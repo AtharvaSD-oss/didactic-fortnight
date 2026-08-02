@@ -409,26 +409,97 @@ export const CafeSection = () => (
   </section>
 );
 
-export const ContactSection = ({ onOpenBooking }) => (
-  <section id="contact" className="py-24 px-4 max-w-7xl mx-auto border-t border-white/10">
-    <div className="bg-gradient-to-r from-[#0f0f1a] via-[#141424] to-[#0f0f1a] border border-[#FF4500]/40 rounded-3xl p-8 sm:p-12 shadow-[0_0_50px_rgba(255,69,0,0.2)]">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-        <div className="space-y-4 md:w-2/3">
-          <span className="font-mono text-xs text-[#FF4500] uppercase tracking-widest">// ARENA LOCATION & CONTACT</span>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-white uppercase">
-            READY TO SET YOUR QUALIFYING LAP?
+export const ContactSection = ({ onOpenBooking }) => {
+  const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/7c5CMX5a4vaaXFLN9";
+
+  return (
+    <section id="contact" className="py-24 px-4 max-w-7xl mx-auto border-t border-white/10">
+      <div className="space-y-12">
+        {/* Section Header */}
+        <div className="text-center space-y-3">
+          <span className="font-mono text-xs text-[#FF4500] uppercase tracking-widest">// ARENA LOCATION & NAVIGATION</span>
+          <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">
+            FIND THE <span className="text-[#FF4500]">ARENA</span>
           </h2>
-          <p className="text-gray-300 text-sm">
-            Kartomania Arena, Sector 62 Cyber Speed Park, Gurgaon, Delhi NCR, India.
-            <br />
-            Open Daily: 11:00 AM – 11:00 PM | Phone: +91 98765 43210
+          <p className="text-sm font-mono text-gray-400 max-w-xl mx-auto">
+            Located at Entertainland Mall, India's premier indoor pro karting circuit.
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-          <MagneticButton onClick={onOpenBooking}>Book Your Race</MagneticButton>
+        {/* Embedded Google Map with Dark F1 Styling */}
+        <div className="relative rounded-3xl overflow-hidden border border-[#FF4500]/50 shadow-[0_0_50px_rgba(255,69,0,0.25)] bg-[#0e0e17]">
+          {/* Map Top Accent Bar */}
+          <div className="flex items-center justify-between px-6 py-3 bg-[#11111d] border-b border-white/10 text-xs font-mono">
+            <div className="flex items-center gap-2 text-[#FF4500]">
+              <MapPin className="w-4 h-4" />
+              <span className="font-bold uppercase tracking-wider">KARTOMANIA GO-KARTING TRACK</span>
+            </div>
+            <a
+              href={GOOGLE_MAPS_LINK}
+              target="_blank"
+              rel="noreferrer"
+              className="text-gray-300 hover:text-white flex items-center gap-1.5 underline decoration-[#FF4500] underline-offset-4 transition-colors"
+            >
+              OPEN IN GOOGLE MAPS &rarr;
+            </a>
+          </div>
+
+          {/* Map Iframe */}
+          <div className="relative w-full h-80 sm:h-[420px] overflow-hidden">
+            <iframe
+              title="Kartomania Go-Karting Track Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.669527622998!2d76.9649233!3d28.3698889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3d52c80383b7%3A0xe54e3d3bd4c06cf5!2sKartomania%20Go-Karting%20Track!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(120%) brightness(90%)' }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+
+        {/* Location Info & CTAs */}
+        <div className="bg-gradient-to-r from-[#0f0f1a] via-[#141424] to-[#0f0f1a] border border-white/10 rounded-3xl p-8 sm:p-10 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-left font-mono">
+            <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5 space-y-1">
+              <span className="text-[10px] text-[#FF4500] uppercase font-bold">// ADDRESS</span>
+              <div className="text-xs text-white font-sans font-semibold">
+                Kartomania Arena, Entertainland Mall, Sector 83, Gurgaon, Haryana, India.
+              </div>
+            </div>
+
+            <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5 space-y-1">
+              <span className="text-[10px] text-[#FF4500] uppercase font-bold">// ARENA HOURS</span>
+              <div className="text-xs text-white font-sans font-semibold">
+                Open Daily: 11:00 AM – 11:00 PM
+              </div>
+            </div>
+
+            <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5 space-y-1">
+              <span className="text-[10px] text-[#FF4500] uppercase font-bold">// HOTLINE</span>
+              <div className="text-xs text-white font-sans font-semibold">
+                +91 98765 43210
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
+            <a
+              href={GOOGLE_MAPS_LINK}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 hover:border-[#FF4500] text-xs font-mono tracking-widest uppercase text-white transition-all group"
+            >
+              <MapPin className="w-4 h-4 text-[#FF4500] group-hover:scale-110 transition-transform" />
+              <span>GET DIRECTIONS ON GOOGLE MAPS</span>
+            </a>
+
+            <MagneticButton onClick={onOpenBooking}>Book Your Race</MagneticButton>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
