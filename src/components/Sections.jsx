@@ -780,40 +780,6 @@ export const ContactSection = ({ onOpenBooking }) => {
           </p>
         </div>
 
-        {/* Embedded Google Map with Dark F1 Styling */}
-        <div className="relative rounded-3xl overflow-hidden border border-[#FF4500]/50 shadow-[0_0_50px_rgba(255,69,0,0.25)] bg-[#0e0e17]">
-          {/* Map Top Accent Bar */}
-          <div className="flex items-center justify-between px-6 py-3 bg-[#11111d] border-b border-white/10 text-xs font-mono">
-            <div className="flex items-center gap-2 text-[#FF4500]">
-              <MapPin className="w-4 h-4" />
-              <span className="font-bold uppercase tracking-wider">KARTOMANIA GO-KARTING TRACK</span>
-            </div>
-            <a
-              href={GOOGLE_MAPS_LINK}
-              target="_blank"
-              rel="noreferrer"
-              className="text-gray-300 hover:text-white flex items-center gap-1.5 underline decoration-[#FF4500] underline-offset-4 transition-colors"
-            >
-              OPEN IN GOOGLE MAPS &rarr;
-            </a>
-          </div>
-
-          {/* Map Iframe */}
-          <div className="relative w-full h-80 sm:h-[420px] overflow-hidden">
-            <iframe
-              title="Kartomania Go-Karting Track Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.669527622998!2d76.9649233!3d28.3698889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3d52c80383b7%3A0xe54e3d3bd4c06cf5!2sKartomania%20Go-Karting%20Track!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(120%) brightness(90%)' }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-full"
-            />
-          </div>
-        </div>
-
         {/* Location Info & CTAs */}
         <div className="bg-gradient-to-r from-[#0f0f1a] via-[#141424] to-[#0f0f1a] border border-white/10 rounded-3xl p-8 sm:p-10 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-left font-mono">
