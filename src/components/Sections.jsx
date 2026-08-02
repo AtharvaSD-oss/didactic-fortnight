@@ -664,6 +664,105 @@ export const GallerySection = () => {
 };
 
 
+export const FounderSection = () => {
+  const achievements = [
+    {
+      title: "JK National Racing Championship",
+      period: "2003 – PRESENT",
+      desc: "Competing since 2003 with multiple wins & podiums. Finished Runners up in 2018.",
+      badge: "RUNNERS UP 2018",
+      icon: Trophy
+    },
+    {
+      title: "Porsche India Certified Lead Instructor",
+      period: "PORSCHE INDIA",
+      desc: "Certified lead instructor for lead & follow track events at Buddh International Circuit (BIC). Instructor for Porsche off-road Drives.",
+      badge: "PORSCHE BIC INSTRUCTOR",
+      icon: Shield
+    },
+    {
+      title: "TATA 50,000 KM World Record Holder",
+      period: "2016 WORLD RECORD",
+      desc: "Lead driver for the TATA world record of 50,000 kms non-stop run over 17 days at Ahmednagar for launch of Tiago, Zest & Bolt in 2016.",
+      badge: "WORLD RECORD 50K KM",
+      icon: Gauge
+    },
+    {
+      title: "Mercedes-Benz Luxe Drive Instructor",
+      period: "MERCEDES-BENZ",
+      desc: "Lead Instructor with Mercedes Luxe Drive & Brand Tour across India.",
+      badge: "LUXE DRIVE INSTRUCTOR",
+      icon: Zap
+    },
+    {
+      title: "Audi Q Drives & Mahindra Adventure",
+      period: "NORTH INDIA",
+      desc: "Instructor for Audi Q drives in North India, Mahindra Adventure & Purple Club off-road experiences.",
+      badge: "OFF-ROAD INSTRUCTOR",
+      icon: Flag
+    },
+    {
+      title: "JK National Karting Championship",
+      period: "2000 – 2003",
+      desc: "Driver at JK National Karting Championship (2000-2003) with multiple wins & podiums. Lead driver of the team to win Amaron Karting Endurance Championship in 2011.",
+      badge: "ENDURANCE CHAMPION 2011",
+      icon: Flame
+    }
+  ];
+
+  return (
+    <section id="founder" className="py-24 px-4 max-w-7xl mx-auto border-t border-white/10">
+      <div className="space-y-12">
+        {/* Section Header */}
+        <div className="text-center space-y-3">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF4500]/15 border border-[#FF4500]/40 text-[#FF4500] font-mono text-xs font-bold uppercase tracking-widest">
+            <Trophy className="w-4 h-4" /> MOTORSPORT LEGEND & FOUNDER
+          </div>
+          <h2 className="text-3xl sm:text-6xl font-display font-black text-white uppercase tracking-tight">
+            KNOW OUR FOUNDER — <span className="text-[#FF4500]">MR. ROHIT KHANNA</span>
+          </h2>
+          <p className="text-sm font-mono text-gray-400 max-w-2xl mx-auto">
+            2+ Decades of Indian Motorsport excellence, certified Porsche & Mercedes-Benz lead instructor, world record holder, and founder of Kartomania.
+          </p>
+        </div>
+
+        {/* Founder Highlights Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {achievements.map((item, idx) => {
+            const IconComponent = item.icon;
+            return (
+              <div
+                key={idx}
+                className="bg-[#0e0e17] border border-white/10 hover:border-[#FF4500]/60 rounded-2xl p-6 sm:p-8 space-y-4 shadow-[0_0_30px_rgba(0,0,0,0.5)] hover:shadow-[0_0_40px_rgba(255,69,0,0.25)] transition-all duration-300 group"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="p-3 rounded-xl bg-[#FF4500]/15 text-[#FF4500] group-hover:scale-110 transition-transform">
+                    <IconComponent className="w-5 h-5" />
+                  </div>
+                  <span className="px-2.5 py-1 rounded bg-[#FF4500]/20 text-[#FF4500] font-mono text-[10px] font-bold uppercase tracking-widest">
+                    {item.badge}
+                  </span>
+                </div>
+
+                <div className="space-y-1">
+                  <span className="font-mono text-[10px] text-gray-500 uppercase tracking-widest">{item.period}</span>
+                  <h3 className="text-lg font-display font-bold text-white uppercase group-hover:text-[#FF4500] transition-colors">
+                    {item.title}
+                  </h3>
+                </div>
+
+                <p className="text-xs font-mono text-gray-300 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export const ContactSection = ({ onOpenBooking }) => {
   const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/7c5CMX5a4vaaXFLN9";
 

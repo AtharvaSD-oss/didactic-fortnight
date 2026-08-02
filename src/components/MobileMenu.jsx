@@ -13,7 +13,8 @@ const NAV_ITEMS = [
   { name: 'Pricing', id: 'pricing', tag: '06' },
   { name: 'Leaderboard', id: 'leaderboard', tag: '07' },
   { name: 'Gallery', id: 'gallery', tag: '08' },
-  { name: 'Contact', id: 'contact', tag: '09' },
+  { name: 'Founder', id: 'founder', tag: '09' },
+  { name: 'Contact', id: 'contact', tag: '10' },
 ];
 
 const drawerVariants = {
