@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { name: 'Home', id: 'home' },
   { name: 'Track', id: 'track' },
   { name: 'Karts', id: 'karts' },
+  { name: "What's New", id: 'whats-new' },
   { name: 'Pricing', id: 'pricing' },
   { name: 'Leaderboard', id: 'leaderboard' },
   { name: 'Gallery', id: 'gallery' },

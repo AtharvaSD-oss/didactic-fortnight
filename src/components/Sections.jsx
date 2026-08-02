@@ -92,6 +92,157 @@ export const KartsSection = () => (
   </section>
 );
 
+export const WhatsNewSection = ({ onOpenBooking }) => {
+  const [activePromo, setActivePromo] = React.useState(null);
+
+  const promos = [
+    {
+      id: 1,
+      src: "/whats-new/promo-1.jpg",
+      title: "PRO KART PRICING - LIMITED OFFER",
+      badge: "LIMITED OFFER",
+      desc: "1st Session @ ₹750 | 2nd Session @ ₹695 | 3rd @ ₹625 | 4th Onwards @ ₹575",
+      tag: "PRO SERIES",
+      span: "md:col-span-2",
+      featured: true
+    },
+    {
+      id: 2,
+      src: "/whats-new/promo-2.jpg",
+      title: "LEVEL 1 PRIVATE SESSION",
+      badge: "PRIVATE TRACK",
+      desc: "Book exclusive Level 1 Private Track Session for ₹4,999/- Only",
+      tag: "VIP EXCLUSIVE",
+      span: "md:col-span-1",
+      featured: false
+    },
+    {
+      id: 3,
+      src: "/whats-new/promo-3.jpg",
+      title: "MONDAY BONANZA",
+      badge: "50% OFF",
+      desc: "Buy 1 Session and Get Another at 50% Off every Monday!",
+      tag: "WEEKDAY DEALS",
+      span: "md:col-span-1",
+      featured: false
+    },
+    {
+      id: 4,
+      src: "/whats-new/promo-4.jpg",
+      title: "HAPPY HOURS WEDNESDAY",
+      badge: "SUMMER SPECIAL",
+      desc: "Kart your heart out! Buy a session @ ₹500/- Only on Wednesdays",
+      tag: "HAPPY HOUR",
+      span: "md:col-span-1",
+      featured: false
+    },
+    {
+      id: 5,
+      src: "/whats-new/promo-5.jpg",
+      title: "FRIDAY FRENZY",
+      badge: "BUY 2 GET 1 FREE",
+      desc: "Buy 2 Sessions & the 3rd is FREE! Start, Kart, Repeat!",
+      tag: "WEEKEND PREVIEW",
+      span: "md:col-span-1",
+      featured: false
+    }
+  ];
+
+  return (
+    <section id="whats-new" className="py-24 px-4 max-w-7xl mx-auto border-t border-white/10">
+      <div className="text-center space-y-3 mb-14">
+        <span className="font-mono text-xs text-[#FF4500] uppercase tracking-widest">// LATEST OFFERS & ANNOUNCEMENTS</span>
+        <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">
+          WHAT'S <span className="text-[#FF4500]">NEW</span>
+        </h2>
+        <p className="text-sm font-mono text-gray-400 max-w-xl mx-auto">
+          Exclusive summer specials, private track passes, and daily racing bonanzas at Kartomania.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {promos.map((promo) => (
+          <div
+            key={promo.id}
+            onClick={() => setActivePromo(promo)}
+            className={`
+              relative group rounded-2xl overflow-hidden cursor-pointer border border-white/10 hover:border-[#FF4500]/70
+              transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(255,69,0,0.35)]
+              ${promo.span} h-80 sm:h-96 bg-[#08080c] flex flex-col justify-end
+            `}
+          >
+            {/* Background Image with Dark Seamless Gradient Blend */}
+            <img
+              src={promo.src}
+              alt={promo.title}
+              className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-95"
+            />
+
+            {/* Vignette & Seamless Background Overlays matching #07070a theme */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-[#07070a]/50 to-transparent opacity-95 group-hover:opacity-80 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#07070a]/70 via-transparent to-[#07070a]/70" />
+            <div className="absolute inset-0 bg-carbon opacity-30 pointer-events-none" />
+
+            {/* Top Badge */}
+            <div className="absolute top-4 left-4 z-20">
+              <span className="px-3 py-1 rounded-full bg-gradient-to-r from-[#FF4500] to-[#FF1E00] text-white font-mono text-[10px] font-bold uppercase tracking-widest shadow-md">
+                {promo.badge}
+              </span>
+            </div>
+
+            {/* Content info */}
+            <div className="relative z-20 p-6 space-y-2">
+              <span className="text-[10px] font-mono text-[#FF4500] uppercase font-bold tracking-wider">
+                {promo.tag}
+              </span>
+              <h3 className="text-xl sm:text-2xl font-display font-bold text-white uppercase group-hover:text-[#FF4500] transition-colors">
+                {promo.title}
+              </h3>
+              <p className="text-xs font-mono text-gray-300">
+                {promo.desc}
+              </p>
+
+              <div className="pt-2">
+                <MagneticButton onClick={onOpenBooking} className="text-[11px] py-2 px-4">
+                  Claim Offer &rarr;
+                </MagneticButton>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Lightbox Modal */}
+      {activePromo && (
+        <div
+          onClick={() => setActivePromo(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-2xl"
+        >
+          <div className="relative max-w-3xl w-full bg-[#0c0c14] border border-[#FF4500]/60 rounded-3xl overflow-hidden shadow-[0_0_80px_rgba(255,69,0,0.4)]">
+            <button
+              onClick={() => setActivePromo(null)}
+              className="absolute top-4 right-4 z-30 p-3 rounded-full bg-black/60 text-white hover:text-[#FF4500] border border-white/20 transition-colors"
+            >
+              ✕
+            </button>
+            <img src={activePromo.src} alt={activePromo.title} className="w-full max-h-[75vh] object-contain bg-black" />
+            <div className="p-6 bg-[#09090f] border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div>
+                <span className="text-[10px] font-mono text-[#FF4500] uppercase font-bold">{activePromo.tag}</span>
+                <h4 className="text-xl font-display font-bold text-white uppercase">{activePromo.title}</h4>
+                <p className="text-xs font-mono text-gray-300 mt-1">{activePromo.desc}</p>
+              </div>
+              <MagneticButton onClick={onOpenBooking}>
+                Book Offer
+              </MagneticButton>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+};
+
 export const PricingSection = ({ onOpenBooking }) => {
   const weekdayData = [
     { sessions: 1, price: '₹550' },
