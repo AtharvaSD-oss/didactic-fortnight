@@ -119,12 +119,6 @@ export const LeapFrogSection = ({ onOpenBooking }) => {
       title: "Race Engineers & Pit Crew",
       tag: "TECHNICAL SUPPORT",
       desc: "Highly experienced international standard mechanics and engineers."
-    },
-    {
-      src: "/leap-frog/leap-frog-5.jpg",
-      title: "Team Owner Rohit Khanna & Squad",
-      tag: "LEAP FROG TEAM",
-      desc: "Owned by veteran Indian racing driver Rohit Khanna with over 2 decades of motorsport experience."
     }
   ];
 
@@ -175,17 +169,13 @@ export const LeapFrogSection = ({ onOpenBooking }) => {
           </div>
         </div>
 
-        {/* 5 Real Team Images Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Real Team Images Gallery Grid (2x2 Layout) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {teamPhotos.map((photo, idx) => (
             <div
               key={idx}
               onClick={() => setActiveImage(photo)}
-              className={`
-                relative group rounded-2xl overflow-hidden cursor-pointer border border-white/10 hover:border-[#FF4500]/70
-                transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(255,69,0,0.3)]
-                ${idx === 0 ? 'md:col-span-2 h-80 sm:h-96' : 'h-72'} bg-[#08080c]
-              `}
+              className="relative group rounded-2xl overflow-hidden cursor-pointer border border-white/10 hover:border-[#FF4500]/70 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(255,69,0,0.3)] h-80 bg-[#08080c]"
             >
               <img
                 src={photo.src}
