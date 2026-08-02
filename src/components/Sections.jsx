@@ -250,32 +250,132 @@ export const LeaderboardSection = () => (
   </section>
 );
 
-export const GallerySection = () => (
-  <section id="gallery" className="py-24 px-4 max-w-7xl mx-auto border-t border-white/10">
-    <div className="text-center space-y-4 mb-14">
-      <span className="font-mono text-xs text-[#FF4500] uppercase tracking-widest">// VISUAL SHOWCASE</span>
-      <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase">THE RACE ATMOSPHERE</h2>
-    </div>
+export const GallerySection = () => {
+  const [activePhoto, setActivePhoto] = React.useState(null);
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {[
-        { title: "Night Apex Cornering", tag: "F1 LIGHTING" },
-        { title: "Podium Celebrations", tag: "CHAMPIONS" },
-        { title: "Pitlane Telemetry Hub", tag: "RACE CONTROL" }
-      ].map((item, idx) => (
-        <div key={idx} className="relative group h-64 rounded-2xl bg-[#12121c] border border-white/10 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
-          <div className="absolute bottom-6 left-6 z-20 space-y-1">
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#FF4500] text-white uppercase">
-              {item.tag}
-            </span>
-            <h3 className="text-lg font-display font-bold text-white uppercase">{item.title}</h3>
+  const galleryItems = [
+    {
+      src: "/gallery/gallery-1.jpg",
+      title: "Pitlane Staging Grid",
+      tag: "GRID #05 & #06",
+      desc: "Pro series karts lined up under the F1 orange canopy ready for pit exit.",
+      span: "md:col-span-2 md:row-span-2",
+      height: "h-96 md:h-full"
+    },
+    {
+      src: "/gallery/gallery-2.jpg",
+      title: "Kartomania Sunset Apex",
+      tag: "SUNSET RACE",
+      desc: "Karts rounding the hairpin turn as dusk falls over the Kartomania main arena.",
+      span: "md:col-span-1",
+      height: "h-64 md:h-80"
+    },
+    {
+      src: "/gallery/gallery-3.jpg",
+      title: "Hairpin Cornering Telemetry",
+      tag: "TECHNICAL CHICANE",
+      desc: "High-speed cornering along polymer barrier loops.",
+      span: "md:col-span-1",
+      height: "h-64 md:h-80"
+    },
+    {
+      src: "/gallery/gallery-4.jpg",
+      title: "Podium Victory Celebration",
+      tag: "CHAMPIONS",
+      desc: "Drivers celebrating qualifying lap records in the paddock.",
+      span: "md:col-span-1",
+      height: "h-64 md:h-80"
+    },
+    {
+      src: "/gallery/gallery-5.jpg",
+      title: "Pro Karts Fleet Lineup",
+      tag: "ARENA FLEET",
+      desc: "270cc high-torque race karts ready in pitlane.",
+      span: "md:col-span-2",
+      height: "h-64 md:h-80"
+    }
+  ];
+
+  return (
+    <section id="gallery" className="py-24 px-4 max-w-7xl mx-auto border-t border-white/10">
+      <div className="text-center space-y-4 mb-14">
+        <span className="font-mono text-xs text-[#FF4500] uppercase tracking-widest">// VISUAL SHOWCASE & GALLERY</span>
+        <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">
+          THE <span className="text-[#FF4500]">KARTOMANIA</span> EXPERIENCE
+        </h2>
+        <p className="text-sm font-mono text-gray-400 max-w-xl mx-auto">
+          Explore real track footage from India's premier indoor go-karting arena.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {galleryItems.map((item, idx) => (
+          <div
+            key={idx}
+            onClick={() => setActivePhoto(item)}
+            className={`
+              relative group rounded-2xl overflow-hidden cursor-pointer border border-white/10 hover:border-[#FF4500]/70
+              transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(255,69,0,0.3)]
+              ${item.span} ${item.height} bg-[#08080c]
+            `}
+          >
+            {/* Background Image with Dark Seamless Gradient Blend */}
+            <img
+              src={item.src}
+              alt={item.title}
+              className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 opacity-85 group-hover:opacity-100"
+            />
+
+            {/* Vignette & Ambient Darkness Overlay matching #07070a page background */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-[#07070a]/40 to-transparent opacity-90 group-hover:opacity-75 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#07070a]/60 via-transparent to-[#07070a]/60" />
+
+            {/* Inner Glowing Border Accent */}
+            <div className="absolute inset-0 border border-[#FF4500]/0 group-hover:border-[#FF4500]/50 rounded-2xl transition-colors duration-500 pointer-events-none" />
+
+            {/* Content Labels */}
+            <div className="absolute bottom-6 left-6 right-6 z-20 space-y-2">
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#FF4500] text-white font-mono text-[10px] font-bold uppercase tracking-widest shadow-md">
+                {item.tag}
+              </div>
+              <h3 className="text-xl font-display font-bold text-white uppercase group-hover:text-[#FF4500] transition-colors">
+                {item.title}
+              </h3>
+              <p className="text-xs font-mono text-gray-300 line-clamp-2">
+                {item.desc}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Lightbox Fullscreen Modal */}
+      {activePhoto && (
+        <div
+          onClick={() => setActivePhoto(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-2xl"
+        >
+          <div className="relative max-w-4xl w-full bg-[#0c0c14] border border-[#FF4500]/60 rounded-3xl overflow-hidden shadow-[0_0_80px_rgba(255,69,0,0.4)]">
+            <button
+              onClick={() => setActivePhoto(null)}
+              className="absolute top-4 right-4 z-30 p-3 rounded-full bg-black/60 text-white hover:text-[#FF4500] border border-white/20 transition-colors"
+            >
+              ✕
+            </button>
+            <img src={activePhoto.src} alt={activePhoto.title} className="w-full max-h-[75vh] object-contain bg-black" />
+            <div className="p-6 bg-[#09090f] border-t border-white/10 flex items-center justify-between">
+              <div>
+                <span className="text-[10px] font-mono text-[#FF4500] uppercase">{activePhoto.tag}</span>
+                <h4 className="text-xl font-display font-bold text-white uppercase">{activePhoto.title}</h4>
+                <p className="text-xs font-mono text-gray-400 mt-1">{activePhoto.desc}</p>
+              </div>
+            </div>
           </div>
         </div>
-      ))}
-    </div>
-  </section>
-);
+      )}
+    </section>
+  );
+};
 
 export const CafeSection = () => (
   <section id="cafe" className="py-24 px-4 max-w-7xl mx-auto border-t border-white/10">
