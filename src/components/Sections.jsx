@@ -92,6 +92,151 @@ export const KartsSection = () => (
   </section>
 );
 
+export const LeapFrogSection = ({ onOpenBooking }) => {
+  const [activeImage, setActiveImage] = React.useState(null);
+
+  const teamPhotos = [
+    {
+      src: "/leap-frog/leap-frog-1.jpg",
+      title: "Rotax Max Kart #71 Apex",
+      tag: "NATIONAL KARTING",
+      desc: "Rotax Max Championship race kart #71 taking the apex corner."
+    },
+    {
+      src: "/leap-frog/leap-frog-2.jpg",
+      title: "High-Speed Motion Telemetry",
+      tag: "CHICANE SPEED",
+      desc: "Full throttle velocity along the national circuit barrier loops."
+    },
+    {
+      src: "/leap-frog/leap-frog-3.jpg",
+      title: "Rotax Max Classes 2023 Champions",
+      tag: "PODIUM VICTORY",
+      desc: "Leap Frog Racing driver on 1st place podium trophy ceremony."
+    },
+    {
+      src: "/leap-frog/leap-frog-4.jpg",
+      title: "Race Engineers & Pit Crew",
+      tag: "TECHNICAL SUPPORT",
+      desc: "Highly experienced international standard mechanics and engineers."
+    },
+    {
+      src: "/leap-frog/leap-frog-5.jpg",
+      title: "Team Owner Rohit Khanna & Squad",
+      tag: "LEAP FROG TEAM",
+      desc: "Owned by veteran Indian racing driver Rohit Khanna with over 2 decades of motorsport experience."
+    }
+  ];
+
+  return (
+    <section id="leap-frog" className="py-24 px-4 max-w-7xl mx-auto border-t border-white/10">
+      <div className="space-y-12">
+        {/* Section Header */}
+        <div className="text-center space-y-3">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF4500]/15 border border-[#FF4500]/40 text-[#FF4500] font-mono text-xs font-bold uppercase tracking-widest">
+            <Trophy className="w-4 h-4" /> PROFESSIONAL MOTORSPORT DIVISION
+          </div>
+          <h2 className="text-3xl sm:text-6xl font-display font-black text-white uppercase tracking-tight">
+            LEAP FROG <span className="text-[#FF4500]">RACING</span>
+          </h2>
+          <p className="text-sm font-mono text-[#FF4500] tracking-widest uppercase font-semibold">
+            THE ONLY PROFESSIONAL RACING TEAM FROM THE NORTH
+          </p>
+        </div>
+
+        {/* Narrative & Stats Dashboard Card */}
+        <div className="bg-gradient-to-r from-[#0f0f1a] via-[#141424] to-[#0f0f1a] border border-[#FF4500]/40 rounded-3xl p-8 sm:p-12 shadow-[0_0_50px_rgba(255,69,0,0.2)]">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            <div className="lg:col-span-2 space-y-4">
+              <span className="font-mono text-xs text-[#FF4500] uppercase tracking-widest">// HERITAGE & TELEMETRY</span>
+              <p className="text-gray-300 text-sm sm:text-base font-sans leading-relaxed">
+                Leap Frog Racing is a Professional Racing & Karting Team formed in the year <strong className="text-white">2018</strong> taking part in the <strong className="text-white">JK Tyre FMSCI National Racing Championship</strong>, <strong className="text-white">MRF National Championship</strong> & <strong className="text-white">Rotax Max National Karting Championship</strong>.
+              </p>
+              <p className="text-gray-400 text-xs sm:text-sm font-sans leading-relaxed">
+                Leap Frog Racing is owned by well experienced and successful Indian Racing Driver <strong className="text-[#FF4500]">Rohit Khanna</strong> who has been a core part of the Indian Motorsport fraternity for more than <strong className="text-white">2 decades</strong>. The team boasts international-standard technical support, race engineers, and mechanics.
+              </p>
+            </div>
+
+            {/* Stats Telemetry Badge */}
+            <div className="grid grid-cols-2 gap-4 font-mono">
+              <div className="p-4 rounded-2xl bg-[#09090f] border border-white/10 text-center">
+                <div className="text-2xl font-display font-bold text-[#FF4500]">2018</div>
+                <div className="text-[10px] text-gray-400 uppercase tracking-wider">ESTABLISHED</div>
+              </div>
+              <div className="p-4 rounded-2xl bg-[#09090f] border border-white/10 text-center">
+                <div className="text-2xl font-display font-bold text-white">20+ YRS</div>
+                <div className="text-[10px] text-gray-400 uppercase tracking-wider">DRIVER EXP.</div>
+              </div>
+              <div className="p-4 rounded-2xl bg-[#09090f] border border-white/10 text-center col-span-2">
+                <div className="text-sm font-display font-bold text-white uppercase">FMSCI & ROTAX</div>
+                <div className="text-[10px] text-[#FF4500] uppercase tracking-wider">NATIONAL CHAMPIONSHIPS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 5 Real Team Images Gallery Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {teamPhotos.map((photo, idx) => (
+            <div
+              key={idx}
+              onClick={() => setActiveImage(photo)}
+              className={`
+                relative group rounded-2xl overflow-hidden cursor-pointer border border-white/10 hover:border-[#FF4500]/70
+                transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(255,69,0,0.3)]
+                ${idx === 0 ? 'md:col-span-2 h-80 sm:h-96' : 'h-72'} bg-[#08080c]
+              `}
+            >
+              <img
+                src={photo.src}
+                alt={photo.title}
+                className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 opacity-85 group-hover:opacity-100"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-[#07070a]/40 to-transparent opacity-90 group-hover:opacity-75 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#07070a]/60 via-transparent to-[#07070a]/60" />
+
+              <div className="absolute bottom-6 left-6 right-6 z-20 space-y-1">
+                <span className="text-[10px] font-mono px-2.5 py-0.5 rounded bg-[#FF4500] text-white uppercase font-bold tracking-widest">
+                  {photo.tag}
+                </span>
+                <h3 className="text-lg font-display font-bold text-white uppercase group-hover:text-[#FF4500] transition-colors">
+                  {photo.title}
+                </h3>
+                <p className="text-xs font-mono text-gray-300 line-clamp-2">{photo.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Lightbox Modal */}
+        {activeImage && (
+          <div
+            onClick={() => setActiveImage(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-2xl"
+          >
+            <div className="relative max-w-4xl w-full bg-[#0c0c14] border border-[#FF4500]/60 rounded-3xl overflow-hidden shadow-[0_0_80px_rgba(255,69,0,0.4)]">
+              <button
+                onClick={() => setActiveImage(null)}
+                className="absolute top-4 right-4 z-30 p-3 rounded-full bg-black/60 text-white hover:text-[#FF4500] border border-white/20 transition-colors"
+              >
+                ✕
+              </button>
+              <img src={activeImage.src} alt={activeImage.title} className="w-full max-h-[75vh] object-contain bg-black" />
+              <div className="p-6 bg-[#09090f] border-t border-white/10 flex items-center justify-between">
+                <div>
+                  <span className="text-[10px] font-mono text-[#FF4500] uppercase font-bold">{activeImage.tag}</span>
+                  <h4 className="text-xl font-display font-bold text-white uppercase">{activeImage.title}</h4>
+                  <p className="text-xs font-mono text-gray-400 mt-1">{activeImage.desc}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
 export const WhatsNewSection = ({ onOpenBooking }) => {
   const [activePromo, setActivePromo] = React.useState(null);
 

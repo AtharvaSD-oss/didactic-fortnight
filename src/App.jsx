@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import { 
   TrackSection, 
   KartsSection, 
+  LeapFrogSection,
   WhatsNewSection,
   PricingSection, 
   LeaderboardSection, 
@@ -22,7 +23,7 @@ export function App() {
 
   // Active section intersection observer
   useEffect(() => {
-    const sections = ['home', 'track', 'karts', 'whats-new', 'pricing', 'leaderboard', 'gallery', 'contact'];
+    const sections = ['home', 'track', 'karts', 'leap-frog', 'whats-new', 'pricing', 'leaderboard', 'gallery', 'contact'];
     
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200;
@@ -77,6 +78,7 @@ export function App() {
         />
         <TrackSection onOpenBooking={() => setBookingOpen(true)} />
         <KartsSection />
+        <LeapFrogSection onOpenBooking={() => setBookingOpen(true)} />
         <WhatsNewSection onOpenBooking={() => setBookingOpen(true)} />
         <PricingSection onOpenBooking={() => setBookingOpen(true)} />
         <LeaderboardSection />

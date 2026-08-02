@@ -8,11 +8,12 @@ const NAV_ITEMS = [
   { name: 'Home', id: 'home', tag: '01' },
   { name: 'Track', id: 'track', tag: '02' },
   { name: 'Karts', id: 'karts', tag: '03' },
-  { name: "What's New", id: 'whats-new', tag: '04' },
-  { name: 'Pricing', id: 'pricing', tag: '05' },
-  { name: 'Leaderboard', id: 'leaderboard', tag: '06' },
-  { name: 'Gallery', id: 'gallery', tag: '07' },
-  { name: 'Contact', id: 'contact', tag: '08' },
+  { name: 'Leap Frog', id: 'leap-frog', tag: '04' },
+  { name: "What's New", id: 'whats-new', tag: '05' },
+  { name: 'Pricing', id: 'pricing', tag: '06' },
+  { name: 'Leaderboard', id: 'leaderboard', tag: '07' },
+  { name: 'Gallery', id: 'gallery', tag: '08' },
+  { name: 'Contact', id: 'contact', tag: '09' },
 ];
 
 const drawerVariants = {
