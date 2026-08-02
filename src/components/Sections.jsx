@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flag, Trophy, Shield, Zap, MapPin, Phone, Coffee, Star, CheckCircle, ArrowRight, Gauge } from 'lucide-react';
+import { Flag, Trophy, Shield, Zap, MapPin, Phone, Coffee, Star, CheckCircle, ArrowRight, Gauge, Flame } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 
 export const TrackSection = ({ onOpenBooking }) => (
