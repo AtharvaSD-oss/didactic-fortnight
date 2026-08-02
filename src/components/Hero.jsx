@@ -210,8 +210,8 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
         <div className="pt-6 flex flex-col items-center justify-center space-y-1">
           <span className="font-mono text-[10px] text-gray-500 uppercase tracking-widest">SCROLL</span>
           <button
-            onClick={() => onNavigate('track')}
-            className="text-gray-400 hover:text-[#FF4500] animate-bounce transition-colors"
+            onClick={() => onNavigate('leap-frog')}
+            className="text-[#FF4500] hover:text-white animate-bounce transition-colors"
           >
             <ChevronDown className="w-4 h-4" />
           </button>

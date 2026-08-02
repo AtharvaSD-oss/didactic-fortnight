@@ -6,15 +6,13 @@ import MagneticButton from './MagneticButton';
 
 const NAV_ITEMS = [
   { name: 'Home', id: 'home', tag: '01' },
-  { name: 'Track', id: 'track', tag: '02' },
-  { name: 'Karts', id: 'karts', tag: '03' },
-  { name: 'Leap Frog', id: 'leap-frog', tag: '04' },
-  { name: "What's New", id: 'whats-new', tag: '05' },
-  { name: 'Pricing', id: 'pricing', tag: '06' },
-  { name: 'Leaderboard', id: 'leaderboard', tag: '07' },
-  { name: 'Gallery', id: 'gallery', tag: '08' },
-  { name: 'Founder', id: 'founder', tag: '09' },
-  { name: 'Contact', id: 'contact', tag: '10' },
+  { name: 'Leap Frog', id: 'leap-frog', tag: '02' },
+  { name: "What's New", id: 'whats-new', tag: '03' },
+  { name: 'Pricing', id: 'pricing', tag: '04' },
+  { name: 'Leaderboard', id: 'leaderboard', tag: '05' },
+  { name: 'Gallery', id: 'gallery', tag: '06' },
+  { name: 'Founder', id: 'founder', tag: '07' },
+  { name: 'Contact', id: 'contact', tag: '08' },
 ];
 
 const drawerVariants = {

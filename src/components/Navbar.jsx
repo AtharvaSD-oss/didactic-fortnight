@@ -7,8 +7,6 @@ import MobileMenu from './MobileMenu';
 
 const NAV_LINKS = [
   { name: 'Home', id: 'home' },
-  { name: 'Track', id: 'track' },
-  { name: 'Karts', id: 'karts' },
   { name: 'Leap Frog', id: 'leap-frog' },
   { name: "What's New", id: 'whats-new' },
   { name: 'Pricing', id: 'pricing' },
