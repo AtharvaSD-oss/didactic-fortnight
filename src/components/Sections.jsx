@@ -92,48 +92,121 @@ export const KartsSection = () => (
   </section>
 );
 
-export const PricingSection = ({ onOpenBooking }) => (
-  <section id="pricing" className="py-24 px-4 max-w-7xl mx-auto border-t border-white/10">
-    <div className="text-center space-y-4 mb-14">
-      <span className="font-mono text-xs text-[#FF4500] uppercase tracking-widest">// RACE PACKAGES</span>
-      <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase">GRID PASS PRICING</h2>
-    </div>
+export const PricingSection = ({ onOpenBooking }) => {
+  const weekdayData = [
+    { sessions: 1, price: '₹550' },
+    { sessions: 5, price: '₹2750' },
+    { sessions: 10, price: '₹5200' },
+    { sessions: 15, price: '₹7500' },
+    { sessions: 20, price: '₹9570' },
+  ];
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {[
-        { title: "SPRINT DASH", price: "₹1,499", laps: "10 LAPS", desc: "Perfect for quick adrenaline rushes.", popular: false },
-        { title: "PRO GRAND PRIX", price: "₹2,999", laps: "25 LAPS + QUALIFYING", desc: "Full telemetry analysis & podium ceremony.", popular: true },
-        { title: "VIP TRACK RENTAL", price: "₹24,999", laps: "EXCLUSIVE 1 HOUR ARENA", desc: "Private track access for up to 12 drivers.", popular: false }
-      ].map((pkg, idx) => (
-        <div 
-          key={idx} 
-          className={`relative rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
-            pkg.popular 
-              ? 'bg-gradient-to-b from-[#141424] to-[#0c0c14] border-2 border-[#FF4500] shadow-[0_0_40px_rgba(255,69,0,0.3)] scale-105' 
-              : 'bg-[#0e0e17] border border-white/10 hover:border-white/30'
-          }`}
-        >
-          {pkg.popular && (
-            <span className="absolute -top-3 right-6 px-3 py-1 rounded-full bg-gradient-to-r from-[#FF4500] to-[#FF1E00] text-[10px] font-mono font-bold text-white uppercase tracking-widest shadow-md">
-              MOST POPULAR
+  const weekendData = [
+    { sessions: 1, price: '₹650' },
+    { sessions: 5, price: '₹3250' },
+    { sessions: 10, price: '₹6175' },
+    { sessions: 15, price: '₹8850' },
+    { sessions: 20, price: '₹11,400' },
+  ];
+
+  return (
+    <section id="pricing" className="py-24 px-4 max-w-7xl mx-auto border-t border-white/10">
+      <div className="text-center space-y-3 mb-12">
+        <span className="font-mono text-xs text-[#FF4500] uppercase tracking-widest">// RACE PACKAGES & RATES</span>
+        <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">PRICING</h2>
+        <p className="text-sm font-mono text-gray-400">Come back regularly to check out the current deals!</p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        {/* Weekdays Table Card */}
+        <div className="bg-[#0e0e17] border border-white/10 hover:border-[#FF4500]/40 rounded-2xl p-6 sm:p-8 shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all">
+          <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
+            <h3 className="text-2xl font-display font-bold text-white uppercase tracking-wider">WEEKDAYS</h3>
+            <span className="px-3 py-1 rounded-full bg-[#FF4500]/15 text-[#FF4500] font-mono text-xs font-semibold uppercase">
+              MON – THU
             </span>
-          )}
-
-          <div>
-            <h3 className="text-xl font-display font-bold text-white uppercase mb-2">{pkg.title}</h3>
-            <p className="text-xs text-gray-400 mb-6">{pkg.desc}</p>
-            <div className="text-4xl font-display font-black text-white mb-2">{pkg.price}</div>
-            <div className="text-xs font-mono text-[#FF4500] uppercase tracking-wider mb-6">{pkg.laps}</div>
           </div>
 
-          <MagneticButton onClick={onOpenBooking} className="w-full justify-center">
-            Book Package
-          </MagneticButton>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left font-mono text-sm">
+              <thead className="bg-[#141422] text-[#FF4500] uppercase text-xs">
+                <tr>
+                  <th className="py-3 px-4 rounded-l-lg">SESSIONS</th>
+                  <th className="py-3 px-4 rounded-r-lg text-right">PRICE</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/5 text-gray-200">
+                {weekdayData.map((row, idx) => (
+                  <tr key={idx} className="hover:bg-white/[0.04] transition-colors">
+                    <td className="py-3.5 px-4 font-bold text-white">
+                      {row.sessions} {row.sessions === 1 ? 'Session' : 'Sessions'}
+                    </td>
+                    <td className="py-3.5 px-4 text-right font-display font-bold text-[#FF4500] text-base">
+                      {row.price}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
-      ))}
-    </div>
-  </section>
-);
+
+        {/* Weekend Table Card */}
+        <div className="bg-gradient-to-b from-[#121220] to-[#0c0c14] border-2 border-[#FF4500]/60 rounded-2xl p-6 sm:p-8 shadow-[0_0_40px_rgba(255,69,0,0.25)] transition-all relative">
+          <span className="absolute -top-3 right-6 px-3 py-1 rounded-full bg-gradient-to-r from-[#FF4500] to-[#FF1E00] text-[10px] font-mono font-bold text-white uppercase tracking-widest shadow-md">
+            PEAK RACING
+          </span>
+
+          <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
+            <h3 className="text-2xl font-display font-bold text-white uppercase tracking-wider">WEEKEND</h3>
+            <span className="px-3 py-1 rounded-full bg-[#FF4500]/20 text-[#FF4500] font-mono text-xs font-semibold uppercase">
+              FRI – SUN & HOLIDAYS
+            </span>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left font-mono text-sm">
+              <thead className="bg-[#18182b] text-[#FF4500] uppercase text-xs">
+                <tr>
+                  <th className="py-3 px-4 rounded-l-lg">SESSIONS</th>
+                  <th className="py-3 px-4 rounded-r-lg text-right">PRICE</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/5 text-gray-200">
+                {weekendData.map((row, idx) => (
+                  <tr key={idx} className="hover:bg-white/[0.04] transition-colors">
+                    <td className="py-3.5 px-4 font-bold text-white">
+                      {row.sessions} {row.sessions === 1 ? 'Session' : 'Sessions'}
+                    </td>
+                    <td className="py-3.5 px-4 text-right font-display font-bold text-[#FF4500] text-base">
+                      {row.price}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      {/* Terms and Conditions Card */}
+      <div className="bg-[#0e0e17] border border-white/10 rounded-2xl p-6 sm:p-8 space-y-4">
+        <h4 className="font-display font-bold text-sm text-white uppercase tracking-wider text-[#FF4500]">
+          TERMS AND CONDITIONS
+        </h4>
+        <ul className="space-y-2 text-xs font-mono text-gray-300 list-disc list-inside">
+          <li>Each session lasts 6 minutes</li>
+          <li>All prices are exclusive of 18% GST</li>
+          <li>All sessions must be consumed on the day they are bought</li>
+        </ul>
+
+        <div className="pt-4 flex justify-center">
+          <MagneticButton onClick={onOpenBooking}>Book Your Race</MagneticButton>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export const LeaderboardSection = () => (
   <section id="leaderboard" className="py-24 px-4 max-w-7xl mx-auto border-t border-white/10">
