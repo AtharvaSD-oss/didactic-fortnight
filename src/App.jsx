@@ -63,22 +63,6 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-[#07070a] text-white selection:bg-[#FF4500] selection:text-white relative overflow-x-hidden">
-      {/* High-Octane Fullsite Ambient Background Layer */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* Background Image */}
-        <img 
-          src="/bg-kart.jpg" 
-          alt="Karting Background" 
-          className="w-full h-full object-cover object-center opacity-25 scale-105 filter brightness-90 contrast-125 saturate-120" 
-        />
-        {/* Dark Radial Vignette & Seamless Color Matching Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-[#07070a]/75 to-[#07070a]/90" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#07070a]/80 via-transparent to-[#07070a]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#07070a_85%)]" />
-        {/* Carbon Pattern Overlay */}
-        <div className="absolute inset-0 bg-carbon opacity-40 mix-blend-overlay" />
-      </div>
-
       {/* Top Futuristic Navigation Bar */}
       <Navbar
         activeSection={activeSection}

@@ -22,13 +22,12 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
         <img
           src="/hero-bg.jpg"
           alt="Karting Background"
-          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.55] contrast-125 saturate-110"
+          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.5] contrast-125 saturate-110 opacity-75"
         />
         {/* Dark Vignette & Gradient Overlays matching #07070a theme */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-[#07070a]/60 to-[#07070a]/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07070a]/90 via-[#07070a]/60 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#07070a_85%)]" />
-        <div className="absolute inset-0 bg-carbon opacity-30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-[#07070a]/50 to-[#07070a]/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#07070a]/85 via-[#07070a]/40 to-transparent" />
+        <div className="absolute inset-0 bg-carbon opacity-25 pointer-events-none" />
       </div>
 
       {/* 2. Main Content Grid */}
