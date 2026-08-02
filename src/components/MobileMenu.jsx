@@ -11,8 +11,7 @@ const NAV_ITEMS = [
   { name: 'Pricing', id: 'pricing', tag: '04' },
   { name: 'Leaderboard', id: 'leaderboard', tag: '05' },
   { name: 'Gallery', id: 'gallery', tag: '06' },
-  { name: 'Cafe', id: 'cafe', tag: '07' },
-  { name: 'Contact', id: 'contact', tag: '08' },
+  { name: 'Contact', id: 'contact', tag: '07' },
 ];
 
 const drawerVariants = {

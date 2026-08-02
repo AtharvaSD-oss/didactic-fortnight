@@ -377,37 +377,6 @@ export const GallerySection = () => {
   );
 };
 
-export const CafeSection = () => (
-  <section id="cafe" className="py-24 px-4 max-w-7xl mx-auto border-t border-white/10">
-    <div className="flex flex-col md:flex-row items-center gap-12">
-      <div className="md:w-1/2 space-y-6">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF4500]/15 text-[#FF4500] font-mono text-xs uppercase font-bold">
-          <Coffee className="w-4 h-4" /> PITSTOP LOUNGE
-        </div>
-        <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase">
-          FUEL UP AT THE <span className="text-[#FF4500]">APEX CAFE</span>
-        </h2>
-        <p className="text-gray-400 text-sm leading-relaxed">
-          Relax in our luxury air-conditioned F1 paddock lounge overlooking the main straightaway. Enjoy artisan coffees, gourmet wood-fired pizzas, and energy elixirs while monitoring live track telemetries.
-        </p>
-      </div>
-
-      <div className="md:w-1/2 w-full grid grid-cols-2 gap-4">
-        <div className="p-5 rounded-2xl bg-[#0e0e17] border border-white/10">
-          <span className="text-xs font-mono text-[#FF4500] uppercase">// DRINKS</span>
-          <h4 className="font-display font-bold text-white text-base mt-2">NITRO BREW COFFEE</h4>
-          <p className="text-xs text-gray-400 mt-1">Triple espresso with chocolate bitters</p>
-        </div>
-
-        <div className="p-5 rounded-2xl bg-[#0e0e17] border border-white/10">
-          <span className="text-xs font-mono text-[#FF4500] uppercase">// FOOD</span>
-          <h4 className="font-display font-bold text-white text-base mt-2">CHEQUERED FLAG PIZZA</h4>
-          <p className="text-xs text-gray-400 mt-1">Artisan pepperoni & truffle drizzle</p>
-        </div>
-      </div>
-    </div>
-  </section>
-);
 
 export const ContactSection = ({ onOpenBooking }) => {
   const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/7c5CMX5a4vaaXFLN9";

@@ -12,7 +12,6 @@ const NAV_LINKS = [
   { name: 'Pricing', id: 'pricing' },
   { name: 'Leaderboard', id: 'leaderboard' },
   { name: 'Gallery', id: 'gallery' },
-  { name: 'Cafe', id: 'cafe' },
   { name: 'Contact', id: 'contact' },
 ];
 

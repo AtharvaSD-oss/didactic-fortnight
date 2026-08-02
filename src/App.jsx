@@ -7,7 +7,6 @@ import {
   PricingSection, 
   LeaderboardSection, 
   GallerySection, 
-  CafeSection, 
   ContactSection 
 } from './components/Sections';
 import SearchModal from './components/SearchModal';
@@ -22,7 +21,7 @@ export function App() {
 
   // Active section intersection observer
   useEffect(() => {
-    const sections = ['home', 'track', 'karts', 'pricing', 'leaderboard', 'gallery', 'cafe', 'contact'];
+    const sections = ['home', 'track', 'karts', 'pricing', 'leaderboard', 'gallery', 'contact'];
     
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200;
@@ -80,7 +79,6 @@ export function App() {
         <PricingSection onOpenBooking={() => setBookingOpen(true)} />
         <LeaderboardSection />
         <GallerySection />
-        <CafeSection />
         <ContactSection onOpenBooking={() => setBookingOpen(true)} />
       </main>
 

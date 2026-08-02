@@ -4,9 +4,9 @@ import { Search, X, Zap, Trophy, Shield, MapPin, Gauge } from 'lucide-react';
 
 const QUICK_SEARCHES = [
   { title: "Pro Kart Specs & Telemetry", icon: Gauge, section: "karts" },
-  { title: "Track Layout & Lap Records", icon: MapPin, section: "track" },
+  { title: "Track Layout & Circuit Specs", icon: MapPin, section: "track" },
   { title: "Live Leaderboard Rankings", icon: Trophy, section: "leaderboard" },
-  { title: "Pitstop Cafe Menu", icon: Zap, section: "cafe" },
+  { title: "Arena Location & Directions", icon: Shield, section: "contact" },
 ];
 
 const SearchModal = ({ isOpen, onClose, onNavigate }) => {
