@@ -1,37 +1,33 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
-import { Search, Phone, Menu, X, Flame } from 'lucide-react';
+import { Search, Phone, Menu, X } from 'lucide-react';
 import { InstagramIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 import MobileMenu from './MobileMenu';
 
 const NAV_LINKS = [
-  { name: 'Home', id: 'home' },
-  { name: 'About', id: 'who-we-are' },
-  { name: 'Leap Frog', id: 'leap-frog' },
-  { name: "What's New", id: 'whats-new' },
-  { name: 'Pricing', id: 'pricing' },
-  { name: 'Arcade Game', id: 'game' },
-  { name: 'Gallery', id: 'gallery' },
-  { name: 'Reviews', id: 'testimonials' },
-  { name: 'Founder', id: 'founder' },
-  { name: 'Contact', id: 'contact' },
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about' },
+  { name: 'Leap Frog', path: '/leap-frog' },
+  { name: "What's New", path: '/whats-new' },
+  { name: 'Pricing', path: '/pricing' },
+  { name: 'Arcade Game', path: '/game' },
+  { name: 'Gallery', path: '/gallery' },
+  { name: 'Founder', path: '/founder' },
+  { name: 'Contact', path: '/contact' },
 ];
 
-const Navbar = ({ 
-  activeSection, 
-  onNavigate, 
-  onOpenSearch, 
-  onOpenBooking 
-}) => {
+const Navbar = ({ onOpenSearch, onOpenBooking }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
+  const location = useLocation();
+  const navigate = useNavigate();
   const navRef = useRef(null);
   const lastScrollY = useRef(0);
 
-  // GSAP Hide on Scroll Down / Show on Scroll Up
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -79,24 +75,24 @@ const Navbar = ({
 
         <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* 1. LEFT: Kartomania Logo */}
-          <div className="flex items-center gap-3 cursor-pointer group" onClick={() => onNavigate('home')}>
+          <Link to="/" className="flex items-center gap-3 cursor-pointer group">
             <img 
               src="/logo.png" 
               alt="Kartomania Logo" 
               className="h-11 sm:h-12 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(255,69,0,0.4)] group-hover:scale-105 transition-transform duration-300" 
             />
-          </div>
+          </Link>
 
-          {/* 2. CENTER: Navigation Links (Desktop: Full, Tablet: Priority) */}
+          {/* 2. CENTER: Navigation Links */}
           <nav className="hidden md:flex items-center gap-1 xl:gap-2">
             {NAV_LINKS.map((link, idx) => {
-              const isActive = activeSection === link.id;
+              const isActive = location.pathname === link.path;
               const isHovered = hoveredIndex === idx;
 
               return (
-                <button
-                  key={link.id}
-                  onClick={() => onNavigate(link.id)}
+                <Link
+                  key={link.path}
+                  to={link.path}
                   onMouseEnter={() => setHoveredIndex(idx)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   className={`
@@ -119,7 +115,7 @@ const Navbar = ({
                       ${isActive ? 'w-full opacity-100' : isHovered ? 'w-full opacity-80' : 'w-0 opacity-0'}
                     `}
                   />
-                </button>
+                </Link>
               );
             })}
           </nav>
@@ -143,16 +139,6 @@ const Navbar = ({
               >
                 <Phone className="w-4 h-4" />
               </a>
-
-              <a
-                href="https://instagram.com/kartomania.in"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram"
-                className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#FF4500] hover:bg-[#FF4500]/10 text-gray-300 hover:text-[#FF4500] transition-all hover:scale-105"
-              >
-                <InstagramIcon className="w-4 h-4" />
-              </a>
             </div>
 
             {/* CTA Button: Magnetic "Book Your Race" */}
@@ -162,7 +148,7 @@ const Navbar = ({
               </MagneticButton>
             </div>
 
-            {/* Mobile Hamburger Toggle (F1 Styled) */}
+            {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open mobile navigation"
@@ -174,11 +160,12 @@ const Navbar = ({
         </div>
       </header>
 
+      {/* Mobile Drawer Navigation */}
       <MobileMenu
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
-        activeSection={activeSection}
-        onNavigate={onNavigate}
+        activeSection={location.pathname}
+        onNavigate={(path) => navigate(path)}
         onOpenSearch={onOpenSearch}
         onOpenBooking={onOpenBooking}
       />

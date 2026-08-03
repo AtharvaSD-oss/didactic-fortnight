@@ -5,16 +5,15 @@ import { InstagramIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 
 const NAV_ITEMS = [
-  { name: 'Home', id: 'home', tag: '01' },
-  { name: 'About', id: 'who-we-are', tag: '02' },
-  { name: 'Leap Frog', id: 'leap-frog', tag: '03' },
-  { name: "What's New", id: 'whats-new', tag: '04' },
-  { name: 'Pricing', id: 'pricing', tag: '05' },
-  { name: 'Arcade Game', id: 'game', tag: '06' },
-  { name: 'Gallery', id: 'gallery', tag: '07' },
-  { name: 'Reviews', id: 'testimonials', tag: '08' },
-  { name: 'Founder', id: 'founder', tag: '09' },
-  { name: 'Contact', id: 'contact', tag: '10' },
+  { name: 'Home', path: '/', tag: '01' },
+  { name: 'About', path: '/about', tag: '02' },
+  { name: 'Leap Frog', path: '/leap-frog', tag: '03' },
+  { name: "What's New", path: '/whats-new', tag: '04' },
+  { name: 'Pricing', path: '/pricing', tag: '05' },
+  { name: 'Arcade Game', path: '/game', tag: '06' },
+  { name: 'Gallery', path: '/gallery', tag: '07' },
+  { name: 'Founder', path: '/founder', tag: '08' },
+  { name: 'Contact', path: '/contact', tag: '09' },
 ];
 
 const drawerVariants = {
@@ -91,12 +90,12 @@ const MobileMenu = ({
               </div>
 
               {NAV_ITEMS.map((item) => {
-                const isActive = activeSection === item.id;
+                const isActive = activeSection === item.path;
                 return (
-                  <motion.div key={item.id} variants={itemVariants}>
+                  <motion.div key={item.path} variants={itemVariants}>
                     <button
                       onClick={() => {
-                        onNavigate(item.id);
+                        onNavigate(item.path);
                         onClose();
                       }}
                       className={`
