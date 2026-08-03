@@ -6,8 +6,8 @@ const LoadingScreen = ({ onComplete }) => {
   const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
-    const duration = 1800; // 1.8s load simulation
-    const intervalTime = 30;
+    const duration = 700; // Fast 0.7s load simulation
+    const intervalTime = 20;
     const increment = 100 / (duration / intervalTime);
 
     const timer = setInterval(() => {
@@ -17,8 +17,8 @@ const LoadingScreen = ({ onComplete }) => {
           clearInterval(timer);
           setTimeout(() => {
             setIsDone(true);
-            setTimeout(onComplete, 800);
-          }, 300);
+            setTimeout(onComplete, 400);
+          }, 150);
           return 100;
         }
         return next;
