@@ -2,12 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Flag, ChevronDown, Gauge } from 'lucide-react';
+import { Flag, ChevronDown, Gauge, Gamepad2 } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Hero = ({ onOpenBooking, onNavigate }) => {
+const Hero = ({ onOpenBooking, onNavigate, onOpenGame }) => {
   const heroRef = useRef(null);
   const heroContentRef = useRef(null);
   const heroBgRef = useRef(null);
@@ -153,6 +153,14 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
               className="px-8 py-4 rounded-full bg-black/50 hover:bg-black/80 border border-white/20 hover:border-[#FF4500] text-xs font-mono tracking-widest uppercase text-white font-bold transition-all backdrop-blur-md"
             >
               VIEW PRICING
+            </button>
+
+            <button
+              onClick={onOpenGame}
+              className="px-8 py-4 rounded-full bg-[#FF4500]/20 hover:bg-[#FF4500] border border-[#FF4500]/50 text-xs font-mono tracking-widest uppercase text-white font-bold transition-all backdrop-blur-md shadow-[0_0_25px_rgba(255,69,0,0.3)] flex items-center gap-2"
+            >
+              <Gamepad2 className="w-4 h-4 text-[#FF4500] group-hover:text-white" />
+              <span>PLAY 16-BIT GAME</span>
             </button>
           </motion.div>
         </div>

@@ -17,13 +17,15 @@ import {
 } from './components/Sections';
 import SearchModal from './components/SearchModal';
 import BookingModal from './components/BookingModal';
+import GameModal from './game/components/GameModal';
 import { InstagramIcon } from './components/Icons';
-import { Flame, Phone } from 'lucide-react';
+import { Flame, Phone, Gamepad2 } from 'lucide-react';
 
 export function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [searchOpen, setSearchOpen] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
+  const [gameModalOpen, setGameModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [lenisInstance, setLenisInstance] = useState(null);
 
@@ -104,6 +106,7 @@ export function App() {
         onNavigate={handleNavigate}
         onOpenSearch={() => setSearchOpen(true)}
         onOpenBooking={() => setBookingOpen(true)}
+        onOpenGame={() => setGameModalOpen(true)}
       />
 
       {/* 4. Main Content Sections */}
@@ -111,6 +114,7 @@ export function App() {
         <Hero 
           onOpenBooking={() => setBookingOpen(true)} 
           onNavigate={handleNavigate} 
+          onOpenGame={() => setGameModalOpen(true)}
         />
         <WhoWeAreSection onOpenBooking={() => setBookingOpen(true)} />
         <LeapFrogSection onOpenBooking={() => setBookingOpen(true)} />
@@ -134,8 +138,14 @@ export function App() {
             />
           </div>
 
-          <div className="font-mono text-xs text-gray-400">
-            © 2026 KARTOMANIA INDIA. INSPIRED BY F1 & HYPERCAR TELEMETRY.
+          <div className="font-mono text-xs text-gray-400 flex items-center gap-2">
+            <span>© 2026 KARTOMANIA INDIA.</span>
+            <button
+              onClick={() => setGameModalOpen(true)}
+              className="text-[#FF4500] hover:underline font-bold flex items-center gap-1"
+            >
+              <Gamepad2 className="w-3.5 h-3.5" /> 16-Bit Arcade Game
+            </button>
           </div>
 
           <div className="flex items-center gap-4">
@@ -167,6 +177,11 @@ export function App() {
       <BookingModal
         isOpen={bookingOpen}
         onClose={() => setBookingOpen(false)}
+      />
+
+      <GameModal
+        isOpen={gameModalOpen}
+        onClose={() => setGameModalOpen(false)}
       />
     </div>
   );
