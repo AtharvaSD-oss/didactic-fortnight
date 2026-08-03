@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Search, Phone, Menu, X, Flame, Gamepad2 } from 'lucide-react';
+import { Search, Phone, Menu, X, Flame } from 'lucide-react';
 import { InstagramIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 import MobileMenu from './MobileMenu';
@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { name: 'Leap Frog', id: 'leap-frog' },
   { name: "What's New", id: 'whats-new' },
   { name: 'Pricing', id: 'pricing' },
+  { name: 'Arcade Game', id: 'game' },
   { name: 'Leaderboard', id: 'leaderboard' },
   { name: 'Gallery', id: 'gallery' },
   { name: 'Reviews', id: 'testimonials' },
@@ -22,8 +23,7 @@ const Navbar = ({
   activeSection, 
   onNavigate, 
   onOpenSearch, 
-  onOpenBooking,
-  onOpenGame
+  onOpenBooking 
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -135,16 +135,6 @@ const Navbar = ({
                 className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#FF4500] hover:bg-[#FF4500]/10 text-gray-300 hover:text-[#FF4500] transition-all hover:scale-105"
               >
                 <Search className="w-4 h-4" />
-              </button>
-
-              <button
-                onClick={onOpenGame}
-                aria-label="Play 16-Bit Arcade Kart Game"
-                title="Play 16-Bit Retro Kart Game"
-                className="p-2.5 rounded-full bg-[#FF4500]/20 border border-[#FF4500]/50 hover:bg-[#FF4500] text-[#FF4500] hover:text-white transition-all hover:scale-105 shadow-[0_0_15px_rgba(255,69,0,0.3)] flex items-center gap-1.5 px-3"
-              >
-                <Gamepad2 className="w-4 h-4" />
-                <span className="text-[10px] font-mono font-bold tracking-wider hidden xl:inline">16-BIT GAME</span>
               </button>
 
               <a

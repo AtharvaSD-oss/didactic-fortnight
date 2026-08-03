@@ -1,6 +1,7 @@
 import React from 'react';
 import { Flag, Trophy, Shield, Zap, MapPin, Phone, Coffee, Star, CheckCircle, ArrowRight, Gauge, Flame } from 'lucide-react';
 import MagneticButton from './MagneticButton';
+import GameCanvas from './GameCanvas';
 
 export const TrackSection = ({ onOpenBooking }) => (
   <section id="track" className="py-24 px-4 max-w-7xl mx-auto border-t border-white/10">
@@ -826,3 +827,25 @@ export const ContactSection = ({ onOpenBooking }) => {
     </section>
   );
 };
+
+export const GameSection = () => (
+  <section id="game" className="py-28 px-4 max-w-7xl mx-auto border-t border-white/10 relative z-20">
+    <div className="space-y-12">
+      {/* Section Header */}
+      <div className="text-center space-y-3">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF4500]/15 border border-[#FF4500]/40 text-[#FF4500] font-mono text-xs font-bold uppercase tracking-widest">
+          <Trophy className="w-4 h-4" /> INTERACTIVE 2D KART RACER
+        </div>
+        <h2 className="text-3xl sm:text-6xl font-display font-black text-white uppercase tracking-tight">
+          PRO <span className="text-[#FF4500]">ARCADE</span>
+        </h2>
+        <p className="text-sm font-mono text-gray-400 max-w-xl mx-auto">
+          Test your apex timing on our 16-bit retro arcade simulator before taking the real track!
+        </p>
+      </div>
+
+      {/* Embedded 2D Game Canvas Component */}
+      <GameCanvas />
+    </div>
+  </section>
+);
