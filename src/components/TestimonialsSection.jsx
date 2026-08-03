@@ -59,6 +59,7 @@ const TestimonialsSection = () => {
           centeredSlides={true}
           slidesPerView="auto"
           loop={true}
+          speed={1200}
           autoplay={{
             delay: 3500,
             disableOnInteraction: false,
@@ -66,8 +67,8 @@ const TestimonialsSection = () => {
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
-            depth: 120,
-            modifier: 2.5,
+            depth: 140,
+            modifier: 2.2,
             slideShadows: false,
           }}
           className="py-12"

@@ -30,9 +30,10 @@ export function App() {
   // Initialize Lenis Smooth Scroll Engine
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Buttery smooth F1 curve
-      touchMultiplier: 2,
+      duration: 1.5,
+      easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)), // Silky smooth Porsche F1 inertia curve
+      touchMultiplier: 1.8,
+      wheelMultiplier: 1.1,
       smoothWheel: true,
     });
 

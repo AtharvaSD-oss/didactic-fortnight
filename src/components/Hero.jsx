@@ -30,8 +30,8 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
         scrollTrigger: {
           trigger: heroRef.current,
           start: 'top top',
-          end: '+=80%',
-          scrub: 1,
+          end: '+=100%',
+          scrub: 1.5,
           pin: true,
           pinSpacing: true,
         }
