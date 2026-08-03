@@ -1,14 +1,47 @@
 @import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/effect-cards";
 
 @layer base {
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+
   body {
     background-color: #07070a;
     color: #f3f4f6;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, .font-display {
     font-family: 'Orbitron', 'Chakra Petch', sans-serif;
+  }
+}
+
+/* Custom Cursor Hide Native */
+@media (min-width: 1024px) {
+  body {
+    cursor: none;
+  }
+  a, button, input, textarea, [role="button"], .cursor-pointer {
+    cursor: none !important;
   }
 }
 
@@ -50,7 +83,22 @@
 }
 
 .text-glow {
-  text-shadow: 0 0 12px rgba(255, 69, 0, 0.7);
+  text-shadow: 0 0 14px rgba(255, 69, 0, 0.75);
+}
+
+/* Image Clip Mask Reveal Utility */
+.img-mask-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.img-mask-reveal {
+  transform: translateY(100%);
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.img-mask-container.is-revealed .img-mask-reveal {
+  transform: translateY(0%);
 }
 
 /* Light Sweep Shimmer Animation */

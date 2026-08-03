@@ -7,11 +7,13 @@ import MobileMenu from './MobileMenu';
 
 const NAV_LINKS = [
   { name: 'Home', id: 'home' },
+  { name: 'About', id: 'who-we-are' },
   { name: 'Leap Frog', id: 'leap-frog' },
   { name: "What's New", id: 'whats-new' },
   { name: 'Pricing', id: 'pricing' },
   { name: 'Leaderboard', id: 'leaderboard' },
   { name: 'Gallery', id: 'gallery' },
+  { name: 'Reviews', id: 'testimonials' },
   { name: 'Founder', id: 'founder' },
   { name: 'Contact', id: 'contact' },
 ];
