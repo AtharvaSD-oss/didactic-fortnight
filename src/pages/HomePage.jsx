@@ -1,11 +1,10 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import WhoWeAreSection from '../components/WhoWeAreSection';
+import RacingTimeline from '../components/RacingTimeline';
+import FAQSection from '../components/FAQSection';
 import Testimonials from '../components/Testimonials';
-import Gallery from '../components/Gallery';
-import Timeline from '../components/Timeline';
 import { 
-  LeapFrogSection,
   WhatsNewSection,
   PricingSection, 
   ContactSection,
@@ -17,10 +16,12 @@ const HomePage = ({ onOpenBooking, onNavigate }) => {
     <>
       <Hero onOpenBooking={onOpenBooking} onNavigate={onNavigate} />
       <WhoWeAreSection onOpenBooking={onOpenBooking} />
+      <RacingTimeline />
       <WhatsNewSection onOpenBooking={onOpenBooking} />
       <PricingSection onOpenBooking={onOpenBooking} />
       <GameSection />
       <Testimonials />
+      <FAQSection />
       <ContactSection onOpenBooking={onOpenBooking} />
     </>
   );

@@ -2,9 +2,22 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Flame } from 'lucide-react';
 
+import confetti from 'canvas-confetti';
+
 const RACEFACER_URL = "https://web.racefacer.com/kiosk/kartomaniaentertainlandmall";
 
 const BookingModal = ({ isOpen, onClose }) => {
+  React.useEffect(() => {
+    if (isOpen) {
+      confetti({
+        particleCount: 80,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#FF4500', '#FF1E00', '#FFFFFF', '#FFAA00']
+      });
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
