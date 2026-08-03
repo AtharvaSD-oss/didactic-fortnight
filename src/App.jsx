@@ -126,13 +126,11 @@ export function App() {
       <footer className="border-t border-white/10 bg-[#050508] py-12 px-4 text-center sm:text-left relative z-20">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#FF4500] flex items-center justify-center shadow-[0_0_15px_#FF4500]">
-              <Flame className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <span className="font-display font-bold text-lg text-white uppercase tracking-widest">KARTOMANIA</span>
-              <span className="block text-[9px] font-mono text-gray-500 uppercase">F1 INDOOR CIRCUIT // INDIA</span>
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="Kartomania Logo" 
+              className="h-10 sm:h-12 w-auto object-contain filter drop-shadow-[0_0_10px_rgba(255,69,0,0.4)]" 
+            />
           </div>
 
           <div className="font-mono text-xs text-gray-400">

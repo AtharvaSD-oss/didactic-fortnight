@@ -79,22 +79,12 @@ const Navbar = ({
 
         <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* 1. LEFT: Kartomania Logo */}
-          <div className="flex items-center gap-3 cursor-pointer" onClick={() => onNavigate('home')}>
-            <div className="relative group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FF4500] to-[#FF1E00] flex items-center justify-center shadow-[0_0_20px_rgba(255,69,0,0.5)] transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
-                <Flame className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
-              </div>
-              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-white animate-ping" />
-            </div>
-
-            <div className="flex flex-col">
-              <span className="font-display font-black text-xl tracking-widest text-white uppercase leading-none">
-                KARTOMANIA
-              </span>
-              <span className="font-mono text-[9px] tracking-[0.25em] text-[#FF4500] uppercase">
-                INDIA // PRO F1 CIRCUIT
-              </span>
-            </div>
+          <div className="flex items-center gap-3 cursor-pointer group" onClick={() => onNavigate('home')}>
+            <img 
+              src="/logo.png" 
+              alt="Kartomania Logo" 
+              className="h-11 sm:h-12 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(255,69,0,0.4)] group-hover:scale-105 transition-transform duration-300" 
+            />
           </div>
 
           {/* 2. CENTER: Navigation Links (Desktop: Full, Tablet: Priority) */}

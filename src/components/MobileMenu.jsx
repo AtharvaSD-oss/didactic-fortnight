@@ -67,12 +67,11 @@ const MobileMenu = ({
 
           {/* Header Bar in Drawer */}
           <div className="relative z-10 flex items-center justify-between px-6 h-[80px] border-b border-white/10">
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#FF4500] animate-ping" />
-              <span className="font-display font-bold text-base tracking-widest text-white uppercase">
-                KARTOMANIA <span className="text-[#FF4500]">F1</span>
-              </span>
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="Kartomania Logo" 
+              className="h-10 w-auto object-contain filter drop-shadow-[0_0_10px_rgba(255,69,0,0.4)]" 
+            />
 
             <button
               onClick={onClose}

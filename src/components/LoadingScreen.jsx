@@ -62,15 +62,15 @@ const LoadingScreen = ({ onComplete }) => {
               />
             </svg>
 
-            {/* Logo */}
-            <motion.h1
-              initial={{ opacity: 0, scale: 0.9 }}
+            {/* Logo Image */}
+            <motion.img
+              initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl sm:text-6xl font-display font-black text-white uppercase tracking-tight"
-            >
-              KART<span className="text-[#FF4500] text-glow">OMANIA</span>
-            </motion.h1>
+              src="/logo.png"
+              alt="Kartomania Logo"
+              className="h-20 sm:h-28 w-auto object-contain filter drop-shadow-[0_0_20px_rgba(255,69,0,0.5)]"
+            />
 
             <span className="font-mono text-xs text-gray-400 tracking-widest uppercase font-semibold">
               PREMIUM MOTORSPORTS EXPERIENCE
