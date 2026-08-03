@@ -149,7 +149,7 @@ export function App() {
               <InstagramIcon className="w-4 h-4" />
             </a>
             <a 
-              href="tel:+919876543210" 
+              href="tel:+919717548897" 
               className="p-2 rounded-full bg-white/5 hover:bg-[#FF4500]/20 text-gray-300 hover:text-[#FF4500] transition-colors"
             >
               <Phone className="w-4 h-4" />

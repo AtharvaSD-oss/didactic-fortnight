@@ -783,24 +783,27 @@ export const ContactSection = ({ onOpenBooking }) => {
         {/* Location Info & CTAs */}
         <div className="bg-gradient-to-r from-[#0f0f1a] via-[#141424] to-[#0f0f1a] border border-white/10 rounded-3xl p-8 sm:p-10 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-left font-mono">
-            <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5 space-y-1">
-              <span className="text-[10px] text-[#FF4500] uppercase font-bold">// ADDRESS</span>
-              <div className="text-xs text-white font-sans font-semibold">
-                Kartomania Arena, Entertainland Mall, Sector 83, Gurgaon, Haryana, India.
+            <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/5 space-y-2">
+              <span className="text-[10px] text-[#FF4500] uppercase font-bold tracking-wider">// ARENA ADDRESS</span>
+              <div className="text-xs text-white font-sans font-semibold leading-relaxed">
+                Entertainland Mall, Sector 83, Manesar, Gurgaon.
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5 space-y-1">
-              <span className="text-[10px] text-[#FF4500] uppercase font-bold">// ARENA HOURS</span>
-              <div className="text-xs text-white font-sans font-semibold">
-                Open Daily: 11:00 AM – 11:00 PM
+            <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/5 space-y-2">
+              <span className="text-[10px] text-[#FF4500] uppercase font-bold tracking-wider">// BUSINESS HOURS</span>
+              <div className="text-xs text-white font-sans font-semibold space-y-1">
+                <div>Weekdays: 3:00 PM – 10:00 PM</div>
+                <div>Weekends: 11:30 AM – 10:00 PM</div>
+                <div className="text-[#FF4500] font-bold">// Tuesdays Closed</div>
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5 space-y-1">
-              <span className="text-[10px] text-[#FF4500] uppercase font-bold">// HOTLINE</span>
-              <div className="text-xs text-white font-sans font-semibold">
-                +91 98765 43210
+            <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/5 space-y-2">
+              <span className="text-[10px] text-[#FF4500] uppercase font-bold tracking-wider">// CALL US / HOTLINE</span>
+              <div className="text-xs text-white font-sans font-semibold space-y-1">
+                <a href="tel:+919717548897" className="block hover:text-[#FF4500] transition-colors">+91 97175 48897</a>
+                <a href="tel:+919560492876" className="block hover:text-[#FF4500] transition-colors">+91 95604 92876</a>
               </div>
             </div>
           </div>

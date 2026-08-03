@@ -147,7 +147,7 @@ const Navbar = ({
               </button>
 
               <a
-                href="tel:+919876543210"
+                href="tel:+919717548897"
                 aria-label="Call Hotline"
                 className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#FF4500] hover:bg-[#FF4500]/10 text-gray-300 hover:text-[#FF4500] transition-all hover:scale-105"
               >

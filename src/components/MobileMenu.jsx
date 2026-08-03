@@ -144,7 +144,7 @@ const MobileMenu = ({
                   </button>
 
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+919717548897"
                     className="p-3 rounded-full bg-white/5 border border-white/10 hover:border-[#FF4500] text-gray-300 hover:text-white transition-colors"
                   >
                     <Phone className="w-5 h-5 text-[#FF4500]" />
