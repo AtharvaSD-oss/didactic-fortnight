@@ -1,24 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import Lenis from 'lenis';
+
+// Components Directory Imports
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhoWeAreSection from './components/WhoWeAreSection';
-import TestimonialsSection from './components/TestimonialsSection';
-import CustomCursor from './components/CustomCursor';
-import LoadingScreen from './components/LoadingScreen';
+import Gallery from './components/Gallery';
+import Timeline from './components/Timeline';
+import Testimonials from './components/Testimonials';
+import Footer from './components/Footer';
+import Cursor from './components/Cursor';
+import Loader from './components/Loader';
+import ScrollProgress from './components/ScrollProgress';
+import BookingModal from './components/BookingModal';
+import SearchModal from './components/SearchModal';
+
 import { 
   LeapFrogSection,
   WhatsNewSection,
   PricingSection, 
-  GallerySection, 
-  FounderSection,
   ContactSection,
   GameSection
 } from './components/Sections';
-import SearchModal from './components/SearchModal';
-import BookingModal from './components/BookingModal';
-import { InstagramIcon } from './components/Icons';
-import { Flame, Phone } from 'lucide-react';
 
 export function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -92,13 +95,16 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-[#07070a] text-white selection:bg-[#FF4500] selection:text-white relative overflow-x-hidden">
-      {/* 1. System Telemetry Loading Screen */}
-      <LoadingScreen onComplete={() => setIsLoading(false)} />
+      {/* 1. Top Racing Progress Bar */}
+      <ScrollProgress />
 
-      {/* 2. Interactive Precision Custom Cursor */}
-      <CustomCursor />
+      {/* 2. System Telemetry Preloader */}
+      <Loader onComplete={() => setIsLoading(false)} />
 
-      {/* 3. Top Glassmorphism Navigation Bar */}
+      {/* 3. Interactive Precision Custom Cursor */}
+      <Cursor />
+
+      {/* 4. Glassmorphism Navigation Bar */}
       <Navbar
         activeSection={activeSection}
         onNavigate={handleNavigate}
@@ -106,7 +112,7 @@ export function App() {
         onOpenBooking={() => setBookingOpen(true)}
       />
 
-      {/* 4. Main Content Sections */}
+      {/* 5. Main Content Sections */}
       <main className="relative z-10">
         <Hero 
           onOpenBooking={() => setBookingOpen(true)} 
@@ -117,45 +123,14 @@ export function App() {
         <WhatsNewSection onOpenBooking={() => setBookingOpen(true)} />
         <PricingSection onOpenBooking={() => setBookingOpen(true)} />
         <GameSection />
-        <GallerySection />
-        <TestimonialsSection />
-        <FounderSection />
+        <Gallery />
+        <Testimonials />
+        <Timeline />
         <ContactSection onOpenBooking={() => setBookingOpen(true)} />
       </main>
 
-      {/* 5. Footer */}
-      <footer className="border-t border-white/10 bg-[#050508] py-12 px-4 text-center sm:text-left relative z-20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <img 
-              src="/logo.png" 
-              alt="Kartomania Logo" 
-              className="h-10 sm:h-12 w-auto object-contain filter drop-shadow-[0_0_10px_rgba(255,69,0,0.4)]" 
-            />
-          </div>
-
-          <div className="font-mono text-xs text-gray-400">
-            © 2026 KARTOMANIA INDIA. INSPIRED BY F1 & HYPERCAR TELEMETRY.
-          </div>
-
-          <div className="flex items-center gap-4">
-            <a 
-              href="https://instagram.com/kartomania.in" 
-              target="_blank" 
-              rel="noreferrer"
-              className="p-2 rounded-full bg-white/5 hover:bg-[#FF4500]/20 text-gray-300 hover:text-[#FF4500] transition-colors"
-            >
-              <InstagramIcon className="w-4 h-4" />
-            </a>
-            <a 
-              href="tel:+919717548897" 
-              className="p-2 rounded-full bg-white/5 hover:bg-[#FF4500]/20 text-gray-300 hover:text-[#FF4500] transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-      </footer>
+      {/* 6. Footer */}
+      <Footer />
 
       {/* Interactive Modals */}
       <SearchModal
