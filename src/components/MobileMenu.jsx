@@ -11,11 +11,10 @@ const NAV_ITEMS = [
   { name: "What's New", id: 'whats-new', tag: '04' },
   { name: 'Pricing', id: 'pricing', tag: '05' },
   { name: 'Arcade Game', id: 'game', tag: '06' },
-  { name: 'Leaderboard', id: 'leaderboard', tag: '07' },
-  { name: 'Gallery', id: 'gallery', tag: '08' },
-  { name: 'Reviews', id: 'testimonials', tag: '09' },
-  { name: 'Founder', id: 'founder', tag: '10' },
-  { name: 'Contact', id: 'contact', tag: '11' },
+  { name: 'Gallery', id: 'gallery', tag: '07' },
+  { name: 'Reviews', id: 'testimonials', tag: '08' },
+  { name: 'Founder', id: 'founder', tag: '09' },
+  { name: 'Contact', id: 'contact', tag: '10' },
 ];
 
 const drawerVariants = {

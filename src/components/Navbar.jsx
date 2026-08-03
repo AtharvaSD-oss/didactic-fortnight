@@ -12,7 +12,6 @@ const NAV_LINKS = [
   { name: "What's New", id: 'whats-new' },
   { name: 'Pricing', id: 'pricing' },
   { name: 'Arcade Game', id: 'game' },
-  { name: 'Leaderboard', id: 'leaderboard' },
   { name: 'Gallery', id: 'gallery' },
   { name: 'Reviews', id: 'testimonials' },
   { name: 'Founder', id: 'founder' },

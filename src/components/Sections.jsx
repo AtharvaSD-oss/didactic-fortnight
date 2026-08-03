@@ -495,48 +495,6 @@ export const PricingSection = ({ onOpenBooking }) => {
   );
 };
 
-export const LeaderboardSection = () => (
-  <section id="leaderboard" className="py-24 px-4 max-w-7xl mx-auto border-t border-white/10">
-    <div className="text-center space-y-4 mb-14">
-      <span className="font-mono text-xs text-[#FF4500] uppercase tracking-widest">// TELEMETRY RECORDS</span>
-      <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase">HALL OF SPEED</h2>
-    </div>
-
-    <div className="bg-[#0e0e17] border border-white/10 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-      <div className="overflow-x-auto">
-        <table className="w-full text-left font-mono text-xs">
-          <thead className="bg-[#141422] text-[#FF4500] uppercase border-b border-white/10">
-            <tr>
-              <th className="py-4 px-6">POS</th>
-              <th className="py-4 px-6">DRIVER</th>
-              <th className="py-4 px-6">BEST LAP</th>
-              <th className="py-4 px-6">KART #</th>
-              <th className="py-4 px-6">DATE</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-white/5 text-gray-300">
-            {[
-              { pos: '01', driver: 'Karan Sharma', lap: '27.421s', kart: 'SODI-07', date: '2026-07-28' },
-              { pos: '02', driver: 'Vikramaditya R.', lap: '27.658s', kart: 'LAMBO-03', date: '2026-07-30' },
-              { pos: '03', driver: 'Aanya Verma', lap: '27.890s', kart: 'SODI-12', date: '2026-07-31' },
-              { pos: '04', driver: 'Rohan Mehta', lap: '28.012s', kart: 'SODI-01', date: '2026-07-25' },
-              { pos: '05', driver: 'Siddharth Nair', lap: '28.145s', kart: 'LAMBO-09', date: '2026-07-29' },
-            ].map((row, idx) => (
-              <tr key={idx} className="hover:bg-white/[0.03] transition-colors">
-                <td className="py-4 px-6 font-bold text-[#FF4500]">{row.pos}</td>
-                <td className="py-4 px-6 font-sans font-semibold text-white">{row.driver}</td>
-                <td className="py-4 px-6 text-white font-bold">{row.lap}</td>
-                <td className="py-4 px-6 text-gray-400">{row.kart}</td>
-                <td className="py-4 px-6 text-gray-500">{row.date}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-);
-
 export const GallerySection = () => {
   const [activePhoto, setActivePhoto] = React.useState(null);
 

@@ -10,7 +10,6 @@ import {
   LeapFrogSection,
   WhatsNewSection,
   PricingSection, 
-  LeaderboardSection, 
   GallerySection, 
   FounderSection,
   ContactSection,
@@ -54,7 +53,7 @@ export function App() {
 
   // Active section intersection observer
   useEffect(() => {
-    const sections = ['home', 'who-we-are', 'leap-frog', 'whats-new', 'pricing', 'game', 'leaderboard', 'gallery', 'testimonials', 'founder', 'contact'];
+    const sections = ['home', 'who-we-are', 'leap-frog', 'whats-new', 'pricing', 'game', 'gallery', 'testimonials', 'founder', 'contact'];
     
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 250;
@@ -118,7 +117,6 @@ export function App() {
         <WhatsNewSection onOpenBooking={() => setBookingOpen(true)} />
         <PricingSection onOpenBooking={() => setBookingOpen(true)} />
         <GameSection />
-        <LeaderboardSection />
         <GallerySection />
         <TestimonialsSection />
         <FounderSection />
