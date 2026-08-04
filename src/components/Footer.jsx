@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { InstagramIcon } from './Icons';
 
 const Footer = () => {

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Flag, Trophy, Play, RotateCcw, Volume2, VolumeX, Maximize2, Tv, Gauge } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Trophy, Volume2, VolumeX, Maximize2, Tv, Gauge } from 'lucide-react';
 import trackData from '../game/trackData.json';
 import { Kart } from '../game/physicsEngine';
 import { GameRenderer } from '../game/renderer';
@@ -21,8 +21,6 @@ const GameCanvas = () => {
   // Telemetry HUD States
   const [speed, setSpeed] = useState(0);
   const [currentLap, setCurrentLap] = useState(1);
-  const [lapTimes, setLapTimes] = useState([]);
-  const [bestLap, setBestLap] = useState(null);
   const [rank, setRank] = useState(1);
   const [finalRank, setFinalRank] = useState(1);
 

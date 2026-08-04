@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Phone, Search, Flag, ChevronRight, Zap, Trophy, Shield } from 'lucide-react';
+import { X, Phone, Search, ChevronRight, Zap } from 'lucide-react';
 import { InstagramIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 

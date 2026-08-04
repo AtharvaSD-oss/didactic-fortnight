@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const DEFAULT_BOOKING_URL = "https://web.racefacer.com/kiosk/kartomaniaentertainlandmall";
 

@@ -277,7 +277,11 @@ export class GameRenderer {
     points.forEach((p, i) => {
       const mx = offsetX + p.x * scale;
       const my = offsetY + p.y * scale;
-      i === 0 ? ctx.moveTo(mx, my) : ctx.lineTo(mx, my);
+      if (i === 0) {
+        ctx.moveTo(mx, my);
+      } else {
+        ctx.lineTo(mx, my);
+      }
     });
     ctx.closePath();
     ctx.stroke();

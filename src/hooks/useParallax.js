@@ -12,7 +12,7 @@ export const useParallax = (speed = 0.2) => {
 
     const ctx = gsap.context(() => {
       gsap.to(ref.current, {
-        y: (i, target) => -ScrollTrigger.maxScroll(window) * speed,
+        y: () => -ScrollTrigger.maxScroll(window) * speed,
         ease: 'none',
         scrollTrigger: {
           trigger: ref.current,

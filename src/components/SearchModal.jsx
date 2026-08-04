@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, X, Zap, Trophy, Shield, MapPin, Gauge } from 'lucide-react';
+import { Search, X, Trophy, Shield, MapPin, Gauge } from 'lucide-react';
 
 const QUICK_SEARCHES = [
   { title: "Pro Kart Specs & Telemetry", icon: Gauge, section: "karts" },

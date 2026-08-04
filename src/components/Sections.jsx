@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flag, Trophy, Shield, Zap, MapPin, Phone, Coffee, Star, CheckCircle, ArrowRight, Gauge, Flame } from 'lucide-react';
+import { Flag, Trophy, Shield, Zap, MapPin, Gauge, Flame } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 import GameCanvas from './GameCanvas';
 
@@ -93,7 +93,7 @@ export const KartsSection = () => (
   </section>
 );
 
-export const LeapFrogSection = ({ onOpenBooking }) => {
+export const LeapFrogSection = () => {
   const [activeImage, setActiveImage] = React.useState(null);
 
   const teamPhotos = [

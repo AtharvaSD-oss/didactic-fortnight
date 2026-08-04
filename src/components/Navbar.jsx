@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
-import { Search, Phone, Menu, X } from 'lucide-react';
-import { InstagramIcon } from './Icons';
+import { Search, Phone, Menu } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 import MobileMenu from './MobileMenu';
 
