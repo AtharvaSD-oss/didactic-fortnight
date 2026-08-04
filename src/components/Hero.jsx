@@ -46,7 +46,6 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
       id="home"
       className="relative w-full h-screen min-h-screen flex flex-col justify-between pt-24 pb-8 px-4 sm:px-8 overflow-hidden bg-[#07070a] z-10"
     >
-      {/* 1. Cinematic Background Image */}
       {/* 1. Cinematic Background Video / Image */}
       <div
         ref={heroBgRef}
