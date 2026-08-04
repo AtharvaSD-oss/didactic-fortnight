@@ -61,6 +61,8 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
           className="w-full h-full object-cover object-center filter brightness-[0.55] contrast-115"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="/vidssave-go-karting.mp4" type="video/mp4" />
+          <source src="/The Art of Go Karting.mp4" type="video/mp4" />
           <motion.img
             initial={{ opacity: 0, scale: 1.06 }}
             animate={{ opacity: 1, scale: 1 }}
