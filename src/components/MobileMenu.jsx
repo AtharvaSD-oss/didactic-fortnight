@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Phone, ChevronRight, Zap } from 'lucide-react';
+import { X, Phone, Search, ChevronRight, Zap } from 'lucide-react';
 import { InstagramIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 
@@ -46,6 +46,7 @@ const MobileMenu = ({
   onClose, 
   activeSection, 
   onNavigate, 
+  onOpenSearch, 
   onOpenBooking 
 }) => {
   return (
@@ -130,6 +131,16 @@ const MobileMenu = ({
             <motion.div variants={itemVariants} className="mt-8 pt-6 border-t border-white/10 space-y-5">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => {
+                      onOpenSearch();
+                      onClose();
+                    }}
+                    className="p-3 rounded-full bg-white/5 border border-white/10 hover:border-[#FF4500] text-gray-300 hover:text-white transition-colors"
+                  >
+                    <Search className="w-5 h-5 text-[#FF4500]" />
+                  </button>
+
                   <a
                     href="tel:+919717548897"
                     className="p-3 rounded-full bg-white/5 border border-white/10 hover:border-[#FF4500] text-gray-300 hover:text-white transition-colors"

@@ -10,6 +10,7 @@ import Cursor from './components/Cursor';
 import Loader from './components/Loader';
 import ScrollProgress from './components/ScrollProgress';
 import BookingModal from './components/BookingModal';
+import SearchModal from './components/SearchModal';
 
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -22,6 +23,7 @@ import FounderPage from './pages/FounderPage';
 import ContactPage from './pages/ContactPage';
 
 export function App() {
+  const [searchOpen, setSearchOpen] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -63,13 +65,14 @@ export function App() {
       <ScrollProgress />
 
       {/* System Telemetry Preloader */}
-      <Loader />
+      <Loader onComplete={() => setIsLoading(false)} />
 
       {/* Precision Custom Cursor */}
       <Cursor />
 
       {/* Glassmorphism Multi-page Navbar */}
       <Navbar
+        onOpenSearch={() => setSearchOpen(true)}
         onOpenBooking={() => setBookingOpen(true)}
       />
 
@@ -100,7 +103,13 @@ export function App() {
       {/* Footer */}
       <Footer />
 
-      {/* Interactive Booking Modal */}
+      {/* Interactive Search & Booking Modals */}
+      <SearchModal
+        isOpen={searchOpen}
+        onClose={() => setSearchOpen(false)}
+        onNavigate={handleNavigate}
+      />
+
       <BookingModal
         isOpen={bookingOpen}
         onClose={() => setBookingOpen(false)}
