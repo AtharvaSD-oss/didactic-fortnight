@@ -44,13 +44,27 @@ const GameCanvas = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Initialize Renderer
+    // Initialize Renderer & Default Karts Preview
     const renderer = new GameRenderer(canvas);
     entitiesRef.current.renderer = renderer;
 
+    const initKarts = () => {
+      const player = new Kart('player', 'PLAYER', '#FF4500', false, trackData.gridSpawns[0]);
+      const ai1 = new Kart('ai1', 'SODI PRO', '#E53935', true, trackData.gridSpawns[1]);
+      const ai2 = new Kart('ai2', 'LAMBO E', '#1E88E5', true, trackData.gridSpawns[2]);
+      const ai3 = new Kart('ai3', 'ROTAX JR', '#43A047', true, trackData.gridSpawns[3]);
+
+      entitiesRef.current.player = player;
+      entitiesRef.current.karts = [player, ai1, ai2, ai3];
+    };
+
+    if (!entitiesRef.current.player) {
+      initKarts();
+    }
+
     const handleResize = () => {
       if (containerRef.current) {
-        const w = containerRef.current.clientWidth;
+        const w = containerRef.current.clientWidth || 800;
         const h = Math.min(window.innerHeight * 0.7, 560);
         renderer.resize(w, h);
       }
@@ -66,25 +80,29 @@ const GameCanvas = () => {
         case 'w':
         case 'W':
           inputsRef.current.up = true;
+          if (gameStateRef.current === 'racing') e.preventDefault();
           break;
         case 'ArrowDown':
         case 's':
         case 'S':
           inputsRef.current.down = true;
+          if (gameStateRef.current === 'racing') e.preventDefault();
           break;
         case 'ArrowLeft':
         case 'a':
         case 'A':
           inputsRef.current.left = true;
+          if (gameStateRef.current === 'racing') e.preventDefault();
           break;
         case 'ArrowRight':
         case 'd':
         case 'D':
           inputsRef.current.right = true;
+          if (gameStateRef.current === 'racing') e.preventDefault();
           break;
         case ' ':
           inputsRef.current.drift = true;
-          e.preventDefault();
+          if (gameStateRef.current === 'racing') e.preventDefault();
           break;
         default:
           break;

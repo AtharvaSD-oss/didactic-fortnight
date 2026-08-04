@@ -256,7 +256,11 @@ export class GameRenderer {
     ctx.strokeStyle = 'rgba(255, 69, 0, 0.5)';
     ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.roundRect(x, y, miniWidth, miniHeight, 12);
+    if (ctx.roundRect) {
+      ctx.roundRect(x, y, miniWidth, miniHeight, 12);
+    } else {
+      ctx.rect(x, y, miniWidth, miniHeight);
+    }
     ctx.fill();
     ctx.stroke();
 
