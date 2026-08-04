@@ -46,8 +46,7 @@ const MobileMenu = ({
   isOpen, 
   onClose, 
   activeSection, 
-  onNavigate, 
-  onOpenBooking 
+  onNavigate 
 }) => {
   return (
     <AnimatePresence>
@@ -131,10 +130,8 @@ const MobileMenu = ({
             {/* Bottom Footer Actions */}
             <div className="space-y-4 pt-6 border-t border-white/10 mt-6">
               <MagneticButton 
-                onClick={() => {
-                  onClose();
-                  onOpenBooking();
-                }} 
+                href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
+                onClick={onClose} 
                 className="w-full py-4 text-xs font-bold"
               >
                 BOOK YOUR RACE NOW

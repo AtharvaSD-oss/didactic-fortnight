@@ -46,7 +46,7 @@ const StatCounter = ({ end, suffix = '', label }) => {
   );
 };
 
-const WhoWeAreSection = ({ onOpenBooking }) => {
+const WhoWeAreSection = () => {
   const sectionRef = useRef(null);
   const imgRef = useRef(null);
   const textRef = useRef(null);
@@ -137,7 +137,7 @@ const WhoWeAreSection = ({ onOpenBooking }) => {
           </motion.p>
 
           <div className="pt-4">
-            <MagneticButton onClick={onOpenBooking} className="py-3.5 px-7 text-xs">
+            <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-3.5 px-7 text-xs">
               EXPERIENCE THE THRILL &rarr;
             </MagneticButton>
           </div>

@@ -228,7 +228,7 @@ export const LeapFrogSection = () => {
   );
 };
 
-export const WhatsNewSection = ({ onOpenBooking }) => {
+export const WhatsNewSection = () => {
   const [activePromo, setActivePromo] = React.useState(null);
 
   const promos = [
@@ -339,7 +339,7 @@ export const WhatsNewSection = ({ onOpenBooking }) => {
               </p>
 
               <div className="pt-2">
-                <MagneticButton onClick={onOpenBooking} className="text-[11px] py-2 px-4">
+                <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="text-[11px] py-2 px-4">
                   Claim Offer &rarr;
                 </MagneticButton>
               </div>
@@ -368,7 +368,7 @@ export const WhatsNewSection = ({ onOpenBooking }) => {
                 <h4 className="text-xl font-display font-bold text-white uppercase">{activePromo.title}</h4>
                 <p className="text-xs font-mono text-gray-300 mt-1">{activePromo.desc}</p>
               </div>
-              <MagneticButton onClick={onOpenBooking}>
+              <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall">
                 Book Offer
               </MagneticButton>
             </div>
@@ -379,7 +379,7 @@ export const WhatsNewSection = ({ onOpenBooking }) => {
   );
 };
 
-export const PricingSection = ({ onOpenBooking }) => {
+export const PricingSection = () => {
   const weekdayData = [
     { sessions: 1, price: '₹550' },
     { sessions: 5, price: '₹2750' },
@@ -488,7 +488,7 @@ export const PricingSection = ({ onOpenBooking }) => {
         </ul>
 
         <div className="pt-4 flex justify-center">
-          <MagneticButton onClick={onOpenBooking}>Book Your Race</MagneticButton>
+          <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall">Book Your Race</MagneticButton>
         </div>
       </div>
     </section>
@@ -722,7 +722,7 @@ export const FounderSection = () => {
   );
 };
 
-export const ContactSection = ({ onOpenBooking }) => {
+export const ContactSection = () => {
   const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/7c5CMX5a4vaaXFLN9";
 
   return (
@@ -778,7 +778,7 @@ export const ContactSection = ({ onOpenBooking }) => {
               <span>GET DIRECTIONS ON GOOGLE MAPS</span>
             </a>
 
-            <MagneticButton onClick={onOpenBooking}>Book Your Race</MagneticButton>
+            <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall">Book Your Race</MagneticButton>
           </div>
         </div>
       </div>

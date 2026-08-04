@@ -7,7 +7,7 @@ import MagneticButton from './MagneticButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Hero = ({ onOpenBooking, onNavigate }) => {
+const Hero = ({ onNavigate }) => {
   const heroRef = useRef(null);
   const heroContentRef = useRef(null);
   const heroBgRef = useRef(null);
@@ -138,7 +138,7 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
           transition={{ duration: 0.4, delay: 0.45 }}
           className="flex flex-wrap items-center gap-4 pt-2"
         >
-          <MagneticButton onClick={onOpenBooking} className="py-4 px-8 text-sm">
+          <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-4 px-8 text-sm">
             BOOK YOUR RACE
           </MagneticButton>
 

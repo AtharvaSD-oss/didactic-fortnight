@@ -143,7 +143,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
 
             {/* CTA Button: Magnetic "Book Your Race" */}
             <div className="hidden lg:block">
-              <MagneticButton onClick={onOpenBooking}>
+              <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall">
                 Book Your Race
               </MagneticButton>
             </div>
