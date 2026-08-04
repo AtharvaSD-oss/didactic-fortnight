@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
 import Lenis from 'lenis';
 
-// Components & Pages Imports
+// Component Imports
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import WhoWeAreSection from './components/WhoWeAreSection';
+import RacingTimeline from './components/RacingTimeline';
+import Gallery from './components/Gallery';
+import Timeline from './components/Timeline';
+import Testimonials from './components/Testimonials';
+import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
 import Cursor from './components/Cursor';
 import Loader from './components/Loader';
@@ -12,21 +17,19 @@ import ScrollProgress from './components/ScrollProgress';
 import BookingModal from './components/BookingModal';
 import SearchModal from './components/SearchModal';
 
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import LeapFrogPage from './pages/LeapFrogPage';
-import WhatsNewPage from './pages/WhatsNewPage';
-import PricingPage from './pages/PricingPage';
-import GamePage from './pages/GamePage';
-import GalleryPage from './pages/GalleryPage';
-import FounderPage from './pages/FounderPage';
-import ContactPage from './pages/ContactPage';
+import { 
+  LeapFrogSection,
+  WhatsNewSection,
+  PricingSection, 
+  ContactSection,
+  GameSection
+} from './components/Sections';
 
 export function App() {
+  const [activeSection, setActiveSection] = useState('home');
   const [searchOpen, setSearchOpen] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
+  const [lenisInstance, setLenisInstance] = useState(null);
 
   // Initialize Lenis Smooth Scroll Engine
   useEffect(() => {
@@ -37,6 +40,8 @@ export function App() {
       wheelMultiplier: 1.25,
       smoothWheel: true,
     });
+
+    setLenisInstance(lenis);
 
     function raf(time) {
       lenis.raf(time);
@@ -50,60 +55,100 @@ export function App() {
     };
   }, []);
 
-  // Scroll to top on route change
+  // Active section intersection observer
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
+    const sections = [
+      'home', 
+      'who-we-are', 
+      'experience-timeline', 
+      'leap-frog', 
+      'whats-new', 
+      'pricing', 
+      'game', 
+      'gallery', 
+      'testimonials', 
+      'founder', 
+      'faq', 
+      'contact'
+    ];
+    
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 250;
 
-  const handleNavigate = (path) => {
-    navigate(path);
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const top = element.offsetTop;
+          const height = element.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleNavigate = (sectionId) => {
+    setActiveSection(sectionId);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      if (lenisInstance) {
+        lenisInstance.scrollTo(element, { offset: -80, duration: 1.2 });
+      } else {
+        const navOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
+    }
   };
 
   return (
-    <div className="min-h-screen bg-[#07070a] text-white selection:bg-[#FF4500] selection:text-white relative overflow-x-hidden">
-      {/* Top Racing Scroll Progress Line */}
+    <div className="min-h-screen bg-[#07070a] text-white selection:bg-[#EE3124] selection:text-white relative overflow-x-hidden">
+      {/* 1. Top Racing Progress Bar */}
       <ScrollProgress />
 
-      {/* System Telemetry Preloader */}
-      <Loader onComplete={() => setIsLoading(false)} />
+      {/* 2. System Telemetry Preloader */}
+      <Loader />
 
-      {/* Precision Custom Cursor */}
+      {/* 3. Interactive Precision Custom Cursor */}
       <Cursor />
 
-      {/* Glassmorphism Multi-page Navbar */}
+      {/* 4. Glassmorphism Single-Page Navbar */}
       <Navbar
+        activeSection={activeSection}
+        onNavigate={handleNavigate}
         onOpenSearch={() => setSearchOpen(true)}
         onOpenBooking={() => setBookingOpen(true)}
       />
 
-      {/* Multi-Page Routes Container with Framer Motion Transitions */}
-      <AnimatePresence mode="wait">
-        <motion.main
-          key={location.pathname}
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -15 }}
-          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-10 min-h-[80vh]"
-        >
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<HomePage onOpenBooking={() => setBookingOpen(true)} onNavigate={handleNavigate} />} />
-            <Route path="/about" element={<AboutPage onOpenBooking={() => setBookingOpen(true)} />} />
-            <Route path="/leap-frog" element={<LeapFrogPage onOpenBooking={() => setBookingOpen(true)} />} />
-            <Route path="/whats-new" element={<WhatsNewPage onOpenBooking={() => setBookingOpen(true)} />} />
-            <Route path="/pricing" element={<PricingPage onOpenBooking={() => setBookingOpen(true)} />} />
-            <Route path="/game" element={<GamePage />} />
-            <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/founder" element={<FounderPage />} />
-            <Route path="/contact" element={<ContactPage onOpenBooking={() => setBookingOpen(true)} />} />
-          </Routes>
-        </motion.main>
-      </AnimatePresence>
+      {/* 5. Main Single-Page Sections Container */}
+      <main className="relative z-10">
+        <Hero 
+          onOpenBooking={() => setBookingOpen(true)} 
+          onNavigate={handleNavigate} 
+        />
+        <WhoWeAreSection onOpenBooking={() => setBookingOpen(true)} />
+        <RacingTimeline />
+        <LeapFrogSection />
+        <WhatsNewSection onOpenBooking={() => setBookingOpen(true)} />
+        <PricingSection onOpenBooking={() => setBookingOpen(true)} />
+        <GameSection />
+        <Gallery />
+        <Testimonials />
+        <Timeline />
+        <FAQSection />
+        <ContactSection onOpenBooking={() => setBookingOpen(true)} />
+      </main>
 
-      {/* Footer */}
+      {/* 6. Footer */}
       <Footer />
 
-      {/* Interactive Search & Booking Modals */}
+      {/* Interactive Modals */}
       <SearchModal
         isOpen={searchOpen}
         onClose={() => setSearchOpen(false)}

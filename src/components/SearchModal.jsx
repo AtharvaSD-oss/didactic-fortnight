@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, X, Trophy, Shield, MapPin, Gauge } from 'lucide-react';
 
 const QUICK_SEARCHES = [
-  { title: "Pro Kart Specs & Telemetry", icon: Gauge, path: "/about" },
-  { title: "Weekday & Weekend Rates", icon: Trophy, path: "/pricing" },
-  { title: "Entertainland Mall Venue Address", icon: MapPin, path: "/contact" },
-  { title: "16-Bit 2D Arcade Simulator", icon: Shield, path: "/game" },
-  { title: "What's New Special Offers", icon: Trophy, path: "/whats-new" },
-  { title: "Know Our Founder - Rohit Khanna", icon: Shield, path: "/founder" },
+  { title: "Pro Kart Specs & Telemetry", icon: Gauge, path: "who-we-are" },
+  { title: "Weekday & Weekend Rates", icon: Trophy, path: "pricing" },
+  { title: "Entertainland Mall Venue Address", icon: MapPin, path: "contact" },
+  { title: "16-Bit 2D Arcade Simulator", icon: Shield, path: "game" },
+  { title: "What's New Special Offers", icon: Trophy, path: "whats-new" },
+  { title: "Know Our Founder - Rohit Khanna", icon: Shield, path: "founder" },
 ];
 
 const SearchModal = ({ isOpen, onClose, onNavigate }) => {

@@ -1,29 +1,27 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { Search, Phone, Menu } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 import MobileMenu from './MobileMenu';
 
 const NAV_LINKS = [
-  { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
-  { name: 'Leap Frog', path: '/leap-frog' },
-  { name: "What's New", path: '/whats-new' },
-  { name: 'Pricing', path: '/pricing' },
-  { name: 'Arcade Game', path: '/game' },
-  { name: 'Gallery', path: '/gallery' },
-  { name: 'Founder', path: '/founder' },
-  { name: 'Contact', path: '/contact' },
+  { name: 'Home', id: 'home' },
+  { name: 'About', id: 'who-we-are' },
+  { name: 'Leap Frog', id: 'leap-frog' },
+  { name: "What's New", id: 'whats-new' },
+  { name: 'Pricing', id: 'pricing' },
+  { name: 'Arcade Game', id: 'game' },
+  { name: 'Gallery', id: 'gallery' },
+  { name: 'Reviews', id: 'testimonials' },
+  { name: 'Founder', id: 'founder' },
+  { name: 'Contact', id: 'contact' },
 ];
 
-const Navbar = ({ onOpenSearch, onOpenBooking }) => {
+const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBooking }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  const location = useLocation();
-  const navigate = useNavigate();
   const navRef = useRef(null);
   const lastScrollY = useRef(0);
 
@@ -69,33 +67,36 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
           ${isScrolled ? 'glass-nav-scrolled' : 'glass-nav-top'}
         `}
       >
-        {/* Subtle F1 Racing Border Accent */}
+        {/* Subtle Racing Border Accent */}
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#FFD700] via-[#EE3124] to-[#0066CC] opacity-90" />
 
         <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* 1. LEFT: Kartomania Logo */}
-          <Link to="/" className="flex items-center gap-3 cursor-pointer group">
+          <button
+            onClick={() => onNavigate('home')}
+            className="flex items-center gap-3 cursor-pointer group bg-transparent border-none p-0"
+          >
             <img 
               src="/logo.png" 
               alt="Kartomania Logo" 
               className="h-11 sm:h-12 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(255,215,0,0.4)] group-hover:scale-105 transition-transform duration-300" 
             />
-          </Link>
+          </button>
 
           {/* 2. CENTER: Navigation Links */}
           <nav className="hidden md:flex items-center gap-1 xl:gap-2">
             {NAV_LINKS.map((link, idx) => {
-              const isActive = location.pathname === link.path;
+              const isActive = activeSection === link.id;
               const isHovered = hoveredIndex === idx;
 
               return (
-                <Link
-                  key={link.path}
-                  to={link.path}
+                <button
+                  key={link.id}
+                  onClick={() => onNavigate(link.id)}
                   onMouseEnter={() => setHoveredIndex(idx)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   className={`
-                    relative px-3 py-2 text-xs font-mono font-bold tracking-widest uppercase transition-colors duration-300
+                    relative px-3 py-2 text-xs font-mono font-bold tracking-widest uppercase transition-colors duration-300 cursor-pointer bg-transparent border-none
                     ${isActive ? 'text-[#FFD700] text-glow-yellow' : 'text-gray-300 hover:text-white'}
                   `}
                 >
@@ -114,7 +115,7 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
                       ${isActive ? 'w-full opacity-100' : isHovered ? 'w-full opacity-80' : 'w-0 opacity-0'}
                     `}
                   />
-                </Link>
+                </button>
               );
             })}
           </nav>
@@ -151,9 +152,9 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
             <button
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open mobile navigation"
-              className="lg:hidden p-3 rounded-full bg-white/5 border border-[#FF4500]/40 hover:border-[#FF4500] text-white hover:bg-[#FF4500]/20 transition-all active:scale-95"
+              className="lg:hidden p-3 rounded-full bg-white/5 border border-[#EE3124]/40 hover:border-[#EE3124] text-white hover:bg-[#EE3124]/20 transition-all active:scale-95 cursor-pointer"
             >
-              <Menu className="w-5 h-5 text-[#FF4500]" />
+              <Menu className="w-5 h-5 text-[#EE3124]" />
             </button>
           </div>
         </div>
@@ -163,8 +164,8 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
       <MobileMenu
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
-        activeSection={location.pathname}
-        onNavigate={(path) => navigate(path)}
+        activeSection={activeSection}
+        onNavigate={onNavigate}
         onOpenSearch={onOpenSearch}
         onOpenBooking={onOpenBooking}
       />
