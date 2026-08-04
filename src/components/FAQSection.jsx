@@ -36,11 +36,11 @@ const FAQSection = () => {
   return (
     <section id="faq" className="py-28 px-4 max-w-4xl mx-auto border-t border-white/10 relative z-20">
       <div className="text-center space-y-3 mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF4500]/15 border border-[#FF4500]/40 text-[#FF4500] font-mono text-xs font-bold uppercase tracking-widest">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFD700]/15 border border-[#FFD700]/40 text-[#FFD700] font-mono text-xs font-bold uppercase tracking-widest">
           <HelpCircle className="w-4 h-4" /> KNOWLEDGE BASE
         </div>
         <h2 className="text-3xl sm:text-5xl font-display font-black text-white uppercase tracking-tight">
-          FREQUENTLY ASKED <span className="text-[#FF4500]">QUESTIONS</span>
+          FREQUENTLY ASKED <span className="text-[#EE3124]">QUESTIONS</span>
         </h2>
         <p className="text-sm font-mono text-gray-400 max-w-lg mx-auto">
           Everything you need to know about track rules, gear, timing, and rates.
@@ -54,13 +54,13 @@ const FAQSection = () => {
             <AnimatedCard key={idx} className="p-0 overflow-hidden">
               <button
                 onClick={() => toggle(idx)}
-                className="w-full p-6 text-left flex items-center justify-between gap-4 font-display text-base sm:text-lg font-bold text-white uppercase hover:text-[#FF4500] transition-colors"
+                className="w-full p-6 text-left flex items-center justify-between gap-4 font-display text-base sm:text-lg font-bold text-white uppercase hover:text-[#FFD700] transition-colors cursor-pointer"
               >
                 <span>{faq.question}</span>
                 <motion.div
                   animate={{ rotate: isOpen ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
-                  className="p-2 rounded-full bg-white/5 border border-white/10 text-[#FF4500]"
+                  className="p-2 rounded-full bg-white/5 border border-white/10 text-[#FFD700]"
                 >
                   <ChevronDown className="w-5 h-5" />
                 </motion.div>

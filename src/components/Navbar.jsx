@@ -70,7 +70,7 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
         `}
       >
         {/* Subtle F1 Racing Border Accent */}
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#FF4500] to-transparent opacity-80" />
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#FFD700] via-[#EE3124] to-[#0066CC] opacity-90" />
 
         <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* 1. LEFT: Kartomania Logo */}
@@ -78,7 +78,7 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
             <img 
               src="/logo.png" 
               alt="Kartomania Logo" 
-              className="h-11 sm:h-12 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(255,69,0,0.4)] group-hover:scale-105 transition-transform duration-300" 
+              className="h-11 sm:h-12 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(255,215,0,0.4)] group-hover:scale-105 transition-transform duration-300" 
             />
           </Link>
 
@@ -96,21 +96,21 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
                   onMouseLeave={() => setHoveredIndex(null)}
                   className={`
                     relative px-3 py-2 text-xs font-mono font-bold tracking-widest uppercase transition-colors duration-300
-                    ${isActive ? 'text-[#FF4500] text-glow' : 'text-gray-300 hover:text-white'}
+                    ${isActive ? 'text-[#FFD700] text-glow-yellow' : 'text-gray-300 hover:text-white'}
                   `}
                 >
                   <span>{link.name}</span>
 
                   {/* Active glowing indicator dot */}
                   {isActive && (
-                    <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#FF4500] shadow-[0_0_8px_#FF4500]" />
+                    <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#FFD700] shadow-[0_0_8px_#FFD700]" />
                   )}
 
                   {/* Animated glowing streak underline on hover or active */}
                   <span
                     className={`
-                      absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#FF4500] via-[#FF2A00] to-[#FF8C00]
-                      rounded-full transition-all duration-300 shadow-[0_0_10px_#FF4500]
+                      absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#FFD700] via-[#EE3124] to-[#0066CC]
+                      rounded-full transition-all duration-300 shadow-[0_0_10px_#FFD700]
                       ${isActive ? 'w-full opacity-100' : isHovered ? 'w-full opacity-80' : 'w-0 opacity-0'}
                     `}
                   />
@@ -126,7 +126,7 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
               <button
                 onClick={onOpenSearch}
                 aria-label="Search telemetry"
-                className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#FF4500] hover:bg-[#FF4500]/10 text-gray-300 hover:text-[#FF4500] transition-all hover:scale-105"
+                className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#FFD700] hover:bg-[#FFD700]/10 text-gray-300 hover:text-[#FFD700] transition-all hover:scale-105 cursor-pointer"
               >
                 <Search className="w-4 h-4" />
               </button>
@@ -134,7 +134,7 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
               <a
                 href="tel:+919717548897"
                 aria-label="Call Hotline"
-                className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#FF4500] hover:bg-[#FF4500]/10 text-gray-300 hover:text-[#FF4500] transition-all hover:scale-105"
+                className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#EE3124] hover:bg-[#EE3124]/10 text-gray-300 hover:text-[#EE3124] transition-all hover:scale-105"
               >
                 <Phone className="w-4 h-4" />
               </a>

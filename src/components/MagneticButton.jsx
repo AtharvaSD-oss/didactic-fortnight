@@ -2,8 +2,6 @@ import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ArrowRight } from 'lucide-react';
 
-
-
 const MagneticButton = ({ 
   children = "Book Your Race", 
   onClick, 
@@ -75,18 +73,18 @@ const MagneticButton = ({
   const baseClasses = `
     relative inline-flex items-center justify-center group overflow-hidden rounded-full font-display font-semibold tracking-wider text-xs uppercase
     px-6 py-3 transition-all duration-300 transform active:scale-95 cursor-pointer text-decoration-none
-    bg-gradient-to-r from-[#FF4500] via-[#FF2A00] to-[#E60000]
-    text-white border border-[#FF6B35]/40
-    shadow-[0_0_20px_rgba(255,69,0,0.35)]
-    hover:shadow-[0_0_35px_rgba(255,69,0,0.7)]
-    hover:border-white/40 hover:scale-[1.04]
+    bg-gradient-to-r from-[#EE3124] via-[#D32F2F] to-[#FFD700]
+    text-white border border-[#FFD700]/40
+    shadow-[0_0_20px_rgba(238,49,36,0.4)]
+    hover:shadow-[0_0_35px_rgba(255,215,0,0.6)]
+    hover:border-white/50 hover:scale-[1.04]
     light-sweep-effect ${className}
   `;
 
   const innerContent = (
     <>
       {/* Outer ambient glow ring */}
-      <span className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-500 to-red-600 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300 -z-10" />
+      <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#EE3124] to-[#FFD700] opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300 -z-10" />
 
       {/* Button content with icon */}
       <span ref={contentRef} className="relative z-10 flex items-center gap-2">

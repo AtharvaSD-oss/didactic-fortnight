@@ -61,9 +61,9 @@ const RacingTimeline = () => {
     <section id="experience-timeline" className="py-28 px-4 max-w-7xl mx-auto border-t border-white/10 relative z-20">
       {/* Section Header */}
       <div className="text-center space-y-3 mb-16">
-        <span className="font-mono text-xs text-[#FF4500] uppercase tracking-widest">// THE RACEDAY JOURNEY</span>
+        <span className="font-mono text-xs text-[#FFD700] uppercase tracking-widest">// THE RACEDAY JOURNEY</span>
         <h2 className="text-3xl sm:text-5xl font-display font-black text-white uppercase tracking-tight">
-          YOUR <span className="text-[#FF4500]">RACING EXPERIENCE</span>
+          YOUR <span className="text-[#EE3124]">RACING EXPERIENCE</span>
         </h2>
         <p className="text-sm font-mono text-gray-400 max-w-xl mx-auto">
           From paddock arrival to podium victory — here is what happens during your Kartomania track session.
@@ -86,17 +86,17 @@ const RacingTimeline = () => {
               <AnimatedCard className="h-full flex flex-col justify-between space-y-4">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#FF4500] to-[#FF1E00] flex items-center justify-center text-white font-mono font-bold text-sm shadow-[0_0_20px_rgba(255,69,0,0.5)]">
+                    <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#EE3124] to-[#D32F2F] flex items-center justify-center text-white font-mono font-bold text-sm shadow-[0_0_20px_rgba(238,49,36,0.5)]">
                       {item.step}
                     </div>
-                    <span className="px-2.5 py-1 rounded bg-[#FF4500]/20 text-[#FF4500] font-mono text-[10px] font-bold uppercase tracking-widest">
+                    <span className="px-2.5 py-1 rounded bg-[#FFD700]/15 text-[#FFD700] font-mono text-[10px] font-bold uppercase tracking-widest border border-[#FFD700]/30">
                       {item.tag}
                     </span>
                   </div>
 
                   <div className="flex items-center gap-2 pt-2">
-                    <IconComp className="w-5 h-5 text-[#FF4500]" />
-                    <h3 className="text-lg font-display font-bold text-white uppercase group-hover:text-[#FF4500] transition-colors">
+                    <IconComp className="w-5 h-5 text-[#FFD700]" />
+                    <h3 className="text-lg font-display font-bold text-white uppercase group-hover:text-[#FFD700] transition-colors">
                       {item.title}
                     </h3>
                   </div>

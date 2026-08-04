@@ -74,9 +74,9 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-black/60 border border-white/15 backdrop-blur-md"
+          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-black/60 border border-[#FFD700]/30 backdrop-blur-md"
         >
-          <Flag className="w-3.5 h-3.5 text-[#FF4500]" />
+          <Flag className="w-3.5 h-3.5 text-[#FFD700]" />
           <span className="font-mono text-xs text-white uppercase tracking-widest font-semibold">
             ENTERTAINLAND MALL &bull; SECTOR 83 &bull; MANESAR
           </span>
@@ -93,12 +93,12 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
             KARTOMANIA
           </h1>
           <h2 className="text-5xl sm:text-7xl lg:text-8xl font-display font-black tracking-tight uppercase leading-[0.92]">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF3A00] via-[#FF5500] to-[#FF7700]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#EE3124] to-[#0066CC]">
               SPEED THAT
             </span>
           </h2>
           <h2 className="text-5xl sm:text-7xl lg:text-8xl font-display font-black tracking-tight uppercase leading-[0.92]">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] to-[#FFAA00]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE3124] to-[#FFD700] text-glow-yellow">
               THRILLS
             </span>
           </h2>
