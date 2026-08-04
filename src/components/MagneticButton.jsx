@@ -2,12 +2,12 @@ import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ArrowRight } from 'lucide-react';
 
-const DEFAULT_BOOKING_URL = "https://web.racefacer.com/kiosk/kartomaniaentertainlandmall";
+
 
 const MagneticButton = ({ 
   children = "Book Your Race", 
   onClick, 
-  href = DEFAULT_BOOKING_URL,
+  href = null,
   target = "_blank",
   rel = "noreferrer",
   className = "", 
