@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const LoadingScreen = ({ onComplete }) => {
+const LoadingScreen = ({ onComplete = () => {} }) => {
   const [progress, setProgress] = useState(0);
   const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
-    const duration = 700; // Fast 0.7s load simulation
+    const duration = 600; // Fast 0.6s load simulation
     const intervalTime = 20;
     const increment = 100 / (duration / intervalTime);
 
@@ -15,10 +15,14 @@ const LoadingScreen = ({ onComplete }) => {
         const next = prev + increment;
         if (next >= 100) {
           clearInterval(timer);
-          setTimeout(() => {
-            setIsDone(true);
-            setTimeout(onComplete, 400);
-          }, 150);
+          setIsDone(true);
+          if (typeof onComplete === 'function') {
+            try {
+              onComplete();
+            } catch (err) {
+              console.error(err);
+            }
+          }
           return 100;
         }
         return next;
