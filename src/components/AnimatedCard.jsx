@@ -4,13 +4,13 @@ import { motion } from 'framer-motion';
 const AnimatedCard = ({ children, className = '', cursorText = '' }) => {
   return (
     <motion.div
-      whileHover={{ y: -8, scale: 1.02 }}
-      transition={{ duration: 0.3, ease: 'easeOut' }}
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.25, ease: 'easeOut' }}
       data-cursor={cursorText}
       className={`
-        bg-[#0e0e17]/85 border border-white/10 hover:border-[#FF4500]/60
-        rounded-3xl p-6 transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.5)]
-        hover:shadow-[0_0_40px_rgba(255,69,0,0.2)] backdrop-blur-xl group ${className}
+        bg-[#0b0b12] border border-white/10 hover:border-[#FF4500]/40
+        rounded-2xl p-6 sm:p-7 transition-colors duration-300 shadow-xl
+        hover:shadow-2xl hover:shadow-[#FF4500]/10 backdrop-blur-md group ${className}
       `}
     >
       {children}

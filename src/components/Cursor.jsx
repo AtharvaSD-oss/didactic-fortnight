@@ -9,31 +9,20 @@ const Cursor = () => {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
-      {/* Central Precision Dot */}
+      {/* Refined Ambient Follower Ring */}
       <motion.div
-        className="fixed top-0 left-0 w-2.5 h-2.5 bg-white rounded-full mix-blend-difference"
-        animate={{
-          x: mousePosition.x - 5,
-          y: mousePosition.y - 5,
-          scale: cursorState.active ? 0.5 : 1,
-        }}
-        transition={{ type: 'spring', damping: 30, stiffness: 400, mass: 0.1 }}
-      />
-
-      {/* Outer Telemetry Ring */}
-      <motion.div
-        className={`fixed top-0 left-0 rounded-full border flex items-center justify-center font-mono text-[9px] font-bold tracking-widest uppercase transition-colors duration-300 ${
+        className={`fixed top-0 left-0 rounded-full flex items-center justify-center font-mono text-[9px] font-bold tracking-widest uppercase transition-colors duration-300 ${
           cursorState.type === 'badge'
-            ? 'w-16 h-16 bg-[#FF4500]/25 border-[#FF4500] text-white backdrop-blur-sm shadow-[0_0_25px_rgba(255,69,0,0.6)]'
+            ? 'w-14 h-14 bg-[#FF4500]/20 border border-[#FF4500] text-white backdrop-blur-sm shadow-[0_0_20px_rgba(255,69,0,0.5)]'
             : cursorState.type === 'hover'
-            ? 'w-12 h-12 border-[#FF4500] bg-[#FF4500]/10 shadow-[0_0_20px_rgba(255,69,0,0.4)]'
-            : 'w-9 h-9 border-white/40 bg-transparent'
+            ? 'w-10 h-10 border border-[#FF4500]/60 bg-[#FF4500]/10 shadow-[0_0_15px_rgba(255,69,0,0.3)]'
+            : 'w-7 h-7 border border-white/20 bg-transparent'
         }`}
         animate={{
-          x: mousePosition.x - (cursorState.type === 'badge' ? 32 : cursorState.type === 'hover' ? 24 : 18),
-          y: mousePosition.y - (cursorState.type === 'badge' ? 32 : cursorState.type === 'hover' ? 24 : 18),
+          x: mousePosition.x - (cursorState.type === 'badge' ? 28 : cursorState.type === 'hover' ? 20 : 14),
+          y: mousePosition.y - (cursorState.type === 'badge' ? 28 : cursorState.type === 'hover' ? 20 : 14),
         }}
-        transition={{ type: 'spring', damping: 25, stiffness: 250, mass: 0.2 }}
+        transition={{ type: 'spring', damping: 28, stiffness: 280, mass: 0.15 }}
       >
         {cursorState.text}
       </motion.div>

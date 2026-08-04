@@ -12,7 +12,6 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
   const heroContentRef = useRef(null);
   const heroBgRef = useRef(null);
 
-  // Responsive GSAP ScrollTrigger Animation (Fast, fluid scroll transition without sticky lag)
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
@@ -25,15 +24,15 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
       });
 
       tl.to(heroBgRef.current, {
-        scale: 0.95,
+        scale: 0.96,
         borderRadius: '24px',
-        opacity: 0.6,
+        opacity: 0.65,
         ease: 'power1.out'
       }, 0);
 
       tl.to(heroContentRef.current, {
-        y: -60,
-        opacity: 0.2,
+        y: -50,
+        opacity: 0.25,
         ease: 'power1.out'
       }, 0);
     }, heroRef);
@@ -47,48 +46,47 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
       id="home"
       className="relative w-full h-screen min-h-screen flex flex-col justify-between pt-24 pb-8 px-4 sm:px-8 overflow-hidden bg-[#07070a] z-10"
     >
-      {/* 1. Cinematic Background with Fast Smooth Zoom */}
+      {/* 1. Cinematic Background Image */}
       <div
         ref={heroBgRef}
         className="absolute inset-0 z-0 overflow-hidden rounded-none transition-all duration-300"
       >
         <motion.img
-          initial={{ opacity: 0, scale: 1.08 }}
+          initial={{ opacity: 0, scale: 1.06 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           src="/hero-bg.jpg"
-          alt="Formula Karting Cinematic Background"
-          className="w-full h-full object-cover object-center filter brightness-[0.55] contrast-125 saturate-110"
+          alt="Kartomania Indoor Racing Circuit"
+          className="w-full h-full object-cover object-center filter brightness-[0.55] contrast-115"
         />
-        {/* Dark Vignette & Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-[#07070a]/50 to-[#07070a]/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07070a]/90 via-[#07070a]/50 to-transparent" />
-        <div className="absolute inset-0 bg-carbon opacity-30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-[#07070a]/40 to-[#07070a]/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#07070a]/85 via-[#07070a]/40 to-transparent" />
+        <div className="absolute inset-0 bg-carbon opacity-20 pointer-events-none" />
       </div>
 
-      {/* 2. Fast Snappy Content Container */}
+      {/* 2. Editorial Content Layout */}
       <div
         ref={heroContentRef}
         className="relative z-10 max-w-7xl w-full mx-auto flex flex-col justify-center items-start my-auto pt-4 space-y-6 text-left"
       >
-        {/* Top Pill Badge */}
+        {/* Track Badge */}
         <motion.div
-          initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 0.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-black/50 border border-[#FF4500]/40 backdrop-blur-md shadow-[0_0_20px_rgba(255,69,0,0.25)]"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-black/60 border border-white/15 backdrop-blur-md"
         >
           <Flag className="w-3.5 h-3.5 text-[#FF4500]" />
           <span className="font-mono text-xs text-white uppercase tracking-widest font-semibold">
-            RACE &bull; COMPETE &bull; BREAK RECORDS
+            ENTERTAINLAND MALL &bull; SECTOR 83 &bull; MANESAR
           </span>
         </motion.div>
 
-        {/* Giant Display Headline */}
+        {/* Display Headline */}
         <motion.div
-          initial={{ opacity: 0, y: 35, filter: 'blur(12px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="space-y-1 max-w-4xl"
         >
           <h1 className="text-5xl sm:text-7xl lg:text-8xl font-display font-black tracking-tight text-white uppercase leading-[0.92] drop-shadow-2xl">
@@ -100,7 +98,7 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
             </span>
           </h2>
           <h2 className="text-5xl sm:text-7xl lg:text-8xl font-display font-black tracking-tight uppercase leading-[0.92]">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] to-[#FFAA00] text-glow">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] to-[#FFAA00]">
               THRILLS
             </span>
           </h2>
@@ -108,9 +106,9 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
 
         {/* Subtitle */}
         <motion.div
-          initial={{ opacity: 0, y: 25, filter: 'blur(8px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 0.4, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.35 }}
           className="space-y-3 max-w-2xl"
         >
           <h3 className="text-lg sm:text-xl font-display font-bold text-white tracking-wide">
@@ -123,9 +121,9 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
 
         {/* Action Buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.4, delay: 0.45 }}
           className="flex flex-wrap items-center gap-4 pt-2"
         >
           <MagneticButton onClick={onOpenBooking} className="py-4 px-8 text-sm">
@@ -134,21 +132,21 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
 
           <button
             onClick={() => onNavigate('pricing')}
-            className="px-8 py-4 rounded-full bg-black/50 hover:bg-black/80 border border-white/20 hover:border-[#FF4500] text-xs font-mono tracking-widest uppercase text-white font-bold transition-all backdrop-blur-md"
+            className="px-8 py-4 rounded-full bg-black/60 hover:bg-black/80 border border-white/20 hover:border-[#FF4500] text-xs font-mono tracking-widest uppercase text-white font-bold transition-all backdrop-blur-md cursor-pointer"
           >
             VIEW PRICING
           </button>
         </motion.div>
       </div>
 
-      {/* 3. Fast Animated Scroll Indicator */}
+      {/* 3. Human Scroll Indicator */}
       <div className="relative z-10 max-w-7xl w-full mx-auto flex flex-col items-center justify-center pt-2">
         <span className="font-mono text-[10px] text-gray-500 uppercase tracking-widest mb-1">SCROLL</span>
         <motion.button
-          onClick={() => onNavigate('who-we-are')}
+          onClick={() => onNavigate('/about')}
           animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 1.2, ease: 'easeInOut' }}
-          className="p-2 rounded-full border border-[#FF4500]/40 text-[#FF4500] hover:text-white hover:border-[#FF4500] shadow-[0_0_15px_rgba(255,69,0,0.3)] transition-colors"
+          className="p-2 rounded-full border border-white/20 text-[#FF4500] hover:border-[#FF4500] transition-colors cursor-pointer"
         >
           <ChevronDown className="w-4 h-4" />
         </motion.button>

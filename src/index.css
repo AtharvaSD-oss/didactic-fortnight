@@ -35,13 +35,10 @@
   }
 }
 
-/* Custom Cursor Hide Native */
+/* Natural Human Cursor Ergonomics */
 @media (min-width: 1024px) {
   body {
-    cursor: none;
-  }
-  a, button, input, textarea, [role="button"], .cursor-pointer {
-    cursor: none !important;
+    cursor: default;
   }
 }
 
