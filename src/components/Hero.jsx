@@ -47,18 +47,29 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
       className="relative w-full h-screen min-h-screen flex flex-col justify-between pt-24 pb-8 px-4 sm:px-8 overflow-hidden bg-[#07070a] z-10"
     >
       {/* 1. Cinematic Background Image */}
+      {/* 1. Cinematic Background Video / Image */}
       <div
         ref={heroBgRef}
         className="absolute inset-0 z-0 overflow-hidden rounded-none transition-all duration-300"
       >
-        <motion.img
-          initial={{ opacity: 0, scale: 1.06 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          src="/hero-bg.jpg"
-          alt="Kartomania Indoor Racing Circuit"
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/hero-bg.jpg"
           className="w-full h-full object-cover object-center filter brightness-[0.55] contrast-115"
-        />
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+          <motion.img
+            initial={{ opacity: 0, scale: 1.06 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            src="/hero-bg.jpg"
+            alt="Kartomania Indoor Racing Circuit"
+            className="w-full h-full object-cover object-center filter brightness-[0.55] contrast-115"
+          />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-[#07070a]/40 to-[#07070a]/75" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#07070a]/85 via-[#07070a]/40 to-transparent" />
         <div className="absolute inset-0 bg-carbon opacity-20 pointer-events-none" />
