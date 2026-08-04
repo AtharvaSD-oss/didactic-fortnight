@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
-import { Search, Phone, Menu } from 'lucide-react';
+import { Phone, Menu } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 import MobileMenu from './MobileMenu';
 
@@ -17,7 +17,7 @@ const NAV_LINKS = [
   { name: 'Contact', path: '/contact' },
 ];
 
-const Navbar = ({ onOpenSearch, onOpenBooking }) => {
+const Navbar = ({ onOpenBooking }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -123,14 +123,6 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
           <div className="flex items-center gap-3 sm:gap-4">
             {/* Utility Icons */}
             <div className="hidden sm:flex items-center gap-2 pr-2 border-r border-white/10">
-              <button
-                onClick={onOpenSearch}
-                aria-label="Search telemetry"
-                className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#FF4500] hover:bg-[#FF4500]/10 text-gray-300 hover:text-[#FF4500] transition-all hover:scale-105"
-              >
-                <Search className="w-4 h-4" />
-              </button>
-
               <a
                 href="tel:+919717548897"
                 aria-label="Call Hotline"
