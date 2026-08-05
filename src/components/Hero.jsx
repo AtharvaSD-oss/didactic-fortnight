@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Flag, ChevronDown } from 'lucide-react';
+import { Flag, ChevronDown, MapPin } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -142,9 +142,19 @@ const Hero = ({ onNavigate }) => {
             BOOK YOUR RACE
           </MagneticButton>
 
+          <a
+            href="https://maps.app.goo.gl/7c5CMX5a4vaaXFLN9"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-black/60 hover:bg-black/80 border border-white/20 hover:border-[#FFD700] text-xs font-mono tracking-widest uppercase text-white font-bold transition-all backdrop-blur-md cursor-pointer group"
+          >
+            <MapPin className="w-4 h-4 text-[#FFD700] group-hover:scale-110 transition-transform" />
+            <span>GET DIRECTIONS ON GOOGLE MAPS</span>
+          </a>
+
           <button
             onClick={() => onNavigate('pricing')}
-            className="px-8 py-4 rounded-full bg-black/60 hover:bg-black/80 border border-white/20 hover:border-[#FF4500] text-xs font-mono tracking-widest uppercase text-white font-bold transition-all backdrop-blur-md cursor-pointer"
+            className="px-8 py-4 rounded-full bg-black/60 hover:bg-black/80 border border-white/20 hover:border-[#EE3124] text-xs font-mono tracking-widest uppercase text-white font-bold transition-all backdrop-blur-md cursor-pointer"
           >
             VIEW PRICING
           </button>
