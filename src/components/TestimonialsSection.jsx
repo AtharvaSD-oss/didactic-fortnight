@@ -34,6 +34,20 @@ const testimonials = [
     rating: 5,
     comment: "Rohit Khanna sir's mentorship and the Leap Frog Racing setup here are world standard. A true gem for Indian motorsport!",
     avatar: "🏆"
+  },
+  {
+    name: "Vikram Malhotra",
+    role: "Corporate Team Lead",
+    rating: 5,
+    comment: "Hosted our annual corporate grand prix championship at Kartomania. Seamless telemetry timing, podium champagne, and zero lag!",
+    avatar: "🥇"
+  },
+  {
+    name: "Ananya Deshmukh",
+    role: "Weekend Go-Karter",
+    rating: 5,
+    comment: "Incredible venue! The asphalt track grip is super responsive and the staff makes sure everyone gets a thrilling, safe race.",
+    avatar: "✨"
   }
 ];
 
