@@ -31,7 +31,14 @@ export function App() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [lenisInstance, setLenisInstance] = useState(null);
-  const [theme, setTheme] = useState(() => localStorage.getItem('kartomania_theme') || 'light');
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('kartomania_theme');
+    if (saved) return saved;
+    if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+    return 'light';
+  });
 
   // Synchronize document theme class
   useEffect(() => {
@@ -126,7 +133,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#07070a] text-white selection:bg-[#EE3124] selection:text-white relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#FFFFFF] dark:bg-[#050505] text-[#111111] dark:text-[#FFFFFF] selection:bg-[#FFB800] dark:selection:bg-[#FFD43B] selection:text-[#111111] transition-colors duration-500 relative overflow-x-hidden">
       {/* 1. Top Racing Progress Bar */}
       <ScrollProgress />
 
