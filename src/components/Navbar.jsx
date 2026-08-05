@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Search, Phone, Menu, Sun, Moon } from 'lucide-react';
+import { Search, Phone, Menu } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 import MobileMenu from './MobileMenu';
 
@@ -17,7 +17,7 @@ const NAV_LINKS = [
   { name: 'Contact', id: 'contact' },
 ];
 
-const Navbar = ({ activeSection = 'home', theme = 'dark', onToggleTheme, onNavigate, onOpenSearch, onOpenBooking }) => {
+const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBooking }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -123,19 +123,11 @@ const Navbar = ({ activeSection = 'home', theme = 'dark', onToggleTheme, onNavig
           {/* 3. RIGHT: Quick Icons & Magnetic CTA */}
           <div className="flex items-center gap-3 sm:gap-4">
             {/* Utility Icons */}
-            <div className="flex items-center gap-2 pr-2 sm:border-r border-white/10">
-              <button
-                onClick={onToggleTheme}
-                aria-label="Toggle theme mode"
-                className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#FFD700] hover:bg-[#FFD700]/10 text-[#FFD700] transition-all hover:scale-105 cursor-pointer"
-              >
-                {theme === 'dark' ? <Sun className="w-4 h-4 text-[#FFD700]" /> : <Moon className="w-4 h-4 text-[#0066CC]" />}
-              </button>
-
+            <div className="hidden sm:flex items-center gap-2 pr-2 border-r border-white/10">
               <button
                 onClick={onOpenSearch}
                 aria-label="Search telemetry"
-                className="hidden sm:flex p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#FFD700] hover:bg-[#FFD700]/10 text-gray-300 hover:text-[#FFD700] transition-all hover:scale-105 cursor-pointer"
+                className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#FFD700] hover:bg-[#FFD700]/10 text-gray-300 hover:text-[#FFD700] transition-all hover:scale-105 cursor-pointer"
               >
                 <Search className="w-4 h-4" />
               </button>
@@ -143,7 +135,7 @@ const Navbar = ({ activeSection = 'home', theme = 'dark', onToggleTheme, onNavig
               <a
                 href="tel:+919717548897"
                 aria-label="Call Hotline"
-                className="hidden sm:flex p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#EE3124] hover:bg-[#EE3124]/10 text-gray-300 hover:text-[#EE3124] transition-all hover:scale-105"
+                className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#EE3124] hover:bg-[#EE3124]/10 text-gray-300 hover:text-[#EE3124] transition-all hover:scale-105"
               >
                 <Phone className="w-4 h-4" />
               </a>
@@ -173,8 +165,6 @@ const Navbar = ({ activeSection = 'home', theme = 'dark', onToggleTheme, onNavig
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
         activeSection={activeSection}
-        theme={theme}
-        onToggleTheme={onToggleTheme}
         onNavigate={onNavigate}
         onOpenSearch={onOpenSearch}
         onOpenBooking={onOpenBooking}

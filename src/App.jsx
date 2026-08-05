@@ -31,30 +31,6 @@ export function App() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [lenisInstance, setLenisInstance] = useState(null);
-  const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('kartomania_theme');
-    if (saved) return saved;
-    if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
-    }
-    return 'light';
-  });
-
-  // Synchronize document theme class
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-      document.documentElement.classList.remove('light');
-    } else {
-      document.documentElement.classList.add('light');
-      document.documentElement.classList.remove('dark');
-    }
-    localStorage.setItem('kartomania_theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
-  };
 
   // Initialize Lenis Smooth Scroll Engine
   useEffect(() => {
@@ -146,8 +122,6 @@ export function App() {
       {/* 4. Glassmorphism Single-Page Navbar */}
       <Navbar
         activeSection={activeSection}
-        theme={theme}
-        onToggleTheme={toggleTheme}
         onNavigate={handleNavigate}
         onOpenSearch={() => setSearchOpen(true)}
         onOpenBooking={() => setBookingOpen(true)}

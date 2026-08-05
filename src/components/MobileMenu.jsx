@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Phone, ChevronRight, Sun, Moon } from 'lucide-react';
+import { X, Phone, ChevronRight } from 'lucide-react';
 import { InstagramIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 
@@ -46,8 +46,6 @@ const MobileMenu = ({
   isOpen, 
   onClose, 
   activeSection, 
-  theme = 'dark',
-  onToggleTheme,
   onNavigate 
 }) => {
   return (
@@ -77,21 +75,12 @@ const MobileMenu = ({
                 <div className="flex items-center gap-3">
                   <img src="/logo.png" alt="Kartomania" className="h-9 w-auto" />
                 </div>
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={onToggleTheme}
-                    aria-label="Toggle theme mode"
-                    className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#FFD700] text-[#FFD700] transition-colors"
-                  >
-                    {theme === 'dark' ? <Sun className="w-4 h-4 text-[#FFD700]" /> : <Moon className="w-4 h-4 text-[#0066CC]" />}
-                  </button>
-                  <button
-                    onClick={onClose}
-                    className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#EE3124] text-white transition-colors"
-                  >
-                    <X className="w-5 h-5 text-[#EE3124]" />
-                  </button>
-                </div>
+                <button
+                  onClick={onClose}
+                  className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#EE3124] text-white transition-colors"
+                >
+                  <X className="w-5 h-5 text-[#EE3124]" />
+                </button>
               </div>
 
               {/* Navigation Items */}
