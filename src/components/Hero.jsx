@@ -92,13 +92,16 @@ const Hero = ({ onNavigate }) => {
       {/* 2. Hero Editorial Content Layout */}
       <motion.div
         style={{ y: textY, opacity: textOpacity }}
-        animate={{
-          x: -mousePos.x * 0.4,
-          y: -mousePos.y * 0.4,
-        }}
-        transition={{ type: 'spring', damping: 30, stiffness: 200 }}
         className="relative z-10 max-w-7xl w-full mx-auto flex flex-col justify-center items-start my-auto space-y-6 text-left"
       >
+        <motion.div
+          animate={{
+            x: -mousePos.x * 0.4,
+            y: -mousePos.y * 0.4,
+          }}
+          transition={{ type: 'spring', damping: 30, stiffness: 200 }}
+          className="w-full flex flex-col items-start space-y-6"
+        >
         {/* Top Circuit Pill Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
@@ -167,6 +170,7 @@ const Hero = ({ onNavigate }) => {
           >
             Explore Track
           </button>
+        </motion.div>
         </motion.div>
       </motion.div>
 
