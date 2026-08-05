@@ -542,7 +542,7 @@ export const GallerySection = () => {
   ];
 
   return (
-    <section id="gallery" className="py-24 px-4 max-w-7xl mx-auto border-t border-white/10">
+    <section id="gallery" className="py-24 px-4 max-w-7xl mx-auto border-t border-white/10 select-none">
       <div className="text-center space-y-4 mb-14">
         <span className="font-mono text-xs text-[#FF4500] uppercase tracking-widest">// VISUAL SHOWCASE & GALLERY</span>
         <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">
@@ -560,30 +560,32 @@ export const GallerySection = () => {
             onClick={() => setActivePhoto(item)}
             className={`
               relative group rounded-2xl overflow-hidden cursor-pointer border border-white/10 hover:border-[#FF4500]/70
-              transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(255,69,0,0.3)]
+              transition-all duration-300 transform-gpu shadow-[0_0_20px_rgba(0,0,0,0.6)] hover:shadow-[0_0_35px_rgba(255,69,0,0.25)]
               ${item.span} ${item.height} bg-[#08080c]
             `}
           >
-            {/* Background Image with Dark Seamless Gradient Blend */}
+            {/* Hardware-Accelerated Background Image */}
             <img
               src={item.src}
               alt={item.title}
-              className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 opacity-85 group-hover:opacity-100"
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out transform-gpu opacity-90 group-hover:opacity-100 pointer-events-none"
             />
 
-            {/* Vignette & Ambient Darkness Overlay matching #07070a page background */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-[#07070a]/40 to-transparent opacity-90 group-hover:opacity-75 transition-opacity duration-500" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#07070a]/60 via-transparent to-[#07070a]/60" />
+            {/* Dark Vignette Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-[#07070a]/40 to-transparent opacity-90 group-hover:opacity-75 transition-opacity duration-300 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#07070a]/60 via-transparent to-[#07070a]/60 pointer-events-none" />
 
             {/* Inner Glowing Border Accent */}
-            <div className="absolute inset-0 border border-[#FF4500]/0 group-hover:border-[#FF4500]/50 rounded-2xl transition-colors duration-500 pointer-events-none" />
+            <div className="absolute inset-0 border border-[#FF4500]/0 group-hover:border-[#FF4500]/50 rounded-2xl transition-colors duration-300 pointer-events-none" />
 
             {/* Content Labels */}
             <div className="absolute bottom-6 left-6 right-6 z-20 space-y-2">
               <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#FF4500] text-white font-mono text-[10px] font-bold uppercase tracking-widest shadow-md">
                 {item.tag}
               </div>
-              <h3 className="text-xl font-display font-bold text-white uppercase group-hover:text-[#FF4500] transition-colors">
+              <h3 className="text-xl font-display font-bold text-white uppercase group-hover:text-[#FF4500] transition-colors duration-200">
                 {item.title}
               </h3>
               <p className="text-xs font-mono text-gray-300 line-clamp-2">
