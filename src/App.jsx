@@ -5,6 +5,7 @@ import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhoWeAreSection from './components/WhoWeAreSection';
+import WhyChooseUs from './components/WhyChooseUs';
 import RacingTimeline from './components/RacingTimeline';
 import Gallery from './components/Gallery';
 import Timeline from './components/Timeline';
@@ -30,16 +31,16 @@ export function App() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [lenisInstance, setLenisInstance] = useState(null);
-  const [theme, setTheme] = useState(() => localStorage.getItem('kartomania_theme') || 'dark');
+  const [theme, setTheme] = useState(() => localStorage.getItem('kartomania_theme') || 'light');
 
   // Synchronize document theme class
   useEffect(() => {
-    if (theme === 'light') {
-      document.documentElement.classList.add('light');
-      document.documentElement.classList.remove('dark');
-    } else {
+    if (theme === 'dark') {
       document.documentElement.classList.add('dark');
       document.documentElement.classList.remove('light');
+    } else {
+      document.documentElement.classList.add('light');
+      document.documentElement.classList.remove('dark');
     }
     localStorage.setItem('kartomania_theme', theme);
   }, [theme]);
@@ -152,6 +153,7 @@ export function App() {
           onNavigate={handleNavigate} 
         />
         <WhoWeAreSection onOpenBooking={() => setBookingOpen(true)} />
+        <WhyChooseUs />
         <RacingTimeline />
         <LeapFrogSection />
         <WhatsNewSection onOpenBooking={() => setBookingOpen(true)} />
