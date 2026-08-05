@@ -42,12 +42,6 @@
     color: #FFFFFF;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
-    transition: background-color 0.4s ease, color 0.4s ease;
-  }
-
-  html.light body {
-    background-color: #F8F9FA;
-    color: #1A1A1A;
   }
 
   h1, h2, h3, .font-display {

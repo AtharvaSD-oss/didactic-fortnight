@@ -5,7 +5,6 @@ import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhoWeAreSection from './components/WhoWeAreSection';
-import WhyChooseUs from './components/WhyChooseUs';
 import RacingTimeline from './components/RacingTimeline';
 import Gallery from './components/Gallery';
 import Timeline from './components/Timeline';
@@ -109,7 +108,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFFFFF] dark:bg-[#050505] text-[#111111] dark:text-[#FFFFFF] selection:bg-[#FFB800] dark:selection:bg-[#FFD43B] selection:text-[#111111] transition-colors duration-500 relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#07070a] text-white selection:bg-[#EE3124] selection:text-white relative overflow-x-hidden">
       {/* 1. Top Racing Progress Bar */}
       <ScrollProgress />
 
@@ -134,7 +133,6 @@ export function App() {
           onNavigate={handleNavigate} 
         />
         <WhoWeAreSection onOpenBooking={() => setBookingOpen(true)} />
-        <WhyChooseUs />
         <RacingTimeline />
         <LeapFrogSection />
         <WhatsNewSection onOpenBooking={() => setBookingOpen(true)} />

@@ -36,18 +36,32 @@ const testimonials = [
     avatar: "🏆"
   },
   {
-    name: "Vikram Malhotra",
-    role: "Corporate Team Lead",
+    name: "Ananya Deshmukh",
+    role: "Corporate Event Host",
     rating: 5,
-    comment: "Hosted our annual corporate grand prix championship at Kartomania. Seamless telemetry timing, podium champagne, and zero lag!",
-    avatar: "🥇"
+    comment: "Hosted our annual corporate racing championship at Entertainland Mall. Incredible venue atmosphere and podium ceremony!",
+    avatar: "👑"
   },
   {
-    name: "Ananya Deshmukh",
-    role: "Weekend Go-Karter",
+    name: "Vikramaditya Rao",
+    role: "Karting Academy Cadet",
     rating: 5,
-    comment: "Incredible venue! The asphalt track grip is super responsive and the staff makes sure everyone gets a thrilling, safe race.",
-    avatar: "✨"
+    comment: "The SODI LR5 Junior karts are super fast and responsive. The 680m multi-level track apexes are great for practicing race lines.",
+    avatar: "🚀"
+  },
+  {
+    name: "Simran Kaur",
+    role: "Speed Enthusiast",
+    rating: 5,
+    comment: "Monday Bonanza 50% off offer was total value for money! Completed 4 sessions back-to-back with zero exhaustion.",
+    avatar: "🔥"
+  },
+  {
+    name: "Kabir Mehta",
+    role: "F1 Fan & Track Driver",
+    rating: 5,
+    comment: "The polymer asphalt grip levels are phenomenal. You can carry serious momentum into Turn 3 and 7!",
+    avatar: "🎯"
   }
 ];
 
@@ -55,9 +69,9 @@ const TestimonialsSection = () => {
   return (
     <section id="testimonials" className="py-28 px-4 max-w-7xl mx-auto border-t border-white/10 relative z-20">
       <div className="text-center space-y-3 mb-16">
-        <span className="font-mono text-xs text-[#FF4500] uppercase tracking-widest">// PILOT TESTIMONIALS & REVIEWS</span>
+        <span className="font-mono text-xs text-[#FFD700] uppercase tracking-widest">// PILOT TESTIMONIALS & REVIEWS</span>
         <h2 className="text-3xl sm:text-5xl font-display font-black text-white uppercase tracking-tight">
-          RACER <span className="text-[#FF4500]">EXPERIENCES</span>
+          RACER <span className="text-[#EE3124]">EXPERIENCES</span>
         </h2>
         <p className="text-sm font-mono text-gray-400 max-w-xl mx-auto">
           Hear what drivers, amateur racers, and corporate event teams say about Kartomania.
@@ -94,7 +108,7 @@ const TestimonialsSection = () => {
                     p-8 rounded-3xl transition-all duration-500 border text-left flex flex-col justify-between h-72
                     ${
                       isActive
-                        ? 'bg-[#0f0f1d]/95 border-[#FF4500]/70 shadow-[0_0_50px_rgba(255,69,0,0.35)] scale-105 backdrop-blur-xl'
+                        ? 'bg-[#0f0f1d]/95 border-[#EE3124]/70 shadow-[0_0_50px_rgba(238,49,36,0.35)] scale-105 backdrop-blur-xl'
                         : 'bg-[#08080f]/70 border-white/10 opacity-60 scale-95'
                     }
                   `}
@@ -103,10 +117,10 @@ const TestimonialsSection = () => {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1">
                         {[...Array(item.rating)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-[#FF4500] text-[#FF4500]" />
+                          <Star key={i} className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
                         ))}
                       </div>
-                      <Quote className="w-6 h-6 text-[#FF4500]/40" />
+                      <Quote className="w-6 h-6 text-[#FFD700]/40" />
                     </div>
                     <p className="text-sm font-sans text-gray-200 leading-relaxed font-light italic">
                       "{item.comment}"
@@ -114,12 +128,12 @@ const TestimonialsSection = () => {
                   </div>
 
                   <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-                    <div className="w-10 h-10 rounded-full bg-[#FF4500]/20 border border-[#FF4500]/40 flex items-center justify-center text-lg">
+                    <div className="w-10 h-10 rounded-full bg-[#EE3124]/20 border border-[#EE3124]/40 flex items-center justify-center text-lg">
                       {item.avatar}
                     </div>
                     <div>
                       <h4 className="text-sm font-display font-bold text-white uppercase">{item.name}</h4>
-                      <span className="text-[10px] font-mono text-[#FF4500] uppercase font-bold">{item.role}</span>
+                      <span className="text-[10px] font-mono text-[#FFD700] uppercase font-bold">{item.role}</span>
                     </div>
                   </div>
                 </div>
