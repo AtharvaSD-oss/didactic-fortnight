@@ -12,7 +12,9 @@ export const useCursor = () => {
     const onMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
 
-      const target = e.target.closest('[data-cursor], button, a, input, [role="button"]');
+      const targetElement = e.target && e.target.nodeType === 1 ? e.target : e.target?.parentElement;
+      const target = targetElement?.closest ? targetElement.closest('[data-cursor], button, a, input, [role="button"]') : null;
+
       if (target) {
         const cursorAttr = target.getAttribute('data-cursor');
         if (cursorAttr) {
