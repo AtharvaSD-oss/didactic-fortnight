@@ -451,13 +451,13 @@ export const PricingSection = () => {
       {/* 1. Official Value Combo Packages (From Counter Tariff) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         {/* Weekday Combos */}
-        <div className="bg-white border-2 border-gray-200 hover:border-[#EE3124]/40 rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all relative overflow-hidden">
-          <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-200">
-            <div>
+        <div className="bg-white border-2 border-gray-200 hover:border-[#EE3124]/40 rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all relative">
+          <div className="flex flex-wrap items-start justify-between gap-3 pb-4 mb-4 border-b border-gray-200">
+            <div className="space-y-1">
               <span className="text-[10px] font-mono font-bold text-[#EE3124] uppercase tracking-widest block">SUPER VALUE DEALS</span>
               <h3 className="text-2xl font-display font-bold text-gray-950 uppercase tracking-wider">WEEKDAY COMBOS</h3>
             </div>
-            <span className="px-3.5 py-1.5 rounded-full bg-[#EE3124]/10 text-[#EE3124] font-mono text-xs font-bold uppercase">
+            <span className="px-3 py-1.5 rounded-full bg-[#EE3124]/10 text-[#EE3124] font-mono text-xs font-bold uppercase whitespace-nowrap">
               MON – THU
             </span>
           </div>
@@ -480,17 +480,18 @@ export const PricingSection = () => {
         </div>
 
         {/* Weekend Combos */}
-        <div className="bg-white border-2 border-[#EE3124]/50 rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden">
-          <span className="absolute -top-3 right-6 px-3.5 py-1 rounded-full bg-gradient-to-r from-[#EE3124] to-[#D32F2F] text-[10px] font-mono font-bold text-white uppercase tracking-widest shadow-md">
-            POPULAR COMBOS
-          </span>
-
-          <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-200">
-            <div>
-              <span className="text-[10px] font-mono font-bold text-[#EE3124] uppercase tracking-widest block">PEAK RACING & ENTERTAINMENT</span>
+        <div className="bg-white border-2 border-[#EE3124]/50 rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all relative">
+          <div className="flex flex-wrap items-start justify-between gap-3 pb-4 mb-4 border-b border-gray-200">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-mono font-bold text-[#EE3124] uppercase tracking-widest block">PEAK RACING & ENTERTAINMENT</span>
+                <span className="px-2.5 py-0.5 rounded-full bg-gradient-to-r from-[#EE3124] to-[#D32F2F] text-[9px] font-mono font-bold text-white uppercase tracking-wider shadow-sm">
+                  ★ POPULAR
+                </span>
+              </div>
               <h3 className="text-2xl font-display font-bold text-gray-950 uppercase tracking-wider">WEEKEND COMBOS</h3>
             </div>
-            <span className="px-3.5 py-1.5 rounded-full bg-[#EE3124]/15 text-[#EE3124] font-mono text-xs font-bold uppercase">
+            <span className="px-3 py-1.5 rounded-full bg-[#EE3124]/15 text-[#EE3124] font-mono text-xs font-bold uppercase whitespace-nowrap">
               FRI – SUN & HOLIDAYS
             </span>
           </div>
