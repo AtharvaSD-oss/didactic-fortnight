@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Search, Phone, Menu } from 'lucide-react';
+import { InstagramIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 import MobileMenu from './MobileMenu';
 
@@ -124,6 +125,16 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
           <div className="flex items-center gap-3 sm:gap-4">
             {/* Utility Icons */}
             <div className="hidden sm:flex items-center gap-2 pr-2 border-r border-gray-200">
+              <a
+                href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram Profile"
+                className="p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105"
+              >
+                <InstagramIcon className="w-4 h-4" />
+              </a>
+
               <button
                 onClick={onOpenSearch}
                 aria-label="Search telemetry"

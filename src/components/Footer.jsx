@@ -20,7 +20,7 @@ const Footer = () => {
 
         <div className="flex items-center gap-4">
           <a 
-            href="https://instagram.com/kartomania.in" 
+            href="https://www.instagram.com/kartomaniacsggn/?r=nametag" 
             target="_blank" 
             rel="noreferrer"
             className="p-2.5 rounded-full bg-white hover:bg-gray-100 text-gray-700 hover:text-[#EE3124] border border-gray-200 transition-colors shadow-sm"

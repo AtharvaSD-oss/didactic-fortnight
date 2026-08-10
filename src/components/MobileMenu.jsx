@@ -147,7 +147,7 @@ const MobileMenu = ({
                 </a>
 
                 <a
-                  href="https://instagram.com/kartomania.in"
+                  href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
                   target="_blank"
                   rel="noreferrer"
                   className="p-2 rounded-full bg-gray-100 border border-gray-200 hover:border-[#EE3124] hover:text-[#EE3124] text-gray-700 transition-colors"
