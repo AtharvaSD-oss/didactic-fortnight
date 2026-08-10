@@ -3,12 +3,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const galleryItems = [
   {
+    src: "/gallery/rotax-max-kart-71.jpg",
+    title: "Rotax Max Kart #71 Apex",
+    tag: "NATIONAL KARTING",
+    desc: "Starting grid lineup of Tony Kart / Leap Frog Racing Kart #71 at the National Karting Championship.",
+    span: "md:col-span-2",
+    height: "h-80 md:h-96"
+  },
+  {
     src: "/gallery/gallery-1.jpg",
     title: "Sodi RT10 Pro Fleet Lineup",
     tag: "PRO KART FLEET",
     desc: "270cc high-torque race karts prepped for high-speed sessions.",
-    span: "md:col-span-2",
-    height: "h-96 md:h-full"
+    span: "md:col-span-1",
+    height: "h-80 md:h-96"
   },
   {
     src: "/gallery/gallery-2.jpg",
@@ -55,7 +63,7 @@ const Gallery = () => {
           THE <span className="text-[#EE3124]">KARTOMANIA</span> EXPERIENCE
         </h2>
         <p className="text-sm font-mono text-gray-600 max-w-xl mx-auto">
-          Explore real track footage from India's premier indoor go-karting arena.
+          Explore real track footage and national championship racing from Kartomania India.
         </p>
       </div>
 
@@ -121,7 +129,7 @@ const Gallery = () => {
               <img
                 src={activePhoto.src}
                 alt={activePhoto.title}
-                className="w-full max-h-[70vh] object-cover"
+                className="w-full max-h-[70vh] object-contain bg-black"
               />
               <div className="p-6 bg-white space-y-2 text-gray-900">
                 <span className="font-mono text-[10px] text-[#EE3124] uppercase font-bold tracking-widest">

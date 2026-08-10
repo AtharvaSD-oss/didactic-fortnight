@@ -98,10 +98,10 @@ export const LeapFrogSection = () => {
 
   const teamPhotos = [
     {
-      src: "/leap-frog/leap-frog-1.jpg",
+      src: "/gallery/rotax-max-kart-71.jpg",
       title: "Rotax Max Kart #71 Apex",
       tag: "NATIONAL KARTING",
-      desc: "Rotax Max Championship race kart #71 taking the apex corner."
+      desc: "Starting grid lineup of Tony Kart / Leap Frog Racing Kart #71 at the National Karting Championship."
     },
     {
       src: "/leap-frog/leap-frog-2.jpg",
