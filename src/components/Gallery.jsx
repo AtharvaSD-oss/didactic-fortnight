@@ -12,9 +12,9 @@ const galleryItems = [
   },
   {
     src: "/gallery/gallery-2.jpg",
-    title: "Leap Frog Racing Kart #71 Apex Velocity",
-    tag: "NATIONAL ROTAX #71",
-    desc: "Full throttle apex cornering along national circuit barrier loops.",
+    title: "Kartomania Sunset Apex",
+    tag: "SUNSET RACE",
+    desc: "Karts rounding the hairpin turn as dusk falls over the main arena.",
     span: "md:col-span-1",
     height: "h-64 md:h-80"
   },

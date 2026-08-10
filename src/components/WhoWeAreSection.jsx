@@ -86,8 +86,8 @@ const WhoWeAreSection = () => {
           <div className="relative rounded-3xl overflow-hidden border border-gray-200 shadow-2xl bg-gray-100 group">
             <img
               ref={imgRef}
-              src="/gallery/gallery-1.jpg"
-              alt="Kartomania Circuit & Fleet"
+              src="/about-action.jpg"
+              alt="Kartomania & Leap Frog Racing Kart #71"
               data-cursor="VIEW"
               className="w-full h-[420px] sm:h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
             />
