@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Phone, ChevronRight } from 'lucide-react';
+import { X, Phone, Mail, ChevronRight } from 'lucide-react';
 import { InstagramIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 
@@ -137,22 +137,32 @@ const MobileMenu = ({
                 BOOK YOUR RACE NOW
               </MagneticButton>
 
-              <div className="flex items-center justify-between text-xs font-mono text-gray-600">
-                <a
-                  href="tel:+919717548897"
-                  className="flex items-center gap-2 hover:text-[#EE3124] transition-colors"
-                >
-                  <Phone className="w-3.5 h-3.5 text-[#EE3124]" />
-                  <span>+91 97175 48897</span>
-                </a>
+              <div className="flex flex-col gap-2 text-xs font-mono text-gray-600">
+                <div className="flex items-center justify-between">
+                  <a
+                    href="tel:+919717548897"
+                    className="flex items-center gap-2 hover:text-[#EE3124] transition-colors"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-[#EE3124]" />
+                    <span>+91 97175 48897</span>
+                  </a>
+
+                  <a
+                    href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-2 rounded-full bg-gray-100 border border-gray-200 hover:border-[#EE3124] hover:text-[#EE3124] text-gray-700 transition-colors"
+                  >
+                    <InstagramIcon className="w-4 h-4" />
+                  </a>
+                </div>
 
                 <a
-                  href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-2 rounded-full bg-gray-100 border border-gray-200 hover:border-[#EE3124] hover:text-[#EE3124] text-gray-700 transition-colors"
+                  href="mailto:kartomania.ggn@gmail.com"
+                  className="flex items-center gap-2 hover:text-[#EE3124] transition-colors text-[11px]"
                 >
-                  <InstagramIcon className="w-4 h-4" />
+                  <Mail className="w-3.5 h-3.5 text-[#EE3124]" />
+                  <span>kartomania.ggn@gmail.com</span>
                 </a>
               </div>
             </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flag, Trophy, Shield, Zap, MapPin, Gauge, Flame } from 'lucide-react';
+import { Flag, Trophy, Shield, Zap, MapPin, Gauge, Flame, Mail, Phone, Clock } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 import GameCanvas from './GameCanvas';
 
@@ -813,16 +813,22 @@ export const ContactSection = () => {
 
         {/* Location Info & CTAs */}
         <div className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-lg">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 mb-6 text-left font-mono">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 text-left font-mono">
             <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 space-y-1.5 shadow-sm">
-              <span className="text-[9px] text-[#EE3124] uppercase font-bold tracking-wider">// ARENA ADDRESS</span>
+              <div className="flex items-center gap-1.5 text-[#EE3124]">
+                <MapPin className="w-3.5 h-3.5" />
+                <span className="text-[9px] uppercase font-bold tracking-wider">// ARENA ADDRESS</span>
+              </div>
               <div className="text-xs text-gray-900 font-sans font-semibold leading-relaxed">
                 Entertainland Mall, Sector 83, Manesar, Gurgaon.
               </div>
             </div>
 
             <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 space-y-1.5 shadow-sm">
-              <span className="text-[9px] text-[#EE3124] uppercase font-bold tracking-wider">// BUSINESS HOURS</span>
+              <div className="flex items-center gap-1.5 text-[#EE3124]">
+                <Clock className="w-3.5 h-3.5" />
+                <span className="text-[9px] uppercase font-bold tracking-wider">// BUSINESS HOURS</span>
+              </div>
               <div className="text-xs text-gray-900 font-sans font-semibold space-y-0.5">
                 <div>Weekdays: 3:00 PM – 10:00 PM</div>
                 <div>Weekends: 11:30 AM – 10:00 PM</div>
@@ -831,10 +837,26 @@ export const ContactSection = () => {
             </div>
 
             <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 space-y-1.5 shadow-sm">
-              <span className="text-[9px] text-[#EE3124] uppercase font-bold tracking-wider">// CALL US / HOTLINE</span>
+              <div className="flex items-center gap-1.5 text-[#EE3124]">
+                <Phone className="w-3.5 h-3.5" />
+                <span className="text-[9px] uppercase font-bold tracking-wider">// CALL US / HOTLINE</span>
+              </div>
               <div className="text-xs text-gray-900 font-sans font-semibold space-y-0.5">
                 <a href="tel:+919717548897" className="block hover:text-[#EE3124] transition-colors font-bold">+91 97175 48897</a>
                 <a href="tel:+919560492876" className="block hover:text-[#EE3124] transition-colors font-bold">+91 95604 92876</a>
+              </div>
+            </div>
+
+            <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 space-y-1.5 shadow-sm">
+              <div className="flex items-center gap-1.5 text-[#EE3124]">
+                <Mail className="w-3.5 h-3.5" />
+                <span className="text-[9px] uppercase font-bold tracking-wider">// EMAIL ENQUIRIES</span>
+              </div>
+              <div className="text-xs text-gray-900 font-sans font-semibold space-y-0.5">
+                <a href="mailto:kartomania.ggn@gmail.com" className="block hover:text-[#EE3124] transition-colors font-bold break-all">
+                  kartomania.ggn@gmail.com
+                </a>
+                <div className="text-[10px] text-gray-500 font-mono">Corporate & Booking queries</div>
               </div>
             </div>
           </div>
