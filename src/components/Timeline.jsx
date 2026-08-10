@@ -51,36 +51,43 @@ const achievements = [
 
 const Timeline = () => {
   return (
-    <section id="founder" className="py-28 px-4 max-w-7xl mx-auto border-t border-gray-200/80 relative z-20 bg-white text-gray-900">
-      <div className="text-center space-y-3 mb-16">
+    <section id="founder" className="py-14 sm:py-18 px-4 max-w-7xl mx-auto border-t border-gray-200/80 relative z-20 bg-white text-gray-900">
+      <div className="text-center space-y-2 mb-8 sm:mb-10">
         <span className="font-mono text-xs text-[#EE3124] uppercase tracking-widest font-bold">// MOTORSPORT HERITAGE</span>
-        <h2 className="text-3xl sm:text-5xl font-display font-black text-gray-950 uppercase tracking-tight">
+        <h2 className="text-2xl sm:text-4xl font-display font-black text-[#0B0F19] uppercase tracking-tight">
           KNOW OUR <span className="text-[#EE3124]">FOUNDER</span>
         </h2>
-        <p className="text-sm font-mono text-gray-600 max-w-2xl mx-auto">
-          Mr. Rohit Khanna — 2+ Decades Indian Motorsport Veteran & Certified Porsche/Mercedes Lead Track Instructor.
+        <p className="text-xs sm:text-sm font-mono text-gray-600 max-w-2xl mx-auto">
+          2+ decades of competitive Indian motorsport excellence and championship podiums.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
         {achievements.map((item, idx) => {
           const IconComp = item.icon;
           return (
-            <motion.div key={idx} variants={fadeUp} custom={idx} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <AnimatedCard className="h-full flex flex-col justify-between space-y-4">
-                <div className="space-y-3">
+            <motion.div
+              key={idx}
+              variants={fadeUp}
+              custom={idx}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <AnimatedCard className="h-full flex flex-col justify-between space-y-3 p-5 rounded-2xl">
+                <div className="space-y-2.5">
                   <div className="flex items-center justify-between">
-                    <div className="p-2.5 rounded-xl bg-[#EE3124]/10 text-[#EE3124] border border-[#EE3124]/20">
-                      <IconComp className="w-5 h-5" />
-                    </div>
-                    <span className="px-2.5 py-1 rounded bg-[#EE3124]/10 text-[#EE3124] font-mono text-[10px] font-bold uppercase tracking-widest">
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#EE3124]/10 text-[#EE3124] font-mono text-[9px] font-bold uppercase tracking-wider border border-[#EE3124]/20">
                       {item.tag}
+                    </span>
+                    <span className="font-mono text-xs text-gray-400 font-semibold">
+                      {item.year}
                     </span>
                   </div>
 
-                  <div className="space-y-1">
-                    <span className="font-mono text-[10px] text-gray-400 uppercase tracking-widest font-bold">{item.year}</span>
-                    <h3 className="text-lg font-display font-bold text-gray-950 uppercase group-hover:text-[#EE3124] transition-colors">
+                  <div className="flex items-center gap-2 pt-1">
+                    <IconComp className="w-4 h-4 text-[#EE3124]" />
+                    <h3 className="text-base font-display font-bold text-gray-950 uppercase group-hover:text-[#EE3124] transition-colors">
                       {item.title}
                     </h3>
                   </div>

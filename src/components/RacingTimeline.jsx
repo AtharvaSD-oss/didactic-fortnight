@@ -58,20 +58,20 @@ const steps = [
 
 const RacingTimeline = () => {
   return (
-    <section id="experience-timeline" className="py-32 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto border-t border-gray-200/80 relative z-20 text-gray-900 bg-white">
+    <section id="experience-timeline" className="py-14 sm:py-18 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto border-t border-gray-200/80 relative z-20 text-gray-900 bg-white">
       {/* Section Header */}
-      <div className="text-center space-y-3 mb-20">
+      <div className="text-center space-y-2 mb-8 sm:mb-10">
         <span className="font-mono text-xs text-[#EE3124] uppercase tracking-wider font-bold">// THE RACEDAY JOURNEY</span>
-        <h2 className="text-3xl sm:text-5xl font-display font-black text-[#0B0F19] uppercase tracking-tight">
+        <h2 className="text-2xl sm:text-4xl font-display font-black text-[#0B0F19] uppercase tracking-tight">
           YOUR <span className="text-[#EE3124]">RACING EXPERIENCE</span>
         </h2>
-        <p className="text-base sm:text-lg font-sans text-gray-600 max-w-2xl mx-auto">
+        <p className="text-xs sm:text-sm font-sans text-gray-600 max-w-2xl mx-auto">
           From paddock arrival to podium victory — here is what happens during your Kartomania track session.
         </p>
       </div>
 
       {/* Step Grid Layout */}
-      <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         {steps.map((item, idx) => {
           const IconComp = item.icon;
           return (
@@ -83,25 +83,25 @@ const RacingTimeline = () => {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <AnimatedCard className="h-full flex flex-col justify-between space-y-5 p-7">
-                <div className="space-y-4">
+              <AnimatedCard className="h-full flex flex-col justify-between space-y-3 p-5 rounded-2xl">
+                <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#EE3124] to-[#DC2626] flex items-center justify-center text-white font-mono font-bold text-sm shadow-md">
+                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#EE3124] to-[#DC2626] flex items-center justify-center text-white font-mono font-bold text-xs shadow-md">
                       {item.step}
                     </div>
-                    <span className="px-3 py-1 rounded-full bg-[#EE3124]/10 text-[#EE3124] font-mono text-[10px] font-bold uppercase tracking-wider border border-[#EE3124]/20">
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#EE3124]/10 text-[#EE3124] font-mono text-[9px] font-bold uppercase tracking-wider border border-[#EE3124]/20">
                       {item.tag}
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-2.5 pt-2">
-                    <IconComp className="w-5 h-5 text-[#EE3124]" />
-                    <h3 className="text-lg font-display font-bold text-[#0B0F19] uppercase group-hover:text-[#EE3124] transition-colors">
+                  <div className="flex items-center gap-2 pt-1">
+                    <IconComp className="w-4 h-4 text-[#EE3124]" />
+                    <h3 className="text-base font-display font-bold text-[#0B0F19] uppercase group-hover:text-[#EE3124] transition-colors">
                       {item.title}
                     </h3>
                   </div>
 
-                  <p className="text-sm font-sans text-gray-600 leading-relaxed">
+                  <p className="text-xs font-sans text-gray-600 leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
