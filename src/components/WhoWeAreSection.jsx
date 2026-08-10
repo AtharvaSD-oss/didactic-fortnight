@@ -35,11 +35,11 @@ const StatCounter = ({ end, suffix = '', label }) => {
   }, [isInView, end]);
 
   return (
-    <div ref={ref} className="p-6 rounded-2xl bg-[#0d0d18] border border-white/10 text-center space-y-1 shadow-[0_0_30px_rgba(0,0,0,0.5)] hover:border-[#FF4500]/50 transition-colors group">
-      <div className="text-3xl sm:text-4xl font-display font-black text-white group-hover:text-[#FF4500] transition-colors">
+    <div ref={ref} className="p-6 rounded-2xl bg-white border border-gray-200/80 text-center space-y-1 shadow-md hover:shadow-xl hover:border-[#EE3124]/40 transition-all group">
+      <div className="text-3xl sm:text-4xl font-display font-black text-gray-900 group-hover:text-[#EE3124] transition-colors">
         {count}{suffix}
       </div>
-      <div className="font-mono text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider font-semibold">
+      <div className="font-mono text-[10px] sm:text-xs text-gray-500 uppercase tracking-wider font-semibold">
         {label}
       </div>
     </div>
@@ -78,13 +78,13 @@ const WhoWeAreSection = () => {
     <section
       ref={sectionRef}
       id="who-we-are"
-      className="py-28 px-4 sm:px-8 max-w-7xl mx-auto border-t border-white/10 relative z-20"
+      className="py-28 px-4 sm:px-8 max-w-7xl mx-auto border-t border-gray-200/80 relative z-20 text-gray-900 bg-white"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
         
         {/* Left Side Image with Clip Mask & Scale 1.15 -> 1 */}
         <div className="lg:col-span-6 relative">
-          <div className="relative rounded-3xl overflow-hidden border border-[#FF4500]/40 shadow-[0_0_50px_rgba(255,69,0,0.2)] bg-[#08080c] group">
+          <div className="relative rounded-3xl overflow-hidden border border-gray-200 shadow-xl bg-gray-100 group">
             <img
               ref={imgRef}
               src="/gallery/gallery-1.jpg"
@@ -92,17 +92,17 @@ const WhoWeAreSection = () => {
               data-cursor="VIEW"
               className="w-full h-[400px] sm:h-[480px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-transparent to-transparent opacity-80" />
-            <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-between">
-              <span className="font-mono text-xs text-[#FF4500] font-bold uppercase tracking-widest">// ARENA TELEMETRY</span>
-              <span className="font-mono text-[10px] text-gray-300 uppercase">ENTERTAINLAND MALL ARENA</span>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
+            <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-gray-200 flex items-center justify-between shadow-lg">
+              <span className="font-mono text-xs text-[#EE3124] font-bold uppercase tracking-widest">// ARENA TELEMETRY</span>
+              <span className="font-mono text-[10px] text-gray-700 font-semibold uppercase">ENTERTAINLAND MALL ARENA</span>
             </div>
           </div>
         </div>
 
-        {/* Right Side Text - Character & Line Reveal */}
+        {/* Right Side Text */}
         <div ref={textRef} className="lg:col-span-6 space-y-6 text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF4500]/15 border border-[#FF4500]/40 text-[#FF4500] font-mono text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EE3124]/10 border border-[#EE3124]/30 text-[#EE3124] font-mono text-xs font-bold uppercase tracking-widest">
             <Trophy className="w-3.5 h-3.5" /> WHO WE ARE
           </div>
 
@@ -111,9 +111,9 @@ const WhoWeAreSection = () => {
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="text-3xl sm:text-5xl font-display font-black text-white uppercase tracking-tight leading-tight"
+            className="text-3xl sm:text-5xl font-display font-black text-gray-950 uppercase tracking-tight leading-tight"
           >
-            NORTHERN INDIA'S PREMIER <span className="text-[#FF4500] text-glow">PRO KARTING</span> ARENA
+            NORTHERN INDIA'S PREMIER <span className="text-[#EE3124]">PRO KARTING</span> ARENA
           </motion.h2>
 
           <motion.p
@@ -121,9 +121,9 @@ const WhoWeAreSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-gray-300 text-sm sm:text-base leading-relaxed font-sans font-normal"
+            className="text-gray-700 text-sm sm:text-base leading-relaxed font-sans font-normal"
           >
-            Founded by veteran motorsport driver <strong className="text-white">Mr. Rohit Khanna</strong> (with over 20+ years of active Indian & international racing experience), Kartomania offers an unparalleled high-speed indoor racing circuit designed with Formula 1 precision.
+            Founded by veteran motorsport driver <strong className="text-gray-950">Mr. Rohit Khanna</strong> (with over 20+ years of active Indian & international racing experience), Kartomania offers an unparalleled high-speed indoor racing circuit designed with Formula 1 precision.
           </motion.p>
 
           <motion.p
@@ -131,7 +131,7 @@ const WhoWeAreSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-gray-400 text-xs sm:text-sm leading-relaxed font-sans"
+            className="text-gray-600 text-xs sm:text-sm leading-relaxed font-sans"
           >
             From beginners taking their first apex to seasoned racers competing in national championships, our arena combines Sodi race karts, polymer asphalt multi-level tracks, and millisecond timing telemetry.
           </motion.p>

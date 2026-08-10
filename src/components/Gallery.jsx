@@ -48,13 +48,13 @@ const Gallery = () => {
   const [activePhoto, setActivePhoto] = useState(null);
 
   return (
-    <section id="gallery" className="py-28 px-4 max-w-7xl mx-auto border-t border-white/10 relative z-20">
+    <section id="gallery" className="py-28 px-4 max-w-7xl mx-auto border-t border-gray-200/80 relative z-20 bg-white text-gray-900">
       <div className="text-center space-y-3 mb-16">
-        <span className="font-mono text-xs text-[#FF4500] uppercase tracking-widest">// VISUAL SHOWCASE</span>
-        <h2 className="text-3xl sm:text-5xl font-display font-black text-white uppercase tracking-tight">
-          THE <span className="text-[#FF4500]">KARTOMANIA</span> EXPERIENCE
+        <span className="font-mono text-xs text-[#EE3124] uppercase tracking-widest font-bold">// VISUAL SHOWCASE</span>
+        <h2 className="text-3xl sm:text-5xl font-display font-black text-gray-950 uppercase tracking-tight">
+          THE <span className="text-[#EE3124]">KARTOMANIA</span> EXPERIENCE
         </h2>
-        <p className="text-sm font-mono text-gray-400 max-w-xl mx-auto">
+        <p className="text-sm font-mono text-gray-600 max-w-xl mx-auto">
           Explore real track footage from India's premier indoor go-karting arena.
         </p>
       </div>
@@ -67,28 +67,28 @@ const Gallery = () => {
             onClick={() => setActivePhoto(item)}
             data-cursor="VIEW"
             className={`
-              relative group rounded-3xl overflow-hidden cursor-pointer border border-white/10 hover:border-[#FF4500]/70
-              transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(255,69,0,0.3)]
-              ${item.span} ${item.height} bg-[#08080c]
+              relative group rounded-3xl overflow-hidden cursor-pointer border border-gray-200 hover:border-[#EE3124]/70
+              transition-all duration-500 shadow-md hover:shadow-xl
+              ${item.span} ${item.height} bg-gray-900
             `}
           >
             <img
               src={item.src}
               alt={item.title}
-              className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 opacity-85 group-hover:opacity-100"
+              className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 opacity-90 group-hover:opacity-100"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-[#07070a]/40 to-transparent opacity-90 group-hover:opacity-75 transition-opacity duration-500" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#07070a]/60 via-transparent to-[#07070a]/60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent opacity-90 group-hover:opacity-75 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60" />
 
             <div className="absolute bottom-6 left-6 right-6 z-20 space-y-2">
-              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#FF4500] text-white font-mono text-[10px] font-bold uppercase tracking-widest shadow-md">
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#EE3124] text-white font-mono text-[10px] font-bold uppercase tracking-widest shadow-md">
                 {item.tag}
               </div>
-              <h3 className="text-xl font-display font-bold text-white uppercase group-hover:text-[#FF4500] transition-colors">
+              <h3 className="text-xl font-display font-bold text-white uppercase group-hover:text-[#FFD700] transition-colors">
                 {item.title}
               </h3>
-              <p className="text-xs font-mono text-gray-300 line-clamp-2">
+              <p className="text-xs font-mono text-gray-200 line-clamp-2">
                 {item.desc}
               </p>
             </div>
@@ -110,11 +110,11 @@ const Gallery = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative max-w-4xl w-full bg-[#0c0c14] border border-[#FF4500]/60 rounded-3xl overflow-hidden shadow-[0_0_80px_rgba(255,69,0,0.4)]"
+              className="relative max-w-4xl w-full bg-white border border-gray-300 rounded-3xl overflow-hidden shadow-2xl"
             >
               <button
                 onClick={() => setActivePhoto(null)}
-                className="absolute top-4 right-4 z-30 p-3 rounded-full bg-black/60 text-white hover:text-[#FF4500] border border-white/20 transition-colors"
+                className="absolute top-4 right-4 z-30 p-3 rounded-full bg-black/70 text-white hover:text-[#EE3124] border border-white/20 transition-colors"
               >
                 ✕
               </button>
@@ -123,12 +123,12 @@ const Gallery = () => {
                 alt={activePhoto.title}
                 className="w-full max-h-[70vh] object-cover"
               />
-              <div className="p-6 bg-[#08080f] space-y-2">
-                <span className="font-mono text-[10px] text-[#FF4500] uppercase font-bold tracking-widest">
+              <div className="p-6 bg-white space-y-2 text-gray-900">
+                <span className="font-mono text-[10px] text-[#EE3124] uppercase font-bold tracking-widest">
                   {activePhoto.tag}
                 </span>
-                <h4 className="text-2xl font-display font-bold text-white uppercase">{activePhoto.title}</h4>
-                <p className="text-xs font-mono text-gray-400">{activePhoto.desc}</p>
+                <h4 className="text-2xl font-display font-bold text-gray-950 uppercase">{activePhoto.title}</h4>
+                <p className="text-xs font-mono text-gray-600">{activePhoto.desc}</p>
               </div>
             </motion.div>
           </motion.div>

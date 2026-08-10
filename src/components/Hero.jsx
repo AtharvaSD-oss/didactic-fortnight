@@ -24,15 +24,15 @@ const Hero = ({ onNavigate }) => {
       });
 
       tl.to(heroBgRef.current, {
-        scale: 0.96,
+        scale: 0.97,
         borderRadius: '24px',
-        opacity: 0.65,
+        opacity: 0.85,
         ease: 'power1.out'
       }, 0);
 
       tl.to(heroContentRef.current, {
-        y: -50,
-        opacity: 0.25,
+        y: -40,
+        opacity: 0.4,
         ease: 'power1.out'
       }, 0);
     }, heroRef);
@@ -44,12 +44,12 @@ const Hero = ({ onNavigate }) => {
     <section
       ref={heroRef}
       id="home"
-      className="relative w-full h-screen min-h-screen flex flex-col justify-between pt-24 pb-8 px-4 sm:px-8 overflow-hidden bg-[#07070a] z-10"
+      className="relative w-full min-h-screen flex flex-col justify-between pt-28 pb-12 px-4 sm:px-8 overflow-hidden bg-white text-gray-900 z-10"
     >
-      {/* 1. Cinematic Background Video / Image */}
+      {/* 1. Cinematic Background Video with Clean Light Gradients */}
       <div
         ref={heroBgRef}
-        className="absolute inset-0 z-0 overflow-hidden rounded-none transition-all duration-300"
+        className="absolute inset-0 z-0 overflow-hidden transition-all duration-300"
       >
         <video
           autoPlay
@@ -57,39 +57,40 @@ const Hero = ({ onNavigate }) => {
           muted
           playsInline
           poster="/hero-bg.jpg"
-          className="w-full h-full object-cover object-center filter brightness-[0.55] contrast-115"
+          className="w-full h-full object-cover object-center filter brightness-[0.9] contrast-105"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
           <source src="/vidssave-go-karting.mp4" type="video/mp4" />
           <source src="/The Art of Go Karting.mp4" type="video/mp4" />
           <motion.img
-            initial={{ opacity: 0, scale: 1.06 }}
+            initial={{ opacity: 0, scale: 1.04 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             src="/hero-bg.jpg"
             alt="Kartomania Indoor Racing Circuit"
-            className="w-full h-full object-cover object-center filter brightness-[0.55] contrast-115"
+            className="w-full h-full object-cover object-center filter brightness-[0.9] contrast-105"
           />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-[#07070a]/40 to-[#07070a]/75" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07070a]/85 via-[#07070a]/40 to-transparent" />
-        <div className="absolute inset-0 bg-carbon opacity-20 pointer-events-none" />
+        {/* Soft light glass vignettes for crisp typography contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-transparent" />
+        <div className="absolute inset-0 bg-carbon opacity-15 pointer-events-none" />
       </div>
 
       {/* 2. Editorial Content Layout */}
       <div
         ref={heroContentRef}
-        className="relative z-10 max-w-7xl w-full mx-auto flex flex-col justify-center items-start my-auto pt-4 space-y-6 text-left"
+        className="relative z-10 max-w-7xl w-full mx-auto flex flex-col justify-center items-start my-auto pt-6 space-y-6 text-left"
       >
         {/* Track Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-black/60 border border-[#FFD700]/30 backdrop-blur-md"
+          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/90 border border-gray-300/80 shadow-sm backdrop-blur-md"
         >
-          <Flag className="w-3.5 h-3.5 text-[#FFD700]" />
-          <span className="font-mono text-xs text-white uppercase tracking-widest font-semibold">
+          <Flag className="w-3.5 h-3.5 text-[#EE3124]" />
+          <span className="font-mono text-xs text-gray-800 uppercase tracking-widest font-bold">
             ENTERTAINLAND MALL &bull; SECTOR 83 &bull; MANESAR
           </span>
         </motion.div>
@@ -101,16 +102,16 @@ const Hero = ({ onNavigate }) => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="space-y-1 max-w-4xl"
         >
-          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-display font-black tracking-tight text-white uppercase leading-[0.92] drop-shadow-2xl">
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-display font-black tracking-tight text-gray-950 uppercase leading-[0.92] drop-shadow-sm">
             KARTOMANIA
           </h1>
           <h2 className="text-5xl sm:text-7xl lg:text-8xl font-display font-black tracking-tight uppercase leading-[0.92]">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#EE3124] to-[#0066CC]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE3124] via-[#D32F2F] to-[#0066CC]">
               SPEED THAT
             </span>
           </h2>
           <h2 className="text-5xl sm:text-7xl lg:text-8xl font-display font-black tracking-tight uppercase leading-[0.92]">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE3124] to-[#FFD700] text-glow-yellow">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE3124] to-[#FFC220]">
               THRILLS
             </span>
           </h2>
@@ -123,10 +124,10 @@ const Hero = ({ onNavigate }) => {
           transition={{ duration: 0.4, delay: 0.35 }}
           className="space-y-3 max-w-2xl"
         >
-          <h3 className="text-lg sm:text-xl font-display font-bold text-white tracking-wide">
+          <h3 className="text-lg sm:text-xl font-display font-bold text-gray-900 tracking-wide">
             Northern India's First Indoor Go-Karting Track
           </h3>
-          <p className="text-sm font-sans text-gray-300 font-normal leading-relaxed text-left">
+          <p className="text-sm font-sans text-gray-700 font-normal leading-relaxed text-left">
             Experience the ultimate adrenaline rush on one of India's most exciting indoor racing circuits. Whether you're a beginner or a professional racer, Kartomania offers an unforgettable high-speed karting experience with world-class facilities.
           </p>
         </motion.div>
@@ -146,15 +147,15 @@ const Hero = ({ onNavigate }) => {
             href="https://maps.app.goo.gl/7c5CMX5a4vaaXFLN9"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-black/60 hover:bg-black/80 border border-white/20 hover:border-[#FFD700] text-xs font-mono tracking-widest uppercase text-white font-bold transition-all backdrop-blur-md cursor-pointer group"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white hover:bg-gray-50 border border-gray-300 hover:border-[#EE3124] text-xs font-mono tracking-widest uppercase text-gray-900 font-bold transition-all shadow-md hover:shadow-lg cursor-pointer group"
           >
-            <MapPin className="w-4 h-4 text-[#FFD700] group-hover:scale-110 transition-transform" />
+            <MapPin className="w-4 h-4 text-[#EE3124] group-hover:scale-110 transition-transform" />
             <span>GET DIRECTIONS ON GOOGLE MAPS</span>
           </a>
 
           <button
             onClick={() => onNavigate('pricing')}
-            className="px-8 py-4 rounded-full bg-black/60 hover:bg-black/80 border border-white/20 hover:border-[#EE3124] text-xs font-mono tracking-widest uppercase text-white font-bold transition-all backdrop-blur-md cursor-pointer"
+            className="px-8 py-4 rounded-full bg-white hover:bg-gray-50 border border-gray-300 hover:border-[#EE3124] text-xs font-mono tracking-widest uppercase text-gray-900 font-bold transition-all shadow-md hover:shadow-lg cursor-pointer"
           >
             VIEW PRICING
           </button>
@@ -162,13 +163,13 @@ const Hero = ({ onNavigate }) => {
       </div>
 
       {/* 3. Human Scroll Indicator */}
-      <div className="relative z-10 max-w-7xl w-full mx-auto flex flex-col items-center justify-center pt-2">
-        <span className="font-mono text-[10px] text-gray-500 uppercase tracking-widest mb-1">SCROLL</span>
+      <div className="relative z-10 max-w-7xl w-full mx-auto flex flex-col items-center justify-center pt-6">
+        <span className="font-mono text-[10px] text-gray-500 uppercase tracking-widest mb-1 font-semibold">SCROLL</span>
         <motion.button
-          onClick={() => onNavigate('/about')}
+          onClick={() => onNavigate('who-we-are')}
           animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 1.2, ease: 'easeInOut' }}
-          className="p-2 rounded-full border border-white/20 text-[#FF4500] hover:border-[#FF4500] transition-colors cursor-pointer"
+          className="p-2.5 rounded-full bg-white border border-gray-300 text-[#EE3124] hover:border-[#EE3124] shadow-sm transition-colors cursor-pointer"
         >
           <ChevronDown className="w-4 h-4" />
         </motion.button>

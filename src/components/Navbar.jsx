@@ -63,7 +63,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
       <header
         ref={navRef}
         className={`
-          fixed top-0 left-0 right-0 z-40 h-[80px] transition-colors duration-500 flex items-center
+          fixed top-0 left-0 right-0 z-40 h-[80px] transition-all duration-500 flex items-center
           ${isScrolled ? 'glass-nav-scrolled' : 'glass-nav-top'}
         `}
       >
@@ -79,7 +79,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
             <img 
               src="/logo.png" 
               alt="Kartomania Logo" 
-              className="h-11 sm:h-12 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(255,215,0,0.4)] group-hover:scale-105 transition-transform duration-300" 
+              className="h-11 sm:h-12 w-auto object-contain filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.15)] group-hover:scale-105 transition-transform duration-300" 
             />
           </button>
 
@@ -97,21 +97,21 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
                   onMouseLeave={() => setHoveredIndex(null)}
                   className={`
                     relative px-3 py-2 text-xs font-mono font-bold tracking-widest uppercase transition-colors duration-300 cursor-pointer bg-transparent border-none
-                    ${isActive ? 'text-[#FFD700] text-glow-yellow' : 'text-gray-300 hover:text-white'}
+                    ${isActive ? 'text-[#EE3124]' : 'text-gray-700 hover:text-black'}
                   `}
                 >
                   <span>{link.name}</span>
 
                   {/* Active glowing indicator dot */}
                   {isActive && (
-                    <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#FFD700] shadow-[0_0_8px_#FFD700]" />
+                    <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#EE3124] shadow-[0_0_8px_#EE3124]" />
                   )}
 
                   {/* Animated glowing streak underline on hover or active */}
                   <span
                     className={`
-                      absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#FFD700] via-[#EE3124] to-[#0066CC]
-                      rounded-full transition-all duration-300 shadow-[0_0_10px_#FFD700]
+                      absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#EE3124] to-[#FFD700]
+                      rounded-full transition-all duration-300 shadow-[0_0_10px_rgba(238,49,36,0.4)]
                       ${isActive ? 'w-full opacity-100' : isHovered ? 'w-full opacity-80' : 'w-0 opacity-0'}
                     `}
                   />
@@ -123,11 +123,11 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
           {/* 3. RIGHT: Quick Icons & Magnetic CTA */}
           <div className="flex items-center gap-3 sm:gap-4">
             {/* Utility Icons */}
-            <div className="hidden sm:flex items-center gap-2 pr-2 border-r border-white/10">
+            <div className="hidden sm:flex items-center gap-2 pr-2 border-r border-gray-200">
               <button
                 onClick={onOpenSearch}
                 aria-label="Search telemetry"
-                className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#FFD700] hover:bg-[#FFD700]/10 text-gray-300 hover:text-[#FFD700] transition-all hover:scale-105 cursor-pointer"
+                className="p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105 cursor-pointer"
               >
                 <Search className="w-4 h-4" />
               </button>
@@ -135,7 +135,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
               <a
                 href="tel:+919717548897"
                 aria-label="Call Hotline"
-                className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#EE3124] hover:bg-[#EE3124]/10 text-gray-300 hover:text-[#EE3124] transition-all hover:scale-105"
+                className="p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105"
               >
                 <Phone className="w-4 h-4" />
               </a>
@@ -152,7 +152,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
             <button
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open mobile navigation"
-              className="lg:hidden p-3 rounded-full bg-white/5 border border-[#EE3124]/40 hover:border-[#EE3124] text-white hover:bg-[#EE3124]/20 transition-all active:scale-95 cursor-pointer"
+              className="lg:hidden p-3 rounded-full bg-gray-100 border border-gray-200 hover:border-[#EE3124] text-gray-800 hover:text-[#EE3124] transition-all active:scale-95 cursor-pointer"
             >
               <Menu className="w-5 h-5 text-[#EE3124]" />
             </button>
@@ -166,7 +166,6 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
         onClose={() => setMobileMenuOpen(false)}
         activeSection={activeSection}
         onNavigate={onNavigate}
-        onOpenSearch={onOpenSearch}
         onOpenBooking={onOpenBooking}
       />
     </>

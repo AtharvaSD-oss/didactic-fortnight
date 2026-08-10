@@ -58,19 +58,19 @@ const steps = [
 
 const RacingTimeline = () => {
   return (
-    <section id="experience-timeline" className="py-28 px-4 max-w-7xl mx-auto border-t border-white/10 relative z-20">
+    <section id="experience-timeline" className="py-28 px-4 max-w-7xl mx-auto border-t border-gray-200/80 relative z-20 text-gray-900 bg-white">
       {/* Section Header */}
       <div className="text-center space-y-3 mb-16">
-        <span className="font-mono text-xs text-[#FFD700] uppercase tracking-widest">// THE RACEDAY JOURNEY</span>
-        <h2 className="text-3xl sm:text-5xl font-display font-black text-white uppercase tracking-tight">
+        <span className="font-mono text-xs text-[#EE3124] uppercase tracking-widest font-bold">// THE RACEDAY JOURNEY</span>
+        <h2 className="text-3xl sm:text-5xl font-display font-black text-gray-950 uppercase tracking-tight">
           YOUR <span className="text-[#EE3124]">RACING EXPERIENCE</span>
         </h2>
-        <p className="text-sm font-mono text-gray-400 max-w-xl mx-auto">
+        <p className="text-sm font-mono text-gray-600 max-w-xl mx-auto">
           From paddock arrival to podium victory — here is what happens during your Kartomania track session.
         </p>
       </div>
 
-      {/* Step Grid Layout with Animated Connecting Streaks */}
+      {/* Step Grid Layout with Animated Connecting Cards */}
       <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {steps.map((item, idx) => {
           const IconComp = item.icon;
@@ -86,22 +86,22 @@ const RacingTimeline = () => {
               <AnimatedCard className="h-full flex flex-col justify-between space-y-4">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#EE3124] to-[#D32F2F] flex items-center justify-center text-white font-mono font-bold text-sm shadow-[0_0_20px_rgba(238,49,36,0.5)]">
+                    <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#EE3124] to-[#D32F2F] flex items-center justify-center text-white font-mono font-bold text-sm shadow-md">
                       {item.step}
                     </div>
-                    <span className="px-2.5 py-1 rounded bg-[#FFD700]/15 text-[#FFD700] font-mono text-[10px] font-bold uppercase tracking-widest border border-[#FFD700]/30">
+                    <span className="px-2.5 py-1 rounded bg-[#EE3124]/10 text-[#EE3124] font-mono text-[10px] font-bold uppercase tracking-widest border border-[#EE3124]/20">
                       {item.tag}
                     </span>
                   </div>
 
                   <div className="flex items-center gap-2 pt-2">
-                    <IconComp className="w-5 h-5 text-[#FFD700]" />
-                    <h3 className="text-lg font-display font-bold text-white uppercase group-hover:text-[#FFD700] transition-colors">
+                    <IconComp className="w-5 h-5 text-[#EE3124]" />
+                    <h3 className="text-lg font-display font-bold text-gray-950 uppercase group-hover:text-[#EE3124] transition-colors">
                       {item.title}
                     </h3>
                   </div>
 
-                  <p className="text-xs font-mono text-gray-300 leading-relaxed">
+                  <p className="text-xs font-sans text-gray-600 leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

@@ -51,13 +51,13 @@ const achievements = [
 
 const Timeline = () => {
   return (
-    <section id="founder" className="py-28 px-4 max-w-7xl mx-auto border-t border-white/10 relative z-20">
+    <section id="founder" className="py-28 px-4 max-w-7xl mx-auto border-t border-gray-200/80 relative z-20 bg-white text-gray-900">
       <div className="text-center space-y-3 mb-16">
-        <span className="font-mono text-xs text-[#FF4500] uppercase tracking-widest">// MOTORSPORT HERITAGE</span>
-        <h2 className="text-3xl sm:text-5xl font-display font-black text-white uppercase tracking-tight">
-          KNOW OUR <span className="text-[#FF4500]">FOUNDER</span>
+        <span className="font-mono text-xs text-[#EE3124] uppercase tracking-widest font-bold">// MOTORSPORT HERITAGE</span>
+        <h2 className="text-3xl sm:text-5xl font-display font-black text-gray-950 uppercase tracking-tight">
+          KNOW OUR <span className="text-[#EE3124]">FOUNDER</span>
         </h2>
-        <p className="text-sm font-mono text-gray-400 max-w-2xl mx-auto">
+        <p className="text-sm font-mono text-gray-600 max-w-2xl mx-auto">
           Mr. Rohit Khanna — 2+ Decades Indian Motorsport Veteran & Certified Porsche/Mercedes Lead Track Instructor.
         </p>
       </div>
@@ -70,22 +70,22 @@ const Timeline = () => {
               <AnimatedCard className="h-full flex flex-col justify-between space-y-4">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <div className="p-2.5 rounded-xl bg-[#FF4500]/15 text-[#FF4500] border border-[#FF4500]/30">
+                    <div className="p-2.5 rounded-xl bg-[#EE3124]/10 text-[#EE3124] border border-[#EE3124]/20">
                       <IconComp className="w-5 h-5" />
                     </div>
-                    <span className="px-2.5 py-1 rounded bg-[#FF4500]/20 text-[#FF4500] font-mono text-[10px] font-bold uppercase tracking-widest">
+                    <span className="px-2.5 py-1 rounded bg-[#EE3124]/10 text-[#EE3124] font-mono text-[10px] font-bold uppercase tracking-widest">
                       {item.tag}
                     </span>
                   </div>
 
                   <div className="space-y-1">
-                    <span className="font-mono text-[10px] text-gray-500 uppercase tracking-widest">{item.year}</span>
-                    <h3 className="text-lg font-display font-bold text-white uppercase group-hover:text-[#FF4500] transition-colors">
+                    <span className="font-mono text-[10px] text-gray-400 uppercase tracking-widest font-bold">{item.year}</span>
+                    <h3 className="text-lg font-display font-bold text-gray-950 uppercase group-hover:text-[#EE3124] transition-colors">
                       {item.title}
                     </h3>
                   </div>
 
-                  <p className="text-xs font-mono text-gray-300 leading-relaxed">
+                  <p className="text-xs font-sans text-gray-600 leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

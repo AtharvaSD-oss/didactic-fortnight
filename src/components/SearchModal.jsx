@@ -22,27 +22,27 @@ const SearchModal = ({ isOpen, onClose, onNavigate }) => {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 p-4 bg-black/85 backdrop-blur-xl">
+      <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 p-4 bg-black/50 backdrop-blur-md">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: -20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: -20 }}
-          className="relative w-full max-w-xl bg-[#0c0c14] border border-[#FF4500]/50 rounded-2xl p-6 shadow-[0_0_60px_rgba(255,69,0,0.3)] text-white"
+          className="relative w-full max-w-xl bg-white border border-gray-200 rounded-2xl p-6 shadow-2xl text-gray-900"
         >
           {/* Top Search Input Bar */}
-          <div className="flex items-center gap-3 border-b border-white/10 pb-4">
-            <Search className="w-5 h-5 text-[#FF4500]" />
+          <div className="flex items-center gap-3 border-b border-gray-200 pb-4">
+            <Search className="w-5 h-5 text-[#EE3124]" />
             <input
               type="text"
               autoFocus
               placeholder="Search Kartomania telemetry, rates, track specs..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="w-full bg-transparent text-sm font-mono text-white placeholder-gray-500 focus:outline-none"
+              className="w-full bg-transparent text-sm font-mono text-gray-900 placeholder-gray-400 focus:outline-none"
             />
             <button
               onClick={onClose}
-              className="p-1.5 rounded-full bg-white/5 text-gray-400 hover:text-white transition-colors"
+              className="p-1.5 rounded-full bg-gray-100 text-gray-600 hover:text-black transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -50,7 +50,7 @@ const SearchModal = ({ isOpen, onClose, onNavigate }) => {
 
           {/* Search Suggestions */}
           <div className="py-4 space-y-2 max-h-80 overflow-y-auto">
-            <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-2">
+            <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-2 font-bold">
               QUICK TELEMETRY LINKS
             </span>
 
@@ -63,15 +63,15 @@ const SearchModal = ({ isOpen, onClose, onNavigate }) => {
                     onNavigate(item.path);
                     onClose();
                   }}
-                  className="w-full text-left flex items-center justify-between p-3 rounded-xl bg-white/[0.03] hover:bg-[#FF4500]/20 border border-white/5 hover:border-[#FF4500]/40 transition-colors group cursor-pointer"
+                  className="w-full text-left flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-[#EE3124]/10 border border-gray-200 hover:border-[#EE3124]/40 transition-colors group cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
-                    <IconComp className="w-4 h-4 text-[#FF4500]" />
-                    <span className="text-xs font-mono text-gray-200 group-hover:text-white">
+                    <IconComp className="w-4 h-4 text-[#EE3124]" />
+                    <span className="text-xs font-mono text-gray-800 group-hover:text-black font-semibold">
                       {item.title}
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono text-[#FF4500]">GO &rarr;</span>
+                  <span className="text-[10px] font-mono text-[#EE3124] font-bold">GO &rarr;</span>
                 </button>
               );
             })}
