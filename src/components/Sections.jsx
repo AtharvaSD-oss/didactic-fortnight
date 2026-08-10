@@ -379,111 +379,146 @@ export const WhatsNewSection = () => {
 };
 
 export const PricingSection = () => {
-  const weekdayData = [
-    { sessions: 1, price: '₹550' },
-    { sessions: 5, price: '₹2750' },
-    { sessions: 10, price: '₹5200' },
-    { sessions: 15, price: '₹7500' },
-    { sessions: 20, price: '₹9570' },
+  const weekdayCombos = [
+    { package: '5 Sessions + 1 Bowling FREE', bonus: '1 Bowling FREE', price: '₹3,250' },
+    { package: '10 Sessions + 1 Session + 1 Bowling FREE', bonus: '+1 Session & 1 Bowling FREE', price: '₹6,500' },
+    { package: '15 Sessions + 2 Sessions + 2 Bowling FREE', bonus: '+2 Sessions & 2 Bowling FREE', price: '₹9,750' },
+    { package: '20 Sessions + 3 Sessions + 3 Bowling FREE', bonus: '+3 Sessions & 3 Bowling FREE', price: '₹13,000' },
   ];
 
-  const weekendData = [
-    { sessions: 1, price: '₹650' },
-    { sessions: 5, price: '₹3250' },
-    { sessions: 10, price: '₹6175' },
-    { sessions: 15, price: '₹8850' },
-    { sessions: 20, price: '₹11,400' },
+  const weekendCombos = [
+    { package: '5 Sessions + 1 Bowling FREE', bonus: '1 Bowling FREE', price: '₹3,800' },
+    { package: '10 Sessions + 1 Session + 1 Bowling FREE', bonus: '+1 Session & 1 Bowling FREE', price: '₹7,600' },
+    { package: '15 Sessions + 2 Sessions + 2 Bowling FREE', bonus: '+2 Sessions & 2 Bowling FREE', price: '₹11,400' },
+    { package: '20 Sessions + 3 Sessions + 3 Bowling FREE', bonus: '+3 Sessions & 3 Bowling FREE', price: '₹15,200' },
+  ];
+
+  const standardRates = [
+    { sessions: '1 Session (6 Min)', weekday: '₹550', weekend: '₹650' },
+    { sessions: '5 Sessions', weekday: '₹2,750', weekend: '₹3,250' },
+    { sessions: '10 Sessions', weekday: '₹5,200', weekend: '₹6,175' },
+    { sessions: '15 Sessions', weekday: '₹7,500', weekend: '₹8,850' },
+    { sessions: '20 Sessions', weekday: '₹9,570', weekend: '₹11,400' },
   ];
 
   return (
     <section id="pricing" className="py-24 px-4 max-w-7xl mx-auto border-t border-gray-200/80 bg-white text-gray-900">
-      <div className="text-center space-y-3 mb-12">
-        <span className="font-mono text-xs text-[#EE3124] uppercase tracking-widest font-bold">// RACE PACKAGES & RATES</span>
-        <h2 className="text-3xl sm:text-5xl font-display font-bold text-gray-950 uppercase tracking-tight">PRICING</h2>
-        <p className="text-sm font-mono text-gray-600">Come back regularly to check out the current deals!</p>
+      <div className="text-center space-y-3 mb-14">
+        <span className="font-mono text-xs text-[#EE3124] uppercase tracking-widest font-bold">// RACE PACKAGES & COMBO DEALS</span>
+        <h2 className="text-3xl sm:text-5xl font-display font-bold text-gray-950 uppercase tracking-tight">
+          OFFICIAL <span className="text-[#EE3124]">PRICING & COMBOS</span>
+        </h2>
+        <p className="text-sm font-mono text-gray-600 max-w-2xl mx-auto">
+          Exclusive karting multi-session packages featuring complimentary free bowling and bonus race sessions!
+        </p>
       </div>
 
+      {/* 1. Official Value Combo Packages (From Counter Tariff) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        {/* Weekdays Table Card */}
-        <div className="bg-white border border-gray-200 hover:border-[#EE3124]/40 rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-xl transition-all">
+        {/* Weekday Combos */}
+        <div className="bg-white border-2 border-gray-200 hover:border-[#EE3124]/40 rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all relative overflow-hidden">
           <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-200">
-            <h3 className="text-2xl font-display font-bold text-gray-950 uppercase tracking-wider">WEEKDAYS</h3>
-            <span className="px-3 py-1 rounded-full bg-[#EE3124]/10 text-[#EE3124] font-mono text-xs font-bold uppercase">
+            <div>
+              <span className="text-[10px] font-mono font-bold text-[#EE3124] uppercase tracking-widest block">SUPER VALUE DEALS</span>
+              <h3 className="text-2xl font-display font-bold text-gray-950 uppercase tracking-wider">WEEKDAY COMBOS</h3>
+            </div>
+            <span className="px-3.5 py-1.5 rounded-full bg-[#EE3124]/10 text-[#EE3124] font-mono text-xs font-bold uppercase">
               MON – THU
             </span>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left font-mono text-sm">
-              <thead className="bg-gray-100 text-[#EE3124] uppercase text-xs">
-                <tr>
-                  <th className="py-3 px-4 rounded-l-lg">SESSIONS</th>
-                  <th className="py-3 px-4 rounded-r-lg text-right">PRICE</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100 text-gray-800">
-                {weekdayData.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-gray-50 transition-colors">
-                    <td className="py-3.5 px-4 font-bold text-gray-900">
-                      {row.sessions} {row.sessions === 1 ? 'Session' : 'Sessions'}
-                    </td>
-                    <td className="py-3.5 px-4 text-right font-display font-bold text-[#EE3124] text-base">
-                      {row.price}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="space-y-4">
+            {weekdayCombos.map((item, idx) => (
+              <div key={idx} className="p-4 rounded-2xl bg-gray-50 border border-gray-200/80 hover:border-[#EE3124]/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 transition-colors">
+                <div className="space-y-1">
+                  <div className="text-sm font-display font-bold text-gray-900 uppercase">{item.package}</div>
+                  <span className="inline-block px-2 py-0.5 rounded bg-[#FFD700]/20 text-amber-800 font-mono text-[10px] font-bold uppercase tracking-wider">
+                    🎁 {item.bonus}
+                  </span>
+                </div>
+                <div className="text-right">
+                  <div className="text-xl font-display font-black text-[#EE3124]">{item.price}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Weekend Table Card */}
-        <div className="bg-white border-2 border-[#EE3124]/60 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all relative">
-          <span className="absolute -top-3 right-6 px-3 py-1 rounded-full bg-gradient-to-r from-[#EE3124] to-[#D32F2F] text-[10px] font-mono font-bold text-white uppercase tracking-widest shadow-md">
-            PEAK RACING
+        {/* Weekend Combos */}
+        <div className="bg-white border-2 border-[#EE3124]/50 rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden">
+          <span className="absolute -top-3 right-6 px-3.5 py-1 rounded-full bg-gradient-to-r from-[#EE3124] to-[#D32F2F] text-[10px] font-mono font-bold text-white uppercase tracking-widest shadow-md">
+            POPULAR COMBOS
           </span>
 
           <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-200">
-            <h3 className="text-2xl font-display font-bold text-gray-950 uppercase tracking-wider">WEEKEND</h3>
-            <span className="px-3 py-1 rounded-full bg-[#EE3124]/15 text-[#EE3124] font-mono text-xs font-bold uppercase">
+            <div>
+              <span className="text-[10px] font-mono font-bold text-[#EE3124] uppercase tracking-widest block">PEAK RACING & ENTERTAINMENT</span>
+              <h3 className="text-2xl font-display font-bold text-gray-950 uppercase tracking-wider">WEEKEND COMBOS</h3>
+            </div>
+            <span className="px-3.5 py-1.5 rounded-full bg-[#EE3124]/15 text-[#EE3124] font-mono text-xs font-bold uppercase">
               FRI – SUN & HOLIDAYS
             </span>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left font-mono text-sm">
-              <thead className="bg-gray-100 text-[#EE3124] uppercase text-xs">
-                <tr>
-                  <th className="py-3 px-4 rounded-l-lg">SESSIONS</th>
-                  <th className="py-3 px-4 rounded-r-lg text-right">PRICE</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100 text-gray-800">
-                {weekendData.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-gray-50 transition-colors">
-                    <td className="py-3.5 px-4 font-bold text-gray-900">
-                      {row.sessions} {row.sessions === 1 ? 'Session' : 'Sessions'}
-                    </td>
-                    <td className="py-3.5 px-4 text-right font-display font-bold text-[#EE3124] text-base">
-                      {row.price}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="space-y-4">
+            {weekendCombos.map((item, idx) => (
+              <div key={idx} className="p-4 rounded-2xl bg-gray-50 border border-gray-200/80 hover:border-[#EE3124]/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 transition-colors">
+                <div className="space-y-1">
+                  <div className="text-sm font-display font-bold text-gray-900 uppercase">{item.package}</div>
+                  <span className="inline-block px-2 py-0.5 rounded bg-[#EE3124]/10 text-[#EE3124] font-mono text-[10px] font-bold uppercase tracking-wider">
+                    🔥 {item.bonus}
+                  </span>
+                </div>
+                <div className="text-right">
+                  <div className="text-xl font-display font-black text-[#EE3124]">{item.price}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
+      {/* 2. Standard Session Tariff Table */}
+      <div className="bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 shadow-md mb-10">
+        <div className="pb-4 mb-4 border-b border-gray-200">
+          <h3 className="text-xl font-display font-bold text-gray-950 uppercase tracking-wider">
+            STANDARD KARTING SESSIONS TARIFF
+          </h3>
+          <p className="text-xs font-mono text-gray-500">Pure track time rates without bowling additions.</p>
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-left font-mono text-sm">
+            <thead className="bg-gray-100 text-[#EE3124] uppercase text-xs">
+              <tr>
+                <th className="py-3.5 px-4 rounded-l-xl">SESSIONS</th>
+                <th className="py-3.5 px-4 text-center">WEEKDAY (MON – THU)</th>
+                <th className="py-3.5 px-4 text-right rounded-r-xl">WEEKEND (FRI – SUN & HOLIDAYS)</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100 text-gray-800">
+              {standardRates.map((row, idx) => (
+                <tr key={idx} className="hover:bg-gray-50 transition-colors">
+                  <td className="py-3.5 px-4 font-bold text-gray-900">{row.sessions}</td>
+                  <td className="py-3.5 px-4 text-center font-display font-bold text-gray-900">{row.weekday}</td>
+                  <td className="py-3.5 px-4 text-right font-display font-bold text-[#EE3124] text-base">{row.weekend}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       {/* Terms and Conditions Card */}
-      <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 sm:p-8 space-y-4">
+      <div className="bg-gray-50 border border-gray-200 rounded-3xl p-6 sm:p-8 space-y-4">
         <h4 className="font-display font-bold text-sm text-gray-950 uppercase tracking-wider text-[#EE3124]">
           TERMS AND CONDITIONS
         </h4>
         <ul className="space-y-2 text-xs font-mono text-gray-700 list-disc list-inside">
-          <li>Each session lasts 6 minutes</li>
-          <li>All prices are exclusive of 18% GST</li>
-          <li>All sessions must be consumed on the day they are bought</li>
+          <li>Each karting session lasts 6 minutes on the track.</li>
+          <li>All prices are exclusive of 18% GST.</li>
+          <li>All sessions and free bowling coupons must be consumed on the day they are bought.</li>
+          <li>Packages are non-transferable and non-refundable.</li>
         </ul>
 
         <div className="pt-4 flex justify-center">
