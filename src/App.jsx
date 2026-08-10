@@ -16,6 +16,7 @@ import Loader from './components/Loader';
 import ScrollProgress from './components/ScrollProgress';
 import BookingModal from './components/BookingModal';
 import SearchModal from './components/SearchModal';
+import WhatsAppButton from './components/WhatsAppButton';
 
 import { 
   LeapFrogSection,
@@ -159,6 +160,9 @@ export function App() {
         isOpen={bookingOpen}
         onClose={() => setBookingOpen(false)}
       />
+
+      {/* Floating Action WhatsApp Button (Bottom Right) */}
+      <WhatsAppButton />
     </div>
   );
 }
