@@ -27,7 +27,7 @@ const MagneticButton = ({
       gsap.to(btn, {
         x: x * strength,
         y: y * strength,
-        rotate: x * 0.05,
+        rotate: x * 0.04,
         duration: 0.3,
         ease: 'power2.out'
       });
@@ -71,20 +71,20 @@ const MagneticButton = ({
   }, [strength]);
 
   const baseClasses = `
-    relative inline-flex items-center justify-center group overflow-hidden rounded-full font-display font-semibold tracking-wider text-xs uppercase
-    px-6 py-3 transition-all duration-300 transform active:scale-95 cursor-pointer text-decoration-none
-    bg-gradient-to-r from-[#EE3124] via-[#D32F2F] to-[#FFD700]
-    text-white border border-[#FFD700]/40
-    shadow-[0_0_20px_rgba(238,49,36,0.4)]
-    hover:shadow-[0_0_35px_rgba(255,215,0,0.6)]
-    hover:border-white/50 hover:scale-[1.04]
+    relative inline-flex items-center justify-center group overflow-hidden rounded-full font-display font-bold tracking-wide text-xs sm:text-sm uppercase
+    px-7 py-3.5 transition-all duration-300 transform active:scale-95 cursor-pointer text-decoration-none
+    bg-gradient-to-r from-[#EE3124] via-[#EA281B] to-[#D32F2F]
+    text-white border border-white/20
+    shadow-[0_8px_25px_rgba(238,49,36,0.35)]
+    hover:shadow-[0_12px_35px_rgba(238,49,36,0.5)]
+    hover:scale-[1.03]
     light-sweep-effect ${className}
   `;
 
   const innerContent = (
     <>
-      {/* Outer ambient glow ring */}
-      <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#EE3124] to-[#FFD700] opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300 -z-10" />
+      {/* Outer ambient glow */}
+      <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#EE3124] to-[#F59E0B] opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300 -z-10" />
 
       {/* Button content with icon */}
       <span ref={contentRef} className="relative z-10 flex items-center gap-2">

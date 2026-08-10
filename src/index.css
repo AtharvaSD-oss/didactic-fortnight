@@ -3,17 +3,18 @@
 @import "swiper/css/effect-cards";
 
 :root {
-  --primary-yellow: #FFD700;
   --primary-red: #EE3124;
+  --primary-gold: #F59E0B;
   --primary-blue: #0066CC;
-  --secondary-yellow: #FFC220;
   --secondary-red: #D32F2F;
+  --secondary-gold: #D97706;
 
+  --midnight-navy: #0B0F19;
   --pure-black: #111827;
   --pure-white: #FFFFFF;
-  --light-gray: #F8F9FA;
-  --medium-gray: #E5E7EB;
-  --dark-gray: #4B5563;
+  --porcelain-bg: #FAFAFB;
+  --silver-border: #E5E7EB;
+  --slate-muted: #6B7280;
 }
 
 @layer base {
@@ -40,66 +41,66 @@
   body {
     background-color: #FFFFFF;
     color: #111827;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x: hidden;
+    line-height: 1.65;
+    letter-spacing: -0.01em;
   }
 
-  h1, h2, h3, .font-display {
-    font-family: 'Orbitron', 'Chakra Petch', sans-serif;
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.025em;
+  }
+
+  .font-mono, code, .telemetry-tag {
+    font-family: 'Space Grotesk', monospace;
+    letter-spacing: 0.05em;
   }
 }
 
-/* Natural Human Cursor Ergonomics */
+/* Natural Ergonomics */
 @media (min-width: 1024px) {
   body {
     cursor: default;
   }
 }
 
-/* Glassmorphism Styles (White Theme) */
+/* Glassmorphism Styles (Refined White / Navy Hybrid) */
 .glass-nav-top {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.7);
+  box-shadow: 0 4px 20px rgba(11, 15, 25, 0.03);
 }
 
 .glass-nav-scrolled {
   background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(238, 49, 36, 0.25);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-bottom: 1px solid rgba(238, 49, 36, 0.2);
+  box-shadow: 0 10px 30px rgba(11, 15, 25, 0.06);
 }
 
-/* Carbon & Speed Patterns (Light) */
+/* Carbon & Racing Grid Patterns */
 .bg-carbon {
-  background-color: #F8F9FA;
+  background-color: #FAFAFB;
   background-image: 
-    radial-gradient(rgba(238, 49, 36, 0.08) 1px, transparent 0),
-    linear-gradient(45deg, rgba(229, 231, 235, 0.6) 25%, transparent 25%, transparent 75%, rgba(229, 231, 235, 0.6) 75%, rgba(229, 231, 235, 0.6));
+    radial-gradient(rgba(238, 49, 36, 0.06) 1px, transparent 0),
+    linear-gradient(45deg, rgba(229, 231, 235, 0.4) 25%, transparent 25%, transparent 75%, rgba(229, 231, 235, 0.4) 75%, rgba(229, 231, 235, 0.4));
   background-size: 24px 24px, 12px 12px;
 }
 
-/* Glowing Streaks & Neon Effects */
+/* Soft Glows */
 .neon-glow-yellow {
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4), 0 0 50px rgba(255, 215, 0, 0.15);
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.35), 0 0 50px rgba(245, 158, 11, 0.12);
 }
 
 .neon-glow-red {
-  box-shadow: 0 0 25px rgba(238, 49, 36, 0.4), 0 0 50px rgba(211, 47, 47, 0.15);
+  box-shadow: 0 0 25px rgba(238, 49, 36, 0.35), 0 0 50px rgba(220, 38, 38, 0.12);
 }
 
-.text-glow-yellow {
-  text-shadow: 0 0 14px rgba(234, 179, 8, 0.6);
-}
-
-.text-glow-red {
-  text-shadow: 0 0 14px rgba(238, 49, 36, 0.6);
-}
-
-/* Light Sweep Shimmer Animation */
+/* Tactile Light Shimmer */
 .light-sweep-effect {
   position: relative;
   overflow: hidden;
@@ -115,7 +116,7 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.45) 50%,
     transparent 100%
   );
   transform: skewX(-25deg);
@@ -126,7 +127,7 @@
   left: 150%;
 }
 
-/* Custom Scrollbar (Light Theme) */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
