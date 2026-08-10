@@ -296,6 +296,41 @@ export const WhatsNewSection = () => {
         </p>
       </div>
 
+      {/* Featured Weekly Mega Banner (Monday BOGO / Wednesday Happy Hour / Friday Frenzy) */}
+      <div className="mb-12">
+        <div
+          onClick={() => setActivePromo({
+            id: 0,
+            src: "/whats-new/weekly-offers.jpg",
+            title: "WEEKLY MEGA RACING OFFERS",
+            tag: "WEEKLY BONANZA",
+            desc: "Monday BOGO 50% Off • Wednesday Happy Hour ₹500 • Friday Frenzy Buy 2 Get 1 Free!"
+          })}
+          className="relative group rounded-3xl overflow-hidden cursor-pointer border-2 border-[#EE3124]/40 hover:border-[#EE3124] transition-all duration-500 shadow-xl hover:shadow-2xl bg-black"
+        >
+          <img
+            src="/whats-new/weekly-offers.jpg"
+            alt="Kartomania Weekly Offers - Monday BOGO, Wednesday Happy Hour, Friday Frenzy"
+            className="w-full h-auto max-h-[520px] object-cover object-center group-hover:scale-[1.02] transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end p-6 sm:p-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between w-full gap-4">
+              <div>
+                <span className="text-[10px] font-mono px-3 py-1 rounded-full bg-[#EE3124] text-white font-bold uppercase tracking-widest shadow-md">
+                  CLICK TO VIEW FULL DETAILS
+                </span>
+                <h3 className="text-xl sm:text-2xl font-display font-bold text-white uppercase mt-2">
+                  MONDAY BOGO &bull; WEDNESDAY HAPPY HOUR &bull; FRIDAY FRENZY
+                </h3>
+              </div>
+              <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-3 px-6 text-xs">
+                Claim Weekly Deals &rarr;
+              </MagneticButton>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {promos.map((promo) => (
           <div
