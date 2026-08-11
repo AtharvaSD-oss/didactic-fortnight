@@ -9,7 +9,6 @@ const NAV_LINKS = [
   { name: 'Home', id: 'home' },
   { name: 'About', id: 'who-we-are' },
   { name: 'Why Us', id: 'why-kartomania' },
-  { name: 'Rules', id: 'racing-rules' },
   { name: 'Track', id: 'track' },
   { name: 'Fleet', id: 'karts' },
   { name: 'Leap Frog', id: 'leap-frog' },
@@ -17,7 +16,6 @@ const NAV_LINKS = [
   { name: 'Pricing', id: 'pricing' },
   { name: 'Arcade', id: 'game' },
   { name: 'Reviews', id: 'testimonials' },
-  { name: 'Founder', id: 'founder' },
   { name: 'Contact', id: 'contact' },
 ];
 
@@ -67,29 +65,29 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
       <header
         ref={navRef}
         className={`
-          fixed top-0 left-0 right-0 z-40 h-[80px] transition-all duration-500 flex items-center
+          fixed top-0 left-0 right-0 z-40 h-[72px] sm:h-[76px] transition-all duration-500 flex items-center
           ${isScrolled ? 'glass-nav-scrolled' : 'glass-nav-top'}
         `}
       >
         {/* Subtle Racing Border Accent */}
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#FFD700] via-[#EE3124] to-[#0066CC] opacity-90" />
 
-        <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="w-full px-3 sm:px-5 lg:px-7 flex items-center justify-between gap-2">
           {/* 1. LEFT: Official Kartomania Logo */}
           <button
             onClick={() => onNavigate('home')}
-            className="flex items-center gap-2 cursor-pointer group bg-transparent border-none p-0 focus:outline-none"
+            className="flex items-center gap-2 cursor-pointer group bg-transparent border-none p-0 focus:outline-none shrink-0"
             aria-label="Kartomania Home"
           >
             <img 
               src="/logo.png" 
               alt="Kartomania - Where Real Racing Begins" 
-              className="h-12 sm:h-14 lg:h-16 w-auto max-w-[200px] object-contain filter drop-shadow-[0_2px_10px_rgba(0,0,0,0.2)] group-hover:scale-105 transition-transform duration-300" 
+              className="h-10 sm:h-12 lg:h-13 w-auto object-contain filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.2)] group-hover:scale-105 transition-transform duration-300" 
             />
           </button>
 
           {/* 2. CENTER: Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 xl:gap-2">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 shrink">
             {NAV_LINKS.map((link, idx) => {
               const isActive = activeSection === link.id;
               const isHovered = hoveredIndex === idx;
@@ -101,22 +99,22 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
                   onMouseEnter={() => setHoveredIndex(idx)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   className={`
-                    relative px-3 py-2 text-xs font-mono font-bold tracking-widest uppercase transition-colors duration-300 cursor-pointer bg-transparent border-none
+                    relative px-2 xl:px-2.5 py-1.5 text-[11px] xl:text-xs font-mono font-bold tracking-wider uppercase transition-colors duration-300 cursor-pointer bg-transparent border-none whitespace-nowrap
                     ${isActive ? 'text-[#EE3124]' : 'text-gray-700 hover:text-black'}
                   `}
                 >
                   <span>{link.name}</span>
 
-                  {/* Active glowing indicator dot */}
+                  {/* Active indicator dot */}
                   {isActive && (
-                    <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#EE3124] shadow-[0_0_8px_#EE3124]" />
+                    <span className="absolute top-0.5 right-0.5 w-1.5 h-1.5 rounded-full bg-[#EE3124] shadow-[0_0_6px_#EE3124]" />
                   )}
 
                   {/* Animated glowing streak underline on hover or active */}
                   <span
                     className={`
-                      absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#EE3124] to-[#FFD700]
-                      rounded-full transition-all duration-300 shadow-[0_0_10px_rgba(238,49,36,0.4)]
+                      absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#EE3124] to-[#FFD700]
+                      rounded-full transition-all duration-300 shadow-[0_0_8px_rgba(238,49,36,0.4)]
                       ${isActive ? 'w-full opacity-100' : isHovered ? 'w-full opacity-80' : 'w-0 opacity-0'}
                     `}
                   />
@@ -126,17 +124,17 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
           </nav>
 
           {/* 3. RIGHT: Quick Icons & Magnetic CTA */}
-          <div className="flex items-center gap-3 sm:gap-4">
+          <div className="flex items-center gap-2 xl:gap-3 shrink-0">
             {/* Utility Icons */}
-            <div className="hidden sm:flex items-center gap-2 pr-2 border-r border-gray-200">
+            <div className="hidden sm:flex items-center gap-1.5 pr-2 border-r border-gray-200">
               <a
                 href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram Profile"
-                className="p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105"
+                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105"
               >
-                <InstagramIcon className="w-4 h-4" />
+                <InstagramIcon className="w-3.5 h-3.5" />
               </a>
 
               <a
@@ -144,32 +142,32 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook Page"
-                className="p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105"
+                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105"
               >
-                <FacebookIcon className="w-4 h-4" />
+                <FacebookIcon className="w-3.5 h-3.5" />
               </a>
 
               <button
                 onClick={onOpenSearch}
                 aria-label="Search telemetry"
-                className="p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105 cursor-pointer"
+                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105 cursor-pointer"
               >
-                <Search className="w-4 h-4" />
+                <Search className="w-3.5 h-3.5" />
               </button>
 
               <a
                 href="tel:+919717548897"
                 aria-label="Call Hotline"
-                className="p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105"
+                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-3.5 h-3.5" />
               </a>
             </div>
 
             {/* CTA Button: Magnetic "Book Your Race" */}
-            <div className="hidden lg:block">
-              <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall">
-                Book Your Race
+            <div className="hidden md:block shrink-0">
+              <MagneticButton onClick={onOpenBooking} className="py-2.5 px-4 xl:px-5 text-[11px] xl:text-xs whitespace-nowrap shadow-md">
+                BOOK YOUR RACE 🏁
               </MagneticButton>
             </div>
 
