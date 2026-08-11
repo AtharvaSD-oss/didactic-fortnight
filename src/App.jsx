@@ -9,7 +9,6 @@ import WhyKartomaniaSection from './components/WhyKartomaniaSection';
 import TrackExperienceSection from './components/TrackExperienceSection';
 import RacingTimeline from './components/RacingTimeline';
 import RacingRulesSection from './components/RacingRulesSection';
-import Gallery from './components/Gallery';
 import Timeline from './components/Timeline';
 import Testimonials from './components/Testimonials';
 import FAQSection from './components/FAQSection';
@@ -76,7 +75,6 @@ export function App() {
       'whats-new', 
       'pricing', 
       'game', 
-      'gallery', 
       'testimonials', 
       'founder', 
       'faq', 
@@ -154,7 +152,6 @@ export function App() {
         <WhatsNewSection onOpenBooking={() => setBookingOpen(true)} />
         <PricingSection onOpenBooking={() => setBookingOpen(true)} />
         <GameSection />
-        <Gallery />
         <Testimonials />
         <Timeline />
         <FAQSection />
