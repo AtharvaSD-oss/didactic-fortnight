@@ -247,17 +247,17 @@ const GameCanvas = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full max-w-6xl mx-auto rounded-3xl overflow-hidden border border-[#FF4500]/40 bg-[#07070a] shadow-[0_0_60px_rgba(255,69,0,0.2)] select-none"
+      className="relative w-full max-w-6xl mx-auto rounded-3xl overflow-hidden border border-[#EE3124]/40 bg-[#07070a] shadow-[0_0_60px_rgba(238,49,36,0.25)] select-none"
     >
       {/* Top Telemetry Game Bar */}
       <div className="flex items-center justify-between px-6 py-3 bg-[#0d0d17] border-b border-white/10 text-xs font-mono">
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 text-[#FF4500]">
+          <div className="flex items-center gap-2 text-[#EE3124]">
             <Trophy className="w-4 h-4" />
-            <span className="font-bold uppercase tracking-wider">KARTOMANIA 2D PRO ARCADE</span>
+            <span className="font-bold uppercase tracking-wider">KARTOMANIA 720M PRO ARCADE</span>
           </div>
-          <span className="hidden sm:inline px-2 py-0.5 rounded bg-[#FF4500]/20 text-[#FF4500] text-[10px]">
-            16-BIT SNES PHYSICS
+          <span className="hidden sm:inline px-2 py-0.5 rounded bg-[#EE3124]/20 text-[#EE3124] text-[10px] font-bold">
+            SCHEMATIC GRAND PRIX
           </span>
         </div>
 
@@ -265,7 +265,7 @@ const GameCanvas = () => {
           <button
             onClick={() => setCrtEnabled(!crtEnabled)}
             className={`p-2 rounded-full border text-xs transition-colors flex items-center gap-1 ${
-              crtEnabled ? 'border-[#FF4500] text-[#FF4500] bg-[#FF4500]/10' : 'border-white/10 text-gray-400'
+              crtEnabled ? 'border-[#EE3124] text-[#EE3124] bg-[#EE3124]/10' : 'border-white/10 text-gray-400'
             }`}
             title="Toggle Retro CRT Scanlines"
           >
@@ -275,15 +275,15 @@ const GameCanvas = () => {
 
           <button
             onClick={toggleMute}
-            className="p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#FF4500] text-gray-300 hover:text-white transition-colors"
+            className="p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#EE3124] text-gray-300 hover:text-white transition-colors"
             title="Toggle Engine Sound"
           >
-            {isMuted ? <VolumeX className="w-3.5 h-3.5 text-gray-500" /> : <Volume2 className="w-3.5 h-3.5 text-[#FF4500]" />}
+            {isMuted ? <VolumeX className="w-3.5 h-3.5 text-gray-500" /> : <Volume2 className="w-3.5 h-3.5 text-[#EE3124]" />}
           </button>
 
           <button
             onClick={toggleFullscreen}
-            className="p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#FF4500] text-gray-300 hover:text-white transition-colors"
+            className="p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#EE3124] text-gray-300 hover:text-white transition-colors"
             title="Fullscreen Mode"
           >
             <Maximize2 className="w-3.5 h-3.5" />
@@ -292,7 +292,7 @@ const GameCanvas = () => {
       </div>
 
       {/* Main Canvas Engine Container */}
-      <div className="relative w-full h-[450px] sm:h-[520px] bg-[#122815]">
+      <div className="relative w-full h-[450px] sm:h-[520px] bg-[#07070a]">
         <canvas ref={canvasRef} className="w-full h-full block" />
 
         {/* Live Race Telemetry HUD Overlay */}
@@ -300,19 +300,19 @@ const GameCanvas = () => {
           <div className="absolute top-4 left-4 z-20 flex flex-col gap-2 font-mono">
             {/* Speedometer */}
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/70 border border-white/10 text-white backdrop-blur-md">
-              <Gauge className="w-4 h-4 text-[#FF4500]" />
+              <Gauge className="w-4 h-4 text-[#EE3124]" />
               <span className="text-xl font-display font-bold">{speed}</span>
               <span className="text-[10px] text-gray-400">KM/H</span>
             </div>
 
             {/* Lap Counter */}
             <div className="px-3 py-1 rounded-xl bg-black/70 border border-white/10 text-white text-xs backdrop-blur-md">
-              LAP: <span className="text-[#FF4500] font-bold">{currentLap}</span> / 3
+              LAP: <span className="text-[#EE3124] font-bold">{currentLap}</span> / 3
             </div>
 
             {/* Position Rank */}
             <div className="px-3 py-1 rounded-xl bg-black/70 border border-white/10 text-white text-xs backdrop-blur-md">
-              POS: <span className="text-[#FF4500] font-bold">{rank}</span> / 4
+              POS: <span className="text-[#EE3124] font-bold">{rank}</span> / 4
             </div>
           </div>
         )}
@@ -321,12 +321,12 @@ const GameCanvas = () => {
         {gameState === 'menu' && (
           <div className="absolute inset-0 z-30 flex flex-col items-center justify-center bg-black/80 backdrop-blur-md p-6 text-center space-y-6">
             <div className="space-y-2">
-              <span className="font-mono text-xs text-[#FF4500] uppercase tracking-widest">// 16-BIT PRO RACING ENGINE</span>
+              <span className="font-mono text-xs text-[#EE3124] uppercase tracking-widest font-bold">// OFFICIAL SCHEMATIC RACING SIMULATOR</span>
               <h3 className="text-3xl sm:text-5xl font-display font-black text-white uppercase tracking-tight">
-                KARTOMANIA <span className="text-[#FF4500]">2D RACER</span>
+                KARTOMANIA <span className="text-[#EE3124]">720M GP ARCADE</span>
               </h3>
               <p className="text-xs sm:text-sm font-mono text-gray-300 max-w-md">
-                Race 3 AI opponents around the official Entertainland Mall circuit. Use Spacebar for Super Mario Kart drifts!
+                Race 3 AI competitors on our authentic 720-meter schematic circuit layout with Pit Lane, Direction Arrows, and Marshall apex kerbs!
               </p>
             </div>
 
@@ -338,7 +338,7 @@ const GameCanvas = () => {
               </div>
               <div>
                 <span className="text-gray-500 text-[10px]">DRIFT / BOOST</span>
-                <div className="text-[#FF4500] font-bold">SPACEBAR</div>
+                <div className="text-[#EE3124] font-bold">SPACEBAR</div>
               </div>
             </div>
 
@@ -356,7 +356,7 @@ const GameCanvas = () => {
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1.2, opacity: 1 }}
               transition={{ duration: 0.4 }}
-              className="text-7xl sm:text-9xl font-display font-black text-[#FF4500] text-glow drop-shadow-2xl"
+              className="text-7xl sm:text-9xl font-display font-black text-[#EE3124] text-glow drop-shadow-2xl"
             >
               {countdown}
             </motion.div>
@@ -366,14 +366,14 @@ const GameCanvas = () => {
         {/* Race Finish Victory Podium Overlay */}
         {gameState === 'finished' && (
           <div className="absolute inset-0 z-30 flex flex-col items-center justify-center bg-black/85 backdrop-blur-md p-6 text-center space-y-6">
-            <div className="p-4 rounded-full bg-[#FF4500]/20 border border-[#FF4500] text-[#FF4500] animate-bounce">
+            <div className="p-4 rounded-full bg-[#EE3124]/20 border border-[#EE3124] text-[#EE3124] animate-bounce">
               <Trophy className="w-12 h-12" />
             </div>
 
             <div className="space-y-1">
-              <span className="font-mono text-xs text-[#FF4500] uppercase tracking-widest">// RACE FINISHED</span>
+              <span className="font-mono text-xs text-[#EE3124] uppercase tracking-widest font-bold">// RACE FINISHED</span>
               <h3 className="text-4xl font-display font-black text-white uppercase">
-                YOU FINISHED <span className="text-[#FF4500]">{finalRank === 1 ? '1ST PLACE! 🏆' : `${finalRank}ND PLACE`}</span>
+                YOU FINISHED <span className="text-[#EE3124]">{finalRank === 1 ? '1ST PLACE! 🏆' : `${finalRank}ND PLACE`}</span>
               </h3>
             </div>
 
@@ -395,7 +395,7 @@ const GameCanvas = () => {
                 onTouchEnd={() => (inputsRef.current.left = false)}
                 onMouseDown={() => (inputsRef.current.left = true)}
                 onMouseUp={() => (inputsRef.current.left = false)}
-                className="w-14 h-14 rounded-2xl bg-black/70 border border-white/20 text-white font-bold text-xl active:bg-[#FF4500]"
+                className="w-14 h-14 rounded-2xl bg-black/70 border border-white/20 text-white font-bold text-xl active:bg-[#EE3124]"
               >
                 &larr;
               </button>
@@ -404,7 +404,7 @@ const GameCanvas = () => {
                 onTouchEnd={() => (inputsRef.current.right = false)}
                 onMouseDown={() => (inputsRef.current.right = true)}
                 onMouseUp={() => (inputsRef.current.right = false)}
-                className="w-14 h-14 rounded-2xl bg-black/70 border border-white/20 text-white font-bold text-xl active:bg-[#FF4500]"
+                className="w-14 h-14 rounded-2xl bg-black/70 border border-white/20 text-white font-bold text-xl active:bg-[#EE3124]"
               >
                 &rarr;
               </button>
@@ -417,7 +417,7 @@ const GameCanvas = () => {
                 onTouchEnd={() => (inputsRef.current.drift = false)}
                 onMouseDown={() => (inputsRef.current.drift = true)}
                 onMouseUp={() => (inputsRef.current.drift = false)}
-                className="w-14 h-14 rounded-2xl bg-[#FF4500]/40 border border-[#FF4500] text-white font-mono font-bold text-xs active:bg-[#FF4500]"
+                className="w-14 h-14 rounded-2xl bg-[#EE3124]/40 border border-[#EE3124] text-white font-mono font-bold text-xs active:bg-[#EE3124]"
               >
                 DRIFT
               </button>
@@ -426,7 +426,7 @@ const GameCanvas = () => {
                 onTouchEnd={() => (inputsRef.current.up = false)}
                 onMouseDown={() => (inputsRef.current.up = true)}
                 onMouseUp={() => (inputsRef.current.up = false)}
-                className="w-16 h-14 rounded-2xl bg-[#FF4500] text-white font-mono font-bold text-sm shadow-[0_0_15px_#FF4500] active:scale-95"
+                className="w-16 h-14 rounded-2xl bg-[#EE3124] text-white font-mono font-bold text-sm shadow-[0_0_15px_#EE3124] active:scale-95"
               >
                 GAS
               </button>
