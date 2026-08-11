@@ -112,7 +112,7 @@ const WhoWeAreSection = () => {
             transition={{ duration: 0.6 }}
             className="text-2xl sm:text-4xl lg:text-5xl font-display font-black text-[#0B0F19] uppercase tracking-tight leading-tight"
           >
-            NORTHERN INDIA'S PREMIER <span className="text-[#EE3124]">PRO KARTING</span> ARENA
+            NORTHERN INDIA'S PREMIER <span className="text-[#EE3124]">720M OUTDOOR</span> TRACK
           </motion.h2>
 
           <motion.p
@@ -122,7 +122,7 @@ const WhoWeAreSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-gray-700 text-sm sm:text-base leading-relaxed font-sans font-normal"
           >
-            Founded by veteran motorsport driver <strong className="text-[#0B0F19] font-bold">Mr. Rohit Khanna</strong> (with over 20+ years of active Indian & international racing experience), Kartomania offers an indoor racing circuit designed with Formula 1 precision.
+            Founded by veteran motorsport champion <strong className="text-[#0B0F19] font-bold">Mr. Rohit Khanna</strong> (20+ years of active Indian & international racing championships), Kartomania is the <strong className="text-[#EE3124]">only racing track owned, run, and maintained by a professional racer</strong>.
           </motion.p>
 
           <motion.p
@@ -132,7 +132,7 @@ const WhoWeAreSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-gray-600 text-xs sm:text-sm leading-relaxed font-sans"
           >
-            From beginners taking their first apex to seasoned racers competing in national championships, our arena combines Sodi race karts, polymer asphalt multi-level tracks, and millisecond timing telemetry.
+            From beginners learning proper braking lines to pro racers shaving split seconds, Kartomania offers an authentic 720-meter outdoor asphalt circuit with 4 calibrated kart fleet categories and live telemetry timing.
           </motion.p>
 
           <div className="pt-2">
@@ -145,9 +145,9 @@ const WhoWeAreSection = () => {
 
       {/* Stats Counter Grid */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2">
-        <StatCounter end={680} suffix="m" label="LONGEST INDOOR TRACK" />
+        <StatCounter end={720} suffix="m" label="OUTDOOR GRAND PRIX TRACK" />
         <StatCounter end={14} label="RACING TURNS & APEXES" />
-        <StatCounter end={5} label="KART FLEET CATEGORIES" />
+        <StatCounter end={4} label="KART FLEET CATEGORIES" />
         <StatCounter end={1000} suffix="+" label="RACES COMPLETED WEEKLY" />
       </div>
     </section>

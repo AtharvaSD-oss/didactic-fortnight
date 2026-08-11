@@ -5,7 +5,9 @@ import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhoWeAreSection from './components/WhoWeAreSection';
+import WhyKartomaniaSection from './components/WhyKartomaniaSection';
 import RacingTimeline from './components/RacingTimeline';
+import RacingRulesSection from './components/RacingRulesSection';
 import Gallery from './components/Gallery';
 import Timeline from './components/Timeline';
 import Testimonials from './components/Testimonials';
@@ -19,6 +21,8 @@ import SearchModal from './components/SearchModal';
 import WhatsAppButton from './components/WhatsAppButton';
 
 import { 
+  TrackSection,
+  KartsSection,
   LeapFrogSection,
   WhatsNewSection,
   PricingSection, 
@@ -60,8 +64,12 @@ export function App() {
   useEffect(() => {
     const sections = [
       'home', 
-      'who-we-are', 
+      'who-we-are',
+      'why-kartomania',
       'experience-timeline', 
+      'racing-rules',
+      'track',
+      'karts',
       'leap-frog', 
       'whats-new', 
       'pricing', 
@@ -134,7 +142,11 @@ export function App() {
           onNavigate={handleNavigate} 
         />
         <WhoWeAreSection onOpenBooking={() => setBookingOpen(true)} />
+        <WhyKartomaniaSection />
         <RacingTimeline />
+        <RacingRulesSection />
+        <TrackSection onOpenBooking={() => setBookingOpen(true)} />
+        <KartsSection />
         <LeapFrogSection />
         <WhatsNewSection onOpenBooking={() => setBookingOpen(true)} />
         <PricingSection onOpenBooking={() => setBookingOpen(true)} />

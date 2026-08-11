@@ -6,15 +6,19 @@ import AnimatedCard from './AnimatedCard';
 const faqs = [
   {
     question: "What are the session durations and karting rates?",
-    answer: "Each racing session lasts 6 minutes on the track. Mon–Thu Weekday rates start at ₹550 for 1 session up to ₹9,570 for 20 sessions. Fri–Sun Weekend rates start at ₹650 for 1 session up to ₹11,400 for 20 sessions (exclusive of 18% GST)."
+    answer: "Each racing session lasts 6 minutes on the track. Weekday combo packages start from ₹3,250 and weekend packages from ₹3,800 with free bonus bowling vouchers. All rates are fully inclusive of all taxes."
   },
   {
     question: "Are safety helmets and suits provided at the venue?",
-    answer: "Yes! All racers receive DOT-certified full-face race helmets, sanitary balaclavas, and neck collars. Our safety crew conducts mandatory briefings prior to every grid launch."
+    answer: "Yes! All racers receive DOT-certified full-face race helmets, sanitary balaclavas, and neck collars. Our professional marshals conduct mandatory safety briefings before every grid launch."
   },
   {
     question: "What are the business operating hours at Entertainland Mall?",
-    answer: "Weekdays (Mon–Thu): 3:00 PM – 10:00 PM | Weekends (Fri–Sun & Holidays): 11:30 AM – 10:00 PM | Tuesdays Closed."
+    answer: "We are OPEN ALL DAYS (7 Days a Week)! Monday – Friday: 2:00 PM – 11:00 PM | Saturday – Sunday & Holidays: 1:00 PM – 11:00 PM."
+  },
+  {
+    question: "Is Kartomania an indoor or outdoor racing track?",
+    answer: "Kartomania features an authentic 720-meter Outdoor Grand Prix asphalt circuit with 14 technical corners, high-speed straights, and international-standard F1 safety barrier systems."
   },
   {
     question: "Is prior booking required or can we walk in?",

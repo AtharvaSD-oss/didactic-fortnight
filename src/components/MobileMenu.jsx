@@ -1,20 +1,24 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Phone, Mail, ChevronRight } from 'lucide-react';
-import { InstagramIcon } from './Icons';
+import { InstagramIcon, FacebookIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 
 const NAV_ITEMS = [
   { name: 'Home', id: 'home', tag: '01' },
   { name: 'About', id: 'who-we-are', tag: '02' },
-  { name: 'Leap Frog', id: 'leap-frog', tag: '03' },
-  { name: "What's New", id: 'whats-new', tag: '04' },
-  { name: 'Pricing', id: 'pricing', tag: '05' },
-  { name: 'Arcade Game', id: 'game', tag: '06' },
-  { name: 'Gallery', id: 'gallery', tag: '07' },
-  { name: 'Reviews', id: 'testimonials', tag: '08' },
-  { name: 'Founder', id: 'founder', tag: '09' },
-  { name: 'Contact', id: 'contact', tag: '10' },
+  { name: 'Why Kartomania', id: 'why-kartomania', tag: '03' },
+  { name: 'Rules & Safety', id: 'racing-rules', tag: '04' },
+  { name: '720M Track', id: 'track', tag: '05' },
+  { name: 'Kart Fleet', id: 'karts', tag: '06' },
+  { name: 'Leap Frog Racing', id: 'leap-frog', tag: '07' },
+  { name: "What's New", id: 'whats-new', tag: '08' },
+  { name: 'Pricing & Combos', id: 'pricing', tag: '09' },
+  { name: '2D Arcade Game', id: 'game', tag: '10' },
+  { name: 'Visual Gallery', id: 'gallery', tag: '11' },
+  { name: 'Reviews', id: 'testimonials', tag: '12' },
+  { name: 'Founder Heritage', id: 'founder', tag: '13' },
+  { name: 'Find The Arena', id: 'contact', tag: '14' },
 ];
 
 const drawerVariants = {
@@ -147,14 +151,27 @@ const MobileMenu = ({
                     <span>+91 97175 48897</span>
                   </a>
 
-                  <a
-                    href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-2 rounded-full bg-gray-100 border border-gray-200 hover:border-[#EE3124] hover:text-[#EE3124] text-gray-700 transition-colors"
-                  >
-                    <InstagramIcon className="w-4 h-4" />
-                  </a>
+                  <div className="flex items-center gap-2">
+                    <a
+                      href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Instagram"
+                      className="p-2 rounded-full bg-gray-100 border border-gray-200 hover:border-[#EE3124] hover:text-[#EE3124] text-gray-700 transition-colors"
+                    >
+                      <InstagramIcon className="w-4 h-4" />
+                    </a>
+
+                    <a
+                      href="https://www.facebook.com/kartomaniacsggn/"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Facebook"
+                      className="p-2 rounded-full bg-gray-100 border border-gray-200 hover:border-[#EE3124] hover:text-[#EE3124] text-gray-700 transition-colors"
+                    >
+                      <FacebookIcon className="w-4 h-4" />
+                    </a>
+                  </div>
                 </div>
 
                 <a

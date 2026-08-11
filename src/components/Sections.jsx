@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flag, Trophy, Shield, Zap, MapPin, Gauge, Flame, Mail, Phone, Clock } from 'lucide-react';
+import { InstagramIcon, FacebookIcon, WhatsAppIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 import GameCanvas from './GameCanvas';
 
@@ -11,20 +12,20 @@ export const TrackSection = ({ onOpenBooking }) => (
           <MapPin className="w-3.5 h-3.5" /> CIRCUIT TELEMETRY
         </div>
         <h2 className="text-2xl sm:text-4xl lg:text-5xl font-display font-bold uppercase tracking-tight text-gray-950 leading-tight">
-          THE MONACO OF <span className="text-[#EE3124]">INDOOR KARTING</span>
+          THE MONACO OF <span className="text-[#EE3124]">OUTDOOR KARTING</span>
         </h2>
         <p className="text-gray-700 text-xs sm:text-sm font-sans leading-relaxed">
-          Designed by former Formula 1 track engineers. Features a 550-meter multi-level asphalt surface with high-banked hairpin turns, elevation changes, and high-speed chicane straights.
+          Designed by championship racing engineers. Features a full 720-meter outdoor asphalt circuit with high-banked hairpin apexes, technical chicanes, and high-speed overtaking straights.
         </p>
 
         <div className="grid grid-cols-2 gap-3 pt-1">
           <div className="p-3.5 bg-gray-50 border border-gray-200 rounded-xl">
             <span className="text-[10px] font-mono text-gray-500 uppercase">Surface</span>
-            <div className="text-base font-display font-bold text-gray-900">Polymer Asphalt</div>
+            <div className="text-base font-display font-bold text-gray-900">Outdoor Polymer Asphalt</div>
           </div>
           <div className="p-3.5 bg-gray-50 border border-gray-200 rounded-xl">
             <span className="text-[10px] font-mono text-gray-500 uppercase">Barrier System</span>
-            <div className="text-base font-display font-bold text-gray-900">F1 Pro Barrier</div>
+            <div className="text-base font-display font-bold text-gray-900">F1 Pro Safety Barrier</div>
           </div>
         </div>
 
@@ -38,14 +39,14 @@ export const TrackSection = ({ onOpenBooking }) => (
       <div className="md:w-1/2 w-full">
         <div className="relative rounded-2xl bg-gray-900 border border-gray-800 p-5 shadow-lg overflow-hidden">
           <div className="absolute top-3 right-3 text-[10px] font-mono text-[#EE3124] uppercase">
-            // 2D CIRCUIT SCHEMATIC
+            // 720M OUTDOOR ARENA SCHEMATIC
           </div>
           <div className="h-56 sm:h-72 rounded-xl bg-gray-950 border border-gray-800 flex items-center justify-center relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-tr from-[#EE3124]/20 to-transparent opacity-50" />
             <div className="text-center p-5 space-y-2 z-10">
               <Gauge className="w-10 h-10 text-[#EE3124] mx-auto animate-pulse" />
-              <div className="font-display font-bold text-lg text-white">KARTOMANIA INTERNATIONAL ARENA</div>
-              <div className="font-mono text-[11px] text-gray-400">550 METERS // 14 TURNS // FLYOVER SECTION</div>
+              <div className="font-display font-bold text-lg text-white">KARTOMANIA 720M GRAND PRIX CIRCUIT</div>
+              <div className="font-mono text-[11px] text-gray-400">720 METERS // 14 TURNS // OUTDOOR ARENA</div>
             </div>
           </div>
         </div>
@@ -57,38 +58,41 @@ export const TrackSection = ({ onOpenBooking }) => (
 export const KartsSection = () => (
   <section id="karts" className="py-14 sm:py-18 px-4 max-w-7xl mx-auto border-t border-gray-200/80 bg-white text-gray-900">
     <div className="text-center space-y-2 mb-8 sm:mb-10">
-      <span className="font-mono text-xs text-[#EE3124] uppercase tracking-widest font-bold">// THE FLEET</span>
-      <h2 className="text-2xl sm:text-4xl font-display font-bold text-gray-950 uppercase">HIGH-PERFORMANCE RACE KARTS</h2>
+      <span className="font-mono text-xs text-[#EE3124] uppercase tracking-widest font-bold">// 4 KART FLEET CATEGORIES</span>
+      <h2 className="text-2xl sm:text-4xl font-display font-bold text-gray-950 uppercase">HIGH-PERFORMANCE RACE FLEET</h2>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {[
         { name: "SODI RT10 PRO", engine: "270cc Honda GX", hp: "13.0 HP", topSpeed: "75 KM/H", level: "PRO SERIES" },
+        { name: "SUPER PRO TWIN", engine: "Twin-Engine 390cc", hp: "22.0 HP", topSpeed: "88 KM/H", level: "CHAMPIONSHIP" },
         { name: "LAMBO E-BOOSTER", engine: "Dual Electric Brushless", hp: "18.5 HP", topSpeed: "85 KM/H", level: "HYPER E-SERIES" },
         { name: "SODI LR5 JUNIOR", engine: "160cc Honda GX", hp: "6.5 HP", topSpeed: "45 KM/H", level: "CADET ACADEMY" }
       ].map((kart, idx) => (
-        <div key={idx} className="bg-white border border-gray-200 hover:border-[#EE3124]/50 rounded-2xl p-5 transition-all duration-300 shadow-md hover:shadow-xl group">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-[9px] font-mono px-2.5 py-0.5 rounded bg-[#EE3124]/10 text-[#EE3124] font-bold uppercase">
-              {kart.level}
-            </span>
-            <Zap className="w-4 h-4 text-gray-400 group-hover:text-[#EE3124] transition-colors" />
-          </div>
-
-          <h3 className="text-lg font-display font-bold text-gray-950 uppercase mb-3">{kart.name}</h3>
-
-          <div className="space-y-1.5 font-mono text-xs text-gray-600 mb-2">
-            <div className="flex justify-between border-b border-gray-100 pb-1">
-              <span>ENGINE:</span>
-              <span className="text-gray-900 font-bold">{kart.engine}</span>
+        <div key={idx} className="bg-white border border-gray-200 hover:border-[#EE3124]/50 rounded-2xl p-5 transition-all duration-300 shadow-md hover:shadow-xl group flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-[9px] font-mono px-2.5 py-0.5 rounded bg-[#EE3124]/10 text-[#EE3124] font-bold uppercase">
+                {kart.level}
+              </span>
+              <Zap className="w-4 h-4 text-gray-400 group-hover:text-[#EE3124] transition-colors" />
             </div>
-            <div className="flex justify-between border-b border-gray-100 pb-1">
-              <span>OUTPUT:</span>
-              <span className="text-[#EE3124] font-bold">{kart.hp}</span>
-            </div>
-            <div className="flex justify-between">
-              <span>MAX VELOCITY:</span>
-              <span className="text-gray-900 font-bold">{kart.topSpeed}</span>
+
+            <h3 className="text-base sm:text-lg font-display font-bold text-gray-950 uppercase mb-3">{kart.name}</h3>
+
+            <div className="space-y-1.5 font-mono text-xs text-gray-600 mb-2">
+              <div className="flex justify-between border-b border-gray-100 pb-1">
+                <span>ENGINE:</span>
+                <span className="text-gray-900 font-bold">{kart.engine}</span>
+              </div>
+              <div className="flex justify-between border-b border-gray-100 pb-1">
+                <span>OUTPUT:</span>
+                <span className="text-[#EE3124] font-bold">{kart.hp}</span>
+              </div>
+              <div className="flex justify-between">
+                <span>MAX SPEED:</span>
+                <span className="text-gray-900 font-bold">{kart.topSpeed}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -235,69 +239,49 @@ export const LeapFrogSection = () => {
 export const WhatsNewSection = () => {
   const [activePromo, setActivePromo] = React.useState(null);
 
-  const promos = [
+  const coreThreeOffers = [
     {
       id: 1,
-      src: "/whats-new/promo-1.jpg",
-      title: "PRO KART PRICING - LIMITED OFFER",
-      badge: "LIMITED OFFER",
-      desc: "1st Session @ ₹750 | 2nd Session @ ₹695 | 3rd @ ₹625 | 4th Onwards @ ₹575",
-      tag: "PRO SERIES",
-      span: "md:col-span-2",
-      featured: true
+      title: "MONDAY BONANZA",
+      badge: "50% OFF",
+      desc: "Buy 1 Session and Get Another Session at 50% Off every Monday!",
+      price: "BOGO 50% OFF",
+      tag: "WEEKDAY DEALS"
     },
     {
       id: 2,
-      src: "/whats-new/promo-2.jpg",
-      title: "LEVEL 1 PRIVATE SESSION",
-      badge: "PRIVATE TRACK",
-      desc: "Book exclusive Level 1 Private Track Session for ₹4,999/- Only",
-      tag: "VIP EXCLUSIVE",
-      span: "md:col-span-1",
-      featured: false
+      title: "HAPPY HOURS WEDNESDAY",
+      badge: "₹500 SPECIAL",
+      desc: "Kart your heart out! Buy an authentic racing session @ ₹500/- Only on Wednesdays.",
+      price: "₹500 FLAT",
+      tag: "HAPPY HOUR"
     },
     {
       id: 3,
-      src: "/whats-new/promo-3.jpg",
-      title: "MONDAY BONANZA",
-      badge: "50% OFF",
-      desc: "Buy 1 Session and Get Another at 50% Off every Monday!",
-      tag: "WEEKDAY DEALS",
-      span: "md:col-span-1",
-      featured: false
-    },
-    {
-      id: 4,
-      src: "/whats-new/promo-4.jpg",
-      title: "HAPPY HOURS WEDNESDAY",
-      badge: "SUMMER SPECIAL",
-      desc: "Kart your heart out! Buy a session @ ₹500/- Only on Wednesdays",
-      tag: "HAPPY HOUR",
-      span: "md:col-span-1",
-      featured: false
-    },
-    {
-      id: 5,
-      src: "/whats-new/promo-5.jpg",
       title: "FRIDAY FRENZY",
       badge: "BUY 2 GET 1 FREE",
-      desc: "Buy 2 Sessions & the 3rd is FREE! Start, Kart, Repeat!",
-      tag: "WEEKEND PREVIEW",
-      span: "md:col-span-1",
-      featured: false
+      desc: "Buy 2 Sessions & the 3rd Session is completely FREE! Start, Kart, Repeat!",
+      price: "3RD SESSION FREE",
+      tag: "WEEKEND PREVIEW"
     }
+  ];
+
+  const bundleSessions = [
+    { name: "5 SESSIONS STARTER BUNDLE", bonus: "+ 1 FREE Bowling Coupon", price: "₹3,250", desc: "Perfect for a duo or an intense personal sprint practice." },
+    { name: "10 SESSIONS RACER PACK", bonus: "+ 1 FREE Session & 1 Bowling", price: "₹6,500", desc: "Our most popular package for group battles & telemetry lap records." },
+    { name: "20 SESSIONS PRO CHAMPIONSHIP", bonus: "+ 3 FREE Sessions & 3 Bowling", price: "₹13,000", desc: "Ultimate group Grand Prix package for corporate & family events." }
   ];
 
   return (
     <section id="whats-new" className="py-14 sm:py-18 px-4 max-w-7xl mx-auto border-t border-gray-200/80 bg-white text-gray-900">
       <div className="text-center space-y-2 mb-8 sm:mb-10">
-        <span className="font-mono text-xs text-[#EE3124] uppercase tracking-widest font-bold">// LATEST OFFERS & ANNOUNCEMENTS</span>
+        <span className="font-mono text-xs text-[#EE3124] uppercase tracking-widest font-bold">// LATEST OFFERS & BUNDLE SESSIONS</span>
         <h2 className="text-2xl sm:text-4xl lg:text-5xl font-display font-black text-gray-950 uppercase tracking-tight">
           WHAT'S <span className="text-[#EE3124]">NEW</span>
         </h2>
-        <p className="text-xs sm:text-sm font-mono text-gray-600 max-w-xl mx-auto">
-          Exclusive summer specials, private track passes, and daily racing bonanzas at Kartomania.
-        </p>
+        <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono text-[10px] font-bold uppercase tracking-wider">
+          ★ ALL PRICES INCLUSIVE OF ALL TAXES
+        </div>
       </div>
 
       {/* Featured Weekly Mega Banner (Monday BOGO / Wednesday Happy Hour / Friday Frenzy) */}
@@ -335,55 +319,64 @@ export const WhatsNewSection = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
-        {promos.map((promo) => (
+      {/* 1. Core 3 Daily Offers Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 mb-8">
+        {coreThreeOffers.map((offer) => (
           <div
-            key={promo.id}
-            onClick={() => setActivePromo(promo)}
-            className={`
-              relative group rounded-2xl overflow-hidden cursor-pointer border border-gray-200 hover:border-[#EE3124]/70
-              transition-all duration-300 shadow-md hover:shadow-xl
-              ${promo.span} h-64 sm:h-72 bg-gray-900 flex flex-col justify-end
-            `}
+            key={offer.id}
+            className="p-5 sm:p-6 rounded-2xl bg-white border border-gray-200 hover:border-[#EE3124]/60 shadow-md hover:shadow-lg transition-all flex flex-col justify-between space-y-3"
           >
-            {/* Background Image with Dark Gradient Blend */}
-            <img
-              src={promo.src}
-              alt={promo.title}
-              className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-85 group-hover:opacity-95"
-            />
-
-            {/* Vignette & Contrast Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent opacity-95 group-hover:opacity-80 transition-opacity duration-300" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70" />
-
-            {/* Top Badge */}
-            <div className="absolute top-3 left-3 z-20">
-              <span className="px-2.5 py-0.5 rounded-full bg-gradient-to-r from-[#EE3124] to-[#D32F2F] text-white font-mono text-[9px] font-bold uppercase tracking-widest shadow-md">
-                {promo.badge}
-              </span>
-            </div>
-
-            {/* Content info */}
-            <div className="relative z-20 p-4 sm:p-5 space-y-1.5">
-              <span className="text-[9px] font-mono text-[#FFD700] uppercase font-bold tracking-wider">
-                {promo.tag}
-              </span>
-              <h3 className="text-base sm:text-lg font-display font-bold text-white uppercase group-hover:text-[#FFD700] transition-colors">
-                {promo.title}
-              </h3>
-              <p className="text-xs font-mono text-gray-200 line-clamp-1 sm:line-clamp-2">
-                {promo.desc}
-              </p>
-
-              <div className="pt-1">
-                <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="text-[10px] py-1.5 px-3.5">
-                  Claim Offer &rarr;
-                </MagneticButton>
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#EE3124]/10 text-[#EE3124] font-mono text-[9px] font-bold uppercase tracking-wider">
+                  {offer.tag}
+                </span>
+                <span className="px-2.5 py-0.5 rounded-full bg-[#FFD700]/20 text-amber-900 font-mono text-[9px] font-bold uppercase">
+                  {offer.badge}
+                </span>
               </div>
+              <h3 className="text-base sm:text-lg font-display font-bold text-gray-950 uppercase">{offer.title}</h3>
+              <p className="text-xs font-sans text-gray-600 leading-relaxed">{offer.desc}</p>
+            </div>
+            <div className="pt-2 border-t border-gray-100 flex items-center justify-between">
+              <div className="text-base font-display font-black text-[#EE3124]">{offer.price}</div>
+              <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-1.5 px-3.5 text-[10px]">
+                Book Deal
+              </MagneticButton>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* 2. Bundle Sessions Section */}
+      <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5 sm:p-7 space-y-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-gray-200 pb-3">
+          <div>
+            <span className="text-[10px] font-mono font-bold text-[#EE3124] uppercase tracking-wider">// MULTI-RACE VALUE PACKS</span>
+            <h3 className="text-lg sm:text-xl font-display font-bold text-gray-950 uppercase">BUNDLE SESSIONS</h3>
+          </div>
+          <span className="text-[10px] font-mono text-gray-500 font-semibold uppercase">Inclusive of all taxes</span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {bundleSessions.map((bundle, idx) => (
+            <div key={idx} className="p-4 rounded-xl bg-white border border-gray-200 flex flex-col justify-between space-y-3 shadow-sm hover:border-[#EE3124]/40 transition-colors">
+              <div className="space-y-1.5">
+                <div className="text-xs font-display font-bold text-gray-950 uppercase">{bundle.name}</div>
+                <span className="inline-block px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-mono text-[9px] font-bold uppercase tracking-wider">
+                  🎁 {bundle.bonus}
+                </span>
+                <p className="text-[11px] font-sans text-gray-500">{bundle.desc}</p>
+              </div>
+              <div className="pt-2 flex items-center justify-between border-t border-gray-100">
+                <div className="text-lg font-display font-black text-[#EE3124]">{bundle.price}</div>
+                <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-1.5 px-3 text-[10px]">
+                  Get Bundle
+                </MagneticButton>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Lightbox Modal */}
@@ -443,12 +436,14 @@ export const PricingSection = () => {
   return (
     <section id="pricing" className="py-14 sm:py-18 px-4 max-w-7xl mx-auto border-t border-gray-200/80 bg-white text-gray-900">
       <div className="text-center space-y-2 mb-8 sm:mb-10">
-        <span className="font-mono text-xs text-[#EE3124] uppercase tracking-widest font-bold">// RACE PACKAGES & COMBO DEALS</span>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 font-mono text-xs font-bold uppercase tracking-wider">
+          ★ ALL PRICES INCLUSIVE OF ALL TAXES
+        </div>
         <h2 className="text-2xl sm:text-4xl lg:text-5xl font-display font-black text-gray-950 uppercase tracking-tight">
           OFFICIAL <span className="text-[#EE3124]">PRICING & COMBOS</span>
         </h2>
         <p className="text-xs sm:text-sm font-mono text-gray-600 max-w-2xl mx-auto">
-          Exclusive karting multi-session packages featuring complimentary free bowling and bonus race sessions!
+          Exclusive multi-session packages featuring complimentary free bowling and bonus race sessions.
         </p>
       </div>
 
@@ -524,7 +519,7 @@ export const PricingSection = () => {
           <h3 className="text-lg font-display font-bold text-gray-950 uppercase tracking-wider">
             STANDARD KARTING SESSIONS TARIFF
           </h3>
-          <p className="text-xs font-mono text-gray-500">Pure track time rates without bowling additions.</p>
+          <p className="text-xs font-mono text-gray-500">Pure track time rates without bowling additions (Taxes Included).</p>
         </div>
 
         <div className="overflow-x-auto">
@@ -556,7 +551,7 @@ export const PricingSection = () => {
         </h4>
         <ul className="space-y-1.5 text-xs font-mono text-gray-700 list-disc list-inside">
           <li>Each karting session lasts 6 minutes on the track.</li>
-          <li>All prices are exclusive of 18% GST.</li>
+          <li><strong>All prices are inclusive of all taxes.</strong></li>
           <li>All sessions and free bowling coupons must be consumed on the day they are bought.</li>
           <li>Packages are non-transferable and non-refundable.</li>
         </ul>
@@ -625,7 +620,7 @@ export const GallerySection = () => {
           THE <span className="text-[#EE3124]">KARTOMANIA</span> EXPERIENCE
         </h2>
         <p className="text-xs sm:text-sm font-mono text-gray-600 max-w-xl mx-auto">
-          Explore real track footage from India's premier indoor go-karting arena.
+          Explore real track footage from India's premier 720m outdoor go-karting arena.
         </p>
       </div>
 
@@ -807,7 +802,7 @@ export const ContactSection = () => {
             FIND THE <span className="text-[#EE3124]">ARENA</span>
           </h2>
           <p className="text-xs sm:text-sm font-mono text-gray-600 max-w-xl mx-auto">
-            Located at Entertainland Mall, India's premier indoor pro karting circuit.
+            Located at Entertainland Mall, India's premier 720m outdoor pro karting circuit.
           </p>
         </div>
 
@@ -827,12 +822,12 @@ export const ContactSection = () => {
             <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 space-y-1.5 shadow-sm">
               <div className="flex items-center gap-1.5 text-[#EE3124]">
                 <Clock className="w-3.5 h-3.5" />
-                <span className="text-[9px] uppercase font-bold tracking-wider">// BUSINESS HOURS</span>
+                <span className="text-[9px] uppercase font-bold tracking-wider">// OPEN ALL 7 DAYS</span>
               </div>
               <div className="text-xs text-gray-900 font-sans font-semibold space-y-0.5">
-                <div>Weekdays: 3:00 PM – 10:00 PM</div>
-                <div>Weekends: 11:30 AM – 10:00 PM</div>
-                <div className="text-[#EE3124] font-bold">// Tuesdays Closed</div>
+                <div>Mon – Fri: 2:00 PM – 11:00 PM</div>
+                <div>Sat – Sun: 1:00 PM – 11:00 PM</div>
+                <div className="text-[#25D366] font-bold">// We Open All Days</div>
               </div>
             </div>
 
@@ -861,18 +856,53 @@ export const ContactSection = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-gray-200">
-            <a
-              href={GOOGLE_MAPS_LINK}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white hover:bg-gray-50 border border-gray-300 hover:border-[#EE3124] text-xs font-mono tracking-widest uppercase text-gray-900 font-bold transition-all shadow-sm group"
-            >
-              <MapPin className="w-4 h-4 text-[#EE3124] group-hover:scale-110 transition-transform" />
-              <span>GET DIRECTIONS ON GOOGLE MAPS</span>
-            </a>
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-4 pt-4 border-t border-gray-200">
+            <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto justify-center lg:justify-start">
+              <a
+                href={GOOGLE_MAPS_LINK}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white hover:bg-gray-50 border border-gray-300 hover:border-[#EE3124] text-xs font-mono tracking-wider uppercase text-gray-900 font-bold transition-all shadow-sm group"
+              >
+                <MapPin className="w-4 h-4 text-[#EE3124] group-hover:scale-110 transition-transform" />
+                <span>GOOGLE MAPS</span>
+              </a>
 
-            <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-3 px-6 text-xs">
+              <a
+                href="https://www.facebook.com/kartomaniacsggn/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook Page"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white hover:bg-gray-50 border border-gray-300 hover:border-[#EE3124] text-xs font-mono tracking-wider uppercase text-gray-900 font-bold transition-all shadow-sm group"
+              >
+                <FacebookIcon className="w-4 h-4 text-[#EE3124] group-hover:scale-110 transition-transform" />
+                <span>FACEBOOK</span>
+              </a>
+
+              <a
+                href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram Profile"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white hover:bg-gray-50 border border-gray-300 hover:border-[#EE3124] text-xs font-mono tracking-wider uppercase text-gray-900 font-bold transition-all shadow-sm group"
+              >
+                <InstagramIcon className="w-4 h-4 text-[#EE3124] group-hover:scale-110 transition-transform" />
+                <span>INSTAGRAM</span>
+              </a>
+
+              <a
+                href="https://wa.me/919717548897?text=Hi%20Kartomania!%20I%20would%20like%20to%20inquire%20about%20booking%20a%20racing%20session."
+                target="_blank"
+                rel="noreferrer"
+                aria-label="WhatsApp Hotline"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white hover:bg-gray-50 border border-gray-300 hover:border-[#25D366] text-xs font-mono tracking-wider uppercase text-gray-900 font-bold transition-all shadow-sm group"
+              >
+                <WhatsAppIcon className="w-4 h-4 text-[#25D366] group-hover:scale-110 transition-transform" />
+                <span>WHATSAPP</span>
+              </a>
+            </div>
+
+            <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-3 px-6 text-xs whitespace-nowrap">
               Book Your Race
             </MagneticButton>
           </div>
@@ -894,7 +924,7 @@ export const GameSection = () => (
           PRO <span className="text-[#EE3124]">ARCADE</span>
         </h2>
         <p className="text-xs sm:text-sm font-mono text-gray-600 max-w-xl mx-auto">
-          Test your apex timing on our 16-bit retro arcade simulator before taking the real track!
+          Test your apex timing on our 16-bit retro arcade simulator before taking our 720M outdoor track!
         </p>
       </div>
 

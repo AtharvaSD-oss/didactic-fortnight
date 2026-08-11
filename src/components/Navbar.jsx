@@ -1,18 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Search, Phone, Menu } from 'lucide-react';
-import { InstagramIcon } from './Icons';
+import { InstagramIcon, FacebookIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 import MobileMenu from './MobileMenu';
 
 const NAV_LINKS = [
   { name: 'Home', id: 'home' },
   { name: 'About', id: 'who-we-are' },
+  { name: 'Why Us', id: 'why-kartomania' },
+  { name: 'Rules', id: 'racing-rules' },
+  { name: 'Track', id: 'track' },
+  { name: 'Fleet', id: 'karts' },
   { name: 'Leap Frog', id: 'leap-frog' },
   { name: "What's New", id: 'whats-new' },
   { name: 'Pricing', id: 'pricing' },
-  { name: 'Arcade Game', id: 'game' },
-  { name: 'Gallery', id: 'gallery' },
+  { name: 'Arcade', id: 'game' },
   { name: 'Reviews', id: 'testimonials' },
   { name: 'Founder', id: 'founder' },
   { name: 'Contact', id: 'contact' },
@@ -133,6 +136,16 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
                 className="p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105"
               >
                 <InstagramIcon className="w-4 h-4" />
+              </a>
+
+              <a
+                href="https://www.facebook.com/kartomaniacsggn/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook Page"
+                className="p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105"
+              >
+                <FacebookIcon className="w-4 h-4" />
               </a>
 
               <button

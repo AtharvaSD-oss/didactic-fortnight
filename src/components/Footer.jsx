@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Mail } from 'lucide-react';
-import { InstagramIcon, WhatsAppIcon } from './Icons';
+import { InstagramIcon, FacebookIcon, WhatsAppIcon } from './Icons';
 
 const Footer = () => {
   return (
@@ -26,7 +26,7 @@ const Footer = () => {
           </a>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
           <a 
             href="mailto:kartomania.ggn@gmail.com" 
             aria-label="Email Us"
@@ -51,6 +51,15 @@ const Footer = () => {
             className="p-2.5 rounded-full bg-white hover:bg-gray-100 text-gray-700 hover:text-[#EE3124] border border-gray-200 transition-colors shadow-sm"
           >
             <InstagramIcon className="w-4 h-4" />
+          </a>
+          <a 
+            href="https://www.facebook.com/kartomaniacsggn/" 
+            target="_blank" 
+            rel="noreferrer"
+            aria-label="Facebook"
+            className="p-2.5 rounded-full bg-white hover:bg-gray-100 text-gray-700 hover:text-[#EE3124] border border-gray-200 transition-colors shadow-sm"
+          >
+            <FacebookIcon className="w-4 h-4" />
           </a>
           <a 
             href="tel:+919717548897" 

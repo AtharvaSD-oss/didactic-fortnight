@@ -92,7 +92,19 @@ const Hero = ({ onNavigate }) => {
         >
           <Flag className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#FFD700]" />
           <span className="font-mono text-[10px] sm:text-xs text-white uppercase tracking-wider font-bold">
-            ENTERTAINLAND MALL &bull; SECTOR 83 &bull; MANESAR
+            720M OUTDOOR ARENA &bull; ENTERTAINLAND MALL &bull; SECTOR 83 MANESAR
+          </span>
+        </motion.div>
+
+        {/* Slogan Pill */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
+          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EE3124]/20 border border-[#EE3124]/40 backdrop-blur-md"
+        >
+          <span className="font-mono text-[9px] sm:text-[11px] text-[#FFD700] uppercase tracking-widest font-black">
+            // PRECISION &bull; PASSION &bull; PERFORMANCE
           </span>
         </motion.div>
 
@@ -103,19 +115,19 @@ const Hero = ({ onNavigate }) => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="space-y-1 max-w-4xl"
         >
-          <h1 className="text-4xl xs:text-5xl sm:text-7xl lg:text-8xl font-display font-black tracking-tight text-white uppercase leading-[0.95] drop-shadow-2xl">
-            KARTOMANIA
+          <h1 className="text-3xl xs:text-4xl sm:text-6xl lg:text-7xl font-display font-black tracking-tight text-white uppercase leading-[0.95] drop-shadow-2xl">
+            WHERE REAL RACING
           </h1>
           <h2 className="text-4xl xs:text-5xl sm:text-7xl lg:text-8xl font-display font-black tracking-tight uppercase leading-[0.95]">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#EE3124] to-[#0066CC]">
-              SPEED THAT
+              BEGINS.
             </span>
           </h2>
-          <h2 className="text-4xl xs:text-5xl sm:text-7xl lg:text-8xl font-display font-black tracking-tight uppercase leading-[0.95]">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE3124] to-[#FFD700]">
-              THRILLS
-            </span>
-          </h2>
+          <div className="pt-1 flex flex-wrap gap-2 text-xs sm:text-sm font-mono text-gray-300 font-bold uppercase tracking-wider">
+            <span className="text-[#FFD700]">FEEL THE SPEED</span> &bull; 
+            <span className="text-white">BORN TO RACE</span> &bull; 
+            <span className="text-[#EE3124]">DRIVE THE THRILL</span>
+          </div>
         </motion.div>
 
         {/* Subtitle */}
@@ -125,11 +137,12 @@ const Hero = ({ onNavigate }) => {
           transition={{ duration: 0.4, delay: 0.35 }}
           className="space-y-2 sm:space-y-3 max-w-2xl"
         >
-          <h3 className="text-lg sm:text-xl md:text-2xl font-display font-bold text-white tracking-tight drop-shadow-md">
-            Northern India's First Indoor Go-Karting Track
+          <h3 className="text-base sm:text-xl md:text-2xl font-display font-bold text-white tracking-tight drop-shadow-md flex items-center gap-2">
+            <span>Speed Meets Control</span>
+            <span className="text-xs px-2.5 py-0.5 rounded bg-[#EE3124] text-white font-mono uppercase tracking-wider">PRO RACER OWNED</span>
           </h3>
           <p className="text-xs sm:text-base font-sans text-gray-200 font-normal leading-relaxed text-left drop-shadow-md line-clamp-3 sm:line-clamp-none">
-            Experience the ultimate adrenaline rush on one of India's most exciting indoor racing circuits with world-class facilities and race timing telemetry.
+            The only racing track owned, run, and maintained by a professional national racing driver. Experience authentic 720-meter outdoor asphalt racing with 4 kart fleet categories and championship telemetry.
           </p>
         </motion.div>
 
