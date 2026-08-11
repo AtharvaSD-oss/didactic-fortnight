@@ -3,18 +3,22 @@
 @import "swiper/css/effect-cards";
 
 :root {
-  --primary-red: #EE3124;
-  --primary-gold: #F59E0B;
-  --primary-blue: #0066CC;
-  --secondary-red: #D32F2F;
-  --secondary-gold: #D97706;
+  /* Phase 1: Antigravity Color Palette */
+  --space-black: #0a0e27;
+  --void-black: #050714;
+  --purple-depth: #1a0033;
+  --purple-shadow: #12072b;
+  --electric-cyan: #00d9ff;
+  --neon-cyan: #00f2fe;
+  --metallic-gold: #d4af37;
+  --metallic-silver: #c0c0c0;
+  --off-white: #f5f5f5;
+  --racing-red: #EE3124;
 
-  --midnight-navy: #0B0F19;
-  --pure-black: #111827;
-  --pure-white: #FFFFFF;
-  --porcelain-bg: #FAFAFB;
-  --silver-border: #E5E7EB;
-  --slate-muted: #6B7280;
+  /* Elevation Shadows */
+  --antigravity-shadow: 0 20px 60px rgba(0, 217, 255, 0.16);
+  --gold-shadow: 0 20px 50px rgba(212, 175, 55, 0.18);
+  --dark-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
 }
 
 @layer base {
@@ -39,16 +43,16 @@
   }
 
   body {
-    background-color: #FFFFFF;
-    color: #111827;
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #0a0e27;
+    color: #f5f5f5;
+    font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x: hidden;
     line-height: 1.65;
     letter-spacing: -0.01em;
   }
 
   h1, h2, h3, h4, .font-display {
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Montserrat', 'Outfit', sans-serif;
     letter-spacing: -0.025em;
   }
 
@@ -58,46 +62,95 @@
   }
 }
 
-/* Natural Ergonomics */
-@media (min-width: 1024px) {
-  body {
-    cursor: default;
+/* Antigravity Floating & Levitating Keyframes */
+@keyframes antigravity-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0.4deg);
   }
 }
 
-/* Glassmorphism Styles (Refined White / Navy Hybrid) */
+@keyframes antigravity-float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-glow-cyan {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.35), 0 0 45px rgba(0, 217, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0, 217, 255, 0.65), 0 0 70px rgba(0, 217, 255, 0.3);
+  }
+}
+
+@keyframes pulse-glow-gold {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.35), 0 0 45px rgba(212, 175, 55, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(212, 175, 55, 0.65), 0 0 70px rgba(212, 175, 55, 0.3);
+  }
+}
+
+.animate-levitate {
+  animation: antigravity-float 6s ease-in-out infinite;
+}
+
+.animate-levitate-slow {
+  animation: antigravity-float-slow 8s ease-in-out infinite;
+}
+
+.glow-cyan {
+  animation: pulse-glow-cyan 4s ease-in-out infinite;
+}
+
+.glow-gold {
+  animation: pulse-glow-gold 4s ease-in-out infinite;
+}
+
+/* Floating Card Utilities with Layered Depth */
+.floating-card {
+  background: rgba(14, 20, 48, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 217, 255, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 217, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.floating-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(0, 217, 255, 0.5);
+  box-shadow: 0 25px 70px rgba(0, 217, 255, 0.22), 0 0 40px rgba(0, 217, 255, 0.2);
+}
+
+/* Glassmorphism Frosted Nav */
 .glass-nav-top {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(229, 231, 235, 0.7);
-  box-shadow: 0 4px 20px rgba(11, 15, 25, 0.03);
+  background: rgba(10, 14, 39, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .glass-nav-scrolled {
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  border-bottom: 1px solid rgba(238, 49, 36, 0.2);
-  box-shadow: 0 10px 30px rgba(11, 15, 25, 0.06);
+  background: rgba(10, 14, 39, 0.92);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.35);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 217, 255, 0.12);
 }
 
-/* Carbon & Racing Grid Patterns */
-.bg-carbon {
-  background-color: #FAFAFB;
-  background-image: 
-    radial-gradient(rgba(238, 49, 36, 0.06) 1px, transparent 0),
-    linear-gradient(45deg, rgba(229, 231, 235, 0.4) 25%, transparent 25%, transparent 75%, rgba(229, 231, 235, 0.4) 75%, rgba(229, 231, 235, 0.4));
-  background-size: 24px 24px, 12px 12px;
-}
-
-/* Soft Glows */
-.neon-glow-yellow {
-  box-shadow: 0 0 25px rgba(245, 158, 11, 0.35), 0 0 50px rgba(245, 158, 11, 0.12);
-}
-
-.neon-glow-red {
-  box-shadow: 0 0 25px rgba(238, 49, 36, 0.35), 0 0 50px rgba(220, 38, 38, 0.12);
+/* Deep Space & Neon Orbs Background */
+.bg-deep-space {
+  background: radial-gradient(circle at 50% 0%, #1a0033 0%, #0a0e27 60%, #050714 100%);
 }
 
 /* Tactile Light Shimmer */
@@ -116,7 +169,7 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.45) 50%,
+    rgba(0, 217, 255, 0.35) 50%,
     transparent 100%
   );
   transform: skewX(-25deg);
@@ -127,17 +180,18 @@
   left: 150%;
 }
 
-/* Custom Scrollbar */
+/* Modern Antigravity Neon Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F3F4F6;
+  background: #070918;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D1D5DB;
-  border-radius: 4px;
+  background: linear-gradient(180deg, #00d9ff, #d4af37);
+  border-radius: 9999px;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #EE3124;
+  background: #00f2fe;
 }

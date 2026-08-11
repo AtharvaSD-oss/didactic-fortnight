@@ -19,6 +19,8 @@ import ScrollProgress from './components/ScrollProgress';
 import BookingModal from './components/BookingModal';
 import SearchModal from './components/SearchModal';
 import WhatsAppButton from './components/WhatsAppButton';
+import AntigravityParticles from './components/AntigravityParticles';
+import BackToTop from './components/BackToTop';
 
 import { 
   TrackSection,
@@ -117,7 +119,10 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 selection:bg-[#EE3124] selection:text-white relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#0a0e27] text-white selection:bg-[#00d9ff] selection:text-black relative overflow-x-hidden">
+      {/* 0. Upward Floating Antigravity Particles & Glowing Orbs Background */}
+      <AntigravityParticles />
+
       {/* 1. Top Racing Progress Bar */}
       <ScrollProgress />
 
@@ -175,6 +180,9 @@ export function App() {
 
       {/* Floating Action WhatsApp Button (Bottom Right) */}
       <WhatsAppButton />
+
+      {/* Floating Back To Top Button (Bottom Left) */}
+      <BackToTop />
     </div>
   );
 }
