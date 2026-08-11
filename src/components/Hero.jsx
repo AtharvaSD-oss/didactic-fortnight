@@ -81,8 +81,22 @@ const Hero = ({ onNavigate }) => {
       {/* 2. Responsive Content Layout */}
       <div
         ref={heroContentRef}
-        className="relative z-10 max-w-7xl w-full mx-auto flex flex-col justify-center items-start my-auto pt-4 sm:pt-6 space-y-4 sm:space-y-6 md:space-y-7 text-left"
+        className="relative z-10 max-w-7xl w-full mx-auto flex flex-col justify-center items-start my-auto pt-2 sm:pt-4 space-y-3 sm:space-y-5 md:space-y-6 text-left"
       >
+        {/* Official Brand Logo Top Left */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, y: 15 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="block"
+        >
+          <img
+            src="/logo.png"
+            alt="Kartomania Official Logo"
+            className="h-16 sm:h-20 md:h-24 w-auto object-contain filter drop-shadow-[0_4px_25px_rgba(0,0,0,0.7)] hover:scale-105 transition-transform duration-300"
+          />
+        </motion.div>
+
         {/* Track Badge */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}

@@ -75,15 +75,16 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#FFD700] via-[#EE3124] to-[#0066CC] opacity-90" />
 
         <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* 1. LEFT: Kartomania Logo */}
+          {/* 1. LEFT: Official Kartomania Logo */}
           <button
             onClick={() => onNavigate('home')}
-            className="flex items-center gap-3 cursor-pointer group bg-transparent border-none p-0"
+            className="flex items-center gap-2 cursor-pointer group bg-transparent border-none p-0 focus:outline-none"
+            aria-label="Kartomania Home"
           >
             <img 
               src="/logo.png" 
-              alt="Kartomania Logo" 
-              className="h-11 sm:h-12 w-auto object-contain filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.15)] group-hover:scale-105 transition-transform duration-300" 
+              alt="Kartomania - Where Real Racing Begins" 
+              className="h-12 sm:h-14 lg:h-16 w-auto max-w-[200px] object-contain filter drop-shadow-[0_2px_10px_rgba(0,0,0,0.2)] group-hover:scale-105 transition-transform duration-300" 
             />
           </button>
 
