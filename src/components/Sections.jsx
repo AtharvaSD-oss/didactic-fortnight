@@ -3,11 +3,12 @@ import { Flag, Trophy, Shield, Zap, MapPin, Gauge, Flame, Mail, Phone, Clock } f
 import { InstagramIcon, FacebookIcon, WhatsAppIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 import GameCanvas from './GameCanvas';
+import TrackCircuitVisual from './TrackCircuitVisual';
 
 export const TrackSection = ({ onOpenBooking }) => (
   <section id="track" className="py-14 sm:py-18 px-4 max-w-7xl mx-auto border-t border-gray-200/80 bg-white text-gray-900">
-    <div className="flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-10">
-      <div className="space-y-4 md:w-1/2">
+    <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10">
+      <div className="space-y-4 lg:w-5/12">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EE3124]/10 text-[#EE3124] font-mono text-xs font-bold uppercase tracking-widest">
           <MapPin className="w-3.5 h-3.5" /> CIRCUIT TELEMETRY
         </div>
@@ -36,23 +37,9 @@ export const TrackSection = ({ onOpenBooking }) => (
         </div>
       </div>
 
-      <div className="md:w-1/2 w-full">
-        <div className="relative rounded-2xl bg-gray-950 border border-gray-800 p-3 sm:p-4 shadow-xl overflow-hidden group">
-          <div className="flex items-center justify-between mb-2">
-            <span className="px-2.5 py-0.5 rounded-full bg-[#EE3124] text-white font-mono text-[9px] font-bold uppercase tracking-wider shadow-md">
-              720M GRAND PRIX CIRCUIT LAYOUT
-            </span>
-            <span className="text-[10px] font-mono text-gray-400">14 TURNS // PIT LANE</span>
-          </div>
-
-          <div className="relative rounded-xl overflow-hidden bg-black flex items-center justify-center border border-gray-800">
-            <img
-              src="/track-layout.jpg"
-              alt="Kartomania 720M Outdoor Grand Prix Circuit Schematic Layout"
-              className="w-full h-auto max-h-[360px] object-contain group-hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-        </div>
+      <div className="lg:w-7/12 w-full">
+        {/* High-End 2D Schematic Circuit Telemetry Visual Model */}
+        <TrackCircuitVisual />
       </div>
     </div>
   </section>
