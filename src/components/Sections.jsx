@@ -389,7 +389,7 @@ export const WhatsNewSection = () => {
                 <h4 className="text-lg font-display font-bold text-gray-950 uppercase">{activePromo.title}</h4>
                 <p className="text-xs font-mono text-gray-600 mt-0.5">{activePromo.desc}</p>
               </div>
-              <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-2.5 px-5 text-xs">
+              <MagneticButton onClick={onOpenBooking} className="py-2.5 px-5 text-xs">
                 Book Offer
               </MagneticButton>
             </div>
@@ -400,7 +400,7 @@ export const WhatsNewSection = () => {
   );
 };
 
-export const PricingSection = () => {
+export const PricingSection = ({ onOpenBooking }) => {
   const weekdayCombos = [
     { package: '5 Sessions + 1 Bowling FREE', bonus: '1 Bowling FREE', price: '₹3,250' },
     { package: '10 Sessions + 1 Session + 1 Bowling FREE', bonus: '+1 Session & 1 Bowling FREE', price: '₹6,500' },
@@ -456,7 +456,7 @@ export const PricingSection = () => {
               <div key={idx} className="p-3 sm:p-3.5 rounded-xl bg-gray-50 border border-gray-200/80 hover:border-[#EE3124]/40 flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition-colors">
                 <div className="space-y-0.5">
                   <div className="text-xs sm:text-sm font-display font-bold text-gray-900 uppercase">{item.package}</div>
-                  <span className="inline-block px-2 py-0.5 rounded bg-[#FFD700]/20 text-amber-800 font-mono text-[9px] font-bold uppercase tracking-wider">
+                  <span className="inline-block px-2 py-0.5 rounded bg-[#EE3124]/10 text-[#EE3124] font-mono text-[9px] font-bold uppercase tracking-wider">
                     🎁 {item.bonus}
                   </span>
                 </div>
@@ -547,8 +547,8 @@ export const PricingSection = () => {
         </ul>
 
         <div className="pt-2 flex justify-center">
-          <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-3 px-6 text-xs">
-            Book Your Race
+          <MagneticButton onClick={onOpenBooking} className="py-3 px-8 text-xs font-bold shadow-lg">
+            Book Your Race Now 🏁
           </MagneticButton>
         </div>
       </div>

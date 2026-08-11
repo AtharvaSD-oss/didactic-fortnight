@@ -2,12 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Flag, ChevronDown, MapPin } from 'lucide-react';
+import { Flag, ChevronDown, MapPin, Flame } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Hero = ({ onNavigate }) => {
+const Hero = ({ onOpenBooking, onNavigate }) => {
   const heroRef = useRef(null);
   const heroContentRef = useRef(null);
   const heroBgRef = useRef(null);
@@ -72,7 +72,7 @@ const Hero = ({ onNavigate }) => {
           />
         </video>
 
-        {/* Responsive light gradients: Gentle on mobile so the kart is crystal clear, structured on desktop */}
+        {/* Responsive light gradients: Clear visibility of karting arena on mobile and desktop */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-black/45 to-black/25 md:hidden" />
         <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent" />
         <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-[#07070a]/90 via-transparent to-black/40" />
@@ -81,46 +81,34 @@ const Hero = ({ onNavigate }) => {
       {/* 2. Responsive Content Layout */}
       <div
         ref={heroContentRef}
-        className="relative z-10 max-w-7xl w-full mx-auto flex flex-col justify-center items-start my-auto pt-2 sm:pt-4 space-y-3 sm:space-y-5 md:space-y-6 text-left"
+        className="relative z-10 max-w-7xl w-full mx-auto flex flex-col justify-center items-start my-auto pt-2 sm:pt-4 space-y-4 sm:space-y-6 md:space-y-7 text-left"
       >
-        {/* Official Brand Logo Top Left */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 15 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="block"
-        >
-          <img
-            src="/logo.png"
-            alt="Kartomania Official Logo"
-            className="h-16 sm:h-20 md:h-24 w-auto object-contain filter drop-shadow-[0_4px_25px_rgba(0,0,0,0.7)] hover:scale-105 transition-transform duration-300"
-          />
-        </motion.div>
+        {/* Track Badges Row */}
+        <div className="flex flex-wrap items-center gap-2">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-black/70 border border-white/20 shadow-md backdrop-blur-md"
+          >
+            <Flag className="w-3.5 h-3.5 text-[#FFD700]" />
+            <span className="font-mono text-[10px] sm:text-xs text-white uppercase tracking-wider font-bold">
+              720M OUTDOOR ARENA &bull; ENTERTAINLAND MALL &bull; SECTOR 83
+            </span>
+          </motion.div>
 
-        {/* Track Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black/65 border border-white/20 shadow-md backdrop-blur-md"
-        >
-          <Flag className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#FFD700]" />
-          <span className="font-mono text-[10px] sm:text-xs text-white uppercase tracking-wider font-bold">
-            720M OUTDOOR ARENA &bull; ENTERTAINLAND MALL &bull; SECTOR 83 MANESAR
-          </span>
-        </motion.div>
-
-        {/* Slogan Pill */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.15 }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EE3124]/20 border border-[#EE3124]/40 backdrop-blur-md"
-        >
-          <span className="font-mono text-[9px] sm:text-[11px] text-[#FFD700] uppercase tracking-widest font-black">
-            // PRECISION &bull; PASSION &bull; PERFORMANCE
-          </span>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EE3124]/20 border border-[#EE3124]/40 backdrop-blur-md"
+          >
+            <Flame className="w-3 h-3 text-[#EE3124]" />
+            <span className="font-mono text-[9px] sm:text-[11px] text-[#FFD700] uppercase tracking-widest font-black">
+              PRO RACER OWNED
+            </span>
+          </motion.div>
+        </div>
 
         {/* Display Headline */}
         <motion.div
@@ -137,26 +125,22 @@ const Hero = ({ onNavigate }) => {
               BEGINS.
             </span>
           </h2>
-          <div className="pt-1 flex flex-wrap gap-2 text-xs sm:text-sm font-mono text-gray-300 font-bold uppercase tracking-wider">
+          <div className="pt-2 flex flex-wrap gap-2 text-xs sm:text-sm font-mono text-gray-300 font-bold uppercase tracking-wider">
             <span className="text-[#FFD700]">FEEL THE SPEED</span> &bull; 
             <span className="text-white">BORN TO RACE</span> &bull; 
             <span className="text-[#EE3124]">DRIVE THE THRILL</span>
           </div>
         </motion.div>
 
-        {/* Subtitle */}
+        {/* Subtitle & Value Proposition */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.35 }}
-          className="space-y-2 sm:space-y-3 max-w-2xl"
+          className="space-y-2 max-w-2xl"
         >
-          <h3 className="text-base sm:text-xl md:text-2xl font-display font-bold text-white tracking-tight drop-shadow-md flex items-center gap-2">
-            <span>Speed Meets Control</span>
-            <span className="text-xs px-2.5 py-0.5 rounded bg-[#EE3124] text-white font-mono uppercase tracking-wider">PRO RACER OWNED</span>
-          </h3>
           <p className="text-xs sm:text-base font-sans text-gray-200 font-normal leading-relaxed text-left drop-shadow-md line-clamp-3 sm:line-clamp-none">
-            The only racing track owned, run, and maintained by a professional national racing driver. Experience authentic 720-meter outdoor asphalt racing with 4 kart fleet categories and championship telemetry.
+            The only racing track owned, run, and maintained by a professional national racing driver (Mr. Rohit Khanna). Experience authentic 720-meter outdoor asphalt racing with 4 kart fleet categories and championship telemetry.
           </p>
         </motion.div>
 
@@ -167,8 +151,12 @@ const Hero = ({ onNavigate }) => {
           transition={{ duration: 0.4, delay: 0.45 }}
           className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2 w-full sm:w-auto"
         >
-          <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-3.5 sm:py-4 px-6 sm:px-8 text-xs sm:text-sm text-center">
-            BOOK YOUR RACE
+          {/* Main Book Your Race Button */}
+          <MagneticButton
+            onClick={onOpenBooking}
+            className="py-3.5 sm:py-4 px-7 sm:px-9 text-xs sm:text-sm text-center shadow-[0_0_25px_rgba(238,49,36,0.5)] cursor-pointer"
+          >
+            BOOK YOUR RACE 🏁
           </MagneticButton>
 
           <a
