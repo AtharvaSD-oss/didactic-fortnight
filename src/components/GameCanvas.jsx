@@ -44,15 +44,22 @@ const GameCanvas = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    // Set initial canvas dimension immediately
+    const initW = containerRef.current?.clientWidth || 900;
+    const initH = 520;
+    canvas.width = initW;
+    canvas.height = initH;
+
     // Initialize Renderer & Default Karts Preview
     const renderer = new GameRenderer(canvas);
+    renderer.resize(initW, initH);
     entitiesRef.current.renderer = renderer;
 
     const initKarts = () => {
-      const player = new Kart('player', 'PLAYER', '#FF4500', false, trackData.gridSpawns[0]);
-      const ai1 = new Kart('ai1', 'SODI PRO', '#E53935', true, trackData.gridSpawns[1]);
-      const ai2 = new Kart('ai2', 'LAMBO E', '#1E88E5', true, trackData.gridSpawns[2]);
-      const ai3 = new Kart('ai3', 'ROTAX JR', '#43A047', true, trackData.gridSpawns[3]);
+      const player = new Kart('player', 'PLAYER', '#EE3124', false, trackData.gridSpawns[0]);
+      const ai1 = new Kart('ai1', 'SODI PRO', '#0066CC', true, trackData.gridSpawns[1]);
+      const ai2 = new Kart('ai2', 'LAMBO E', '#FFD700', true, trackData.gridSpawns[2]);
+      const ai3 = new Kart('ai3', 'ROTAX JR', '#2E7D32', true, trackData.gridSpawns[3]);
 
       entitiesRef.current.player = player;
       entitiesRef.current.karts = [player, ai1, ai2, ai3];
@@ -64,8 +71,8 @@ const GameCanvas = () => {
 
     const handleResize = () => {
       if (containerRef.current) {
-        const w = containerRef.current.clientWidth || 800;
-        const h = Math.min(window.innerHeight * 0.7, 560);
+        const w = containerRef.current.clientWidth || 900;
+        const h = Math.min(window.innerHeight * 0.7, 540);
         renderer.resize(w, h);
       }
     };
@@ -202,10 +209,10 @@ const GameCanvas = () => {
     audioEngine.init();
 
     // Spawn 1 Player + 3 AI Opponents
-    const player = new Kart('player', 'PLAYER', '#FF4500', false, trackData.gridSpawns[0]);
-    const ai1 = new Kart('ai1', 'SODI PRO', '#E53935', true, trackData.gridSpawns[1]);
-    const ai2 = new Kart('ai2', 'LAMBO E', '#1E88E5', true, trackData.gridSpawns[2]);
-    const ai3 = new Kart('ai3', 'ROTAX JR', '#43A047', true, trackData.gridSpawns[3]);
+    const player = new Kart('player', 'PLAYER', '#EE3124', false, trackData.gridSpawns[0]);
+    const ai1 = new Kart('ai1', 'SODI PRO', '#0066CC', true, trackData.gridSpawns[1]);
+    const ai2 = new Kart('ai2', 'LAMBO E', '#FFD700', true, trackData.gridSpawns[2]);
+    const ai3 = new Kart('ai3', 'ROTAX JR', '#2E7D32', true, trackData.gridSpawns[3]);
 
     entitiesRef.current.player = player;
     entitiesRef.current.karts = [player, ai1, ai2, ai3];

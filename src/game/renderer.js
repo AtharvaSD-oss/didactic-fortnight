@@ -6,38 +6,50 @@ export class GameRenderer {
     // Skid marks & particle pools
     this.skidMarks = [];
     this.particles = [];
-    this.camera = { x: 0, y: 0, zoom: 1 };
+    this.camera = { x: 0, y: 0 };
+    this.initialized = false;
   }
 
   resize(width, height) {
-    this.canvas.width = width;
-    this.canvas.height = height;
+    if (width > 0 && height > 0) {
+      this.canvas.width = width;
+      this.canvas.height = height;
+    }
   }
 
   render(playerKart, karts, trackData, raceState, crtEnabled = true) {
     const ctx = this.ctx;
-    const width = this.canvas.width;
-    const height = this.canvas.height;
+    if (!ctx || !playerKart) return;
 
-    // Smooth Camera Follow
+    const width = this.canvas.width || 800;
+    const height = this.canvas.height || 520;
+
+    // Smooth Camera Follow centered on player
     const targetX = playerKart.x - width / 2;
     const targetY = playerKart.y - height / 2;
-    this.camera.x += (targetX - this.camera.x) * 0.1;
-    this.camera.y += (targetY - this.camera.y) * 0.1;
+
+    if (!this.initialized) {
+      this.camera.x = targetX;
+      this.camera.y = targetY;
+      this.initialized = true;
+    } else {
+      this.camera.x += (targetX - this.camera.x) * 0.12;
+      this.camera.y += (targetY - this.camera.y) * 0.12;
+    }
 
     ctx.save();
     ctx.clearRect(0, 0, width, height);
 
     // Camera transform
-    ctx.translate(-this.camera.x, -this.camera.y);
+    ctx.translate(-Math.round(this.camera.x), -Math.round(this.camera.y));
 
-    // 1. Draw Arena Concrete Slab & Ground
+    // 1. Draw Arena Concrete Platform & Stadium Floor
     this.drawArenaPlatform(ctx);
 
     // 2. Draw Track Asphalt & Curbs & Pit Lane
     this.drawTrack(ctx, trackData);
 
-    // 3. Draw Track Markings (Arrows, Kerbs, Marshall Posts, Signs)
+    // 3. Draw Markings (Direction Arrows, Kerbs, Marshall Posts, Signs)
     this.drawTrackDetails(ctx, trackData);
 
     // 4. Draw Skid Marks
@@ -66,30 +78,30 @@ export class GameRenderer {
   }
 
   drawArenaPlatform(ctx) {
-    // Outer dark arena stadium space
-    ctx.fillStyle = '#060609';
+    // Outer stadium background
+    ctx.fillStyle = '#08080d';
     ctx.fillRect(this.camera.x - 300, this.camera.y - 300, this.canvas.width + 600, this.canvas.height + 600);
 
-    // Main Concrete Arena Platform Slab (matches image)
-    const slabX = 50;
-    const slabY = 80;
-    const slabW = 1250;
-    const slabH = 880;
+    // Main Concrete Arena Platform Slab (matches image schematic)
+    const slabX = 20;
+    const slabY = 60;
+    const slabW = 1280;
+    const slabH = 920;
     const radius = 60;
 
     // Slab Shadow
     ctx.save();
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
     ctx.beginPath();
     if (ctx.roundRect) {
-      ctx.roundRect(slabX + 15, slabY + 25, slabW, slabH, radius);
+      ctx.roundRect(slabX + 18, slabY + 28, slabW, slabH, radius);
     } else {
-      ctx.rect(slabX + 15, slabY + 25, slabW, slabH);
+      ctx.rect(slabX + 18, slabY + 28, slabW, slabH);
     }
     ctx.fill();
 
-    // Slab Bevel Bottom Edge
-    ctx.fillStyle = '#b8bcc4';
+    // Slab Bevel Edge
+    ctx.fillStyle = '#9ca3af';
     ctx.beginPath();
     if (ctx.roundRect) {
       ctx.roundRect(slabX, slabY + 12, slabW, slabH, radius);
@@ -98,11 +110,11 @@ export class GameRenderer {
     }
     ctx.fill();
 
-    // Main Concrete Surface
+    // Main Concrete Surface Gradient
     const slabGrad = ctx.createLinearGradient(slabX, slabY, slabX + slabW, slabY + slabH);
-    slabGrad.addColorStop(0, '#f0f2f6');
-    slabGrad.addColorStop(0.5, '#e4e7ec');
-    slabGrad.addColorStop(1, '#d5d9e0');
+    slabGrad.addColorStop(0, '#f1f3f7');
+    slabGrad.addColorStop(0.5, '#e5e7eb');
+    slabGrad.addColorStop(1, '#d1d5db');
     ctx.fillStyle = slabGrad;
     ctx.beginPath();
     if (ctx.roundRect) {
@@ -112,16 +124,16 @@ export class GameRenderer {
     }
     ctx.fill();
 
-    // Subtle concrete panel grid lines
-    ctx.strokeStyle = 'rgba(180, 185, 195, 0.35)';
+    // Concrete panel tiles
+    ctx.strokeStyle = 'rgba(156, 163, 175, 0.3)';
     ctx.lineWidth = 1;
-    for (let x = slabX + 100; x < slabX + slabW; x += 120) {
+    for (let x = slabX + 80; x < slabX + slabW; x += 110) {
       ctx.beginPath();
       ctx.moveTo(x, slabY);
       ctx.lineTo(x, slabY + slabH);
       ctx.stroke();
     }
-    for (let y = slabY + 100; y < slabY + slabH; y += 120) {
+    for (let y = slabY + 80; y < slabY + slabH; y += 110) {
       ctx.beginPath();
       ctx.moveTo(slabX, y);
       ctx.lineTo(slabX + slabW, y);
@@ -133,11 +145,11 @@ export class GameRenderer {
 
   drawTrack(ctx, trackData) {
     const points = trackData.centerline;
-    const trackWidth = trackData.width;
+    const trackWidth = trackData.width || 80;
 
-    // 1. Outer Safety Barrier Shading (Dark extruded wall)
+    // 1. Safety Barrier Base
     ctx.beginPath();
-    ctx.strokeStyle = '#181920';
+    ctx.strokeStyle = '#111217';
     ctx.lineWidth = trackWidth + 24;
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
@@ -145,7 +157,7 @@ export class GameRenderer {
     ctx.closePath();
     ctx.stroke();
 
-    // 2. White Perimeter Line
+    // 2. White Barrier Border Line
     ctx.beginPath();
     ctx.strokeStyle = '#ffffff';
     ctx.lineWidth = trackWidth + 14;
@@ -155,20 +167,20 @@ export class GameRenderer {
     ctx.closePath();
     ctx.stroke();
 
-    // 3. Pit Lane underlay
+    // 3. Pit Lane Underlay
     if (trackData.pitLane) {
       ctx.beginPath();
-      ctx.strokeStyle = '#2b2d35';
-      ctx.lineWidth = trackWidth * 0.65;
+      ctx.strokeStyle = '#1f2128';
+      ctx.lineWidth = trackWidth * 0.7;
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
       trackData.pitLane.forEach((p, i) => (i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)));
       ctx.stroke();
     }
 
-    // 4. Smooth Asphalt Track Surface
+    // 4. Smooth Asphalt Surface
     ctx.beginPath();
-    ctx.strokeStyle = '#2c2e37';
+    ctx.strokeStyle = '#272932';
     ctx.lineWidth = trackWidth;
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
@@ -176,10 +188,10 @@ export class GameRenderer {
     ctx.closePath();
     ctx.stroke();
 
-    // 5. Track Centerline Dashes (Subtle White)
+    // 5. White Dashed Centerline
     ctx.save();
-    ctx.setLineDash([16, 24]);
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.25)';
+    ctx.setLineDash([16, 22]);
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.28)';
     ctx.lineWidth = 2;
     ctx.beginPath();
     points.forEach((p, i) => (i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)));
@@ -188,24 +200,26 @@ export class GameRenderer {
     ctx.restore();
 
     // 6. Speed Boost Pads
-    for (const pad of trackData.speedPads) {
-      ctx.save();
-      ctx.translate(pad.x, pad.y);
-      ctx.fillStyle = '#EE3124';
-      ctx.beginPath();
-      ctx.arc(0, 0, pad.radius, 0, Math.PI * 2);
-      ctx.fill();
+    if (trackData.speedPads) {
+      for (const pad of trackData.speedPads) {
+        ctx.save();
+        ctx.translate(pad.x, pad.y);
+        ctx.fillStyle = '#EE3124';
+        ctx.beginPath();
+        ctx.arc(0, 0, pad.radius, 0, Math.PI * 2);
+        ctx.fill();
 
-      // Glowing Speed Chevron
-      ctx.fillStyle = '#FFD700';
-      ctx.beginPath();
-      ctx.moveTo(-8, 8);
-      ctx.lineTo(0, -10);
-      ctx.lineTo(8, 8);
-      ctx.lineTo(0, 2);
-      ctx.closePath();
-      ctx.fill();
-      ctx.restore();
+        // Speed Chevron
+        ctx.fillStyle = '#FFD700';
+        ctx.beginPath();
+        ctx.moveTo(-8, 8);
+        ctx.lineTo(0, -10);
+        ctx.lineTo(8, 8);
+        ctx.lineTo(0, 2);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+      }
     }
 
     // 7. Checkered Start / Finish Line on track
@@ -242,7 +256,7 @@ export class GameRenderer {
       ctx.rotate(angle);
 
       // White Direction Arrow
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.75)';
       ctx.beginPath();
       ctx.moveTo(10, 0);
       ctx.lineTo(-6, -6);
@@ -273,7 +287,7 @@ export class GameRenderer {
           ctx.fillStyle = isRed ? '#d32f2f' : '#2e7d32'; // Red / Green
           ctx.fillRect((s - kerbSegments / 2) * segWidth, -segHeight / 2, segWidth - 1, segHeight);
 
-          // White inner strip
+          // White inner stripe
           ctx.fillStyle = '#ffffff';
           ctx.fillRect((s - kerbSegments / 2) * segWidth, -segHeight / 2 + 4, segWidth - 1, 3);
         }
@@ -283,9 +297,9 @@ export class GameRenderer {
 
     // 3. Draw Pit Lane Text Marking
     ctx.save();
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.65)';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
     ctx.font = 'bold 12px monospace';
-    ctx.fillText('PIT LANE', 820, 875);
+    ctx.fillText('PIT LANE', 820, 895);
     ctx.restore();
 
     // 4. Draw Marshall Stations (M) in orange circle
@@ -452,7 +466,7 @@ export class GameRenderer {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
     ctx.fillRect(-16, -11, 34, 22);
 
-    // Kart Chassis / Sidepods
+    // Kart Chassis
     ctx.fillStyle = kart.color;
     ctx.beginPath();
     if (ctx.roundRect) {

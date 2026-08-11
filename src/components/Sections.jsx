@@ -37,17 +37,20 @@ export const TrackSection = ({ onOpenBooking }) => (
       </div>
 
       <div className="md:w-1/2 w-full">
-        <div className="relative rounded-2xl bg-gray-900 border border-gray-800 p-5 shadow-lg overflow-hidden">
-          <div className="absolute top-3 right-3 text-[10px] font-mono text-[#EE3124] uppercase">
-            // 720M OUTDOOR ARENA SCHEMATIC
+        <div className="relative rounded-2xl bg-gray-950 border border-gray-800 p-3 sm:p-4 shadow-xl overflow-hidden group">
+          <div className="flex items-center justify-between mb-2">
+            <span className="px-2.5 py-0.5 rounded-full bg-[#EE3124] text-white font-mono text-[9px] font-bold uppercase tracking-wider shadow-md">
+              720M GRAND PRIX CIRCUIT LAYOUT
+            </span>
+            <span className="text-[10px] font-mono text-gray-400">14 TURNS // PIT LANE</span>
           </div>
-          <div className="h-56 sm:h-72 rounded-xl bg-gray-950 border border-gray-800 flex items-center justify-center relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#EE3124]/20 to-transparent opacity-50" />
-            <div className="text-center p-5 space-y-2 z-10">
-              <Gauge className="w-10 h-10 text-[#EE3124] mx-auto animate-pulse" />
-              <div className="font-display font-bold text-lg text-white">KARTOMANIA 720M GRAND PRIX CIRCUIT</div>
-              <div className="font-mono text-[11px] text-gray-400">720 METERS // 14 TURNS // OUTDOOR ARENA</div>
-            </div>
+
+          <div className="relative rounded-xl overflow-hidden bg-black flex items-center justify-center border border-gray-800">
+            <img
+              src="/track-layout.jpg"
+              alt="Kartomania 720M Outdoor Grand Prix Circuit Schematic Layout"
+              className="w-full h-auto max-h-[360px] object-contain group-hover:scale-105 transition-transform duration-500"
+            />
           </div>
         </div>
       </div>
