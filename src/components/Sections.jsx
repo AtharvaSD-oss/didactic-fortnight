@@ -727,47 +727,98 @@ export const FounderSection = () => {
   ];
 
   return (
-    <section id="founder" className="py-14 sm:py-18 px-4 max-w-7xl mx-auto border-t border-gray-200/80 bg-white text-gray-900">
-      <div className="space-y-6 sm:space-y-8">
+    <section id="founder" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto rounded-3xl my-8 bg-[#0B0F19] text-white border border-gray-800 shadow-2xl overflow-hidden relative">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#EE3124]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="space-y-8 relative z-10">
         {/* Section Header */}
         <div className="text-center space-y-2">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EE3124]/10 border border-[#EE3124]/30 text-[#EE3124] font-mono text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EE3124]/15 border border-[#EE3124]/40 text-[#EE3124] font-mono text-xs font-bold uppercase tracking-widest">
             <Trophy className="w-4 h-4" /> MOTORSPORT LEGEND & FOUNDER
           </div>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-display font-black text-gray-950 uppercase tracking-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-display font-black text-white uppercase tracking-tight">
             KNOW OUR FOUNDER — <span className="text-[#EE3124]">MR. ROHIT KHANNA</span>
           </h2>
-          <p className="text-xs sm:text-sm font-mono text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm font-mono text-gray-400 max-w-2xl mx-auto">
             2+ Decades of Indian Motorsport excellence, certified Porsche & Mercedes-Benz lead instructor, world record holder, and founder of Kartomania.
           </p>
         </div>
 
-        {/* Founder Highlights Grid */}
+        {/* Founder Spotlight Card with Real Grid Photo */}
+        <div className="rounded-2xl bg-[#111625] border border-gray-800 shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+          <div className="lg:col-span-6 relative min-h-[320px] sm:min-h-[400px] bg-black">
+            <img
+              src="/founder-rohit-khanna.jpg"
+              alt="Mr. Rohit Khanna on Formula Grid"
+              className="w-full h-full object-cover object-center filter brightness-[0.92]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4 z-10 space-y-1">
+              <span className="px-2.5 py-0.5 rounded-full bg-[#EE3124] text-white font-mono text-[9px] font-bold uppercase">
+                FORMULA RACING GRID
+              </span>
+              <div className="text-white font-display font-bold text-lg sm:text-xl uppercase">
+                MR. ROHIT KHANNA
+              </div>
+              <div className="text-gray-300 font-mono text-xs">
+                Active National Racing Driver & Founder
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-6 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <span className="text-[10px] font-mono text-[#FFD700] uppercase font-bold tracking-widest">// NATIONAL RACING PEDIGREE</span>
+              <h3 className="text-xl sm:text-2xl font-display font-bold text-white uppercase">
+                "REAL RACERS RACE CLEAN — BUILT FROM DECADES ON THE NATIONAL GRID."
+              </h3>
+              <p className="text-gray-300 text-xs sm:text-sm font-sans leading-relaxed">
+                Mr. Rohit Khanna has been a core pillar of the Indian Motorsport fraternity for over 20 years. Having competed in the JK Tyre National Racing Championship, MRF National Championship, and Rotax Max Karting Championship, he founded Kartomania to give racers an authentic, championship-grade motorsport platform in Gurugram.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-3 gap-2 font-mono pt-2">
+              <div className="p-3 rounded-xl bg-black/40 border border-gray-800 text-center">
+                <div className="text-lg font-display font-bold text-[#EE3124]">20+ YRS</div>
+                <div className="text-[8px] text-gray-400 uppercase font-semibold">MOTORSPORT EXP</div>
+              </div>
+              <div className="p-3 rounded-xl bg-black/40 border border-gray-800 text-center">
+                <div className="text-lg font-display font-bold text-[#FFD700]">50K KM</div>
+                <div className="text-[8px] text-gray-400 uppercase font-semibold">WORLD RECORD</div>
+              </div>
+              <div className="p-3 rounded-xl bg-black/40 border border-gray-800 text-center">
+                <div className="text-lg font-display font-bold text-[#0066CC]">PORSCHE</div>
+                <div className="text-[8px] text-gray-400 uppercase font-semibold">LEAD INSTRUCTOR</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Achievements Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {achievements.map((item, idx) => {
             const IconComponent = item.icon;
             return (
               <div
                 key={idx}
-                className="bg-white border border-gray-200 hover:border-[#EE3124]/60 rounded-2xl p-5 sm:p-6 space-y-3 shadow-md hover:shadow-lg transition-all duration-300 group"
+                className="bg-[#111625] border border-gray-800 hover:border-[#EE3124]/60 rounded-2xl p-5 space-y-3 shadow-md hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="flex items-center justify-between">
                   <div className="p-2.5 rounded-xl bg-[#EE3124]/10 text-[#EE3124] group-hover:scale-110 transition-transform">
                     <IconComponent className="w-4 h-4" />
                   </div>
-                  <span className="px-2 py-0.5 rounded bg-[#EE3124]/10 text-[#EE3124] font-mono text-[9px] font-bold uppercase tracking-widest">
+                  <span className="px-2 py-0.5 rounded bg-[#EE3124]/15 text-[#EE3124] font-mono text-[9px] font-bold uppercase tracking-widest border border-[#EE3124]/30">
                     {item.badge}
                   </span>
                 </div>
 
                 <div className="space-y-0.5">
                   <span className="font-mono text-[9px] text-gray-400 uppercase tracking-widest font-bold">{item.period}</span>
-                  <h3 className="text-base font-display font-bold text-gray-950 uppercase group-hover:text-[#EE3124] transition-colors">
+                  <h3 className="text-base font-display font-bold text-white uppercase group-hover:text-[#FFD700] transition-colors">
                     {item.title}
                   </h3>
                 </div>
 
-                <p className="text-xs font-sans text-gray-600 leading-relaxed">
+                <p className="text-xs font-sans text-gray-300 leading-relaxed">
                   {item.desc}
                 </p>
               </div>
