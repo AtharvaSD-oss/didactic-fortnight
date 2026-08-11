@@ -52,6 +52,29 @@ export const KartsSection = () => (
       <h2 className="text-2xl sm:text-4xl font-display font-bold text-gray-950 uppercase">HIGH-PERFORMANCE RACE FLEET</h2>
     </div>
 
+    {/* Real Fleet Grid Staging Photo Banner */}
+    <div className="mb-8 rounded-2xl overflow-hidden bg-black border border-gray-200 relative h-64 sm:h-80 group shadow-lg">
+      <img
+        src="/images/karts.webp"
+        alt="Kartomania Real Fleet Lined Up on Staging Grid"
+        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+      <div className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2 z-10">
+        <div>
+          <span className="px-2.5 py-0.5 rounded-full bg-[#EE3124] text-white font-mono text-[9px] font-bold uppercase tracking-wider">
+            STAGING GRID READY
+          </span>
+          <h3 className="text-xl sm:text-2xl font-display font-bold text-white uppercase mt-1">
+            OFFICIAL KARTOMANIA FLEET
+          </h3>
+          <p className="text-xs font-mono text-gray-300">
+            Maintained and calibrated daily by championship motorsport mechanics.
+          </p>
+        </div>
+      </div>
+    </div>
+
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {[
         { name: "SODI RT10 PRO", engine: "270cc Honda GX", hp: "13.0 HP", topSpeed: "75 KM/H", level: "PRO SERIES" },

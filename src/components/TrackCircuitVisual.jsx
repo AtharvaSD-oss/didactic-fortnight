@@ -202,37 +202,37 @@ const TrackCircuitVisual = () => {
           </g>
 
           {/* 5. Pit Lane Painted Text */}
-          <text x="820" y="880" fill="rgba(255,255,255,0.7)" font-family="monospace" font-size="14" font-weight="bold" letter-spacing="2">
+          <text x="820" y="880" fill="rgba(255,255,255,0.7)" fontFamily="monospace" fontSize="14" fontWeight="bold" letterSpacing="2">
             PIT LANE
           </text>
 
           {/* 6. Marshall Stations (Orange Circles with 'M') */}
           <g>
             <circle cx="740" cy="155" r="15" fill="#ff8f00" stroke="#ffffff" strokeWidth="2" />
-            <text x="740" y="160" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">M</text>
+            <text x="740" y="160" fill="#ffffff" fontFamily="sans-serif" fontSize="13" fontWeight="bold" textAnchor="middle">M</text>
 
             <circle cx="1110" cy="510" r="15" fill="#ff8f00" stroke="#ffffff" strokeWidth="2" />
-            <text x="1110" y="515" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">M</text>
+            <text x="1110" y="515" fill="#ffffff" fontFamily="sans-serif" fontSize="13" fontWeight="bold" textAnchor="middle">M</text>
 
             <circle cx="880" cy="915" r="15" fill="#ff8f00" stroke="#ffffff" strokeWidth="2" />
-            <text x="880" y="920" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">M</text>
+            <text x="880" y="920" fill="#ffffff" fontFamily="sans-serif" fontSize="13" fontWeight="bold" textAnchor="middle">M</text>
           </g>
 
           {/* 7. Sector Markers & Exit Gates */}
           <g>
             {/* Sector 12 Blue Marker */}
             <circle cx="115" cy="535" r="16" fill="#0288d1" stroke="#ffffff" strokeWidth="2" />
-            <text x="115" y="540" fill="#ffffff" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">12</text>
+            <text x="115" y="540" fill="#ffffff" fontFamily="monospace" fontSize="12" fontWeight="bold" textAnchor="middle">12</text>
 
             {/* Exit Gates (Green) */}
             <rect x="35" y="490" width="46" height="24" rx="5" fill="#2e7d32" stroke="#ffffff" strokeWidth="1.5" />
-            <text x="58" y="506" fill="#ffffff" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">EXIT ➜</text>
+            <text x="58" y="506" fill="#ffffff" fontFamily="monospace" fontSize="10" fontWeight="bold" textAnchor="middle">EXIT ➜</text>
 
             <rect x="630" y="925" width="46" height="24" rx="5" fill="#2e7d32" stroke="#ffffff" strokeWidth="1.5" />
-            <text x="653" y="941" fill="#ffffff" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">EXIT ➜</text>
+            <text x="653" y="941" fill="#ffffff" fontFamily="monospace" fontSize="10" fontWeight="bold" textAnchor="middle">EXIT ➜</text>
 
             <rect x="1230" y="650" width="46" height="24" rx="5" fill="#2e7d32" stroke="#ffffff" strokeWidth="1.5" />
-            <text x="1253" y="666" fill="#ffffff" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">EXIT ➜</text>
+            <text x="1253" y="666" fill="#ffffff" fontFamily="monospace" fontSize="10" fontWeight="bold" textAnchor="middle">EXIT ➜</text>
           </g>
 
           {/* 8. START / FINISH Gantry & Checkered Line */}
@@ -245,7 +245,7 @@ const TrackCircuitVisual = () => {
             {/* Orange Gantry Pole & Banner */}
             <line x1="300" y1="210" x2="300" y2="350" stroke="#ff8f00" strokeWidth="4" />
             <rect x="235" y="175" width="130" height="34" rx="4" fill="#ff8f00" stroke="#ffffff" strokeWidth="2" filter="url(#glow)" />
-            <text x="300" y="197" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="900" text-anchor="middle" letter-spacing="1">
+            <text x="300" y="197" fill="#ffffff" fontFamily="sans-serif" fontSize="13" fontWeight="900" textAnchor="middle" letterSpacing="1">
               START/FINISH
             </text>
           </g>
@@ -270,10 +270,10 @@ const TrackCircuitVisual = () => {
                 x={turn.x}
                 y={turn.y + 4}
                 fill="#ffffff"
-                font-family="sans-serif"
-                font-size="11"
-                font-weight="bold"
-                text-anchor="middle"
+                fontFamily="sans-serif"
+                fontSize="11"
+                fontWeight="bold"
+                textAnchor="middle"
                 className="pointer-events-none"
               >
                 T{turn.id}

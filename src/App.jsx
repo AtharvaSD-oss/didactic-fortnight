@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhoWeAreSection from './components/WhoWeAreSection';
 import WhyKartomaniaSection from './components/WhyKartomaniaSection';
+import TrackExperienceSection from './components/TrackExperienceSection';
 import RacingTimeline from './components/RacingTimeline';
 import RacingRulesSection from './components/RacingRulesSection';
 import Gallery from './components/Gallery';
@@ -66,6 +67,7 @@ export function App() {
       'home', 
       'who-we-are',
       'why-kartomania',
+      'experience',
       'experience-timeline', 
       'racing-rules',
       'track',
@@ -143,6 +145,7 @@ export function App() {
         />
         <WhoWeAreSection onOpenBooking={() => setBookingOpen(true)} />
         <WhyKartomaniaSection />
+        <TrackExperienceSection onOpenBooking={() => setBookingOpen(true)} />
         <RacingTimeline />
         <RacingRulesSection />
         <TrackSection onOpenBooking={() => setBookingOpen(true)} />
