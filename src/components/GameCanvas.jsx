@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Trophy, Volume2, VolumeX, Maximize2, Tv, Gauge } from 'lucide-react';
 import trackData from '../game/trackData.json';
-import { Kart } from '../game/physicsEngine';
+import { Kart, resolveKartCollisions } from '../game/physicsEngine';
 import { GameRenderer } from '../game/renderer';
 import { audioEngine } from '../game/audioEngine';
 import MagneticButton from './MagneticButton';
@@ -154,6 +154,9 @@ const GameCanvas = () => {
           karts.forEach((k) => {
             if (k.isAI) k.update({}, trackData, null);
           });
+
+          // Kart-to-Kart Collision Physics
+          resolveKartCollisions(karts, audioEngine);
 
           // Sort Rank by Checkpoint & Lap Progress
           const sorted = [...karts].sort((a, b) => {

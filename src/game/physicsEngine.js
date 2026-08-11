@@ -13,12 +13,12 @@ export class Kart {
     this.vx = 0;
     this.vy = 0;
 
-    // Physics Attributes (Mario Kart SNES Style)
-    this.maxSpeed = isAI ? 5.2 : 6.0;
-    this.accel = 0.18;
-    this.brake = 0.25;
-    this.friction = 0.96;
-    this.turnSpeed = 3.2;
+    // Physics Attributes (Responsive Arcade Physics)
+    this.maxSpeed = isAI ? 4.8 : 5.8;
+    this.accel = 0.16;
+    this.brake = 0.28;
+    this.friction = 0.965;
+    this.turnSpeed = 3.4;
 
     // Drifting Dynamics
     this.isDrifting = false;
@@ -34,8 +34,8 @@ export class Kart {
     this.finished = false;
     this.rank = 1;
 
-    // AI Waypoint tracking
-    this.aiWaypointIndex = 0;
+    // AI Waypoint tracking (start seeking the 1st corner waypoint)
+    this.aiWaypointIndex = 1;
   }
 
   update(inputs, trackData, audioEngine) {
@@ -45,7 +45,7 @@ export class Kart {
     if (this.boostTimer > 0) {
       this.boostTimer--;
     }
-    const currentMaxSpeed = this.maxSpeed * (this.boostTimer > 0 ? 1.4 : 1.0);
+    const currentMaxSpeed = this.maxSpeed * (this.boostTimer > 0 ? 1.35 : 1.0);
 
     if (this.isAI) {
       this.updateAI(trackData);
@@ -53,26 +53,36 @@ export class Kart {
       this.updatePlayer(inputs, currentMaxSpeed, audioEngine);
     }
 
-    // Velocity update from angle & momentum
+    // Velocity calculation from heading & momentum
     const rad = ((this.angle + this.driftAngleOffset) * Math.PI) / 180;
     this.vx = Math.cos(rad) * this.speed;
     this.vy = Math.sin(rad) * this.speed;
 
-    // Apply friction & momentum
+    // Apply friction
     this.speed *= this.friction;
 
-    // Track boundary check (off-road grass slowdown)
-    const onTrack = isPointOnTrack(this.x, this.y, trackData);
-    if (!onTrack) {
-      this.speed *= 0.88; // Slowdown on grass/gravel
+    // Track boundary check & barrier collision
+    const trackInfo = getTrackBoundsInfo(this.x, this.y, trackData);
+    if (!trackInfo.onTrack) {
+      // Off-road slowdown
+      this.speed *= 0.88;
+
+      // Outer barrier wall rebound
+      if (trackInfo.distanceToCenter > (trackData.width / 2) + 20) {
+        this.x += (trackInfo.nearestPoint.x - this.x) * 0.12;
+        this.y += (trackInfo.nearestPoint.y - this.y) * 0.12;
+        this.speed *= 0.75;
+      }
     }
 
     // Speed pad check
-    for (const pad of trackData.speedPads) {
-      const dist = Math.hypot(this.x - pad.x, this.y - pad.y);
-      if (dist < pad.radius + 10) {
-        this.boostTimer = 60; // 1s boost
-        if (audioEngine && !this.isAI) audioEngine.playBoost();
+    if (trackData.speedPads) {
+      for (const pad of trackData.speedPads) {
+        const dist = Math.hypot(this.x - pad.x, this.y - pad.y);
+        if (dist < pad.radius + 12) {
+          this.boostTimer = 55; // Boost duration
+          if (audioEngine && !this.isAI) audioEngine.playBoost();
+        }
       }
     }
 
@@ -92,8 +102,8 @@ export class Kart {
       this.speed = Math.max(this.speed - this.brake, -maxSpeed * 0.4);
     }
 
-    // Turning
-    const turnFactor = Math.min(Math.abs(this.speed) / 2.5, 1);
+    // Turning with progressive speed response
+    const turnFactor = Math.min(Math.abs(this.speed) / 2.2, 1);
     if (inputs.left) {
       this.angle -= this.turnSpeed * turnFactor;
     }
@@ -102,14 +112,14 @@ export class Kart {
     }
 
     // Drifting (Space)
-    if (inputs.drift && Math.abs(this.speed) > 2.5) {
+    if (inputs.drift && Math.abs(this.speed) > 2.0) {
       if (!this.isDrifting) {
         this.isDrifting = true;
         this.driftDirection = inputs.left ? -1 : inputs.right ? 1 : 0;
         if (audioEngine) audioEngine.startDrift();
       }
-      this.driftAngleOffset = this.driftDirection * 25;
-      this.speed *= 0.985;
+      this.driftAngleOffset = this.driftDirection * 22;
+      this.speed *= 0.988;
     } else {
       if (this.isDrifting && audioEngine) {
         audioEngine.stopDrift();
@@ -131,26 +141,28 @@ export class Kart {
 
     if (!target) return;
 
-    // Angle to target waypoint
+    // Vector to target waypoint
     const dx = target.x - this.x;
     const dy = target.y - this.y;
     const targetAngle = (Math.atan2(dy, dx) * 180) / Math.PI;
 
-    // Turn towards target
+    // Smooth angle adjustment
     let angleDiff = targetAngle - this.angle;
     while (angleDiff < -180) angleDiff += 360;
     while (angleDiff > 180) angleDiff -= 360;
 
-    if (Math.abs(angleDiff) > 3) {
-      this.angle += Math.sign(angleDiff) * Math.min(Math.abs(angleDiff), this.turnSpeed * 1.1);
+    if (Math.abs(angleDiff) > 2) {
+      this.angle += Math.sign(angleDiff) * Math.min(Math.abs(angleDiff), this.turnSpeed * 1.05);
     }
 
-    // AI Speed Control
-    this.speed = Math.min(this.speed + this.accel * 0.9, this.maxSpeed);
+    // Adaptive AI throttle
+    const isSharpTurn = Math.abs(angleDiff) > 40;
+    const aiTargetSpeed = isSharpTurn ? this.maxSpeed * 0.75 : this.maxSpeed;
+    this.speed = Math.min(this.speed + this.accel * 0.9, aiTargetSpeed);
 
-    // Advance to next waypoint when close
+    // Advance to next waypoint when within reach
     const distToTarget = Math.hypot(dx, dy);
-    if (distToTarget < 60) {
+    if (distToTarget < 75) {
       this.aiWaypointIndex = (this.aiWaypointIndex + 1) % waypoints.length;
     }
   }
@@ -160,8 +172,12 @@ export class Kart {
     const nextCheckpointIndex = (this.checkpointIndex + 1) % waypoints.length;
     const targetCheckpoint = waypoints[nextCheckpointIndex];
 
+    if (!targetCheckpoint) return;
+
     const dist = Math.hypot(this.x - targetCheckpoint.x, this.y - targetCheckpoint.y);
-    if (dist < trackData.width * 0.75) {
+    const threshold = Math.max(trackData.width * 1.3, 100);
+
+    if (dist < threshold) {
       this.checkpointIndex = nextCheckpointIndex;
 
       // Start/Finish line crossed
@@ -175,27 +191,94 @@ export class Kart {
   }
 }
 
-// Distance to line segment helper for track bounds
-export function isPointOnTrack(px, py, trackData) {
+// Kart-to-Kart physical collision resolution
+export function resolveKartCollisions(karts, audioEngine) {
+  const minDistance = 28;
+
+  for (let i = 0; i < karts.length; i++) {
+    for (let j = i + 1; j < karts.length; j++) {
+      const k1 = karts[i];
+      const k2 = karts[j];
+
+      const dx = k2.x - k1.x;
+      const dy = k2.y - k1.y;
+      const dist = Math.hypot(dx, dy);
+
+      if (dist < minDistance && dist > 0) {
+        const overlap = (minDistance - dist) / 2;
+        const nx = dx / dist;
+        const ny = dy / dist;
+
+        // Push apart
+        k1.x -= nx * overlap;
+        k1.y -= ny * overlap;
+        k2.x += nx * overlap;
+        k2.y += ny * overlap;
+
+        // Velocity dampening & impulse
+        k1.speed *= 0.94;
+        k2.speed *= 0.94;
+
+        if (audioEngine && (!k1.isAI || !k2.isAI)) {
+          audioEngine.playCollision();
+        }
+      }
+    }
+  }
+}
+
+// Track Bounds Helper
+export function getTrackBoundsInfo(px, py, trackData) {
   const points = trackData.centerline;
   const radius = trackData.width / 2;
+
+  let minDistance = Infinity;
+  let nearestPoint = points[0];
 
   for (let i = 0; i < points.length; i++) {
     const p1 = points[i];
     const p2 = points[(i + 1) % points.length];
 
-    const dist = distToSegment({ x: px, y: py }, p1, p2);
-    if (dist <= radius + 15) {
-      return true;
+    const { distance, closestPoint } = distToSegmentWithPoint({ x: px, y: py }, p1, p2);
+    if (distance < minDistance) {
+      minDistance = distance;
+      nearestPoint = closestPoint;
     }
   }
-  return false;
+
+  // Also check pit lane
+  if (trackData.pitLane) {
+    for (let i = 0; i < trackData.pitLane.length - 1; i++) {
+      const p1 = trackData.pitLane[i];
+      const p2 = trackData.pitLane[i + 1];
+      const { distance, closestPoint } = distToSegmentWithPoint({ x: px, y: py }, p1, p2);
+      if (distance < minDistance) {
+        minDistance = distance;
+        nearestPoint = closestPoint;
+      }
+    }
+  }
+
+  return {
+    onTrack: minDistance <= radius + 12,
+    distanceToCenter: minDistance,
+    nearestPoint
+  };
 }
 
-function distToSegment(p, v, w) {
+function distToSegmentWithPoint(p, v, w) {
   const l2 = (v.x - w.x) ** 2 + (v.y - w.y) ** 2;
-  if (l2 === 0) return Math.hypot(p.x - v.x, p.y - v.y);
+  if (l2 === 0) {
+    return { distance: Math.hypot(p.x - v.x, p.y - v.y), closestPoint: v };
+  }
   let t = ((p.x - v.x) * (w.x - v.x) + (p.y - v.y) * (w.y - v.y)) / l2;
   t = Math.max(0, Math.min(1, t));
-  return Math.hypot(p.x - (v.x + t * (w.x - v.x)), p.y - (v.y + t * (w.y - v.y)));
+  const closestPoint = {
+    x: v.x + t * (w.x - v.x),
+    y: v.y + t * (w.y - v.y)
+  };
+  return {
+    distance: Math.hypot(p.x - closestPoint.x, p.y - closestPoint.y),
+    closestPoint
+  };
 }
