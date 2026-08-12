@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Flag, ChevronDown, MapPin, Flame } from 'lucide-react';
+import { ChevronDown, MapPin } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -83,32 +83,7 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
         ref={heroContentRef}
         className="relative z-10 max-w-7xl w-full mx-auto flex flex-col justify-end items-start mt-auto mb-2 sm:mb-4 space-y-3 sm:space-y-4 md:space-y-5 text-left"
       >
-        {/* Track Badges Row */}
-        <div className="flex flex-wrap items-center gap-2">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-black/70 border border-white/20 shadow-md backdrop-blur-md"
-          >
-            <Flag className="w-3.5 h-3.5 text-[#FFD700]" />
-            <span className="font-mono text-[10px] sm:text-xs text-white uppercase tracking-wider font-bold">
-              720M OUTDOOR ARENA &bull; ENTERTAINLAND MALL &bull; SECTOR 83
-            </span>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.15 }}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EE3124]/20 border border-[#EE3124]/40 backdrop-blur-md"
-          >
-            <Flame className="w-3 h-3 text-[#EE3124]" />
-            <span className="font-mono text-[9px] sm:text-[11px] text-[#FFD700] uppercase tracking-widest font-black">
-              PRO RACER OWNED
-            </span>
-          </motion.div>
-        </div>
 
         {/* Display Headline */}
         <motion.div
