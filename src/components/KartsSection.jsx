@@ -8,7 +8,7 @@ const KARTS_DATA = [
     category: 'PRO SERIES',
     name: 'SODI RT10 PRO',
     badge: 'MOST POPULAR',
-    badgeColor: 'bg-[#EE3124] text-white',
+    badgeColor: 'bg-[#C9A45C] text-[#0B0D0F]',
     tagline: 'The gold standard of world-class rental karting.',
     engine: '270cc Honda GX 4-Stroke',
     hp: '13.0 HP',
@@ -27,7 +27,7 @@ const KARTS_DATA = [
     category: 'CHAMPIONSHIP',
     name: 'SUPER PRO TWIN',
     badge: 'MAX POWER',
-    badgeColor: 'bg-[#0B0F19] text-[#FFD700] border border-[#FFD700]/30',
+    badgeColor: 'bg-[#0B0D0F] text-[#C9A45C] border border-[#C9A45C]/30',
     tagline: 'Raw twin-engine acceleration for apex hunters.',
     engine: 'Twin-Engine 390cc Dual Block',
     hp: '22.0 HP',
@@ -85,25 +85,25 @@ const KartsSection = ({ onOpenBooking }) => {
   return (
     <section
       id="karts"
-      className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-gray-200/80 bg-white text-gray-900 relative z-20"
+      className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/10 bg-[#0B0D0F] text-[#F4F1EA] relative z-20"
     >
       {/* 1. Header Section */}
       <div className="text-center space-y-3 sm:space-y-4 max-w-3xl mx-auto mb-10 sm:mb-14">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EE3124]/10 border border-[#EE3124]/30 text-[#EE3124] font-mono text-xs font-bold uppercase tracking-widest">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C9A45C]/15 border border-[#C9A45C]/30 text-[#C9A45C] font-mono text-xs font-bold uppercase tracking-widest">
           <Award className="w-3.5 h-3.5" /> MOTORSPORT FLEET SPECIFICATIONS
         </div>
 
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-[#0B0F19] uppercase tracking-tight">
-          PRECISION-ENGINEERED <span className="text-[#EE3124]">RACE FLEET</span>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-[#F4F1EA] uppercase tracking-tight">
+          PRECISION-ENGINEERED <span className="text-[#C9A45C]">RACE FLEET</span>
         </h2>
 
-        <p className="text-xs sm:text-sm md:text-base font-sans text-gray-600 leading-relaxed max-w-2xl mx-auto">
+        <p className="text-xs sm:text-sm md:text-base font-sans text-[#B8B1A5] leading-relaxed max-w-2xl mx-auto">
           Every machine is balanced and calibrated daily by active championship motorsport engineers to deliver authentic track grip, razor-sharp steering, and blistering lap times.
         </p>
       </div>
 
       {/* 2. Hero Staging Grid Showcase Banner */}
-      <div className="mb-10 sm:mb-14 rounded-3xl overflow-hidden bg-[#0B0F19] border border-gray-200 relative group shadow-xl">
+      <div className="mb-10 sm:mb-14 rounded-3xl overflow-hidden bg-[#15181C] border border-white/10 relative group shadow-2xl">
         <div className="relative h-64 sm:h-80 md:h-[380px] w-full overflow-hidden">
           <img
             src="/gallery/kartomania-fleet-canopy.jpg"
@@ -111,15 +111,15 @@ const KartsSection = ({ onOpenBooking }) => {
             className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out opacity-90"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-transparent" />
 
           {/* Staging Overlay Badges */}
           <div className="absolute top-4 sm:top-6 left-4 sm:left-6 z-10 flex items-center gap-2">
-            <span className="px-3 py-1 rounded-full bg-[#EE3124] text-white font-mono text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-lg">
+            <span className="px-3 py-1 rounded-full bg-[#C9A45C] text-[#0B0D0F] font-mono text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-lg">
               PITLANE READY
             </span>
-            <span className="hidden sm:inline-block px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[#FFD700] font-mono text-[10px] sm:text-xs font-bold uppercase border border-white/10">
+            <span className="hidden sm:inline-block px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[#C9A45C] font-mono text-[10px] sm:text-xs font-bold uppercase border border-white/10">
               DAILY MOTORSPORT BALANCING
             </span>
           </div>
@@ -127,7 +127,7 @@ const KartsSection = ({ onOpenBooking }) => {
           {/* Bottom Banner Content */}
           <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4 z-10">
             <div className="space-y-1 sm:space-y-1.5 max-w-xl text-left">
-              <span className="text-[#FFD700] font-mono text-xs font-bold uppercase tracking-widest block">
+              <span className="text-[#C9A45C] font-mono text-xs font-bold uppercase tracking-widest block">
                 OFFICIAL KARTOMANIA FLEET
               </span>
               <h3 className="text-xl sm:text-3xl font-display font-black text-white uppercase tracking-tight">
@@ -141,7 +141,7 @@ const KartsSection = ({ onOpenBooking }) => {
             {onOpenBooking && (
               <button
                 onClick={onOpenBooking}
-                className="self-start sm:self-auto px-5 py-2.5 rounded-xl bg-white text-[#0B0F19] hover:bg-[#EE3124] hover:text-white font-mono text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-lg cursor-pointer whitespace-nowrap"
+                className="self-start sm:self-auto px-5 py-2.5 rounded-xl bg-[#C9A45C] text-[#0B0D0F] hover:bg-[#DFBA70] font-mono text-xs font-black uppercase tracking-wider transition-all duration-300 shadow-lg cursor-pointer whitespace-nowrap"
               >
                 SELECT YOUR KART &rarr;
               </button>
@@ -151,7 +151,7 @@ const KartsSection = ({ onOpenBooking }) => {
       </div>
 
       {/* 3. Refined 4-Tier Specifications Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 text-left">
         {KARTS_DATA.map((kart, idx) => {
           const isHighlighted = idx === 0;
 
@@ -163,18 +163,18 @@ const KartsSection = ({ onOpenBooking }) => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               className={`
-                relative rounded-2xl bg-white border p-6 flex flex-col justify-between transition-all duration-300
-                hover:-translate-y-1.5 shadow-sm hover:shadow-xl group
+                relative rounded-2xl bg-[#15181C] border p-6 flex flex-col justify-between transition-all duration-300
+                hover:-translate-y-1.5 shadow-md hover:shadow-2xl group
                 ${isHighlighted 
-                  ? 'border-[#EE3124]/60 shadow-md ring-1 ring-[#EE3124]/20' 
-                  : 'border-gray-200/90 hover:border-[#EE3124]/40'
+                  ? 'border-[#C9A45C]/40 shadow-lg ring-1 ring-[#C9A45C]/20' 
+                  : 'border-white/10 hover:border-[#C9A45C]/50'
                 }
               `}
             >
               {/* Top Meta Line */}
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="font-mono text-xs font-black text-gray-400 group-hover:text-[#EE3124] transition-colors">
+                  <span className="font-mono text-xs font-black text-[#837D73] group-hover:text-[#C9A45C] transition-colors">
                     {kart.tierNumber} // {kart.category}
                   </span>
                   <span className={`px-2.5 py-0.5 rounded-full font-mono text-[9px] font-bold uppercase tracking-wider ${kart.badgeColor}`}>
@@ -183,36 +183,36 @@ const KartsSection = ({ onOpenBooking }) => {
                 </div>
 
                 {/* Model Name & Tagline */}
-                <h3 className="text-xl font-display font-black text-[#0B0F19] uppercase tracking-tight group-hover:text-[#EE3124] transition-colors">
+                <h3 className="text-xl font-display font-black text-[#F4F1EA] uppercase tracking-tight group-hover:text-[#C9A45C] transition-colors">
                   {kart.name}
                 </h3>
-                <p className="text-xs font-sans text-gray-600 mt-1 mb-5 leading-relaxed min-h-[36px]">
+                <p className="text-xs font-sans text-[#B8B1A5] mt-1 mb-5 leading-relaxed min-h-[36px]">
                   {kart.tagline}
                 </p>
 
                 {/* Telemetry Metrics Panel */}
-                <div className="p-3.5 rounded-xl bg-gray-50/80 border border-gray-200/80 space-y-2.5 mb-5 font-mono text-xs">
+                <div className="p-4 rounded-xl bg-[#0B0D0F] border border-white/10 space-y-2.5 mb-5 font-mono text-xs">
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-500 font-semibold text-[11px]">POWER OUTPUT</span>
-                    <span className="text-[#EE3124] font-black text-sm">{kart.hp}</span>
+                    <span className="text-[#837D73] font-semibold text-[11px]">POWER OUTPUT</span>
+                    <span className="text-[#C9A45C] font-black text-sm">{kart.hp}</span>
                   </div>
 
                   {/* Power Gauge Bar */}
-                  <div className="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                  <div className="w-full h-1.5 bg-[#1F242D] rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-[#FFD700] to-[#EE3124] rounded-full transition-all duration-700"
+                      className="h-full bg-gradient-to-r from-[#C9A45C] to-[#EE3124] rounded-full transition-all duration-700"
                       style={{ width: `${kart.powerPercent}%` }}
                     />
                   </div>
 
-                  <div className="flex items-center justify-between pt-1 border-t border-gray-200/60">
-                    <span className="text-gray-500 font-semibold text-[11px]">TOP SPEED</span>
-                    <span className="text-[#0B0F19] font-black text-xs">{kart.speed}</span>
+                  <div className="flex items-center justify-between pt-1 border-t border-white/10">
+                    <span className="text-[#837D73] font-semibold text-[11px]">TOP SPEED</span>
+                    <span className="text-[#F4F1EA] font-black text-xs">{kart.speed}</span>
                   </div>
 
-                  <div className="flex items-center justify-between border-t border-gray-200/60 pt-1">
-                    <span className="text-gray-500 font-semibold text-[11px]">POWERTRAIN</span>
-                    <span className="text-gray-800 font-bold text-[10px] text-right truncate max-w-[140px]">
+                  <div className="flex items-center justify-between border-t border-white/10 pt-1">
+                    <span className="text-[#837D73] font-semibold text-[11px]">POWERTRAIN</span>
+                    <span className="text-[#B8B1A5] font-bold text-[10px] text-right truncate max-w-[140px]">
                       {kart.engine}
                     </span>
                   </div>
@@ -220,12 +220,12 @@ const KartsSection = ({ onOpenBooking }) => {
 
                 {/* Key Engineering Features */}
                 <div className="space-y-2 mb-6">
-                  <span className="font-mono text-[10px] font-bold text-gray-400 uppercase tracking-widest block">
+                  <span className="font-mono text-[10px] font-bold text-[#837D73] uppercase tracking-widest block">
                     CHASSIS & SPECS
                   </span>
                   {kart.features.map((feat, fIdx) => (
-                    <div key={fIdx} className="flex items-start gap-2 text-xs font-sans text-gray-700">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#EE3124] shrink-0 mt-0.5" />
+                    <div key={fIdx} className="flex items-start gap-2 text-xs font-sans text-[#B8B1A5]">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A45C] shrink-0 mt-0.5" />
                       <span className="leading-snug">{feat}</span>
                     </div>
                   ))}
@@ -233,9 +233,9 @@ const KartsSection = ({ onOpenBooking }) => {
               </div>
 
               {/* Recommended Driver Category */}
-              <div className="pt-4 border-t border-gray-100 flex items-center justify-between text-[11px] font-mono">
-                <span className="text-gray-500 font-medium">DRIVER:</span>
-                <span className="text-gray-900 font-bold uppercase truncate max-w-[160px]">
+              <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+                <span className="text-[#837D73] font-medium">DRIVER:</span>
+                <span className="text-[#F4F1EA] font-bold uppercase truncate max-w-[160px]">
                   {kart.recommended}
                 </span>
               </div>
@@ -245,16 +245,16 @@ const KartsSection = ({ onOpenBooking }) => {
       </div>
 
       {/* 4. Bottom Engineering Guarantee Strip */}
-      <div className="mt-10 p-4 sm:p-5 rounded-2xl bg-gray-50 border border-gray-200/90 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left shadow-sm">
-        <div className="flex items-center gap-3">
-          <div className="p-2 rounded-xl bg-[#EE3124]/10 text-[#EE3124] shrink-0">
+      <div className="mt-10 p-5 sm:p-6 rounded-2xl bg-[#15181C] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left shadow-lg">
+        <div className="flex items-center gap-3.5">
+          <div className="p-2.5 rounded-xl bg-[#C9A45C]/15 text-[#C9A45C] shrink-0">
             <Shield className="w-5 h-5" />
           </div>
           <div className="space-y-0.5">
-            <div className="font-display font-bold text-xs sm:text-sm text-gray-950 uppercase">
+            <div className="font-display font-bold text-xs sm:text-sm text-[#F4F1EA] uppercase">
               FIA & SODIKART CERTIFIED SAFETY ECOSYSTEM
             </div>
-            <div className="font-mono text-[11px] text-gray-600">
+            <div className="font-mono text-[11px] text-[#B8B1A5]">
               High-impact polymer perimeter bumper wrap, remote pitlane emergency kill-switch, and DOT-certified safety gear.
             </div>
           </div>
@@ -264,7 +264,7 @@ const KartsSection = ({ onOpenBooking }) => {
           href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
           target="_blank"
           rel="noreferrer"
-          className="px-5 py-2.5 rounded-xl bg-[#0B0F19] text-white hover:bg-[#EE3124] font-mono text-xs font-bold uppercase tracking-wider transition-colors shrink-0 shadow-sm"
+          className="px-5 py-2.5 rounded-xl bg-[#C9A45C] text-[#0B0D0F] hover:bg-[#DFBA70] font-mono text-xs font-bold uppercase tracking-wider transition-colors shrink-0 shadow-md font-bold"
         >
           BOOK FLEET RACE &rarr;
         </a>

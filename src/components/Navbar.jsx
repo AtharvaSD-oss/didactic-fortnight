@@ -70,7 +70,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
         `}
       >
         {/* Subtle Racing Border Accent */}
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#FFD700] via-[#EE3124] to-[#0066CC] opacity-90" />
+        <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#C9A45C]/60 to-transparent opacity-80" />
 
         <div className="w-full px-3 sm:px-5 lg:px-7 flex items-center justify-between gap-2">
           {/* 1. LEFT: Official Kartomania Logo */}
@@ -82,7 +82,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
             <img 
               src="/logo.png" 
               alt="Kartomania - Where Real Racing Begins" 
-              className="h-10 sm:h-12 lg:h-13 w-auto object-contain filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.2)] group-hover:scale-105 transition-transform duration-300" 
+              className="h-10 sm:h-12 lg:h-13 w-auto object-contain filter drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] group-hover:scale-105 transition-transform duration-300" 
             />
           </button>
 
@@ -100,21 +100,21 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
                   onMouseLeave={() => setHoveredIndex(null)}
                   className={`
                     relative px-2 xl:px-2.5 py-1.5 text-[11px] xl:text-xs font-mono font-bold tracking-wider uppercase transition-colors duration-300 cursor-pointer bg-transparent border-none whitespace-nowrap
-                    ${isActive ? 'text-[#EE3124]' : 'text-gray-700 hover:text-black'}
+                    ${isActive ? 'text-[#C9A45C]' : 'text-[#B8B1A5] hover:text-[#F4F1EA]'}
                   `}
                 >
                   <span>{link.name}</span>
 
                   {/* Active indicator dot */}
                   {isActive && (
-                    <span className="absolute top-0.5 right-0.5 w-1.5 h-1.5 rounded-full bg-[#EE3124] shadow-[0_0_6px_#EE3124]" />
+                    <span className="absolute top-0.5 right-0.5 w-1.5 h-1.5 rounded-full bg-[#C9A45C] shadow-[0_0_8px_#C9A45C]" />
                   )}
 
                   {/* Animated glowing streak underline on hover or active */}
                   <span
                     className={`
-                      absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#EE3124] to-[#FFD700]
-                      rounded-full transition-all duration-300 shadow-[0_0_8px_rgba(238,49,36,0.4)]
+                      absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#C9A45C] via-[#EE3124] to-[#C9A45C]
+                      rounded-full transition-all duration-300 shadow-[0_0_8px_rgba(201,164,92,0.4)]
                       ${isActive ? 'w-full opacity-100' : isHovered ? 'w-full opacity-80' : 'w-0 opacity-0'}
                     `}
                   />
@@ -126,13 +126,13 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
           {/* 3. RIGHT: Quick Icons & Magnetic CTA */}
           <div className="flex items-center gap-2 xl:gap-3 shrink-0">
             {/* Utility Icons */}
-            <div className="hidden sm:flex items-center gap-1.5 pr-2 border-r border-gray-200">
+            <div className="hidden sm:flex items-center gap-1.5 pr-2 border-r border-white/10">
               <a
                 href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram Profile"
-                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105"
+                className="p-2 rounded-full bg-[#15181C] hover:bg-[#1E232B] border border-white/10 hover:border-[#C9A45C]/50 text-[#B8B1A5] hover:text-[#F4F1EA] transition-all hover:scale-105"
               >
                 <InstagramIcon className="w-3.5 h-3.5" />
               </a>
@@ -142,7 +142,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook Page"
-                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105"
+                className="p-2 rounded-full bg-[#15181C] hover:bg-[#1E232B] border border-white/10 hover:border-[#C9A45C]/50 text-[#B8B1A5] hover:text-[#F4F1EA] transition-all hover:scale-105"
               >
                 <FacebookIcon className="w-3.5 h-3.5" />
               </a>
@@ -150,7 +150,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
               <button
                 onClick={onOpenSearch}
                 aria-label="Search telemetry"
-                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105 cursor-pointer"
+                className="p-2 rounded-full bg-[#15181C] hover:bg-[#1E232B] border border-white/10 hover:border-[#C9A45C]/50 text-[#B8B1A5] hover:text-[#F4F1EA] transition-all hover:scale-105 cursor-pointer"
               >
                 <Search className="w-3.5 h-3.5" />
               </button>
@@ -158,7 +158,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
               <a
                 href="tel:+919717548897"
                 aria-label="Call Hotline"
-                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-[#EE3124] text-gray-700 hover:text-[#EE3124] transition-all hover:scale-105"
+                className="p-2 rounded-full bg-[#15181C] hover:bg-[#1E232B] border border-white/10 hover:border-[#C9A45C]/50 text-[#B8B1A5] hover:text-[#F4F1EA] transition-all hover:scale-105"
               >
                 <Phone className="w-3.5 h-3.5" />
               </a>
@@ -175,9 +175,9 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
             <button
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open mobile navigation"
-              className="lg:hidden p-3 rounded-full bg-gray-100 border border-gray-200 hover:border-[#EE3124] text-gray-800 hover:text-[#EE3124] transition-all active:scale-95 cursor-pointer"
+              className="lg:hidden p-2.5 sm:p-3 rounded-full bg-[#15181C] border border-white/10 hover:border-[#C9A45C] text-[#F4F1EA] hover:text-[#C9A45C] transition-all active:scale-95 cursor-pointer"
             >
-              <Menu className="w-5 h-5 text-[#EE3124]" />
+              <Menu className="w-5 h-5 text-[#C9A45C]" />
             </button>
           </div>
         </div>

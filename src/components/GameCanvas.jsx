@@ -257,16 +257,16 @@ const GameCanvas = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full max-w-6xl mx-auto rounded-3xl overflow-hidden border border-[#EE3124]/40 bg-[#07070a] shadow-[0_0_60px_rgba(238,49,36,0.25)] select-none"
+      className="relative w-full max-w-6xl mx-auto rounded-3xl overflow-hidden border border-white/10 bg-[#0B0D0F] shadow-[0_0_60px_rgba(201,164,92,0.15)] select-none"
     >
       {/* Top Telemetry Game Bar */}
-      <div className="flex items-center justify-between px-6 py-3 bg-[#0d0d17] border-b border-white/10 text-xs font-mono">
+      <div className="flex items-center justify-between px-6 py-3 bg-[#15181C] border-b border-white/10 text-xs font-mono text-[#F4F1EA]">
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 text-[#EE3124]">
+          <div className="flex items-center gap-2 text-[#C9A45C]">
             <Trophy className="w-4 h-4" />
             <span className="font-bold uppercase tracking-wider">KARTOMANIA 720M PRO ARCADE</span>
           </div>
-          <span className="hidden sm:inline px-2 py-0.5 rounded bg-[#EE3124]/20 text-[#EE3124] text-[10px] font-bold">
+          <span className="hidden sm:inline px-2 py-0.5 rounded bg-[#C9A45C]/20 text-[#C9A45C] text-[10px] font-bold">
             SCHEMATIC GRAND PRIX
           </span>
         </div>
@@ -274,8 +274,8 @@ const GameCanvas = () => {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setCrtEnabled(!crtEnabled)}
-            className={`p-2 rounded-full border text-xs transition-colors flex items-center gap-1 ${
-              crtEnabled ? 'border-[#EE3124] text-[#EE3124] bg-[#EE3124]/10' : 'border-white/10 text-gray-400'
+            className={`p-2 rounded-full border text-xs transition-colors flex items-center gap-1 cursor-pointer ${
+              crtEnabled ? 'border-[#C9A45C] text-[#C9A45C] bg-[#C9A45C]/10' : 'border-white/10 text-[#837D73]'
             }`}
             title="Toggle Retro CRT Scanlines"
           >
@@ -285,15 +285,15 @@ const GameCanvas = () => {
 
           <button
             onClick={toggleMute}
-            className="p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#EE3124] text-gray-300 hover:text-white transition-colors"
+            className="p-2 rounded-full bg-[#0B0D0F] border border-white/10 hover:border-[#C9A45C] text-[#B8B1A5] hover:text-[#F4F1EA] transition-colors cursor-pointer"
             title="Toggle Engine Sound"
           >
-            {isMuted ? <VolumeX className="w-3.5 h-3.5 text-gray-500" /> : <Volume2 className="w-3.5 h-3.5 text-[#EE3124]" />}
+            {isMuted ? <VolumeX className="w-3.5 h-3.5 text-[#837D73]" /> : <Volume2 className="w-3.5 h-3.5 text-[#C9A45C]" />}
           </button>
 
           <button
             onClick={toggleFullscreen}
-            className="p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#EE3124] text-gray-300 hover:text-white transition-colors"
+            className="p-2 rounded-full bg-[#0B0D0F] border border-white/10 hover:border-[#C9A45C] text-[#B8B1A5] hover:text-[#F4F1EA] transition-colors cursor-pointer"
             title="Fullscreen Mode"
           >
             <Maximize2 className="w-3.5 h-3.5" />
@@ -302,53 +302,53 @@ const GameCanvas = () => {
       </div>
 
       {/* Main Canvas Engine Container */}
-      <div className="relative w-full h-[450px] sm:h-[520px] bg-[#07070a]">
+      <div className="relative w-full h-[450px] sm:h-[520px] bg-[#0B0D0F]">
         <canvas ref={canvasRef} className="w-full h-full block" />
 
         {/* Live Race Telemetry HUD Overlay */}
         {gameState === 'racing' && (
           <div className="absolute top-4 left-4 z-20 flex flex-col gap-2 font-mono">
             {/* Speedometer */}
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/70 border border-white/10 text-white backdrop-blur-md">
-              <Gauge className="w-4 h-4 text-[#EE3124]" />
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#0B0D0F]/80 border border-white/10 text-white backdrop-blur-md">
+              <Gauge className="w-4 h-4 text-[#C9A45C]" />
               <span className="text-xl font-display font-bold">{speed}</span>
-              <span className="text-[10px] text-gray-400">KM/H</span>
+              <span className="text-[10px] text-[#837D73]">KM/H</span>
             </div>
 
             {/* Lap Counter */}
-            <div className="px-3 py-1 rounded-xl bg-black/70 border border-white/10 text-white text-xs backdrop-blur-md">
-              LAP: <span className="text-[#EE3124] font-bold">{currentLap}</span> / 3
+            <div className="px-3 py-1 rounded-xl bg-[#0B0D0F]/80 border border-white/10 text-white text-xs backdrop-blur-md">
+              LAP: <span className="text-[#C9A45C] font-bold">{currentLap}</span> / 3
             </div>
 
             {/* Position Rank */}
-            <div className="px-3 py-1 rounded-xl bg-black/70 border border-white/10 text-white text-xs backdrop-blur-md">
-              POS: <span className="text-[#EE3124] font-bold">{rank}</span> / 4
+            <div className="px-3 py-1 rounded-xl bg-[#0B0D0F]/80 border border-white/10 text-white text-xs backdrop-blur-md">
+              POS: <span className="text-[#C9A45C] font-bold">{rank}</span> / 4
             </div>
           </div>
         )}
 
         {/* Start Game Overlay Menu */}
         {gameState === 'menu' && (
-          <div className="absolute inset-0 z-30 flex flex-col items-center justify-center bg-black/80 backdrop-blur-md p-6 text-center space-y-6">
+          <div className="absolute inset-0 z-30 flex flex-col items-center justify-center bg-black/85 backdrop-blur-md p-6 text-center space-y-6">
             <div className="space-y-2">
-              <span className="font-mono text-xs text-[#EE3124] uppercase tracking-widest font-bold">// OFFICIAL SCHEMATIC RACING SIMULATOR</span>
+              <span className="font-mono text-xs text-[#C9A45C] uppercase tracking-widest font-bold">// OFFICIAL SCHEMATIC RACING SIMULATOR</span>
               <h3 className="text-3xl sm:text-5xl font-display font-black text-white uppercase tracking-tight">
-                KARTOMANIA <span className="text-[#EE3124]">720M GP ARCADE</span>
+                KARTOMANIA <span className="text-[#C9A45C]">720M GP ARCADE</span>
               </h3>
-              <p className="text-xs sm:text-sm font-mono text-gray-300 max-w-md">
+              <p className="text-xs sm:text-sm font-mono text-[#B8B1A5] max-w-md">
                 Race 3 AI competitors on our authentic 720-meter schematic circuit layout with Pit Lane, Direction Arrows, and Marshall apex kerbs!
               </p>
             </div>
 
             {/* Controls Cheatsheet */}
-            <div className="grid grid-cols-2 gap-4 font-mono text-xs text-left bg-black/60 border border-white/10 p-4 rounded-2xl max-w-sm w-full">
+            <div className="grid grid-cols-2 gap-4 font-mono text-xs text-left bg-[#15181C] border border-white/10 p-4 rounded-2xl max-w-sm w-full">
               <div>
-                <span className="text-gray-500 text-[10px]">STEERING</span>
+                <span className="text-[#837D73] text-[10px]">STEERING</span>
                 <div className="text-white font-bold">Arrow Keys / WASD</div>
               </div>
               <div>
-                <span className="text-gray-500 text-[10px]">DRIFT / BOOST</span>
-                <div className="text-[#EE3124] font-bold">SPACEBAR</div>
+                <span className="text-[#837D73] text-[10px]">DRIFT / BOOST</span>
+                <div className="text-[#C9A45C] font-bold">SPACEBAR</div>
               </div>
             </div>
 
@@ -366,7 +366,7 @@ const GameCanvas = () => {
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1.2, opacity: 1 }}
               transition={{ duration: 0.4 }}
-              className="text-7xl sm:text-9xl font-display font-black text-[#EE3124] text-glow drop-shadow-2xl"
+              className="text-7xl sm:text-9xl font-display font-black text-[#C9A45C] text-glow drop-shadow-2xl"
             >
               {countdown}
             </motion.div>
@@ -376,14 +376,14 @@ const GameCanvas = () => {
         {/* Race Finish Victory Podium Overlay */}
         {gameState === 'finished' && (
           <div className="absolute inset-0 z-30 flex flex-col items-center justify-center bg-black/85 backdrop-blur-md p-6 text-center space-y-6">
-            <div className="p-4 rounded-full bg-[#EE3124]/20 border border-[#EE3124] text-[#EE3124] animate-bounce">
+            <div className="p-4 rounded-full bg-[#C9A45C]/20 border border-[#C9A45C] text-[#C9A45C] animate-bounce">
               <Trophy className="w-12 h-12" />
             </div>
 
             <div className="space-y-1">
-              <span className="font-mono text-xs text-[#EE3124] uppercase tracking-widest font-bold">// RACE FINISHED</span>
+              <span className="font-mono text-xs text-[#C9A45C] uppercase tracking-widest font-bold">// RACE FINISHED</span>
               <h3 className="text-4xl font-display font-black text-white uppercase">
-                YOU FINISHED <span className="text-[#EE3124]">{finalRank === 1 ? '1ST PLACE! 🏆' : `${finalRank}ND PLACE`}</span>
+                YOU FINISHED <span className="text-[#C9A45C]">{finalRank === 1 ? '1ST PLACE! 🏆' : `${finalRank}ND PLACE`}</span>
               </h3>
             </div>
 

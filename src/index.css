@@ -3,18 +3,25 @@
 @import "swiper/css/effect-cards";
 
 :root {
-  --primary-red: #EE3124;
-  --primary-gold: #F59E0B;
-  --primary-blue: #0066CC;
-  --secondary-red: #D32F2F;
-  --secondary-gold: #D97706;
-
-  --midnight-navy: #0B0F19;
-  --pure-black: #111827;
-  --pure-white: #FFFFFF;
-  --porcelain-bg: #FAFAFB;
-  --silver-border: #E5E7EB;
-  --slate-muted: #6B7280;
+  --bg-primary: #0B0D0F;
+  --bg-secondary: #15181C;
+  --bg-card: #121519;
+  --bg-surface: #191D23;
+  
+  --text-primary: #F4F1EA;
+  --text-secondary: #B8B1A5;
+  --text-muted: #7E776D;
+  
+  --accent-gold: #C9A45C;
+  --accent-gold-hover: #DFBA70;
+  --accent-gold-glow: rgba(201, 164, 92, 0.25);
+  
+  --accent-red: #EE3124;
+  --accent-red-hover: #FF3B30;
+  
+  --border-subtle: rgba(244, 241, 234, 0.08);
+  --border-medium: rgba(244, 241, 234, 0.14);
+  --border-gold: rgba(201, 164, 92, 0.28);
 }
 
 @layer base {
@@ -39,16 +46,16 @@
   }
 
   body {
-    background-color: #FFFFFF;
-    color: #111827;
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #0B0D0F;
+    color: #F4F1EA;
+    font-family: 'Inter', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x: hidden;
     line-height: 1.65;
     letter-spacing: -0.01em;
   }
 
   h1, h2, h3, h4, .font-display {
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Archivo', 'Outfit', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
     letter-spacing: -0.025em;
   }
 
@@ -58,46 +65,39 @@
   }
 }
 
-/* Natural Ergonomics */
-@media (min-width: 1024px) {
-  body {
-    cursor: default;
-  }
-}
-
-/* Glassmorphism Styles (Refined White / Navy Hybrid) */
+/* Glassmorphism Styles (Cinematic Dark Motorsport Theme) */
 .glass-nav-top {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(11, 13, 15, 0.65);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(229, 231, 235, 0.7);
-  box-shadow: 0 4px 20px rgba(11, 15, 25, 0.03);
+  border-bottom: 1px solid rgba(244, 241, 234, 0.06);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
 .glass-nav-scrolled {
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(11, 13, 15, 0.92);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
-  border-bottom: 1px solid rgba(238, 49, 36, 0.2);
-  box-shadow: 0 10px 30px rgba(11, 15, 25, 0.06);
+  border-bottom: 1px solid rgba(201, 164, 92, 0.22);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
 }
 
-/* Carbon & Racing Grid Patterns */
+/* Carbon & Racing Grid Patterns for Dark Atmosphere */
 .bg-carbon {
-  background-color: #FAFAFB;
+  background-color: #0B0D0F;
   background-image: 
-    radial-gradient(rgba(238, 49, 36, 0.06) 1px, transparent 0),
-    linear-gradient(45deg, rgba(229, 231, 235, 0.4) 25%, transparent 25%, transparent 75%, rgba(229, 231, 235, 0.4) 75%, rgba(229, 231, 235, 0.4));
+    radial-gradient(rgba(201, 164, 92, 0.08) 1px, transparent 0),
+    linear-gradient(45deg, rgba(21, 24, 28, 0.4) 25%, transparent 25%, transparent 75%, rgba(21, 24, 28, 0.4) 75%, rgba(21, 24, 28, 0.4));
   background-size: 24px 24px, 12px 12px;
 }
 
-/* Soft Glows */
-.neon-glow-yellow {
-  box-shadow: 0 0 25px rgba(245, 158, 11, 0.35), 0 0 50px rgba(245, 158, 11, 0.12);
+/* Refined Glow Utilities */
+.gold-glow {
+  box-shadow: 0 0 25px rgba(201, 164, 92, 0.25), 0 0 50px rgba(201, 164, 92, 0.08);
 }
 
-.neon-glow-red {
-  box-shadow: 0 0 25px rgba(238, 49, 36, 0.35), 0 0 50px rgba(220, 38, 38, 0.12);
+.red-glow {
+  box-shadow: 0 0 25px rgba(238, 49, 36, 0.25), 0 0 50px rgba(238, 49, 36, 0.08);
 }
 
 /* Tactile Light Shimmer */
@@ -116,7 +116,7 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.45) 50%,
+    rgba(244, 241, 234, 0.15) 50%,
     transparent 100%
   );
   transform: skewX(-25deg);
@@ -127,17 +127,17 @@
   left: 150%;
 }
 
-/* Custom Scrollbar */
+/* Custom Sleek Dark Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #F3F4F6;
+  background: #0B0D0F;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D1D5DB;
+  background: #23272F;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #EE3124;
+  background: #C9A45C;
 }

@@ -13,9 +13,9 @@ const Cursor = () => {
       <motion.div
         className={`fixed top-0 left-0 rounded-full flex items-center justify-center font-mono text-[9px] font-bold tracking-widest uppercase transition-colors duration-300 ${
           cursorState.type === 'badge'
-            ? 'w-14 h-14 bg-[#FF4500]/20 border border-[#FF4500] text-white backdrop-blur-sm shadow-[0_0_20px_rgba(255,69,0,0.5)]'
+            ? 'w-14 h-14 bg-[#C9A45C]/20 border border-[#C9A45C] text-[#F4F1EA] backdrop-blur-sm shadow-[0_0_20px_rgba(201,164,92,0.5)]'
             : cursorState.type === 'hover'
-            ? 'w-10 h-10 border border-[#FF4500]/60 bg-[#FF4500]/10 shadow-[0_0_15px_rgba(255,69,0,0.3)]'
+            ? 'w-10 h-10 border border-[#C9A45C]/60 bg-[#C9A45C]/10 shadow-[0_0_15px_rgba(201,164,92,0.3)]'
             : 'w-7 h-7 border border-white/20 bg-transparent'
         }`}
         animate={{

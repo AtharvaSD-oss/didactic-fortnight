@@ -38,33 +38,33 @@ const FAQSection = () => {
   };
 
   return (
-    <section id="faq" className="py-14 sm:py-18 px-4 max-w-4xl mx-auto border-t border-gray-200/80 relative z-20 bg-white text-gray-900">
-      <div className="text-center space-y-2 mb-8 sm:mb-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EE3124]/10 border border-[#EE3124]/30 text-[#EE3124] font-mono text-xs font-bold uppercase tracking-widest">
+    <section id="faq" className="py-16 sm:py-24 px-4 max-w-4xl mx-auto border-t border-white/10 relative z-20 bg-[#0B0D0F] text-[#F4F1EA]">
+      <div className="text-center space-y-3 mb-10 sm:mb-14">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C9A45C]/15 border border-[#C9A45C]/30 text-[#C9A45C] font-mono text-xs font-bold uppercase tracking-widest">
           <HelpCircle className="w-4 h-4" /> KNOWLEDGE BASE
         </div>
-        <h2 className="text-2xl sm:text-4xl font-display font-black text-[#0B0F19] uppercase tracking-tight">
-          FREQUENTLY ASKED <span className="text-[#EE3124]">QUESTIONS</span>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-[#F4F1EA] uppercase tracking-tight">
+          FREQUENTLY ASKED <span className="text-[#C9A45C]">QUESTIONS</span>
         </h2>
-        <p className="text-xs sm:text-sm font-mono text-gray-600 max-w-lg mx-auto">
+        <p className="text-xs sm:text-sm font-mono text-[#B8B1A5] max-w-lg mx-auto">
           Everything you need to know about track rules, gear, timing, and rates.
         </p>
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-3.5">
         {faqs.map((faq, idx) => {
           const isOpen = openIdx === idx;
           return (
-            <AnimatedCard key={idx} className="p-0 overflow-hidden rounded-2xl">
+            <AnimatedCard key={idx} className="p-0 overflow-hidden rounded-2xl bg-[#15181C] border border-white/10 hover:border-[#C9A45C]/50 transition-colors">
               <button
                 onClick={() => toggle(idx)}
-                className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 font-display text-sm sm:text-base font-bold text-gray-950 uppercase hover:text-[#EE3124] transition-colors cursor-pointer"
+                className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-display text-sm sm:text-base font-bold text-[#F4F1EA] uppercase hover:text-[#C9A45C] transition-colors cursor-pointer"
               >
                 <span>{faq.question}</span>
                 <motion.div
                   animate={{ rotate: isOpen ? 180 : 0 }}
                   transition={{ duration: 0.2 }}
-                  className="p-1 rounded-full bg-gray-100 text-[#EE3124] shrink-0"
+                  className="p-1.5 rounded-full bg-[#0B0D0F] text-[#C9A45C] shrink-0 border border-white/10"
                 >
                   <ChevronDown className="w-4 h-4" />
                 </motion.div>
@@ -79,7 +79,7 @@ const FAQSection = () => {
                     transition={{ duration: 0.25 }}
                     className="overflow-hidden"
                   >
-                    <div className="p-4 sm:p-5 pt-0 text-xs sm:text-sm font-sans text-gray-600 border-t border-gray-100 leading-relaxed">
+                    <div className="p-5 sm:p-6 pt-0 text-xs sm:text-sm font-sans text-[#B8B1A5] border-t border-white/10 leading-relaxed text-left">
                       {faq.answer}
                     </div>
                   </motion.div>

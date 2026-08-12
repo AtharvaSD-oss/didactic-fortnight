@@ -65,31 +65,31 @@ const MobileMenu = ({
             className="absolute inset-0 bg-black/40 backdrop-blur-sm"
           />
 
-          {/* Slide-out Drawer Panel (White Theme) */}
+          {/* Slide-out Drawer Panel (Dark Theme) */}
           <motion.div
             variants={drawerVariants}
             initial="closed"
             animate="open"
             exit="closed"
-            className="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-white border-l border-gray-200 shadow-2xl flex flex-col justify-between p-6 sm:p-8 overflow-y-auto text-gray-900"
+            className="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-[#0B0D0F] border-l border-white/10 shadow-2xl flex flex-col justify-between p-6 sm:p-8 overflow-y-auto text-[#F4F1EA]"
           >
             {/* Top Drawer Header */}
             <div className="space-y-6">
-              <div className="flex items-center justify-between border-b border-gray-200 pb-4">
+              <div className="flex items-center justify-between border-b border-white/10 pb-4">
                 <div className="flex items-center gap-3">
                   <img src="/logo.png" alt="Kartomania" className="h-9 w-auto" />
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 text-gray-700 hover:text-[#EE3124] transition-colors"
+                  className="p-2.5 rounded-full bg-[#15181C] hover:bg-[#1E232B] border border-white/10 text-[#F4F1EA] hover:text-[#C9A45C] transition-colors cursor-pointer"
                 >
-                  <X className="w-5 h-5 text-[#EE3124]" />
+                  <X className="w-5 h-5 text-[#C9A45C]" />
                 </button>
               </div>
 
               {/* Navigation Items */}
               <div className="space-y-2">
-                <span className="font-mono text-[10px] font-semibold text-gray-400 uppercase tracking-widest block mb-1">
+                <span className="font-mono text-[10px] font-semibold text-[#837D73] uppercase tracking-widest block mb-1">
                   NAVIGATION SECTIONS
                 </span>
 
@@ -105,13 +105,13 @@ const MobileMenu = ({
                         className={`
                           group w-full flex items-center justify-between py-3 px-4 rounded-xl border transition-all duration-300 cursor-pointer
                           ${isActive 
-                            ? 'bg-[#EE3124]/10 border-[#EE3124] text-[#EE3124] shadow-sm font-bold' 
-                            : 'bg-gray-50 border-gray-200/80 hover:border-[#EE3124]/40 text-gray-800 hover:bg-gray-100'
+                            ? 'bg-[#C9A45C]/15 border-[#C9A45C] text-[#C9A45C] shadow-sm font-bold' 
+                            : 'bg-[#15181C] border-white/5 hover:border-[#C9A45C]/40 text-[#B8B1A5] hover:text-[#F4F1EA] hover:bg-[#1C2128]'
                           }
                         `}
                       >
                         <div className="flex items-center gap-4">
-                          <span className="font-mono text-xs font-semibold text-[#EE3124]">
+                          <span className="font-mono text-xs font-semibold text-[#C9A45C]">
                             {item.tag}
                           </span>
                           <span className="font-display text-base font-bold tracking-wider uppercase">
@@ -121,7 +121,7 @@ const MobileMenu = ({
 
                         <ChevronRight 
                           className={`w-4 h-4 transition-transform duration-300 ${
-                            isActive ? 'text-[#EE3124] translate-x-1' : 'text-gray-400 group-hover:text-black group-hover:translate-x-1'
+                            isActive ? 'text-[#C9A45C] translate-x-1' : 'text-[#837D73] group-hover:text-[#F4F1EA] group-hover:translate-x-1'
                           }`} 
                         />
                       </button>
@@ -132,7 +132,7 @@ const MobileMenu = ({
             </div>
 
             {/* Bottom Footer Actions */}
-            <div className="space-y-4 pt-6 border-t border-gray-200 mt-6">
+            <div className="space-y-4 pt-6 border-t border-white/10 mt-6">
               <MagneticButton 
                 href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
                 onClick={onClose} 
@@ -141,13 +141,13 @@ const MobileMenu = ({
                 BOOK YOUR RACE NOW
               </MagneticButton>
 
-              <div className="flex flex-col gap-2 text-xs font-mono text-gray-600">
+              <div className="flex flex-col gap-2 text-xs font-mono text-[#B8B1A5]">
                 <div className="flex items-center justify-between">
                   <a
                     href="tel:+919717548897"
-                    className="flex items-center gap-2 hover:text-[#EE3124] transition-colors"
+                    className="flex items-center gap-2 hover:text-[#C9A45C] transition-colors"
                   >
-                    <Phone className="w-3.5 h-3.5 text-[#EE3124]" />
+                    <Phone className="w-3.5 h-3.5 text-[#C9A45C]" />
                     <span>+91 97175 48897</span>
                   </a>
 
@@ -157,7 +157,7 @@ const MobileMenu = ({
                       target="_blank"
                       rel="noreferrer"
                       aria-label="Instagram"
-                      className="p-2 rounded-full bg-gray-100 border border-gray-200 hover:border-[#EE3124] hover:text-[#EE3124] text-gray-700 transition-colors"
+                      className="p-2 rounded-full bg-[#15181C] border border-white/10 hover:border-[#C9A45C] hover:text-[#C9A45C] text-[#B8B1A5] transition-colors"
                     >
                       <InstagramIcon className="w-4 h-4" />
                     </a>
@@ -167,7 +167,7 @@ const MobileMenu = ({
                       target="_blank"
                       rel="noreferrer"
                       aria-label="Facebook"
-                      className="p-2 rounded-full bg-gray-100 border border-gray-200 hover:border-[#EE3124] hover:text-[#EE3124] text-gray-700 transition-colors"
+                      className="p-2 rounded-full bg-[#15181C] border border-white/10 hover:border-[#C9A45C] hover:text-[#C9A45C] text-[#B8B1A5] transition-colors"
                     >
                       <FacebookIcon className="w-4 h-4" />
                     </a>
@@ -176,9 +176,9 @@ const MobileMenu = ({
 
                 <a
                   href="mailto:kartomania.ggn@gmail.com"
-                  className="flex items-center gap-2 hover:text-[#EE3124] transition-colors text-[11px]"
+                  className="flex items-center gap-2 hover:text-[#C9A45C] transition-colors text-[11px]"
                 >
-                  <Mail className="w-3.5 h-3.5 text-[#EE3124]" />
+                  <Mail className="w-3.5 h-3.5 text-[#C9A45C]" />
                   <span>kartomania.ggn@gmail.com</span>
                 </a>
               </div>

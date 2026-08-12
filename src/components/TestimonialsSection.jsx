@@ -64,13 +64,13 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-14 sm:py-18 px-4 max-w-7xl mx-auto border-t border-gray-200/80 relative z-20 bg-white text-gray-900">
-      <div className="text-center space-y-2 mb-8 sm:mb-10">
-        <span className="font-mono text-xs text-[#EE3124] uppercase tracking-widest font-bold">// PILOT TESTIMONIALS & REVIEWS</span>
-        <h2 className="text-2xl sm:text-4xl font-display font-black text-[#0B0F19] uppercase tracking-tight">
-          RACER <span className="text-[#EE3124]">EXPERIENCES</span>
+    <section id="testimonials" className="py-16 sm:py-24 px-4 max-w-7xl mx-auto border-t border-white/10 relative z-20 bg-[#0B0D0F] text-[#F4F1EA]">
+      <div className="text-center space-y-3 mb-10 sm:mb-14">
+        <span className="font-mono text-xs text-[#C9A45C] uppercase tracking-widest font-bold">// PILOT TESTIMONIALS & REVIEWS</span>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-[#F4F1EA] uppercase tracking-tight">
+          RACER <span className="text-[#C9A45C]">EXPERIENCES</span>
         </h2>
-        <p className="text-xs sm:text-sm font-mono text-gray-600 max-w-xl mx-auto">
+        <p className="text-xs sm:text-sm font-mono text-[#B8B1A5] max-w-xl mx-auto">
           Hear what drivers, amateur racers, and corporate event teams say about Kartomania.
         </p>
       </div>
@@ -105,34 +105,34 @@ const TestimonialsSection = () => {
                     p-6 sm:p-7 rounded-2xl transition-all duration-500 border text-left flex flex-col justify-between h-64
                     ${
                       isActive
-                        ? 'bg-white border-[#EE3124]/60 shadow-xl scale-100'
-                        : 'bg-gray-50 border-gray-200 opacity-60 scale-95'
+                        ? 'bg-[#15181C] border-[#C9A45C]/50 shadow-2xl scale-100'
+                        : 'bg-[#0B0D0F] border-white/10 opacity-50 scale-95'
                     }
                   `}
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1 text-[#F59E0B]">
+                      <div className="flex items-center gap-1 text-[#C9A45C]">
                         {[...Array(item.rating)].map((_, i) => (
-                          <Star key={i} className="w-3.5 h-3.5 fill-[#F59E0B]" />
+                          <Star key={i} className="w-3.5 h-3.5 fill-[#C9A45C] text-[#C9A45C]" />
                         ))}
                       </div>
-                      <span className="px-2 py-0.5 rounded-full bg-[#EE3124]/10 text-[#EE3124] font-mono text-[9px] font-bold uppercase tracking-wider">
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#0B0D0F] text-[#C9A45C] font-mono text-[9px] font-bold uppercase tracking-wider border border-[#C9A45C]/30">
                         {item.tag}
                       </span>
                     </div>
 
-                    <p className="text-xs sm:text-sm font-sans text-gray-700 leading-relaxed italic line-clamp-3">
+                    <p className="text-xs sm:text-sm font-sans text-[#B8B1A5] leading-relaxed italic line-clamp-3">
                       "{item.review}"
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                  <div className="flex items-center justify-between pt-3 border-t border-white/10">
                     <div>
-                      <h4 className="text-sm font-display font-bold text-gray-950 uppercase">{item.name}</h4>
-                      <p className="text-[10px] font-mono text-gray-500">{item.role}</p>
+                      <h4 className="text-sm font-display font-bold text-[#F4F1EA] uppercase">{item.name}</h4>
+                      <p className="text-[10px] font-mono text-[#837D73]">{item.role}</p>
                     </div>
-                    <Quote className="w-6 h-6 text-gray-300" />
+                    <Quote className="w-6 h-6 text-white/20" />
                   </div>
                 </div>
               )}
