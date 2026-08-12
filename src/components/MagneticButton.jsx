@@ -72,11 +72,11 @@ const MagneticButton = ({
   }, [strength]);
 
   const baseClasses = `
-    relative inline-flex items-center justify-center group overflow-hidden rounded-lg font-mono font-bold tracking-wider text-xs uppercase
+    relative inline-flex items-center justify-center group overflow-hidden rounded-sm font-mono font-bold tracking-widest text-xs uppercase
     px-6 py-3 transition-all duration-300 transform active:scale-95 cursor-pointer text-decoration-none border
     ${variant === 'secondary' 
-      ? 'bg-transparent text-[#0A0A0A] border-[#0A0A0A] hover:bg-[#080808] hover:text-white' 
-      : 'bg-[#080808] text-white border-[#080808] hover:bg-[#1a1a1a] hover:text-white hover:border-[#1a1a1a]'
+      ? 'bg-transparent text-[#111111] border-[#111111] hover:bg-[#080808] hover:text-white' 
+      : 'bg-[#080808] text-white border-[#080808] hover:bg-white hover:text-[#080808] hover:border-[#080808]'
     }
     ${className}
   `;
@@ -85,7 +85,7 @@ const MagneticButton = ({
     <span ref={contentRef} className="relative z-10 flex items-center gap-2">
       <span>{children}</span>
       {showArrow && (
-        <ArrowRight className="w-3.5 h-3.5 text-[#F4A261] transition-transform duration-300 group-hover:translate-x-1" />
+        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
       )}
     </span>
   );

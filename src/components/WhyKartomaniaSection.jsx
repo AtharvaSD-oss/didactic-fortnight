@@ -56,9 +56,7 @@ const WhyKartomaniaSection = () => {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 font-mono text-xs text-[#888888] uppercase tracking-widest">
-              <span className="w-[3px] h-3.5 bg-[#F4A261] rounded-full inline-block" />
-              <span className="text-[#F4A261] font-bold">03</span>
-              <span>/ WHY KARTOMANIA</span>
+              <Trophy className="w-3.5 h-3.5 text-white" /> // MOTORSPORT EXCELLENCE
             </div>
             <h2 className="text-3xl sm:text-5xl lg:text-7xl font-display font-bold text-white uppercase tracking-tight leading-none">
               WHY <span className="text-[#888888]">KARTOMANIA?</span>
@@ -76,14 +74,14 @@ const WhyKartomaniaSection = () => {
             return (
               <div
                 key={idx}
-                className="p-8 rounded-xl bg-[#111111] border border-white/10 hover:border-[#F4A261]/50 transition-all duration-300 flex flex-col justify-between space-y-6 group"
+                className="p-8 rounded-xl bg-[#111111] border border-white/10 hover:border-white/30 transition-all duration-300 flex flex-col justify-between space-y-6 group"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="p-3 rounded-lg bg-white/5 text-white border border-white/10 group-hover:bg-[#F4A261] group-hover:text-[#080808] transition-colors duration-300">
+                    <div className="p-3 rounded-lg bg-white/5 text-white border border-white/10 group-hover:bg-white group-hover:text-[#080808] transition-colors duration-300">
                       <IconComp className="w-5 h-5" />
                     </div>
-                    <span className="px-2.5 py-1 rounded-sm bg-black text-[#888888] font-mono text-[9px] font-bold uppercase tracking-widest border border-white/10 group-hover:text-[#F4A261] transition-colors">
+                    <span className="px-2.5 py-1 rounded-sm bg-black text-[#888888] font-mono text-[9px] font-bold uppercase tracking-widest border border-white/10">
                       {item.badge}
                     </span>
                   </div>
@@ -99,7 +97,7 @@ const WhyKartomaniaSection = () => {
                 </div>
 
                 <div className="pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-mono text-white font-semibold">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#F4A261]" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-white" />
                   <span>{item.highlight}</span>
                 </div>
               </div>

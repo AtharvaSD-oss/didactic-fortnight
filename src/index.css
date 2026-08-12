@@ -4,12 +4,12 @@
 
 :root {
   --color-white: #FFFFFF;
-  --color-secondary-bg: #F5F5F3;
-  --color-dark-bg: #080808;
-  --color-text: #0A0A0A;
-  --color-accent: #F4A261;
+  --color-soft-gray: #F3F3F3;
+  --color-card-gray: #F9F9F9;
   --color-medium-gray: #B8B8B8;
   --color-dark-gray: #666666;
+  --color-black: #080808;
+  --color-text-primary: #111111;
   --color-border: #E5E5E5;
   --color-border-dark: rgba(255, 255, 255, 0.12);
 }
@@ -37,7 +37,7 @@
 
   body {
     background-color: #FFFFFF;
-    color: #0A0A0A;
+    color: #111111;
     font-family: 'Inter', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x: hidden;
     line-height: 1.6;
@@ -45,7 +45,7 @@
   }
 
   h1, h2, h3, h4, .font-display {
-    font-family: 'Space Grotesk', 'Outfit', 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Archivo', 'Outfit', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
     letter-spacing: -0.03em;
   }
 

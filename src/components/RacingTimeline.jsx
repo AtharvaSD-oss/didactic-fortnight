@@ -35,7 +35,7 @@ const steps = [
   {
     step: '05',
     title: 'Race',
-    desc: 'Grid launch in 270cc Sodi RT10 karts on the 720m asphalt track.',
+    desc: 'Grid launch in 270cc Sodi RT10 karts on the 680m multi-level asphalt track.',
     icon: Flag,
     tag: 'HIGH SPEED',
   },
@@ -57,18 +57,16 @@ const steps = [
 
 const RacingTimeline = () => {
   return (
-    <section id="experience-timeline" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 bg-[#F5F5F3] border-t border-[#EAEAEA] relative z-20 text-[#0A0A0A]">
+    <section id="experience-timeline" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 bg-[#F9F9F9] border-t border-[#EAEAEA] relative z-20 text-[#111111]">
       <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16">
         
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E5E5E5] pb-6 text-left">
           <div>
-            <div className="inline-flex items-center gap-2 font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold mb-2">
-              <span className="w-[3px] h-3.5 bg-[#F4A261] rounded-full inline-block" />
-              <span className="text-[#F4A261] font-bold">04</span>
-              <span>/ RACEDAY JOURNEY</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+            <span className="font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold block mb-2">
+              // THE RACEDAY JOURNEY
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#080808] uppercase tracking-tight">
               YOUR <span className="text-[#666666]">RACING EXPERIENCE</span>
             </h2>
           </div>
@@ -90,20 +88,20 @@ const RacingTimeline = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                <div className="h-full flex flex-col justify-between space-y-5 p-7 rounded-xl bg-white border border-[#E5E5E5] hover:border-[#0A0A0A] transition-all duration-300 shadow-sm text-left group">
+                <div className="h-full flex flex-col justify-between space-y-5 p-7 rounded-xl bg-white border border-[#E5E5E5] hover:border-[#080808] transition-all duration-300 shadow-sm text-left group">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="font-mono text-2xl font-black text-[#0A0A0A] group-hover:text-[#F4A261] group-hover:translate-x-1 transition-all">
+                      <span className="font-mono text-2xl font-black text-[#080808] group-hover:translate-x-1 transition-transform">
                         {item.step}
                       </span>
-                      <span className="px-2.5 py-0.5 rounded-sm bg-[#F5F5F3] text-[#555555] font-mono text-[9px] font-bold uppercase tracking-wider border border-[#E5E5E5]">
+                      <span className="px-2.5 py-0.5 rounded-sm bg-[#F5F5F5] text-[#555555] font-mono text-[9px] font-bold uppercase tracking-wider border border-[#E5E5E5]">
                         {item.tag}
                       </span>
                     </div>
 
                     <div className="flex items-center gap-2 pt-1 border-t border-[#F0F0F0]">
-                      <IconComp className="w-4 h-4 text-[#0A0A0A]" />
-                      <h3 className="text-base font-display font-bold text-[#0A0A0A] uppercase tracking-wide">
+                      <IconComp className="w-4 h-4 text-[#080808]" />
+                      <h3 className="text-base font-display font-bold text-[#111111] uppercase tracking-wide">
                         {item.title}
                       </h3>
                     </div>

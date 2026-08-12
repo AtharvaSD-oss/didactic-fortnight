@@ -6,13 +6,16 @@ export const useCursor = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (window.innerWidth < 1024) return;
+    if (typeof window === 'undefined' || window.innerWidth < 1024) return;
     setIsVisible(true);
 
     const onMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
 
-      const target = e.target.closest('[data-cursor], button, a, input, [role="button"]');
+      const target = (e.target && typeof e.target.closest === 'function')
+        ? e.target.closest('[data-cursor], button, a, input, [role="button"]')
+        : null;
+
       if (target) {
         const cursorAttr = target.getAttribute('data-cursor');
         if (cursorAttr) {

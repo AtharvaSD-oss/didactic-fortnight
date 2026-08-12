@@ -8,15 +8,18 @@ const CustomCursor = () => {
 
   useEffect(() => {
     // Only activate cursor on desktop
-    if (window.innerWidth < 1024) return;
+    if (typeof window === 'undefined' || window.innerWidth < 1024) return;
 
     setIsVisible(true);
 
     const onMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
 
-      // Check hovered element
-      const target = e.target.closest('[data-cursor], button, a, input, [role="button"]');
+      // Check hovered element safely
+      const target = (e.target && typeof e.target.closest === 'function')
+        ? e.target.closest('[data-cursor], button, a, input, [role="button"]')
+        : null;
+
       if (target) {
         const cursorAttr = target.getAttribute('data-cursor');
         if (cursorAttr) {
@@ -49,10 +52,10 @@ const CustomCursor = () => {
     <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
       {/* Central Precision Dot */}
       <motion.div
-        className="fixed top-0 left-0 w-2.5 h-2.5 bg-white rounded-full mix-blend-difference"
+        className="fixed top-0 left-0 w-2 h-2 bg-[#080808] rounded-full"
         animate={{
-          x: mousePosition.x - 5,
-          y: mousePosition.y - 5,
+          x: mousePosition.x - 4,
+          y: mousePosition.y - 4,
           scale: cursorState.active ? 0.5 : 1
         }}
         transition={{ type: 'spring', damping: 30, stiffness: 400, mass: 0.1 }}
@@ -60,16 +63,16 @@ const CustomCursor = () => {
 
       {/* Outer Telemetry Ring */}
       <motion.div
-        className={`fixed top-0 left-0 rounded-full border flex items-center justify-center font-mono text-[9px] font-bold tracking-widest uppercase transition-colors duration-300 ${
+        className={`fixed top-0 left-0 rounded-full border flex items-center justify-center font-mono text-[9px] font-bold tracking-widest uppercase transition-colors duration-200 ${
           cursorState.type === 'badge'
-            ? 'w-16 h-16 bg-[#FF4500]/25 border-[#FF4500] text-white backdrop-blur-sm shadow-[0_0_25px_rgba(255,69,0,0.6)]'
+            ? 'w-14 h-14 bg-black/80 border-black text-white shadow-md'
             : cursorState.type === 'hover'
-            ? 'w-12 h-12 border-[#FF4500] bg-[#FF4500]/10 shadow-[0_0_20px_rgba(255,69,0,0.4)]'
-            : 'w-9 h-9 border-white/40 bg-transparent'
+            ? 'w-10 h-10 border-black/40 bg-black/5'
+            : 'w-7 h-7 border-black/20 bg-transparent'
         }`}
         animate={{
-          x: mousePosition.x - (cursorState.type === 'badge' ? 32 : cursorState.type === 'hover' ? 24 : 18),
-          y: mousePosition.y - (cursorState.type === 'badge' ? 32 : cursorState.type === 'hover' ? 24 : 18),
+          x: mousePosition.x - (cursorState.type === 'badge' ? 28 : cursorState.type === 'hover' ? 20 : 14),
+          y: mousePosition.y - (cursorState.type === 'badge' ? 28 : cursorState.type === 'hover' ? 20 : 14),
         }}
         transition={{ type: 'spring', damping: 25, stiffness: 250, mass: 0.2 }}
       >

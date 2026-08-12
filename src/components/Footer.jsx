@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
           <a 
             href="mailto:kartomania.ggn@gmail.com" 
-            className="inline-block font-mono text-xs text-white hover:text-[#F4A261] transition-colors"
+            className="inline-block font-mono text-xs text-white hover:text-[#AAAAAA] transition-colors"
           >
             kartomania.ggn@gmail.com
           </a>

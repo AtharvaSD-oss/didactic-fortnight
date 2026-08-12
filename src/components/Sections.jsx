@@ -1,22 +1,20 @@
 import React from 'react';
-import { MapPin, Mail, Phone, Clock } from 'lucide-react';
+import { Trophy, MapPin, Mail, Phone, Clock } from 'lucide-react';
 import { InstagramIcon, FacebookIcon, WhatsAppIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 import GameCanvas from './GameCanvas';
 import TrackCircuitVisual from './TrackCircuitVisual';
 
 export const TrackSection = ({ onOpenBooking }) => (
-  <section id="track" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#0A0A0A]">
+  <section id="track" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
     <div className="flex flex-col lg:flex-row items-center justify-between gap-10 sm:gap-14">
       
       {/* Left Spec & Narrative */}
       <div className="space-y-6 lg:w-5/12 text-left">
         <div className="inline-flex items-center gap-2 font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold">
-          <span className="w-[3px] h-3.5 bg-[#F4A261] rounded-full inline-block" />
-          <span className="text-[#F4A261] font-bold">07</span>
-          <span>/ CIRCUIT TELEMETRY</span>
+          <MapPin className="w-3.5 h-3.5 text-[#080808]" /> // CIRCUIT TELEMETRY
         </div>
-        <h2 className="text-3xl sm:text-5xl font-display font-bold uppercase tracking-tight text-[#0A0A0A] leading-tight">
+        <h2 className="text-3xl sm:text-5xl font-display font-bold uppercase tracking-tight text-[#080808] leading-tight">
           THE MONACO OF <br />
           <span className="text-[#666666]">OUTDOOR KARTING</span>
         </h2>
@@ -26,35 +24,27 @@ export const TrackSection = ({ onOpenBooking }) => (
 
         {/* Large Statistics: 01, 02, 03, 04 */}
         <div className="grid grid-cols-2 gap-4 pt-2">
-          <div className="p-5 bg-[#F5F5F3] border border-[#E5E5E5] rounded-xl text-left space-y-1 group hover:border-[#0A0A0A] transition-colors">
-            <span className="text-[10px] font-mono text-[#888888] uppercase tracking-widest block font-bold">
-              <span className="text-[#F4A261]">01</span> // TRACK LENGTH
-            </span>
-            <div className="text-2xl font-display font-bold text-[#0A0A0A]">720 METERS</div>
+          <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] rounded-xl text-left space-y-1">
+            <span className="text-[10px] font-mono text-[#888888] uppercase tracking-widest block font-bold">01 // TRACK LENGTH</span>
+            <div className="text-2xl font-display font-bold text-[#080808]">720 METERS</div>
             <span className="text-[11px] font-sans text-[#666666]">Full outdoor asphalt circuit</span>
           </div>
 
-          <div className="p-5 bg-[#F5F5F3] border border-[#E5E5E5] rounded-xl text-left space-y-1 group hover:border-[#0A0A0A] transition-colors">
-            <span className="text-[10px] font-mono text-[#888888] uppercase tracking-widest block font-bold">
-              <span className="text-[#F4A261]">02</span> // CORNERS
-            </span>
-            <div className="text-2xl font-display font-bold text-[#0A0A0A]">14 APEXES</div>
+          <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] rounded-xl text-left space-y-1">
+            <span className="text-[10px] font-mono text-[#888888] uppercase tracking-widest block font-bold">02 // CORNERS</span>
+            <div className="text-2xl font-display font-bold text-[#080808]">14 APEXES</div>
             <span className="text-[11px] font-sans text-[#666666]">High-G tactical chicanes</span>
           </div>
 
-          <div className="p-5 bg-[#F5F5F3] border border-[#E5E5E5] rounded-xl text-left space-y-1 group hover:border-[#0A0A0A] transition-colors">
-            <span className="text-[10px] font-mono text-[#888888] uppercase tracking-widest block font-bold">
-              <span className="text-[#F4A261]">03</span> // SURFACE
-            </span>
-            <div className="text-sm font-display font-bold text-[#0A0A0A]">OUTDOOR ASPHALT</div>
+          <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] rounded-xl text-left space-y-1">
+            <span className="text-[10px] font-mono text-[#888888] uppercase tracking-widest block font-bold">03 // SURFACE</span>
+            <div className="text-sm font-display font-bold text-[#080808]">OUTDOOR ASPHALT</div>
             <span className="text-[11px] font-sans text-[#666666]">High-grip polymer blend</span>
           </div>
 
-          <div className="p-5 bg-[#F5F5F3] border border-[#E5E5E5] rounded-xl text-left space-y-1 group hover:border-[#0A0A0A] transition-colors">
-            <span className="text-[10px] font-mono text-[#888888] uppercase tracking-widest block font-bold">
-              <span className="text-[#F4A261]">04</span> // SAFETY
-            </span>
-            <div className="text-sm font-display font-bold text-[#0A0A0A]">F1 PRO BARRIER</div>
+          <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] rounded-xl text-left space-y-1">
+            <span className="text-[10px] font-mono text-[#888888] uppercase tracking-widest block font-bold">04 // SAFETY</span>
+            <div className="text-sm font-display font-bold text-[#080808]">F1 PRO BARRIER</div>
             <span className="text-[11px] font-sans text-[#666666]">High-impact shock absorption</span>
           </div>
         </div>
@@ -112,9 +102,7 @@ export const LeapFrogSection = () => {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/10 pb-8 text-left">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 font-mono text-xs text-[#888888] uppercase tracking-widest">
-              <span className="w-[3px] h-3.5 bg-[#F4A261] rounded-full inline-block" />
-              <span className="text-[#F4A261] font-bold">08</span>
-              <span>/ MOTORSPORT DIVISION</span>
+              <Trophy className="w-3.5 h-3.5 text-white" /> // MOTORSPORT DIVISION
             </div>
             <h2 className="text-3xl sm:text-5xl lg:text-7xl font-display font-bold text-white uppercase tracking-tight leading-none">
               LEAP FROG <span className="text-[#888888]">RACING</span>
@@ -129,7 +117,7 @@ export const LeapFrogSection = () => {
         <div className="bg-[#111111] border border-white/10 rounded-xl p-8 shadow-2xl text-left">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             <div className="lg:col-span-2 space-y-4">
-              <span className="font-mono text-xs text-[#F4A261] uppercase tracking-widest font-bold">// HERITAGE & TELEMETRY</span>
+              <span className="font-mono text-xs text-white uppercase tracking-widest font-bold">// HERITAGE & TELEMETRY</span>
               <p className="text-[#CCCCCC] text-sm sm:text-base font-sans leading-relaxed">
                 Leap Frog Racing is a Professional Racing & Karting Team formed in the year <strong className="text-white font-bold">2018</strong> taking part in the <strong className="text-white font-bold">JK Tyre FMSCI National Racing Championship</strong>, <strong className="text-white font-bold">MRF National Championship</strong> & <strong className="text-white font-bold">Rotax Max National Karting Championship</strong>.
               </p>
@@ -162,7 +150,7 @@ export const LeapFrogSection = () => {
             <div
               key={idx}
               onClick={() => setActiveImage(photo)}
-              className="relative group rounded-xl overflow-hidden cursor-pointer border border-white/10 hover:border-[#F4A261]/50 transition-all duration-300 shadow-md h-72 sm:h-80 bg-black"
+              className="relative group rounded-xl overflow-hidden cursor-pointer border border-white/10 hover:border-white/40 transition-all duration-300 shadow-md h-72 sm:h-80 bg-black"
             >
               <img
                 src={photo.src}
@@ -250,22 +238,20 @@ export const WhatsNewSection = () => {
   ];
 
   return (
-    <section id="whats-new" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-[#F5F5F3] text-[#0A0A0A]">
+    <section id="whats-new" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-[#F9F9F9] text-[#111111]">
       <div className="space-y-12 sm:space-y-16">
         
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E5E5E5] pb-6 text-left">
           <div>
-            <div className="inline-flex items-center gap-2 font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold mb-2">
-              <span className="w-[3px] h-3.5 bg-[#F4A261] rounded-full inline-block" />
-              <span className="text-[#F4A261] font-bold">09</span>
-              <span>/ LATEST OFFERS & BUNDLE SESSIONS</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+            <span className="font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold block mb-2">
+              // LATEST OFFERS & BUNDLE SESSIONS
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#080808] uppercase tracking-tight">
               WHAT'S <span className="text-[#666666]">NEW</span>
             </h2>
           </div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-white border border-[#E5E5E5] text-[#0A0A0A] font-mono text-[10px] font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-white border border-[#E5E5E5] text-[#111111] font-mono text-[10px] font-bold uppercase tracking-wider">
             ★ ALL PRICES INCLUSIVE OF ALL TAXES
           </div>
         </div>
@@ -280,7 +266,7 @@ export const WhatsNewSection = () => {
               tag: "WEEKLY BONANZA",
               desc: "Monday BOGO 50% Off • Wednesday Happy Hour ₹500 • Friday Frenzy Buy 2 Get 1 Free!"
             })}
-            className="relative group rounded-xl overflow-hidden cursor-pointer border border-[#E5E5E5] hover:border-[#0A0A0A] transition-all duration-300 shadow-sm bg-black"
+            className="relative group rounded-xl overflow-hidden cursor-pointer border border-[#E5E5E5] hover:border-[#080808] transition-all duration-300 shadow-sm bg-black"
           >
             <img
               src="/whats-new/weekly-offers.jpg"
@@ -310,22 +296,22 @@ export const WhatsNewSection = () => {
           {coreThreeOffers.map((offer) => (
             <div
               key={offer.id}
-              className="p-7 rounded-xl bg-white border border-[#E5E5E5] hover:border-[#0A0A0A] shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4 text-left"
+              className="p-7 rounded-xl bg-white border border-[#E5E5E5] hover:border-[#080808] shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4 text-left"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-sm bg-[#F5F5F3] text-[#555555] font-mono text-[9px] font-bold uppercase tracking-wider border border-[#E5E5E5]">
+                  <span className="px-2.5 py-0.5 rounded-sm bg-[#F5F5F5] text-[#555555] font-mono text-[9px] font-bold uppercase tracking-wider border border-[#E5E5E5]">
                     {offer.tag}
                   </span>
                   <span className="px-2.5 py-0.5 rounded-sm bg-[#080808] text-white font-mono text-[9px] font-bold uppercase">
                     {offer.badge}
                   </span>
                 </div>
-                <h3 className="text-lg font-display font-bold text-[#0A0A0A] uppercase">{offer.title}</h3>
+                <h3 className="text-lg font-display font-bold text-[#111111] uppercase">{offer.title}</h3>
                 <p className="text-xs sm:text-sm font-sans text-[#666666] leading-relaxed">{offer.desc}</p>
               </div>
               <div className="pt-4 border-t border-[#F0F0F0] flex items-center justify-between">
-                <div className="text-lg font-display font-bold text-[#0A0A0A]">{offer.price}</div>
+                <div className="text-lg font-display font-bold text-[#080808]">{offer.price}</div>
                 <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-1.5 px-4 text-[10px]">
                   BOOK DEAL
                 </MagneticButton>
@@ -339,23 +325,23 @@ export const WhatsNewSection = () => {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-[#EAEAEA] pb-4">
             <div>
               <span className="text-[10px] font-mono font-bold text-[#666666] uppercase tracking-wider">// MULTI-RACE VALUE PACKS</span>
-              <h3 className="text-xl font-display font-bold text-[#0A0A0A] uppercase">BUNDLE SESSIONS</h3>
+              <h3 className="text-xl font-display font-bold text-[#080808] uppercase">BUNDLE SESSIONS</h3>
             </div>
             <span className="text-[10px] font-mono text-[#888888] font-semibold uppercase">Inclusive of all taxes</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {bundleSessions.map((bundle, idx) => (
-              <div key={idx} className="p-6 rounded-lg bg-[#F5F5F3] border border-[#E5E5E5] flex flex-col justify-between space-y-4 shadow-sm hover:border-[#0A0A0A] transition-colors">
+              <div key={idx} className="p-6 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] flex flex-col justify-between space-y-4 shadow-sm hover:border-[#080808] transition-colors">
                 <div className="space-y-2">
-                  <div className="text-xs sm:text-sm font-display font-bold text-[#0A0A0A] uppercase">{bundle.name}</div>
-                  <span className="inline-block px-2 py-0.5 rounded-sm bg-white border border-[#E5E5E5] text-[#0A0A0A] font-mono text-[9px] font-bold uppercase tracking-wider">
+                  <div className="text-xs sm:text-sm font-display font-bold text-[#111111] uppercase">{bundle.name}</div>
+                  <span className="inline-block px-2 py-0.5 rounded-sm bg-white border border-[#E5E5E5] text-[#111111] font-mono text-[9px] font-bold uppercase tracking-wider">
                     🎁 {bundle.bonus}
                   </span>
                   <p className="text-xs font-sans text-[#666666]">{bundle.desc}</p>
                 </div>
                 <div className="pt-3 flex items-center justify-between border-t border-[#EAEAEA]">
-                  <div className="text-lg font-display font-bold text-[#0A0A0A]">{bundle.price}</div>
+                  <div className="text-lg font-display font-bold text-[#080808]">{bundle.price}</div>
                   <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-1.5 px-3 text-[10px]">
                     GET BUNDLE
                   </MagneticButton>
@@ -379,10 +365,10 @@ export const WhatsNewSection = () => {
                 ✕
               </button>
               <img src={activePromo.src} alt={activePromo.title} className="w-full max-h-[75vh] object-contain bg-black" />
-              <div className="p-6 bg-white border-t border-[#E5E5E5] flex flex-col sm:flex-row items-center justify-between gap-3 text-[#0A0A0A] text-left">
+              <div className="p-6 bg-white border-t border-[#E5E5E5] flex flex-col sm:flex-row items-center justify-between gap-3 text-[#111111] text-left">
                 <div>
                   <span className="text-[10px] font-mono text-[#666666] uppercase font-bold">{activePromo.tag}</span>
-                  <h4 className="text-lg font-display font-bold text-[#0A0A0A] uppercase">{activePromo.title}</h4>
+                  <h4 className="text-lg font-display font-bold text-[#080808] uppercase">{activePromo.title}</h4>
                   <p className="text-xs font-mono text-[#666666] mt-0.5">{activePromo.desc}</p>
                 </div>
                 <MagneticButton onClick={() => setActivePromo(null)} className="py-2.5 px-6 text-xs">
@@ -421,16 +407,16 @@ export const PricingSection = ({ onOpenBooking }) => {
   ];
 
   return (
-    <section id="pricing" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#0A0A0A]">
+    <section id="pricing" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
       <div className="space-y-12 sm:space-y-16">
         
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-6 text-left">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#F5F5F3] border border-[#E5E5E5] text-[#0A0A0A] font-mono text-[10px] font-bold uppercase tracking-wider mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#F5F5F5] border border-[#E5E5E5] text-[#111111] font-mono text-[10px] font-bold uppercase tracking-wider mb-2">
               ★ ALL PRICES INCLUSIVE OF ALL TAXES
             </div>
-            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#080808] uppercase tracking-tight">
               OFFICIAL <span className="text-[#666666]">PRICING & COMBOS</span>
             </h2>
           </div>
@@ -442,13 +428,13 @@ export const PricingSection = ({ onOpenBooking }) => {
         {/* 1. Official Value Combo Packages */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Weekday Combos */}
-          <div className="bg-[#F5F5F3] border border-[#E5E5E5] hover:border-[#0A0A0A] rounded-xl p-8 shadow-sm transition-all text-left">
+          <div className="bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#080808] rounded-xl p-8 shadow-sm transition-all text-left">
             <div className="flex flex-wrap items-start justify-between gap-3 pb-4 mb-5 border-b border-[#E5E5E5]">
               <div className="space-y-0.5">
                 <span className="text-[9px] font-mono font-bold text-[#666666] uppercase tracking-widest block">SUPER VALUE DEALS</span>
-                <h3 className="text-xl font-display font-bold text-[#0A0A0A] uppercase tracking-wider">WEEKDAY COMBOS</h3>
+                <h3 className="text-xl font-display font-bold text-[#080808] uppercase tracking-wider">WEEKDAY COMBOS</h3>
               </div>
-              <span className="px-3 py-1 rounded-sm bg-white border border-[#E5E5E5] text-[#0A0A0A] font-mono text-xs font-bold uppercase whitespace-nowrap">
+              <span className="px-3 py-1 rounded-sm bg-white border border-[#E5E5E5] text-[#111111] font-mono text-xs font-bold uppercase whitespace-nowrap">
                 MON – THU
               </span>
             </div>
@@ -457,13 +443,13 @@ export const PricingSection = ({ onOpenBooking }) => {
               {weekdayCombos.map((item, idx) => (
                 <div key={idx} className="p-4 rounded-lg bg-white border border-[#EAEAEA] flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition-colors">
                   <div className="space-y-0.5">
-                    <div className="text-xs sm:text-sm font-display font-bold text-[#0A0A0A] uppercase">{item.package}</div>
-                    <span className="inline-block px-2 py-0.5 rounded-sm bg-[#F5F5F3] text-[#555555] font-mono text-[9px] font-bold uppercase tracking-wider">
+                    <div className="text-xs sm:text-sm font-display font-bold text-[#111111] uppercase">{item.package}</div>
+                    <span className="inline-block px-2 py-0.5 rounded-sm bg-[#F5F5F5] text-[#555555] font-mono text-[9px] font-bold uppercase tracking-wider">
                       🎁 {item.bonus}
                     </span>
                   </div>
                   <div className="text-right">
-                    <div className="text-lg font-display font-bold text-[#0A0A0A]">{item.price}</div>
+                    <div className="text-lg font-display font-bold text-[#080808]">{item.price}</div>
                   </div>
                 </div>
               ))}
@@ -471,7 +457,7 @@ export const PricingSection = ({ onOpenBooking }) => {
           </div>
 
           {/* Weekend Combos */}
-          <div className="bg-[#F5F5F3] border border-[#E5E5E5] hover:border-[#0A0A0A] rounded-xl p-8 shadow-sm transition-all text-left">
+          <div className="bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#080808] rounded-xl p-8 shadow-sm transition-all text-left">
             <div className="flex flex-wrap items-start justify-between gap-3 pb-4 mb-5 border-b border-[#E5E5E5]">
               <div className="space-y-0.5">
                 <div className="flex items-center gap-2">
@@ -480,9 +466,9 @@ export const PricingSection = ({ onOpenBooking }) => {
                     ★ POPULAR
                   </span>
                 </div>
-                <h3 className="text-xl font-display font-bold text-[#0A0A0A] uppercase tracking-wider">WEEKEND COMBOS</h3>
+                <h3 className="text-xl font-display font-bold text-[#080808] uppercase tracking-wider">WEEKEND COMBOS</h3>
               </div>
-              <span className="px-3 py-1 rounded-sm bg-white border border-[#E5E5E5] text-[#0A0A0A] font-mono text-xs font-bold uppercase whitespace-nowrap">
+              <span className="px-3 py-1 rounded-sm bg-white border border-[#E5E5E5] text-[#111111] font-mono text-xs font-bold uppercase whitespace-nowrap">
                 FRI – SUN & HOLIDAYS
               </span>
             </div>
@@ -491,13 +477,13 @@ export const PricingSection = ({ onOpenBooking }) => {
               {weekendCombos.map((item, idx) => (
                 <div key={idx} className="p-4 rounded-lg bg-white border border-[#EAEAEA] flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition-colors">
                   <div className="space-y-0.5">
-                    <div className="text-xs sm:text-sm font-display font-bold text-[#0A0A0A] uppercase">{item.package}</div>
-                    <span className="inline-block px-2 py-0.5 rounded-sm bg-[#F5F5F3] text-[#555555] font-mono text-[9px] font-bold uppercase tracking-wider">
+                    <div className="text-xs sm:text-sm font-display font-bold text-[#111111] uppercase">{item.package}</div>
+                    <span className="inline-block px-2 py-0.5 rounded-sm bg-[#F5F5F5] text-[#555555] font-mono text-[9px] font-bold uppercase tracking-wider">
                       🔥 {item.bonus}
                     </span>
                   </div>
                   <div className="text-right">
-                    <div className="text-lg font-display font-bold text-[#0A0A0A]">{item.price}</div>
+                    <div className="text-lg font-display font-bold text-[#080808]">{item.price}</div>
                   </div>
                 </div>
               ))}
@@ -508,7 +494,7 @@ export const PricingSection = ({ onOpenBooking }) => {
         {/* 2. Standard Session Tariff Table */}
         <div className="bg-white border border-[#E5E5E5] rounded-xl p-8 shadow-sm text-left">
           <div className="pb-4 mb-5 border-b border-[#EAEAEA]">
-            <h3 className="text-lg font-display font-bold text-[#0A0A0A] uppercase tracking-wider">
+            <h3 className="text-lg font-display font-bold text-[#080808] uppercase tracking-wider">
               STANDARD KARTING SESSIONS TARIFF
             </h3>
             <p className="text-xs font-mono text-[#888888]">Pure track time rates without bowling additions (Taxes Included).</p>
@@ -516,19 +502,19 @@ export const PricingSection = ({ onOpenBooking }) => {
 
           <div className="overflow-x-auto">
             <table className="w-full text-left font-mono text-xs sm:text-sm">
-              <thead className="bg-[#F5F5F3] text-[#0A0A0A] uppercase text-[11px] border border-[#E5E5E5]">
+              <thead className="bg-[#F5F5F5] text-[#111111] uppercase text-[11px] border border-[#E5E5E5]">
                 <tr>
                   <th className="py-3.5 px-5 rounded-l-sm font-bold">SESSIONS</th>
                   <th className="py-3.5 px-5 text-center font-bold">WEEKDAY (MON – THU)</th>
                   <th className="py-3.5 px-5 text-right rounded-r-sm font-bold">WEEKEND (FRI – SUN)</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#EAEAEA] text-[#0A0A0A]">
+              <tbody className="divide-y divide-[#EAEAEA] text-[#111111]">
                 {standardRates.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-[#F5F5F3] transition-colors">
-                    <td className="py-3.5 px-5 font-bold text-[#0A0A0A]">{row.sessions}</td>
+                  <tr key={idx} className="hover:bg-[#F9F9F9] transition-colors">
+                    <td className="py-3.5 px-5 font-bold text-[#080808]">{row.sessions}</td>
                     <td className="py-3.5 px-5 text-center font-display font-semibold text-[#555555]">{row.weekday}</td>
-                    <td className="py-3.5 px-5 text-right font-display font-bold text-[#0A0A0A] text-sm sm:text-base">{row.weekend}</td>
+                    <td className="py-3.5 px-5 text-right font-display font-bold text-[#080808] text-sm sm:text-base">{row.weekend}</td>
                   </tr>
                 ))}
               </tbody>
@@ -537,8 +523,8 @@ export const PricingSection = ({ onOpenBooking }) => {
         </div>
 
         {/* Terms and Conditions Card */}
-        <div className="bg-[#F5F5F3] border border-[#E5E5E5] rounded-xl p-8 space-y-4 text-left shadow-sm">
-          <h4 className="font-display font-bold text-xs sm:text-sm text-[#0A0A0A] uppercase tracking-wider">
+        <div className="bg-[#F9F9F9] border border-[#E5E5E5] rounded-xl p-8 space-y-4 text-left shadow-sm">
+          <h4 className="font-display font-bold text-xs sm:text-sm text-[#080808] uppercase tracking-wider">
             TERMS AND CONDITIONS
           </h4>
           <ul className="space-y-2 text-xs font-mono text-[#666666] list-disc list-inside">
@@ -563,18 +549,16 @@ export const ContactSection = () => {
   const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/7c5CMX5a4vaaXFLN9";
 
   return (
-    <section id="contact" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-[#F5F5F3] text-[#0A0A0A]">
+    <section id="contact" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-[#F9F9F9] text-[#111111]">
       <div className="space-y-12 sm:space-y-16">
         
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E5E5E5] pb-6 text-left">
           <div>
-            <div className="inline-flex items-center gap-2 font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold mb-2">
-              <span className="w-[3px] h-3.5 bg-[#F4A261] rounded-full inline-block" />
-              <span className="text-[#F4A261] font-bold">13</span>
-              <span>/ ARENA LOCATION & NAVIGATION</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+            <span className="font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold block mb-2">
+              // ARENA LOCATION & NAVIGATION
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#080808] uppercase tracking-tight">
               FIND THE <span className="text-[#666666]">ARENA</span>
             </h2>
           </div>
@@ -586,45 +570,45 @@ export const ContactSection = () => {
         {/* Location Info & CTAs */}
         <div className="bg-white border border-[#E5E5E5] rounded-xl p-8 sm:p-10 shadow-sm">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 text-left font-mono">
-            <div className="p-5 rounded-lg bg-[#F5F5F3] border border-[#E5E5E5] space-y-2">
-              <div className="flex items-center gap-2 text-[#0A0A0A]">
-                <MapPin className="w-4 h-4 text-[#F4A261]" />
+            <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] space-y-2">
+              <div className="flex items-center gap-2 text-[#080808]">
+                <MapPin className="w-4 h-4" />
                 <span className="text-[10px] uppercase font-bold tracking-wider">// ARENA ADDRESS</span>
               </div>
-              <div className="text-xs text-[#0A0A0A] font-sans font-semibold leading-relaxed">
+              <div className="text-xs text-[#111111] font-sans font-semibold leading-relaxed">
                 Entertainland Mall, Sector 83, Manesar, Gurgaon.
               </div>
             </div>
 
-            <div className="p-5 rounded-lg bg-[#F5F5F3] border border-[#E5E5E5] space-y-2">
-              <div className="flex items-center gap-2 text-[#0A0A0A]">
-                <Clock className="w-4 h-4 text-[#F4A261]" />
+            <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] space-y-2">
+              <div className="flex items-center gap-2 text-[#080808]">
+                <Clock className="w-4 h-4" />
                 <span className="text-[10px] uppercase font-bold tracking-wider">// OPEN ALL 7 DAYS</span>
               </div>
-              <div className="text-xs text-[#0A0A0A] font-sans font-semibold space-y-0.5">
+              <div className="text-xs text-[#111111] font-sans font-semibold space-y-0.5">
                 <div>Mon – Fri: 2:00 PM – 11:00 PM</div>
                 <div>Sat – Sun: 1:00 PM – 11:00 PM</div>
                 <div className="text-emerald-600 font-bold">// Open All Days</div>
               </div>
             </div>
 
-            <div className="p-5 rounded-lg bg-[#F5F5F3] border border-[#E5E5E5] space-y-2">
-              <div className="flex items-center gap-2 text-[#0A0A0A]">
-                <Phone className="w-4 h-4 text-[#F4A261]" />
+            <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] space-y-2">
+              <div className="flex items-center gap-2 text-[#080808]">
+                <Phone className="w-4 h-4" />
                 <span className="text-[10px] uppercase font-bold tracking-wider">// CALL US / HOTLINE</span>
               </div>
-              <div className="text-xs text-[#0A0A0A] font-sans font-semibold space-y-0.5">
+              <div className="text-xs text-[#111111] font-sans font-semibold space-y-0.5">
                 <a href="tel:+919717548897" className="block hover:text-[#666666] transition-colors font-bold">+91 97175 48897</a>
                 <a href="tel:+919560492876" className="block hover:text-[#666666] transition-colors font-bold">+91 95604 92876</a>
               </div>
             </div>
 
-            <div className="p-5 rounded-lg bg-[#F5F5F3] border border-[#E5E5E5] space-y-2">
-              <div className="flex items-center gap-2 text-[#0A0A0A]">
-                <Mail className="w-4 h-4 text-[#F4A261]" />
+            <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] space-y-2">
+              <div className="flex items-center gap-2 text-[#080808]">
+                <Mail className="w-4 h-4" />
                 <span className="text-[10px] uppercase font-bold tracking-wider">// EMAIL ENQUIRIES</span>
               </div>
-              <div className="text-xs text-[#0A0A0A] font-sans font-semibold space-y-0.5">
+              <div className="text-xs text-[#111111] font-sans font-semibold space-y-0.5">
                 <a href="mailto:kartomania.ggn@gmail.com" className="block hover:text-[#666666] transition-colors font-bold break-all">
                   kartomania.ggn@gmail.com
                 </a>
@@ -639,9 +623,9 @@ export const ContactSection = () => {
                 href={GOOGLE_MAPS_LINK}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#F5F5F3] hover:bg-[#EAEAEA] border border-[#E5E5E5] text-xs font-mono tracking-wider uppercase text-[#0A0A0A] font-bold transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-[#F5F5F5] hover:bg-[#EAEAEA] border border-[#E5E5E5] text-xs font-mono tracking-wider uppercase text-[#111111] font-bold transition-all shadow-sm"
               >
-                <MapPin className="w-3.5 h-3.5 text-[#0A0A0A]" />
+                <MapPin className="w-3.5 h-3.5 text-[#080808]" />
                 <span>GOOGLE MAPS</span>
               </a>
 
@@ -650,9 +634,9 @@ export const ContactSection = () => {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook Page"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#F5F5F3] hover:bg-[#EAEAEA] border border-[#E5E5E5] text-xs font-mono tracking-wider uppercase text-[#0A0A0A] font-bold transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-[#F5F5F5] hover:bg-[#EAEAEA] border border-[#E5E5E5] text-xs font-mono tracking-wider uppercase text-[#111111] font-bold transition-all shadow-sm"
               >
-                <FacebookIcon className="w-3.5 h-3.5 text-[#0A0A0A]" />
+                <FacebookIcon className="w-3.5 h-3.5 text-[#080808]" />
                 <span>FACEBOOK</span>
               </a>
 
@@ -661,9 +645,9 @@ export const ContactSection = () => {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram Profile"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#F5F5F3] hover:bg-[#EAEAEA] border border-[#E5E5E5] text-xs font-mono tracking-wider uppercase text-[#0A0A0A] font-bold transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-[#F5F5F5] hover:bg-[#EAEAEA] border border-[#E5E5E5] text-xs font-mono tracking-wider uppercase text-[#111111] font-bold transition-all shadow-sm"
               >
-                <InstagramIcon className="w-3.5 h-3.5 text-[#0A0A0A]" />
+                <InstagramIcon className="w-3.5 h-3.5 text-[#080808]" />
                 <span>INSTAGRAM</span>
               </a>
 
@@ -672,7 +656,7 @@ export const ContactSection = () => {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp Hotline"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#F5F5F3] hover:bg-[#EAEAEA] border border-[#E5E5E5] text-xs font-mono tracking-wider uppercase text-[#0A0A0A] font-bold transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-[#F5F5F5] hover:bg-[#EAEAEA] border border-[#E5E5E5] text-xs font-mono tracking-wider uppercase text-[#111111] font-bold transition-all shadow-sm"
               >
                 <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" />
                 <span>WHATSAPP</span>
@@ -690,17 +674,15 @@ export const ContactSection = () => {
 };
 
 export const GameSection = () => (
-  <section id="game" className="py-20 sm:py-28 px-4 max-w-7xl mx-auto border-t border-[#EAEAEA] relative z-20 bg-white text-[#0A0A0A]">
+  <section id="game" className="py-20 sm:py-28 px-4 max-w-7xl mx-auto border-t border-[#EAEAEA] relative z-20 bg-white text-[#111111]">
     <div className="space-y-8 sm:space-y-12">
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-6 text-left">
         <div>
           <div className="inline-flex items-center gap-2 font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold mb-2">
-            <span className="w-[3px] h-3.5 bg-[#F4A261] rounded-full inline-block" />
-            <span className="text-[#F4A261] font-bold">10</span>
-            <span>/ INTERACTIVE 2D KART RACER</span>
+            <Trophy className="w-3.5 h-3.5 text-[#080808]" /> // INTERACTIVE 2D KART RACER
           </div>
-          <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#080808] uppercase tracking-tight">
             PRO <span className="text-[#666666]">ARCADE</span>
           </h2>
         </div>

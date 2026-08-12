@@ -64,15 +64,13 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-20 sm:py-28 px-4 max-w-7xl mx-auto border-t border-[#EAEAEA] relative z-20 bg-[#F5F5F3] text-[#0A0A0A]">
+    <section id="testimonials" className="py-20 sm:py-28 px-4 max-w-7xl mx-auto border-t border-[#EAEAEA] relative z-20 bg-[#F9F9F9] text-[#111111]">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E5E5E5] pb-6 mb-12 text-left">
         <div>
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold mb-2">
-            <span className="w-[3px] h-3.5 bg-[#F4A261] rounded-full inline-block" />
-            <span className="text-[#F4A261] font-bold">14</span>
-            <span>/ PILOT TESTIMONIALS & REVIEWS</span>
-          </div>
-          <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+          <span className="font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold block mb-2">
+            // PILOT TESTIMONIALS & REVIEWS
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#080808] uppercase tracking-tight">
             RACER <span className="text-[#666666]">EXPERIENCES</span>
           </h2>
         </div>
@@ -111,19 +109,19 @@ const TestimonialsSection = () => {
                     p-7 rounded-xl transition-all duration-300 border text-left flex flex-col justify-between h-64
                     ${
                       isActive
-                        ? 'bg-white border-[#0A0A0A] shadow-md scale-100'
-                        : 'bg-[#F5F5F3] border-[#E5E5E5] opacity-60 scale-95'
+                        ? 'bg-white border-[#080808] shadow-md scale-100'
+                        : 'bg-[#F5F5F5] border-[#E5E5E5] opacity-60 scale-95'
                     }
                   `}
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1 text-[#0A0A0A]">
+                      <div className="flex items-center gap-1 text-[#080808]">
                         {[...Array(item.rating)].map((_, i) => (
-                          <Star key={i} className="w-3.5 h-3.5 fill-[#F4A261] text-[#F4A261]" />
+                          <Star key={i} className="w-3.5 h-3.5 fill-[#080808] text-[#080808]" />
                         ))}
                       </div>
-                      <span className="px-2.5 py-0.5 rounded-sm bg-[#F5F5F3] text-[#555555] font-mono text-[9px] font-bold uppercase tracking-wider border border-[#E5E5E5]">
+                      <span className="px-2.5 py-0.5 rounded-sm bg-[#F5F5F5] text-[#555555] font-mono text-[9px] font-bold uppercase tracking-wider border border-[#E5E5E5]">
                         {item.tag}
                       </span>
                     </div>
@@ -135,7 +133,7 @@ const TestimonialsSection = () => {
 
                   <div className="flex items-center justify-between pt-3 border-t border-[#F0F0F0]">
                     <div>
-                      <h4 className="text-sm font-display font-bold text-[#0A0A0A] uppercase">{item.name}</h4>
+                      <h4 className="text-sm font-display font-bold text-[#080808] uppercase">{item.name}</h4>
                       <p className="text-[10px] font-mono text-[#888888]">{item.role}</p>
                     </div>
                     <Quote className="w-5 h-5 text-[#CCCCCC]" />

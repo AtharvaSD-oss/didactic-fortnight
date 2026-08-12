@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Maximize2, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Camera, Maximize2, ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const GALLERY_PHOTOS = [
   {
@@ -84,18 +84,16 @@ const GallerySection = () => {
   return (
     <section
       id="gallery"
-      className="py-20 sm:py-32 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#0A0A0A] relative z-20"
+      className="py-20 sm:py-32 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111] relative z-20"
     >
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#EAEAEA] pb-8 mb-10 sm:mb-14 text-left">
         <div>
           <div className="inline-flex items-center gap-2 font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold mb-2">
-            <span className="w-[3px] h-3.5 bg-[#F4A261] rounded-full inline-block" />
-            <span className="text-[#F4A261] font-bold">11</span>
-            <span>/ MOTORSPORT IN ACTION</span>
+            <Camera className="w-3.5 h-3.5 text-[#080808]" /> // MOTORSPORT IN ACTION
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#080808] uppercase tracking-tight">
             KARTOMANIA <span className="text-[#666666]">GALLERY</span>
           </h2>
         </div>
@@ -109,10 +107,10 @@ const GallerySection = () => {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`
-                  px-3.5 py-1.5 rounded-md font-mono text-xs font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer
+                  px-3.5 py-1.5 rounded-sm font-mono text-xs font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer
                   ${isActive
                     ? 'bg-[#080808] text-white shadow-sm'
-                    : 'bg-[#F5F5F3] text-[#666666] hover:bg-[#EAEAEA] hover:text-[#0A0A0A] border border-[#E5E5E5]'
+                    : 'bg-[#F5F5F5] text-[#666666] hover:bg-[#EAEAEA] hover:text-[#080808] border border-[#E5E5E5]'
                   }
                 `}
               >
@@ -139,7 +137,7 @@ const GallerySection = () => {
               key={photo.id}
               onClick={() => openLightbox(index)}
               className={`
-                group relative rounded-xl overflow-hidden border border-[#E5E5E5] bg-[#F5F5F3] shadow-sm hover:shadow-lg hover:border-[#0A0A0A]
+                group relative rounded-xl overflow-hidden border border-[#E5E5E5] bg-[#F9F9F9] shadow-sm hover:shadow-lg hover:border-[#080808]
                 transition-all duration-500 cursor-pointer ${photo.aspect}
               `}
               data-cursor="EXPAND"
@@ -154,7 +152,7 @@ const GallerySection = () => {
 
               {/* Subtle Expand Icon on Hover */}
               <div className="absolute top-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="p-2.5 rounded-full bg-black/75 backdrop-blur-md text-white border border-white/20 hover:bg-white hover:text-[#0A0A0A] transition-colors shadow-lg">
+                <div className="p-2.5 rounded-full bg-black/75 backdrop-blur-md text-white border border-white/20 hover:bg-white hover:text-[#080808] transition-colors shadow-lg">
                   <Maximize2 className="w-3.5 h-3.5" />
                 </div>
               </div>
