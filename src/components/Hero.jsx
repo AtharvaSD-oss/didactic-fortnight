@@ -1,49 +1,99 @@
-import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, MapPin } from 'lucide-react';
+import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ArrowRight, MapPin } from "lucide-react";
+import MagneticButton from "./MagneticButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* ─── Animation Sequence Variants ─────────────────────────────── */
+/* ============================================================
+   ANIMATION SETTINGS
+============================================================ */
+
 const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 22 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay },
+  initial: {
+    opacity: 0,
+    y: 24,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+  },
+  transition: {
+    duration: 0.8,
+    delay,
+    ease: [0.22, 1, 0.36, 1],
+  },
 });
 
-const kartVariant = {
-  initial: { opacity: 0, x: 65, y: 35 },
-  animate: { opacity: 1, x: 0, y: 0 },
+const titleAnimation = {
+  initial: {
+    opacity: 0,
+    y: 35,
+    scale: 0.98,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+  },
   transition: {
-    duration: 1.0,
+    duration: 1,
+    delay: 0.15,
     ease: [0.16, 1, 0.3, 1],
-    delay: 0.6,
   },
 };
 
-/* ─── Hero Component ──────────────────────────────────────────── */
+const kartAnimation = {
+  initial: {
+    opacity: 0,
+    x: 80,
+    y: 40,
+    scale: 0.96,
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    scale: 1,
+  },
+  transition: {
+    duration: 1.1,
+    delay: 0.45,
+    ease: [0.16, 1, 0.3, 1],
+  },
+};
+
+/* ============================================================
+   HERO
+============================================================ */
+
 const Hero = ({ onOpenBooking, onNavigate }) => {
   const heroRef = useRef(null);
   const kartRef = useRef(null);
 
-  /* Subtle scroll-based parallax on the race car */
+  /* ----------------------------------------------------------
+     KART PARALLAX
+  ---------------------------------------------------------- */
+
   useEffect(() => {
     const ctx = gsap.context(() => {
-      if (kartRef.current) {
-        gsap.to(kartRef.current, {
-          y: -28,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: heroRef.current,
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true,
-          },
-        });
-      }
+      if (!kartRef.current || !heroRef.current) return;
+
+      gsap.to(kartRef.current, {
+        y: -28,
+        ease: "none",
+
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
     }, heroRef);
+
     return () => ctx.revert();
   }, []);
 
@@ -51,214 +101,644 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
     <section
       ref={heroRef}
       id="home"
-      className="relative w-full min-h-[100vh] sm:min-h-[900px] flex flex-col justify-between bg-white text-[#111111] overflow-hidden pt-24 sm:pt-28 lg:pt-32"
+      className="
+        relative
+        w-full
+        min-h-[900px]
+        lg:min-h-[100svh]
+        bg-white
+        text-[#0A0A0A]
+        overflow-hidden
+      "
     >
-      {/* ── 16. Right-Side Page Indicator Dots ───────────────── */}
-      <div className="hidden lg:flex fixed right-6 sm:right-8 top-1/2 -translate-y-1/2 z-40 flex-col gap-3.5 items-center">
+
+      {/* ======================================================
+          RIGHT SIDE SECTION INDICATORS
+      ====================================================== */}
+
+      <div
+        className="
+          hidden
+          lg:flex
+          fixed
+          right-8
+          top-1/2
+          -translate-y-1/2
+          z-50
+          flex-col
+          items-center
+          gap-3
+        "
+      >
+        {/* ACTIVE */}
         <button
-          onClick={() => onNavigate('home')}
-          aria-label="Go to section 1: Home"
-          className="w-3 h-3 rounded-full bg-[#F47C20] transition-all duration-300 transform scale-125 shadow-sm cursor-pointer"
+          onClick={() => onNavigate("home")}
+          aria-label="Go to Home"
+          className="
+            w-[11px]
+            h-[11px]
+            rounded-full
+            bg-[#F47C20]
+            scale-110
+            transition-all
+            duration-300
+          "
         />
+
+        {/* EXPERIENCE */}
         <button
-          onClick={() => onNavigate('who-we-are')}
-          aria-label="Go to section 2: Experience"
-          className="w-3 h-3 rounded-full bg-[#D1D5DB] hover:bg-[#F47C20] transition-all duration-300 cursor-pointer"
+          onClick={() => onNavigate("who-we-are")}
+          aria-label="Go to Experience"
+          className="
+            w-[10px]
+            h-[10px]
+            rounded-full
+            bg-[#999999]
+            hover:bg-[#F47C20]
+            transition-colors
+            duration-300
+          "
         />
+
+        {/* TRACK */}
         <button
-          onClick={() => onNavigate('track')}
-          aria-label="Go to section 3: Track"
-          className="w-3 h-3 rounded-full bg-[#D1D5DB] hover:bg-[#F47C20] transition-all duration-300 cursor-pointer"
+          onClick={() => onNavigate("track")}
+          aria-label="Go to Track"
+          className="
+            w-[10px]
+            h-[10px]
+            rounded-full
+            bg-[#999999]
+            hover:bg-[#F47C20]
+            transition-colors
+            duration-300
+          "
         />
+
+        {/* KARTS */}
         <button
-          onClick={() => onNavigate('karts')}
-          aria-label="Go to section 4: Karts"
-          className="w-3 h-3 rounded-full bg-[#D1D5DB] hover:bg-[#F47C20] transition-all duration-300 cursor-pointer"
+          onClick={() => onNavigate("karts")}
+          aria-label="Go to Karts"
+          className="
+            w-[10px]
+            h-[10px]
+            rounded-full
+            bg-[#999999]
+            hover:bg-[#F47C20]
+            transition-colors
+            duration-300
+          "
         />
       </div>
 
-      {/* ════════════════════════════════════════════════════════
-          MAIN COMPOSITION: Typography, Content & Integrated Kart
-         ════════════════════════════════════════════════════════ */}
-      <div className="relative z-10 max-w-[1600px] w-full mx-auto px-6 lg:px-[54px] flex-1 flex flex-col justify-between">
-        
-        {/* ── 6, 8. Section Label: 01 / KARTOMANIA ───────── */}
-        <motion.div {...fadeUp(0.1)} className="pt-2 sm:pt-4">
-          <div className="inline-flex items-center gap-2 font-mono text-xs sm:text-sm font-bold tracking-widest uppercase">
-            <span className="w-[3px] h-4 bg-[#F47C20] block" aria-hidden="true" />
-            <span className="text-[#F47C20]">01</span>
-            <span className="text-[#111111]">/</span>
-            <span className="text-[#111111]">KARTOMANIA</span>
-          </div>
+      {/* ======================================================
+          MAIN HERO CONTAINER
+      ====================================================== */}
+
+      <div
+        className="
+          relative
+          z-10
+          w-full
+          max-w-[1600px]
+          mx-auto
+          px-6
+          sm:px-8
+          lg:px-[54px]
+          pt-[150px]
+          lg:pt-[155px]
+        "
+      >
+
+        {/* ====================================================
+            SECTION LABEL
+        ==================================================== */}
+
+        <motion.div
+          {...fadeUp(0.05)}
+          className="
+            flex
+            items-center
+            gap-3
+            mb-7
+            lg:mb-8
+          "
+        >
+          <span
+            className="
+              block
+              w-[2px]
+              h-[20px]
+              bg-[#F47C20]
+            "
+          />
+
+          <span
+            className="
+              text-[#F47C20]
+              text-[14px]
+              sm:text-[15px]
+              font-bold
+              tracking-[0.12em]
+            "
+          >
+            01
+          </span>
+
+          <span
+            className="
+              text-[#111111]
+              text-[14px]
+              sm:text-[15px]
+              font-bold
+              tracking-[0.12em]
+            "
+          >
+            /
+          </span>
+
+          <span
+            className="
+              text-[#111111]
+              text-[14px]
+              sm:text-[15px]
+              font-bold
+              tracking-[0.12em]
+            "
+          >
+            KARTOMANIA
+          </span>
         </motion.div>
 
-        {/* ── 7, 8. Giant Hero Title (KARTOMANIA) ───────────── */}
-        <div className="relative z-10 my-2 sm:my-4 select-none">
+
+        {/* ====================================================
+            GIANT KARTOMANIA TITLE
+        ==================================================== */}
+
+        <div
+          className="
+            relative
+            z-10
+            w-full
+            overflow-visible
+          "
+        >
           <motion.h1
-            initial={{ opacity: 0, y: 25, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-            className="font-display font-black text-[#111111] uppercase leading-[0.88] tracking-tighter text-[15.5vw] sm:text-[14vw] md:text-[12.5vw] lg:text-[11vw] xl:text-[10vw] 2xl:text-[13rem]"
+            {...titleAnimation}
+            className="
+              font-display
+              font-black
+              uppercase
+              text-[#111111]
+
+              leading-[0.78]
+
+              tracking-[-0.065em]
+
+              whitespace-nowrap
+
+              text-[17vw]
+              sm:text-[15vw]
+              md:text-[13.5vw]
+              lg:text-[11.6vw]
+              xl:text-[11.3vw]
+              2xl:text-[11rem]
+            "
           >
             KARTOMANIA
           </motion.h1>
         </div>
 
-        {/* ── LOWER COMPOSITION: Text Content + Overlapping Kart ── */}
-        <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 items-end pb-8 lg:pb-16 gap-6 lg:gap-0">
-          
-          {/* ── 9, 10, 11, 12. Left Content Block ───────────────── */}
-          <div className="lg:col-span-6 xl:col-span-5 space-y-4 sm:space-y-5 lg:pb-4 relative z-30">
-            
-            {/* Tagline */}
-            <motion.div {...fadeUp(0.35)}>
-              <p className="font-mono text-xs sm:text-sm font-bold tracking-[0.25em] uppercase text-[#111111]">
-                RACE.&nbsp; EXPERIENCE.&nbsp; REMEMBER.
-              </p>
-            </motion.div>
 
-            {/* Orange Horizontal Divider */}
+        {/* ====================================================
+            LOWER HERO AREA
+        ==================================================== */}
+
+        <div
+          className="
+            relative
+            z-20
+            min-h-[430px]
+            lg:min-h-[460px]
+          "
+        >
+
+          {/* ==================================================
+              LEFT TEXT CONTENT
+          ================================================== */}
+
+          <div
+            className="
+              absolute
+              left-0
+              top-[55px]
+              lg:top-[58px]
+
+              z-30
+
+              w-[320px]
+              sm:w-[370px]
+              lg:w-[390px]
+            "
+          >
+
+            {/* TAGLINE */}
+
+            <motion.p
+              {...fadeUp(0.3)}
+              className="
+                text-[#111111]
+                font-semibold
+
+                text-[15px]
+                sm:text-[18px]
+                lg:text-[20px]
+
+                uppercase
+
+                tracking-[0.16em]
+
+                leading-tight
+              "
+            >
+              RACE. EXPERIENCE. REMEMBER.
+            </motion.p>
+
+
+            {/* ORANGE LINE */}
+
             <motion.div
-              initial={{ scaleX: 0, opacity: 0 }}
-              animate={{ scaleX: 1, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.45, ease: 'easeOut' }}
-              style={{ originX: 0 }}
-              className="w-[84px] h-[2px] bg-[#F47C20]"
-              aria-hidden="true"
+              initial={{
+                opacity: 0,
+                scaleX: 0,
+              }}
+              animate={{
+                opacity: 1,
+                scaleX: 1,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 0.45,
+                ease: "easeOut",
+              }}
+              style={{
+                transformOrigin: "left center",
+              }}
+              className="
+                w-[84px]
+                h-[2px]
+                bg-[#F47C20]
+                mt-6
+                mb-6
+              "
             />
 
-            {/* Description */}
+
+            {/* DESCRIPTION */}
+
             <motion.p
-              {...fadeUp(0.5)}
-              className="text-sm sm:text-base text-[#444444] font-medium leading-relaxed max-w-[380px]"
+              {...fadeUp(0.45)}
+              className="
+                text-[#333333]
+
+                text-[15px]
+                sm:text-[16px]
+
+                leading-[1.8]
+
+                max-w-[350px]
+              "
             >
-              Where speed meets adrenaline.<br />
+              Where speed meets adrenaline.
+              <br />
+
               <span className="text-[#111111] font-semibold">
                 Experience Kartomania.
               </span>
             </motion.p>
 
-            {/* CTA Buttons */}
+
+            {/* =================================================
+                BUTTONS
+            ================================================= */}
+
             <motion.div
-              {...fadeUp(0.6)}
-              className="flex flex-wrap items-center gap-3 pt-2"
+              {...fadeUp(0.55)}
+              className="
+                flex
+                flex-wrap
+                items-center
+                gap-3
+                mt-8
+              "
             >
-              {/* Primary Booking Button */}
-              <button
+
+              {/* PRIMARY BOOKING BUTTON */}
+
+              <MagneticButton
                 onClick={onOpenBooking}
-                className="group flex items-center justify-center gap-2.5 w-[215px] h-[54px] rounded-[6px] bg-[#0A0A0A] hover:bg-[#F47C20] text-white font-display font-bold text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-md"
+                variant="primary"
+                className="
+                  group
+                  h-[54px]
+                  px-6
+                  sm:px-7
+
+                  bg-[#0A0A0A]
+                  text-white
+
+                  text-[12px]
+                  sm:text-[13px]
+
+                  font-bold
+
+                  rounded-[5px]
+
+                  shadow-none
+
+                  transition-all
+                  duration-300
+
+                  hover:bg-[#F47C20]
+                "
               >
                 <span>BOOK YOUR RACE</span>
-                <ArrowRight className="w-4 h-4 text-[#F47C20] group-hover:text-white transition-colors" />
-              </button>
 
-              {/* Secondary Directions Button */}
+                <ArrowRight
+                  className="
+                    inline-block
+                    w-4
+                    h-4
+                    ml-2
+
+                    text-[#F47C20]
+
+                    group-hover:text-white
+
+                    transition-colors
+                    duration-300
+                  "
+                />
+              </MagneticButton>
+
+
+              {/* DIRECTIONS */}
+
               <a
                 href="https://maps.app.goo.gl/7c5CMX5a4vaaXFLN9"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 h-[54px] border border-[#E5E5E5] hover:border-[#F47C20]
-                           text-xs font-mono tracking-widest uppercase text-[#111111] hover:text-[#F47C20]
-                           font-bold transition-all duration-200 cursor-pointer rounded-[6px] bg-white"
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+
+                  h-[54px]
+                  px-5
+
+                  border
+                  border-[#DCDCDC]
+
+                  bg-white
+
+                  text-[#111111]
+
+                  text-[11px]
+
+                  font-bold
+
+                  tracking-[0.08em]
+
+                  uppercase
+
+                  rounded-[5px]
+
+                  transition-all
+                  duration-300
+
+                  hover:border-[#F47C20]
+                  hover:text-[#F47C20]
+                "
               >
-                <MapPin className="w-3.5 h-3.5 text-[#F47C20]" />
+                <MapPin
+                  className="
+                    w-4
+                    h-4
+                    text-[#F47C20]
+                  "
+                />
+
                 GET DIRECTIONS
               </a>
             </motion.div>
           </div>
 
-          {/* ── 13, 14, 15. Integrated Kart Layer (Desktop/Tablet Overlap) ── */}
-          <div className="hidden lg:block lg:col-span-6 xl:col-span-7 relative self-end -mb-6 xl:-mb-10 z-20">
+
+          {/* ==================================================
+              DESKTOP RACING CAR
+          ================================================== */}
+
+          <div
+            className="
+              hidden
+              lg:block
+
+              absolute
+
+              right-[-70px]
+              xl:right-[-100px]
+
+              bottom-[-5px]
+              xl:bottom-[-18px]
+
+              z-20
+
+              w-[760px]
+              xl:w-[900px]
+              2xl:w-[1020px]
+            "
+          >
+
             <motion.div
               ref={kartRef}
-              variants={kartVariant}
-              initial="initial"
-              animate="animate"
-              className="relative z-20 w-full"
-              style={{ willChange: 'transform' }}
+              {...kartAnimation}
+              className="
+                relative
+                w-full
+              "
+              style={{
+                willChange: "transform",
+              }}
             >
-              {/* Subtle Ground Contact Shadow */}
+
+              {/* GROUND SHADOW */}
+
               <div
                 aria-hidden="true"
-                className="absolute -bottom-2 left-[12%] right-[8%] h-8 sm:h-10 blur-xl rounded-full pointer-events-none z-10"
+                className="
+                  absolute
+
+                  left-[10%]
+                  right-[5%]
+                  bottom-[8px]
+
+                  h-[34px]
+
+                  rounded-full
+
+                  blur-[20px]
+
+                  pointer-events-none
+
+                  z-0
+                "
                 style={{
                   background:
-                    'radial-gradient(ellipse at center, rgba(0, 0, 0, 0.18) 0%, transparent 70%)',
+                    "radial-gradient(ellipse at center, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0) 72%)",
                 }}
               />
 
-              {/* White Avalanche Kart Image (Independent Layer) */}
+
+              {/* RACE CAR */}
+
               <img
                 src="/avalanche-car-isolated.png"
-                alt="Kartomania White Avalanche Race Car #10"
+                alt="Kartomania White Avalanche Race Car"
                 width={1000}
                 height={600}
                 loading="eager"
                 fetchPriority="high"
                 draggable={false}
                 className="
-                  w-[65vw] max-w-[1100px] min-w-[520px]
-                  xl:w-[68vw] 2xl:w-[70vw]
+                  relative
+                  z-10
+
+                  block
+
+                  w-full
                   h-auto
+
                   object-contain
+
+                  select-none
+                  pointer-events-none
+
                   mix-blend-multiply
-                  filter contrast-[1.03] brightness-[1.01]
-                  select-none pointer-events-none
-                  translate-x-2 xl:translate-x-6
+
+                  contrast-[1.02]
                 "
-                style={{ aspectRatio: '1000/600', mixBlendMode: 'multiply' }}
+                style={{
+                  aspectRatio: "1000 / 600",
+                }}
               />
             </motion.div>
           </div>
         </div>
 
-        {/* ── 24. Mobile Responsive Kart Layer ────────────────── */}
-        <div className="block lg:hidden w-full my-4 z-20">
+
+        {/* ====================================================
+            MOBILE RACING CAR
+        ==================================================== */}
+
+        <div
+          className="
+            lg:hidden
+
+            relative
+
+            w-full
+
+            mt-[-15px]
+            sm:mt-[-5px]
+
+            z-20
+          "
+        >
+
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-            className="relative w-full"
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.9,
+              delay: 0.5,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            className="
+              relative
+              w-full
+            "
           >
+
+            {/* MOBILE SHADOW */}
+
             <div
-              aria-hidden="true"
-              className="absolute -bottom-2 left-[10%] right-[10%] h-5 blur-lg rounded-full pointer-events-none"
+              className="
+                absolute
+                left-[12%]
+                right-[12%]
+                bottom-[4px]
+                h-5
+                rounded-full
+                blur-xl
+              "
               style={{
                 background:
-                  'radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, transparent 70%)',
+                  "radial-gradient(ellipse at center, rgba(0,0,0,0.18) 0%, transparent 70%)",
               }}
             />
+
             <img
               src="/avalanche-car-isolated.png"
-              alt="Kartomania White Avalanche Race Car #10"
+              alt="Kartomania White Avalanche Race Car"
               width={900}
               height={540}
               loading="eager"
               fetchPriority="high"
               draggable={false}
-              className="w-full h-auto object-contain mix-blend-multiply filter contrast-[1.03] brightness-[1.01] select-none pointer-events-none max-w-[520px] mx-auto"
-              style={{ aspectRatio: '900/540', mixBlendMode: 'multiply' }}
+              className="
+                relative
+                z-10
+
+                block
+
+                w-full
+                max-w-[650px]
+
+                mx-auto
+
+                h-auto
+
+                object-contain
+
+                mix-blend-multiply
+
+                select-none
+                pointer-events-none
+              "
             />
           </motion.div>
         </div>
-
       </div>
 
-      {/* ── Minimal Scroll Indicator ─────────────────────────── */}
-      <div className="relative z-10 flex flex-col items-center justify-center pb-4 pt-2">
-        <span className="font-mono text-[9px] text-[#888888] uppercase tracking-widest font-semibold mb-1">
-          SCROLL TO EXPLORE
-        </span>
-        <motion.button
-          onClick={() => onNavigate('who-we-are')}
-          animate={{ y: [0, 4, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
-          className="p-1 rounded-full text-[#0A0A0A] hover:text-[#F47C20] transition-colors cursor-pointer"
-          aria-label="Scroll to next section"
-        >
-          <div className="w-[1px] h-5 bg-gradient-to-b from-[#F47C20] to-transparent mx-auto" />
-        </motion.button>
-      </div>
+
+      {/* ======================================================
+          HERO BOTTOM SPACING
+      ====================================================== */}
+
+      <div
+        className="
+          h-[25px]
+          sm:h-[30px]
+          lg:h-[35px]
+        "
+      />
+
     </section>
   );
 };
