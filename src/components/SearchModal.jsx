@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, X, Trophy, Shield, MapPin, Gauge, Sparkles } from 'lucide-react';
+import { Search, X, Trophy, Shield, MapPin, Gauge, Camera } from 'lucide-react';
 
 const QUICK_SEARCHES = [
   { title: "Pro Kart Specs & Telemetry", icon: Gauge, path: "who-we-are" },
   { title: "Weekday & Weekend Rates", icon: Trophy, path: "pricing" },
+  { title: "Real Track & Racing Photo Gallery", icon: Camera, path: "gallery" },
   { title: "Entertainland Mall Venue Address", icon: MapPin, path: "contact" },
   { title: "16-Bit 2D Arcade Simulator", icon: Shield, path: "game" },
   { title: "What's New Special Offers", icon: Trophy, path: "whats-new" },
@@ -22,27 +23,27 @@ const SearchModal = ({ isOpen, onClose, onNavigate }) => {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 p-4 bg-black/80 backdrop-blur-xl">
+      <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 p-4 bg-black/50 backdrop-blur-md">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: -20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: -20 }}
-          className="relative w-full max-w-xl bg-[#0e1430] border border-[#00d9ff]/30 rounded-3xl p-6 shadow-[0_25px_80px_rgba(0,217,255,0.2)] text-white"
+          className="relative w-full max-w-xl bg-white border border-gray-200 rounded-2xl p-6 shadow-2xl text-gray-900"
         >
           {/* Top Search Input Bar */}
-          <div className="flex items-center gap-3 border-b border-gray-800 pb-4">
-            <Search className="w-5 h-5 text-[#00d9ff]" />
+          <div className="flex items-center gap-3 border-b border-gray-200 pb-4">
+            <Search className="w-5 h-5 text-[#EE3124]" />
             <input
               type="text"
               autoFocus
               placeholder="Search Kartomania telemetry, rates, track specs..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="w-full bg-transparent text-sm font-mono text-white placeholder-gray-400 focus:outline-none"
+              className="w-full bg-transparent text-sm font-mono text-gray-900 placeholder-gray-400 focus:outline-none"
             />
             <button
               onClick={onClose}
-              className="p-1.5 rounded-full bg-black/60 text-gray-400 hover:text-white transition-colors cursor-pointer"
+              className="p-1.5 rounded-full bg-gray-100 text-gray-600 hover:text-black transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -50,10 +51,9 @@ const SearchModal = ({ isOpen, onClose, onNavigate }) => {
 
           {/* Search Suggestions */}
           <div className="py-4 space-y-2 max-h-80 overflow-y-auto">
-            <div className="flex items-center gap-1.5 text-[10px] font-mono text-[#00d9ff] uppercase tracking-widest mb-2 font-bold">
-              <Sparkles className="w-3 h-3" />
-              <span>QUICK TELEMETRY HUD LINKS</span>
-            </div>
+            <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-2 font-bold">
+              QUICK TELEMETRY LINKS
+            </span>
 
             {filtered.map((item, idx) => {
               const IconComp = item.icon;
@@ -64,15 +64,15 @@ const SearchModal = ({ isOpen, onClose, onNavigate }) => {
                     onNavigate(item.path);
                     onClose();
                   }}
-                  className="w-full text-left flex items-center justify-between p-3.5 rounded-2xl bg-black/40 hover:bg-[#00d9ff]/10 border border-gray-800 hover:border-[#00d9ff]/50 transition-colors group cursor-pointer"
+                  className="w-full text-left flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-[#EE3124]/10 border border-gray-200 hover:border-[#EE3124]/40 transition-colors group cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
-                    <IconComp className="w-4 h-4 text-[#00d9ff]" />
-                    <span className="text-xs font-mono text-gray-200 group-hover:text-white font-semibold">
+                    <IconComp className="w-4 h-4 text-[#EE3124]" />
+                    <span className="text-xs font-mono text-gray-800 group-hover:text-black font-semibold">
                       {item.title}
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono text-[#00d9ff] font-bold group-hover:translate-x-1 transition-transform">GO &rarr;</span>
+                  <span className="text-[10px] font-mono text-[#EE3124] font-bold">GO &rarr;</span>
                 </button>
               );
             })}

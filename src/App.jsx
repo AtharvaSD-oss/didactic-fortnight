@@ -6,9 +6,9 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhoWeAreSection from './components/WhoWeAreSection';
 import WhyKartomaniaSection from './components/WhyKartomaniaSection';
-import TrackExperienceSection from './components/TrackExperienceSection';
 import RacingTimeline from './components/RacingTimeline';
 import RacingRulesSection from './components/RacingRulesSection';
+import GallerySection from './components/GallerySection';
 import Timeline from './components/Timeline';
 import Testimonials from './components/Testimonials';
 import FAQSection from './components/FAQSection';
@@ -19,8 +19,6 @@ import ScrollProgress from './components/ScrollProgress';
 import BookingModal from './components/BookingModal';
 import SearchModal from './components/SearchModal';
 import WhatsAppButton from './components/WhatsAppButton';
-import AntigravityParticles from './components/AntigravityParticles';
-import BackToTop from './components/BackToTop';
 
 import { 
   TrackSection,
@@ -68,7 +66,6 @@ export function App() {
       'home', 
       'who-we-are',
       'why-kartomania',
-      'experience',
       'experience-timeline', 
       'racing-rules',
       'track',
@@ -77,6 +74,7 @@ export function App() {
       'whats-new', 
       'pricing', 
       'game', 
+      'gallery',
       'testimonials', 
       'founder', 
       'faq', 
@@ -119,10 +117,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0e27] text-white selection:bg-[#00d9ff] selection:text-black relative overflow-x-hidden">
-      {/* 0. Upward Floating Antigravity Particles & Glowing Orbs Background */}
-      <AntigravityParticles />
-
+    <div className="min-h-screen bg-white text-gray-900 selection:bg-[#EE3124] selection:text-white relative overflow-x-hidden">
       {/* 1. Top Racing Progress Bar */}
       <ScrollProgress />
 
@@ -148,7 +143,6 @@ export function App() {
         />
         <WhoWeAreSection onOpenBooking={() => setBookingOpen(true)} />
         <WhyKartomaniaSection />
-        <TrackExperienceSection onOpenBooking={() => setBookingOpen(true)} />
         <RacingTimeline />
         <RacingRulesSection />
         <TrackSection onOpenBooking={() => setBookingOpen(true)} />
@@ -157,6 +151,7 @@ export function App() {
         <WhatsNewSection onOpenBooking={() => setBookingOpen(true)} />
         <PricingSection onOpenBooking={() => setBookingOpen(true)} />
         <GameSection />
+        <GallerySection />
         <Testimonials />
         <Timeline />
         <FAQSection />
@@ -180,9 +175,6 @@ export function App() {
 
       {/* Floating Action WhatsApp Button (Bottom Right) */}
       <WhatsAppButton />
-
-      {/* Floating Back To Top Button (Bottom Left) */}
-      <BackToTop />
     </div>
   );
 }
