@@ -74,29 +74,7 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
         className="absolute top-0 right-1/4 w-[36rem] h-[36rem] bg-gradient-to-br from-[#F47C20]/10 via-[#FF9A4D]/5 to-transparent rounded-full blur-[140px] pointer-events-none"
       />
 
-      {/* ── Right-Side Pagination Dots ─────────────────────── */}
-      <div className="hidden lg:flex fixed right-6 sm:right-8 top-1/2 -translate-y-1/2 z-30 flex-col gap-3 items-center">
-        <button
-          onClick={() => onNavigate('home')}
-          aria-label="Go to section 1: Home"
-          className="w-2.5 h-2.5 rounded-full bg-[#F47C20] transition-all duration-300 transform scale-110 shadow-sm cursor-pointer"
-        />
-        <button
-          onClick={() => onNavigate('who-we-are')}
-          aria-label="Go to section 2: Experience"
-          className="w-2.5 h-2.5 rounded-full bg-[#D1D5DB] hover:bg-[#F47C20] transition-all duration-300 cursor-pointer"
-        />
-        <button
-          onClick={() => onNavigate('track')}
-          aria-label="Go to section 3: Track"
-          className="w-2.5 h-2.5 rounded-full bg-[#D1D5DB] hover:bg-[#F47C20] transition-all duration-300 cursor-pointer"
-        />
-        <button
-          onClick={() => onNavigate('karts')}
-          aria-label="Go to section 4: Karts"
-          className="w-2.5 h-2.5 rounded-full bg-[#D1D5DB] hover:bg-[#F47C20] transition-all duration-300 cursor-pointer"
-        />
-      </div>
+
 
       {/* ════════════════════════════════════════════════════════
           MAIN COMPOSITION: Typography & Seamless Car Layer
