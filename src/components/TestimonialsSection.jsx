@@ -64,13 +64,17 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-16 sm:py-24 px-4 max-w-7xl mx-auto border-t border-white/10 relative z-20 bg-[#0B0D0F] text-[#F4F1EA]">
-      <div className="text-center space-y-3 mb-10 sm:mb-14">
-        <span className="font-mono text-xs text-[#C9A45C] uppercase tracking-widest font-bold">// PILOT TESTIMONIALS & REVIEWS</span>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-[#F4F1EA] uppercase tracking-tight">
-          RACER <span className="text-[#C9A45C]">EXPERIENCES</span>
-        </h2>
-        <p className="text-xs sm:text-sm font-mono text-[#B8B1A5] max-w-xl mx-auto">
+    <section id="testimonials" className="py-20 sm:py-28 px-4 max-w-7xl mx-auto border-t border-[#EAEAEA] relative z-20 bg-[#F9F9F9] text-[#111111]">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E5E5E5] pb-6 mb-12 text-left">
+        <div>
+          <span className="font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold block mb-2">
+            // PILOT TESTIMONIALS & REVIEWS
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#080808] uppercase tracking-tight">
+            RACER <span className="text-[#666666]">EXPERIENCES</span>
+          </h2>
+        </div>
+        <p className="text-xs sm:text-sm font-mono text-[#888888] max-w-sm">
           Hear what drivers, amateur racers, and corporate event teams say about Kartomania.
         </p>
       </div>
@@ -83,7 +87,7 @@ const TestimonialsSection = () => {
           centeredSlides={true}
           slidesPerView="auto"
           loop={true}
-          speed={1000}
+          speed={900}
           autoplay={{
             delay: 3500,
             disableOnInteraction: false,
@@ -91,48 +95,48 @@ const TestimonialsSection = () => {
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
-            depth: 100,
-            modifier: 1.8,
+            depth: 80,
+            modifier: 1.5,
             slideShadows: false,
           }}
-          className="py-6"
+          className="py-4"
         >
           {testimonials.map((item, idx) => (
             <SwiperSlide key={idx} className="max-w-md w-full">
               {({ isActive }) => (
                 <div
                   className={`
-                    p-6 sm:p-7 rounded-2xl transition-all duration-500 border text-left flex flex-col justify-between h-64
+                    p-7 rounded-xl transition-all duration-300 border text-left flex flex-col justify-between h-64
                     ${
                       isActive
-                        ? 'bg-[#15181C] border-[#C9A45C]/50 shadow-2xl scale-100'
-                        : 'bg-[#0B0D0F] border-white/10 opacity-50 scale-95'
+                        ? 'bg-white border-[#080808] shadow-md scale-100'
+                        : 'bg-[#F5F5F5] border-[#E5E5E5] opacity-60 scale-95'
                     }
                   `}
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1 text-[#C9A45C]">
+                      <div className="flex items-center gap-1 text-[#080808]">
                         {[...Array(item.rating)].map((_, i) => (
-                          <Star key={i} className="w-3.5 h-3.5 fill-[#C9A45C] text-[#C9A45C]" />
+                          <Star key={i} className="w-3.5 h-3.5 fill-[#080808] text-[#080808]" />
                         ))}
                       </div>
-                      <span className="px-2.5 py-0.5 rounded-full bg-[#0B0D0F] text-[#C9A45C] font-mono text-[9px] font-bold uppercase tracking-wider border border-[#C9A45C]/30">
+                      <span className="px-2.5 py-0.5 rounded-sm bg-[#F5F5F5] text-[#555555] font-mono text-[9px] font-bold uppercase tracking-wider border border-[#E5E5E5]">
                         {item.tag}
                       </span>
                     </div>
 
-                    <p className="text-xs sm:text-sm font-sans text-[#B8B1A5] leading-relaxed italic line-clamp-3">
+                    <p className="text-xs sm:text-sm font-sans text-[#444444] leading-relaxed italic line-clamp-3">
                       "{item.review}"
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-between pt-3 border-t border-white/10">
+                  <div className="flex items-center justify-between pt-3 border-t border-[#F0F0F0]">
                     <div>
-                      <h4 className="text-sm font-display font-bold text-[#F4F1EA] uppercase">{item.name}</h4>
-                      <p className="text-[10px] font-mono text-[#837D73]">{item.role}</p>
+                      <h4 className="text-sm font-display font-bold text-[#080808] uppercase">{item.name}</h4>
+                      <p className="text-[10px] font-mono text-[#888888]">{item.role}</p>
                     </div>
-                    <Quote className="w-6 h-6 text-white/20" />
+                    <Quote className="w-5 h-5 text-[#CCCCCC]" />
                   </div>
                 </div>
               )}

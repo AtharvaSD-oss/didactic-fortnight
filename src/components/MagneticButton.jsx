@@ -10,7 +10,8 @@ const MagneticButton = ({
   rel = "noreferrer",
   className = "", 
   showArrow = true,
-  strength = 0.35 
+  strength = 0.25,
+  variant = "primary" // "primary" (black/white) or "secondary" (white/black border) or "ghost"
 }) => {
   const buttonRef = useRef(null);
   const contentRef = useRef(null);
@@ -27,15 +28,15 @@ const MagneticButton = ({
       gsap.to(btn, {
         x: x * strength,
         y: y * strength,
-        rotate: x * 0.04,
+        rotate: x * 0.02,
         duration: 0.3,
         ease: 'power2.out'
       });
 
       if (contentRef.current) {
         gsap.to(contentRef.current, {
-          x: x * (strength * 0.5),
-          y: y * (strength * 0.5),
+          x: x * (strength * 0.4),
+          y: y * (strength * 0.4),
           duration: 0.3,
           ease: 'power2.out'
         });
@@ -47,16 +48,16 @@ const MagneticButton = ({
         x: 0,
         y: 0,
         rotate: 0,
-        duration: 0.6,
-        ease: 'elastic.out(1, 0.4)'
+        duration: 0.5,
+        ease: 'power2.out'
       });
 
       if (contentRef.current) {
         gsap.to(contentRef.current, {
           x: 0,
           y: 0,
-          duration: 0.6,
-          ease: 'elastic.out(1, 0.4)'
+          duration: 0.5,
+          ease: 'power2.out'
         });
       }
     };
@@ -71,29 +72,22 @@ const MagneticButton = ({
   }, [strength]);
 
   const baseClasses = `
-    relative inline-flex items-center justify-center group overflow-hidden rounded-full font-display font-bold tracking-wide text-xs sm:text-sm uppercase
-    px-7 py-3.5 transition-all duration-300 transform active:scale-95 cursor-pointer text-decoration-none
-    bg-gradient-to-r from-[#EE3124] via-[#EA281B] to-[#D32F2F]
-    text-white border border-white/20
-    shadow-[0_8px_25px_rgba(238,49,36,0.35)]
-    hover:shadow-[0_12px_35px_rgba(238,49,36,0.5)]
-    hover:scale-[1.03]
-    light-sweep-effect ${className}
+    relative inline-flex items-center justify-center group overflow-hidden rounded-sm font-mono font-bold tracking-widest text-xs uppercase
+    px-6 py-3 transition-all duration-300 transform active:scale-95 cursor-pointer text-decoration-none border
+    ${variant === 'secondary' 
+      ? 'bg-transparent text-[#111111] border-[#111111] hover:bg-[#080808] hover:text-white' 
+      : 'bg-[#080808] text-white border-[#080808] hover:bg-white hover:text-[#080808] hover:border-[#080808]'
+    }
+    ${className}
   `;
 
   const innerContent = (
-    <>
-      {/* Outer ambient glow */}
-      <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#EE3124] to-[#F59E0B] opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300 -z-10" />
-
-      {/* Button content with icon */}
-      <span ref={contentRef} className="relative z-10 flex items-center gap-2">
-        <span>{children}</span>
-        {showArrow && (
-          <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-110 text-white" />
-        )}
-      </span>
-    </>
+    <span ref={contentRef} className="relative z-10 flex items-center gap-2">
+      <span>{children}</span>
+      {showArrow && (
+        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+      )}
+    </span>
   );
 
   if (href) {

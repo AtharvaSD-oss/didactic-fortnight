@@ -23,27 +23,27 @@ const SearchModal = ({ isOpen, onClose, onNavigate }) => {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 p-4 bg-black/75 backdrop-blur-md">
+      <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 p-4 bg-black/40 backdrop-blur-sm">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: -20 }}
+          initial={{ opacity: 0, scale: 0.96, y: -15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: -20 }}
-          className="relative w-full max-w-xl bg-[#0B0D0F] border border-white/10 rounded-2xl p-6 shadow-2xl text-[#F4F1EA]"
+          exit={{ opacity: 0, scale: 0.96, y: -15 }}
+          className="relative w-full max-w-xl bg-white border border-[#E5E5E5] rounded-xl p-6 shadow-2xl text-[#111111]"
         >
           {/* Top Search Input Bar */}
-          <div className="flex items-center gap-3 border-b border-white/10 pb-4">
-            <Search className="w-5 h-5 text-[#C9A45C]" />
+          <div className="flex items-center gap-3 border-b border-[#E5E5E5] pb-4">
+            <Search className="w-4 h-4 text-[#080808]" />
             <input
               type="text"
               autoFocus
               placeholder="Search Kartomania telemetry, rates, track specs..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="w-full bg-transparent text-sm font-mono text-[#F4F1EA] placeholder-[#837D73] focus:outline-none"
+              className="w-full bg-transparent text-sm font-mono text-[#111111] placeholder-[#888888] focus:outline-none"
             />
             <button
               onClick={onClose}
-              className="p-1.5 rounded-full bg-[#15181C] text-[#B8B1A5] hover:text-[#F4F1EA] transition-colors cursor-pointer"
+              className="p-1.5 rounded-full bg-[#F5F5F5] hover:bg-[#EAEAEA] text-[#111111] transition-colors cursor-pointer"
             >
               <X className="w-4 h-4" />
             </button>
@@ -51,7 +51,7 @@ const SearchModal = ({ isOpen, onClose, onNavigate }) => {
 
           {/* Search Suggestions */}
           <div className="py-4 space-y-2 max-h-80 overflow-y-auto">
-            <span className="text-[10px] font-mono text-[#837D73] uppercase tracking-widest block mb-2 font-bold">
+            <span className="text-[10px] font-mono text-[#888888] uppercase tracking-widest block mb-2 font-bold">
               QUICK TELEMETRY LINKS
             </span>
 
@@ -64,15 +64,15 @@ const SearchModal = ({ isOpen, onClose, onNavigate }) => {
                     onNavigate(item.path);
                     onClose();
                   }}
-                  className="w-full text-left flex items-center justify-between p-3 rounded-xl bg-[#15181C] hover:bg-[#1C2128] border border-white/5 hover:border-[#C9A45C]/40 transition-colors group cursor-pointer"
+                  className="w-full text-left flex items-center justify-between p-3 rounded-lg bg-[#F9F9F9] hover:bg-[#F0F0F0] border border-[#E5E5E5] hover:border-[#080808] transition-colors group cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
-                    <IconComp className="w-4 h-4 text-[#C9A45C]" />
-                    <span className="text-xs font-mono text-[#F4F1EA] group-hover:text-[#C9A45C] font-semibold transition-colors">
+                    <IconComp className="w-4 h-4 text-[#080808]" />
+                    <span className="text-xs font-mono text-[#111111] group-hover:text-[#080808] font-semibold transition-colors">
                       {item.title}
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono text-[#C9A45C] font-bold">GO &rarr;</span>
+                  <span className="text-[10px] font-mono text-[#080808] font-bold">GO &rarr;</span>
                 </button>
               );
             })}

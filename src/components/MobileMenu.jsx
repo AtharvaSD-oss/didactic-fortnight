@@ -25,7 +25,7 @@ const drawerVariants = {
   closed: {
     x: '100%',
     transition: {
-      duration: 0.45,
+      duration: 0.35,
       ease: [0.32, 0, 0.67, 0],
       when: 'afterChildren'
     }
@@ -33,16 +33,16 @@ const drawerVariants = {
   open: {
     x: 0,
     transition: {
-      duration: 0.45,
+      duration: 0.35,
       ease: [0.22, 1, 0.36, 1],
-      staggerChildren: 0.05,
-      delayChildren: 0.1
+      staggerChildren: 0.04,
+      delayChildren: 0.05
     }
   }
 };
 
 const itemVariants = {
-  closed: { opacity: 0, x: 25 },
+  closed: { opacity: 0, x: 20 },
   open: { opacity: 1, x: 0 }
 };
 
@@ -50,7 +50,8 @@ const MobileMenu = ({
   isOpen, 
   onClose, 
   activeSection, 
-  onNavigate 
+  onNavigate,
+  onOpenBooking 
 }) => {
   return (
     <AnimatePresence>
@@ -62,34 +63,34 @@ const MobileMenu = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/30 backdrop-blur-sm"
           />
 
-          {/* Slide-out Drawer Panel (Dark Theme) */}
+          {/* Slide-out Drawer Panel (Minimal White Theme) */}
           <motion.div
             variants={drawerVariants}
             initial="closed"
             animate="open"
             exit="closed"
-            className="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-[#0B0D0F] border-l border-white/10 shadow-2xl flex flex-col justify-between p-6 sm:p-8 overflow-y-auto text-[#F4F1EA]"
+            className="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-white border-l border-[#E5E5E5] shadow-2xl flex flex-col justify-between p-6 sm:p-8 overflow-y-auto text-[#111111]"
           >
             {/* Top Drawer Header */}
             <div className="space-y-6">
-              <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <div className="flex items-center justify-between border-b border-[#E5E5E5] pb-4">
                 <div className="flex items-center gap-3">
-                  <img src="/logo.png" alt="Kartomania" className="h-9 w-auto" />
+                  <img src="/logo.png" alt="Kartomania" className="h-8 w-auto" />
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-2.5 rounded-full bg-[#15181C] hover:bg-[#1E232B] border border-white/10 text-[#F4F1EA] hover:text-[#C9A45C] transition-colors cursor-pointer"
+                  className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#EAEAEA] border border-[#E5E5E5] text-[#111111] transition-colors cursor-pointer"
                 >
-                  <X className="w-5 h-5 text-[#C9A45C]" />
+                  <X className="w-4 h-4" />
                 </button>
               </div>
 
               {/* Navigation Items */}
-              <div className="space-y-2">
-                <span className="font-mono text-[10px] font-semibold text-[#837D73] uppercase tracking-widest block mb-1">
+              <div className="space-y-1.5">
+                <span className="font-mono text-[10px] font-semibold text-[#888888] uppercase tracking-widest block mb-2">
                   NAVIGATION SECTIONS
                 </span>
 
@@ -103,25 +104,25 @@ const MobileMenu = ({
                           onClose();
                         }}
                         className={`
-                          group w-full flex items-center justify-between py-3 px-4 rounded-xl border transition-all duration-300 cursor-pointer
+                          group w-full flex items-center justify-between py-2.5 px-3.5 rounded-sm border transition-all duration-200 cursor-pointer
                           ${isActive 
-                            ? 'bg-[#C9A45C]/15 border-[#C9A45C] text-[#C9A45C] shadow-sm font-bold' 
-                            : 'bg-[#15181C] border-white/5 hover:border-[#C9A45C]/40 text-[#B8B1A5] hover:text-[#F4F1EA] hover:bg-[#1C2128]'
+                            ? 'bg-[#080808] border-[#080808] text-white font-bold' 
+                            : 'bg-white border-[#EAEAEA] hover:border-[#080808] text-[#333333] hover:text-[#080808] hover:bg-[#F9F9F9]'
                           }
                         `}
                       >
-                        <div className="flex items-center gap-4">
-                          <span className="font-mono text-xs font-semibold text-[#C9A45C]">
+                        <div className="flex items-center gap-3">
+                          <span className={`font-mono text-xs font-semibold ${isActive ? 'text-white' : 'text-[#888888]'}`}>
                             {item.tag}
                           </span>
-                          <span className="font-display text-base font-bold tracking-wider uppercase">
+                          <span className="font-display text-sm font-bold tracking-wider uppercase">
                             {item.name}
                           </span>
                         </div>
 
                         <ChevronRight 
-                          className={`w-4 h-4 transition-transform duration-300 ${
-                            isActive ? 'text-[#C9A45C] translate-x-1' : 'text-[#837D73] group-hover:text-[#F4F1EA] group-hover:translate-x-1'
+                          className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                            isActive ? 'text-white translate-x-0.5' : 'text-[#AAAAAA] group-hover:text-[#080808] group-hover:translate-x-0.5'
                           }`} 
                         />
                       </button>
@@ -132,22 +133,24 @@ const MobileMenu = ({
             </div>
 
             {/* Bottom Footer Actions */}
-            <div className="space-y-4 pt-6 border-t border-white/10 mt-6">
+            <div className="space-y-4 pt-6 border-t border-[#E5E5E5] mt-6">
               <MagneticButton 
-                href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
-                onClick={onClose} 
-                className="w-full py-4 text-xs font-bold"
+                onClick={() => {
+                  onClose();
+                  if (onOpenBooking) onOpenBooking();
+                }} 
+                className="w-full py-3.5 text-xs font-bold"
               >
-                BOOK YOUR RACE NOW
+                BOOK YOUR RACE
               </MagneticButton>
 
-              <div className="flex flex-col gap-2 text-xs font-mono text-[#B8B1A5]">
+              <div className="flex flex-col gap-2 text-xs font-mono text-[#666666]">
                 <div className="flex items-center justify-between">
                   <a
                     href="tel:+919717548897"
-                    className="flex items-center gap-2 hover:text-[#C9A45C] transition-colors"
+                    className="flex items-center gap-2 hover:text-[#080808] transition-colors"
                   >
-                    <Phone className="w-3.5 h-3.5 text-[#C9A45C]" />
+                    <Phone className="w-3.5 h-3.5 text-[#080808]" />
                     <span>+91 97175 48897</span>
                   </a>
 
@@ -157,9 +160,9 @@ const MobileMenu = ({
                       target="_blank"
                       rel="noreferrer"
                       aria-label="Instagram"
-                      className="p-2 rounded-full bg-[#15181C] border border-white/10 hover:border-[#C9A45C] hover:text-[#C9A45C] text-[#B8B1A5] transition-colors"
+                      className="p-2 rounded-full bg-[#F5F5F5] border border-[#E5E5E5] hover:border-[#080808] text-[#333333] transition-colors"
                     >
-                      <InstagramIcon className="w-4 h-4" />
+                      <InstagramIcon className="w-3.5 h-3.5" />
                     </a>
 
                     <a
@@ -167,18 +170,18 @@ const MobileMenu = ({
                       target="_blank"
                       rel="noreferrer"
                       aria-label="Facebook"
-                      className="p-2 rounded-full bg-[#15181C] border border-white/10 hover:border-[#C9A45C] hover:text-[#C9A45C] text-[#B8B1A5] transition-colors"
+                      className="p-2 rounded-full bg-[#F5F5F5] border border-[#E5E5E5] hover:border-[#080808] text-[#333333] transition-colors"
                     >
-                      <FacebookIcon className="w-4 h-4" />
+                      <FacebookIcon className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>
 
                 <a
                   href="mailto:kartomania.ggn@gmail.com"
-                  className="flex items-center gap-2 hover:text-[#C9A45C] transition-colors text-[11px]"
+                  className="flex items-center gap-2 hover:text-[#080808] transition-colors text-[11px]"
                 >
-                  <Mail className="w-3.5 h-3.5 text-[#C9A45C]" />
+                  <Mail className="w-3.5 h-3.5 text-[#080808]" />
                   <span>kartomania.ggn@gmail.com</span>
                 </a>
               </div>

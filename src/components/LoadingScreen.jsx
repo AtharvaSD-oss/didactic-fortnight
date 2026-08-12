@@ -6,7 +6,7 @@ const LoadingScreen = ({ onComplete }) => {
   const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
-    const duration = 700; // Fast 0.7s load simulation
+    const duration = 650; // Fast load simulation
     const intervalTime = 20;
     const increment = 100 / (duration / intervalTime);
 
@@ -17,8 +17,8 @@ const LoadingScreen = ({ onComplete }) => {
           clearInterval(timer);
           setTimeout(() => {
             setIsDone(true);
-            setTimeout(onComplete, 400);
-          }, 150);
+            setTimeout(onComplete, 300);
+          }, 100);
           return 100;
         }
         return next;
@@ -34,60 +34,43 @@ const LoadingScreen = ({ onComplete }) => {
         <motion.div
           key="loading-screen"
           initial={{ y: 0 }}
-          exit={{ y: '-100%', transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }}
-          className="fixed inset-0 z-[10000] bg-[#0B0D0F] flex flex-col items-center justify-between p-8 sm:p-12 overflow-hidden selection:bg-[#C9A45C]"
+          exit={{ y: '-100%', transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }}
+          className="fixed inset-0 z-[10000] bg-white flex flex-col items-center justify-between p-8 sm:p-12 overflow-hidden selection:bg-[#080808]"
         >
-          {/* Carbon Grid Overlay */}
-          <div className="absolute inset-0 bg-carbon opacity-30 pointer-events-none" />
-
           {/* Top Telemetry Tag */}
-          <div className="w-full max-w-6xl flex items-center justify-between font-mono text-xs text-[#837D73] z-10">
-            <span className="text-[#C9A45C] font-bold tracking-widest">// FORMULA KARTING ARENA</span>
-            <span>SYSTEM INITIALIZATION</span>
+          <div className="w-full max-w-6xl flex items-center justify-between font-mono text-xs text-[#888888] z-10">
+            <span className="text-[#080808] font-bold tracking-widest">// KARTOMANIA ARENA</span>
+            <span>INITIALIZING</span>
           </div>
 
-          {/* Center Logo & Animated Telemetry Racing Line */}
-          <div className="relative z-10 flex flex-col items-center space-y-6 my-auto">
-            {/* SVG Racing Line Path Animation */}
-            <svg className="w-64 h-12 text-[#C9A45C]" viewBox="0 0 300 40">
-              <motion.path
-                d="M 10 20 Q 75 5, 150 20 T 290 20"
-                fill="transparent"
-                stroke="currentColor"
-                strokeWidth="4"
-                strokeLinecap="round"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: progress / 100 }}
-                transition={{ ease: 'linear' }}
-              />
-            </svg>
-
+          {/* Center Logo */}
+          <div className="relative z-10 flex flex-col items-center space-y-5 my-auto">
             {/* Logo Image */}
             <motion.img
-              initial={{ opacity: 0, scale: 0.85 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.5 }}
               src="/logo.png"
               alt="Kartomania Logo"
-              className="h-20 sm:h-28 w-auto object-contain filter drop-shadow-[0_0_20px_rgba(201,164,92,0.4)]"
+              className="h-16 sm:h-20 w-auto object-contain"
             />
 
-            <span className="font-mono text-xs text-[#B8B1A5] tracking-widest uppercase font-semibold">
+            <span className="font-mono text-xs text-[#666666] tracking-widest uppercase font-semibold">
               PREMIUM MOTORSPORTS EXPERIENCE
             </span>
           </div>
 
           {/* Bottom Progress Bar & Percentage */}
-          <div className="w-full max-w-xl z-10 space-y-3">
-            <div className="flex items-center justify-between font-mono text-xs text-[#837D73]">
-              <span className="uppercase text-[#C9A45C] font-bold">TELEMETRY SYNC</span>
-              <span className="text-xl font-display font-bold text-[#F4F1EA]">{Math.round(progress)}%</span>
+          <div className="w-full max-w-md z-10 space-y-2">
+            <div className="flex items-center justify-between font-mono text-xs text-[#888888]">
+              <span className="uppercase text-[#080808] font-bold">SYSTEM SYNC</span>
+              <span className="text-base font-display font-bold text-[#080808]">{Math.round(progress)}%</span>
             </div>
 
             {/* Outer Progress Track */}
-            <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden p-0.5 border border-white/5">
+            <div className="w-full h-1 bg-[#EAEAEA] rounded-full overflow-hidden">
               <motion.div
-                className="h-full bg-gradient-to-r from-[#C9A45C] via-[#EE3124] to-[#C9A45C] rounded-full shadow-[0_0_15px_#C9A45C]"
+                className="h-full bg-[#080808] rounded-full"
                 style={{ width: `${progress}%` }}
               />
             </div>

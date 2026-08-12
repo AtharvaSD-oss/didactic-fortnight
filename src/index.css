@@ -3,25 +3,15 @@
 @import "swiper/css/effect-cards";
 
 :root {
-  --bg-primary: #0B0D0F;
-  --bg-secondary: #15181C;
-  --bg-card: #121519;
-  --bg-surface: #191D23;
-  
-  --text-primary: #F4F1EA;
-  --text-secondary: #B8B1A5;
-  --text-muted: #7E776D;
-  
-  --accent-gold: #C9A45C;
-  --accent-gold-hover: #DFBA70;
-  --accent-gold-glow: rgba(201, 164, 92, 0.25);
-  
-  --accent-red: #EE3124;
-  --accent-red-hover: #FF3B30;
-  
-  --border-subtle: rgba(244, 241, 234, 0.08);
-  --border-medium: rgba(244, 241, 234, 0.14);
-  --border-gold: rgba(201, 164, 92, 0.28);
+  --color-white: #FFFFFF;
+  --color-soft-gray: #F3F3F3;
+  --color-card-gray: #F9F9F9;
+  --color-medium-gray: #B8B8B8;
+  --color-dark-gray: #666666;
+  --color-black: #080808;
+  --color-text-primary: #111111;
+  --color-border: #E5E5E5;
+  --color-border-dark: rgba(255, 255, 255, 0.12);
 }
 
 @layer base {
@@ -46,17 +36,17 @@
   }
 
   body {
-    background-color: #0B0D0F;
-    color: #F4F1EA;
+    background-color: #FFFFFF;
+    color: #111111;
     font-family: 'Inter', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x: hidden;
-    line-height: 1.65;
+    line-height: 1.6;
     letter-spacing: -0.01em;
   }
 
   h1, h2, h3, h4, .font-display {
     font-family: 'Archivo', 'Outfit', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.03em;
   }
 
   .font-mono, code, .telemetry-tag {
@@ -65,79 +55,34 @@
   }
 }
 
-/* Glassmorphism Styles (Cinematic Dark Motorsport Theme) */
-.glass-nav-top {
-  background: rgba(11, 13, 15, 0.65);
+/* Minimal Luxury Automotive Header */
+.header-minimal-top {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid #EAEAEA;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.header-minimal-scrolled {
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(244, 241, 234, 0.06);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid #DCDCDC;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
-.glass-nav-scrolled {
-  background: rgba(11, 13, 15, 0.92);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  border-bottom: 1px solid rgba(201, 164, 92, 0.22);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
-}
-
-/* Carbon & Racing Grid Patterns for Dark Atmosphere */
-.bg-carbon {
-  background-color: #0B0D0F;
-  background-image: 
-    radial-gradient(rgba(201, 164, 92, 0.08) 1px, transparent 0),
-    linear-gradient(45deg, rgba(21, 24, 28, 0.4) 25%, transparent 25%, transparent 75%, rgba(21, 24, 28, 0.4) 75%, rgba(21, 24, 28, 0.4));
-  background-size: 24px 24px, 12px 12px;
-}
-
-/* Refined Glow Utilities */
-.gold-glow {
-  box-shadow: 0 0 25px rgba(201, 164, 92, 0.25), 0 0 50px rgba(201, 164, 92, 0.08);
-}
-
-.red-glow {
-  box-shadow: 0 0 25px rgba(238, 49, 36, 0.25), 0 0 50px rgba(238, 49, 36, 0.08);
-}
-
-/* Tactile Light Shimmer */
-.light-sweep-effect {
-  position: relative;
-  overflow: hidden;
-}
-
-.light-sweep-effect::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -150%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(244, 241, 234, 0.15) 50%,
-    transparent 100%
-  );
-  transform: skewX(-25deg);
-  transition: all 0.75s ease;
-}
-
-.light-sweep-effect:hover::before {
-  left: 150%;
-}
-
-/* Custom Sleek Dark Scrollbar */
+/* Custom Minimal Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0D0F;
+  background: #FFFFFF;
 }
 ::-webkit-scrollbar-thumb {
-  background: #23272F;
-  border-radius: 4px;
+  background: #B8B8B8;
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C9A45C;
+  background: #080808;
 }

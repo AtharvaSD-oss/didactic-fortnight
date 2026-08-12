@@ -18,13 +18,13 @@ const TrackCircuitVisual = () => {
   const [showSectors, setShowSectors] = useState(true);
 
   return (
-    <div className="relative w-full rounded-2xl bg-[#15181C] border border-white/10 p-3 sm:p-5 shadow-2xl overflow-hidden text-[#F4F1EA] select-none">
+    <div className="relative w-full rounded-xl bg-[#F9F9F9] border border-[#E5E5E5] p-4 sm:p-6 shadow-sm overflow-hidden text-[#111111] select-none">
       
       {/* Top Telemetry Header Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-white/10">
+      <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-[#E5E5E5]">
         <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#C9A45C] animate-pulse" />
-          <span className="font-mono text-xs font-bold text-[#F4F1EA] uppercase tracking-wider">
+          <span className="w-2.5 h-2.5 rounded-full bg-[#080808]" />
+          <span className="font-mono text-xs font-bold text-[#080808] uppercase tracking-wider">
             720M GP ARENA SCHEMATIC TELEMETRY
           </span>
         </div>
@@ -33,16 +33,16 @@ const TrackCircuitVisual = () => {
         <div className="flex items-center gap-2 text-[10px] font-mono">
           <button
             onClick={() => setShowRacingLine(!showRacingLine)}
-            className={`px-2.5 py-1 rounded-full border transition-colors cursor-pointer ${
-              showRacingLine ? 'bg-[#C9A45C]/20 border-[#C9A45C] text-[#C9A45C]' : 'bg-[#0B0D0F] border-white/10 text-[#837D73]'
+            className={`px-3 py-1 rounded-sm border transition-colors cursor-pointer font-bold ${
+              showRacingLine ? 'bg-[#080808] border-[#080808] text-white' : 'bg-white border-[#E5E5E5] text-[#666666]'
             }`}
           >
             {showRacingLine ? '● RACING FLOW' : '○ FLOW OFF'}
           </button>
           <button
             onClick={() => setShowSectors(!showSectors)}
-            className={`px-2.5 py-1 rounded-full border transition-colors cursor-pointer ${
-              showSectors ? 'bg-[#EE3124]/20 border-[#EE3124] text-[#EE3124]' : 'bg-[#0B0D0F] border-white/10 text-[#837D73]'
+            className={`px-3 py-1 rounded-sm border transition-colors cursor-pointer font-bold ${
+              showSectors ? 'bg-[#080808] border-[#080808] text-white' : 'bg-white border-[#E5E5E5] text-[#666666]'
             }`}
           >
             {showSectors ? '● SECTORS' : '○ SECTORS'}
@@ -51,31 +51,25 @@ const TrackCircuitVisual = () => {
       </div>
 
       {/* Main High-End Vector 2.5D SVG Canvas */}
-      <div className="relative w-full aspect-[16/10] max-h-[460px] bg-gradient-to-br from-[#0e1017] via-[#090a0f] to-[#06070a] rounded-xl overflow-hidden flex items-center justify-center p-2 border border-white/10">
+      <div className="relative w-full aspect-[16/10] max-h-[460px] bg-gradient-to-br from-[#FFFFFF] via-[#F8F8F8] to-[#F0F0F0] rounded-lg overflow-hidden flex items-center justify-center p-2 border border-[#E5E5E5]">
         
         <svg
           viewBox="0 0 1340 980"
-          className="w-full h-full object-contain filter drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+          className="w-full h-full object-contain filter drop-shadow-[0_4px_16px_rgba(0,0,0,0.15)]"
         >
           <defs>
             {/* Concrete Arena Gradient */}
             <linearGradient id="concreteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#f3f4f6" />
-              <stop offset="50%" stopColor="#e5e7eb" />
-              <stop offset="100%" stopColor="#cfd3dc" />
+              <stop offset="0%" stopColor="#ffffff" />
+              <stop offset="50%" stopColor="#f3f4f6" />
+              <stop offset="100%" stopColor="#e5e7eb" />
             </linearGradient>
 
             {/* Asphalt Shading */}
             <linearGradient id="asphaltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#2e313b" />
-              <stop offset="100%" stopColor="#1f2026" />
+              <stop offset="0%" stopColor="#22242a" />
+              <stop offset="100%" stopColor="#111215" />
             </linearGradient>
-
-            {/* Glowing Pulse Shader */}
-            <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="4" result="blur" />
-              <feComposite in="SourceGraphic" in2="blur" operator="over" />
-            </filter>
 
             {/* Checkered Pattern */}
             <pattern id="checkered" width="12" height="12" patternUnits="userSpaceOnUse">
@@ -86,21 +80,18 @@ const TrackCircuitVisual = () => {
             </pattern>
           </defs>
 
-          {/* 1. Concrete Arena Platform Slab (3D Bevel & Shadow) */}
+          {/* 1. Concrete Arena Platform Slab */}
           <g>
-            {/* Ground Shadow */}
-            <rect x="35" y="85" width="1270" height="850" rx="55" fill="rgba(0,0,0,0.6)" />
-            {/* Bevel Base */}
-            <rect x="20" y="70" width="1270" height="850" rx="55" fill="#9ca3af" />
-            {/* Top Concrete Slab */}
-            <rect x="20" y="55" width="1270" height="850" rx="55" fill="url(#concreteGrad)" stroke="#ffffff" strokeWidth="2" />
+            <rect x="35" y="85" width="1270" height="850" rx="45" fill="rgba(0,0,0,0.08)" />
+            <rect x="20" y="70" width="1270" height="850" rx="45" fill="#d1d5db" />
+            <rect x="20" y="55" width="1270" height="850" rx="45" fill="url(#concreteGrad)" stroke="#ffffff" strokeWidth="2" />
             
             {/* Concrete Floor Joint Lines */}
             {[180, 340, 500, 660, 820, 980, 1140].map((x) => (
-              <line key={x} x1={x} y1="55" x2={x} y2="905" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="6 6" />
+              <line key={x} x1={x} y1="55" x2={x} y2="905" stroke="#e2e8f0" strokeWidth="1" strokeDasharray="6 6" />
             ))}
             {[200, 360, 520, 680, 840].map((y) => (
-              <line key={y} x1="20" y1={y} x2="1290" y2={y} stroke="#cbd5e1" strokeWidth="1" strokeDasharray="6 6" />
+              <line key={y} x1="20" y1={y} x2="1290" y2={y} stroke="#e2e8f0" strokeWidth="1" strokeDasharray="6 6" />
             ))}
           </g>
 
@@ -110,7 +101,7 @@ const TrackCircuitVisual = () => {
             <path
               d="M 320 360 C 440 310, 580 250, 740 200 C 920 210, 1060 270, 1120 370 C 1080 460, 940 480, 760 470 C 580 450, 400 430, 250 440 C 160 490, 180 560, 280 580 C 460 570, 680 550, 880 560 C 1050 590, 1140 650, 1110 720 C 960 720, 800 690, 640 670 C 480 670, 340 710, 280 780 C 340 840, 480 850, 640 840 C 800 830, 960 820, 1080 800 C 1160 740, 1140 660, 1020 580 C 860 500, 680 440, 500 390 Z"
               fill="none"
-              stroke="#111217"
+              stroke="#080808"
               strokeWidth="98"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -126,7 +117,7 @@ const TrackCircuitVisual = () => {
               strokeLinejoin="round"
             />
 
-            {/* Dedicated Pit Lane Branch Underlay */}
+            {/* Pit Lane Branch */}
             <path
               d="M 640 875 C 800 875, 960 870, 1080 850 C 1140 810, 1120 760, 1080 800"
               fill="none"
@@ -153,12 +144,12 @@ const TrackCircuitVisual = () => {
               strokeLinejoin="round"
             />
 
-            {/* Animated Racing Flow Particle Line */}
+            {/* Animated Racing Flow Line */}
             {showRacingLine && (
               <path
                 d="M 320 360 C 440 310, 580 250, 740 200 C 920 210, 1060 270, 1120 370 C 1080 460, 940 480, 760 470 C 580 450, 400 430, 250 440 C 160 490, 180 560, 280 580 C 460 570, 680 550, 880 560 C 1050 590, 1140 650, 1110 720 C 960 720, 800 690, 640 670 C 480 670, 340 710, 280 780 C 340 840, 480 850, 640 840 C 800 830, 960 820, 1080 800 C 1160 740, 1140 660, 1020 580 C 860 500, 680 440, 500 390 Z"
                 fill="none"
-                stroke="#C9A45C"
+                stroke="#FFFFFF"
                 strokeWidth="3"
                 strokeDasharray="14 26"
                 className="animate-[dash_12s_linear_infinite]"
@@ -166,7 +157,7 @@ const TrackCircuitVisual = () => {
             )}
           </g>
 
-          {/* 3. Red & Green Racing Kerbs at Apexes */}
+          {/* 3. Apex Kerbs */}
           <g>
             <path d="M 690 165 Q 740 160 790 168" stroke="#d32f2f" strokeWidth="8" strokeDasharray="10 8" fill="none" />
             <path d="M 1060 230 Q 1120 270 1150 340" stroke="#2e7d32" strokeWidth="8" strokeDasharray="10 8" fill="none" />
@@ -198,40 +189,31 @@ const TrackCircuitVisual = () => {
 
           {/* 6. Marshall Stations */}
           <g>
-            <circle cx="740" cy="155" r="15" fill="#ff8f00" stroke="#ffffff" strokeWidth="2" />
+            <circle cx="740" cy="155" r="15" fill="#111111" stroke="#ffffff" strokeWidth="2" />
             <text x="740" y="160" fill="#ffffff" fontFamily="sans-serif" fontSize="13" fontWeight="bold" textAnchor="middle">M</text>
 
-            <circle cx="1110" cy="510" r="15" fill="#ff8f00" stroke="#ffffff" strokeWidth="2" />
+            <circle cx="1110" cy="510" r="15" fill="#111111" stroke="#ffffff" strokeWidth="2" />
             <text x="1110" y="515" fill="#ffffff" fontFamily="sans-serif" fontSize="13" fontWeight="bold" textAnchor="middle">M</text>
 
-            <circle cx="880" cy="915" r="15" fill="#ff8f00" stroke="#ffffff" strokeWidth="2" />
+            <circle cx="880" cy="915" r="15" fill="#111111" stroke="#ffffff" strokeWidth="2" />
             <text x="880" y="920" fill="#ffffff" fontFamily="sans-serif" fontSize="13" fontWeight="bold" textAnchor="middle">M</text>
           </g>
 
-          {/* 7. Sector Markers & Exit Gates */}
+          {/* 7. Sector Markers */}
           <g>
-            <circle cx="115" cy="535" r="16" fill="#0288d1" stroke="#ffffff" strokeWidth="2" />
+            <circle cx="115" cy="535" r="16" fill="#080808" stroke="#ffffff" strokeWidth="2" />
             <text x="115" y="540" fill="#ffffff" fontFamily="monospace" fontSize="12" fontWeight="bold" textAnchor="middle">12</text>
-
-            <rect x="35" y="490" width="46" height="24" rx="5" fill="#2e7d32" stroke="#ffffff" strokeWidth="1.5" />
-            <text x="58" y="506" fill="#ffffff" fontFamily="monospace" fontSize="10" fontWeight="bold" textAnchor="middle">EXIT ➜</text>
-
-            <rect x="630" y="925" width="46" height="24" rx="5" fill="#2e7d32" stroke="#ffffff" strokeWidth="1.5" />
-            <text x="653" y="941" fill="#ffffff" fontFamily="monospace" fontSize="10" fontWeight="bold" textAnchor="middle">EXIT ➜</text>
-
-            <rect x="1230" y="650" width="46" height="24" rx="5" fill="#2e7d32" stroke="#ffffff" strokeWidth="1.5" />
-            <text x="1253" y="666" fill="#ffffff" fontFamily="monospace" fontSize="10" fontWeight="bold" textAnchor="middle">EXIT ➜</text>
           </g>
 
-          {/* 8. START / FINISH Gantry & Checkered Line */}
+          {/* 8. START / FINISH Gantry */}
           <g>
             <g transform="translate(320, 360) rotate(-25)">
               <rect x="-38" y="-6" width="76" height="12" fill="url(#checkered)" stroke="#ffffff" strokeWidth="1" />
             </g>
 
-            <line x1="300" y1="210" x2="300" y2="350" stroke="#ff8f00" strokeWidth="4" />
-            <rect x="235" y="175" width="130" height="34" rx="4" fill="#ff8f00" stroke="#ffffff" strokeWidth="2" filter="url(#glow)" />
-            <text x="300" y="197" fill="#ffffff" fontFamily="sans-serif" fontSize="13" fontWeight="900" textAnchor="middle" letterSpacing="1">
+            <line x1="300" y1="210" x2="300" y2="350" stroke="#080808" strokeWidth="4" />
+            <rect x="235" y="175" width="130" height="34" rx="4" fill="#080808" stroke="#ffffff" strokeWidth="2" />
+            <text x="300" y="197" fill="#ffffff" fontFamily="sans-serif" fontSize="13" fontWeight="bold" textAnchor="middle" letterSpacing="1">
               START/FINISH
             </text>
           </g>
@@ -247,15 +229,15 @@ const TrackCircuitVisual = () => {
                 cx={turn.x}
                 cy={turn.y}
                 r="16"
-                fill={activeTurn?.id === turn.id ? "#C9A45C" : "rgba(17, 18, 23, 0.9)"}
-                stroke={activeTurn?.id === turn.id ? "#ffffff" : "#C9A45C"}
+                fill={activeTurn?.id === turn.id ? "#080808" : "rgba(255, 255, 255, 0.95)"}
+                stroke="#080808"
                 strokeWidth="2.5"
                 className="transition-all duration-300 group-hover:scale-125"
               />
               <text
                 x={turn.x}
                 y={turn.y + 4}
-                fill={activeTurn?.id === turn.id ? "#0B0D0F" : "#ffffff"}
+                fill={activeTurn?.id === turn.id ? "#ffffff" : "#080808"}
                 fontFamily="sans-serif"
                 fontSize="11"
                 fontWeight="bold"
@@ -275,30 +257,30 @@ const TrackCircuitVisual = () => {
               initial={{ opacity: 0, y: 10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.95 }}
-              className="absolute bottom-3 left-3 right-3 sm:right-auto sm:max-w-xs bg-[#0B0D0F]/95 border border-[#C9A45C]/60 backdrop-blur-xl p-4 rounded-xl shadow-2xl z-30 text-left"
+              className="absolute bottom-3 left-3 right-3 sm:right-auto sm:max-w-xs bg-white/95 border border-[#080808] backdrop-blur-md p-4 rounded-lg shadow-xl z-30 text-left"
             >
-              <div className="flex items-center justify-between border-b border-white/10 pb-1.5 mb-1.5">
-                <span className="font-display font-bold text-xs text-[#C9A45C] uppercase">
+              <div className="flex items-center justify-between border-b border-[#EAEAEA] pb-1.5 mb-1.5">
+                <span className="font-display font-bold text-xs text-[#080808] uppercase">
                   {activeTurn.name}
                 </span>
                 <button
                   onClick={() => setActiveTurn(null)}
-                  className="text-[#837D73] hover:text-[#F4F1EA] text-xs px-1 cursor-pointer"
+                  className="text-[#888888] hover:text-[#080808] text-xs px-1 cursor-pointer"
                 >
                   ✕
                 </button>
               </div>
               <div className="grid grid-cols-2 gap-2 text-[10px] font-mono mb-1.5">
                 <div>
-                  <span className="text-[#837D73]">APEX SPEED:</span>
-                  <div className="text-[#F4F1EA] font-bold">{activeTurn.speed}</div>
+                  <span className="text-[#888888]">APEX SPEED:</span>
+                  <div className="text-[#080808] font-bold">{activeTurn.speed}</div>
                 </div>
                 <div>
-                  <span className="text-[#837D73]">BRAKING ZONE:</span>
-                  <div className="text-[#C9A45C] font-bold">{activeTurn.gear}</div>
+                  <span className="text-[#888888]">BRAKING ZONE:</span>
+                  <div className="text-[#080808] font-bold">{activeTurn.gear}</div>
                 </div>
               </div>
-              <p className="text-[11px] font-sans text-[#B8B1A5] leading-snug">
+              <p className="text-[11px] font-sans text-[#666666] leading-snug">
                 {activeTurn.desc}
               </p>
             </motion.div>
@@ -308,21 +290,21 @@ const TrackCircuitVisual = () => {
 
       {/* Bottom Telemetry Footer Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-3 text-center font-mono">
-        <div className="p-2.5 rounded-lg bg-[#0B0D0F] border border-white/10">
-          <div className="text-[9px] text-[#837D73] uppercase font-semibold">CIRCUIT LENGTH</div>
-          <div className="text-sm sm:text-base font-display font-bold text-[#C9A45C]">720 METERS</div>
+        <div className="p-3 rounded-lg bg-white border border-[#E5E5E5]">
+          <div className="text-[9px] text-[#888888] uppercase font-semibold">CIRCUIT LENGTH</div>
+          <div className="text-sm sm:text-base font-display font-bold text-[#080808]">720 METERS</div>
         </div>
-        <div className="p-2.5 rounded-lg bg-[#0B0D0F] border border-white/10">
-          <div className="text-[9px] text-[#837D73] uppercase font-semibold">TECHNICAL TURNS</div>
-          <div className="text-sm sm:text-base font-display font-bold text-[#F4F1EA]">14 APEXES</div>
+        <div className="p-3 rounded-lg bg-white border border-[#E5E5E5]">
+          <div className="text-[9px] text-[#888888] uppercase font-semibold">TECHNICAL TURNS</div>
+          <div className="text-sm sm:text-base font-display font-bold text-[#080808]">14 APEXES</div>
         </div>
-        <div className="p-2.5 rounded-lg bg-[#0B0D0F] border border-white/10">
-          <div className="text-[9px] text-[#837D73] uppercase font-semibold">SURFACE TYPE</div>
-          <div className="text-sm sm:text-base font-display font-bold text-[#C9A45C]">POLYMER ASPHALT</div>
+        <div className="p-3 rounded-lg bg-white border border-[#E5E5E5]">
+          <div className="text-[9px] text-[#888888] uppercase font-semibold">SURFACE TYPE</div>
+          <div className="text-sm sm:text-base font-display font-bold text-[#080808]">POLYMER ASPHALT</div>
         </div>
-        <div className="p-2.5 rounded-lg bg-[#0B0D0F] border border-white/10">
-          <div className="text-[9px] text-[#837D73] uppercase font-semibold">SAFETY SYSTEM</div>
-          <div className="text-sm sm:text-base font-display font-bold text-[#F4F1EA]">F1 PRO BARRIER</div>
+        <div className="p-3 rounded-lg bg-white border border-[#E5E5E5]">
+          <div className="text-[9px] text-[#888888] uppercase font-semibold">SAFETY SYSTEM</div>
+          <div className="text-sm sm:text-base font-display font-bold text-[#080808]">F1 PRO BARRIER</div>
         </div>
       </div>
 
