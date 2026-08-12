@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, MapPin } from 'lucide-react';
 import MagneticButton from './MagneticButton';
+
+gsap.registerPlugin(ScrollTrigger);
 
 /* ─── Animation Variants ─────────────────────────────────────── */
 const fadeUp = (delay = 0) => ({
@@ -10,10 +14,43 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1], delay },
 });
 
+const kartVariant = {
+  initial: { opacity: 0, x: 50, y: 30 },
+  animate: { opacity: 1, x: 0, y: 0 },
+  transition: {
+    duration: 1.1,
+    ease: [0.16, 1, 0.3, 1],
+    delay: 0.4,
+  },
+};
+
 /* ─── Hero Component ──────────────────────────────────────────── */
 const Hero = ({ onOpenBooking, onNavigate }) => {
+  const heroRef = useRef(null);
+  const kartRef = useRef(null);
+
+  /* Subtle scroll-based parallax on the race car */
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (kartRef.current) {
+        gsap.to(kartRef.current, {
+          y: -20,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true,
+          },
+        });
+      }
+    }, heroRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
+      ref={heroRef}
       id="home"
       className="relative w-full min-h-[100svh] flex flex-col justify-between bg-white text-[#111111] overflow-hidden pt-20 sm:pt-24 lg:pt-28"
     >
@@ -62,7 +99,7 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
       </div>
 
       {/* ════════════════════════════════════════════════════════
-          MAIN COMPOSITION: Typography & Editorial CTAs
+          MAIN COMPOSITION: Typography & Seamless Car Layer
          ════════════════════════════════════════════════════════ */}
       <div className="relative z-10 max-w-[1600px] w-full mx-auto px-5 sm:px-8 lg:px-14 xl:px-20 flex-1 flex flex-col justify-between">
         
@@ -88,62 +125,140 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
           </motion.h1>
         </div>
 
-        {/* LOWER CONTENT: Tagline, Description & CTA */}
-        <div className="relative z-20 pb-8 lg:pb-16 max-w-2xl space-y-4 sm:space-y-5">
+        {/* LOWER GRID: Left Content + Seamless Right Car Visual */}
+        <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 items-end pb-8 lg:pb-16 gap-6 lg:gap-0">
           
-          {/* Tagline */}
-          <motion.div {...fadeUp(0.24)}>
-            <p className="font-mono text-xs sm:text-sm font-bold tracking-[0.22em] uppercase text-[#0A0A0A]">
-              RACE.&nbsp; EXPERIENCE.&nbsp; REMEMBER.
-            </p>
-          </motion.div>
+          {/* LEFT: Tagline, Description & CTA */}
+          <div className="lg:col-span-6 xl:col-span-5 space-y-4 sm:space-y-5 lg:pb-6">
+            
+            {/* Tagline */}
+            <motion.div {...fadeUp(0.24)}>
+              <p className="font-mono text-xs sm:text-sm font-bold tracking-[0.22em] uppercase text-[#0A0A0A]">
+                RACE.&nbsp; EXPERIENCE.&nbsp; REMEMBER.
+              </p>
+            </motion.div>
 
-          {/* Orange Divider */}
-          <motion.div
-            initial={{ scaleX: 0, opacity: 0 }}
-            animate={{ scaleX: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.35, ease: 'easeOut' }}
-            style={{ originX: 0 }}
-            className="w-12 h-[2px] bg-[#F47C20]"
-            aria-hidden="true"
-          />
+            {/* Orange Divider */}
+            <motion.div
+              initial={{ scaleX: 0, opacity: 0 }}
+              animate={{ scaleX: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.35, ease: 'easeOut' }}
+              style={{ originX: 0 }}
+              className="w-12 h-[2px] bg-[#F47C20]"
+              aria-hidden="true"
+            />
 
-          {/* Description */}
-          <motion.p
-            {...fadeUp(0.42)}
-            className="text-sm sm:text-base text-[#444444] font-medium leading-relaxed max-w-lg"
-          >
-            Where speed meets adrenaline.<br />
-            <span className="text-[#0A0A0A] font-semibold">
-              Experience Kartomania.
-            </span>
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            {...fadeUp(0.52)}
-            className="flex flex-wrap items-center gap-3 pt-2"
-          >
-            <MagneticButton
-              onClick={onOpenBooking}
-              variant="primary"
-              className="py-3.5 px-7 text-xs font-bold whitespace-nowrap shadow-md"
+            {/* Description */}
+            <motion.p
+              {...fadeUp(0.42)}
+              className="text-sm sm:text-base text-[#444444] font-medium leading-relaxed max-w-sm"
             >
-              BOOK YOUR RACE&nbsp;
-              <ArrowRight className="inline w-3.5 h-3.5 ml-1 text-[#F47C20]" />
-            </MagneticButton>
+              Where speed meets adrenaline.<br />
+              <span className="text-[#0A0A0A] font-semibold">
+                Experience Kartomania.
+              </span>
+            </motion.p>
 
-            <a
-              href="https://maps.app.goo.gl/7c5CMX5a4vaaXFLN9"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3.5 border border-[#E5E5E5] hover:border-[#F47C20]
-                         text-xs font-mono tracking-widest uppercase text-[#0A0A0A] hover:text-[#F47C20]
-                         font-bold transition-all duration-200 cursor-pointer rounded-sm bg-white"
+            {/* CTA Buttons */}
+            <motion.div
+              {...fadeUp(0.52)}
+              className="flex flex-wrap items-center gap-3 pt-2"
             >
-              <MapPin className="w-3.5 h-3.5 text-[#F47C20]" />
-              GET DIRECTIONS
-            </a>
+              <MagneticButton
+                onClick={onOpenBooking}
+                variant="primary"
+                className="py-3.5 px-7 text-xs font-bold whitespace-nowrap shadow-md"
+              >
+                BOOK YOUR RACE&nbsp;
+                <ArrowRight className="inline w-3.5 h-3.5 ml-1 text-[#F47C20]" />
+              </MagneticButton>
+
+              <a
+                href="https://maps.app.goo.gl/7c5CMX5a4vaaXFLN9"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3.5 border border-[#E5E5E5] hover:border-[#F47C20]
+                           text-xs font-mono tracking-widest uppercase text-[#0A0A0A] hover:text-[#F47C20]
+                           font-bold transition-all duration-200 cursor-pointer rounded-sm bg-white"
+              >
+                <MapPin className="w-3.5 h-3.5 text-[#F47C20]" />
+                GET DIRECTIONS
+              </a>
+            </motion.div>
+          </div>
+
+          {/* RIGHT: Seamlessly Integrated Isolated Avalanche Race Car (Desktop & Tablet) */}
+          <div className="hidden lg:block lg:col-span-6 xl:col-span-7 relative self-end -mb-6 xl:-mb-10">
+            <motion.div
+              ref={kartRef}
+              variants={kartVariant}
+              initial="initial"
+              animate="animate"
+              className="relative z-10 w-full"
+              style={{ willChange: 'transform' }}
+            >
+              {/* Natural subtle tire contact ground shadow matching white background */}
+              <div
+                aria-hidden="true"
+                className="absolute -bottom-2 left-[12%] right-[8%] h-8 sm:h-10 blur-xl rounded-full pointer-events-none"
+                style={{
+                  background:
+                    'radial-gradient(ellipse at center, rgba(0, 0, 0, 0.18) 0%, transparent 70%)',
+                }}
+              />
+
+              {/* Clean transparent isolated PNG — perfectly blended into white background */}
+              <img
+                src="/avalanche-car-isolated.png"
+                alt="Kartomania Avalanche Race Car #10"
+                width={1000}
+                height={600}
+                loading="eager"
+                fetchPriority="high"
+                draggable={false}
+                className="
+                  w-[58vw] max-w-[980px] min-w-[500px]
+                  xl:w-[60vw] 2xl:w-[62vw]
+                  h-auto
+                  object-contain
+                  mix-blend-multiply
+                  filter contrast-[1.03] brightness-[1.01]
+                  select-none pointer-events-none
+                  translate-x-2 xl:translate-x-6
+                "
+                style={{ aspectRatio: '1000/600', mixBlendMode: 'multiply' }}
+              />
+            </motion.div>
+          </div>
+        </div>
+
+        {/* MOBILE CAR VISUAL: Stacked seamlessly below CTA */}
+        <div className="block lg:hidden w-full my-4">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+            className="relative w-full"
+          >
+            <div
+              aria-hidden="true"
+              className="absolute -bottom-2 left-[10%] right-[10%] h-5 blur-lg rounded-full pointer-events-none"
+              style={{
+                background:
+                  'radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, transparent 70%)',
+              }}
+            />
+            <img
+              src="/avalanche-car-isolated.png"
+              alt="Kartomania Avalanche Race Car #10"
+              width={900}
+              height={540}
+              loading="eager"
+              fetchPriority="high"
+              draggable={false}
+              className="w-full h-auto object-contain mix-blend-multiply filter contrast-[1.03] brightness-[1.01] select-none pointer-events-none max-w-[520px] mx-auto"
+              style={{ aspectRatio: '900/540', mixBlendMode: 'multiply' }}
+            />
           </motion.div>
         </div>
 
