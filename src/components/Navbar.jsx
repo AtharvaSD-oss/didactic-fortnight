@@ -1,28 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Search, Phone, Menu } from 'lucide-react';
-import { InstagramIcon, FacebookIcon } from './Icons';
-import MagneticButton from './MagneticButton';
+import { Menu, ArrowRight } from 'lucide-react';
 import MobileMenu from './MobileMenu';
 
 const NAV_LINKS = [
-  { name: 'Home', id: 'home' },
-  { name: 'About', id: 'who-we-are' },
-  { name: 'Why Us', id: 'why-kartomania' },
-  { name: 'Track', id: 'track' },
-  { name: 'Fleet', id: 'karts' },
-  { name: 'Leap Frog', id: 'leap-frog' },
-  { name: "What's New", id: 'whats-new' },
-  { name: 'Pricing', id: 'pricing' },
-  { name: 'Gallery', id: 'gallery' },
-  { name: 'Reviews', id: 'testimonials' },
-  { name: 'Contact', id: 'contact' },
+  { name: 'HOME', id: 'home' },
+  { name: 'EXPERIENCE', id: 'who-we-are' },
+  { name: 'TRACK', id: 'track' },
+  { name: 'KARTS', id: 'karts' },
+  { name: 'GALLERY', id: 'gallery' },
+  { name: 'ABOUT', id: 'founder' },
+  { name: 'CONTACT', id: 'contact' },
 ];
 
 const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBooking }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const navRef = useRef(null);
   const lastScrollY = useRef(0);
@@ -65,111 +58,82 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
       <header
         ref={navRef}
         className={`
-          fixed top-0 left-0 right-0 z-40 h-[72px] sm:h-[76px] transition-all duration-300 flex items-center
-          ${isScrolled ? 'header-minimal-scrolled' : 'header-minimal-top'}
+          fixed top-0 left-0 right-0 z-40 h-[72px] sm:h-[80px] transition-all duration-300 flex items-center bg-white/95 backdrop-blur-md
+          ${isScrolled ? 'border-b border-[#EAEAEA] shadow-sm' : ''}
         `}
       >
-        <div className="w-full px-4 sm:px-6 lg:px-10 flex items-center justify-between gap-4">
-          {/* 1. LEFT: Official Kartomania Logo */}
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between gap-4">
+          
+          {/* 1. LEFT: Official Kartomania Logo with 'LIVE THE RACE' and orange underline */}
           <button
             onClick={() => onNavigate('home')}
-            className="flex items-center gap-2 cursor-pointer group bg-transparent border-none p-0 focus:outline-none shrink-0"
+            className="flex flex-col items-start cursor-pointer group bg-transparent border-none p-0 focus:outline-none shrink-0"
             aria-label="Kartomania Home"
           >
-            <img 
-              src="/logo.png" 
-              alt="Kartomania" 
-              className="h-9 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
-            />
+            <div className="flex items-center gap-1.5">
+              <span className="font-display font-black italic tracking-tighter text-xl sm:text-2xl text-[#0A0A0A] uppercase">
+                KARTOMANIA
+              </span>
+            </div>
+            <div className="relative flex items-center w-full pl-0.5">
+              <span className="font-mono text-[8px] sm:text-[9px] font-bold tracking-[0.25em] text-[#333333] uppercase">
+                LIVE THE RACE
+              </span>
+              <span className="absolute bottom-0 left-0 w-8 h-[2px] bg-[#F37021]" />
+            </div>
           </button>
 
-          {/* 2. CENTER: Minimal Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2 shrink">
-            {NAV_LINKS.map((link, idx) => {
-              const isActive = activeSection === link.id;
-              const isHovered = hoveredIndex === idx;
+          {/* 2. CENTER: Navigation Links matching mockup */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 shrink">
+            {NAV_LINKS.map((link) => {
+              const isActive = (activeSection === 'home' && link.id === 'home') ||
+                (activeSection === 'who-we-are' && link.id === 'who-we-are') ||
+                (activeSection === 'track' && link.id === 'track') ||
+                (activeSection === 'karts' && link.id === 'karts') ||
+                (activeSection === 'gallery' && link.id === 'gallery') ||
+                (activeSection === 'founder' && link.id === 'founder') ||
+                (activeSection === 'contact' && link.id === 'contact');
 
               return (
                 <button
                   key={link.id}
                   onClick={() => onNavigate(link.id)}
-                  onMouseEnter={() => setHoveredIndex(idx)}
-                  onMouseLeave={() => setHoveredIndex(null)}
                   className={`
-                    relative px-2.5 py-1 text-xs font-mono font-medium tracking-wider uppercase transition-colors duration-200 cursor-pointer bg-transparent border-none whitespace-nowrap
-                    ${isActive ? 'text-[#080808] font-bold' : 'text-[#666666] hover:text-[#080808]'}
+                    relative py-1.5 text-xs font-mono font-bold tracking-wider uppercase transition-colors duration-200 cursor-pointer bg-transparent border-none whitespace-nowrap
+                    ${isActive ? 'text-[#0A0A0A]' : 'text-[#555555] hover:text-[#0A0A0A]'}
                   `}
                 >
                   <span>{link.name}</span>
 
-                  {/* Underline on active or hover */}
-                  <span
-                    className={`
-                      absolute bottom-0 left-2.5 right-2.5 h-[1.5px] bg-[#080808] transition-all duration-200
-                      ${isActive ? 'w-[calc(100%-20px)] opacity-100' : isHovered ? 'w-[calc(100%-20px)] opacity-60' : 'w-0 opacity-0'}
-                    `}
-                  />
+                  {/* Active orange underline indicator */}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#F37021]" />
+                  )}
                 </button>
               );
             })}
           </nav>
 
-          {/* 3. RIGHT: Search, Social & Minimal Action Button */}
-          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
-            <div className="hidden sm:flex items-center gap-1.5 pr-2 border-r border-[#E5E5E5]">
-              <a
-                href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram"
-                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#EAEAEA] text-[#333333] hover:text-[#080808] transition-colors"
-              >
-                <InstagramIcon className="w-3.5 h-3.5" />
-              </a>
-
-              <a
-                href="https://www.facebook.com/kartomaniacsggn/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Facebook"
-                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#EAEAEA] text-[#333333] hover:text-[#080808] transition-colors"
-              >
-                <FacebookIcon className="w-3.5 h-3.5" />
-              </a>
-
-              <button
-                onClick={onOpenSearch}
-                aria-label="Search"
-                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#EAEAEA] text-[#333333] hover:text-[#080808] transition-colors cursor-pointer"
-              >
-                <Search className="w-3.5 h-3.5" />
-              </button>
-
-              <a
-                href="tel:+919717548897"
-                aria-label="Call"
-                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#EAEAEA] text-[#333333] hover:text-[#080808] transition-colors"
-              >
-                <Phone className="w-3.5 h-3.5" />
-              </a>
-            </div>
-
-            {/* Minimal Luxury CTA Button */}
-            <div className="hidden md:block shrink-0">
-              <MagneticButton onClick={onOpenBooking} className="py-2.5 px-5 text-xs whitespace-nowrap">
-                BOOK YOUR RACE
-              </MagneticButton>
-            </div>
+          {/* 3. RIGHT: Action Button matching mockup */}
+          <div className="flex items-center gap-3 shrink-0">
+            <button
+              onClick={onOpenBooking}
+              className="hidden sm:inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-[#080808] hover:bg-[#1a1a1a] text-white text-xs font-mono font-bold tracking-wider uppercase transition-all duration-200 shadow-sm cursor-pointer group"
+            >
+              <span>BOOK YOUR RACE</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#F37021] group-hover:translate-x-1 transition-transform" />
+            </button>
 
             {/* Mobile Toggle */}
             <button
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open mobile menu"
-              className="lg:hidden p-2.5 rounded-full bg-[#F5F5F5] border border-[#E5E5E5] text-[#080808] transition-colors cursor-pointer"
+              className="lg:hidden p-2 rounded-lg bg-[#F5F5F5] border border-[#E5E5E5] text-[#080808] transition-colors cursor-pointer"
             >
               <Menu className="w-5 h-5" />
             </button>
           </div>
+
         </div>
       </header>
 
@@ -179,6 +143,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
         onClose={() => setMobileMenuOpen(false)}
         activeSection={activeSection}
         onNavigate={onNavigate}
+        onOpenSearch={onOpenSearch}
         onOpenBooking={onOpenBooking}
       />
     </>
