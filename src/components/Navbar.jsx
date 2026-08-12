@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Search, Phone, Menu } from 'lucide-react';
+import { Search, Phone, Menu, ArrowRight } from 'lucide-react';
 import { InstagramIcon, FacebookIcon } from './Icons';
-import MagneticButton from './MagneticButton';
 import MobileMenu from './MobileMenu';
 
 const NAV_LINKS = [
@@ -65,11 +64,11 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
       <header
         ref={navRef}
         className={`
-          fixed top-0 left-0 right-0 z-40 h-[72px] sm:h-[76px] transition-all duration-300 flex items-center
-          ${isScrolled ? 'header-minimal-scrolled' : 'header-minimal-top'}
+          fixed top-0 left-0 right-0 z-40 h-[96px] sm:h-[104px] transition-all duration-300 flex items-center
+          ${isScrolled ? 'bg-white/95 backdrop-blur-md border-b-2 border-[#F47C20] shadow-sm' : 'bg-white border-b border-[#EAEAEA]'}
         `}
       >
-        <div className="w-full px-4 sm:px-6 lg:px-10 flex items-center justify-between gap-4">
+        <div className="w-full px-6 lg:px-[54px] flex items-center justify-between gap-6">
           {/* 1. LEFT: Official Kartomania Logo */}
           <button
             onClick={() => onNavigate('home')}
@@ -79,12 +78,12 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
             <img 
               src="/logo.png" 
               alt="Kartomania" 
-              className="h-9 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
             />
           </button>
 
           {/* 2. CENTER: Navigation Links with Orange Active States */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 shrink">
+          <nav className="hidden lg:flex items-center gap-2 xl:gap-3 shrink">
             {NAV_LINKS.map((link, idx) => {
               const isActive = activeSection === link.id;
               const isHovered = hoveredIndex === idx;
@@ -96,8 +95,8 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
                   onMouseEnter={() => setHoveredIndex(idx)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   className={`
-                    relative px-2.5 py-1 text-xs font-mono font-medium tracking-wider uppercase transition-colors duration-200 cursor-pointer bg-transparent border-none whitespace-nowrap
-                    ${isActive ? 'text-[#F47C20] font-bold' : 'text-[#0A0A0A] hover:text-[#F47C20]'}
+                    relative px-2.5 py-1.5 font-display font-bold text-sm xl:text-[15px] uppercase tracking-wider transition-colors duration-200 cursor-pointer bg-transparent border-none whitespace-nowrap
+                    ${isActive ? 'text-[#0A0A0A]' : 'text-[#111111] hover:text-[#F47C20]'}
                   `}
                 >
                   <span>{link.name}</span>
@@ -105,7 +104,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
                   {/* Orange Active/Hover Indicator Line */}
                   <span
                     className={`
-                      absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#F47C20] transition-all duration-200
+                      absolute bottom-0 left-2.5 right-2.5 h-[2.5px] bg-[#F47C20] transition-all duration-200
                       ${isActive ? 'w-[calc(100%-20px)] opacity-100' : isHovered ? 'w-[calc(100%-20px)] opacity-60' : 'w-0 opacity-0'}
                     `}
                   />
@@ -114,9 +113,9 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
             })}
           </nav>
 
-          {/* 3. RIGHT: Search, Social & Minimal Action Button */}
-          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
-            <div className="hidden sm:flex items-center gap-1.5 pr-2 border-r border-[#E5E5E5]">
+          {/* 3. RIGHT: Search, Social & Booking CTA Button */}
+          <div className="flex items-center gap-3 shrink-0">
+            <div className="hidden xl:flex items-center gap-2 pr-3 border-r border-[#E5E5E5]">
               <a
                 href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
                 target="_blank"
@@ -124,7 +123,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
                 aria-label="Instagram"
                 className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#333333] hover:text-[#F47C20] transition-colors"
               >
-                <InstagramIcon className="w-3.5 h-3.5" />
+                <InstagramIcon className="w-4 h-4" />
               </a>
 
               <a
@@ -134,7 +133,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
                 aria-label="Facebook"
                 className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#333333] hover:text-[#F47C20] transition-colors"
               >
-                <FacebookIcon className="w-3.5 h-3.5" />
+                <FacebookIcon className="w-4 h-4" />
               </a>
 
               <button
@@ -142,7 +141,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
                 aria-label="Search"
                 className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#333333] hover:text-[#F47C20] transition-colors cursor-pointer"
               >
-                <Search className="w-3.5 h-3.5" />
+                <Search className="w-4 h-4" />
               </button>
 
               <a
@@ -150,16 +149,18 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
                 aria-label="Call"
                 className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#333333] hover:text-[#F47C20] transition-colors"
               >
-                <Phone className="w-3.5 h-3.5" />
+                <Phone className="w-4 h-4" />
               </a>
             </div>
 
-            {/* Minimal Luxury CTA Button */}
-            <div className="hidden md:block shrink-0">
-              <MagneticButton onClick={onOpenBooking} className="py-2.5 px-5 text-xs whitespace-nowrap">
-                BOOK YOUR RACE
-              </MagneticButton>
-            </div>
+            {/* Header Booking CTA Button */}
+            <button
+              onClick={onOpenBooking}
+              className="hidden md:inline-flex items-center justify-center gap-2 w-[190px] sm:w-[200px] h-[48px] sm:h-[50px] rounded-md bg-[#0A0A0A] hover:bg-[#F47C20] text-white font-display font-bold text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-md"
+            >
+              <span>BOOK YOUR RACE</span>
+              <ArrowRight className="w-4 h-4 text-[#F47C20] group-hover:text-white" />
+            </button>
 
             {/* Mobile Toggle */}
             <button
