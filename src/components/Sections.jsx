@@ -208,6 +208,7 @@ export const WhatsNewSection = () => {
     {
       id: 1,
       title: "MONDAY BONANZA",
+      image: "/whats-new/monday-bonanza.jpg",
       badge: "50% OFF",
       desc: "Buy 1 Session and Get Another Session at 50% Off every Monday!",
       price: "BOGO 50% OFF",
@@ -216,6 +217,7 @@ export const WhatsNewSection = () => {
     {
       id: 2,
       title: "HAPPY HOURS WEDNESDAY",
+      image: "/whats-new/happy-hour-wednesday.jpg",
       badge: "₹500 SPECIAL",
       desc: "Kart your heart out! Buy an authentic racing session @ ₹500/- Only on Wednesdays.",
       price: "₹500 FLAT",
@@ -224,6 +226,7 @@ export const WhatsNewSection = () => {
     {
       id: 3,
       title: "FRIDAY FRENZY",
+      image: "/whats-new/friday-frenzy.jpg",
       badge: "BUY 2 GET 1 FREE",
       desc: "Buy 2 Sessions & the 3rd Session is completely FREE! Start, Kart, Repeat!",
       price: "3RD SESSION FREE",
@@ -256,7 +259,76 @@ export const WhatsNewSection = () => {
           </div>
         </div>
 
-        {/* Featured Weekly Mega Banner */}
+        {/* 1. Core 3 Daily Offers Cards with High-Res Promotional Posters */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {coreThreeOffers.map((offer) => (
+            <div
+              key={offer.id}
+              className="rounded-xl bg-white border border-[#E5E5E5] hover:border-[#080808] shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden text-left group"
+            >
+              {/* Poster Image Container with Zoom & Click-to-Expand */}
+              <div
+                onClick={() => setActivePromo({
+                  id: offer.id,
+                  src: offer.image,
+                  title: offer.title,
+                  tag: offer.tag,
+                  desc: offer.desc
+                })}
+                className="relative aspect-[4/3] bg-black overflow-hidden cursor-pointer"
+              >
+                <img
+                  src={offer.image}
+                  alt={offer.title}
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+                
+                {/* Floating Tag Badges */}
+                <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+                  <span className="px-2.5 py-1 rounded-sm bg-black/80 backdrop-blur-md text-white font-mono text-[9px] font-bold uppercase tracking-wider border border-white/20">
+                    {offer.tag}
+                  </span>
+                  <span className="px-2.5 py-1 rounded-sm bg-white text-[#080808] font-mono text-[9px] font-black uppercase shadow-md">
+                    {offer.badge}
+                  </span>
+                </div>
+
+                {/* Hover Overlay Prompt */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="px-3 py-1.5 rounded-sm bg-white text-[#080808] font-mono text-[10px] font-bold uppercase tracking-widest shadow-lg">
+                    CLICK TO EXPAND 🔍
+                  </span>
+                </div>
+              </div>
+
+              {/* Card Body Details */}
+              <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-display font-bold text-[#111111] uppercase tracking-tight">
+                    {offer.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm font-sans text-[#666666] leading-relaxed">
+                    {offer.desc}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-[#F0F0F0] flex items-center justify-between">
+                  <div className="text-base sm:text-lg font-display font-bold text-[#080808]">
+                    {offer.price}
+                  </div>
+                  <MagneticButton
+                    href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
+                    className="py-1.5 px-4 text-[10px]"
+                  >
+                    BOOK DEAL
+                  </MagneticButton>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* 2. Featured Weekly Mega Banner */}
         <div>
           <div
             onClick={() => setActivePromo({
@@ -291,36 +363,7 @@ export const WhatsNewSection = () => {
           </div>
         </div>
 
-        {/* 1. Core 3 Daily Offers Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {coreThreeOffers.map((offer) => (
-            <div
-              key={offer.id}
-              className="p-7 rounded-xl bg-white border border-[#E5E5E5] hover:border-[#080808] shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4 text-left"
-            >
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-sm bg-[#F5F5F5] text-[#555555] font-mono text-[9px] font-bold uppercase tracking-wider border border-[#E5E5E5]">
-                    {offer.tag}
-                  </span>
-                  <span className="px-2.5 py-0.5 rounded-sm bg-[#080808] text-white font-mono text-[9px] font-bold uppercase">
-                    {offer.badge}
-                  </span>
-                </div>
-                <h3 className="text-lg font-display font-bold text-[#111111] uppercase">{offer.title}</h3>
-                <p className="text-xs sm:text-sm font-sans text-[#666666] leading-relaxed">{offer.desc}</p>
-              </div>
-              <div className="pt-4 border-t border-[#F0F0F0] flex items-center justify-between">
-                <div className="text-lg font-display font-bold text-[#080808]">{offer.price}</div>
-                <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-1.5 px-4 text-[10px]">
-                  BOOK DEAL
-                </MagneticButton>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* 2. Bundle Sessions Section */}
+        {/* 3. Bundle Sessions Section */}
         <div className="bg-white border border-[#E5E5E5] rounded-xl p-8 space-y-6 text-left shadow-sm">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-[#EAEAEA] pb-4">
             <div>
@@ -357,7 +400,10 @@ export const WhatsNewSection = () => {
             onClick={() => setActivePromo(null)}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
           >
-            <div className="relative max-w-3xl w-full bg-white border border-[#E5E5E5] rounded-2xl overflow-hidden shadow-2xl">
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-3xl w-full bg-white border border-[#E5E5E5] rounded-2xl overflow-hidden shadow-2xl"
+            >
               <button
                 onClick={() => setActivePromo(null)}
                 className="absolute top-4 right-4 z-30 p-2.5 rounded-full bg-black/80 text-white hover:text-[#AAAAAA] transition-colors cursor-pointer"
@@ -371,8 +417,11 @@ export const WhatsNewSection = () => {
                   <h4 className="text-lg font-display font-bold text-[#080808] uppercase">{activePromo.title}</h4>
                   <p className="text-xs font-mono text-[#666666] mt-0.5">{activePromo.desc}</p>
                 </div>
-                <MagneticButton onClick={() => setActivePromo(null)} className="py-2.5 px-6 text-xs">
-                  BOOK OFFER
+                <MagneticButton
+                  href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
+                  className="py-2.5 px-6 text-xs"
+                >
+                  BOOK THIS DEAL
                 </MagneticButton>
               </div>
             </div>
