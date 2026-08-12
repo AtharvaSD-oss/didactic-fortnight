@@ -8,6 +8,7 @@ import WhoWeAreSection from './components/WhoWeAreSection';
 import WhyKartomaniaSection from './components/WhyKartomaniaSection';
 import RacingTimeline from './components/RacingTimeline';
 import RacingRulesSection from './components/RacingRulesSection';
+import KartsSection from './components/KartsSection';
 import GallerySection from './components/GallerySection';
 import Timeline from './components/Timeline';
 import Testimonials from './components/Testimonials';
@@ -22,7 +23,6 @@ import WhatsAppButton from './components/WhatsAppButton';
 
 import { 
   TrackSection,
-  KartsSection,
   LeapFrogSection,
   WhatsNewSection,
   PricingSection, 
