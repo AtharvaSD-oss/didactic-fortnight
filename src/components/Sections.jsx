@@ -5,7 +5,6 @@ import {
   Mail,
   Phone,
   Clock,
-  Tag,
   Sparkles,
   ShieldCheck,
   CheckCircle2,
@@ -24,40 +23,40 @@ export const TrackSection = ({ onOpenBooking }) => (
       
       {/* Left Spec & Narrative */}
       <div className="space-y-6 lg:w-5/12 text-left">
-        <div className="inline-flex items-center gap-2 font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold">
-          <MapPin className="w-3.5 h-3.5 text-[#080808]" /> // CIRCUIT TELEMETRY
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
+          <MapPin className="w-3.5 h-3.5 text-[#F47C20]" /> // CIRCUIT TELEMETRY
         </div>
-        <h2 className="text-3xl sm:text-5xl font-display font-bold uppercase tracking-tight text-[#080808] leading-tight">
+        <h2 className="text-3xl sm:text-5xl font-display font-bold uppercase tracking-tight text-[#0A0A0A] leading-tight">
           THE MONACO OF <br />
-          <span className="text-[#666666]">OUTDOOR KARTING</span>
+          <span className="text-[#F47C20]">OUTDOOR KARTING</span>
         </h2>
         <p className="text-[#666666] text-xs sm:text-sm font-sans leading-relaxed">
           Designed by championship racing engineers. Features a full 720-meter outdoor asphalt circuit with high-banked hairpin apexes, technical chicanes, and high-speed overtaking straights.
         </p>
 
-        {/* Large Statistics: 01, 02, 03, 04 */}
+        {/* Large Statistics: 01, 02, 03, 04 in Orange */}
         <div className="grid grid-cols-2 gap-4 pt-2">
-          <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] rounded-xl text-left space-y-1">
-            <span className="text-[10px] font-mono text-[#888888] uppercase tracking-widest block font-bold">01 // TRACK LENGTH</span>
-            <div className="text-2xl font-display font-bold text-[#080808]">720 METERS</div>
+          <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl text-left space-y-1 transition-colors group shadow-sm">
+            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">01 // TRACK LENGTH</span>
+            <div className="text-2xl font-display font-bold text-[#0A0A0A]">720 METERS</div>
             <span className="text-[11px] font-sans text-[#666666]">Full outdoor asphalt circuit</span>
           </div>
 
-          <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] rounded-xl text-left space-y-1">
-            <span className="text-[10px] font-mono text-[#888888] uppercase tracking-widest block font-bold">02 // CORNERS</span>
-            <div className="text-2xl font-display font-bold text-[#080808]">14 APEXES</div>
+          <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl text-left space-y-1 transition-colors group shadow-sm">
+            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">02 // CORNERS</span>
+            <div className="text-2xl font-display font-bold text-[#0A0A0A]">14 APEXES</div>
             <span className="text-[11px] font-sans text-[#666666]">High-G tactical chicanes</span>
           </div>
 
-          <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] rounded-xl text-left space-y-1">
-            <span className="text-[10px] font-mono text-[#888888] uppercase tracking-widest block font-bold">03 // SURFACE</span>
-            <div className="text-2xl font-display font-bold text-[#080808]">POLYMER GRIP</div>
+          <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl text-left space-y-1 transition-colors group shadow-sm">
+            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">03 // SURFACE</span>
+            <div className="text-2xl font-display font-bold text-[#0A0A0A]">POLYMER GRIP</div>
             <span className="text-[11px] font-sans text-[#666666]">Formula asphalt compound</span>
           </div>
 
-          <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] rounded-xl text-left space-y-1">
-            <span className="text-[10px] font-mono text-[#888888] uppercase tracking-widest block font-bold">04 // SAFETY</span>
-            <div className="text-2xl font-display font-bold text-[#080808]">F1 BARRIERS</div>
+          <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl text-left space-y-1 transition-colors group shadow-sm">
+            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">04 // SAFETY</span>
+            <div className="text-2xl font-display font-bold text-[#0A0A0A]">F1 BARRIERS</div>
             <span className="text-[11px] font-sans text-[#666666]">Pro absorption bumpers</span>
           </div>
         </div>
@@ -106,99 +105,135 @@ export const LeapFrogSection = () => {
   ];
 
   return (
-    <section id="leap-frog" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-12 bg-[#080808] text-white relative z-20">
-      <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16">
+    <section id="leap-frog" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-12 bg-[#0A0A0A] text-white relative z-20 overflow-hidden">
+      {/* Background speed grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] opacity-40 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/10 pb-8 text-left">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/15 pb-8 text-left">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 font-mono text-xs text-[#888888] uppercase tracking-widest">
-              <Trophy className="w-3.5 h-3.5 text-white" /> // MOTORSPORT HERITAGE
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#F47C20] text-white font-mono text-xs uppercase tracking-widest font-bold shadow-md">
+              <Trophy className="w-3.5 h-3.5" /> // MOTORSPORT HERITAGE
             </div>
             <h2 className="text-3xl sm:text-5xl lg:text-7xl font-display font-bold text-white uppercase tracking-tight leading-none">
-              LEAP FROG <span className="text-[#888888]">RACING</span>
+              LEAP FROG <span className="text-[#F47C20]">RACING</span>
             </h2>
           </div>
-          <p className="text-xs sm:text-sm font-mono text-[#888888] uppercase tracking-widest max-w-sm">
-            THE OFFICIAL MOTORSPORT & CHAMPIONSHIP RACING DIVISION OF KARTOMANIA
+          <p className="text-xs sm:text-sm font-mono text-[#AAAAAA] uppercase tracking-wider max-w-md">
+            Kartomania's official professional motorsport division competing across Indian National Karting Championships.
           </p>
         </div>
 
-        {/* Hero Narrative Block */}
-        <div className="rounded-xl bg-[#111111] border border-white/10 p-8 sm:p-12 text-left space-y-6">
-          <h3 className="text-xl sm:text-3xl font-display font-bold text-white uppercase leading-snug">
-            BORN ON THE NATIONAL RACING GRID &bull; 20+ YEARS OF CHAMPIONSHIP MOTORSPORT
-          </h3>
-          <p className="text-sm sm:text-base font-sans text-[#CCCCCC] leading-relaxed max-w-4xl">
-            Leap Frog Racing is the competition motorsport and driver-development branch of Kartomania, founded and led by active national racing champion <strong className="text-white font-bold">Mr. Rohit Khanna</strong>. Competing continuously in the JK Tyre FMSCI National Racing Championship and Rotax Max Karting Challenge, Leap Frog Racing brings legitimate national-tier vehicle dynamics, tire science, and telemetry to every driver at Kartomania.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-white/10 font-mono">
-            <div className="p-4 bg-black rounded-lg border border-white/10 text-center">
-              <div className="text-2xl font-display font-bold text-white">2003</div>
-              <div className="text-[10px] text-[#888888] uppercase mt-1 font-semibold">ESTABLISHED</div>
+        {/* Story Narrative & Racing Accolades */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center text-left">
+          <div className="lg:col-span-7 space-y-5 font-sans">
+            <p className="text-white text-base sm:text-lg leading-relaxed font-medium">
+              <strong className="text-[#F47C20]">Leap Frog Racing</strong> is Northern India’s championship-winning motorsport academy, founded and directed by veteran racer <strong className="text-white font-bold">Mr. Rohit Khanna</strong>.
+            </p>
+            <p className="text-[#AAAAAA] text-sm sm:text-base leading-relaxed">
+              With multiple podium finishes across the JK Tyre National Karting Championship, Rotax Max Challenge India, and national formula racing championships, our racing academy trains aspiring drivers with real competition telemetry, professional telemetry debriefs, and chassis setup.
+            </p>
+            
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 font-mono">
+              <div className="p-4 rounded-lg bg-[#161616] border border-white/10 text-left space-y-1">
+                <span className="text-[#F47C20] text-xs font-bold block">// EXPERIENCE</span>
+                <div className="text-2xl font-display font-bold text-white">20+ YRS</div>
+                <span className="text-[11px] text-[#888888]">Active Racing</span>
+              </div>
+              <div className="p-4 rounded-lg bg-[#161616] border border-white/10 text-left space-y-1">
+                <span className="text-[#F47C20] text-xs font-bold block">// PODIUMS</span>
+                <div className="text-2xl font-display font-bold text-white">50+ WINS</div>
+                <span className="text-[11px] text-[#888888]">National Trophies</span>
+              </div>
+              <div className="p-4 rounded-lg bg-[#161616] border border-white/10 text-left space-y-1 col-span-2 sm:col-span-1">
+                <span className="text-[#F47C20] text-xs font-bold block">// ACADEMY</span>
+                <div className="text-2xl font-display font-bold text-white">PRO TIER</div>
+                <span className="text-[11px] text-[#888888]">Driver Coaching</span>
+              </div>
             </div>
-            <div className="p-4 bg-black rounded-lg border border-white/10 text-center">
-              <div className="text-2xl font-display font-bold text-white">JK TYRE</div>
-              <div className="text-[10px] text-[#888888] uppercase mt-1 font-semibold">NATIONAL SERIES</div>
-            </div>
-            <div className="p-4 bg-black rounded-lg border border-white/10 text-center">
-              <div className="text-2xl font-display font-bold text-white">ROTAX MAX</div>
-              <div className="text-[10px] text-[#888888] uppercase mt-1 font-semibold">2-STROKE FLEET</div>
-            </div>
-            <div className="p-4 bg-black rounded-lg border border-white/10 text-center">
-              <div className="text-2xl font-display font-bold text-white">FMSCI</div>
-              <div className="text-[10px] text-[#888888] uppercase mt-1 font-semibold">LICENSED PROS</div>
+          </div>
+
+          <div className="lg:col-span-5 relative">
+            <div className="relative rounded-2xl overflow-hidden border-2 border-white/20 hover:border-[#F47C20] transition-colors duration-500 shadow-2xl group">
+              <img
+                src="/leap-frog-3.jpg"
+                alt="Leap Frog Racing Competition Action"
+                className="w-full h-80 sm:h-96 object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono">
+                <span className="text-[#F47C20] font-bold uppercase">// OFFICIAL RACING ACADEMY</span>
+                <span className="text-white bg-black/80 px-2 py-0.5 rounded-sm font-semibold">JK TYRE NATIONALS</span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Authentic High-Res Motorsport Photography Gallery */}
+        {/* Real Competition Photography Gallery Grid */}
         <div className="space-y-4 text-left">
-          <span className="font-mono text-xs text-[#888888] uppercase tracking-widest font-semibold block">
-            // AUTHENTIC ON-TRACK CHAMPIONSHIP ARCHIVE
-          </span>
+          <div className="flex items-center justify-between">
+            <span className="font-mono text-xs font-bold text-[#F47C20] uppercase tracking-wider">
+              // AUTHENTIC NATIONAL CHAMPIONSHIP PHOTOGRAPHY
+            </span>
+            <span className="text-[10px] font-mono text-[#888888] uppercase">
+              CLICK IMAGE TO EXPAND
+            </span>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {galleryImages.map((img, idx) => (
+            {galleryImages.map((item, idx) => (
               <div
                 key={idx}
-                onClick={() => setActiveImage(img)}
-                className="group relative rounded-xl overflow-hidden bg-black border border-white/10 hover:border-white/40 transition-all duration-300 cursor-pointer shadow-lg aspect-[4/3]"
+                onClick={() => setActiveImage(item)}
+                className="group relative rounded-xl overflow-hidden bg-[#161616] border border-white/10 hover:border-[#F47C20] transition-all duration-300 cursor-pointer shadow-lg"
               >
-                <img
-                  src={img.src}
-                  alt={img.title}
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-5 text-left">
-                  <span className="px-2 py-0.5 rounded-sm bg-white text-[#080808] font-mono text-[9px] font-bold uppercase tracking-widest w-max mb-1">
-                    {img.tag}
-                  </span>
-                  <h4 className="text-sm font-display font-bold text-white uppercase group-hover:text-[#CCCCCC] transition-colors">
-                    {img.title}
-                  </h4>
+                <div className="relative h-64 w-full overflow-hidden">
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                  
+                  <div className="absolute top-3 left-3">
+                    <span className="px-2.5 py-0.5 rounded-sm bg-[#F47C20] text-white font-mono text-[9px] font-bold uppercase tracking-wider shadow-sm">
+                      {item.tag}
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-3 left-3 right-3 text-left">
+                    <h4 className="text-sm font-display font-bold text-white uppercase tracking-wide group-hover:text-[#F47C20] transition-colors">
+                      {item.title}
+                    </h4>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Lightbox Modal */}
+        {/* Lightbox Modal for Leap Frog Gallery */}
         {activeImage && (
           <div
             onClick={() => setActiveImage(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
           >
-            <div className="relative max-w-4xl w-full bg-[#111111] border border-white/15 rounded-2xl overflow-hidden shadow-2xl">
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-3xl w-full bg-[#111111] border border-white/20 rounded-2xl overflow-hidden shadow-2xl"
+            >
               <button
                 onClick={() => setActiveImage(null)}
-                className="absolute top-4 right-4 z-30 p-2.5 rounded-full bg-black/80 text-white hover:text-[#888888] border border-white/20 transition-colors cursor-pointer"
+                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/80 text-white hover:text-[#F47C20] transition-colors cursor-pointer"
               >
                 ✕
               </button>
               <img src={activeImage.src} alt={activeImage.title} className="w-full max-h-[75vh] object-contain bg-black" />
-              <div className="p-6 bg-[#111111] border-t border-white/10 flex items-center justify-between text-white text-left">
+              <div className="p-6 bg-[#161616] border-t border-white/10 flex items-center justify-between text-white text-left">
                 <div>
-                  <span className="text-[10px] font-mono text-[#888888] uppercase font-bold">{activeImage.tag}</span>
+                  <span className="text-[10px] font-mono text-[#F47C20] uppercase font-bold">{activeImage.tag}</span>
                   <h4 className="text-xl font-display font-bold text-white uppercase">{activeImage.title}</h4>
                   <p className="text-xs font-mono text-[#AAAAAA] mt-1">{activeImage.desc}</p>
                 </div>
@@ -360,11 +395,11 @@ export const WhatsNewSection = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E5E5E5] pb-8 text-left">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold">
-              <Sparkles className="w-3.5 h-3.5 text-[#080808]" /> // EXCLUSIVE TRACK OFFERS & VALUE BUNDLES
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-[#F47C20]" /> // EXCLUSIVE TRACK OFFERS & VALUE BUNDLES
             </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#080808] uppercase tracking-tight leading-none">
-              WHAT'S <span className="text-[#666666]">NEW</span>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
+              WHAT'S <span className="text-[#F47C20]">NEW</span>
             </h2>
             <p className="text-xs sm:text-sm font-mono text-[#666666] max-w-xl">
               Daily bonanzas, happy hour sprints, and multi-session value packages designed for maximum track velocity.
@@ -372,24 +407,21 @@ export const WhatsNewSection = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-sm bg-white border border-[#E5E5E5] text-[#080808] font-mono text-[10px] font-bold uppercase tracking-wider shadow-sm">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-sm bg-white border border-[#E5E5E5] text-[#0A0A0A] font-mono text-[10px] font-bold uppercase tracking-wider shadow-sm">
               ★ 100% INCLUSIVE OF ALL TAXES
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-sm bg-[#080808] text-white font-mono text-[10px] font-bold uppercase tracking-wider shadow-sm">
-              <Zap className="w-3 h-3 text-white" /> INSTANT KIOSK SLOTS
             </span>
           </div>
         </div>
 
-        {/* Filter Switcher Bar */}
-        <div className="flex items-center justify-between flex-wrap gap-4 pt-1">
-          <div className="flex items-center gap-2 p-1 rounded-md bg-white border border-[#E5E5E5] shadow-sm">
+        {/* Category Switcher Tabs in 60/30/10 styling */}
+        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#E5E5E5] pb-4">
+          <div className="inline-flex items-center p-1 rounded-lg bg-white border border-[#E5E5E5] shadow-sm">
             <button
               onClick={() => setActiveFilter('all')}
               className={`px-4 py-2 rounded-sm font-mono text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                 activeFilter === 'all'
-                  ? 'bg-[#080808] text-white shadow-sm'
-                  : 'text-[#666666] hover:text-[#080808] bg-transparent'
+                  ? 'bg-[#F47C20] text-white shadow-sm'
+                  : 'text-[#666666] hover:text-[#0A0A0A] bg-transparent'
               }`}
             >
               ALL SPECIALS
@@ -398,8 +430,8 @@ export const WhatsNewSection = () => {
               onClick={() => setActiveFilter('daily')}
               className={`px-4 py-2 rounded-sm font-mono text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                 activeFilter === 'daily'
-                  ? 'bg-[#080808] text-white shadow-sm'
-                  : 'text-[#666666] hover:text-[#080808] bg-transparent'
+                  ? 'bg-[#F47C20] text-white shadow-sm'
+                  : 'text-[#666666] hover:text-[#0A0A0A] bg-transparent'
               }`}
             >
               DAILY BONANZAS (3)
@@ -408,16 +440,16 @@ export const WhatsNewSection = () => {
               onClick={() => setActiveFilter('bundles')}
               className={`px-4 py-2 rounded-sm font-mono text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                 activeFilter === 'bundles'
-                  ? 'bg-[#080808] text-white shadow-sm'
-                  : 'text-[#666666] hover:text-[#080808] bg-transparent'
+                  ? 'bg-[#F47C20] text-white shadow-sm'
+                  : 'text-[#666666] hover:text-[#0A0A0A] bg-transparent'
               }`}
             >
               BUNDLE PASSES (3)
             </button>
           </div>
 
-          <div className="hidden lg:flex items-center gap-2 text-xs font-mono text-[#888888]">
-            <Clock className="w-3.5 h-3.5 text-[#080808]" />
+          <div className="hidden lg:flex items-center gap-2 text-xs font-mono text-[#666666]">
+            <Clock className="w-3.5 h-3.5 text-[#F47C20]" />
             <span>Open All 7 Days &bull; 2:00 PM – 11:00 PM</span>
           </div>
         </div>
@@ -426,7 +458,7 @@ export const WhatsNewSection = () => {
         {(activeFilter === 'all' || activeFilter === 'daily') && (
           <div className="space-y-3 text-left">
             <div className="flex items-center justify-between">
-              <span className="font-mono text-xs font-bold text-[#080808] uppercase tracking-wider">
+              <span className="font-mono text-xs font-bold text-[#F47C20] uppercase tracking-wider">
                 // FEATURED WEEKLY CAMPAIGN SHOWCASE
               </span>
               <span className="text-[10px] font-mono text-[#888888] uppercase">
@@ -436,7 +468,7 @@ export const WhatsNewSection = () => {
 
             <div
               onClick={() => setActivePromoIdx(0)}
-              className="relative group rounded-2xl overflow-hidden cursor-pointer border border-[#E5E5E5] hover:border-[#080808] transition-all duration-300 shadow-md hover:shadow-xl bg-black"
+              className="relative group rounded-2xl overflow-hidden cursor-pointer border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 shadow-md hover:shadow-xl bg-black"
             >
               <img
                 src="/whats-new/weekly-offers.jpg"
@@ -445,29 +477,36 @@ export const WhatsNewSection = () => {
               />
               
               {/* Subtle Ambient Vignette & Interactive Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent flex flex-col justify-between p-6 sm:p-8 text-left">
-                <div className="flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-sm bg-white/95 backdrop-blur-md text-[#080808] font-mono text-[10px] font-black uppercase tracking-widest shadow-md">
-                    ★ OFFICIAL WEEKLY CAMPAIGN
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+
+              {/* Banner Top Badge */}
+              <div className="absolute top-5 left-5 z-10 flex items-center gap-2">
+                <span className="px-3 py-1 rounded-sm bg-[#F47C20] text-white font-mono text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-md">
+                  ★ OFFICIAL WEEKLY CAMPAIGN
+                </span>
+                <span className="hidden sm:inline-block px-3 py-1 rounded-sm bg-black/75 backdrop-blur-md text-white font-mono text-[10px] sm:text-xs uppercase font-semibold border border-white/20">
+                  CLICK TO VIEW FULL DETAILS
+                </span>
+              </div>
+
+              {/* Banner Bottom Action Bar */}
+              <div className="absolute bottom-5 left-5 right-5 z-10 flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
+                <div className="space-y-1 max-w-2xl">
+                  <span className="text-[#F47C20] font-mono text-xs font-bold uppercase tracking-widest block">
+                    MONDAY BOGO &bull; WEDNESDAY HAPPY HOUR &bull; FRIDAY FRENZY
                   </span>
-                  <span className="px-3 py-1 rounded-sm bg-black/80 text-white border border-white/20 font-mono text-[10px] font-bold uppercase tracking-widest">
-                    CLICK TO ZOOM 🔍
-                  </span>
+                  <h3 className="text-xl sm:text-3xl lg:text-4xl font-display font-bold text-white uppercase tracking-tight leading-tight">
+                    HIGH-VELOCITY WEEKDAY SPECIALS
+                  </h3>
+                  <p className="text-xs sm:text-sm font-sans text-gray-300 leading-relaxed hidden sm:block">
+                    Experience authentic 720M outdoor asphalt racing starting at just ₹500. All taxes included.
+                  </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 pt-8">
-                  <div className="space-y-1">
-                    <span className="text-[11px] font-mono text-white/80 uppercase font-semibold">
-                      ENTERTAINLAND MALL &bull; SECTOR 83 GURGAON
-                    </span>
-                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-white uppercase tracking-tight">
-                      MONDAY BOGO &bull; WEDNESDAY HAPPY HOUR &bull; FRIDAY FRENZY
-                    </h3>
-                  </div>
-
+                <div className="flex items-center gap-3 shrink-0">
                   <MagneticButton
                     href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
-                    className="py-3 px-7 text-xs font-bold shrink-0 bg-white text-[#080808] hover:bg-[#F0F0F0]"
+                    className="py-3 px-6 text-xs font-bold whitespace-nowrap shadow-md"
                   >
                     CLAIM WEEKLY DEALS &rarr;
                   </MagneticButton>
@@ -477,100 +516,97 @@ export const WhatsNewSection = () => {
           </div>
         )}
 
-        {/* 2. Core 3 Daily Offers: Monday, Wednesday, Friday Cards */}
+        {/* 2. Three Main Daily Offer Cards (Monday, Wednesday, Friday) */}
         {(activeFilter === 'all' || activeFilter === 'daily') && (
-          <div className="space-y-6 text-left">
-            <div className="flex items-center justify-between border-b border-[#E5E5E5] pb-4">
-              <div>
-                <span className="font-mono text-xs font-bold text-[#080808] uppercase tracking-wider block">
-                  // DAILY BONANZA POSTERS & SPECIALS
-                </span>
-                <span className="text-[11px] font-sans text-[#666666]">
-                  Click any poster to expand full resolution flyer & race telemetry details.
-                </span>
-              </div>
-              <span className="hidden sm:inline font-mono text-[10px] text-[#888888] uppercase">
-                3 SPECIALS ACTIVE
+          <div className="space-y-4 text-left">
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-xs font-bold text-[#0A0A0A] uppercase tracking-wider">
+                // DAILY RACE BONANZAS (CLICK POSTER TO EXPAND)
+              </span>
+              <span className="text-[10px] font-mono text-[#888888] uppercase">
+                VALID EVERY WEEK
               </span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-              {allPromos.slice(1).map((offer) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+              {allPromos.slice(1).map((offer, idx) => (
                 <div
                   key={offer.id}
-                  className="rounded-2xl bg-white border border-[#E5E5E5] hover:border-[#080808] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden text-left group"
+                  className="rounded-2xl bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 overflow-hidden shadow-sm hover:shadow-xl flex flex-col justify-between group"
                 >
-                  {/* Poster Image Frame with Zoom & Lightbox Trigger */}
+                  {/* Poster Image Frame */}
                   <div
-                    onClick={() => setActivePromoIdx(offer.id)}
-                    className="relative aspect-[4/3] bg-[#080808] overflow-hidden cursor-pointer"
+                    onClick={() => setActivePromoIdx(idx + 1)}
+                    className="relative aspect-[4/3] bg-black overflow-hidden cursor-pointer"
                   >
                     <img
                       src={offer.image}
                       alt={offer.title}
-                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
-
-                    {/* Floating Header Badges */}
-                    <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-10">
-                      <span className="px-2.5 py-1 rounded-sm bg-black/85 backdrop-blur-md text-white font-mono text-[9px] font-bold uppercase tracking-wider border border-white/20">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                    
+                    {/* Floating Badges */}
+                    <div className="absolute top-3 left-3 flex items-center gap-2">
+                      <span className="px-2.5 py-1 rounded-sm bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider shadow-sm">
                         {offer.dayName}
                       </span>
-                      <span className="px-2.5 py-1 rounded-sm bg-white text-[#080808] font-mono text-[9px] font-black uppercase shadow-md">
+                    </div>
+
+                    <div className="absolute top-3 right-3">
+                      <span className="px-2.5 py-1 rounded-sm bg-[#F47C20] text-white font-mono text-[9px] font-bold uppercase tracking-wider shadow-sm">
                         {offer.badge}
                       </span>
                     </div>
 
-                    {/* Hover Overlay with Expand Prompt */}
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="px-3 py-1.5 rounded-sm bg-white text-[#080808] font-mono text-[10px] font-bold uppercase tracking-widest shadow-xl">
-                        CLICK TO EXPAND 🔍
+                    {/* Bottom overlay text */}
+                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white font-mono text-[10px]">
+                      <span className="bg-black/80 px-2 py-0.5 rounded-sm uppercase tracking-wider">
+                        {offer.tag}
+                      </span>
+                      <span className="text-[#B8B8B8] font-bold">
+                        ZOOM POSTER 🔍
                       </span>
                     </div>
                   </div>
 
-                  {/* Card Content & Bullet Details */}
-                  <div className="p-6 sm:p-7 space-y-5 flex-1 flex flex-col justify-between">
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between">
-                        <span className="text-[10px] font-mono text-[#888888] font-bold uppercase tracking-wider">
-                          {offer.tag}
-                        </span>
-                        <span className="text-[10px] font-mono text-[#080808] font-bold uppercase bg-[#F5F5F5] px-2 py-0.5 rounded-sm border border-[#E5E5E5]">
-                          {offer.saveHighlight}
-                        </span>
+                  {/* Card Body Content */}
+                  <div className="p-6 space-y-4 flex-1 flex flex-col justify-between text-left">
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between gap-2">
+                        <h4 className="text-xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight group-hover:text-[#F47C20] transition-colors">
+                          {offer.title}
+                        </h4>
                       </div>
 
-                      <h3 className="text-xl font-display font-bold text-[#080808] uppercase tracking-tight">
-                        {offer.title}
-                      </h3>
+                      <div className="text-xs font-mono font-bold text-[#F47C20] uppercase">
+                        {offer.headline}
+                      </div>
 
-                      <p className="text-xs sm:text-sm font-sans text-[#555555] leading-relaxed">
+                      <p className="text-xs font-sans text-[#666666] leading-relaxed">
                         {offer.desc}
                       </p>
 
-                      {/* Key Feature Inclusions */}
-                      <div className="pt-2 space-y-1.5 border-t border-[#F0F0F0]">
-                        {offer.perks.slice(0, 3).map((perk, pIdx) => (
+                      {/* Perk Inclusions */}
+                      <div className="pt-3 space-y-1.5 border-t border-[#F0F0F0]">
+                        {offer.perks.map((perk, pIdx) => (
                           <div key={pIdx} className="flex items-start gap-2 text-xs font-sans text-[#444444]">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-[#080808] shrink-0 mt-0.5" />
-                            <span>{perk}</span>
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#F47C20] shrink-0 mt-0.5" />
+                            <span className="leading-snug">{perk}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    {/* Action Bar */}
-                    <div className="pt-4 border-t border-[#EAEAEA] flex items-center justify-between gap-3">
+                    {/* Card Pricing & Booking Action */}
+                    <div className="pt-4 flex items-center justify-between border-t border-[#EAEAEA] gap-3">
                       <div>
                         <span className="text-[9px] font-mono text-[#888888] block uppercase">SPECIAL RATE</span>
-                        <div className="text-lg sm:text-xl font-display font-bold text-[#080808]">
-                          {offer.price}
-                        </div>
+                        <div className="text-xl font-display font-bold text-[#0A0A0A]">{offer.price}</div>
                       </div>
                       <MagneticButton
                         href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
-                        className="py-2 px-5 text-xs font-bold"
+                        className="py-2.5 px-5 text-xs font-bold"
                       >
                         BOOK DEAL &rarr;
                       </MagneticButton>
@@ -582,58 +618,51 @@ export const WhatsNewSection = () => {
           </div>
         )}
 
-        {/* 3. Multi-Race Value Packs (Bundle Sessions) */}
+        {/* 3. Multi-Race Value Bundles Grid */}
         {(activeFilter === 'all' || activeFilter === 'bundles') && (
-          <div className="bg-white border border-[#E5E5E5] rounded-2xl p-6 sm:p-10 space-y-8 text-left shadow-sm">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-6">
-              <div className="space-y-1">
-                <div className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold text-[#666666] uppercase tracking-wider">
-                  <Tag className="w-3.5 h-3.5 text-[#080808]" /> // MULTI-RACE VALUE BUNDLES
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-display font-bold text-[#080808] uppercase tracking-tight">
-                  BUNDLE SESSIONS & PRE-PAID PASSES
+          <div className="space-y-4 text-left pt-6">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+              <div>
+                <span className="font-mono text-xs font-bold text-[#F47C20] uppercase tracking-wider block">
+                  // PRE-PAID MULTI-SESSION VALUE BUNDLES
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+                  MORE LAPS. MORE FREE BOWLING.
                 </h3>
-                <p className="text-xs font-sans text-[#666666]">
-                  Pre-purchase session credits with bonus bowling vouchers. Shareable with your group & valid for 30 days.
-                </p>
               </div>
-              <span className="text-[10px] font-mono text-[#080808] font-bold uppercase bg-[#F9F9F9] px-3 py-1.5 rounded-sm border border-[#E5E5E5]">
-                INCLUSIVE OF ALL TAXES
+              <span className="text-xs font-mono text-[#666666]">
+                Shareable with Friends & Family &bull; Valid for 30 Days
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {bundleSessions.map((bundle, idx) => (
+              {bundleSessions.map((bundle, bIdx) => (
                 <div
-                  key={idx}
-                  className={`p-6 sm:p-7 rounded-xl border flex flex-col justify-between space-y-5 transition-all duration-300 relative ${
-                    bundle.badge
-                      ? 'bg-[#FDFCFA] border-[#080808] shadow-md hover:shadow-lg'
-                      : 'bg-[#F9F9F9] border-[#E5E5E5] hover:border-[#080808] shadow-sm'
-                  }`}
+                  key={bIdx}
+                  className="p-7 rounded-2xl bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between space-y-6 text-left group"
                 >
-                  {bundle.badge && (
-                    <span className="absolute -top-3 right-6 px-2.5 py-0.5 rounded-sm bg-[#080808] text-white font-mono text-[9px] font-bold uppercase tracking-wider shadow-sm">
-                      {bundle.badge}
-                    </span>
-                  )}
-
-                  <div className="space-y-3">
+                  <div className="space-y-4">
+                    {/* Tier and Badge */}
                     <div className="flex items-center justify-between">
-                      <span className="px-2.5 py-0.5 rounded-sm bg-white border border-[#E5E5E5] text-[#666666] font-mono text-[9px] font-bold uppercase tracking-wider">
+                      <span className="font-mono text-xs font-bold text-[#F47C20]">
                         {bundle.tier}
                       </span>
-                      <span className="text-[10px] font-mono text-[#080808] font-bold">
+                      {bundle.badge && (
+                        <span className="px-2.5 py-0.5 rounded-sm bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider shadow-sm">
+                          ★ {bundle.badge}
+                        </span>
+                      )}
+                      <span className="text-xs font-mono text-[#666666] font-semibold">
                         {bundle.effective}
                       </span>
                     </div>
 
-                    <h4 className="text-lg font-display font-bold text-[#080808] uppercase leading-tight">
+                    <h4 className="text-lg font-display font-bold text-[#0A0A0A] uppercase leading-tight">
                       {bundle.name}
                     </h4>
 
-                    {/* Free Bonus Callout Pill */}
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-sm bg-white border border-[#E5E5E5] text-[#080808] font-mono text-[10px] font-bold uppercase tracking-wider">
+                    {/* Free Bonus Callout Pill in Orange Tint */}
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 text-[#F47C20] font-mono text-[10px] font-bold uppercase tracking-wider shadow-sm">
                       🎁 {bundle.bonus}
                     </div>
 
@@ -645,7 +674,7 @@ export const WhatsNewSection = () => {
                     <div className="pt-3 space-y-2 border-t border-[#EAEAEA]">
                       {bundle.features.map((feat, fIdx) => (
                         <div key={fIdx} className="flex items-center gap-2 text-xs font-sans text-[#444444]">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#080808] shrink-0" />
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#F47C20] shrink-0" />
                           <span>{feat}</span>
                         </div>
                       ))}
@@ -656,7 +685,7 @@ export const WhatsNewSection = () => {
                   <div className="pt-4 flex items-center justify-between border-t border-[#EAEAEA] gap-3">
                     <div>
                       <span className="text-[9px] font-mono text-[#888888] block uppercase">PACKAGE TOTAL</span>
-                      <div className="text-xl font-display font-bold text-[#080808]">{bundle.price}</div>
+                      <div className="text-xl font-display font-bold text-[#0A0A0A]">{bundle.price}</div>
                     </div>
                     <MagneticButton
                       href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
@@ -673,27 +702,27 @@ export const WhatsNewSection = () => {
 
         {/* 4. Track Transparency & Racer Assurance 4-Pillar Strip */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-left font-mono">
-          <div className="p-5 rounded-xl bg-white border border-[#E5E5E5] space-y-1.5">
-            <ShieldCheck className="w-4 h-4 text-[#080808]" />
-            <div className="text-xs font-bold text-[#080808] uppercase">ALL TAXES INCLUDED</div>
+          <div className="p-5 rounded-xl bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-1.5 shadow-sm">
+            <ShieldCheck className="w-4 h-4 text-[#F47C20]" />
+            <div className="text-xs font-bold text-[#0A0A0A] uppercase">ALL TAXES INCLUDED</div>
             <p className="text-[11px] font-sans text-[#666666]">100% GST included in all listed rates. Zero hidden checkout fees.</p>
           </div>
 
-          <div className="p-5 rounded-xl bg-white border border-[#E5E5E5] space-y-1.5">
-            <Trophy className="w-4 h-4 text-[#080808]" />
-            <div className="text-xs font-bold text-[#080808] uppercase">SAFETY GEAR PROVIDED</div>
+          <div className="p-5 rounded-xl bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-1.5 shadow-sm">
+            <Trophy className="w-4 h-4 text-[#F47C20]" />
+            <div className="text-xs font-bold text-[#0A0A0A] uppercase">SAFETY GEAR PROVIDED</div>
             <p className="text-[11px] font-sans text-[#666666]">DOT-certified helmets, sanitary balaclavas, and rib protectors free.</p>
           </div>
 
-          <div className="p-5 rounded-xl bg-white border border-[#E5E5E5] space-y-1.5">
-            <Zap className="w-4 h-4 text-[#080808]" />
-            <div className="text-xs font-bold text-[#080808] uppercase">LIVE TELEMETRY</div>
+          <div className="p-5 rounded-xl bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-1.5 shadow-sm">
+            <Zap className="w-4 h-4 text-[#F47C20]" />
+            <div className="text-xs font-bold text-[#0A0A0A] uppercase">LIVE TELEMETRY</div>
             <p className="text-[11px] font-sans text-[#666666]">Millisecond lap timing & leaderboards by RaceFacer systems.</p>
           </div>
 
-          <div className="p-5 rounded-xl bg-white border border-[#E5E5E5] space-y-1.5">
-            <Clock className="w-4 h-4 text-[#080808]" />
-            <div className="text-xs font-bold text-[#080808] uppercase">OPEN 7 DAYS A WEEK</div>
+          <div className="p-5 rounded-xl bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-1.5 shadow-sm">
+            <Clock className="w-4 h-4 text-[#F47C20]" />
+            <div className="text-xs font-bold text-[#0A0A0A] uppercase">OPEN 7 DAYS A WEEK</div>
             <p className="text-[11px] font-sans text-[#666666]">Mon–Fri 2PM–11PM | Sat–Sun & Holidays 1PM–11PM.</p>
           </div>
         </div>
@@ -706,12 +735,12 @@ export const WhatsNewSection = () => {
           >
             <div
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-4xl w-full bg-white border border-[#E5E5E5] rounded-2xl overflow-hidden shadow-2xl my-auto text-left flex flex-col"
+              className="relative max-w-4xl w-full bg-white border-2 border-[#F47C20] rounded-2xl overflow-hidden shadow-2xl my-auto text-left flex flex-col"
             >
               {/* Close Button */}
               <button
                 onClick={() => setActivePromoIdx(null)}
-                className="absolute top-4 right-4 z-30 p-2.5 rounded-full bg-black/80 text-white hover:text-[#AAAAAA] transition-colors cursor-pointer shadow-lg"
+                className="absolute top-4 right-4 z-30 p-2.5 rounded-full bg-black/80 text-white hover:text-[#F47C20] transition-colors cursor-pointer shadow-lg"
                 aria-label="Close Lightbox"
               >
                 ✕
@@ -723,7 +752,7 @@ export const WhatsNewSection = () => {
                   e.stopPropagation();
                   setActivePromoIdx((prev) => (prev - 1 + allPromos.length) % allPromos.length);
                 }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/75 text-white hover:bg-black transition-colors cursor-pointer shadow-xl hidden sm:flex items-center justify-center"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/75 text-white hover:bg-[#F47C20] transition-colors cursor-pointer shadow-xl hidden sm:flex items-center justify-center"
                 aria-label="Previous Offer"
               >
                 <ChevronLeft className="w-5 h-5" />
@@ -734,14 +763,14 @@ export const WhatsNewSection = () => {
                   e.stopPropagation();
                   setActivePromoIdx((prev) => (prev + 1) % allPromos.length);
                 }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/75 text-white hover:bg-black transition-colors cursor-pointer shadow-xl hidden sm:flex items-center justify-center"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/75 text-white hover:bg-[#F47C20] transition-colors cursor-pointer shadow-xl hidden sm:flex items-center justify-center"
                 aria-label="Next Offer"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
 
               {/* Main Image Stage */}
-              <div className="w-full bg-[#080808] flex items-center justify-center max-h-[70vh] overflow-hidden">
+              <div className="w-full bg-[#0A0A0A] flex items-center justify-center max-h-[70vh] overflow-hidden">
                 <img
                   src={allPromos[activePromoIdx].image}
                   alt={allPromos[activePromoIdx].title}
@@ -753,14 +782,14 @@ export const WhatsNewSection = () => {
               <div className="p-6 sm:p-8 bg-white border-t border-[#E5E5E5] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div className="space-y-1.5 max-w-xl">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono text-white bg-[#080808] px-2 py-0.5 rounded-sm font-bold uppercase">
+                    <span className="text-[10px] font-mono text-white bg-[#F47C20] px-2.5 py-0.5 rounded-sm font-bold uppercase">
                       {allPromos[activePromoIdx].tag}
                     </span>
                     <span className="text-[10px] font-mono text-[#888888] uppercase font-semibold">
                       PROMO {activePromoIdx + 1} OF {allPromos.length} &bull; {allPromos[activePromoIdx].dayName}
                     </span>
                   </div>
-                  <h4 className="text-xl sm:text-2xl font-display font-bold text-[#080808] uppercase">
+                  <h4 className="text-xl sm:text-2xl font-display font-bold text-[#0A0A0A] uppercase">
                     {allPromos[activePromoIdx].title}
                   </h4>
                   <p className="text-xs sm:text-sm font-sans text-[#555555] leading-relaxed">
@@ -771,7 +800,7 @@ export const WhatsNewSection = () => {
                 <div className="flex items-center gap-3 w-full md:w-auto shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-[#EAEAEA]">
                   <div className="text-left">
                     <span className="text-[9px] font-mono text-[#888888] block uppercase">OFFER PRICE</span>
-                    <span className="text-xl font-display font-bold text-[#080808]">
+                    <span className="text-xl font-display font-bold text-[#F47C20]">
                       {allPromos[activePromoIdx].price}
                     </span>
                   </div>
@@ -822,14 +851,14 @@ export const PricingSection = ({ onOpenBooking }) => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-6 text-left">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#F5F5F5] border border-[#E5E5E5] text-[#111111] font-mono text-[10px] font-bold uppercase tracking-wider mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 text-[#F47C20] font-mono text-[10px] font-bold uppercase tracking-wider mb-2 shadow-sm">
               ★ ALL PRICES INCLUSIVE OF ALL TAXES
             </div>
-            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#080808] uppercase tracking-tight">
-              OFFICIAL <span className="text-[#666666]">PRICING & COMBOS</span>
+            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+              OFFICIAL <span className="text-[#F47C20]">PRICING & COMBOS</span>
             </h2>
           </div>
-          <p className="text-xs sm:text-sm font-mono text-[#888888] max-w-md">
+          <p className="text-xs sm:text-sm font-mono text-[#666666] max-w-md">
             Exclusive multi-session packages featuring complimentary free bowling and bonus race sessions.
           </p>
         </div>
@@ -837,28 +866,28 @@ export const PricingSection = ({ onOpenBooking }) => {
         {/* 1. Official Value Combo Packages */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Weekday Combos */}
-          <div className="bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#080808] rounded-xl p-8 shadow-sm transition-all text-left">
+          <div className="bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl p-8 shadow-sm hover:shadow-md transition-all text-left">
             <div className="flex flex-wrap items-start justify-between gap-3 pb-4 mb-5 border-b border-[#E5E5E5]">
               <div className="space-y-0.5">
-                <span className="text-[9px] font-mono font-bold text-[#666666] uppercase tracking-widest block">SUPER VALUE DEALS</span>
-                <h3 className="text-xl font-display font-bold text-[#080808] uppercase tracking-wider">WEEKDAY COMBOS</h3>
+                <span className="text-[9px] font-mono font-bold text-[#F47C20] uppercase tracking-widest block">SUPER VALUE DEALS</span>
+                <h3 className="text-xl font-display font-bold text-[#0A0A0A] uppercase tracking-wider">WEEKDAY COMBOS</h3>
               </div>
-              <span className="px-3 py-1 rounded-sm bg-white border border-[#E5E5E5] text-[#111111] font-mono text-xs font-bold uppercase whitespace-nowrap">
+              <span className="px-3 py-1 rounded-sm bg-white border border-[#E5E5E5] text-[#0A0A0A] font-mono text-xs font-bold uppercase whitespace-nowrap shadow-sm">
                 MON – THU
               </span>
             </div>
 
             <div className="space-y-3.5">
               {weekdayCombos.map((item, idx) => (
-                <div key={idx} className="p-4 rounded-lg bg-white border border-[#EAEAEA] flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition-colors">
+                <div key={idx} className="p-4 rounded-lg bg-white border border-[#EAEAEA] hover:border-[#F47C20] flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition-colors shadow-sm">
                   <div className="space-y-0.5">
-                    <div className="text-xs sm:text-sm font-display font-bold text-[#111111] uppercase">{item.package}</div>
-                    <span className="inline-block px-2 py-0.5 rounded-sm bg-[#F5F5F5] text-[#555555] font-mono text-[9px] font-bold uppercase tracking-wider">
+                    <div className="text-xs sm:text-sm font-display font-bold text-[#0A0A0A] uppercase">{item.package}</div>
+                    <span className="inline-block px-2 py-0.5 rounded-sm bg-[#FFF0E5] text-[#F47C20] font-mono text-[9px] font-bold uppercase tracking-wider">
                       🎁 {item.bonus}
                     </span>
                   </div>
                   <div className="text-right">
-                    <div className="text-lg font-display font-bold text-[#080808]">{item.price}</div>
+                    <div className="text-lg font-display font-bold text-[#0A0A0A]">{item.price}</div>
                   </div>
                 </div>
               ))}
@@ -866,33 +895,33 @@ export const PricingSection = ({ onOpenBooking }) => {
           </div>
 
           {/* Weekend Combos */}
-          <div className="bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#080808] rounded-xl p-8 shadow-sm transition-all text-left">
+          <div className="bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl p-8 shadow-sm hover:shadow-md transition-all text-left">
             <div className="flex flex-wrap items-start justify-between gap-3 pb-4 mb-5 border-b border-[#E5E5E5]">
               <div className="space-y-0.5">
                 <div className="flex items-center gap-2">
-                  <span className="text-[9px] font-mono font-bold text-[#666666] uppercase tracking-widest block">PEAK RACING & ENTERTAINMENT</span>
-                  <span className="px-2 py-0.5 rounded-sm bg-[#080808] text-[8px] font-mono font-bold text-white uppercase tracking-wider">
+                  <span className="text-[9px] font-mono font-bold text-[#F47C20] uppercase tracking-widest block">PEAK RACING & ENTERTAINMENT</span>
+                  <span className="px-2 py-0.5 rounded-sm bg-[#F47C20] text-[8px] font-mono font-bold text-white uppercase tracking-wider">
                     ★ POPULAR
                   </span>
                 </div>
-                <h3 className="text-xl font-display font-bold text-[#080808] uppercase tracking-wider">WEEKEND COMBOS</h3>
+                <h3 className="text-xl font-display font-bold text-[#0A0A0A] uppercase tracking-wider">WEEKEND COMBOS</h3>
               </div>
-              <span className="px-3 py-1 rounded-sm bg-white border border-[#E5E5E5] text-[#111111] font-mono text-xs font-bold uppercase whitespace-nowrap">
+              <span className="px-3 py-1 rounded-sm bg-white border border-[#E5E5E5] text-[#0A0A0A] font-mono text-xs font-bold uppercase whitespace-nowrap shadow-sm">
                 FRI – SUN & HOLIDAYS
               </span>
             </div>
 
             <div className="space-y-3.5">
               {weekendCombos.map((item, idx) => (
-                <div key={idx} className="p-4 rounded-lg bg-white border border-[#EAEAEA] flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition-colors">
+                <div key={idx} className="p-4 rounded-lg bg-white border border-[#EAEAEA] hover:border-[#F47C20] flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition-colors shadow-sm">
                   <div className="space-y-0.5">
-                    <div className="text-xs sm:text-sm font-display font-bold text-[#111111] uppercase">{item.package}</div>
-                    <span className="inline-block px-2 py-0.5 rounded-sm bg-[#F5F5F5] text-[#555555] font-mono text-[9px] font-bold uppercase tracking-wider">
+                    <div className="text-xs sm:text-sm font-display font-bold text-[#0A0A0A] uppercase">{item.package}</div>
+                    <span className="inline-block px-2 py-0.5 rounded-sm bg-[#FFF0E5] text-[#F47C20] font-mono text-[9px] font-bold uppercase tracking-wider">
                       🔥 {item.bonus}
                     </span>
                   </div>
                   <div className="text-right">
-                    <div className="text-lg font-display font-bold text-[#080808]">{item.price}</div>
+                    <div className="text-lg font-display font-bold text-[#0A0A0A]">{item.price}</div>
                   </div>
                 </div>
               ))}
@@ -903,15 +932,15 @@ export const PricingSection = ({ onOpenBooking }) => {
         {/* 2. Standard Session Tariff Table */}
         <div className="bg-white border border-[#E5E5E5] rounded-xl p-8 shadow-sm text-left">
           <div className="pb-4 mb-5 border-b border-[#EAEAEA]">
-            <h3 className="text-lg font-display font-bold text-[#080808] uppercase tracking-wider">
+            <h3 className="text-lg font-display font-bold text-[#0A0A0A] uppercase tracking-wider">
               STANDARD KARTING SESSIONS TARIFF
             </h3>
-            <p className="text-xs font-mono text-[#888888]">Pure track time rates without bowling additions (Taxes Included).</p>
+            <p className="text-xs font-mono text-[#666666]">Pure track time rates without bowling additions (Taxes Included).</p>
           </div>
 
           <div className="overflow-x-auto">
             <table className="w-full text-left font-mono text-xs sm:text-sm">
-              <thead className="bg-[#F5F5F5] text-[#111111] uppercase text-[11px] border border-[#E5E5E5]">
+              <thead className="bg-[#F5F5F5] text-[#0A0A0A] uppercase text-[11px] border border-[#E5E5E5]">
                 <tr>
                   <th className="py-3.5 px-5 rounded-l-sm font-bold">SESSIONS</th>
                   <th className="py-3.5 px-5 text-center font-bold">WEEKDAY (MON – THU)</th>
@@ -920,10 +949,10 @@ export const PricingSection = ({ onOpenBooking }) => {
               </thead>
               <tbody className="divide-y divide-[#EAEAEA] text-[#111111]">
                 {standardRates.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-[#F9F9F9] transition-colors">
-                    <td className="py-3.5 px-5 font-bold text-[#080808]">{row.sessions}</td>
+                  <tr key={idx} className="hover:bg-[#FFF9F5] transition-colors">
+                    <td className="py-3.5 px-5 font-bold text-[#0A0A0A]">{row.sessions}</td>
                     <td className="py-3.5 px-5 text-center font-display font-semibold text-[#555555]">{row.weekday}</td>
-                    <td className="py-3.5 px-5 text-right font-display font-bold text-[#080808] text-sm sm:text-base">{row.weekend}</td>
+                    <td className="py-3.5 px-5 text-right font-display font-bold text-[#F47C20] text-sm sm:text-base">{row.weekend}</td>
                   </tr>
                 ))}
               </tbody>
@@ -933,7 +962,7 @@ export const PricingSection = ({ onOpenBooking }) => {
 
         {/* Terms and Conditions Card */}
         <div className="bg-[#F9F9F9] border border-[#E5E5E5] rounded-xl p-8 space-y-4 text-left shadow-sm">
-          <h4 className="font-display font-bold text-xs sm:text-sm text-[#080808] uppercase tracking-wider">
+          <h4 className="font-display font-bold text-xs sm:text-sm text-[#0A0A0A] uppercase tracking-wider">
             TERMS AND CONDITIONS
           </h4>
           <ul className="space-y-2 text-xs font-mono text-[#666666] list-disc list-inside">
@@ -964,14 +993,14 @@ export const ContactSection = () => {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E5E5E5] pb-6 text-left">
           <div>
-            <span className="font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold block mb-2">
-              // ARENA LOCATION & NAVIGATION
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#080808] uppercase tracking-tight">
-              FIND THE <span className="text-[#666666]">ARENA</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs text-[#F47C20] uppercase tracking-widest font-bold mb-2 shadow-sm">
+              <MapPin className="w-3.5 h-3.5 text-[#F47C20]" /> // ARENA LOCATION & NAVIGATION
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+              FIND THE <span className="text-[#F47C20]">ARENA</span>
             </h2>
           </div>
-          <p className="text-xs sm:text-sm font-mono text-[#888888] max-w-sm">
+          <p className="text-xs sm:text-sm font-mono text-[#666666] max-w-sm">
             Located at Entertainland Mall, India's premier 720m outdoor pro karting circuit.
           </p>
         </div>
@@ -979,8 +1008,8 @@ export const ContactSection = () => {
         {/* Location Info & CTAs */}
         <div className="bg-white border border-[#E5E5E5] rounded-xl p-8 sm:p-10 shadow-sm">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 text-left font-mono">
-            <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] space-y-2">
-              <div className="flex items-center gap-2 text-[#080808]">
+            <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2">
+              <div className="flex items-center gap-2 text-[#F47C20]">
                 <MapPin className="w-4 h-4" />
                 <span className="text-[10px] uppercase font-bold tracking-wider">// ARENA ADDRESS</span>
               </div>
@@ -989,36 +1018,36 @@ export const ContactSection = () => {
               </div>
             </div>
 
-            <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] space-y-2">
-              <div className="flex items-center gap-2 text-[#080808]">
+            <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2">
+              <div className="flex items-center gap-2 text-[#F47C20]">
                 <Clock className="w-4 h-4" />
                 <span className="text-[10px] uppercase font-bold tracking-wider">// OPEN ALL 7 DAYS</span>
               </div>
               <div className="text-xs text-[#111111] font-sans font-semibold space-y-0.5">
                 <div>Mon – Fri: 2:00 PM – 11:00 PM</div>
                 <div>Sat – Sun: 1:00 PM – 11:00 PM</div>
-                <div className="text-emerald-600 font-bold">// Open All Days</div>
+                <div className="text-[#F47C20] font-bold">// Open All Days</div>
               </div>
             </div>
 
-            <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] space-y-2">
-              <div className="flex items-center gap-2 text-[#080808]">
+            <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2">
+              <div className="flex items-center gap-2 text-[#F47C20]">
                 <Phone className="w-4 h-4" />
                 <span className="text-[10px] uppercase font-bold tracking-wider">// CALL US / HOTLINE</span>
               </div>
               <div className="text-xs text-[#111111] font-sans font-semibold space-y-0.5">
-                <a href="tel:+919717548897" className="block hover:text-[#666666] transition-colors font-bold">+91 97175 48897</a>
-                <a href="tel:+919560492876" className="block hover:text-[#666666] transition-colors font-bold">+91 95604 92876</a>
+                <a href="tel:+919717548897" className="block hover:text-[#F47C20] transition-colors font-bold">+91 97175 48897</a>
+                <a href="tel:+919560492876" className="block hover:text-[#F47C20] transition-colors font-bold">+91 95604 92876</a>
               </div>
             </div>
 
-            <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] space-y-2">
-              <div className="flex items-center gap-2 text-[#080808]">
+            <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2">
+              <div className="flex items-center gap-2 text-[#F47C20]">
                 <Mail className="w-4 h-4" />
                 <span className="text-[10px] uppercase font-bold tracking-wider">// EMAIL ENQUIRIES</span>
               </div>
               <div className="text-xs text-[#111111] font-sans font-semibold space-y-0.5">
-                <a href="mailto:kartomania.ggn@gmail.com" className="block hover:text-[#666666] transition-colors font-bold break-all">
+                <a href="mailto:kartomania.ggn@gmail.com" className="block hover:text-[#F47C20] transition-colors font-bold break-all">
                   kartomania.ggn@gmail.com
                 </a>
                 <div className="text-[10px] text-[#888888] font-mono">Corporate & Booking queries</div>
@@ -1032,9 +1061,9 @@ export const ContactSection = () => {
                 href={GOOGLE_MAPS_LINK}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-[#F5F5F5] hover:bg-[#EAEAEA] border border-[#E5E5E5] text-xs font-mono tracking-wider uppercase text-[#111111] font-bold transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-[#F5F5F5] hover:bg-[#FFF0E5] border border-[#E5E5E5] hover:border-[#F47C20] text-xs font-mono tracking-wider uppercase text-[#0A0A0A] hover:text-[#F47C20] font-bold transition-all shadow-sm"
               >
-                <MapPin className="w-3.5 h-3.5 text-[#080808]" />
+                <MapPin className="w-3.5 h-3.5 text-[#F47C20]" />
                 <span>GOOGLE MAPS</span>
               </a>
 
@@ -1043,9 +1072,9 @@ export const ContactSection = () => {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook Page"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-[#F5F5F5] hover:bg-[#EAEAEA] border border-[#E5E5E5] text-xs font-mono tracking-wider uppercase text-[#111111] font-bold transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-[#F5F5F5] hover:bg-[#FFF0E5] border border-[#E5E5E5] hover:border-[#F47C20] text-xs font-mono tracking-wider uppercase text-[#0A0A0A] hover:text-[#F47C20] font-bold transition-all shadow-sm"
               >
-                <FacebookIcon className="w-3.5 h-3.5 text-[#080808]" />
+                <FacebookIcon className="w-3.5 h-3.5 text-[#0A0A0A]" />
                 <span>FACEBOOK</span>
               </a>
 
@@ -1054,9 +1083,9 @@ export const ContactSection = () => {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram Profile"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-[#F5F5F5] hover:bg-[#EAEAEA] border border-[#E5E5E5] text-xs font-mono tracking-wider uppercase text-[#111111] font-bold transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-[#F5F5F5] hover:bg-[#FFF0E5] border border-[#E5E5E5] hover:border-[#F47C20] text-xs font-mono tracking-wider uppercase text-[#0A0A0A] hover:text-[#F47C20] font-bold transition-all shadow-sm"
               >
-                <InstagramIcon className="w-3.5 h-3.5 text-[#080808]" />
+                <InstagramIcon className="w-3.5 h-3.5 text-[#0A0A0A]" />
                 <span>INSTAGRAM</span>
               </a>
 
@@ -1065,7 +1094,7 @@ export const ContactSection = () => {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp Hotline"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-[#F5F5F5] hover:bg-[#EAEAEA] border border-[#E5E5E5] text-xs font-mono tracking-wider uppercase text-[#111111] font-bold transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-[#F5F5F5] hover:bg-[#FFF0E5] border border-[#E5E5E5] hover:border-[#F47C20] text-xs font-mono tracking-wider uppercase text-[#0A0A0A] hover:text-[#F47C20] font-bold transition-all shadow-sm"
               >
                 <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" />
                 <span>WHATSAPP</span>
@@ -1088,14 +1117,14 @@ export const GameSection = () => (
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-6 text-left">
         <div>
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold mb-2">
-            <Trophy className="w-3.5 h-3.5 text-[#080808]" /> // INTERACTIVE 2D KART RACER
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs text-[#F47C20] uppercase tracking-widest font-bold mb-2 shadow-sm">
+            <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // INTERACTIVE 2D KART RACER
           </div>
-          <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#080808] uppercase tracking-tight">
-            PRO <span className="text-[#666666]">ARCADE</span>
+          <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+            PRO <span className="text-[#F47C20]">ARCADE</span>
           </h2>
         </div>
-        <p className="text-xs sm:text-sm font-mono text-[#888888] max-w-sm">
+        <p className="text-xs sm:text-sm font-mono text-[#666666] max-w-sm">
           Test your apex timing on our 16-bit retro arcade simulator before taking our 720M outdoor track!
         </p>
       </div>

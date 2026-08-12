@@ -117,7 +117,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#111111] selection:bg-[#080808] selection:text-white relative overflow-x-hidden">
+    <div className="min-h-screen bg-white text-[#111111] selection:bg-[#F47C20] selection:text-white relative overflow-x-hidden">
       {/* 1. Top Racing Progress Bar */}
       <ScrollProgress />
 

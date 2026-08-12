@@ -11,7 +11,7 @@ const MagneticButton = ({
   className = "", 
   showArrow = true,
   strength = 0.25,
-  variant = "primary" // "primary" (black/white) or "secondary" (white/black border) or "ghost"
+  variant = "primary" // "primary" (black w/ orange hover), "orange" (bright orange), "outline" (black outline)
 }) => {
   const buttonRef = useRef(null);
   const contentRef = useRef(null);
@@ -71,13 +71,21 @@ const MagneticButton = ({
     };
   }, [strength]);
 
+  const getVariantClasses = () => {
+    if (variant === 'orange' || variant === 'secondary') {
+      return 'bg-[#F47C20] text-white border-[#F47C20] hover:bg-[#0A0A0A] hover:border-[#0A0A0A] hover:text-white shadow-sm';
+    }
+    if (variant === 'outline') {
+      return 'bg-white text-[#0A0A0A] border-[#E5E5E5] hover:border-[#0A0A0A] hover:bg-[#F9F9F9]';
+    }
+    // Default: primary (black w/ orange accent on hover)
+    return 'bg-[#0A0A0A] text-white border-[#0A0A0A] hover:bg-[#F47C20] hover:border-[#F47C20] hover:text-white shadow-sm';
+  };
+
   const baseClasses = `
     relative inline-flex items-center justify-center group overflow-hidden rounded-sm font-mono font-bold tracking-widest text-xs uppercase
     px-6 py-3 transition-all duration-300 transform active:scale-95 cursor-pointer text-decoration-none border
-    ${variant === 'secondary' 
-      ? 'bg-transparent text-[#111111] border-[#111111] hover:bg-[#080808] hover:text-white' 
-      : 'bg-[#080808] text-white border-[#080808] hover:bg-white hover:text-[#080808] hover:border-[#080808]'
-    }
+    ${getVariantClasses()}
     ${className}
   `;
 
@@ -85,7 +93,7 @@ const MagneticButton = ({
     <span ref={contentRef} className="relative z-10 flex items-center gap-2">
       <span>{children}</span>
       {showArrow && (
-        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+        <ArrowRight className="w-3.5 h-3.5 text-[#F47C20] group-hover:text-white transition-all duration-300 group-hover:translate-x-1" />
       )}
     </span>
   );

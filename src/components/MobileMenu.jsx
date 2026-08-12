@@ -7,7 +7,7 @@ import MagneticButton from './MagneticButton';
 const NAV_ITEMS = [
   { name: 'Home', id: 'home', tag: '01' },
   { name: 'About', id: 'who-we-are', tag: '02' },
-  { name: 'Why Kartomania', id: 'why-kartomania', tag: '03' },
+  { name: 'Experience', id: 'why-kartomania', tag: '03' },
   { name: 'Rules & Safety', id: 'racing-rules', tag: '04' },
   { name: '720M Track', id: 'track', tag: '05' },
   { name: 'Kart Fleet', id: 'karts', tag: '06' },
@@ -63,10 +63,10 @@ const MobileMenu = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/30 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
           />
 
-          {/* Slide-out Drawer Panel (Minimal White Theme) */}
+          {/* Slide-out Drawer Panel */}
           <motion.div
             variants={drawerVariants}
             initial="closed"
@@ -82,7 +82,7 @@ const MobileMenu = ({
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#EAEAEA] border border-[#E5E5E5] text-[#111111] transition-colors cursor-pointer"
+                  className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] border border-[#E5E5E5] text-[#0A0A0A] hover:text-[#F47C20] transition-colors cursor-pointer"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -106,8 +106,8 @@ const MobileMenu = ({
                         className={`
                           group w-full flex items-center justify-between py-2.5 px-3.5 rounded-sm border transition-all duration-200 cursor-pointer
                           ${isActive 
-                            ? 'bg-[#080808] border-[#080808] text-white font-bold' 
-                            : 'bg-white border-[#EAEAEA] hover:border-[#080808] text-[#333333] hover:text-[#080808] hover:bg-[#F9F9F9]'
+                            ? 'bg-[#F47C20] border-[#F47C20] text-white font-bold shadow-sm' 
+                            : 'bg-white border-[#EAEAEA] hover:border-[#F47C20] text-[#333333] hover:text-[#F47C20] hover:bg-[#FFF8F2]'
                           }
                         `}
                       >
@@ -122,7 +122,7 @@ const MobileMenu = ({
 
                         <ChevronRight 
                           className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                            isActive ? 'text-white translate-x-0.5' : 'text-[#AAAAAA] group-hover:text-[#080808] group-hover:translate-x-0.5'
+                            isActive ? 'text-white translate-x-0.5' : 'text-[#AAAAAA] group-hover:text-[#F47C20] group-hover:translate-x-0.5'
                           }`} 
                         />
                       </button>
@@ -148,9 +148,9 @@ const MobileMenu = ({
                 <div className="flex items-center justify-between">
                   <a
                     href="tel:+919717548897"
-                    className="flex items-center gap-2 hover:text-[#080808] transition-colors"
+                    className="flex items-center gap-2 hover:text-[#F47C20] transition-colors"
                   >
-                    <Phone className="w-3.5 h-3.5 text-[#080808]" />
+                    <Phone className="w-3.5 h-3.5 text-[#F47C20]" />
                     <span>+91 97175 48897</span>
                   </a>
 
@@ -160,7 +160,7 @@ const MobileMenu = ({
                       target="_blank"
                       rel="noreferrer"
                       aria-label="Instagram"
-                      className="p-2 rounded-full bg-[#F5F5F5] border border-[#E5E5E5] hover:border-[#080808] text-[#333333] transition-colors"
+                      className="p-2 rounded-full bg-[#F5F5F5] border border-[#E5E5E5] hover:border-[#F47C20] text-[#333333] hover:text-[#F47C20] transition-colors"
                     >
                       <InstagramIcon className="w-3.5 h-3.5" />
                     </a>
@@ -170,7 +170,7 @@ const MobileMenu = ({
                       target="_blank"
                       rel="noreferrer"
                       aria-label="Facebook"
-                      className="p-2 rounded-full bg-[#F5F5F5] border border-[#E5E5E5] hover:border-[#080808] text-[#333333] transition-colors"
+                      className="p-2 rounded-full bg-[#F5F5F5] border border-[#E5E5E5] hover:border-[#F47C20] text-[#333333] hover:text-[#F47C20] transition-colors"
                     >
                       <FacebookIcon className="w-3.5 h-3.5" />
                     </a>
@@ -179,9 +179,9 @@ const MobileMenu = ({
 
                 <a
                   href="mailto:kartomania.ggn@gmail.com"
-                  className="flex items-center gap-2 hover:text-[#080808] transition-colors text-[11px]"
+                  className="flex items-center gap-2 hover:text-[#F47C20] transition-colors text-[11px]"
                 >
-                  <Mail className="w-3.5 h-3.5 text-[#080808]" />
+                  <Mail className="w-3.5 h-3.5 text-[#F47C20]" />
                   <span>kartomania.ggn@gmail.com</span>
                 </a>
               </div>

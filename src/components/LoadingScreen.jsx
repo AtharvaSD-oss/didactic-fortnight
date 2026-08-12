@@ -35,12 +35,12 @@ const LoadingScreen = ({ onComplete }) => {
           key="loading-screen"
           initial={{ y: 0 }}
           exit={{ y: '-100%', transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }}
-          className="fixed inset-0 z-[10000] bg-white flex flex-col items-center justify-between p-8 sm:p-12 overflow-hidden selection:bg-[#080808]"
+          className="fixed inset-0 z-[10000] bg-white flex flex-col items-center justify-between p-8 sm:p-12 overflow-hidden selection:bg-[#F47C20]"
         >
           {/* Top Telemetry Tag */}
           <div className="w-full max-w-6xl flex items-center justify-between font-mono text-xs text-[#888888] z-10">
-            <span className="text-[#080808] font-bold tracking-widest">// KARTOMANIA ARENA</span>
-            <span>INITIALIZING</span>
+            <span className="text-[#0A0A0A] font-bold tracking-widest">// KARTOMANIA ARENA</span>
+            <span className="text-[#F47C20] font-bold">INITIALIZING TELEMETRY</span>
           </div>
 
           {/* Center Logo */}
@@ -55,7 +55,7 @@ const LoadingScreen = ({ onComplete }) => {
               className="h-16 sm:h-20 w-auto object-contain"
             />
 
-            <span className="font-mono text-xs text-[#666666] tracking-widest uppercase font-semibold">
+            <span className="font-mono text-xs text-[#F47C20] tracking-widest uppercase font-bold">
               PREMIUM MOTORSPORTS EXPERIENCE
             </span>
           </div>
@@ -63,14 +63,14 @@ const LoadingScreen = ({ onComplete }) => {
           {/* Bottom Progress Bar & Percentage */}
           <div className="w-full max-w-md z-10 space-y-2">
             <div className="flex items-center justify-between font-mono text-xs text-[#888888]">
-              <span className="uppercase text-[#080808] font-bold">SYSTEM SYNC</span>
-              <span className="text-base font-display font-bold text-[#080808]">{Math.round(progress)}%</span>
+              <span className="uppercase text-[#0A0A0A] font-bold">SYSTEM SYNC</span>
+              <span className="text-base font-display font-bold text-[#F47C20]">{Math.round(progress)}%</span>
             </div>
 
             {/* Outer Progress Track */}
-            <div className="w-full h-1 bg-[#EAEAEA] rounded-full overflow-hidden">
+            <div className="w-full h-1.5 bg-[#F0F0F0] rounded-full overflow-hidden">
               <motion.div
-                className="h-full bg-[#080808] rounded-full"
+                className="h-full bg-[#F47C20] rounded-full"
                 style={{ width: `${progress}%` }}
               />
             </div>

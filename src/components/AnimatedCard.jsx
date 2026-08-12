@@ -8,7 +8,7 @@ const AnimatedCard = ({ children, className = '', cursorText = '' }) => {
       transition={{ duration: 0.2, ease: 'easeOut' }}
       data-cursor={cursorText}
       className={`
-        bg-white border border-[#E5E5E5] hover:border-[#111111]
+        bg-white border border-[#E5E5E5] hover:border-[#F47C20]
         rounded-xl p-6 transition-all duration-300 shadow-sm
         hover:shadow-md group ${className}
       `}

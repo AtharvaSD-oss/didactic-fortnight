@@ -4,7 +4,7 @@ import { InstagramIcon, FacebookIcon, WhatsAppIcon } from './Icons';
 
 const Footer = () => {
   return (
-    <footer className="border-t border-white/10 bg-[#080808] py-14 px-4 sm:px-6 lg:px-12 text-center sm:text-left relative z-20 text-white">
+    <footer className="border-t border-white/10 bg-[#0A0A0A] py-14 px-4 sm:px-6 lg:px-12 text-center sm:text-left relative z-20 text-white">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
           <img 
@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
           <a 
             href="mailto:kartomania.ggn@gmail.com" 
-            className="inline-block font-mono text-xs text-white hover:text-[#AAAAAA] transition-colors"
+            className="inline-block font-mono text-xs text-white hover:text-[#F47C20] transition-colors"
           >
             kartomania.ggn@gmail.com
           </a>
@@ -30,7 +30,7 @@ const Footer = () => {
           <a 
             href="mailto:kartomania.ggn@gmail.com" 
             aria-label="Email Us"
-            className="p-2.5 rounded-full bg-[#151515] hover:bg-white text-[#AAAAAA] hover:text-[#080808] border border-white/10 transition-colors shadow-sm"
+            className="p-2.5 rounded-full bg-[#151515] hover:bg-[#F47C20] text-[#AAAAAA] hover:text-white border border-white/10 transition-colors shadow-sm"
           >
             <Mail className="w-4 h-4" />
           </a>
@@ -48,7 +48,7 @@ const Footer = () => {
             target="_blank" 
             rel="noreferrer"
             aria-label="Instagram"
-            className="p-2.5 rounded-full bg-[#151515] hover:bg-white text-[#AAAAAA] hover:text-[#080808] border border-white/10 transition-colors shadow-sm"
+            className="p-2.5 rounded-full bg-[#151515] hover:bg-[#F47C20] text-[#AAAAAA] hover:text-white border border-white/10 transition-colors shadow-sm"
           >
             <InstagramIcon className="w-4 h-4" />
           </a>
@@ -57,14 +57,14 @@ const Footer = () => {
             target="_blank" 
             rel="noreferrer"
             aria-label="Facebook"
-            className="p-2.5 rounded-full bg-[#151515] hover:bg-white text-[#AAAAAA] hover:text-[#080808] border border-white/10 transition-colors shadow-sm"
+            className="p-2.5 rounded-full bg-[#151515] hover:bg-[#F47C20] text-[#AAAAAA] hover:text-white border border-white/10 transition-colors shadow-sm"
           >
             <FacebookIcon className="w-4 h-4" />
           </a>
           <a 
             href="tel:+919717548897" 
             aria-label="Call Phone"
-            className="p-2.5 rounded-full bg-[#151515] hover:bg-white text-[#AAAAAA] hover:text-[#080808] border border-white/10 transition-colors shadow-sm"
+            className="p-2.5 rounded-full bg-[#151515] hover:bg-[#F47C20] text-[#AAAAAA] hover:text-white border border-white/10 transition-colors shadow-sm"
           >
             <Phone className="w-4 h-4" />
           </a>

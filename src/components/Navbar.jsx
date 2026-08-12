@@ -8,7 +8,7 @@ import MobileMenu from './MobileMenu';
 const NAV_LINKS = [
   { name: 'Home', id: 'home' },
   { name: 'About', id: 'who-we-are' },
-  { name: 'Why Us', id: 'why-kartomania' },
+  { name: 'Experience', id: 'why-kartomania' },
   { name: 'Track', id: 'track' },
   { name: 'Fleet', id: 'karts' },
   { name: 'Leap Frog', id: 'leap-frog' },
@@ -83,8 +83,8 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
             />
           </button>
 
-          {/* 2. CENTER: Minimal Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2 shrink">
+          {/* 2. CENTER: Navigation Links with Orange Active States */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 shrink">
             {NAV_LINKS.map((link, idx) => {
               const isActive = activeSection === link.id;
               const isHovered = hoveredIndex === idx;
@@ -97,15 +97,15 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
                   onMouseLeave={() => setHoveredIndex(null)}
                   className={`
                     relative px-2.5 py-1 text-xs font-mono font-medium tracking-wider uppercase transition-colors duration-200 cursor-pointer bg-transparent border-none whitespace-nowrap
-                    ${isActive ? 'text-[#080808] font-bold' : 'text-[#666666] hover:text-[#080808]'}
+                    ${isActive ? 'text-[#F47C20] font-bold' : 'text-[#0A0A0A] hover:text-[#F47C20]'}
                   `}
                 >
                   <span>{link.name}</span>
 
-                  {/* Underline on active or hover */}
+                  {/* Orange Active/Hover Indicator Line */}
                   <span
                     className={`
-                      absolute bottom-0 left-2.5 right-2.5 h-[1.5px] bg-[#080808] transition-all duration-200
+                      absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#F47C20] transition-all duration-200
                       ${isActive ? 'w-[calc(100%-20px)] opacity-100' : isHovered ? 'w-[calc(100%-20px)] opacity-60' : 'w-0 opacity-0'}
                     `}
                   />
@@ -122,7 +122,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#EAEAEA] text-[#333333] hover:text-[#080808] transition-colors"
+                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#333333] hover:text-[#F47C20] transition-colors"
               >
                 <InstagramIcon className="w-3.5 h-3.5" />
               </a>
@@ -132,7 +132,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
-                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#EAEAEA] text-[#333333] hover:text-[#080808] transition-colors"
+                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#333333] hover:text-[#F47C20] transition-colors"
               >
                 <FacebookIcon className="w-3.5 h-3.5" />
               </a>
@@ -140,7 +140,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
               <button
                 onClick={onOpenSearch}
                 aria-label="Search"
-                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#EAEAEA] text-[#333333] hover:text-[#080808] transition-colors cursor-pointer"
+                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#333333] hover:text-[#F47C20] transition-colors cursor-pointer"
               >
                 <Search className="w-3.5 h-3.5" />
               </button>
@@ -148,7 +148,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
               <a
                 href="tel:+919717548897"
                 aria-label="Call"
-                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#EAEAEA] text-[#333333] hover:text-[#080808] transition-colors"
+                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#333333] hover:text-[#F47C20] transition-colors"
               >
                 <Phone className="w-3.5 h-3.5" />
               </a>
@@ -165,7 +165,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
             <button
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open mobile menu"
-              className="lg:hidden p-2.5 rounded-full bg-[#F5F5F5] border border-[#E5E5E5] text-[#080808] transition-colors cursor-pointer"
+              className="lg:hidden p-2.5 rounded-full bg-[#F5F5F5] border border-[#E5E5E5] text-[#0A0A0A] hover:text-[#F47C20] transition-colors cursor-pointer"
             >
               <Menu className="w-5 h-5" />
             </button>

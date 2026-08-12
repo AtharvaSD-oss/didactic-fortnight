@@ -4,14 +4,16 @@
 
 :root {
   --color-white: #FFFFFF;
-  --color-soft-gray: #F3F3F3;
-  --color-card-gray: #F9F9F9;
-  --color-medium-gray: #B8B8B8;
-  --color-dark-gray: #666666;
-  --color-black: #080808;
+  --color-orange: #F47C20;
+  --color-orange-light: #FF9A4D;
+  --color-orange-tint: #FFF8F2;
+  --color-orange-subtle: #FFF0E5;
+  --color-orange-hover: #E0670E;
+  --color-black: #0A0A0A;
   --color-text-primary: #111111;
+  --color-text-muted: #666666;
   --color-border: #E5E5E5;
-  --color-border-dark: rgba(255, 255, 255, 0.12);
+  --color-border-orange: rgba(244, 124, 32, 0.35);
 }
 
 @layer base {
@@ -51,28 +53,27 @@
 
   .font-mono, code, .telemetry-tag {
     font-family: 'Space Grotesk', monospace;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
   }
 }
 
-/* Minimal Luxury Automotive Header */
+/* Minimal Luxury Motorsport Header */
 .header-minimal-top {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid #EAEAEA;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
 .header-minimal-scrolled {
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid #DCDCDC;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border-bottom: 2px solid #F47C20;
+  box-shadow: 0 4px 20px rgba(244, 124, 32, 0.08);
 }
 
-/* Custom Minimal Scrollbar */
+/* Custom Minimal Scrollbar with Racing Orange Accents */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -80,9 +81,18 @@
   background: #FFFFFF;
 }
 ::-webkit-scrollbar-thumb {
-  background: #B8B8B8;
+  background: #F47C20;
   border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #080808;
+  background: #0A0A0A;
+}
+
+/* Smooth orange pulse animation for live telemetry */
+@keyframes orangePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.15); }
+}
+.animate-orange-pulse {
+  animation: orangePulse 2s infinite ease-in-out;
 }

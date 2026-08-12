@@ -366,7 +366,7 @@ const GameCanvas = () => {
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1.2, opacity: 1 }}
               transition={{ duration: 0.4 }}
-              className="text-7xl sm:text-9xl font-display font-black text-[#C9A45C] text-glow drop-shadow-2xl"
+              className="text-7xl sm:text-9xl font-display font-black text-[#F47C20] text-glow drop-shadow-2xl"
             >
               {countdown}
             </motion.div>
@@ -376,14 +376,14 @@ const GameCanvas = () => {
         {/* Race Finish Victory Podium Overlay */}
         {gameState === 'finished' && (
           <div className="absolute inset-0 z-30 flex flex-col items-center justify-center bg-black/85 backdrop-blur-md p-6 text-center space-y-6">
-            <div className="p-4 rounded-full bg-[#C9A45C]/20 border border-[#C9A45C] text-[#C9A45C] animate-bounce">
+            <div className="p-4 rounded-full bg-[#F47C20]/20 border border-[#F47C20] text-[#F47C20] animate-bounce">
               <Trophy className="w-12 h-12" />
             </div>
 
             <div className="space-y-1">
-              <span className="font-mono text-xs text-[#C9A45C] uppercase tracking-widest font-bold">// RACE FINISHED</span>
+              <span className="font-mono text-xs text-[#F47C20] uppercase tracking-widest font-bold">// RACE FINISHED</span>
               <h3 className="text-4xl font-display font-black text-white uppercase">
-                YOU FINISHED <span className="text-[#C9A45C]">{finalRank === 1 ? '1ST PLACE! 🏆' : `${finalRank}ND PLACE`}</span>
+                YOU FINISHED <span className="text-[#F47C20]">{finalRank === 1 ? '1ST PLACE! 🏆' : `${finalRank}ND PLACE`}</span>
               </h3>
             </div>
 
@@ -405,7 +405,7 @@ const GameCanvas = () => {
                 onTouchEnd={() => (inputsRef.current.left = false)}
                 onMouseDown={() => (inputsRef.current.left = true)}
                 onMouseUp={() => (inputsRef.current.left = false)}
-                className="w-14 h-14 rounded-2xl bg-black/70 border border-white/20 text-white font-bold text-xl active:bg-[#EE3124]"
+                className="w-14 h-14 rounded-2xl bg-black/70 border border-white/20 text-white font-bold text-xl active:bg-[#F47C20]"
               >
                 &larr;
               </button>
@@ -414,7 +414,7 @@ const GameCanvas = () => {
                 onTouchEnd={() => (inputsRef.current.right = false)}
                 onMouseDown={() => (inputsRef.current.right = true)}
                 onMouseUp={() => (inputsRef.current.right = false)}
-                className="w-14 h-14 rounded-2xl bg-black/70 border border-white/20 text-white font-bold text-xl active:bg-[#EE3124]"
+                className="w-14 h-14 rounded-2xl bg-black/70 border border-white/20 text-white font-bold text-xl active:bg-[#F47C20]"
               >
                 &rarr;
               </button>
@@ -427,7 +427,7 @@ const GameCanvas = () => {
                 onTouchEnd={() => (inputsRef.current.drift = false)}
                 onMouseDown={() => (inputsRef.current.drift = true)}
                 onMouseUp={() => (inputsRef.current.drift = false)}
-                className="w-14 h-14 rounded-2xl bg-[#EE3124]/40 border border-[#EE3124] text-white font-mono font-bold text-xs active:bg-[#EE3124]"
+                className="w-14 h-14 rounded-2xl bg-[#F47C20]/40 border border-[#F47C20] text-white font-mono font-bold text-xs active:bg-[#F47C20]"
               >
                 DRIFT
               </button>
@@ -436,7 +436,7 @@ const GameCanvas = () => {
                 onTouchEnd={() => (inputsRef.current.up = false)}
                 onMouseDown={() => (inputsRef.current.up = true)}
                 onMouseUp={() => (inputsRef.current.up = false)}
-                className="w-16 h-14 rounded-2xl bg-[#EE3124] text-white font-mono font-bold text-sm shadow-[0_0_15px_#EE3124] active:scale-95"
+                className="w-16 h-14 rounded-2xl bg-[#F47C20] text-white font-mono font-bold text-sm shadow-[0_0_15px_#F47C20] active:scale-95"
               >
                 GAS
               </button>

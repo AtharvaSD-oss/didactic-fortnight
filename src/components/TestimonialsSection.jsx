@@ -1,13 +1,13 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectCoverflow } from 'swiper/modules';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, MessageSquare } from 'lucide-react';
 
 const testimonials = [
   {
     name: "Rohan Verma",
     role: "Rotax Max Competitor",
-    review: "The track layout at Kartomania is insane! The multi-level elevation changes and Sodi RT10 karts deliver pure F1 style thrills. Best indoor karting in India.",
+    review: "The track layout at Kartomania is insane! The multi-level elevation changes and Sodi RT10 karts deliver pure F1 style thrills. Best outdoor karting in India.",
     rating: 5,
     tag: "PRO DRIVER"
   },
@@ -42,7 +42,7 @@ const testimonials = [
   {
     name: "Kabir Mehta",
     role: "Karting Fanatic",
-    review: "The 270cc 4-stroke engines pull hard out of apexes. The best asphalt indoor track in NCR without a doubt. The weekday offers are super value for money.",
+    review: "The 270cc 4-stroke engines pull hard out of apexes. The best asphalt outdoor track in NCR without a doubt. The weekday offers are super value for money.",
     rating: 5,
     tag: "REGULAR RACER"
   },
@@ -67,14 +67,14 @@ const TestimonialsSection = () => {
     <section id="testimonials" className="py-20 sm:py-28 px-4 max-w-7xl mx-auto border-t border-[#EAEAEA] relative z-20 bg-[#F9F9F9] text-[#111111]">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E5E5E5] pb-6 mb-12 text-left">
         <div>
-          <span className="font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold block mb-2">
-            // PILOT TESTIMONIALS & REVIEWS
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#080808] uppercase tracking-tight">
-            RACER <span className="text-[#666666]">EXPERIENCES</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest mb-2 shadow-sm">
+            <MessageSquare className="w-3.5 h-3.5 text-[#F47C20]" /> // PILOT TESTIMONIALS & REVIEWS
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+            RACER <span className="text-[#F47C20]">EXPERIENCES</span>
           </h2>
         </div>
-        <p className="text-xs sm:text-sm font-mono text-[#888888] max-w-sm">
+        <p className="text-xs sm:text-sm font-mono text-[#666666] max-w-sm">
           Hear what drivers, amateur racers, and corporate event teams say about Kartomania.
         </p>
       </div>
@@ -106,22 +106,22 @@ const TestimonialsSection = () => {
               {({ isActive }) => (
                 <div
                   className={`
-                    p-7 rounded-xl transition-all duration-300 border text-left flex flex-col justify-between h-64
+                    p-7 rounded-2xl transition-all duration-300 border text-left flex flex-col justify-between h-64
                     ${
                       isActive
-                        ? 'bg-white border-[#080808] shadow-md scale-100'
+                        ? 'bg-white border-2 border-[#F47C20] shadow-xl scale-100'
                         : 'bg-[#F5F5F5] border-[#E5E5E5] opacity-60 scale-95'
                     }
                   `}
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1 text-[#080808]">
+                      <div className="flex items-center gap-1 text-[#F47C20]">
                         {[...Array(item.rating)].map((_, i) => (
-                          <Star key={i} className="w-3.5 h-3.5 fill-[#080808] text-[#080808]" />
+                          <Star key={i} className="w-3.5 h-3.5 fill-[#F47C20] text-[#F47C20]" />
                         ))}
                       </div>
-                      <span className="px-2.5 py-0.5 rounded-sm bg-[#F5F5F5] text-[#555555] font-mono text-[9px] font-bold uppercase tracking-wider border border-[#E5E5E5]">
+                      <span className="px-2.5 py-0.5 rounded-sm bg-[#FFF0E5] text-[#F47C20] font-mono text-[9px] font-bold uppercase tracking-wider border border-[#F47C20]/20">
                         {item.tag}
                       </span>
                     </div>
@@ -133,10 +133,10 @@ const TestimonialsSection = () => {
 
                   <div className="flex items-center justify-between pt-3 border-t border-[#F0F0F0]">
                     <div>
-                      <h4 className="text-sm font-display font-bold text-[#080808] uppercase">{item.name}</h4>
-                      <p className="text-[10px] font-mono text-[#888888]">{item.role}</p>
+                      <h4 className="text-sm font-display font-bold text-[#0A0A0A] uppercase">{item.name}</h4>
+                      <p className="text-[10px] font-mono text-[#666666]">{item.role}</p>
                     </div>
-                    <Quote className="w-5 h-5 text-[#CCCCCC]" />
+                    <Quote className="w-5 h-5 text-[#F47C20]/30" />
                   </div>
                 </div>
               )}

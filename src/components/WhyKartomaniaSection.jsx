@@ -49,55 +49,58 @@ const USPs = [
 
 const WhyKartomaniaSection = () => {
   return (
-    <section id="why-kartomania" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-12 bg-[#080808] text-white relative z-20">
-      <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16">
+    <section id="why-kartomania" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-12 bg-[#F47C20] text-white relative z-20 overflow-hidden">
+      {/* Background subtle speed lines pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] opacity-50 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16 relative z-10">
         
-        {/* Editorial Black Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/10 pb-8">
-          <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 font-mono text-xs text-[#888888] uppercase tracking-widest">
-              <Trophy className="w-3.5 h-3.5 text-white" /> // MOTORSPORT EXCELLENCE
+        {/* Section Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/25 pb-8 text-left">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-black text-white font-mono text-xs uppercase tracking-widest font-bold shadow-sm">
+              <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // MOTORSPORT EXCELLENCE
             </div>
             <h2 className="text-3xl sm:text-5xl lg:text-7xl font-display font-bold text-white uppercase tracking-tight leading-none">
-              WHY <span className="text-[#888888]">KARTOMANIA?</span>
+              WHY <span className="text-[#0A0A0A]">KARTOMANIA?</span>
             </h2>
           </div>
-          <p className="text-xs sm:text-sm font-mono text-[#888888] uppercase tracking-widest max-w-md">
-            // THE ONLY RACING TRACK OWNED, RUN & MAINTAINED BY A PROFESSIONAL RACER
+          <p className="text-xs sm:text-sm font-mono text-white/90 uppercase tracking-widest max-w-md font-semibold">
+            THE ONLY RACING TRACK IN NORTHERN INDIA OWNED & MAINTAINED BY A PROFESSIONAL RACER
           </p>
         </div>
 
-        {/* USP Cards Grid in Minimal Dark Architecture */}
+        {/* High-Contrast White Cards Grid (60% White cards on 30% Orange section) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {USPs.map((item, idx) => {
             const IconComp = item.icon;
             return (
               <div
                 key={idx}
-                className="p-8 rounded-xl bg-[#111111] border border-white/10 hover:border-white/30 transition-all duration-300 flex flex-col justify-between space-y-6 group"
+                className="p-8 rounded-xl bg-white text-[#0A0A0A] border border-white/20 hover:border-black shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between space-y-6 group"
               >
-                <div className="space-y-4">
+                <div className="space-y-4 text-left">
                   <div className="flex items-center justify-between">
-                    <div className="p-3 rounded-lg bg-white/5 text-white border border-white/10 group-hover:bg-white group-hover:text-[#080808] transition-colors duration-300">
+                    <div className="p-3 rounded-lg bg-[#FFF0E5] text-[#F47C20] border border-[#F47C20]/20 group-hover:bg-[#0A0A0A] group-hover:text-white transition-colors duration-300">
                       <IconComp className="w-5 h-5" />
                     </div>
-                    <span className="px-2.5 py-1 rounded-sm bg-black text-[#888888] font-mono text-[9px] font-bold uppercase tracking-widest border border-white/10">
+                    <span className="px-2.5 py-1 rounded-sm bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-widest">
                       {item.badge}
                     </span>
                   </div>
 
-                  <div className="space-y-2 text-left">
-                    <h3 className="text-lg sm:text-xl font-display font-bold text-white uppercase tracking-wide">
+                  <div className="space-y-2">
+                    <h3 className="text-lg sm:text-xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm font-sans text-[#AAAAAA] leading-relaxed">
+                    <p className="text-xs sm:text-sm font-sans text-[#555555] leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-mono text-white font-semibold">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-white" />
+                <div className="pt-4 border-t border-[#F0F0F0] flex items-center gap-2 text-xs font-mono text-[#0A0A0A] font-bold">
+                  <CheckCircle2 className="w-4 h-4 text-[#F47C20]" />
                   <span>{item.highlight}</span>
                 </div>
               </div>
@@ -105,22 +108,22 @@ const WhyKartomaniaSection = () => {
           })}
         </div>
 
-        {/* Bottom Banner Pill */}
-        <div className="p-8 rounded-xl bg-[#111111] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        {/* Bottom Banner Callout (Black contrast block on orange) */}
+        <div className="p-8 rounded-xl bg-[#0A0A0A] border border-black/50 text-white flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-2xl">
           <div className="space-y-1">
-            <div className="font-display font-bold text-base sm:text-lg text-white uppercase tracking-wider">
+            <div className="font-display font-bold text-base sm:text-xl text-white uppercase tracking-tight">
               READY TO FEEL THE THRILL ON OUR 720M OUTDOOR CIRCUIT?
             </div>
-            <div className="font-mono text-xs text-[#888888]">
-              Open all 7 days from 2 PM onwards at Entertainland Mall, Sector 83, Manesar.
+            <div className="font-mono text-xs text-[#B8B8B8]">
+              Open all 7 days from 2 PM onwards at Entertainland Mall, Sector 83, Manesar, Gurgaon.
             </div>
           </div>
           <MagneticButton 
             href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" 
-            variant="secondary"
-            className="py-3 px-8 text-xs whitespace-nowrap bg-white text-[#080808] hover:bg-transparent hover:text-white hover:border-white border-white"
+            variant="orange"
+            className="py-3.5 px-8 text-xs whitespace-nowrap"
           >
-            BOOK TRACK SESSION
+            BOOK TRACK SESSION &rarr;
           </MagneticButton>
         </div>
 

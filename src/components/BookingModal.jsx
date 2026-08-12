@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Flame, MessageCircle, Phone, Clock, MapPin, Mail } from 'lucide-react';
+import { X, ExternalLink, MessageCircle, Phone, Clock, MapPin, Mail, Zap } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 const RACEFACER_URL = "https://web.racefacer.com/kiosk/kartomaniaentertainlandmall";
@@ -10,10 +10,10 @@ const BookingModal = ({ isOpen, onClose }) => {
   React.useEffect(() => {
     if (isOpen) {
       confetti({
-        particleCount: 50,
-        spread: 60,
+        particleCount: 60,
+        spread: 70,
         origin: { y: 0.6 },
-        colors: ['#080808', '#666666', '#B8B8B8']
+        colors: ['#0A0A0A', '#F47C20', '#FF9A4D', '#FFFFFF']
       });
     }
   }, [isOpen]);
@@ -22,18 +22,18 @@ const BookingModal = ({ isOpen, onClose }) => {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.94, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.94, y: 15 }}
           transition={{ duration: 0.25 }}
-          className="relative w-full max-w-lg bg-white border border-[#E5E5E5] rounded-2xl p-6 sm:p-8 shadow-2xl text-[#111111] text-left overflow-hidden my-auto max-h-[90vh] flex flex-col justify-between"
+          className="relative w-full max-w-lg bg-white border-2 border-[#F47C20] rounded-2xl p-6 sm:p-8 shadow-2xl text-[#111111] text-left overflow-hidden my-auto max-h-[90vh] flex flex-col justify-between"
         >
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 p-2 rounded-full bg-[#F5F5F5] hover:bg-[#EAEAEA] text-[#111111] transition-colors z-10 cursor-pointer"
+            className="absolute top-5 right-5 p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#0A0A0A] hover:text-[#F47C20] transition-colors z-10 cursor-pointer"
             aria-label="Close Booking Modal"
           >
             <X className="w-4 h-4" />
@@ -41,11 +41,11 @@ const BookingModal = ({ isOpen, onClose }) => {
 
           {/* Header */}
           <div className="space-y-1.5 pb-4 border-b border-[#EAEAEA]">
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-sm bg-[#F5F5F5] border border-[#E5E5E5] text-[#111111] font-mono text-[10px] font-bold uppercase tracking-wider">
-              <Flame className="w-3 h-3 text-[#080808]" /> OFFICIAL TRACK BOOKING
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 text-[#F47C20] font-mono text-[10px] font-bold uppercase tracking-wider shadow-sm">
+              <Zap className="w-3 h-3 text-[#F47C20]" /> OFFICIAL TRACK BOOKING
             </div>
-            <h3 className="text-xl sm:text-2xl font-display font-bold text-[#080808] uppercase tracking-tight">
-              RESERVE YOUR <span className="text-[#666666]">RACING SESSION</span>
+            <h3 className="text-xl sm:text-2xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+              RESERVE YOUR <span className="text-[#F47C20]">RACING SESSION</span>
             </h3>
             <p className="text-xs text-[#666666] font-sans">
               Choose your preferred booking channel below for instant track slot confirmation.
@@ -59,7 +59,7 @@ const BookingModal = ({ isOpen, onClose }) => {
               href={RACEFACER_URL}
               target="_blank"
               rel="noreferrer"
-              className="group flex items-center justify-between p-4 rounded-xl bg-[#080808] text-white shadow-md hover:shadow-lg transition-all"
+              className="group flex items-center justify-between p-4 rounded-xl bg-[#0A0A0A] hover:bg-[#F47C20] text-white shadow-md hover:shadow-xl transition-all"
             >
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-white/15 text-white">
@@ -68,9 +68,9 @@ const BookingModal = ({ isOpen, onClose }) => {
                 <div>
                   <div className="text-sm font-display font-bold uppercase tracking-wider flex items-center gap-2">
                     <span>RaceFacer Kiosk Booking</span>
-                    <span className="px-1.5 py-0.5 rounded-sm bg-white text-[#080808] font-mono text-[9px] font-bold">INSTANT</span>
+                    <span className="px-1.5 py-0.5 rounded-sm bg-white text-[#0A0A0A] font-mono text-[9px] font-bold">INSTANT</span>
                   </div>
-                  <div className="text-[11px] font-sans text-gray-300">
+                  <div className="text-[11px] font-sans text-gray-200">
                     Live slot selection, telemetry profile & leaderboard timing
                   </div>
                 </div>
@@ -85,7 +85,7 @@ const BookingModal = ({ isOpen, onClose }) => {
               href={`https://wa.me/${WHATSAPP_PRIMARY}?text=${encodeURIComponent("Hi Kartomania! I would like to book a karting session at Entertainland Mall.")}`}
               target="_blank"
               rel="noreferrer"
-              className="group flex items-center justify-between p-4 rounded-xl bg-[#F9F9F9] hover:bg-[#F0F0F0] border border-[#E5E5E5] hover:border-[#080808] transition-all text-[#111111]"
+              className="group flex items-center justify-between p-4 rounded-xl bg-[#F9F9F9] hover:bg-[#FFF0E5] border border-[#E5E5E5] hover:border-[#25D366] transition-all text-[#111111]"
             >
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-[#25D366] text-white">
@@ -101,7 +101,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                   </div>
                 </div>
               </div>
-              <span className="text-xs font-mono font-bold text-[#080808] group-hover:translate-x-1 transition-transform">
+              <span className="text-xs font-mono font-bold text-[#0A0A0A] group-hover:text-[#25D366] group-hover:translate-x-1 transition-transform">
                 CHAT &rarr;
               </span>
             </a>
@@ -109,10 +109,10 @@ const BookingModal = ({ isOpen, onClose }) => {
             {/* 3. Phone Call Booking */}
             <a
               href="tel:+919717548897"
-              className="group flex items-center justify-between p-4 rounded-xl bg-[#F9F9F9] hover:bg-[#F0F0F0] border border-[#E5E5E5] hover:border-[#080808] transition-all text-[#111111]"
+              className="group flex items-center justify-between p-4 rounded-xl bg-[#F9F9F9] hover:bg-[#FFF0E5] border border-[#E5E5E5] hover:border-[#F47C20] transition-all text-[#111111]"
             >
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-[#080808] text-white">
+                <div className="p-2 rounded-lg bg-[#0A0A0A] text-white">
                   <Phone className="w-4 h-4" />
                 </div>
                 <div>
@@ -124,7 +124,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                   </div>
                 </div>
               </div>
-              <span className="text-xs font-mono font-bold text-[#080808] group-hover:translate-x-1 transition-transform">
+              <span className="text-xs font-mono font-bold text-[#0A0A0A] group-hover:text-[#F47C20] group-hover:translate-x-1 transition-transform">
                 CALL &rarr;
               </span>
             </a>
@@ -132,11 +132,11 @@ const BookingModal = ({ isOpen, onClose }) => {
             {/* 4. Corporate & Group Inquiries */}
             <a
               href="mailto:kartomania.ggn@gmail.com?subject=Corporate%20/%20Group%20Booking%20Inquiry%20-%20Kartomania"
-              className="group flex items-center justify-between p-3.5 rounded-xl bg-[#F9F9F9] hover:bg-[#F0F0F0] border border-[#E5E5E5] transition-all text-[#111111]"
+              className="group flex items-center justify-between p-3.5 rounded-xl bg-[#F9F9F9] hover:bg-[#FFF0E5] border border-[#E5E5E5] hover:border-[#F47C20] transition-all text-[#111111]"
             >
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-white border border-[#E5E5E5] text-[#111111]">
-                  <Mail className="w-3.5 h-3.5" />
+                  <Mail className="w-3.5 h-3.5 text-[#F47C20]" />
                 </div>
                 <div>
                   <div className="text-xs font-display font-bold uppercase">
@@ -147,7 +147,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                   </div>
                 </div>
               </div>
-              <span className="text-[11px] font-mono font-bold text-[#888888] group-hover:translate-x-1 transition-transform">
+              <span className="text-[11px] font-mono font-bold text-[#888888] group-hover:text-[#F47C20] group-hover:translate-x-1 transition-transform">
                 EMAIL &rarr;
               </span>
             </a>
@@ -156,11 +156,11 @@ const BookingModal = ({ isOpen, onClose }) => {
           {/* Footer Info: Hours & Location */}
           <div className="pt-4 border-t border-[#EAEAEA] grid grid-cols-1 sm:grid-cols-2 gap-2 text-[10px] font-mono text-[#888888]">
             <div className="flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5 text-[#080808] shrink-0" />
+              <Clock className="w-3.5 h-3.5 text-[#F47C20] shrink-0" />
               <span>Open all 7 days: 2 PM – 11 PM</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-[#080808] shrink-0" />
+              <MapPin className="w-3.5 h-3.5 text-[#F47C20] shrink-0" />
               <span>Entertainland Mall, Sec 83</span>
             </div>
           </div>

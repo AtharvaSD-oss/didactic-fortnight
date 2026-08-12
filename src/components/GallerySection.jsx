@@ -89,12 +89,12 @@ const GallerySection = () => {
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#EAEAEA] pb-8 mb-10 sm:mb-14 text-left">
         <div>
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold mb-2">
-            <Camera className="w-3.5 h-3.5 text-[#080808]" /> // MOTORSPORT IN ACTION
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest mb-2 shadow-sm">
+            <Camera className="w-3.5 h-3.5 text-[#F47C20]" /> // MOTORSPORT IN ACTION
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#080808] uppercase tracking-tight">
-            KARTOMANIA <span className="text-[#666666]">GALLERY</span>
+          <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+            KARTOMANIA <span className="text-[#F47C20]">GALLERY</span>
           </h2>
         </div>
 
@@ -107,10 +107,10 @@ const GallerySection = () => {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`
-                  px-3.5 py-1.5 rounded-sm font-mono text-xs font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer
+                  px-3.5 py-1.5 rounded-sm font-mono text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer
                   ${isActive
-                    ? 'bg-[#080808] text-white shadow-sm'
-                    : 'bg-[#F5F5F5] text-[#666666] hover:bg-[#EAEAEA] hover:text-[#080808] border border-[#E5E5E5]'
+                    ? 'bg-[#F47C20] text-white shadow-sm'
+                    : 'bg-[#F5F5F5] text-[#666666] hover:bg-[#FFF0E5] hover:text-[#F47C20] border border-[#E5E5E5]'
                   }
                 `}
               >
@@ -137,7 +137,7 @@ const GallerySection = () => {
               key={photo.id}
               onClick={() => openLightbox(index)}
               className={`
-                group relative rounded-xl overflow-hidden border border-[#E5E5E5] bg-[#F9F9F9] shadow-sm hover:shadow-lg hover:border-[#080808]
+                group relative rounded-2xl overflow-hidden border-2 border-[#E5E5E5] bg-[#F9F9F9] shadow-sm hover:shadow-xl hover:border-[#F47C20]
                 transition-all duration-500 cursor-pointer ${photo.aspect}
               `}
               data-cursor="EXPAND"
@@ -152,7 +152,7 @@ const GallerySection = () => {
 
               {/* Subtle Expand Icon on Hover */}
               <div className="absolute top-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="p-2.5 rounded-full bg-black/75 backdrop-blur-md text-white border border-white/20 hover:bg-white hover:text-[#080808] transition-colors shadow-lg">
+                <div className="p-2.5 rounded-full bg-black/75 backdrop-blur-md text-white border border-white/20 hover:bg-[#F47C20] hover:text-white transition-colors shadow-lg">
                   <Maximize2 className="w-3.5 h-3.5" />
                 </div>
               </div>
@@ -166,7 +166,7 @@ const GallerySection = () => {
         {activePhotoIndex !== null && filteredPhotos[activePhotoIndex] && (
           <div
             onClick={closeLightbox}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/95 backdrop-blur-md"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -180,7 +180,7 @@ const GallerySection = () => {
               <button
                 onClick={closeLightbox}
                 aria-label="Close Lightbox"
-                className="absolute top-2 right-2 z-30 p-2.5 rounded-full bg-black/80 text-white hover:text-[#888888] border border-white/20 transition-all cursor-pointer shadow-2xl"
+                className="absolute top-2 right-2 z-30 p-2.5 rounded-full bg-black/80 text-white hover:text-[#F47C20] border border-white/20 transition-all cursor-pointer shadow-2xl"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -189,7 +189,7 @@ const GallerySection = () => {
               <button
                 onClick={prevPhoto}
                 aria-label="Previous Photo"
-                className="absolute left-2 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/80 backdrop-blur-md text-white hover:text-[#888888] border border-white/20 transition-all cursor-pointer shadow-2xl"
+                className="absolute left-2 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/80 backdrop-blur-md text-white hover:bg-[#F47C20] hover:text-white border border-white/20 transition-all cursor-pointer shadow-2xl"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
@@ -197,7 +197,7 @@ const GallerySection = () => {
               <button
                 onClick={nextPhoto}
                 aria-label="Next Photo"
-                className="absolute right-2 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/80 backdrop-blur-md text-white hover:text-[#888888] border border-white/20 transition-all cursor-pointer shadow-2xl"
+                className="absolute right-2 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/80 backdrop-blur-md text-white hover:bg-[#F47C20] hover:text-white border border-white/20 transition-all cursor-pointer shadow-2xl"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
