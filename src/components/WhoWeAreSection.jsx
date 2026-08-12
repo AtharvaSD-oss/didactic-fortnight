@@ -81,23 +81,50 @@ const WhoWeAreSection = () => {
     <section
       ref={sectionRef}
       id="who-we-are"
-      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] relative z-20 text-[#111111] bg-white"
+      className="relative z-20 text-[#111111] bg-white"
     >
-      {/* Top Header Tag */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 sm:mb-16 border-b border-[#EAEAEA] pb-6">
-        <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest mb-2 shadow-sm">
-            <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // ABOUT KARTOMANIA
+      {/* ── Dark Transition Header Block matching Reference Design ── */}
+      <div className="bg-[#0A0A0A] text-white py-6 sm:py-8 px-4 sm:px-6 lg:px-12 border-t border-b border-black">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2 font-mono text-xs font-bold tracking-widest uppercase">
+              <span className="w-[3px] h-3.5 bg-[#F47C20] inline-block" aria-hidden="true" />
+              <span className="text-[#F47C20]">02</span>
+              <span className="text-white">/</span>
+              <span className="text-white">EXPERIENCE</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold uppercase tracking-tight text-white">
+              THE KARTOMANIA EXPERIENCE
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-tight">
-            NORTHERN INDIA'S PREMIER <br className="hidden sm:block" />
-            <span className="text-[#F47C20]">720M OUTDOOR</span> TRACK
-          </h2>
+
+          <a
+            href="#why-kartomania"
+            className="inline-flex items-center gap-2 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest hover:text-white transition-colors duration-200"
+          >
+            <span>VIEW ALL</span>
+            <span className="w-8 h-[2px] bg-[#F47C20] inline-block" />
+            <span>&rarr;</span>
+          </a>
         </div>
-        <span className="font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold">
-          MANESAR &bull; GURGAON
-        </span>
       </div>
+
+      <div className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
+        {/* Top Header Tag */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 sm:mb-16 border-b border-[#EAEAEA] pb-6">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest mb-2 shadow-sm">
+              <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // ABOUT KARTOMANIA
+            </div>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-tight">
+              NORTHERN INDIA'S PREMIER <br className="hidden sm:block" />
+              <span className="text-[#F47C20]">720M OUTDOOR</span> TRACK
+            </h2>
+          </div>
+          <span className="font-mono text-xs text-[#666666] uppercase tracking-widest font-semibold">
+            MANESAR &bull; GURGAON
+          </span>
+        </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-16">
         {/* Left Image Showcase */}
@@ -143,6 +170,7 @@ const WhoWeAreSection = () => {
         <StatCounter number="02" end={14} label="RACING TURNS & APEXES" />
         <StatCounter number="03" end={4} label="KART FLEET CATEGORIES" />
         <StatCounter number="04" end={1000} suffix="+" label="RACES COMPLETED WEEKLY" />
+      </div>
       </div>
     </section>
   );

@@ -85,19 +85,19 @@ export const LeapFrogSection = () => {
 
   const galleryImages = [
     {
-      src: "/leap-frog-1.jpg",
+      src: "/leap-frog/leap-frog-1.jpg",
       title: "Rotax Max Championship Chassis #71",
       tag: "COMPETITION KART",
       desc: "Championship-winning Rotax 2-stroke race kart in full competition trim at the JK Tyre National Championship."
     },
     {
-      src: "/leap-frog-2.jpg",
+      src: "/leap-frog/leap-frog-2.jpg",
       title: "JK Tyre National Karting Championship Grid",
       tag: "NATIONAL GRID",
       desc: "Mr. Rohit Khanna and the Leap Frog Racing squad lined up on the national championship starting grid."
     },
     {
-      src: "/leap-frog-3.jpg",
+      src: "/leap-frog/leap-frog-4.jpg",
       title: "Championship Race Action & Pit Telemetry",
       tag: "CIRCUIT ACTION",
       desc: "High-G apex cornering and live engine telemetry monitoring during national championship finals."
@@ -105,23 +105,23 @@ export const LeapFrogSection = () => {
   ];
 
   return (
-    <section id="leap-frog" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-12 bg-[#0A0A0A] text-white relative z-20 overflow-hidden">
-      {/* Background speed grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] opacity-40 pointer-events-none" />
+    <section id="leap-frog" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-12 bg-white text-[#0A0A0A] relative z-20 overflow-hidden">
+      {/* Background subtle grid — matches other white sections */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/15 pb-8 text-left">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#E5E5E5] pb-8 text-left">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#F47C20] text-white font-mono text-xs uppercase tracking-widest font-bold shadow-md">
-              <Trophy className="w-3.5 h-3.5" /> // MOTORSPORT HERITAGE
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 text-[#F47C20] font-mono text-xs uppercase tracking-widest font-bold shadow-sm">
+              <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // MOTORSPORT HERITAGE
             </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-7xl font-display font-bold text-white uppercase tracking-tight leading-none">
+            <h2 className="text-3xl sm:text-5xl lg:text-7xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
               LEAP FROG <span className="text-[#F47C20]">RACING</span>
             </h2>
           </div>
-          <p className="text-xs sm:text-sm font-mono text-[#AAAAAA] uppercase tracking-wider max-w-md">
+          <p className="text-xs sm:text-sm font-mono text-[#666666] uppercase tracking-wider max-w-md">
             Kartomania's official professional motorsport division competing across Indian National Karting Championships.
           </p>
         </div>
@@ -129,40 +129,40 @@ export const LeapFrogSection = () => {
         {/* Story Narrative & Racing Accolades */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center text-left">
           <div className="lg:col-span-7 space-y-5 font-sans">
-            <p className="text-white text-base sm:text-lg leading-relaxed font-medium">
-              <strong className="text-[#F47C20]">Leap Frog Racing</strong> is Northern India’s championship-winning motorsport academy, founded and directed by veteran racer <strong className="text-white font-bold">Mr. Rohit Khanna</strong>.
+            <p className="text-[#0A0A0A] text-base sm:text-lg leading-relaxed font-medium">
+              <strong className="text-[#F47C20]">Leap Frog Racing</strong> is Northern India's championship-winning motorsport academy, founded and directed by veteran racer <strong className="text-[#0A0A0A] font-bold">Mr. Rohit Khanna</strong>.
             </p>
-            <p className="text-[#AAAAAA] text-sm sm:text-base leading-relaxed">
+            <p className="text-[#555555] text-sm sm:text-base leading-relaxed">
               With multiple podium finishes across the JK Tyre National Karting Championship, Rotax Max Challenge India, and national formula racing championships, our racing academy trains aspiring drivers with real competition telemetry, professional telemetry debriefs, and chassis setup.
             </p>
             
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 font-mono">
-              <div className="p-4 rounded-lg bg-[#161616] border border-white/10 text-left space-y-1">
+              <div className="p-4 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] text-left space-y-1 transition-colors">
                 <span className="text-[#F47C20] text-xs font-bold block">// EXPERIENCE</span>
-                <div className="text-2xl font-display font-bold text-white">20+ YRS</div>
+                <div className="text-2xl font-display font-bold text-[#0A0A0A]">20+ YRS</div>
                 <span className="text-[11px] text-[#888888]">Active Racing</span>
               </div>
-              <div className="p-4 rounded-lg bg-[#161616] border border-white/10 text-left space-y-1">
+              <div className="p-4 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] text-left space-y-1 transition-colors">
                 <span className="text-[#F47C20] text-xs font-bold block">// PODIUMS</span>
-                <div className="text-2xl font-display font-bold text-white">50+ WINS</div>
+                <div className="text-2xl font-display font-bold text-[#0A0A0A]">50+ WINS</div>
                 <span className="text-[11px] text-[#888888]">National Trophies</span>
               </div>
-              <div className="p-4 rounded-lg bg-[#161616] border border-white/10 text-left space-y-1 col-span-2 sm:col-span-1">
+              <div className="p-4 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] text-left space-y-1 col-span-2 sm:col-span-1 transition-colors">
                 <span className="text-[#F47C20] text-xs font-bold block">// ACADEMY</span>
-                <div className="text-2xl font-display font-bold text-white">PRO TIER</div>
+                <div className="text-2xl font-display font-bold text-[#0A0A0A]">PRO TIER</div>
                 <span className="text-[11px] text-[#888888]">Driver Coaching</span>
               </div>
             </div>
           </div>
 
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-2xl overflow-hidden border-2 border-white/20 hover:border-[#F47C20] transition-colors duration-500 shadow-2xl group">
+            <div className="relative rounded-2xl overflow-hidden border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-colors duration-500 shadow-md group">
               <img
-                src="/leap-frog-3.jpg"
+                src="/leap-frog/leap-frog-4.jpg"
                 alt="Leap Frog Racing Competition Action"
                 className="w-full h-80 sm:h-96 object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono">
                 <span className="text-[#F47C20] font-bold uppercase">// OFFICIAL RACING ACADEMY</span>
                 <span className="text-white bg-black/80 px-2 py-0.5 rounded-sm font-semibold">JK TYRE NATIONALS</span>
@@ -187,7 +187,7 @@ export const LeapFrogSection = () => {
               <div
                 key={idx}
                 onClick={() => setActiveImage(item)}
-                className="group relative rounded-xl overflow-hidden bg-[#161616] border border-white/10 hover:border-[#F47C20] transition-all duration-300 cursor-pointer shadow-lg"
+                className="group relative rounded-xl overflow-hidden bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
               >
                 <div className="relative h-64 w-full overflow-hidden">
                   <img
@@ -222,20 +222,20 @@ export const LeapFrogSection = () => {
           >
             <div
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-3xl w-full bg-[#111111] border border-white/20 rounded-2xl overflow-hidden shadow-2xl"
+              className="relative max-w-3xl w-full bg-white border-2 border-[#F47C20] rounded-2xl overflow-hidden shadow-2xl"
             >
               <button
                 onClick={() => setActiveImage(null)}
-                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/80 text-white hover:text-[#F47C20] transition-colors cursor-pointer"
+                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#0A0A0A] hover:text-[#F47C20] transition-colors cursor-pointer"
               >
                 ✕
               </button>
               <img src={activeImage.src} alt={activeImage.title} className="w-full max-h-[75vh] object-contain bg-black" />
-              <div className="p-6 bg-[#161616] border-t border-white/10 flex items-center justify-between text-white text-left">
+              <div className="p-6 bg-white border-t border-[#E5E5E5] flex items-center justify-between text-[#0A0A0A] text-left">
                 <div>
                   <span className="text-[10px] font-mono text-[#F47C20] uppercase font-bold">{activeImage.tag}</span>
-                  <h4 className="text-xl font-display font-bold text-white uppercase">{activeImage.title}</h4>
-                  <p className="text-xs font-mono text-[#AAAAAA] mt-1">{activeImage.desc}</p>
+                  <h4 className="text-xl font-display font-bold text-[#0A0A0A] uppercase">{activeImage.title}</h4>
+                  <p className="text-xs font-mono text-[#666666] mt-1">{activeImage.desc}</p>
                 </div>
               </div>
             </div>
