@@ -131,19 +131,6 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
             <span className="text-[#EE3124]">DRIVE THE THRILL</span>
           </div>
         </motion.div>
-
-        {/* Subtitle & Value Proposition */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.35 }}
-          className="space-y-1.5 max-w-2xl"
-        >
-          <p className="text-xs sm:text-sm md:text-base font-sans text-gray-200 font-normal leading-relaxed text-left drop-shadow-md line-clamp-2 sm:line-clamp-none">
-            The only racing track owned, run, and maintained by a professional national racing driver (Mr. Rohit Khanna). Experience authentic 720-meter outdoor asphalt racing with 4 kart fleet categories and championship telemetry.
-          </p>
-        </motion.div>
-
         {/* Action Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
