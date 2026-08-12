@@ -34,8 +34,8 @@ const StatCounter = ({ end, suffix = '', label, number = "01" }) => {
   }, [isInView, end]);
 
   return (
-    <div ref={ref} className="p-6 rounded-xl bg-[#111111] border border-white/10 text-left space-y-2 group hover:border-[#F37021] transition-colors duration-300">
-      <span className="font-mono text-xs font-bold text-[#F37021] block">
+    <div ref={ref} className="p-6 rounded-xl bg-[#111111] border border-white/10 text-left space-y-2 group hover:border-[#F4A261] transition-colors duration-300">
+      <span className="font-mono text-xs font-bold text-[#F4A261] block">
         {number}
       </span>
       <div className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
@@ -84,17 +84,17 @@ const WhoWeAreSection = () => {
         {/* Top Header Tag matching reference layout */}
         <div className="flex items-center justify-between border-b border-white/10 pb-6">
           <div className="flex items-center gap-2 text-left">
-            <span className="w-[3px] h-4 bg-[#F37021] rounded-full inline-block" />
-            <span className="font-mono text-xs sm:text-sm font-bold text-[#F37021] tracking-wider">02</span>
+            <span className="w-[3px] h-4 bg-[#F4A261] rounded-full inline-block" />
+            <span className="font-mono text-xs sm:text-sm font-bold text-[#F4A261] tracking-wider">02</span>
             <span className="font-mono text-xs sm:text-sm font-bold text-[#888888] tracking-widest uppercase">/ EXPERIENCE</span>
           </div>
 
           <a
             href="#why-kartomania"
-            className="font-mono text-xs font-bold text-[#F37021] uppercase tracking-widest flex items-center gap-2 hover:text-[#ff8a3d] transition-colors"
+            className="font-mono text-xs font-bold text-[#F4A261] uppercase tracking-widest flex items-center gap-2 hover:text-[#ffbe85] transition-colors"
           >
             <span>VIEW ALL</span>
-            <span className="w-8 sm:w-12 h-[1.5px] bg-[#F37021] inline-block" />
+            <span className="w-8 sm:w-12 h-[1.5px] bg-[#F4A261] inline-block" />
             <span>&rarr;</span>
           </a>
         </div>

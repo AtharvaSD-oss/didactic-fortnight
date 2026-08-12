@@ -79,7 +79,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
               <span className="font-mono text-[8px] sm:text-[9px] font-bold tracking-[0.25em] text-[#333333] uppercase">
                 LIVE THE RACE
               </span>
-              <span className="absolute bottom-0 left-0 w-8 h-[2px] bg-[#F37021]" />
+              <span className="absolute bottom-0 left-0 w-8 h-[2px] bg-[#F4A261]" />
             </div>
           </button>
 
@@ -107,7 +107,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
 
                   {/* Active orange underline indicator */}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#F37021]" />
+                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#F4A261]" />
                   )}
                 </button>
               );
@@ -121,7 +121,7 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
               className="hidden sm:inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-[#080808] hover:bg-[#1a1a1a] text-white text-xs font-mono font-bold tracking-wider uppercase transition-all duration-200 shadow-sm cursor-pointer group"
             >
               <span>BOOK YOUR RACE</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#F37021] group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#F4A261] group-hover:translate-x-1 transition-transform" />
             </button>
 
             {/* Mobile Toggle */}

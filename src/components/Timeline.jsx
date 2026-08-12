@@ -60,7 +60,9 @@ const Timeline = () => {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/10 pb-8 text-left">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 font-mono text-xs text-[#888888] uppercase tracking-widest">
-              <Trophy className="w-3.5 h-3.5 text-white" /> // MOTORSPORT HERITAGE
+              <span className="w-[3px] h-3.5 bg-[#F4A261] rounded-full inline-block" />
+              <span className="text-[#F4A261] font-bold">12</span>
+              <span>/ MOTORSPORT HERITAGE</span>
             </div>
             <h2 className="text-3xl sm:text-5xl lg:text-7xl font-display font-bold text-white uppercase tracking-tight leading-none">
               MR. ROHIT <span className="text-[#888888]">KHANNA</span>
@@ -112,7 +114,7 @@ const Timeline = () => {
             <div className="lg:col-span-6 p-8 sm:p-10 lg:p-12 flex flex-col justify-between space-y-6">
               <div className="space-y-4">
                 <div className="flex items-center gap-2 text-[#888888] font-mono text-xs font-bold uppercase tracking-wider">
-                  <Award className="w-4 h-4 text-white" />
+                  <Award className="w-4 h-4 text-[#F4A261]" />
                   <span>NATIONAL CHAMPIONSHIP PEDIGREE</span>
                 </div>
 
@@ -169,7 +171,7 @@ const Timeline = () => {
                   className="bg-[#111111] hover:bg-[#161616] border border-white/10 hover:border-white/30 rounded-xl p-6 space-y-4 transition-all duration-300 group"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="px-2.5 py-0.5 rounded-sm bg-black text-[#AAAAAA] font-mono text-[9px] font-bold uppercase tracking-wider border border-white/10">
+                    <span className="px-2.5 py-0.5 rounded-sm bg-black text-[#AAAAAA] font-mono text-[9px] font-bold uppercase tracking-wider border border-white/10 group-hover:text-[#F4A261] transition-colors">
                       {item.tag}
                     </span>
                     <span className="font-mono text-[11px] text-[#888888] font-semibold">
@@ -178,7 +180,7 @@ const Timeline = () => {
                   </div>
 
                   <div className="flex items-center gap-2.5 pt-1 border-t border-white/5">
-                    <div className="p-2 rounded-md bg-white/5 text-white group-hover:bg-white group-hover:text-[#080808] transition-colors">
+                    <div className="p-2 rounded-md bg-white/5 text-white group-hover:bg-[#F4A261] group-hover:text-[#080808] transition-colors">
                       <IconComp className="w-4 h-4" />
                     </div>
                     <h3 className="text-sm sm:text-base font-display font-bold text-white uppercase">

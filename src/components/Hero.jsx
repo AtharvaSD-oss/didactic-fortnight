@@ -35,16 +35,16 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
               aria-label="Book your race at Kartomania"
             >
               <span>BOOK YOUR RACE</span>
-              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#F37021] group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#F4A261] group-hover:translate-x-1 transition-transform" />
             </motion.button>
           </div>
 
           {/* Right-Side Interactive Dot Pagination Overlay */}
           <div className="absolute right-[3.2%] top-1/2 -translate-y-1/2 z-30 flex flex-col items-center gap-2.5 sm:gap-3.5">
-            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#F37021] shadow-[0_0_8px_rgba(243,112,33,0.8)] cursor-pointer" title="Home" />
-            <span onClick={() => onNavigate('who-we-are')} className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#B8B8B8] hover:bg-[#F37021] transition-colors cursor-pointer" title="Experience" />
-            <span onClick={() => onNavigate('track')} className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#B8B8B8] hover:bg-[#F37021] transition-colors cursor-pointer" title="Track" />
-            <span onClick={() => onNavigate('karts')} className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#B8B8B8] hover:bg-[#F37021] transition-colors cursor-pointer" title="Karts" />
+            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#F4A261] shadow-[0_0_8px_rgba(244,162,97,0.8)] cursor-pointer" title="Home" />
+            <span onClick={() => onNavigate('who-we-are')} className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#B8B8B8] hover:bg-[#F4A261] transition-colors cursor-pointer" title="Experience" />
+            <span onClick={() => onNavigate('track')} className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#B8B8B8] hover:bg-[#F4A261] transition-colors cursor-pointer" title="Track" />
+            <span onClick={() => onNavigate('karts')} className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#B8B8B8] hover:bg-[#F4A261] transition-colors cursor-pointer" title="Karts" />
           </div>
 
         </div>
