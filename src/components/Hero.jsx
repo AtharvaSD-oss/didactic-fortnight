@@ -138,31 +138,6 @@ const Hero = ({ onOpenBooking, onNavigate }) => {
             VIEW PRICING
           </button>
         </motion.div>
-
-        {/* Bottom Quick Telemetry Strip */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.55 }}
-          className="pt-1.5 flex flex-wrap items-center gap-3 sm:gap-5 text-[10px] sm:text-xs font-mono text-gray-300"
-        >
-          <div className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#EE3124]" />
-            <span>720M OUTDOOR CIRCUIT</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FFD700]" />
-            <span>4 FLEET TIERS</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0066CC]" />
-            <span>STARTING ₹550 (INCL. TAX)</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            <span>OPEN ALL 7 DAYS</span>
-          </div>
-        </motion.div>
       </div>
 
       {/* 3. Human Scroll Indicator */}
