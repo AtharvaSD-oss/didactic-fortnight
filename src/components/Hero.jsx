@@ -127,7 +127,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
           lg:px-[54px]
           pt-[85px]
           sm:pt-[100px]
-          lg:pt-[125px]
+          lg:pt-[110px]
         "
       >
 
@@ -141,8 +141,8 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
             flex
             items-center
             gap-3
-            mb-4
-            lg:mb-5
+            mb-3
+            lg:mb-4
           "
         >
           <span
@@ -220,9 +220,9 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               text-[10vw]
               sm:text-[8.5vw]
               md:text-[8vw]
-              lg:text-[11.6vw]
-              xl:text-[11.3vw]
-              2xl:text-[11rem]
+              lg:text-[9.2vw]
+              xl:text-[8.8vw]
+              2xl:text-[8.8rem]
             "
           >
             <span className="text-[#F47C20]">KART</span>
@@ -323,7 +323,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
             relative
             z-20
             min-h-0
-            lg:min-h-[460px]
+            lg:min-h-[380px]
           "
         >
 
@@ -337,7 +337,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               lg:absolute
               left-0
               top-0
-              lg:top-[58px]
+              lg:top-[35px]
 
               z-30
 
@@ -360,7 +360,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
 
                 text-[15px]
                 sm:text-[18px]
-                lg:text-[20px]
+                lg:text-[19px]
 
                 uppercase
 
@@ -396,8 +396,8 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
                 w-[84px]
                 h-[2px]
                 bg-[#F47C20]
-                mt-5
-                mb-5
+                mt-4
+                mb-4
               "
             />
 
@@ -409,10 +409,10 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               className="
                 text-[#333333]
 
-                text-[15px]
-                sm:text-[16px]
+                text-[14px]
+                sm:text-[15px]
 
-                leading-[1.8]
+                leading-[1.7]
 
                 max-w-[350px]
               "
@@ -435,8 +435,8 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
                 flex-wrap
                 items-center
                 gap-3
-                mt-6
-                lg:mt-8
+                mt-5
+                lg:mt-6
               "
             >
 
@@ -447,7 +447,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
                 variant="primary"
                 className="
                   group
-                  h-[54px]
+                  h-[48px]
                   px-6
                   sm:px-7
 
@@ -500,7 +500,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
                   items-center
                   gap-2
 
-                  h-[54px]
+                  h-[48px]
                   px-5
 
                   border
@@ -542,7 +542,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
 
 
           {/* ==================================================
-              DESKTOP RACING CAR (Large right side layout for desktop)
+              DESKTOP RACING CAR (Compact right side layout for desktop)
           ================================================== */}
 
           <div
@@ -554,17 +554,17 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               absolute
 
               right-[10px]
-              xl:right-[45px]
-              2xl:right-[85px]
+              xl:right-[40px]
+              2xl:right-[70px]
 
-              bottom-[-8px]
+              bottom-[-10px]
               xl:bottom-[-20px]
 
               z-20
 
-              w-[890px]
-              xl:w-[1080px]
-              2xl:w-[1240px]
+              w-[740px]
+              xl:w-[880px]
+              2xl:w-[1020px]
             "
           >
 
