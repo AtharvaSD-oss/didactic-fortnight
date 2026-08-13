@@ -266,14 +266,14 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               w-full
             "
           >
-            {/* HYPER-REALISTIC MOBILE TIRE CONTACT & GROUND SHADOW */}
+            {/* HYPER-REALISTIC DARK MOBILE TIRE CONTACT & GROUND SHADOW */}
             <div
               className="
                 absolute
                 left-[8%]
                 right-[6%]
                 bottom-[20%]
-                h-5
+                h-6
                 rounded-full
                 blur-md
                 pointer-events-none
@@ -281,7 +281,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               "
               style={{
                 background:
-                  "radial-gradient(ellipse at center, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.20) 50%, transparent 80%)",
+                  "radial-gradient(ellipse at center, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.40) 50%, transparent 80%)",
               }}
             />
 
@@ -586,41 +586,41 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               }}
             >
 
-              {/* HYPER-REALISTIC TIRE CONTACT SHADOWS & AMBIENT GROUND REFLECTION */}
+              {/* HYPER-REALISTIC DARK TIRE CONTACT SHADOWS & AMBIENT GROUND REFLECTION */}
 
               {/* 1. Front Left Tire Contact Patch (Far Left Wheel) */}
               <div
                 aria-hidden="true"
-                className="absolute left-[7%] bottom-[25%] w-[18%] h-[20px] rounded-full blur-[6px] pointer-events-none z-0"
+                className="absolute left-[7%] bottom-[25%] w-[18%] h-[22px] rounded-full blur-[5px] pointer-events-none z-0"
                 style={{
-                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 50%, transparent 80%)",
+                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.48) 50%, transparent 80%)",
                 }}
               />
 
               {/* 2. Front Right Tire Contact Patch (Center-Left Main Wheel) */}
               <div
                 aria-hidden="true"
-                className="absolute left-[36%] bottom-[20%] w-[20%] h-[24px] rounded-full blur-[8px] pointer-events-none z-0"
+                className="absolute left-[36%] bottom-[20%] w-[20%] h-[26px] rounded-full blur-[7px] pointer-events-none z-0"
                 style={{
-                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.30) 50%, transparent 80%)",
+                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.55) 50%, transparent 80%)",
                 }}
               />
 
               {/* 3. Rear Right Tire Contact Patch (Far Right Large Wheel) */}
               <div
                 aria-hidden="true"
-                className="absolute right-[4%] bottom-[26%] w-[18%] h-[24px] rounded-full blur-[7px] pointer-events-none z-0"
+                className="absolute right-[4%] bottom-[26%] w-[18%] h-[26px] rounded-full blur-[6px] pointer-events-none z-0"
                 style={{
-                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.28) 50%, transparent 80%)",
+                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.50) 50%, transparent 80%)",
                 }}
               />
 
               {/* 4. Under-Chassis / Axle Soft Ambient Ground Shadow */}
               <div
                 aria-hidden="true"
-                className="absolute left-[15%] right-[10%] bottom-[22%] h-[26px] rounded-[100%] blur-[12px] pointer-events-none z-0"
+                className="absolute left-[15%] right-[10%] bottom-[22%] h-[28px] rounded-[100%] blur-[10px] pointer-events-none z-0"
                 style={{
-                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.15) 55%, transparent 85%)",
+                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 55%, transparent 85%)",
                 }}
               />
 
@@ -654,7 +654,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
                 "
                 style={{
                   aspectRatio: "1000 / 600",
-                  filter: "drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.20))",
+                  filter: "drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.45)) drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.35))",
                 }}
               />
             </motion.div>
