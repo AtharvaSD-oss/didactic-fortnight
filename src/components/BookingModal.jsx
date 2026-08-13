@@ -7,6 +7,11 @@ const RACEFACER_URL = "https://web.racefacer.com/kiosk/kartomaniaentertainlandma
 const WHATSAPP_PRIMARY = "919717548897";
 
 const BookingModal = ({ isOpen, onClose }) => {
+  const [selectedDay, setSelectedDay] = React.useState('Today');
+  const [selectedSlot, setSelectedSlot] = React.useState('2:00 PM - 6:00 PM');
+  const [selectedKart, setSelectedKart] = React.useState('Sodi RT10 Pro (270cc)');
+  const [racers, _setRacers] = React.useState(2);
+
   React.useEffect(() => {
     if (isOpen) {
       confetti({
@@ -20,6 +25,13 @@ const BookingModal = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
+  const whatsappMessage = `Hi Kartomania! I would like to book a karting session:
+• Date: ${selectedDay}
+• Time Slot: ${selectedSlot}
+• Kart Model: ${selectedKart}
+• Number of Racers: ${racers}
+Location: Entertainland Mall, Sector 83, Manesar.`;
+
   return (
     <AnimatePresence>
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
@@ -28,7 +40,7 @@ const BookingModal = ({ isOpen, onClose }) => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.94, y: 15 }}
           transition={{ duration: 0.25 }}
-          className="relative w-full max-w-lg bg-white border-2 border-[#F47C20] rounded-2xl p-6 sm:p-8 shadow-2xl text-[#111111] text-left overflow-hidden my-auto max-h-[90vh] flex flex-col justify-between"
+          className="relative w-full max-w-lg bg-white border-2 border-[#F47C20] rounded-2xl p-6 sm:p-8 shadow-2xl text-[#111111] text-left overflow-hidden my-auto max-h-[92vh] flex flex-col justify-between"
         >
           {/* Close button */}
           <button
@@ -48,35 +60,129 @@ const BookingModal = ({ isOpen, onClose }) => {
               RESERVE YOUR <span className="text-[#F47C20]">RACING SESSION</span>
             </h3>
             <p className="text-xs text-[#666666] font-sans">
-              Choose your preferred booking channel below for instant track slot confirmation.
+              Select your session preferences below for 1-tap instant reservation.
             </p>
           </div>
 
+          {/* Quick-Select Preference Pills */}
+          <div className="py-3 space-y-3 bg-[#F9F9F9] p-4 rounded-xl border border-[#E5E5E5] my-3">
+            {/* 1. Date */}
+            <div>
+              <label className="text-[10px] font-mono font-bold text-[#F47C20] uppercase tracking-wider block mb-1">
+                DATE
+              </label>
+              <div className="flex flex-wrap gap-1.5">
+                {['Today', 'Tomorrow', 'This Weekend'].map((day) => (
+                  <button
+                    key={day}
+                    onClick={() => setSelectedDay(day)}
+                    className={`px-3 py-1 rounded-md text-xs font-mono font-bold transition-all ${
+                      selectedDay === day
+                        ? 'bg-[#F47C20] text-white shadow-sm'
+                        : 'bg-white border border-[#E5E5E5] text-[#333333] hover:border-[#F47C20]'
+                    }`}
+                  >
+                    {day}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* 2. Time Slot */}
+            <div>
+              <label className="text-[10px] font-mono font-bold text-[#F47C20] uppercase tracking-wider block mb-1">
+                TIME SLOT
+              </label>
+              <div className="flex flex-wrap gap-1.5">
+                {['11 AM - 2 PM', '2 PM - 6 PM', '6 PM - 10 PM'].map((slot) => (
+                  <button
+                    key={slot}
+                    onClick={() => setSelectedSlot(slot)}
+                    className={`px-2.5 py-1 rounded-md text-xs font-mono font-bold transition-all ${
+                      selectedSlot === slot
+                        ? 'bg-[#F47C20] text-white shadow-sm'
+                        : 'bg-white border border-[#E5E5E5] text-[#333333] hover:border-[#F47C20]'
+                    }`}
+                  >
+                    {slot}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* 3. Kart Model */}
+            <div>
+              <label className="text-[10px] font-mono font-bold text-[#F47C20] uppercase tracking-wider block mb-1">
+                KART MODEL
+              </label>
+              <div className="flex flex-wrap gap-1.5">
+                {['Sodi RT10 Pro (270cc)', 'Super Pro Twin (500cc)', 'Cadet (160cc)'].map((kart) => (
+                  <button
+                    key={kart}
+                    onClick={() => setSelectedKart(kart)}
+                    className={`px-2.5 py-1 rounded-md text-xs font-mono font-bold transition-all ${
+                      selectedKart === kart
+                        ? 'bg-[#F47C20] text-white shadow-sm'
+                        : 'bg-white border border-[#E5E5E5] text-[#333333] hover:border-[#F47C20]'
+                    }`}
+                  >
+                    {kart}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {/* Booking Options List */}
-          <div className="py-4 space-y-3 overflow-y-auto pr-1">
-            {/* 1. Official RaceFacer Slot Kiosk */}
+          <div className="py-2 space-y-3 overflow-y-auto pr-1">
+            {/* 1. Direct Pre-Filled WhatsApp Booking */}
+            <a
+              href={`https://wa.me/${WHATSAPP_PRIMARY}?text=${encodeURIComponent(whatsappMessage)}`}
+              target="_blank"
+              rel="noreferrer"
+              className="group flex items-center justify-between p-3.5 rounded-xl bg-[#25D366] hover:bg-[#128C7E] text-white shadow-md hover:shadow-xl transition-all"
+            >
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-white/20 text-white">
+                  <MessageCircle className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-xs font-display font-bold uppercase tracking-wider flex items-center gap-2">
+                    <span>1-Tap WhatsApp Pre-Filled Reservation</span>
+                  </div>
+                  <div className="text-[10px] font-mono text-white/90">
+                    Sends selected date, slot & kart model instantly
+                  </div>
+                </div>
+              </div>
+              <span className="text-xs font-mono font-bold uppercase group-hover:translate-x-1 transition-transform">
+                RESERVE &rarr;
+              </span>
+            </a>
+
+            {/* 2. Official RaceFacer Slot Kiosk */}
             <a
               href={RACEFACER_URL}
               target="_blank"
               rel="noreferrer"
-              className="group flex items-center justify-between p-4 rounded-xl bg-[#0A0A0A] hover:bg-[#F47C20] text-white shadow-md hover:shadow-xl transition-all"
+              className="group flex items-center justify-between p-3.5 rounded-xl bg-[#0A0A0A] hover:bg-[#F47C20] text-white shadow-md hover:shadow-xl transition-all"
             >
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-white/15 text-white">
                   <ExternalLink className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-sm font-display font-bold uppercase tracking-wider flex items-center gap-2">
+                  <div className="text-xs font-display font-bold uppercase tracking-wider flex items-center gap-2">
                     <span>RaceFacer Kiosk Booking</span>
-                    <span className="px-1.5 py-0.5 rounded-sm bg-white text-[#0A0A0A] font-mono text-[9px] font-bold">INSTANT</span>
+                    <span className="px-1.5 py-0.5 rounded-sm bg-white text-[#0A0A0A] font-mono text-[9px] font-bold">LIVE TELEMETRY</span>
                   </div>
-                  <div className="text-[11px] font-sans text-gray-200">
-                    Live slot selection, telemetry profile & leaderboard timing
+                  <div className="text-[10px] font-sans text-gray-300">
+                    Live slot selection & official driver profile
                   </div>
                 </div>
               </div>
               <span className="text-xs font-mono font-bold uppercase group-hover:translate-x-1 transition-transform">
-                BOOK &rarr;
+                OPEN &rarr;
               </span>
             </a>
 

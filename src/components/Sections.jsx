@@ -853,6 +853,41 @@ export const PricingSection = ({ onOpenBooking }) => {
     { sessions: '20 Sessions', weekday: '₹9,570', weekend: '₹11,400' },
   ];
 
+  const [calcGroup, setCalcGroup] = useState('solo'); // 'solo' | 'friends' | 'corporate'
+  const [calcDay, setCalcDay] = useState('weekday'); // 'weekday' | 'weekend'
+  const [calcKart, setCalcKart] = useState('pro'); // 'pro' | 'twin' | 'cadet'
+
+  // Calculate rate based on parameters
+  const getCalculatedFare = () => {
+    let basePerSession = 550;
+    if (calcDay === 'weekend') basePerSession = 650;
+    if (calcKart === 'twin') basePerSession = 1200;
+    if (calcKart === 'cadet') basePerSession = 450;
+
+    let racersCount = 1;
+    if (calcGroup === 'friends') racersCount = 4;
+    if (calcGroup === 'corporate') racersCount = 10;
+
+    let _totalSessions = racersCount;
+    let totalPrice = basePerSession * racersCount;
+    let bonusText = "Includes 1 Free Bowling Coupon!";
+
+    if (calcDay === 'weekday' && calcKart === 'pro') {
+      bonusText = "🔥 WEEKDAY BOGO: Buy 1 Session, Get 1 FREE!";
+    } else if (racersCount >= 4) {
+      bonusText = "🎁 Includes +1 FREE Race Session & 2 FREE Bowling Coupons!";
+    }
+
+    return {
+      racersCount,
+      totalPrice,
+      perRacerPrice: Math.round(totalPrice / racersCount),
+      bonusText
+    };
+  };
+
+  const calculated = getCalculatedFare();
+
   return (
     <section id="pricing" className="py-14 sm:py-20 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
       <div className="space-y-8 sm:space-y-10">
@@ -875,6 +910,126 @@ export const PricingSection = ({ onOpenBooking }) => {
           <p className="text-xs sm:text-sm font-mono text-[#666666] max-w-md">
             Exclusive multi-session packages featuring complimentary free bowling and bonus race sessions.
           </p>
+        </div>
+
+        {/* ====================================================
+            1. INSTANT FARE & PACKAGE CALCULATOR
+        ==================================================== */}
+        <div className="p-6 sm:p-8 rounded-2xl bg-[#0A0A0A] text-white space-y-6 text-left border-2 border-[#F47C20]/40 shadow-xl">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/15 pb-4">
+            <div>
+              <span className="px-2.5 py-0.5 rounded-sm bg-[#F47C20] text-white font-mono text-[10px] font-bold uppercase tracking-widest">
+                ⚡ 1-CLICK CALCULATOR
+              </span>
+              <h3 className="text-xl sm:text-2xl font-display font-bold uppercase text-white mt-1">
+                ESTIMATE YOUR RACE FARE
+              </h3>
+            </div>
+            <span className="text-xs font-mono text-[#AAAAAA]">
+              Instant calculation &bull; Taxes included
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Step 1: Group Size */}
+            <div className="space-y-2">
+              <label className="text-xs font-mono font-bold text-[#F47C20] uppercase tracking-wider block">
+                1. SELECT GROUP SIZE
+              </label>
+              <div className="grid grid-cols-3 gap-2">
+                {[
+                  { id: 'solo', label: '1 Racer' },
+                  { id: 'friends', label: '2–4 Friends' },
+                  { id: 'corporate', label: '5+ Team' }
+                ].map(item => (
+                  <button
+                    key={item.id}
+                    onClick={() => setCalcGroup(item.id)}
+                    className={`py-2.5 px-2 rounded-lg text-xs font-mono font-bold transition-all border ${
+                      calcGroup === item.id
+                        ? 'bg-[#F47C20] border-[#F47C20] text-white shadow-md'
+                        : 'bg-white/5 border-white/15 text-gray-300 hover:border-white/40'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Step 2: Race Day */}
+            <div className="space-y-2">
+              <label className="text-xs font-mono font-bold text-[#F47C20] uppercase tracking-wider block">
+                2. SELECT RACE DAY
+              </label>
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  { id: 'weekday', label: 'Mon–Thu BOGO' },
+                  { id: 'weekend', label: 'Fri–Sun Weekend' }
+                ].map(item => (
+                  <button
+                    key={item.id}
+                    onClick={() => setCalcDay(item.id)}
+                    className={`py-2.5 px-2 rounded-lg text-xs font-mono font-bold transition-all border ${
+                      calcDay === item.id
+                        ? 'bg-[#F47C20] border-[#F47C20] text-white shadow-md'
+                        : 'bg-white/5 border-white/15 text-gray-300 hover:border-white/40'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Step 3: Kart Fleet */}
+            <div className="space-y-2">
+              <label className="text-xs font-mono font-bold text-[#F47C20] uppercase tracking-wider block">
+                3. SELECT KART MODEL
+              </label>
+              <div className="grid grid-cols-3 gap-2">
+                {[
+                  { id: 'pro', label: '270cc Pro' },
+                  { id: 'twin', label: 'Twin 500cc' },
+                  { id: 'cadet', label: '160cc Junior' }
+                ].map(item => (
+                  <button
+                    key={item.id}
+                    onClick={() => setCalcKart(item.id)}
+                    className={`py-2.5 px-2 rounded-lg text-xs font-mono font-bold transition-all border ${
+                      calcKart === item.id
+                        ? 'bg-[#F47C20] border-[#F47C20] text-white shadow-md'
+                        : 'bg-white/5 border-white/15 text-gray-300 hover:border-white/40'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Calculator Output Display Banner */}
+          <div className="p-4 sm:p-5 rounded-xl bg-white/5 border border-white/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="space-y-1">
+              <div className="text-xs font-mono text-[#F47C20] font-bold">
+                {calculated.bonusText}
+              </div>
+              <div className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight">
+                ESTIMATED FARE: <span className="text-[#F47C20]">₹{calculated.totalPrice.toLocaleString()}</span>
+                <span className="text-xs font-mono text-[#AAAAAA] ml-2 font-normal">
+                  (₹{calculated.perRacerPrice}/racer)
+                </span>
+              </div>
+            </div>
+
+            <MagneticButton
+              onClick={onOpenBooking}
+              className="py-3 px-6 text-xs font-bold whitespace-nowrap shadow-md"
+            >
+              BOOK THIS FARE NOW &rarr;
+            </MagneticButton>
+          </div>
         </div>
 
         {/* 1. Official Value Combo Packages */}
