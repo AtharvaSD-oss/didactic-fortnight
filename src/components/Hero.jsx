@@ -320,14 +320,14 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               w-full
             "
           >
-            {/* MOBILE TIGHT GROUND SHADOW */}
+            {/* NATURAL STUDIO GROUND SHADOW — MATCHES REFERENCE DESIGN */}
             <div
               className="
                 absolute
-                left-[6%]
-                right-[6%]
-                bottom-[18%]
-                h-5
+                left-[2%]
+                right-[2%]
+                bottom-[10%]
+                h-7
                 rounded-full
                 blur-md
                 pointer-events-none
@@ -335,7 +335,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               "
               style={{
                 background:
-                  "radial-gradient(ellipse at center, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.35) 50%, transparent 80%)",
+                  "radial-gradient(ellipse at center, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.06) 50%, transparent 80%)",
               }}
             />
 
@@ -637,47 +637,21 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               }}
             >
 
-              {/* DESKTOP TIGHT TIRE CONTACT SHADOW */}
+              {/* NATURAL STUDIO GROUND SHADOW — MATCHES REFERENCE DESIGN EXACTLY */}
               <div
                 aria-hidden="true"
                 className="
                   absolute
 
-                  left-[4%]
+                  left-[2%]
                   right-[2%]
-                  bottom-[18%]
+                  bottom-[12%]
 
-                  h-[26px]
+                  h-[36px]
 
-                  rounded-full
+                  rounded-[100%]
 
-                  blur-[10px]
-
-                  pointer-events-none
-
-                  z-0
-                "
-                style={{
-                  background:
-                    "radial-gradient(ellipse at center, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0) 80%)",
-                }}
-              />
-
-              {/* DESKTOP AMBIENT UNDER-CHASSIS SHADOW */}
-              <div
-                aria-hidden="true"
-                className="
-                  absolute
-
-                  left-[8%]
-                  right-[6%]
-                  bottom-[20%]
-
-                  h-[18px]
-
-                  rounded-full
-
-                  blur-[5px]
+                  blur-[16px]
 
                   pointer-events-none
 
@@ -685,11 +659,11 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
                 "
                 style={{
                   background:
-                    "radial-gradient(ellipse at center, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.48) 50%, rgba(0,0,0,0) 85%)",
+                    "radial-gradient(ellipse at center, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.06) 50%, rgba(0,0,0,0) 80%)",
                 }}
               />
 
-              {/* RACE CAR WITH FLUSH SHADOW FILTER */}
+              {/* RACE CAR MATCHING REFERENCE DESIGN */}
 
               <img
                 src="/avalanche-car-isolated.png"
@@ -715,11 +689,11 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
 
                   mix-blend-multiply
 
-                  contrast-[1.03]
+                  contrast-[1.04]
                 "
                 style={{
                   aspectRatio: "1000 / 600",
-                  filter: "drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.40))",
+                  filter: "drop-shadow(0px 8px 14px rgba(0, 0, 0, 0.14))",
                 }}
               />
             </motion.div>
