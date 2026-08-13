@@ -324,16 +324,18 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
             <div
               className="
                 absolute
-                left-[10%]
-                right-[10%]
-                bottom-[4px]
-                h-6
+                left-[5%]
+                right-[5%]
+                bottom-[2px]
+                h-10
                 rounded-full
-                blur-xl
+                blur-lg
+                pointer-events-none
+                z-0
               "
               style={{
                 background:
-                  "radial-gradient(ellipse at center, rgba(0,0,0,0.18) 0%, transparent 70%)",
+                  "radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 45%, transparent 75%)",
               }}
             />
 
@@ -635,22 +637,21 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               }}
             >
 
-              {/* GROUND SHADOW */}
-
+              {/* DESKTOP DEEP GROUND SHADOW LAYER 1 */}
               <div
                 aria-hidden="true"
                 className="
                   absolute
 
-                  left-[10%]
-                  right-[5%]
-                  bottom-[8px]
+                  left-[5%]
+                  right-[2%]
+                  bottom-[-2px]
 
-                  h-[34px]
+                  h-[48px]
 
                   rounded-full
 
-                  blur-[20px]
+                  blur-[16px]
 
                   pointer-events-none
 
@@ -658,12 +659,37 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
                 "
                 style={{
                   background:
-                    "radial-gradient(ellipse at center, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0) 72%)",
+                    "radial-gradient(ellipse at center, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.28) 45%, rgba(0,0,0,0) 78%)",
                 }}
               />
 
+              {/* DESKTOP AMBIENT GROUND SHADOW LAYER 2 */}
+              <div
+                aria-hidden="true"
+                className="
+                  absolute
 
-              {/* RACE CAR */}
+                  left-[12%]
+                  right-[8%]
+                  bottom-[12px]
+
+                  h-[24px]
+
+                  rounded-full
+
+                  blur-[8px]
+
+                  pointer-events-none
+
+                  z-0
+                "
+                style={{
+                  background:
+                    "radial-gradient(ellipse at center, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0) 80%)",
+                }}
+              />
+
+              {/* RACE CAR WITH MULTI-STAGE SHADOW FILTER */}
 
               <img
                 src="/avalanche-car-isolated.png"
@@ -689,10 +715,11 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
 
                   mix-blend-multiply
 
-                  contrast-[1.02]
+                  contrast-[1.03]
                 "
                 style={{
                   aspectRatio: "1000 / 600",
+                  filter: "drop-shadow(0px 24px 18px rgba(0, 0, 0, 0.45)) drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25))",
                 }}
               />
             </motion.div>
