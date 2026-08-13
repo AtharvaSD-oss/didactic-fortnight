@@ -320,14 +320,14 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               w-full
             "
           >
-            {/* NATURAL STUDIO GROUND SHADOW — MATCHES REFERENCE DESIGN */}
+            {/* HYPER-REALISTIC MOBILE TIRE CONTACT & GROUND SHADOW */}
             <div
               className="
                 absolute
-                left-[2%]
-                right-[2%]
-                bottom-[10%]
-                h-7
+                left-[8%]
+                right-[6%]
+                bottom-[12%]
+                h-6
                 rounded-full
                 blur-md
                 pointer-events-none
@@ -335,7 +335,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               "
               style={{
                 background:
-                  "radial-gradient(ellipse at center, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.06) 50%, transparent 80%)",
+                  "radial-gradient(ellipse at center, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.15) 50%, transparent 80%)",
               }}
             />
 
@@ -637,33 +637,45 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               }}
             >
 
-              {/* NATURAL STUDIO GROUND SHADOW — MATCHES REFERENCE DESIGN EXACTLY */}
+              {/* HYPER-REALISTIC TIRE CONTACT SHADOWS & AMBIENT GROUND REFLECTION */}
+
+              {/* 1. Front Left Tire Contact Patch (Far Left Wheel) */}
               <div
                 aria-hidden="true"
-                className="
-                  absolute
-
-                  left-[2%]
-                  right-[2%]
-                  bottom-[12%]
-
-                  h-[36px]
-
-                  rounded-[100%]
-
-                  blur-[16px]
-
-                  pointer-events-none
-
-                  z-0
-                "
+                className="absolute left-[7%] bottom-[16%] w-[18%] h-[24px] rounded-full blur-[7px] pointer-events-none z-0"
                 style={{
-                  background:
-                    "radial-gradient(ellipse at center, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.06) 50%, rgba(0,0,0,0) 80%)",
+                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.20) 50%, transparent 80%)",
                 }}
               />
 
-              {/* RACE CAR MATCHING REFERENCE DESIGN */}
+              {/* 2. Front Right Tire Contact Patch (Center-Left Main Wheel) */}
+              <div
+                aria-hidden="true"
+                className="absolute left-[36%] bottom-[11%] w-[20%] h-[30px] rounded-full blur-[9px] pointer-events-none z-0"
+                style={{
+                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 50%, transparent 80%)",
+                }}
+              />
+
+              {/* 3. Rear Right Tire Contact Patch (Far Right Large Wheel) */}
+              <div
+                aria-hidden="true"
+                className="absolute right-[4%] bottom-[17%] w-[18%] h-[28px] rounded-full blur-[8px] pointer-events-none z-0"
+                style={{
+                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.22) 50%, transparent 80%)",
+                }}
+              />
+
+              {/* 4. Under-Chassis / Axle Soft Ambient Ground Shadow */}
+              <div
+                aria-hidden="true"
+                className="absolute left-[15%] right-[10%] bottom-[13%] h-[32px] rounded-[100%] blur-[16px] pointer-events-none z-0"
+                style={{
+                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.10) 55%, transparent 85%)",
+                }}
+              />
+
+              {/* RACE CAR WITH FLUSH SHADOW FILTER */}
 
               <img
                 src="/avalanche-car-isolated.png"
@@ -693,7 +705,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
                 "
                 style={{
                   aspectRatio: "1000 / 600",
-                  filter: "drop-shadow(0px 8px 14px rgba(0, 0, 0, 0.14))",
+                  filter: "drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.20))",
                 }}
               />
             </motion.div>
