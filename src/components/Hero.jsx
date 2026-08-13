@@ -69,7 +69,7 @@ const kartAnimation = {
    HERO
 ============================================================ */
 
-const Hero = ({ onOpenBooking, onNavigate }) => {
+const Hero = ({ onOpenBooking, _onNavigate }) => {
   const heroRef = useRef(null);
   const kartRef = useRef(null);
 
