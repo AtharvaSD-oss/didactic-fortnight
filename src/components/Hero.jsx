@@ -400,9 +400,9 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               z-30
 
               w-full
-              max-w-[340px]
-              sm:max-w-[370px]
-              lg:max-w-[390px]
+              max-w-[420px]
+              sm:max-w-[450px]
+              lg:max-w-[480px]
               pt-2
               lg:pt-0
             "
@@ -414,17 +414,20 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               {...fadeUp(0.35)}
               className="
                 text-[#111111]
-                font-semibold
+                font-extrabold
 
-                text-[15px]
-                sm:text-[18px]
-                lg:text-[20px]
+                text-[14px]
+                sm:text-[17px]
+                lg:text-[19px]
 
                 uppercase
 
-                tracking-[0.16em]
+                tracking-[0.12em]
+                sm:tracking-[0.16em]
 
                 leading-tight
+
+                whitespace-nowrap
               "
             >
               RACE. EXPERIENCE. REMEMBER.
