@@ -131,61 +131,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
         "
       >
 
-        {/* ====================================================
-            LIVE TRACK TELEMETRY STATUS BAR
-        ==================================================== */}
 
-        <motion.div
-          {...fadeUp(0.02)}
-          className="
-            inline-flex
-            flex-wrap
-            items-center
-            gap-2.5
-            sm:gap-3
-            px-3.5
-            py-1.5
-            mb-4
-            rounded-md
-            bg-[#FFF0E5]
-            border
-            border-[#F47C20]/30
-            text-xs
-            font-mono
-            font-bold
-            shadow-sm
-          "
-        >
-          <span className="inline-flex items-center gap-1.5 text-[#16a34a]">
-            <span className="w-2 h-2 rounded-full bg-[#16a34a] animate-pulse" />
-            TRACK OPEN TODAY (11:00 AM – 10:00 PM)
-          </span>
-
-          <span className="text-[#999999] hidden sm:inline">|</span>
-
-          <span className="text-[#111111] hidden sm:inline">
-            ENTERTAINLAND MALL, SECTOR 83
-          </span>
-
-          <span className="text-[#999999] hidden md:inline">|</span>
-
-          <a
-            href="https://maps.app.goo.gl/7c5CMX5a4vaaXFLN9"
-            target="_blank"
-            rel="noreferrer"
-            className="
-              inline-flex
-              items-center
-              gap-1
-              text-[#F47C20]
-              hover:underline
-              font-bold
-            "
-          >
-            <MapPin className="w-3.5 h-3.5" />
-            <span>1-TAP MAPS &rarr;</span>
-          </a>
-        </motion.div>
 
         {/* ====================================================
             SECTION LABEL
