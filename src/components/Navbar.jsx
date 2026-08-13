@@ -6,11 +6,11 @@ import MagneticButton from './MagneticButton';
 import MobileMenu from './MobileMenu';
 
 const NAV_LINKS = [
-  { name: '01 HERO', id: 'home' },
-  { name: '02 EXPERIENCE', id: 'who-we-are' },
-  { name: '03 TRACK & FLEET', id: 'track' },
-  { name: '04 PRICING & COMBOS', id: 'pricing' },
-  { name: '05 GALLERY & LOCATION', id: 'contact' },
+  { name: 'HERO', id: 'home' },
+  { name: 'EXPERIENCE', id: 'who-we-are' },
+  { name: 'TRACK & FLEET', id: 'track' },
+  { name: 'PRICING & COMBOS', id: 'pricing' },
+  { name: 'GALLERY & LOCATION', id: 'contact' },
 ];
 
 const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBooking }) => {
@@ -77,8 +77,8 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
             />
           </button>
 
-          {/* 2. CENTER: Navigation Links with Orange Active States */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 shrink">
+          {/* 2. CENTER: Navigation Links with Full-Width Orange Active States */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2 shrink">
             {NAV_LINKS.map((link, idx) => {
               const isActive = activeSection === link.id;
               const isHovered = hoveredIndex === idx;
@@ -90,17 +90,17 @@ const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBookin
                   onMouseEnter={() => setHoveredIndex(idx)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   className={`
-                    relative px-2.5 py-1 text-xs font-mono font-medium tracking-wider uppercase transition-colors duration-200 cursor-pointer bg-transparent border-none whitespace-nowrap
-                    ${isActive ? 'text-[#F47C20] font-bold' : 'text-[#0A0A0A] hover:text-[#F47C20]'}
+                    relative px-3 py-1.5 text-xs font-mono font-bold tracking-wider uppercase transition-colors duration-200 cursor-pointer bg-transparent border-none whitespace-nowrap
+                    ${isActive ? 'text-[#F47C20]' : 'text-[#0A0A0A] hover:text-[#F47C20]'}
                   `}
                 >
-                  <span>{link.name}</span>
+                  <span className="font-bold">{link.name}</span>
 
-                  {/* Orange Active/Hover Indicator Line */}
+                  {/* Orange Active/Hover Indicator Line Covering Full Width */}
                   <span
                     className={`
-                      absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#F47C20] transition-all duration-200
-                      ${isActive ? 'w-[calc(100%-20px)] opacity-100' : isHovered ? 'w-[calc(100%-20px)] opacity-60' : 'w-0 opacity-0'}
+                      absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#F47C20] transition-all duration-200
+                      ${isActive ? 'w-full opacity-100' : isHovered ? 'w-full opacity-60' : 'w-0 opacity-0'}
                     `}
                   />
                 </button>
