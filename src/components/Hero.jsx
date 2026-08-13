@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, MapPin } from "lucide-react";
 import MagneticButton from "./MagneticButton";
+
+gsap.registerPlugin(ScrollTrigger);
 
 /* ============================================================
    ANIMATION SETTINGS
@@ -41,19 +45,66 @@ const titleAnimation = {
   },
 };
 
+const kartAnimation = {
+  initial: {
+    opacity: 0,
+    x: 80,
+    y: 40,
+    scale: 0.96,
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    scale: 1,
+  },
+  transition: {
+    duration: 1.1,
+    delay: 0.45,
+    ease: [0.16, 1, 0.3, 1],
+  },
+};
+
 /* ============================================================
    HERO
 ============================================================ */
 
 const Hero = ({ onOpenBooking, _onNavigate }) => {
+  const heroRef = useRef(null);
+  const kartRef = useRef(null);
+
+  /* ----------------------------------------------------------
+     KART PARALLAX
+  ---------------------------------------------------------- */
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (!kartRef.current || !heroRef.current) return;
+
+      gsap.to(kartRef.current, {
+        y: -28,
+        ease: "none",
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+    }, heroRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
+      ref={heroRef}
       id="home"
       className="
         relative
         w-full
-        min-h-[700px]
-        lg:min-h-[90svh]
+        min-h-[850px]
+        lg:min-h-[100svh]
         bg-white
         text-[#0A0A0A]
         overflow-hidden
@@ -186,8 +237,8 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
           className="
             relative
             z-20
-            pb-12
-            lg:pb-16
+            min-h-[430px]
+            lg:min-h-[460px]
           "
         >
 
@@ -197,13 +248,16 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
 
           <div
             className="
-              pt-[40px]
-              lg:pt-[50px]
+              absolute
+              left-0
+              top-[55px]
+              lg:top-[58px]
 
               z-30
 
-              w-full
-              max-w-[450px]
+              w-[320px]
+              sm:w-[370px]
+              lg:w-[390px]
             "
           >
 
@@ -397,8 +451,201 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               </a>
             </motion.div>
           </div>
+
+
+          {/* ==================================================
+              DESKTOP RACING CAR
+          ================================================== */}
+
+          <div
+            className="
+              hidden
+              lg:block
+
+              absolute
+
+              right-[20px]
+              xl:right-[60px]
+              2xl:right-[100px]
+
+              bottom-[-10px]
+              xl:bottom-[-25px]
+
+              z-20
+
+              w-[950px]
+              xl:w-[1200px]
+              2xl:w-[1380px]
+            "
+          >
+
+            <motion.div
+              ref={kartRef}
+              {...kartAnimation}
+              className="
+                relative
+                w-full
+              "
+              style={{
+                willChange: "transform",
+              }}
+            >
+
+              {/* GROUND SHADOW */}
+
+              <div
+                aria-hidden="true"
+                className="
+                  absolute
+
+                  left-[10%]
+                  right-[5%]
+                  bottom-[8px]
+
+                  h-[34px]
+
+                  rounded-full
+
+                  blur-[20px]
+
+                  pointer-events-none
+
+                  z-0
+                "
+                style={{
+                  background:
+                    "radial-gradient(ellipse at center, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0) 72%)",
+                }}
+              />
+
+
+              {/* RACE CAR */}
+
+              <img
+                src="/avalanche-car-isolated.png"
+                alt="Kartomania White Avalanche Race Car"
+                width={1000}
+                height={600}
+                loading="eager"
+                fetchPriority="high"
+                draggable={false}
+                className="
+                  relative
+                  z-10
+
+                  block
+
+                  w-full
+                  h-auto
+
+                  object-contain
+
+                  select-none
+                  pointer-events-none
+
+                  mix-blend-multiply
+
+                  contrast-[1.02]
+                "
+                style={{
+                  aspectRatio: "1000 / 600",
+                }}
+              />
+            </motion.div>
+          </div>
+        </div>
+
+
+        {/* ====================================================
+            MOBILE RACING CAR
+        ==================================================== */}
+
+        <div
+          className="
+            lg:hidden
+
+            relative
+
+            w-full
+
+            mt-[-15px]
+            sm:mt-[-5px]
+
+            z-20
+          "
+        >
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.9,
+              delay: 0.5,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            className="
+              relative
+              w-full
+            "
+          >
+
+            {/* MOBILE SHADOW */}
+
+            <div
+              className="
+                absolute
+                left-[12%]
+                right-[12%]
+                bottom-[4px]
+                h-5
+                rounded-full
+                blur-xl
+              "
+              style={{
+                background:
+                  "radial-gradient(ellipse at center, rgba(0,0,0,0.18) 0%, transparent 70%)",
+              }}
+            />
+
+            <img
+              src="/avalanche-car-isolated.png"
+              alt="Kartomania White Avalanche Race Car"
+              width={900}
+              height={540}
+              loading="eager"
+              fetchPriority="high"
+              draggable={false}
+              className="
+                relative
+                z-10
+
+                block
+
+                w-full
+                max-w-[850px]
+
+                mx-auto
+
+                h-auto
+
+                object-contain
+
+                mix-blend-multiply
+
+                select-none
+                pointer-events-none
+              "
+            />
+          </motion.div>
         </div>
       </div>
+
 
       {/* ======================================================
           HERO BOTTOM SPACING
@@ -411,6 +658,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
           lg:h-[35px]
         "
       />
+
     </section>
   );
 };
