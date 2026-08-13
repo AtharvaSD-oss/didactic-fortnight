@@ -217,9 +217,9 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
 
               whitespace-nowrap
 
-              text-[17vw]
-              sm:text-[15vw]
-              md:text-[13.5vw]
+              text-[10vw]
+              sm:text-[8.5vw]
+              md:text-[8vw]
               lg:text-[11.6vw]
               xl:text-[11.3vw]
               2xl:text-[11rem]
