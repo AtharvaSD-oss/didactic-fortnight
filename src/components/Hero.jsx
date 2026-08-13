@@ -326,8 +326,8 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
                 absolute
                 left-[8%]
                 right-[6%]
-                bottom-[12%]
-                h-6
+                bottom-[20%]
+                h-5
                 rounded-full
                 blur-md
                 pointer-events-none
@@ -335,7 +335,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               "
               style={{
                 background:
-                  "radial-gradient(ellipse at center, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.15) 50%, transparent 80%)",
+                  "radial-gradient(ellipse at center, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.20) 50%, transparent 80%)",
               }}
             />
 
@@ -642,36 +642,36 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               {/* 1. Front Left Tire Contact Patch (Far Left Wheel) */}
               <div
                 aria-hidden="true"
-                className="absolute left-[7%] bottom-[16%] w-[18%] h-[24px] rounded-full blur-[7px] pointer-events-none z-0"
+                className="absolute left-[7%] bottom-[25%] w-[18%] h-[20px] rounded-full blur-[6px] pointer-events-none z-0"
                 style={{
-                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.20) 50%, transparent 80%)",
+                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 50%, transparent 80%)",
                 }}
               />
 
               {/* 2. Front Right Tire Contact Patch (Center-Left Main Wheel) */}
               <div
                 aria-hidden="true"
-                className="absolute left-[36%] bottom-[11%] w-[20%] h-[30px] rounded-full blur-[9px] pointer-events-none z-0"
+                className="absolute left-[36%] bottom-[20%] w-[20%] h-[24px] rounded-full blur-[8px] pointer-events-none z-0"
                 style={{
-                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 50%, transparent 80%)",
+                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.30) 50%, transparent 80%)",
                 }}
               />
 
               {/* 3. Rear Right Tire Contact Patch (Far Right Large Wheel) */}
               <div
                 aria-hidden="true"
-                className="absolute right-[4%] bottom-[17%] w-[18%] h-[28px] rounded-full blur-[8px] pointer-events-none z-0"
+                className="absolute right-[4%] bottom-[26%] w-[18%] h-[24px] rounded-full blur-[7px] pointer-events-none z-0"
                 style={{
-                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.22) 50%, transparent 80%)",
+                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.28) 50%, transparent 80%)",
                 }}
               />
 
               {/* 4. Under-Chassis / Axle Soft Ambient Ground Shadow */}
               <div
                 aria-hidden="true"
-                className="absolute left-[15%] right-[10%] bottom-[13%] h-[32px] rounded-[100%] blur-[16px] pointer-events-none z-0"
+                className="absolute left-[15%] right-[10%] bottom-[22%] h-[26px] rounded-[100%] blur-[12px] pointer-events-none z-0"
                 style={{
-                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.10) 55%, transparent 85%)",
+                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.15) 55%, transparent 85%)",
                 }}
               />
 
