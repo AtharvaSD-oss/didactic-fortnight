@@ -11,11 +11,11 @@ import RacingRulesSection from './components/RacingRulesSection';
 import KartsSection from './components/KartsSection';
 import GallerySection from './components/GallerySection';
 import Timeline from './components/Timeline';
-import Testimonials from './components/Testimonials';
+import TestimonialsSection from './components/TestimonialsSection';
 import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
 import Cursor from './components/Cursor';
-import Loader from './components/Loader';
+import LoadingScreen from './components/LoadingScreen';
 import ScrollProgress from './components/ScrollProgress';
 import BookingModal from './components/BookingModal';
 import SearchModal from './components/SearchModal';
@@ -122,7 +122,7 @@ export function App() {
       <ScrollProgress />
 
       {/* 2. System Telemetry Preloader */}
-      <Loader />
+      <LoadingScreen />
 
       {/* 3. Interactive Precision Custom Cursor */}
       <Cursor />
@@ -152,7 +152,7 @@ export function App() {
         <PricingSection onOpenBooking={() => setBookingOpen(true)} />
         <GameSection />
         <GallerySection />
-        <Testimonials />
+        <TestimonialsSection />
         <Timeline />
         <FAQSection />
         <ContactSection onOpenBooking={() => setBookingOpen(true)} />
