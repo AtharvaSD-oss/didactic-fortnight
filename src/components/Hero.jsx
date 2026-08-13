@@ -439,8 +439,8 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               {...fadeUp(0.6)}
               className="
                 flex
-                flex-wrap
-                items-center
+                flex-col
+                items-start
                 gap-3
                 mt-6
                 lg:mt-8
