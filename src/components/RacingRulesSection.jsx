@@ -11,6 +11,11 @@ const RacingRulesSection = () => {
         {/* Section Header: Our Rules, Your Safety, Your Race */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#EAEAEA] pb-6 text-left">
           <div className="space-y-2">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="w-[2px] h-5 bg-[#F47C20]" />
+              <span className="text-[#F47C20] text-sm font-bold font-mono">04</span>
+              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ SAFETY</span>
+            </div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
               <ShieldCheck className="w-3.5 h-3.5 text-[#F47C20]" /> // RACING PHILOSOPHY & SAFETY
             </div>

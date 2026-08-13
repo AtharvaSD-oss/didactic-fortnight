@@ -851,6 +851,11 @@ export const PricingSection = ({ onOpenBooking }) => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-6 text-left">
           <div>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="w-[2px] h-5 bg-[#F47C20]" />
+              <span className="text-[#F47C20] text-sm font-bold font-mono">09</span>
+              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ PRICING & COMBOS</span>
+            </div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 text-[#F47C20] font-mono text-[10px] font-bold uppercase tracking-wider mb-2 shadow-sm">
               ★ ALL PRICES INCLUSIVE OF ALL TAXES
             </div>
