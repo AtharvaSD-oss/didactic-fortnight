@@ -155,6 +155,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
           <motion.h1
             {...titleAnimation}
             className="
+              font-anton
               font-display
               font-black
               uppercase
