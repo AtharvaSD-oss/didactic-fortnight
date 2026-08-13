@@ -125,9 +125,9 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
           px-4
           sm:px-8
           lg:px-[54px]
-          pt-[95px]
-          sm:pt-[115px]
-          lg:pt-[155px]
+          pt-[85px]
+          sm:pt-[100px]
+          lg:pt-[125px]
         "
       >
 
@@ -141,8 +141,8 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
             flex
             items-center
             gap-3
-            mb-7
-            lg:mb-8
+            mb-4
+            lg:mb-5
           "
         >
           <span

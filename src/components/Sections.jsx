@@ -845,8 +845,8 @@ export const PricingSection = ({ onOpenBooking }) => {
   ];
 
   return (
-    <section id="pricing" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
-      <div className="space-y-12 sm:space-y-16">
+    <section id="pricing" className="py-14 sm:py-20 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
+      <div className="space-y-8 sm:space-y-10">
         
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-6 text-left">

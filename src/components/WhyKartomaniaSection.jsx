@@ -49,11 +49,11 @@ const USPs = [
 
 const WhyKartomaniaSection = () => {
   return (
-    <section id="why-kartomania" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-12 bg-white text-[#0A0A0A] relative z-20 overflow-hidden">
+    <section id="why-kartomania" className="py-14 sm:py-20 px-4 sm:px-6 lg:px-12 bg-white text-[#0A0A0A] relative z-20 overflow-hidden">
       {/* Subtle background grid — same as other white sections */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16 relative z-10">
+      <div className="max-w-7xl mx-auto space-y-8 sm:space-y-10 relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#E5E5E5] pb-8 text-left">

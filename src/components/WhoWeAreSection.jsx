@@ -84,7 +84,7 @@ const WhoWeAreSection = () => {
       className="relative w-full bg-[#080808] text-white"
     >
       {/* ── Dark Transition Header Block matching Reference Design ── */}
-      <div className="bg-[#080808] text-white py-12 sm:py-16 px-4 sm:px-6 lg:px-12 border-t border-b border-white/10">
+      <div className="bg-[#080808] text-white py-8 sm:py-10 px-4 sm:px-6 lg:px-12 border-t border-b border-white/10">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="space-y-1 text-left">
             <div className="flex items-center gap-3">
@@ -93,7 +93,7 @@ const WhoWeAreSection = () => {
               <span className="text-white text-sm font-bold font-mono">/ EXPERIENCE</span>
             </div>
 
-            <h2 className="mt-7 text-white font-display font-bold uppercase tracking-tight text-4xl sm:text-5xl lg:text-6xl">
+            <h2 className="mt-4 text-white font-display font-bold uppercase tracking-tight text-3xl sm:text-4xl lg:text-5xl">
               THE KARTOMANIA EXPERIENCE
             </h2>
           </div>
@@ -109,9 +109,9 @@ const WhoWeAreSection = () => {
         </div>
       </div>
 
-      <div className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
+      <div className="py-12 sm:py-16 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
         {/* Top Header Tag */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 sm:mb-16 border-b border-white/10 pb-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-10 border-b border-white/10 pb-6">
           <div className="text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5]/10 border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest mb-2 shadow-sm">
               <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // ABOUT KARTOMANIA

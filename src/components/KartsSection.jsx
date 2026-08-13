@@ -86,10 +86,10 @@ const KartsSection = ({ onOpenBooking }) => {
   return (
     <section
       id="karts"
-      className="py-20 sm:py-32 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111] relative z-20"
+      className="py-14 sm:py-20 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111] relative z-20"
     >
       {/* 1. Header Section */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#EAEAEA] pb-8 mb-12 sm:mb-16 text-left">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#EAEAEA] pb-6 mb-8 sm:mb-10 text-left">
         <div className="space-y-2">
           <div className="flex items-center gap-3 mb-2">
             <span className="w-[2px] h-5 bg-[#F47C20]" />

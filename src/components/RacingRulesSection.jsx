@@ -5,8 +5,8 @@ import MagneticButton from './MagneticButton';
 
 const RacingRulesSection = () => {
   return (
-    <section id="racing-rules" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111] relative z-20">
-      <div className="space-y-12 sm:space-y-16">
+    <section id="racing-rules" className="py-12 sm:py-18 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111] relative z-20">
+      <div className="space-y-8 sm:space-y-10">
 
         {/* Section Header: Our Rules, Your Safety, Your Race */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#EAEAEA] pb-6 text-left">
