@@ -209,7 +209,6 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               font-display
               font-black
               uppercase
-              text-[#111111]
 
               leading-[0.78]
 
@@ -225,7 +224,8 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               2xl:text-[11rem]
             "
           >
-            KARTOMANIA
+            <span className="text-[#0A0A0A]">KART</span>
+            <span className="text-[#FFC700] drop-shadow-[0_4px_12px_rgba(255,199,0,0.25)]">OMANIA</span>
           </motion.h1>
         </div>
 
