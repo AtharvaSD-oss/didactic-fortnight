@@ -93,7 +93,7 @@ const KartsSection = ({ onOpenBooking }) => {
         <div className="space-y-2">
           <div className="flex items-center gap-3 mb-2">
             <span className="w-[2px] h-5 bg-[#F47C20]" />
-            <span className="text-[#F47C20] text-sm font-bold font-mono">06</span>
+            <span className="text-[#F47C20] text-sm font-bold font-mono">03</span>
             <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ FLEET</span>
           </div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">

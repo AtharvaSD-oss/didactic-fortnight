@@ -62,6 +62,11 @@ const Timeline = () => {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/15 pb-8 text-left">
           <div className="space-y-2">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="w-[2px] h-5 bg-[#F47C20]" />
+              <span className="text-[#F47C20] text-sm font-bold font-mono">05</span>
+              <span className="text-white text-sm font-bold font-mono">/ HERITAGE</span>
+            </div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#F47C20] text-white font-mono text-xs uppercase tracking-widest font-bold shadow-md">
               <Trophy className="w-3.5 h-3.5" /> // MOTORSPORT HERITAGE
             </div>

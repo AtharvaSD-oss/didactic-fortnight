@@ -67,6 +67,11 @@ const TestimonialsSection = () => {
     <section id="testimonials" className="py-20 sm:py-28 px-4 max-w-7xl mx-auto border-t border-[#EAEAEA] relative z-20 bg-[#F9F9F9] text-[#111111]">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E5E5E5] pb-6 mb-12 text-left">
         <div>
+          <div className="flex items-center gap-3 mb-2">
+            <span className="w-[2px] h-5 bg-[#F47C20]" />
+            <span className="text-[#F47C20] text-sm font-bold font-mono">05</span>
+            <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ REVIEWS</span>
+          </div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest mb-2 shadow-sm">
             <MessageSquare className="w-3.5 h-3.5 text-[#F47C20]" /> // PILOT TESTIMONIALS & REVIEWS
           </div>

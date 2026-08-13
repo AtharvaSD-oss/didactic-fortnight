@@ -22,6 +22,11 @@ export const TrackSection = ({ onOpenBooking }) => (
       
       {/* Left Spec & Narrative */}
       <div className="space-y-6 lg:w-5/12 text-left">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="w-[2px] h-5 bg-[#F47C20]" />
+          <span className="text-[#F47C20] text-sm font-bold font-mono">03</span>
+          <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ TRACK & CIRCUIT</span>
+        </div>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
           <MapPin className="w-3.5 h-3.5 text-[#F47C20]" /> // CIRCUIT TELEMETRY
         </div>
@@ -394,6 +399,11 @@ export const WhatsNewSection = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E5E5E5] pb-8 text-left">
           <div className="space-y-2">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="w-[2px] h-5 bg-[#F47C20]" />
+              <span className="text-[#F47C20] text-sm font-bold font-mono">04</span>
+              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ SPECIAL OFFERS & PACKAGES</span>
+            </div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-[#F47C20]" /> // EXCLUSIVE TRACK OFFERS & VALUE BUNDLES
             </div>
@@ -852,7 +862,7 @@ export const PricingSection = ({ onOpenBooking }) => {
           <div>
             <div className="flex items-center gap-3 mb-2">
               <span className="w-[2px] h-5 bg-[#F47C20]" />
-              <span className="text-[#F47C20] text-sm font-bold font-mono">09</span>
+              <span className="text-[#F47C20] text-sm font-bold font-mono">04</span>
               <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ PRICING & COMBOS</span>
             </div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 text-[#F47C20] font-mono text-[10px] font-bold uppercase tracking-wider mb-2 shadow-sm">
@@ -997,6 +1007,11 @@ export const ContactSection = () => {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E5E5E5] pb-6 text-left">
           <div>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="w-[2px] h-5 bg-[#F47C20]" />
+              <span className="text-[#F47C20] text-sm font-bold font-mono">05</span>
+              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ LOCATION & CONTACT</span>
+            </div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs text-[#F47C20] uppercase tracking-widest font-bold mb-2 shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-[#F47C20]" /> // ARENA LOCATION & NAVIGATION
             </div>

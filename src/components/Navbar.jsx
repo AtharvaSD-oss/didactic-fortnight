@@ -6,17 +6,11 @@ import MagneticButton from './MagneticButton';
 import MobileMenu from './MobileMenu';
 
 const NAV_LINKS = [
-  { name: 'Home', id: 'home' },
-  { name: 'About', id: 'who-we-are' },
-  { name: 'Experience', id: 'why-kartomania' },
-  { name: 'Track', id: 'track' },
-  { name: 'Fleet', id: 'karts' },
-  { name: 'Leap Frog', id: 'leap-frog' },
-  { name: "What's New", id: 'whats-new' },
-  { name: 'Pricing', id: 'pricing' },
-  { name: 'Gallery', id: 'gallery' },
-  { name: 'Reviews', id: 'testimonials' },
-  { name: 'Contact', id: 'contact' },
+  { name: '01 HERO', id: 'home' },
+  { name: '02 EXPERIENCE', id: 'who-we-are' },
+  { name: '03 TRACK & FLEET', id: 'track' },
+  { name: '04 PRICING & COMBOS', id: 'pricing' },
+  { name: '05 GALLERY & LOCATION', id: 'contact' },
 ];
 
 const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBooking }) => {

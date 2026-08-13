@@ -5,19 +5,11 @@ import { InstagramIcon, FacebookIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 
 const NAV_ITEMS = [
-  { name: 'Home', id: 'home', tag: '01' },
-  { name: 'About', id: 'who-we-are', tag: '02' },
-  { name: 'Experience', id: 'why-kartomania', tag: '03' },
-  { name: 'Rules & Safety', id: 'racing-rules', tag: '04' },
-  { name: '720M Track', id: 'track', tag: '05' },
-  { name: 'Kart Fleet', id: 'karts', tag: '06' },
-  { name: 'Leap Frog Racing', id: 'leap-frog', tag: '07' },
-  { name: "What's New", id: 'whats-new', tag: '08' },
-  { name: 'Pricing & Combos', id: 'pricing', tag: '09' },
-  { name: 'Photo Gallery', id: 'gallery', tag: '10' },
-  { name: 'Reviews', id: 'testimonials', tag: '11' },
-  { name: 'Founder Heritage', id: 'founder', tag: '12' },
-  { name: 'Find The Arena', id: 'contact', tag: '13' },
+  { name: 'HERO', id: 'home', tag: '01' },
+  { name: 'THE KARTOMANIA EXPERIENCE', id: 'who-we-are', tag: '02' },
+  { name: 'TRACK + FLEET', id: 'track', tag: '03' },
+  { name: 'PRICING & COMBOS', id: 'pricing', tag: '04' },
+  { name: 'GALLERY + REVIEWS + LOCATION', id: 'contact', tag: '05' },
 ];
 
 const drawerVariants = {
