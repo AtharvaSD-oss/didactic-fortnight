@@ -74,7 +74,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
   const kartRef = useRef(null);
 
   /* ----------------------------------------------------------
-     KART PARALLAX
+     KART PARALLAX (Desktop)
   ---------------------------------------------------------- */
 
   useEffect(() => {
@@ -231,6 +231,89 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
 
 
         {/* ====================================================
+            MOBILE & TABLET PROMINENT KART IMAGE (Placed right below KARTOMANIA title)
+        ==================================================== */}
+
+        <div
+          className="
+            lg:hidden
+            relative
+            w-full
+            my-4
+            sm:my-6
+            z-20
+          "
+        >
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 25,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.8,
+              delay: 0.3,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            className="
+              relative
+              w-full
+            "
+          >
+            {/* MOBILE GROUND SHADOW */}
+            <div
+              className="
+                absolute
+                left-[10%]
+                right-[10%]
+                bottom-[4px]
+                h-6
+                rounded-full
+                blur-xl
+              "
+              style={{
+                background:
+                  "radial-gradient(ellipse at center, rgba(0,0,0,0.18) 0%, transparent 70%)",
+              }}
+            />
+
+            <img
+              src="/avalanche-car-isolated.png"
+              alt="Kartomania White Avalanche Race Car"
+              width={950}
+              height={570}
+              loading="eager"
+              fetchPriority="high"
+              draggable={false}
+              className="
+                relative
+                z-10
+
+                block
+
+                w-full
+                max-w-[820px]
+
+                mx-auto
+
+                h-auto
+
+                object-contain
+
+                mix-blend-multiply
+
+                select-none
+                pointer-events-none
+              "
+            />
+          </motion.div>
+        </div>
+
+
+        {/* ====================================================
             LOWER HERO AREA
         ==================================================== */}
 
@@ -244,7 +327,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
         >
 
           {/* ==================================================
-              LEFT TEXT CONTENT
+              TEXT CONTENT & BUTTONS (Placed BELOW cart image on mobile & tablet)
           ================================================== */}
 
           <div
@@ -261,7 +344,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               max-w-[340px]
               sm:max-w-[370px]
               lg:max-w-[390px]
-              pt-4
+              pt-2
               lg:pt-0
             "
           >
@@ -269,7 +352,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
             {/* TAGLINE */}
 
             <motion.p
-              {...fadeUp(0.3)}
+              {...fadeUp(0.35)}
               className="
                 text-[#111111]
                 font-semibold
@@ -312,8 +395,8 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
                 w-[84px]
                 h-[2px]
                 bg-[#F47C20]
-                mt-6
-                mb-6
+                mt-5
+                mb-5
               "
             />
 
@@ -321,7 +404,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
             {/* DESCRIPTION */}
 
             <motion.p
-              {...fadeUp(0.45)}
+              {...fadeUp(0.5)}
               className="
                 text-[#333333]
 
@@ -342,107 +425,16 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
             </motion.p>
 
 
-            {/* ====================================================
-                MOBILE & TABLET RACING CAR (Placed ABOVE buttons on mobile/tablet)
-            ==================================================== */}
-
-            <div
-              className="
-                lg:hidden
-
-                relative
-
-                w-full
-
-                my-4
-
-                z-20
-              "
-            >
-
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 25,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.4,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-                className="
-                  relative
-                  w-full
-                "
-              >
-
-                {/* MOBILE SHADOW */}
-
-                <div
-                  className="
-                    absolute
-                    left-[12%]
-                    right-[12%]
-                    bottom-[4px]
-                    h-5
-                    rounded-full
-                    blur-xl
-                  "
-                  style={{
-                    background:
-                      "radial-gradient(ellipse at center, rgba(0,0,0,0.18) 0%, transparent 70%)",
-                  }}
-                />
-
-                <img
-                  src="/avalanche-car-isolated.png"
-                  alt="Kartomania White Avalanche Race Car"
-                  width={900}
-                  height={540}
-                  loading="eager"
-                  fetchPriority="high"
-                  draggable={false}
-                  className="
-                    relative
-                    z-10
-
-                    block
-
-                    w-full
-                    max-w-[700px]
-
-                    mx-auto
-
-                    h-auto
-
-                    object-contain
-
-                    mix-blend-multiply
-
-                    select-none
-                    pointer-events-none
-                  "
-                />
-              </motion.div>
-            </div>
-
-
-            {/* =================================================
-                BUTTONS (Placed BELOW cart image on mobile/tablet)
-            ================================================= */}
+            {/* BUTTONS */}
 
             <motion.div
-              {...fadeUp(0.55)}
+              {...fadeUp(0.6)}
               className="
                 flex
                 flex-wrap
                 items-center
                 gap-3
-                mt-4
+                mt-6
                 lg:mt-8
               "
             >
@@ -549,7 +541,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
 
 
           {/* ==================================================
-              DESKTOP RACING CAR (Large right side layout)
+              DESKTOP RACING CAR (Large right side layout for desktop)
           ================================================== */}
 
           <div
