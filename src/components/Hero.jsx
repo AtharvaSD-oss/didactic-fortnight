@@ -207,22 +207,22 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
           <motion.h1
             {...titleAnimation}
             className="
-              font-condensed
-              font-medium
+              font-display
+              font-extrabold
               uppercase
 
-              leading-[0.82]
+              leading-[0.8]
 
-              tracking-[0.18em]
+              tracking-[0.07em]
 
               whitespace-nowrap
 
-              text-[11vw]
-              sm:text-[9.5vw]
-              md:text-[9vw]
-              lg:text-[12.2vw]
-              xl:text-[11.8vw]
-              2xl:text-[12rem]
+              text-[12.5vw]
+              sm:text-[10.8vw]
+              md:text-[10vw]
+              lg:text-[13.5vw]
+              xl:text-[13.2vw]
+              2xl:text-[13.5rem]
             "
           >
             <span className="text-[#F47C20]">KART</span>
