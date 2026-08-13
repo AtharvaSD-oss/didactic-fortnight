@@ -464,18 +464,18 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
 
               absolute
 
-              right-[20px]
-              xl:right-[60px]
-              2xl:right-[100px]
+              right-[0px]
+              xl:right-[40px]
+              2xl:right-[80px]
 
-              bottom-[-10px]
-              xl:bottom-[-25px]
+              bottom-[-5px]
+              xl:bottom-[-18px]
 
               z-20
 
-              w-[950px]
-              xl:w-[1200px]
-              2xl:w-[1380px]
+              w-[760px]
+              xl:w-[900px]
+              2xl:w-[1020px]
             "
           >
 
@@ -628,7 +628,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
                 block
 
                 w-full
-                max-w-[850px]
+                max-w-[560px]
 
                 mx-auto
 
