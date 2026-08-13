@@ -89,6 +89,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
           start: "top top",
           end: "bottom top",
           scrub: 1,
+          invalidateOnRefresh: true,
         },
       });
     }, heroRef);
@@ -545,6 +546,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
           ================================================== */}
 
           <div
+            ref={kartRef}
             className="
               hidden
               lg:block
@@ -567,7 +569,6 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
           >
 
             <motion.div
-              ref={kartRef}
               {...kartAnimation}
               className="
                 relative
