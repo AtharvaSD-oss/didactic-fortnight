@@ -243,7 +243,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               tracking-[0.12em]
             "
           >
-            KARTOMANIA
+            HOME
           </span>
         </motion.div>
 

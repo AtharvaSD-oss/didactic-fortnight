@@ -64,18 +64,11 @@ export function App() {
     const sections = [
       'home', 
       'who-we-are',
-      'why-kartomania',
-      'experience-timeline', 
-      'racing-rules',
-      'track',
-      'karts',
-      'leap-frog', 
-      'whats-new', 
       'pricing', 
       'gallery',
+      'why-kartomania',
       'testimonials', 
-      'founder', 
-      'faq', 
+      'karts',
       'contact'
     ];
     
@@ -135,22 +128,37 @@ export function App() {
 
       {/* 5. Main Single-Page Sections Container */}
       <main className="relative z-10">
+        {/* 1. HOME */}
         <Hero 
           onOpenBooking={() => setBookingOpen(true)} 
           onNavigate={handleNavigate} 
         />
+
+        {/* 2. ABOUT */}
         <WhoWeAreSection onOpenBooking={() => setBookingOpen(true)} />
+        <Timeline />
+
+        {/* 3. PRICING */}
+        <WhatsNewSection onOpenBooking={() => setBookingOpen(true)} />
+        <PricingSection onOpenBooking={() => setBookingOpen(true)} />
+
+        {/* 4. GALLERY */}
+        <GallerySection />
+
+        {/* 5. EXPERIENCE */}
         <WhyKartomaniaSection />
         <RacingTimeline />
         <RacingRulesSection />
+
+        {/* 6. REVIEW */}
+        <TestimonialsSection />
+
+        {/* 7. KART FLEET & TRACK */}
         <TrackSection onOpenBooking={() => setBookingOpen(true)} />
         <KartsSection />
         <LeapFrogSection />
-        <WhatsNewSection onOpenBooking={() => setBookingOpen(true)} />
-        <PricingSection onOpenBooking={() => setBookingOpen(true)} />
-        <GallerySection />
-        <TestimonialsSection />
-        <Timeline />
+
+        {/* 8. CONTACT & FAQ */}
         <FAQSection />
         <ContactSection onOpenBooking={() => setBookingOpen(true)} />
       </main>

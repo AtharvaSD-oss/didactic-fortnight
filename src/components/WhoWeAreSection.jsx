@@ -90,7 +90,7 @@ const WhoWeAreSection = () => {
             <div className="flex items-center gap-3">
               <span className="w-[2px] h-5 bg-[#F47C20]" />
               <span className="text-[#F47C20] text-sm font-bold font-mono">02</span>
-              <span className="text-white text-sm font-bold font-mono">/ EXPERIENCE</span>
+              <span className="text-white text-sm font-bold font-mono">/ ABOUT</span>
             </div>
 
             <h2 className="mt-4 text-white font-display font-bold uppercase tracking-tight text-3xl sm:text-4xl lg:text-5xl">
