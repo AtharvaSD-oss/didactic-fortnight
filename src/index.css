@@ -41,23 +41,31 @@
     background-color: #FFFFFF;
     color: #111111;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
     overflow-x: hidden;
     line-height: 1.6;
     letter-spacing: -0.01em;
   }
 
+  p, span, a, button, input, textarea, div {
+    font-weight: 600;
+  }
+
   h1, .font-anton {
     font-family: 'Anton', 'Barlow Condensed', sans-serif;
+    font-weight: 900;
     letter-spacing: 0.01em;
   }
 
   h2, h3, h4, h5, h6, .font-display, .font-condensed {
     font-family: 'Barlow Condensed', 'Anton', sans-serif;
+    font-weight: 800;
     letter-spacing: 0.01em;
   }
 
   .font-mono, code, .telemetry-tag, .font-barlow {
     font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
     letter-spacing: 0.05em;
   }
 }
