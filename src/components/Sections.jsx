@@ -14,7 +14,6 @@ import {
 } from 'lucide-react';
 import { InstagramIcon, FacebookIcon, WhatsAppIcon } from './Icons';
 import MagneticButton from './MagneticButton';
-import GameCanvas from './GameCanvas';
 import TrackCircuitVisual from './TrackCircuitVisual';
 
 export const TrackSection = ({ onOpenBooking }) => (
@@ -1115,27 +1114,3 @@ export const ContactSection = () => {
     </section>
   );
 };
-
-export const GameSection = () => (
-  <section id="game" className="py-20 sm:py-28 px-4 max-w-7xl mx-auto border-t border-[#EAEAEA] relative z-20 bg-white text-[#111111]">
-    <div className="space-y-8 sm:space-y-12">
-      {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-6 text-left">
-        <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs text-[#F47C20] uppercase tracking-widest font-bold mb-2 shadow-sm">
-            <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // INTERACTIVE 2D KART RACER
-          </div>
-          <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
-            PRO <span className="text-[#F47C20]">ARCADE</span>
-          </h2>
-        </div>
-        <p className="text-xs sm:text-sm font-mono text-[#666666] max-w-sm">
-          Test your apex timing on our 16-bit retro arcade simulator before taking our 720M outdoor track!
-        </p>
-      </div>
-
-      {/* Embedded 2D Game Canvas Component */}
-      <GameCanvas />
-    </div>
-  </section>
-);

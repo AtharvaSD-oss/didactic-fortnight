@@ -7,7 +7,6 @@ const QUICK_SEARCHES = [
   { title: "Weekday & Weekend Rates", icon: Trophy, path: "pricing" },
   { title: "Real Track & Racing Photo Gallery", icon: Camera, path: "gallery" },
   { title: "Entertainland Mall Venue Address", icon: MapPin, path: "contact" },
-  { title: "16-Bit 2D Arcade Simulator", icon: Shield, path: "game" },
   { title: "What's New Special Offers", icon: Zap, path: "whats-new" },
   { title: "Know Our Founder - Rohit Khanna", icon: Shield, path: "founder" },
 ];

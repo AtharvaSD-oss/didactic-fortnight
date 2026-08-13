@@ -14,11 +14,10 @@ const NAV_ITEMS = [
   { name: 'Leap Frog Racing', id: 'leap-frog', tag: '07' },
   { name: "What's New", id: 'whats-new', tag: '08' },
   { name: 'Pricing & Combos', id: 'pricing', tag: '09' },
-  { name: '2D Arcade Game', id: 'game', tag: '10' },
-  { name: 'Photo Gallery', id: 'gallery', tag: '11' },
-  { name: 'Reviews', id: 'testimonials', tag: '12' },
-  { name: 'Founder Heritage', id: 'founder', tag: '13' },
-  { name: 'Find The Arena', id: 'contact', tag: '14' },
+  { name: 'Photo Gallery', id: 'gallery', tag: '10' },
+  { name: 'Reviews', id: 'testimonials', tag: '11' },
+  { name: 'Founder Heritage', id: 'founder', tag: '12' },
+  { name: 'Find The Arena', id: 'contact', tag: '13' },
 ];
 
 const drawerVariants = {

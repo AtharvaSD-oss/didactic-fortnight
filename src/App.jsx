@@ -26,8 +26,7 @@ import {
   LeapFrogSection,
   WhatsNewSection,
   PricingSection, 
-  ContactSection,
-  GameSection
+  ContactSection
 } from './components/Sections';
 
 export function App() {
@@ -73,7 +72,6 @@ export function App() {
       'leap-frog', 
       'whats-new', 
       'pricing', 
-      'game', 
       'gallery',
       'testimonials', 
       'founder', 
@@ -150,7 +148,6 @@ export function App() {
         <LeapFrogSection />
         <WhatsNewSection onOpenBooking={() => setBookingOpen(true)} />
         <PricingSection onOpenBooking={() => setBookingOpen(true)} />
-        <GameSection />
         <GallerySection />
         <TestimonialsSection />
         <Timeline />
