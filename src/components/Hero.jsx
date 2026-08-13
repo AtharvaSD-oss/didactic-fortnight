@@ -326,7 +326,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
                 absolute
                 left-[6%]
                 right-[6%]
-                bottom-[18px]
+                bottom-[18%]
                 h-5
                 rounded-full
                 blur-md
@@ -335,7 +335,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               "
               style={{
                 background:
-                  "radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.30) 50%, transparent 80%)",
+                  "radial-gradient(ellipse at center, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.35) 50%, transparent 80%)",
               }}
             />
 
@@ -645,13 +645,13 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
 
                   left-[4%]
                   right-[2%]
-                  bottom-[24px]
+                  bottom-[18%]
 
-                  h-[22px]
+                  h-[26px]
 
                   rounded-full
 
-                  blur-[8px]
+                  blur-[10px]
 
                   pointer-events-none
 
@@ -659,7 +659,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
                 "
                 style={{
                   background:
-                    "radial-gradient(ellipse at center, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0) 80%)",
+                    "radial-gradient(ellipse at center, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0) 80%)",
                 }}
               />
 
@@ -671,13 +671,13 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
 
                   left-[8%]
                   right-[6%]
-                  bottom-[30px]
+                  bottom-[20%]
 
-                  h-[14px]
+                  h-[18px]
 
                   rounded-full
 
-                  blur-[4px]
+                  blur-[5px]
 
                   pointer-events-none
 
@@ -685,7 +685,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
                 "
                 style={{
                   background:
-                    "radial-gradient(ellipse at center, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0) 85%)",
+                    "radial-gradient(ellipse at center, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.48) 50%, rgba(0,0,0,0) 85%)",
                 }}
               />
 
