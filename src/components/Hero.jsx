@@ -320,22 +320,22 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               w-full
             "
           >
-            {/* MOBILE GROUND SHADOW */}
+            {/* MOBILE TIGHT GROUND SHADOW */}
             <div
               className="
                 absolute
-                left-[5%]
-                right-[5%]
-                bottom-[2px]
-                h-10
+                left-[6%]
+                right-[6%]
+                bottom-[18px]
+                h-5
                 rounded-full
-                blur-lg
+                blur-md
                 pointer-events-none
                 z-0
               "
               style={{
                 background:
-                  "radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 45%, transparent 75%)",
+                  "radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.30) 50%, transparent 80%)",
               }}
             />
 
@@ -637,43 +637,17 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               }}
             >
 
-              {/* DESKTOP DEEP GROUND SHADOW LAYER 1 */}
+              {/* DESKTOP TIGHT TIRE CONTACT SHADOW */}
               <div
                 aria-hidden="true"
                 className="
                   absolute
 
-                  left-[5%]
+                  left-[4%]
                   right-[2%]
-                  bottom-[-2px]
+                  bottom-[24px]
 
-                  h-[48px]
-
-                  rounded-full
-
-                  blur-[16px]
-
-                  pointer-events-none
-
-                  z-0
-                "
-                style={{
-                  background:
-                    "radial-gradient(ellipse at center, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.28) 45%, rgba(0,0,0,0) 78%)",
-                }}
-              />
-
-              {/* DESKTOP AMBIENT GROUND SHADOW LAYER 2 */}
-              <div
-                aria-hidden="true"
-                className="
-                  absolute
-
-                  left-[12%]
-                  right-[8%]
-                  bottom-[12px]
-
-                  h-[24px]
+                  h-[22px]
 
                   rounded-full
 
@@ -685,11 +659,37 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
                 "
                 style={{
                   background:
-                    "radial-gradient(ellipse at center, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0) 80%)",
+                    "radial-gradient(ellipse at center, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0) 80%)",
                 }}
               />
 
-              {/* RACE CAR WITH MULTI-STAGE SHADOW FILTER */}
+              {/* DESKTOP AMBIENT UNDER-CHASSIS SHADOW */}
+              <div
+                aria-hidden="true"
+                className="
+                  absolute
+
+                  left-[8%]
+                  right-[6%]
+                  bottom-[30px]
+
+                  h-[14px]
+
+                  rounded-full
+
+                  blur-[4px]
+
+                  pointer-events-none
+
+                  z-0
+                "
+                style={{
+                  background:
+                    "radial-gradient(ellipse at center, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0) 85%)",
+                }}
+              />
+
+              {/* RACE CAR WITH FLUSH SHADOW FILTER */}
 
               <img
                 src="/avalanche-car-isolated.png"
@@ -719,7 +719,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
                 "
                 style={{
                   aspectRatio: "1000 / 600",
-                  filter: "drop-shadow(0px 24px 18px rgba(0, 0, 0, 0.45)) drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25))",
+                  filter: "drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.40))",
                 }}
               />
             </motion.div>
