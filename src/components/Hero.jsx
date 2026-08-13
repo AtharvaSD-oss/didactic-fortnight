@@ -212,18 +212,18 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
               font-black
               uppercase
 
-              leading-[0.8]
+              leading-[0.82]
 
-              tracking-[0.02em]
+              tracking-[0.08em]
 
               whitespace-nowrap
 
-              text-[11.5vw]
-              sm:text-[10vw]
-              md:text-[9.2vw]
-              lg:text-[13vw]
-              xl:text-[12.8vw]
-              2xl:text-[13rem]
+              text-[13vw]
+              sm:text-[11.5vw]
+              md:text-[10.8vw]
+              lg:text-[14.2vw]
+              xl:text-[13.8vw]
+              2xl:text-[14rem]
             "
           >
             <span className="text-[#F47C20]">KART</span>
