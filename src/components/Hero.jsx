@@ -103,7 +103,7 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
       className="
         relative
         w-full
-        min-h-[850px]
+        min-h-0
         lg:min-h-[100svh]
         bg-white
         text-[#0A0A0A]
@@ -121,10 +121,11 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
           w-full
           max-w-[1600px]
           mx-auto
-          px-6
+          px-4
           sm:px-8
           lg:px-[54px]
-          pt-[140px]
+          pt-[95px]
+          sm:pt-[115px]
           lg:pt-[155px]
         "
       >
@@ -248,16 +249,20 @@ const Hero = ({ onOpenBooking, _onNavigate }) => {
 
           <div
             className="
-              absolute
+              relative
+              lg:absolute
               left-0
-              top-[55px]
+              top-0
               lg:top-[58px]
 
               z-30
 
-              w-[320px]
-              sm:w-[370px]
-              lg:w-[390px]
+              w-full
+              max-w-[340px]
+              sm:max-w-[370px]
+              lg:max-w-[390px]
+              pt-4
+              lg:pt-0
             "
           >
 
