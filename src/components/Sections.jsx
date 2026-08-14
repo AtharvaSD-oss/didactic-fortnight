@@ -474,6 +474,100 @@ export const WhatsNewSection = () => {
   );
 };
 
+export const FounderHighlightSection = () => {
+  return (
+    <section id="founder-pedigree" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
+      <div className="space-y-10 sm:space-y-12">
+        
+        {/* Section Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-6 text-left">
+          <div>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="w-[2px] h-5 bg-[#F47C20]" />
+              <span className="text-[#F47C20] text-sm font-bold font-mono">04-B</span>
+              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ FOUNDER & MOTORSPORT HERITAGE</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 text-[#F47C20] font-mono text-[10px] font-bold uppercase tracking-wider mb-2 shadow-sm">
+              ★ NATIONAL RACING CHAMPION PEDIGREE
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+              MEET OUR <span className="text-[#F47C20]">FOUNDER</span>
+            </h2>
+          </div>
+          <p className="text-xs sm:text-sm font-mono text-[#666666] max-w-md text-left">
+            Kartomania is the only racing track in Northern India owned, operated, and calibrated by an active national racing champion.
+          </p>
+        </div>
+
+        {/* Founder Showcase Card */}
+        <div className="p-8 sm:p-12 rounded-2xl bg-[#0A0A0A] text-white border-2 border-[#F47C20]/40 shadow-xl relative overflow-hidden text-left">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#F47C20]/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            <div className="lg:col-span-8 space-y-6">
+              <div className="inline-block px-3 py-1 rounded-sm bg-[#F47C20] text-white font-mono text-xs font-bold uppercase tracking-wider">
+                FOUNDER & DIRECTOR — LEAP FROG RACING
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">
+                  MR. ROHIT <span className="text-[#F47C20]">KHANNA</span>
+                </h3>
+                <p className="text-sm sm:text-base font-mono text-[#FFC700] font-bold">
+                  20+ Years Active National & International Racing Champion
+                </p>
+              </div>
+
+              <p className="text-xs sm:text-sm font-sans text-gray-300 leading-relaxed max-w-2xl">
+                Founded and directed by veteran racer Mr. Rohit Khanna, Kartomania brings authentic national championship telemetry and track engineering to everyday drivers. As director of Northern India's championship-winning <strong className="text-white">Leap Frog Racing Academy</strong>, Mr. Khanna trains drivers across JK Tyre National Karting & Rotax Max Championships.
+              </p>
+
+              {/* 3 Quick Telemetry Badges */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 font-mono">
+                <div className="p-4 rounded-xl bg-[#151515] border border-white/10 space-y-1">
+                  <span className="text-[9px] text-[#F47C20] font-bold uppercase tracking-widest block">// EXPERIENCE</span>
+                  <div className="text-xl font-display font-bold text-white">20+ YRS</div>
+                  <span className="text-[10px] text-gray-400">Active Competition</span>
+                </div>
+
+                <div className="p-4 rounded-xl bg-[#151515] border border-white/10 space-y-1">
+                  <span className="text-[9px] text-[#F47C20] font-bold uppercase tracking-widest block">// PODIUMS</span>
+                  <div className="text-xl font-display font-bold text-white">50+ WINS</div>
+                  <span className="text-[10px] text-gray-400">National Trophies</span>
+                </div>
+
+                <div className="p-4 rounded-xl bg-[#151515] border border-white/10 space-y-1">
+                  <span className="text-[9px] text-[#F47C20] font-bold uppercase tracking-widest block">// ACADEMY</span>
+                  <div className="text-xl font-display font-bold text-white">PRO TIER</div>
+                  <span className="text-[10px] text-gray-400">Leap Frog Racing</span>
+                </div>
+              </div>
+
+              <div className="pt-2">
+                <MagneticButton href="/experience" className="py-3 px-6 text-xs font-bold">
+                  EXPLORE OUR MOTORSPORT HERITAGE &rarr;
+                </MagneticButton>
+              </div>
+            </div>
+
+            {/* Right Quote Badge Box */}
+            <div className="lg:col-span-4 p-6 rounded-xl bg-[#141414] border border-white/10 space-y-3">
+              <div className="text-4xl text-[#F47C20] font-serif leading-none">“</div>
+              <p className="text-xs sm:text-sm font-display font-bold text-white uppercase leading-relaxed italic">
+                From beginners learning proper braking lines to pro racers shaving split seconds, Kartomania offers authentic racing velocity.
+              </p>
+              <div className="pt-2 border-t border-white/10 text-[10px] font-mono text-gray-400">
+                // Official Track Calibration & Telemetry Briefing
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
 export const PricingSection = () => {
   const REAL_PACKAGES = [
     {

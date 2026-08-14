@@ -17,7 +17,8 @@ import WhatsAppButton from './components/WhatsAppButton';
 import { 
   TrackSection,
   WhatsNewSection,
-  PricingSection, 
+  PricingSection,
+  FounderHighlightSection, 
   ContactSection
 } from './components/Sections';
 
@@ -115,9 +116,10 @@ const HomePage = () => {
         <TrackSection onOpenBooking={handleOpenBooking} />
         <KartsSection />
 
-        {/* 04 — RACE / PACKAGES PREVIEW */}
+        {/* 04 — RACE / PACKAGES PREVIEW & FOUNDER PEDIGREE */}
         <PricingSection onOpenBooking={handleOpenBooking} />
         <WhatsNewSection onOpenBooking={handleOpenBooking} />
+        <FounderHighlightSection />
 
         {/* 05 — FINAL BOOKING CTA */}
         <ContactSection onOpenBooking={handleOpenBooking} />
