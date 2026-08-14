@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import {
   Trophy,
   MapPin,
-  Mail,
-  Phone,
   Clock,
   Sparkles,
   ShieldCheck,
@@ -12,7 +10,6 @@ import {
   ChevronRight,
   Zap
 } from 'lucide-react';
-import { InstagramIcon, FacebookIcon, WhatsAppIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 import TrackCircuitVisual from './TrackCircuitVisual';
 
@@ -746,142 +743,3 @@ export const PricingSection = () => {
   );
 };
 
-export const ContactSection = () => {
-  const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/7c5CMX5a4vaaXFLN9";
-
-  return (
-    <section id="contact" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-[#F9F9F9] text-[#111111]">
-      <div className="space-y-12 sm:space-y-16">
-        
-        {/* Section Header — Task 6 Final Homepage CTA */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#E5E5E5] pb-6 text-left">
-          <div className="space-y-2">
-            <div className="flex items-center gap-3">
-              <span className="w-[2px] h-5 bg-[#F47C20]" />
-              <span className="text-[#F47C20] text-sm font-bold font-mono">05</span>
-              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ FINAL BOOKING CTA</span>
-            </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs text-[#F47C20] uppercase tracking-widest font-bold shadow-sm">
-              <MapPin className="w-3.5 h-3.5 text-[#F47C20]" /> // ARENA LOCATION & NAVIGATION
-            </div>
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
-              READY TO <span className="text-[#F47C20]">RACE?</span>
-            </h2>
-            <p className="text-base sm:text-xl font-sans font-medium text-[#555555]">
-              Your next lap starts here.
-            </p>
-          </div>
-
-          <div className="shrink-0 pt-2 sm:pt-0">
-            <MagneticButton href="/race" className="py-4 px-10 text-sm font-bold shadow-md">
-              BOOK YOUR RACE &rarr;
-            </MagneticButton>
-          </div>
-        </div>
-
-        {/* Location Info & Navigation Strip */}
-        <div className="bg-white border border-[#E5E5E5] rounded-xl p-8 sm:p-10 shadow-sm">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 text-left font-mono">
-            <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2">
-              <div className="flex items-center gap-2 text-[#F47C20]">
-                <MapPin className="w-4 h-4" />
-                <span className="text-[10px] uppercase font-bold tracking-wider">// ARENA ADDRESS</span>
-              </div>
-              <div className="text-xs text-[#111111] font-sans font-semibold leading-relaxed">
-                Entertainland Mall, Sector 83, Manesar, Gurgaon.
-              </div>
-            </div>
-
-            <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2">
-              <div className="flex items-center gap-2 text-[#F47C20]">
-                <Clock className="w-4 h-4" />
-                <span className="text-[10px] uppercase font-bold tracking-wider">// OPEN ALL 7 DAYS</span>
-              </div>
-              <div className="text-xs text-[#111111] font-sans font-semibold space-y-0.5">
-                <div>Mon – Fri: 2:00 PM – 11:00 PM</div>
-                <div>Sat – Sun: 1:00 PM – 11:00 PM</div>
-                <div className="text-[#F47C20] font-bold">// Open All Days</div>
-              </div>
-            </div>
-
-            <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2">
-              <div className="flex items-center gap-2 text-[#F47C20]">
-                <Phone className="w-4 h-4" />
-                <span className="text-[10px] uppercase font-bold tracking-wider">// CALL US / HOTLINE</span>
-              </div>
-              <div className="text-xs text-[#111111] font-sans font-semibold space-y-0.5">
-                <a href="tel:+919717548897" className="block hover:text-[#F47C20] transition-colors font-bold">+91 97175 48897</a>
-                <a href="tel:+919560492876" className="block hover:text-[#F47C20] transition-colors font-bold">+91 95604 92876</a>
-              </div>
-            </div>
-
-            <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2">
-              <div className="flex items-center gap-2 text-[#F47C20]">
-                <Mail className="w-4 h-4" />
-                <span className="text-[10px] uppercase font-bold tracking-wider">// EMAIL ENQUIRIES</span>
-              </div>
-              <div className="text-xs text-[#111111] font-sans font-semibold space-y-0.5">
-                <a href="mailto:kartomania.ggn@gmail.com" className="block hover:text-[#F47C20] transition-colors font-bold break-all">
-                  kartomania.ggn@gmail.com
-                </a>
-                <div className="text-[10px] text-[#888888] font-mono">Corporate & Booking queries</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-4 pt-6 border-t border-[#EAEAEA]">
-            <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto justify-center lg:justify-start">
-              <a
-                href={GOOGLE_MAPS_LINK}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-[#F5F5F5] hover:bg-[#FFF0E5] border border-[#E5E5E5] hover:border-[#F47C20] text-xs font-mono tracking-wider uppercase text-[#0A0A0A] hover:text-[#F47C20] font-bold transition-all shadow-sm"
-              >
-                <MapPin className="w-3.5 h-3.5 text-[#F47C20]" />
-                <span>GOOGLE MAPS</span>
-              </a>
-
-              <a
-                href="https://www.facebook.com/kartomaniacsggn/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Facebook Page"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-[#F5F5F5] hover:bg-[#FFF0E5] border border-[#E5E5E5] hover:border-[#F47C20] text-xs font-mono tracking-wider uppercase text-[#0A0A0A] hover:text-[#F47C20] font-bold transition-all shadow-sm"
-              >
-                <FacebookIcon className="w-3.5 h-3.5 text-[#0A0A0A]" />
-                <span>FACEBOOK</span>
-              </a>
-
-              <a
-                href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram Profile"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-[#F5F5F5] hover:bg-[#FFF0E5] border border-[#E5E5E5] hover:border-[#F47C20] text-xs font-mono tracking-wider uppercase text-[#0A0A0A] hover:text-[#F47C20] font-bold transition-all shadow-sm"
-              >
-                <InstagramIcon className="w-3.5 h-3.5 text-[#0A0A0A]" />
-                <span>INSTAGRAM</span>
-              </a>
-
-              <a
-                href="https://wa.me/919717548897?text=Hi%20Kartomania!%20I%20would%20like%20to%20inquire%20about%20booking%20a%20racing%20session."
-                target="_blank"
-                rel="noreferrer"
-                aria-label="WhatsApp Hotline"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-[#F5F5F5] hover:bg-[#FFF0E5] border border-[#E5E5E5] hover:border-[#F47C20] text-xs font-mono tracking-wider uppercase text-[#0A0A0A] hover:text-[#F47C20] font-bold transition-all shadow-sm"
-              >
-                <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" />
-                <span>WHATSAPP</span>
-              </a>
-            </div>
-
-            <MagneticButton href="/race" className="py-3.5 px-8 text-xs font-bold whitespace-nowrap">
-              BOOK YOUR RACE &rarr;
-            </MagneticButton>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  );
-};

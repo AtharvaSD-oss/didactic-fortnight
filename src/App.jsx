@@ -18,8 +18,7 @@ import {
   TrackSection,
   WhatsNewSection,
   PricingSection,
-  FounderHighlightSection, 
-  ContactSection
+  FounderHighlightSection
 } from './components/Sections';
 
 // Lazy Loaded Page Components for Code-Splitting
@@ -120,9 +119,6 @@ const HomePage = () => {
         <PricingSection onOpenBooking={handleOpenBooking} />
         <WhatsNewSection onOpenBooking={handleOpenBooking} />
         <FounderHighlightSection />
-
-        {/* 05 — FINAL BOOKING CTA */}
-        <ContactSection onOpenBooking={handleOpenBooking} />
       </main>
 
       {/* Footer */}
