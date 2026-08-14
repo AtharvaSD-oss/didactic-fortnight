@@ -1,7 +1,6 @@
 import React from 'react';
-import { ShieldCheck, Zap, Flame, Award } from 'lucide-react';
+import { ShieldCheck, Zap, Award } from 'lucide-react';
 import AnimatedCard from './AnimatedCard';
-import MagneticButton from './MagneticButton';
 
 const RacingRulesSection = () => {
   return (
@@ -71,82 +70,7 @@ const RacingRulesSection = () => {
 
 
 
-        {/* Pro Telemetry Feature: "WANT MORE SPEED?" (Real Racers Race Clean) */}
-        <div className="rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] p-8 sm:p-12 relative overflow-hidden text-left">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            {/* Left: Want More Speed? Heading */}
-            <div className="lg:col-span-5 space-y-4">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 text-[#F47C20] font-mono text-xs font-bold uppercase tracking-wider">
-                <Flame className="w-3.5 h-3.5 text-[#F47C20]" /> PRO RACER CODE
-              </div>
-              <h3 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
-                WANT MORE <span className="text-[#F47C20]">SPEED?</span>
-              </h3>
-              <p className="text-xs sm:text-sm font-sans text-[#666666] leading-relaxed">
-                National champions don't win through aggressive collisions or sideways slides. Master the art of clean driving to smash lap records.
-              </p>
-            </div>
 
-            {/* Right: The 3 Core Pro Truths */}
-            <div className="lg:col-span-7 space-y-3.5">
-              <div className="p-5 rounded-xl bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-colors shadow-sm flex items-start gap-4">
-                <div className="p-2 w-8 h-8 rounded-sm bg-[#F47C20] text-white flex items-center justify-center shrink-0 font-mono font-bold text-xs shadow-sm">
-                  01
-                </div>
-                <div>
-                  <h4 className="font-display font-bold text-sm sm:text-base text-[#0A0A0A] uppercase">
-                    DRIFTING DOESN'T MAKE YOU FASTER
-                  </h4>
-                  <p className="text-xs font-sans text-[#666666] mt-1 leading-relaxed">
-                    Sideways sliding bleeds engine RPM and tire grip. Grip-driving and hitting apexes carries maximum exit velocity down the straight.
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-5 rounded-xl bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-colors shadow-sm flex items-start gap-4">
-                <div className="p-2 w-8 h-8 rounded-sm bg-[#F47C20] text-white flex items-center justify-center shrink-0 font-mono font-bold text-xs shadow-sm">
-                  02
-                </div>
-                <div>
-                  <h4 className="font-display font-bold text-sm sm:text-base text-[#0A0A0A] uppercase">
-                    BUMPING DOESN'T MAKE YOU A BETTER RACER
-                  </h4>
-                  <p className="text-xs font-sans text-[#666666] mt-1 leading-relaxed">
-                    Kart-to-kart contact scrubs speed and damages momentum. Clean overtakes are earned through late braking and switchbacks.
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-5 rounded-xl bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-colors shadow-sm flex items-start gap-4">
-                <div className="p-2 w-8 h-8 rounded-sm bg-[#F47C20] text-white flex items-center justify-center shrink-0 font-mono font-bold text-xs shadow-sm">
-                  03
-                </div>
-                <div>
-                  <h4 className="font-display font-bold text-sm sm:text-base text-[#0A0A0A] uppercase">
-                    THE FASTEST RACERS WIN THROUGH PRECISION, CONTROL & CONSISTENCY
-                  </h4>
-                  <p className="text-xs font-sans text-[#666666] mt-1 leading-relaxed">
-                    Hitting the exact same braking marker lap after lap is how national championships are won.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Big Bold Clean Racing Banner */}
-          <div className="mt-10 pt-8 border-t border-[#E5E5E5] flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
-            <div className="text-2xl sm:text-4xl font-display font-bold tracking-tight text-[#0A0A0A] uppercase">
-              REAL RACERS <span className="text-[#F47C20]">RACE CLEAN.</span>
-            </div>
-
-            <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-3 px-8 text-xs">
-              TEST YOUR TIMING NOW
-            </MagneticButton>
-          </div>
-
-        </div>
 
       </div>
     </section>
