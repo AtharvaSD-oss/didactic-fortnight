@@ -5,8 +5,8 @@ import { InstagramIcon, FacebookIcon, WhatsAppIcon } from './Icons';
 
 const Footer = () => {
   return (
-    <footer className="border-t border-[#EAEAEA] bg-white py-14 px-4 sm:px-6 lg:px-12 text-center sm:text-left relative z-20 text-[#111111]">
-      <div className="max-w-7xl mx-auto space-y-8">
+    <footer className="border-t border-[#EAEAEA] bg-white py-12 px-4 sm:px-8 lg:px-[54px] text-center sm:text-left relative z-20 text-[#111111]">
+      <div className="max-w-[1600px] mx-auto space-y-8">
         
         {/* Main Footer Row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-[#EAEAEA]">

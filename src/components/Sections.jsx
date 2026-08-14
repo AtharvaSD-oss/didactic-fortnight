@@ -7,7 +7,7 @@ import MagneticButton from './MagneticButton';
 import TrackCircuitVisual from './TrackCircuitVisual';
 
 export const TrackSection = () => (
-  <section id="track" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
+  <section id="track" className="py-14 sm:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
     <div className="flex flex-col lg:flex-row items-center justify-between gap-10 sm:gap-14">
       
       {/* Left Spec & Narrative */}
@@ -75,7 +75,7 @@ export const TrackSection = () => (
 
 export const FounderHighlightSection = () => {
   return (
-    <section id="founder-pedigree" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
+    <section id="founder-pedigree" className="py-14 sm:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
       <div className="space-y-10 sm:space-y-12">
         
         {/* Section Header */}
@@ -244,7 +244,7 @@ export const PricingSection = () => {
   ];
 
   return (
-    <section id="pricing" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
+    <section id="pricing" className="py-14 sm:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
       <div className="space-y-10 sm:space-y-12">
         
         {/* Section Header */}

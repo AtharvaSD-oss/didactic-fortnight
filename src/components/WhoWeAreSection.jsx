@@ -100,8 +100,8 @@ export const WhoWeAreSection = () => {
       className="relative w-full bg-white text-[#111111]"
     >
       {/* ── Transition Header Block ── */}
-      <div className="bg-[#F9F9F9] text-[#111111] py-8 sm:py-10 px-4 sm:px-6 lg:px-12 border-t border-b border-[#EAEAEA]">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="bg-[#F9F9F9] text-[#111111] py-8 sm:py-10 px-4 sm:px-8 lg:px-[54px] border-t border-b border-[#EAEAEA]">
+        <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="space-y-1 text-left">
             <div className="flex items-center gap-3">
               <span className="w-[2px] h-5 bg-[#F47C20]" />
@@ -116,7 +116,7 @@ export const WhoWeAreSection = () => {
         </div>
       </div>
 
-      <div className="py-12 sm:py-16 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto space-y-16">
+      <div className="py-12 sm:py-16 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto space-y-16">
         {/* Top Header Tag */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#EAEAEA] pb-6">
           <div className="text-left space-y-2 max-w-3xl">

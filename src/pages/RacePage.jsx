@@ -5,7 +5,7 @@ import Cursor from '../components/Cursor';
 import ScrollProgress from '../components/ScrollProgress';
 import WhatsAppButton from '../components/WhatsAppButton';
 import MagneticButton from '../components/MagneticButton';
-import { Trophy, CheckCircle2, User, Users, Cake, Building2 } from 'lucide-react';
+import { Trophy, CheckCircle2, Zap } from 'lucide-react';
 
 export const RacePage = () => {
   useEffect(() => {
@@ -16,34 +16,48 @@ export const RacePage = () => {
     window.open("https://web.racefacer.com/kiosk/kartomaniaentertainlandmall", "_blank", "noopener,noreferrer");
   };
 
-  const CATEGORIES = [
+  const RACE_EXPERIENCES = [
     {
-      id: "individual",
-      title: "INDIVIDUAL RACING",
-      icon: User,
-      desc: "Solo time-attack heat races in 270cc Sodi RT10 Pro karts with millisecond RaceFacer telemetry tracking.",
-      badge: "SOLO RACERS"
+      id: "pro-kart",
+      name: "PRO KART SESSIONS",
+      cc: "270CC SODI RT10",
+      target: "ADULTS & PRO DRIVERS",
+      desc: "High-speed outdoor sprint karting with Honda GX270 4-stroke engines delivering authentic Grand Prix velocity.",
+      badge: "MOST POPULAR",
+      highlights: [
+        "270cc Honda GX engine (up to 70 km/h)",
+        "Adjustable pedal & seat positioning",
+        "RaceFacer telemetry lap tracking",
+        "Full DOT safety helmet & balaclava"
+      ]
     },
     {
-      id: "group",
-      title: "GROUP RACING",
-      icon: Users,
-      desc: "Multi-driver competitive heat races with friends & family, live sector timing, and podium photo ops.",
-      badge: "FRIENDS & FAMILY"
+      id: "twin-kart",
+      name: "TWIN TANDEM KARTS",
+      cc: "500CC DUAL ENGINE",
+      target: "PAIRS & PARENT-CHILD",
+      desc: "Dual steering setup powered by twin engines, ideal for racing couples, friends, or parents introducing kids to racing.",
+      badge: "DUAL DRIVER",
+      highlights: [
+        "Twin synchronized Honda engines",
+        "Dual steering control systems",
+        "Shared high-speed racing adrenaline",
+        "Full safety harness & roll-over bar"
+      ]
     },
     {
-      id: "birthday",
-      title: "BIRTHDAY / CELEBRATION",
-      icon: Cake,
-      desc: "Birthday party Grand Prix packages featuring complimentary free bowling coupons, trophy ceremony, & paddock lounge.",
-      badge: "PARTIES & EVENTS"
-    },
-    {
-      id: "corporate",
-      title: "CORPORATE / TEAM",
-      icon: Building2,
-      desc: "Exclusive circuit rentals, corporate championship leagues, custom trophies, and telemetry leaderboards.",
-      badge: "CORPORATE LEAGUES"
+      id: "cadet-kart",
+      name: "CADET JUNIOR SPRINT",
+      cc: "160CC SODI CADET",
+      target: "KIDS (HEIGHT 4FT+)",
+      desc: "Calibrated speed-restricted junior chassis with padded bucket seats designed specifically for young champions.",
+      badge: "JUNIOR CLASS",
+      highlights: [
+        "160cc restricted Honda power unit",
+        "Wrap-around safety bumper systems",
+        "Remote electronic speed marshaling",
+        "Junior certified helmets & neck support"
+      ]
     }
   ];
 
@@ -57,9 +71,10 @@ export const RacePage = () => {
       included: [
         "Weekday - 5 sessions + 1 Bowling FREE (₹3,250)",
         "Weekend - 5 sessions + 1 Bowling FREE (₹3,800)",
-        "DOT-certified helmet & balaclava"
+        "DOT-certified helmet & balaclava",
+        "1 free bowling game included"
       ],
-      conditions: "All taxes included. Valid for specified sessions.",
+      conditions: "Validity 2 months. 100% Inclusive of all taxes.",
       tag: "5 SESSIONS"
     },
     {
@@ -71,9 +86,10 @@ export const RacePage = () => {
       included: [
         "Weekday - 10 sessions + 1 Session + 1 Bowling FREE (₹6,500)",
         "Weekend - 10 sessions + 1 Session + 1 Bowling FREE (₹7,600)",
-        "Live RaceFacer telemetry tracking"
+        "Live RaceFacer telemetry tracking",
+        "1 bonus session + 1 free bowling game included"
       ],
-      conditions: "All taxes included. Valid for specified sessions.",
+      conditions: "Validity 4 months. Can be shared with friends and family. 100% Inclusive of all taxes.",
       tag: "MOST POPULAR"
     },
     {
@@ -85,9 +101,10 @@ export const RacePage = () => {
       included: [
         "Weekday - 15 sessions + 2 Sessions + 2 Bowling FREE (₹9,750)",
         "Weekend - 15 sessions + 2 Sessions + 2 Bowling FREE (₹11,400)",
-        "Shareable driver pass & telemetry app"
+        "Shareable driver group pass",
+        "2 bonus sessions + 2 free bowling games included"
       ],
-      conditions: "All taxes included. Valid for specified sessions.",
+      conditions: "Validity 6 months. Can be shared with friends and family. 100% Inclusive of all taxes.",
       tag: "BEST VALUE"
     },
     {
@@ -99,46 +116,47 @@ export const RacePage = () => {
       included: [
         "Weekday - 20 sessions + 3 Session + 3 Bowling FREE (₹13,000)",
         "Weekend - 20 sessions + 3 Session + 3 Bowling FREE (₹15,200)",
-        "Maximum track time & savings"
+        "Maximum track time & savings",
+        "3 bonus sessions + 3 free bowling games included"
       ],
-      conditions: "All taxes included. Valid for specified sessions.",
+      conditions: "Validity 6 months. Can be shared with friends and family. 100% Inclusive of all taxes.",
       tag: "MEGA COMBO"
     }
   ];
 
   const ELIGIBILITY = [
     {
-      title: "ADULTS & TEENS",
-      req: "Height 5ft+ (152cm+)",
-      desc: "Eligible for 270cc Sodi RT10 Pro karts reaching speeds up to 70 km/h on the ~600m asphalt circuit."
+      title: "ADULT DRIVERS",
+      req: "HEIGHT 4'6\"+",
+      desc: "Eligible for 270cc Sodi RT10 Pro single karts and Twin 500cc tandem karts."
     },
     {
-      title: "JUNIOR DRIVERS",
-      req: "Height 4ft+ (122cm+)",
-      desc: "Eligible for 160cc Cadet karts equipped with speed limiters and junior safety padding."
+      title: "JUNIOR CADETS",
+      req: "HEIGHT 4'0\"+",
+      desc: "Eligible for 160cc Sodi Cadet junior sprint karts with electronic speed limits."
     },
     {
-      title: "DUO DRIVERS",
-      req: "Parent & Child or Duo Adults",
-      desc: "Eligible for 500cc Twin dual-steering karts allowing joint track driving."
+      title: "PASSENGERS",
+      req: "HEIGHT 3'6\"+",
+      desc: "Can ride in Twin tandem karts accompanied by an adult licensed driver."
     },
     {
-      title: "SAFETY REQUIREMENTS",
-      req: "Flat Closed-Toe Shoes Required",
-      desc: "Full safety helmets, sanitary balaclavas, and safety briefings provided free before every session."
+      title: "SAFETY GEAR",
+      req: "MANDATORY",
+      desc: "Closed-toe shoes required. Full-face helmets and balaclavas provided on-site."
     }
   ];
 
   const BOOKING_STEPS = [
     {
       step: "01",
-      title: "CHOOSE YOUR RACE",
-      desc: "Select your preferred karting session, duo experience, or multi-session bundle."
+      title: "CHOOSE YOUR SESSIONS",
+      desc: "Pick single sprints or bulk discount passes with free bowling bonus games."
     },
     {
       step: "02",
-      title: "SELECT YOUR TIME",
-      desc: "Pick your date & arrival time slot via the 1-tap RaceFacer online kiosk."
+      title: "INSTANT ONLINE CONFIRMATION",
+      desc: "Secure checkout via RaceFacer official portal with guaranteed grid priority."
     },
     {
       step: "03",
@@ -159,27 +177,27 @@ export const RacePage = () => {
         onOpenBooking={handleOpenBooking}
       />
 
-      <main className="relative z-10 pt-24 sm:pt-32">
+      <main className="relative z-10 pt-[85px] sm:pt-[100px] lg:pt-[125px]">
         {/* ============================================================
             01 — HERO
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
-          <div className="space-y-6 max-w-4xl">
+        <section className="py-10 sm:py-14 lg:py-16 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
+          <div className="space-y-4 sm:space-y-6 max-w-4xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
               <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // OFFICIAL RACING PACKAGES
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
               CHOOSE YOUR <br />
               <span className="text-[#F47C20]">RACE.</span>
             </h1>
 
-            <p className="text-lg sm:text-2xl font-sans text-[#555555] font-medium leading-relaxed">
+            <p className="text-base sm:text-xl font-sans text-[#555555] font-medium leading-relaxed">
               Pick your experience and get ready for the grid.
             </p>
 
-            <div className="pt-4">
-              <MagneticButton onClick={handleOpenBooking} className="py-4 px-10 text-xs font-bold">
+            <div className="pt-2">
+              <MagneticButton onClick={handleOpenBooking} className="py-3.5 px-8 text-xs font-bold">
                 BOOK YOUR RACE &rarr;
               </MagneticButton>
             </div>
@@ -189,7 +207,7 @@ export const RacePage = () => {
         {/* ============================================================
             02 — RACING EXPERIENCES
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-10">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
@@ -198,34 +216,56 @@ export const RacePage = () => {
                 <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ RACING EXPERIENCES</span>
               </div>
               <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
-                VERIFIED RACE <span className="text-[#F47C20]">CATEGORIES</span>
+                SELECT YOUR <span className="text-[#F47C20]">KART CLASS</span>
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {CATEGORIES.map((cat) => {
-                const IconComp = cat.icon;
-                return (
-                  <div key={cat.id} className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-4 group shadow-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {RACE_EXPERIENCES.map((exp) => (
+                <div
+                  key={exp.id}
+                  className="p-6 sm:p-8 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-colors flex flex-col justify-between shadow-sm"
+                >
+                  <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="px-2.5 py-0.5 rounded-sm bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider group-hover:bg-[#F47C20] transition-colors">
-                        {cat.badge}
+                      <span className="px-2.5 py-0.5 rounded-sm bg-[#F47C20] text-white font-mono text-[9px] font-bold uppercase tracking-wider">
+                        {exp.badge}
                       </span>
-                      <IconComp className="w-5 h-5 text-[#F47C20] group-hover:scale-110 transition-transform" />
+                      <span className="font-mono text-xs text-[#0A0A0A] font-bold">{exp.cc}</span>
                     </div>
-                    <h3 className="text-xl font-display font-bold text-[#0A0A0A] uppercase">{cat.title}</h3>
-                    <p className="text-xs font-sans text-[#555555] leading-relaxed">{cat.desc}</p>
+
+                    <h3 className="text-2xl font-display font-bold text-[#0A0A0A] uppercase">{exp.name}</h3>
+                    <p className="text-xs font-mono text-[#F47C20] font-bold uppercase">{exp.target}</p>
+                    <p className="text-xs font-sans text-[#555555] leading-relaxed">{exp.desc}</p>
+
+                    <div className="space-y-2 pt-4 border-t border-[#EAEAEA]">
+                      {exp.highlights.map((item, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-xs font-sans text-[#444444]">
+                          <Zap className="w-3.5 h-3.5 text-[#F47C20] shrink-0" />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                );
-              })}
+
+                  <div className="pt-6">
+                    <MagneticButton
+                      onClick={handleOpenBooking}
+                      className="w-full py-3 px-4 text-xs font-bold justify-center"
+                    >
+                      SELECT THIS KART &rarr;
+                    </MagneticButton>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* ============================================================
-            03 — PACKAGES
+            03 — PACKAGES & PRICING
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-10">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-4">
               <div>
@@ -310,7 +350,7 @@ export const RacePage = () => {
         {/* ============================================================
             04 — WHO CAN RACE?
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-8">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
@@ -338,7 +378,7 @@ export const RacePage = () => {
         {/* ============================================================
             05 — HOW BOOKING WORKS
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-8">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
@@ -366,16 +406,16 @@ export const RacePage = () => {
         {/* ============================================================
             06 — FINAL CTA
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto text-center">
+        <section className="py-16 sm:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-4xl sm:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
               YOUR RACE <span className="text-[#F47C20]">AWAITS.</span>
             </h2>
-            <p className="text-base sm:text-xl font-sans text-[#555555]">
+            <p className="text-sm sm:text-base font-sans text-[#555555]">
               Select your session preferences and launch onto Northern India’s premier ~600m outdoor circuit.
             </p>
-            <div className="pt-4 flex justify-center">
-              <MagneticButton onClick={handleOpenBooking} className="py-4 px-10 text-xs font-bold">
+            <div className="pt-2 flex justify-center">
+              <MagneticButton onClick={handleOpenBooking} className="py-3.5 px-8 text-xs font-bold">
                 BOOK NOW &rarr;
               </MagneticButton>
             </div>

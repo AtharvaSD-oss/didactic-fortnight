@@ -61,22 +61,22 @@ export const ContactPage = () => {
         onOpenBooking={handleOpenBooking}
       />
 
-      <main className="relative z-10 pt-24 sm:pt-32">
+      <main className="relative z-10 pt-[85px] sm:pt-[100px] lg:pt-[125px]">
         {/* ============================================================
             01 — HERO
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
-          <div className="space-y-6 max-w-4xl">
+        <section className="py-10 sm:py-14 lg:py-16 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
+          <div className="space-y-4 sm:space-y-6 max-w-4xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-[#F47C20]" /> // VENUE & NAVIGATION
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
               FIND THE <br />
               <span className="text-[#F47C20]">TRACK.</span>
             </h1>
 
-            <p className="text-lg sm:text-2xl font-sans text-[#555555] font-medium leading-relaxed">
+            <p className="text-base sm:text-xl font-sans text-[#555555] font-medium leading-relaxed">
               Your next race is closer than you think.
             </p>
           </div>
@@ -85,7 +85,7 @@ export const ContactPage = () => {
         {/* ============================================================
             02 — LOCATION & MAP
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-8">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-4">
               <div>
@@ -118,7 +118,7 @@ export const ContactPage = () => {
                 </div>
               </div>
               <span className="font-mono text-xs text-[#666666] font-bold uppercase">
-                600M OUTDOOR ASPHALT TRACK
+                ★ 10 MINS FROM GURGAON NH-48 EXIT
               </span>
             </div>
 
@@ -139,7 +139,7 @@ export const ContactPage = () => {
         {/* ============================================================
             03 — CONTACT
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-8">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
@@ -232,8 +232,8 @@ export const ContactPage = () => {
         {/* ============================================================
             04 — FAQ
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-4xl mx-auto border-b border-[#EAEAEA]">
-          <div className="space-y-8">
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
+          <div className="space-y-8 max-w-4xl">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-4">
               <div>
                 <div className="flex items-center gap-3 mb-1">
@@ -294,16 +294,16 @@ export const ContactPage = () => {
         {/* ============================================================
             05 — FINAL CTA
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto text-center">
+        <section className="py-16 sm:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-4xl sm:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
               SEE YOU ON <span className="text-[#F47C20]">THE GRID.</span>
             </h2>
-            <p className="text-base sm:text-xl font-sans text-[#555555]">
+            <p className="text-sm sm:text-base font-sans text-[#555555]">
               Reserve your race session online now for instant 1-tap confirmation.
             </p>
-            <div className="pt-4 flex justify-center">
-              <MagneticButton onClick={handleOpenBooking} className="py-4 px-10 text-xs font-bold">
+            <div className="pt-2 flex justify-center">
+              <MagneticButton onClick={handleOpenBooking} className="py-3.5 px-8 text-xs font-bold">
                 BOOK YOUR RACE &rarr;
               </MagneticButton>
             </div>

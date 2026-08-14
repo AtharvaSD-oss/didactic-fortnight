@@ -60,22 +60,22 @@ export const TrackPage = () => {
         onOpenBooking={handleOpenBooking}
       />
 
-      <main className="relative z-10 pt-24 sm:pt-32">
+      <main className="relative z-10 pt-[85px] sm:pt-[100px] lg:pt-[125px]">
         {/* ============================================================
             01 — HERO
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
-          <div className="space-y-6 max-w-4xl">
+        <section className="py-10 sm:py-14 lg:py-16 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
+          <div className="space-y-4 sm:space-y-6 max-w-4xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-[#F47C20]" /> // ~600M GRAND PRIX CIRCUIT &bull; 11 TURNS
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
               KNOW YOUR <br />
               <span className="text-[#F47C20]">TRACK.</span>
             </h1>
 
-            <p className="text-lg sm:text-2xl font-sans text-[#555555] font-medium leading-relaxed">
+            <p className="text-base sm:text-xl font-sans text-[#555555] font-medium leading-relaxed">
               Every corner. Every straight. Every lap.
             </p>
           </div>
@@ -84,7 +84,7 @@ export const TrackPage = () => {
         {/* ============================================================
             02 — OFFICIAL TRACK MAP SHOWCASE
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-8">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-4">
               <div>
@@ -103,14 +103,16 @@ export const TrackPage = () => {
             </div>
 
             {/* Official Track Map Component */}
-            <TrackCircuitVisual />
+            <div className="max-w-4xl mx-auto">
+              <TrackCircuitVisual />
+            </div>
           </div>
         </section>
 
         {/* ============================================================
             03 — TRACK DATA
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-8">
             <div className="flex items-center gap-3 mb-2">
               <span className="w-[2px] h-5 bg-[#F47C20]" />
@@ -121,25 +123,25 @@ export const TrackPage = () => {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 font-mono">
               <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2 shadow-sm">
                 <span className="text-xs font-bold text-[#F47C20] tracking-widest block">01 // LENGTH</span>
-                <div className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A]">~ 600m</div>
+                <div className="text-3xl sm:text-4xl font-display font-bold text-[#0A0A0A]">~ 600m</div>
                 <p className="text-xs text-[#666666] font-sans">Outdoor asphalt Grand Prix circuit</p>
               </div>
 
               <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2 shadow-sm">
                 <span className="text-xs font-bold text-[#F47C20] tracking-widest block">02 // TOTAL TURNS</span>
-                <div className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A]">11</div>
+                <div className="text-3xl sm:text-4xl font-display font-bold text-[#0A0A0A]">11</div>
                 <p className="text-xs text-[#666666] font-sans">Apexes, chicanes & hairpins</p>
               </div>
 
               <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2 shadow-sm">
                 <span className="text-xs font-bold text-[#F47C20] tracking-widest block">03 // DIRECTION</span>
-                <div className="text-2xl sm:text-4xl font-display font-bold text-[#0A0A0A]">CLOCKWISE</div>
+                <div className="text-xl sm:text-3xl font-display font-bold text-[#0A0A0A]">CLOCKWISE</div>
                 <p className="text-xs text-[#666666] font-sans">Official circuit flow direction</p>
               </div>
 
               <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2 shadow-sm">
                 <span className="text-xs font-bold text-[#F47C20] tracking-widest block">04 // TRACK TYPE</span>
-                <div className="text-2xl sm:text-4xl font-display font-bold text-[#0A0A0A]">OUTDOOR</div>
+                <div className="text-xl sm:text-3xl font-display font-bold text-[#0A0A0A]">OUTDOOR</div>
                 <p className="text-xs text-[#666666] font-sans">Polymer asphalt surface</p>
               </div>
             </div>
@@ -149,7 +151,7 @@ export const TrackPage = () => {
         {/* ============================================================
             04 — TRACK SECTIONS
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-8">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
@@ -181,16 +183,16 @@ export const TrackPage = () => {
         {/* ============================================================
             05 — FINAL CTA
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto text-center">
+        <section className="py-16 sm:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-4xl sm:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
               THINK YOU CAN <span className="text-[#F47C20]">MASTER IT?</span>
             </h2>
-            <p className="text-base sm:text-xl font-sans text-[#555555]">
+            <p className="text-sm sm:text-base font-sans text-[#555555]">
               Test your timing on Northern India’s premier ~600m outdoor circuit.
             </p>
-            <div className="pt-4 flex justify-center">
-              <MagneticButton onClick={handleOpenBooking} className="py-4 px-10 text-xs font-bold">
+            <div className="pt-2 flex justify-center">
+              <MagneticButton onClick={handleOpenBooking} className="py-3.5 px-8 text-xs font-bold">
                 BOOK YOUR RACE &rarr;
               </MagneticButton>
             </div>

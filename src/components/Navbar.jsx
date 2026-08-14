@@ -65,7 +65,7 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
           ${isScrolled ? 'header-minimal-scrolled py-3' : 'header-minimal-top py-4.5'}
         `}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between gap-4">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-[54px] flex items-center justify-between gap-4">
           
           {/* 1. LEFT: Brand Logo */}
           <Link to="/" className="flex items-center gap-2 group cursor-pointer shrink-0 text-decoration-none">

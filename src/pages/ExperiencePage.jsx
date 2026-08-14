@@ -21,7 +21,7 @@ export const ExperiencePage = () => {
       number: "01",
       title: "SAFETY FIRST",
       icon: ShieldCheck,
-      desc: "Impact-absorbing polymer safety barriers, DOT-certified helmets, sanitary balaclavas, and track-certified safety marshals."
+      desc: "FIA-grade multi-layer polymer barriers, DOT-certified safety helmets, sanitary balaclavas, and trackside marshals on every sector."
     },
     {
       number: "02",
@@ -111,27 +111,27 @@ export const ExperiencePage = () => {
         onOpenBooking={handleOpenBooking}
       />
 
-      <main className="relative z-10 pt-24 sm:pt-32">
+      <main className="relative z-10 pt-[85px] sm:pt-[100px] lg:pt-[125px]">
         {/* ============================================================
             01 — HERO
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
-          <div className="space-y-6 max-w-4xl">
+        <section className="py-10 sm:py-14 lg:py-16 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
+          <div className="space-y-4 sm:space-y-6 max-w-4xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
               <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // THE KARTOMANIA EXPERIENCE
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
               MORE THAN <br />
               <span className="text-[#F47C20]">A RACE.</span>
             </h1>
 
-            <p className="text-lg sm:text-2xl font-sans text-[#555555] font-medium leading-relaxed">
+            <p className="text-base sm:text-xl font-sans text-[#555555] font-medium leading-relaxed">
               Discover what makes the Kartomania experience different.
             </p>
 
-            <div className="pt-4">
-              <MagneticButton onClick={handleOpenBooking} className="py-4 px-10 text-xs font-bold">
+            <div className="pt-2">
+              <MagneticButton onClick={handleOpenBooking} className="py-3.5 px-8 text-xs font-bold">
                 BOOK YOUR RACE &rarr;
               </MagneticButton>
             </div>
@@ -141,9 +141,9 @@ export const ExperiencePage = () => {
         {/* ============================================================
             02 — WHY KARTOMANIA?
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 space-y-6">
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div className="lg:col-span-6 space-y-5">
               <div className="flex items-center gap-3">
                 <span className="w-[2px] h-5 bg-[#F47C20]" />
                 <span className="text-[#F47C20] text-sm font-bold font-mono">02</span>
@@ -155,21 +155,21 @@ export const ExperiencePage = () => {
                 <span className="text-[#F47C20]">NATIONAL RACING CHAMPION</span>
               </h2>
 
-              <p className="text-[#333333] text-base sm:text-lg font-sans leading-relaxed">
+              <p className="text-[#333333] text-sm sm:text-base font-sans leading-relaxed">
                 Kartomania is Northern India’s premier ~600-meter outdoor asphalt go-karting circuit located at Entertainland Mall, Sector 83, Manesar, Gurugram.
               </p>
 
-              <p className="text-[#666666] text-sm sm:text-base font-sans leading-relaxed">
+              <p className="text-[#666666] text-xs sm:text-sm font-sans leading-relaxed">
                 Founded and directed by veteran racer <strong className="text-[#0A0A0A]">Mr. Rohit Khanna</strong> (20+ years of active national racing competition in JK Tyre and Rotax Max Championships), Kartomania is the only track calibrated personally to professional motorsport standards.
               </p>
             </div>
 
             <div className="lg:col-span-6">
-              <div className="p-8 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] hover:border-[#F47C20] space-y-4 shadow-sm transition-colors">
-                <div className="inline-block px-3 py-1 rounded-sm bg-[#F47C20] text-white font-mono text-xs font-bold uppercase">
+              <div className="p-6 sm:p-8 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] space-y-4 shadow-sm text-left">
+                <div className="inline-block px-3 py-1 rounded-sm bg-[#F47C20] text-white font-mono text-[10px] sm:text-xs font-bold uppercase tracking-wider">
                   AUTHENTIC MOTORSPORT HERITAGE
                 </div>
-                <div className="text-2xl font-display font-bold text-[#0A0A0A] uppercase">
+                <div className="text-xl sm:text-2xl font-display font-bold text-[#0A0A0A] uppercase">
                   "REAL RACERS RACE CLEAN — BUILT FROM DECADES ON THE NATIONAL GRID."
                 </div>
                 <p className="text-xs font-mono text-[#666666]">
@@ -183,8 +183,8 @@ export const ExperiencePage = () => {
         {/* ============================================================
             03 — WHAT DRIVES US
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
-          <div className="space-y-12">
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
+          <div className="space-y-10">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <span className="w-[2px] h-5 bg-[#F47C20]" />
@@ -217,8 +217,8 @@ export const ExperiencePage = () => {
         {/* ============================================================
             04 — KARTOMANIA JOURNEY
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
-          <div className="space-y-12">
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
+          <div className="space-y-10">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <span className="w-[2px] h-5 bg-[#F47C20]" />
@@ -245,8 +245,8 @@ export const ExperiencePage = () => {
         {/* ============================================================
             05 — THE KARTOMANIA STANDARD
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
-          <div className="space-y-12">
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
+          <div className="space-y-10">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <span className="w-[2px] h-5 bg-[#F47C20]" />
@@ -275,16 +275,16 @@ export const ExperiencePage = () => {
         {/* ============================================================
             06 — FINAL CTA
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto text-center">
+        <section className="py-16 sm:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-4xl sm:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
               READY TO GET ON <span className="text-[#F47C20]">THE GRID?</span>
             </h2>
-            <p className="text-base sm:text-xl font-sans text-[#555555]">
+            <p className="text-sm sm:text-base font-sans text-[#555555]">
               Reserve your race slot today and experience real motorsport velocity.
             </p>
-            <div className="pt-4 flex justify-center">
-              <MagneticButton onClick={handleOpenBooking} className="py-4 px-10 text-xs font-bold">
+            <div className="pt-2 flex justify-center">
+              <MagneticButton onClick={handleOpenBooking} className="py-3.5 px-8 text-xs font-bold">
                 BOOK YOUR RACE &rarr;
               </MagneticButton>
             </div>
