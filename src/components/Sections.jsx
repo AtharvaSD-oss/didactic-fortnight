@@ -591,56 +591,56 @@ export const FounderHighlightSection = () => {
 export const PricingSection = () => {
   const REAL_PACKAGES = [
     {
-      id: "pro-kart",
-      name: "PRO KART SINGLE SESSION",
-      price: "₹550 / ₹650",
-      priceNote: "Weekday / Weekend",
-      duration: "6 MINUTES",
+      id: "pkg-5",
+      name: "5 SESSIONS + 1 BOWLING FREE",
+      price: "₹3,250 / ₹3,800",
+      priceNote: "Weekday: ₹3,250 | Weekend: ₹3,800",
+      duration: "5 SESSIONS",
       included: [
-        "270cc Sodi RT10 Pro Kart access",
-        "DOT-certified helmet & balaclava",
+        "Weekday - 5 sessions + 1 Bowling FREE (₹3,250)",
+        "Weekend - 5 sessions + 1 Bowling FREE (₹3,800)",
+        "DOT-certified helmet & balaclava"
+      ],
+      tag: "5 SESSIONS"
+    },
+    {
+      id: "pkg-10",
+      name: "10 SESSIONS + 1 SESSION + 1 BOWLING FREE",
+      price: "₹6,500 / ₹7,600",
+      priceNote: "Weekday: ₹6,500 | Weekend: ₹7,600",
+      duration: "10 + 1 SESSIONS",
+      included: [
+        "Weekday - 10 sessions + 1 Session + 1 Bowling FREE (₹6,500)",
+        "Weekend - 10 sessions + 1 Session + 1 Bowling FREE (₹7,600)",
         "Live RaceFacer telemetry tracking"
       ],
       tag: "MOST POPULAR"
     },
     {
-      id: "twin-kart",
-      name: "TWIN KART (DUO / PARENT & CHILD)",
-      price: "₹1,200",
-      priceNote: "Per session (All Days)",
-      duration: "6 MINUTES",
+      id: "pkg-15",
+      name: "15 SESSIONS + 2 SESSIONS + 2 BOWLING FREE",
+      price: "₹9,750 / ₹11,400",
+      priceNote: "Weekday: ₹9,750 | Weekend: ₹11,400",
+      duration: "15 + 2 SESSIONS",
       included: [
-        "500cc Twin dual-steering race kart",
-        "Dual safety harnesses & protection",
-        "Ideal for duo racers & parent/child"
-      ],
-      tag: "DUO EXPERIENCE"
-    },
-    {
-      id: "cadet-kart",
-      name: "CADET KART (JUNIOR PILOTS)",
-      price: "₹450",
-      priceNote: "Per session (All Days)",
-      duration: "6 MINUTES",
-      included: [
-        "160cc calibrated junior chassis",
-        "Speed limiter governor safety",
-        "Junior helmet & rib protector"
-      ],
-      tag: "JUNIOR RACING"
-    },
-    {
-      id: "5-session-bundle",
-      name: "5-SESSION VALUE BUNDLE",
-      price: "₹3,250 / ₹3,800",
-      priceNote: "Weekday / Weekend",
-      duration: "30 MINUTES (5 X 6-MIN)",
-      included: [
-        "5 Sodi RT10 Pro race sessions",
-        "1 FREE Complimentary Bowling Coupon",
-        "Shareable driver pass & telemetry app"
+        "Weekday - 15 sessions + 2 Sessions + 2 Bowling FREE (₹9,750)",
+        "Weekend - 15 sessions + 2 Sessions + 2 Bowling FREE (₹11,400)",
+        "Shareable driver group pass"
       ],
       tag: "BEST VALUE"
+    },
+    {
+      id: "pkg-20",
+      name: "20 SESSIONS + 3 SESSION + 3 BOWLING FREE",
+      price: "₹13,000 / ₹15,200",
+      priceNote: "Weekday: ₹13,000 | Weekend: ₹15,200",
+      duration: "20 + 3 SESSIONS",
+      included: [
+        "Weekday - 20 sessions + 3 Session + 3 Bowling FREE (₹13,000)",
+        "Weekend - 20 sessions + 3 Session + 3 Bowling FREE (₹15,200)",
+        "Maximum track time & savings"
+      ],
+      tag: "MEGA COMBO"
     }
   ];
 
