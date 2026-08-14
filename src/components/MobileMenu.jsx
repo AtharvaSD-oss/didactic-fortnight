@@ -40,8 +40,7 @@ const itemVariants = {
 
 const MobileMenu = ({ 
   isOpen, 
-  onClose,
-  onOpenBooking 
+  onClose 
 }) => {
   const location = useLocation();
 
