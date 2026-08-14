@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Cursor from '../components/Cursor';
@@ -6,26 +6,15 @@ import ScrollProgress from '../components/ScrollProgress';
 import WhatsAppButton from '../components/WhatsAppButton';
 import MagneticButton from '../components/MagneticButton';
 import TrackCircuitVisual from '../components/TrackCircuitVisual';
-import { MapPin, Play, Pause, RotateCcw } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 export const TrackPage = () => {
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [resetKey, setResetKey] = useState(0);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const handleOpenBooking = () => {
     window.open("https://web.racefacer.com/kiosk/kartomaniaentertainlandmall", "_blank", "noopener,noreferrer");
-  };
-
-  const handlePlay = () => setIsPlaying(true);
-  const handlePause = () => setIsPlaying(false);
-  const handleReset = () => {
-    setIsPlaying(false);
-    setResetKey(prev => prev + 1);
-    setTimeout(() => setIsPlaying(true), 100);
   };
 
   const TRACK_SECTIONS = [
@@ -78,7 +67,7 @@ export const TrackPage = () => {
         <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-6 max-w-4xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
-              <MapPin className="w-3.5 h-3.5 text-[#F47C20]" /> // 600M OUTDOOR CIRCUIT &bull; 11 TURNS
+              <MapPin className="w-3.5 h-3.5 text-[#F47C20]" /> // ~600M GRAND PRIX CIRCUIT &bull; 11 TURNS
             </div>
 
             <h1 className="text-4xl sm:text-6xl lg:text-8xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
@@ -93,11 +82,11 @@ export const TrackPage = () => {
         </section>
 
         {/* ============================================================
-            02 — INTERACTIVE TRACK
+            02 — OFFICIAL TRACK MAP SHOWCASE
         ============================================================ */}
         <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-8">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#EAEAEA] pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-4">
               <div>
                 <div className="flex items-center gap-3 mb-1">
                   <span className="w-[2px] h-5 bg-[#F47C20]" />
@@ -105,41 +94,16 @@ export const TrackPage = () => {
                   <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ OFFICIAL TRACK MAP</span>
                 </div>
                 <h2 className="text-2xl sm:text-4xl font-display font-bold text-[#0A0A0A] uppercase">
-                  CIRCUIT LAYOUT & TELEMETRY
+                  CIRCUIT BLUEPRINT & LAYOUT
                 </h2>
               </div>
-
-              {/* Telemetry Animation Controls */}
-              <div className="flex items-center gap-2 font-mono text-xs">
-                <button
-                  onClick={handlePlay}
-                  className={`px-4 py-2 rounded-sm font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer ${
-                    isPlaying ? 'bg-[#F47C20] text-white shadow-md' : 'bg-[#F5F5F5] text-[#555555] hover:bg-[#EAEAEA]'
-                  }`}
-                >
-                  <Play className="w-3.5 h-3.5" /> PLAY
-                </button>
-                <button
-                  onClick={handlePause}
-                  className={`px-4 py-2 rounded-sm font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer ${
-                    !isPlaying ? 'bg-[#F47C20] text-white shadow-md' : 'bg-[#F5F5F5] text-[#555555] hover:bg-[#EAEAEA]'
-                  }`}
-                >
-                  <Pause className="w-3.5 h-3.5" /> PAUSE
-                </button>
-                <button
-                  onClick={handleReset}
-                  className="px-4 py-2 rounded-sm bg-[#F5F5F5] hover:bg-[#EAEAEA] text-[#555555] font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer border border-[#E5E5E5]"
-                >
-                  <RotateCcw className="w-3.5 h-3.5" /> RESET
-                </button>
-              </div>
+              <p className="text-xs sm:text-sm font-mono text-[#666666] max-w-md text-left sm:text-right">
+                11 Apexes &bull; Clockwise Flow &bull; Real-time Telemetry Calibrated
+              </p>
             </div>
 
-            {/* Interactive Circuit Component */}
-            <div key={resetKey} className={`transition-opacity ${isPlaying ? 'opacity-100' : 'opacity-90'}`}>
-              <TrackCircuitVisual />
-            </div>
+            {/* Official Track Map Component */}
+            <TrackCircuitVisual />
           </div>
         </section>
 
@@ -223,7 +187,7 @@ export const TrackPage = () => {
               THINK YOU CAN <span className="text-[#F47C20]">MASTER IT?</span>
             </h2>
             <p className="text-base sm:text-xl font-sans text-[#555555]">
-              Test your timing on Northern India’s premier 600m outdoor circuit.
+              Test your timing on Northern India’s premier ~600m outdoor circuit.
             </p>
             <div className="pt-4 flex justify-center">
               <MagneticButton onClick={handleOpenBooking} className="py-4 px-10 text-xs font-bold">
