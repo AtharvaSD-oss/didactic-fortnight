@@ -16,7 +16,6 @@ import WhatsAppButton from './components/WhatsAppButton';
 
 import { 
   TrackSection,
-  WhatsNewSection,
   PricingSection,
   FounderHighlightSection
 } from './components/Sections';
@@ -117,7 +116,6 @@ const HomePage = () => {
 
         {/* 04 — RACE / PACKAGES PREVIEW & FOUNDER PEDIGREE */}
         <PricingSection onOpenBooking={handleOpenBooking} />
-        <WhatsNewSection onOpenBooking={handleOpenBooking} />
         <FounderHighlightSection />
       </main>
 
