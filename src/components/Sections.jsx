@@ -550,14 +550,34 @@ export const FounderHighlightSection = () => {
               </div>
             </div>
 
-            {/* Right Quote Badge Box */}
-            <div className="lg:col-span-4 p-6 rounded-xl bg-[#141414] border border-white/10 space-y-3">
-              <div className="text-4xl text-[#F47C20] font-serif leading-none">“</div>
-              <p className="text-xs sm:text-sm font-display font-bold text-white uppercase leading-relaxed italic">
-                From beginners learning proper braking lines to pro racers shaving split seconds, Kartomania offers authentic racing velocity.
-              </p>
-              <div className="pt-2 border-t border-white/10 text-[10px] font-mono text-gray-400">
-                // Official Track Calibration & Telemetry Briefing
+            {/* Right Column: Founder Portrait Photo & Quote Box */}
+            <div className="lg:col-span-4 space-y-4">
+              <div className="relative rounded-xl overflow-hidden border-2 border-[#F47C20]/40 group shadow-lg">
+                <img
+                  src="/founder-rohit-khanna.jpg"
+                  alt="Mr. Rohit Khanna - Kartomania Founder & National Racing Champion"
+                  className="w-full h-64 sm:h-72 object-cover object-top filter grayscale contrast-110 group-hover:grayscale-0 group-hover:contrast-100 transition-all duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-90" />
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between font-mono">
+                  <span className="px-2.5 py-1 rounded-sm bg-[#F47C20] text-white text-[9px] font-bold uppercase tracking-wider shadow-sm">
+                    ★ ROHIT KHANNA
+                  </span>
+                  <span className="text-[9px] text-gray-300 font-bold uppercase bg-black/60 px-2 py-0.5 rounded-sm backdrop-blur-xs">
+                    NATIONAL CHAMPION
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-5 rounded-xl bg-[#141414] border border-white/10 space-y-2">
+                <div className="text-3xl text-[#F47C20] font-serif leading-none">“</div>
+                <p className="text-xs font-display font-bold text-white uppercase leading-relaxed italic">
+                  From beginners learning proper braking lines to pro racers shaving split seconds, Kartomania offers authentic racing velocity.
+                </p>
+                <div className="pt-2 border-t border-white/10 text-[9px] font-mono text-gray-400">
+                  // Track Calibration & Telemetry Briefing
+                </div>
               </div>
             </div>
           </div>
