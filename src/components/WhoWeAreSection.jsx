@@ -2,9 +2,37 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useInView } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Trophy } from 'lucide-react';
+import { Trophy, Flag, Zap, Gauge, Users } from 'lucide-react';
+import MagneticButton from './MagneticButton';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const EXPERIENCE_HIGHLIGHTS = [
+  {
+    number: "01",
+    title: "RACING",
+    icon: Flag,
+    desc: "Pure competition on a 720m outdoor asphalt circuit with 14 technical apexes and high-speed straights."
+  },
+  {
+    number: "02",
+    title: "PERFORMANCE",
+    icon: Gauge,
+    desc: "Engineered 270cc Sodi RT10 Pro & Twin 500cc karts with live millisecond RaceFacer telemetry tracking."
+  },
+  {
+    number: "03",
+    title: "THE TRACK",
+    icon: Zap,
+    desc: "F1-inspired barrier protection, precision kerbs, night track floodlighting, and marshal safety controls."
+  },
+  {
+    number: "04",
+    title: "COMMUNITY",
+    icon: Users,
+    desc: "A thriving motorsport hub connecting beginner drivers, corporate racing leagues, and national champions."
+  }
+];
 
 const LEAP_FROG_PHOTOS = [
   {
@@ -82,11 +110,11 @@ export const WhoWeAreSection = () => {
             <div className="flex items-center gap-3">
               <span className="w-[2px] h-5 bg-[#F47C20]" />
               <span className="text-[#F47C20] text-sm font-bold font-mono">02</span>
-              <span className="text-white text-sm font-bold font-mono">/ ABOUT</span>
+              <span className="text-white text-sm font-bold font-mono">/ KARTOMANIA EXPERIENCE</span>
             </div>
 
             <h2 className="mt-4 text-white font-display font-bold uppercase tracking-tight text-3xl sm:text-4xl lg:text-5xl">
-              THE KARTOMANIA EXPERIENCE
+              BUILT FOR <span className="text-[#F47C20]">THE THRILL.</span>
             </h2>
           </div>
         </div>
@@ -94,22 +122,68 @@ export const WhoWeAreSection = () => {
 
       <div className="py-12 sm:py-16 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto space-y-16">
         {/* Top Header Tag */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-6">
-          <div className="text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5]/10 border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest mb-2 shadow-sm">
-              <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // ABOUT KARTOMANIA
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/10 pb-6">
+          <div className="text-left space-y-2 max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5]/10 border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
+              <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // BUILT FOR THE THRILL
             </div>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-white uppercase tracking-tight leading-tight">
               NORTHERN INDIA'S PREMIER <br className="hidden sm:block" />
-              <span className="text-[#F47C20]">720M OUTDOOR</span> TRACK
+              <span className="text-[#F47C20]">720M OUTDOOR</span> CIRCUIT
             </h2>
+            <p className="text-xs sm:text-sm font-sans text-gray-300 leading-relaxed">
+              Kartomania is an authentic 720-meter outdoor asphalt racing track at Entertainland Mall, Gurugram. Founded and directed by veteran racer Mr. Rohit Khanna, it provides a championship-grade motorsport environment for drivers of all skill levels.
+            </p>
           </div>
-          <span className="font-mono text-xs text-[#888888] uppercase tracking-widest font-semibold">
-            MANESAR &bull; GURGAON
-          </span>
+
+          <div className="shrink-0 text-left sm:text-right space-y-3">
+            <span className="font-mono text-xs text-[#888888] uppercase tracking-widest font-semibold block">
+              MANESAR &bull; GURGAON
+            </span>
+            <MagneticButton href="/experience" className="py-3 px-6 text-xs">
+              DISCOVER KARTOMANIA &rarr;
+            </MagneticButton>
+          </div>
         </div>
 
+        {/* 4 Compact Experience Highlights Grid */}
+        <div className="space-y-4 text-left">
+          <div className="flex items-center justify-between border-b border-white/10 pb-3">
+            <span className="font-mono text-xs font-bold text-[#F47C20] uppercase tracking-wider">
+              // 4 COMPACT EXPERIENCE HIGHLIGHTS
+            </span>
+            <span className="text-[10px] font-mono text-gray-400 uppercase">
+              CHAMPIONSHIP MOTORSPORT FOCUS
+            </span>
+          </div>
 
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {EXPERIENCE_HIGHLIGHTS.map((item, idx) => {
+              const IconComponent = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-6 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-all duration-300 space-y-3 text-left group"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-bold text-[#F47C20]">
+                      {item.number}
+                    </span>
+                    <IconComponent className="w-4 h-4 text-[#F47C20] group-hover:scale-110 transition-transform" />
+                  </div>
+
+                  <h3 className="text-lg font-display font-bold text-white uppercase tracking-wide">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-xs font-sans text-gray-300 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
 
         {/* 4 Stats Minimal Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
