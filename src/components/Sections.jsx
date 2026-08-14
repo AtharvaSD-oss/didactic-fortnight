@@ -11,7 +11,7 @@ export const TrackSection = () => (
     <div className="flex flex-col lg:flex-row items-center justify-between gap-10 sm:gap-14">
       
       {/* Left Spec & Narrative */}
-      <div className="space-y-6 lg:w-5/12 text-left">
+      <div className="space-y-6 lg:w-1/2 text-left">
         <div className="flex items-center gap-3 mb-2">
           <span className="w-[2px] h-5 bg-[#F47C20]" />
           <span className="text-[#F47C20] text-sm font-bold font-mono">03</span>
@@ -64,8 +64,8 @@ export const TrackSection = () => (
         </div>
       </div>
 
-      {/* Right Vector 2.5D Schematic Visual */}
-      <div className="w-full lg:w-7/12">
+      {/* Right Track Map Visual */}
+      <div className="w-full lg:w-1/2 flex justify-center">
         <TrackCircuitVisual />
       </div>
 
