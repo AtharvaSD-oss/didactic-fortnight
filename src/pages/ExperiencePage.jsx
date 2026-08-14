@@ -100,13 +100,12 @@ export const ExperiencePage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white selection:bg-[#F47C20] selection:text-white relative overflow-x-hidden text-left">
+    <div className="min-h-screen bg-white text-[#111111] selection:bg-[#F47C20] selection:text-white relative overflow-x-hidden text-left">
       <ScrollProgress />
       <Cursor />
 
       {/* Navigation Header */}
       <Navbar
-        activeSection="who-we-are"
         onNavigate={() => {}}
         onOpenSearch={() => {}}
         onOpenBooking={handleOpenBooking}
@@ -116,18 +115,18 @@ export const ExperiencePage = () => {
         {/* ============================================================
             01 — HERO
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-6 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5]/10 border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
               <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // THE KARTOMANIA EXPERIENCE
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-display font-bold text-white uppercase tracking-tight leading-none">
+            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
               MORE THAN <br />
               <span className="text-[#F47C20]">A RACE.</span>
             </h1>
 
-            <p className="text-lg sm:text-2xl font-sans text-gray-300 font-medium leading-relaxed">
+            <p className="text-lg sm:text-2xl font-sans text-[#555555] font-medium leading-relaxed">
               Discover what makes the Kartomania experience different.
             </p>
 
@@ -142,38 +141,38 @@ export const ExperiencePage = () => {
         {/* ============================================================
             02 — WHY KARTOMANIA?
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
               <div className="flex items-center gap-3">
                 <span className="w-[2px] h-5 bg-[#F47C20]" />
                 <span className="text-[#F47C20] text-sm font-bold font-mono">02</span>
-                <span className="text-white text-sm font-bold font-mono">/ WHY KARTOMANIA?</span>
+                <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ WHY KARTOMANIA?</span>
               </div>
 
-              <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-tight">
                 OWNED & OPERATED BY A <br />
                 <span className="text-[#F47C20]">NATIONAL RACING CHAMPION</span>
               </h2>
 
-              <p className="text-gray-300 text-base sm:text-lg font-sans leading-relaxed">
+              <p className="text-[#333333] text-base sm:text-lg font-sans leading-relaxed">
                 Kartomania is Northern India’s premier 720-meter outdoor asphalt go-karting circuit located at Entertainland Mall, Sector 83, Manesar, Gurugram.
               </p>
 
-              <p className="text-gray-400 text-sm sm:text-base font-sans leading-relaxed">
-                Founded and directed by veteran racer <strong className="text-white">Mr. Rohit Khanna</strong> (20+ years of active national racing competition in JK Tyre and Rotax Max Championships), Kartomania is the only track calibrated personally to professional motorsport standards.
+              <p className="text-[#666666] text-sm sm:text-base font-sans leading-relaxed">
+                Founded and directed by veteran racer <strong className="text-[#0A0A0A]">Mr. Rohit Khanna</strong> (20+ years of active national racing competition in JK Tyre and Rotax Max Championships), Kartomania is the only track calibrated personally to professional motorsport standards.
               </p>
             </div>
 
             <div className="lg:col-span-6">
-              <div className="p-8 rounded-2xl bg-[#141414] border-2 border-[#F47C20]/40 space-y-4 shadow-xl">
+              <div className="p-8 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] hover:border-[#F47C20] space-y-4 shadow-sm transition-colors">
                 <div className="inline-block px-3 py-1 rounded-sm bg-[#F47C20] text-white font-mono text-xs font-bold uppercase">
                   AUTHENTIC MOTORSPORT HERITAGE
                 </div>
-                <div className="text-2xl font-display font-bold text-white uppercase">
+                <div className="text-2xl font-display font-bold text-[#0A0A0A] uppercase">
                   "REAL RACERS RACE CLEAN — BUILT FROM DECADES ON THE NATIONAL GRID."
                 </div>
-                <p className="text-xs font-mono text-gray-400">
+                <p className="text-xs font-mono text-[#666666]">
                   Mr. Rohit Khanna &bull; Founder of Kartomania & Lead Motorsport Instructor
                 </p>
               </div>
@@ -184,15 +183,15 @@ export const ExperiencePage = () => {
         {/* ============================================================
             03 — WHAT DRIVES US
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-12">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <span className="w-[2px] h-5 bg-[#F47C20]" />
                 <span className="text-[#F47C20] text-sm font-bold font-mono">03</span>
-                <span className="text-white text-sm font-bold font-mono">/ WHAT DRIVES US</span>
+                <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ WHAT DRIVES US</span>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">
+              <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
                 OUR 4 CORE <span className="text-[#F47C20]">PRINCIPLES</span>
               </h2>
             </div>
@@ -201,13 +200,13 @@ export const ExperiencePage = () => {
               {PRINCIPLES.map((item, idx) => {
                 const IconComp = item.icon;
                 return (
-                  <div key={idx} className="p-6 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-colors space-y-4 group">
+                  <div key={idx} className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-4 group shadow-sm">
                     <div className="flex items-center justify-between">
                       <span className="font-mono text-xs font-bold text-[#F47C20]">{item.number}</span>
                       <IconComp className="w-5 h-5 text-[#F47C20] group-hover:scale-110 transition-transform" />
                     </div>
-                    <h3 className="text-xl font-display font-bold text-white uppercase">{item.title}</h3>
-                    <p className="text-xs font-sans text-gray-300 leading-relaxed">{item.desc}</p>
+                    <h3 className="text-xl font-display font-bold text-[#0A0A0A] uppercase">{item.title}</h3>
+                    <p className="text-xs font-sans text-[#555555] leading-relaxed">{item.desc}</p>
                   </div>
                 );
               })}
@@ -218,25 +217,25 @@ export const ExperiencePage = () => {
         {/* ============================================================
             04 — KARTOMANIA JOURNEY
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-12">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <span className="w-[2px] h-5 bg-[#F47C20]" />
                 <span className="text-[#F47C20] text-sm font-bold font-mono">04</span>
-                <span className="text-white text-sm font-bold font-mono">/ KARTOMANIA JOURNEY</span>
+                <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ KARTOMANIA JOURNEY</span>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">
+              <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
                 THE HISTORICAL <span className="text-[#F47C20]">MILESTONES</span>
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {HISTORICAL_JOURNEY.map((item, idx) => (
-                <div key={idx} className="p-6 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-colors space-y-3">
+                <div key={idx} className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-3 shadow-sm">
                   <span className="text-2xl font-display font-bold text-[#F47C20] block">{item.year}</span>
-                  <h3 className="text-base font-display font-bold text-white uppercase">{item.title}</h3>
-                  <p className="text-xs font-sans text-gray-300 leading-relaxed">{item.desc}</p>
+                  <h3 className="text-base font-display font-bold text-[#0A0A0A] uppercase">{item.title}</h3>
+                  <p className="text-xs font-sans text-[#555555] leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -246,27 +245,27 @@ export const ExperiencePage = () => {
         {/* ============================================================
             05 — THE KARTOMANIA STANDARD
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-12">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <span className="w-[2px] h-5 bg-[#F47C20]" />
                 <span className="text-[#F47C20] text-sm font-bold font-mono">05</span>
-                <span className="text-white text-sm font-bold font-mono">/ THE KARTOMANIA STANDARD</span>
+                <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ THE KARTOMANIA STANDARD</span>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">
+              <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
                 CHAMPIONSHIP <span className="text-[#F47C20]">BENCHMARKS</span>
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {KARTOMANIA_STANDARDS.map((std, idx) => (
-                <div key={idx} className="p-6 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-colors space-y-3">
+                <div key={idx} className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-3 shadow-sm">
                   <span className="px-2.5 py-0.5 rounded-sm bg-[#F47C20] text-white font-mono text-[9px] font-bold uppercase tracking-wider">
                     {std.badge}
                   </span>
-                  <h3 className="text-xl font-display font-bold text-white uppercase">{std.title}</h3>
-                  <p className="text-xs font-sans text-gray-300 leading-relaxed">{std.desc}</p>
+                  <h3 className="text-xl font-display font-bold text-[#0A0A0A] uppercase">{std.title}</h3>
+                  <p className="text-xs font-sans text-[#555555] leading-relaxed">{std.desc}</p>
                 </div>
               ))}
             </div>
@@ -278,10 +277,10 @@ export const ExperiencePage = () => {
         ============================================================ */}
         <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-tight">
+            <h2 className="text-4xl sm:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
               READY TO GET ON <span className="text-[#F47C20]">THE GRID?</span>
             </h2>
-            <p className="text-base sm:text-xl font-sans text-gray-300">
+            <p className="text-base sm:text-xl font-sans text-[#555555]">
               Reserve your race slot today and experience real motorsport velocity.
             </p>
             <div className="pt-4 flex justify-center">

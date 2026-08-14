@@ -29,7 +29,7 @@ const RacePage = lazy(() => import('./pages/RacePage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 
 const PageFallback = () => (
-  <div className="min-h-screen bg-[#0A0A0A] flex items-center justify-center text-[#F47C20] font-mono text-sm font-bold tracking-widest uppercase">
+  <div className="min-h-screen bg-white flex items-center justify-center text-[#F47C20] font-mono text-sm font-bold tracking-widest uppercase">
     <div className="flex items-center gap-3">
       <span className="w-2 h-2 rounded-full bg-[#F47C20] animate-ping" />
       LOADING KARTOMANIA TELEMETRY...

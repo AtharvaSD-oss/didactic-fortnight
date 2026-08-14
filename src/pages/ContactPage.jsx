@@ -50,13 +50,12 @@ export const ContactPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white selection:bg-[#F47C20] selection:text-white relative overflow-x-hidden text-left">
+    <div className="min-h-screen bg-white text-[#111111] selection:bg-[#F47C20] selection:text-white relative overflow-x-hidden text-left">
       <ScrollProgress />
       <Cursor />
 
       {/* Navigation Header */}
       <Navbar
-        activeSection="contact"
         onNavigate={() => {}}
         onOpenSearch={() => {}}
         onOpenBooking={handleOpenBooking}
@@ -66,18 +65,18 @@ export const ContactPage = () => {
         {/* ============================================================
             01 — HERO
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-6 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5]/10 border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-[#F47C20]" /> // VENUE & NAVIGATION
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-display font-bold text-white uppercase tracking-tight leading-none">
+            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
               FIND THE <br />
               <span className="text-[#F47C20]">TRACK.</span>
             </h1>
 
-            <p className="text-lg sm:text-2xl font-sans text-gray-300 font-medium leading-relaxed">
+            <p className="text-lg sm:text-2xl font-sans text-[#555555] font-medium leading-relaxed">
               Your next race is closer than you think.
             </p>
           </div>
@@ -86,16 +85,16 @@ export const ContactPage = () => {
         {/* ============================================================
             02 — LOCATION & MAP
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-8">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-4">
               <div>
                 <div className="flex items-center gap-3 mb-1">
                   <span className="w-[2px] h-5 bg-[#F47C20]" />
                   <span className="text-[#F47C20] text-sm font-bold font-mono">02</span>
-                  <span className="text-white text-sm font-bold font-mono">/ LOCATION</span>
+                  <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ LOCATION</span>
                 </div>
-                <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase">
+                <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase">
                   ENTERTAINLAND MALL <span className="text-[#F47C20]">CIRCUIT</span>
                 </h2>
               </div>
@@ -111,24 +110,24 @@ export const ContactPage = () => {
             </div>
 
             {/* Address Banner */}
-            <div className="p-6 rounded-xl bg-[#141414] border border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="p-6 rounded-xl bg-[#F9F9F9] border border-[#E5E5E5] flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-sm">
               <div className="space-y-1">
                 <span className="text-[10px] font-mono text-[#F47C20] font-bold uppercase tracking-widest block">OFFICIAL ADDRESS</span>
-                <div className="text-lg font-sans font-bold text-white">
+                <div className="text-lg font-sans font-bold text-[#0A0A0A]">
                   Entertainland Mall, Sector 83, Manesar, Gurugram, Haryana 122004
                 </div>
               </div>
-              <span className="font-mono text-xs text-gray-400 font-bold uppercase">
+              <span className="font-mono text-xs text-[#666666] font-bold uppercase">
                 720M OUTDOOR ASPHALT TRACK
               </span>
             </div>
 
             {/* Embedded Interactive Google Map */}
-            <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden border-2 border-white/10 shadow-xl">
+            <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden border-2 border-[#E5E5E5] shadow-md">
               <iframe
                 title="Kartomania Arena Location Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.963198083884!2d76.96024987625126!3d28.36081497581451!2m3!1f0!0f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3d5267b14073%3A0xb36cb76e274b7027!2sKartomania!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-                className="w-full h-full border-0 filter grayscale invert contrast-125 opacity-90 hover:grayscale-0 hover:invert-0 transition-all duration-500"
+                className="w-full h-full border-0 opacity-95 transition-all duration-500"
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -140,50 +139,50 @@ export const ContactPage = () => {
         {/* ============================================================
             03 — CONTACT
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-8">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <span className="w-[2px] h-5 bg-[#F47C20]" />
                 <span className="text-[#F47C20] text-sm font-bold font-mono">03</span>
-                <span className="text-white text-sm font-bold font-mono">/ CONTACT & HOURS</span>
+                <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ CONTACT & HOURS</span>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">
+              <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
                 COMMUNICATION <span className="text-[#F47C20]">CHANNELS</span>
               </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 font-mono">
               {/* Phone */}
-              <div className="p-6 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-colors space-y-3">
+              <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-3 shadow-sm">
                 <div className="flex items-center gap-2 text-[#F47C20]">
                   <Phone className="w-5 h-5" />
                   <span className="text-xs uppercase font-bold tracking-wider">// PHONE</span>
                 </div>
                 <div className="space-y-1 font-sans text-sm">
-                  <a href="tel:+919717548897" className="block hover:text-[#F47C20] transition-colors font-bold">+91 97175 48897</a>
-                  <a href="tel:+919560492876" className="block hover:text-[#F47C20] transition-colors font-bold">+91 95604 92876</a>
+                  <a href="tel:+919717548897" className="block hover:text-[#F47C20] transition-colors font-bold text-[#0A0A0A]">+91 97175 48897</a>
+                  <a href="tel:+919560492876" className="block hover:text-[#F47C20] transition-colors font-bold text-[#0A0A0A]">+91 95604 92876</a>
                 </div>
               </div>
 
               {/* Email */}
-              <div className="p-6 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-colors space-y-3">
+              <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-3 shadow-sm">
                 <div className="flex items-center gap-2 text-[#F47C20]">
                   <Mail className="w-5 h-5" />
                   <span className="text-xs uppercase font-bold tracking-wider">// EMAIL</span>
                 </div>
-                <a href="mailto:kartomania.ggn@gmail.com" className="block hover:text-[#F47C20] transition-colors font-bold font-sans text-sm break-all">
+                <a href="mailto:kartomania.ggn@gmail.com" className="block hover:text-[#F47C20] transition-colors font-bold font-sans text-sm text-[#0A0A0A] break-all">
                   kartomania.ggn@gmail.com
                 </a>
               </div>
 
               {/* Opening Hours */}
-              <div className="p-6 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-colors space-y-3">
+              <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-3 shadow-sm">
                 <div className="flex items-center gap-2 text-[#F47C20]">
                   <Clock className="w-5 h-5" />
                   <span className="text-xs uppercase font-bold tracking-wider">// OPENING HOURS</span>
                 </div>
-                <div className="font-sans text-xs space-y-1 text-gray-300">
+                <div className="font-sans text-xs space-y-1 text-[#555555]">
                   <div>Mon – Fri: 2:00 PM – 11:00 PM</div>
                   <div>Sat – Sun: 1:00 PM – 11:00 PM</div>
                   <div className="text-[#F47C20] font-bold font-mono">// OPEN 7 DAYS A WEEK</div>
@@ -191,7 +190,7 @@ export const ContactPage = () => {
               </div>
 
               {/* Social Media */}
-              <div className="p-6 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-colors space-y-3">
+              <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-3 shadow-sm">
                 <div className="flex items-center gap-2 text-[#F47C20]">
                   <Trophy className="w-5 h-5" />
                   <span className="text-xs uppercase font-bold tracking-wider">// SOCIAL MEDIA</span>
@@ -201,7 +200,7 @@ export const ContactPage = () => {
                     href="https://www.facebook.com/kartomaniacsggn/"
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2 rounded-lg bg-white/10 hover:bg-[#F47C20] text-white transition-colors"
+                    className="p-2 rounded-lg bg-white border border-[#E5E5E5] hover:bg-[#F47C20] hover:text-white text-[#0A0A0A] transition-colors shadow-xs"
                     aria-label="Facebook"
                   >
                     <FacebookIcon className="w-4 h-4" />
@@ -210,7 +209,7 @@ export const ContactPage = () => {
                     href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2 rounded-lg bg-white/10 hover:bg-[#F47C20] text-white transition-colors"
+                    className="p-2 rounded-lg bg-white border border-[#E5E5E5] hover:bg-[#F47C20] hover:text-white text-[#0A0A0A] transition-colors shadow-xs"
                     aria-label="Instagram"
                   >
                     <InstagramIcon className="w-4 h-4" />
@@ -219,7 +218,7 @@ export const ContactPage = () => {
                     href="https://wa.me/919717548897?text=Hi%20Kartomania!%20I%20would%20like%20to%20inquire%20about%20booking%20a%20racing%20session."
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2 rounded-lg bg-white/10 hover:bg-[#25D366] text-white transition-colors"
+                    className="p-2 rounded-lg bg-white border border-[#E5E5E5] hover:bg-[#25D366] hover:text-white text-[#0A0A0A] transition-colors shadow-xs"
                     aria-label="WhatsApp"
                   >
                     <WhatsAppIcon className="w-4 h-4" />
@@ -233,16 +232,16 @@ export const ContactPage = () => {
         {/* ============================================================
             04 — FAQ
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-4xl mx-auto border-b border-white/10">
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-4xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-8">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-4">
               <div>
                 <div className="flex items-center gap-3 mb-1">
                   <span className="w-[2px] h-5 bg-[#F47C20]" />
                   <span className="text-[#F47C20] text-sm font-bold font-mono">04</span>
-                  <span className="text-white text-sm font-bold font-mono">/ FAQ</span>
+                  <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ FAQ</span>
                 </div>
-                <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase">
+                <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase">
                   FREQUENTLY ASKED <span className="text-[#F47C20]">QUESTIONS</span>
                 </h2>
               </div>
@@ -253,17 +252,17 @@ export const ContactPage = () => {
               {FAQS.map((faq, idx) => {
                 const isOpen = openFaqIdx === idx;
                 return (
-                  <div key={idx} className="overflow-hidden rounded-xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-colors shadow-sm">
+                  <div key={idx} className="overflow-hidden rounded-xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors shadow-sm">
                     <button
                       onClick={() => setOpenFaqIdx(isOpen ? null : idx)}
-                      className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-display text-base sm:text-lg font-bold text-white uppercase hover:text-[#F47C20] transition-colors cursor-pointer"
+                      className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-display text-base sm:text-lg font-bold text-[#0A0A0A] uppercase hover:text-[#F47C20] transition-colors cursor-pointer"
                     >
                       <span>{faq.question}</span>
                       <motion.div
                         animate={{ rotate: isOpen ? 180 : 0 }}
                         transition={{ duration: 0.2 }}
                         className={`p-1.5 rounded-full border transition-colors shrink-0 ${
-                          isOpen ? 'bg-[#F47C20] border-[#F47C20] text-white shadow-sm' : 'bg-white/10 border-white/20 text-white'
+                          isOpen ? 'bg-[#F47C20] border-[#F47C20] text-white shadow-sm' : 'bg-white border-[#E5E5E5] text-[#0A0A0A]'
                         }`}
                       >
                         <ChevronDown className="w-4 h-4" />
@@ -279,7 +278,7 @@ export const ContactPage = () => {
                           transition={{ duration: 0.25 }}
                           className="overflow-hidden"
                         >
-                          <div className="p-5 sm:p-6 pt-0 text-xs sm:text-sm font-sans text-gray-300 border-t border-white/10 leading-relaxed text-left">
+                          <div className="p-5 sm:p-6 pt-0 text-xs sm:text-sm font-sans text-[#555555] border-t border-[#EAEAEA] leading-relaxed text-left">
                             {faq.answer}
                           </div>
                         </motion.div>
@@ -297,10 +296,10 @@ export const ContactPage = () => {
         ============================================================ */}
         <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-tight">
+            <h2 className="text-4xl sm:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
               SEE YOU ON <span className="text-[#F47C20]">THE GRID.</span>
             </h2>
-            <p className="text-base sm:text-xl font-sans text-gray-300">
+            <p className="text-base sm:text-xl font-sans text-[#555555]">
               Reserve your race session online now for instant 1-tap confirmation.
             </p>
             <div className="pt-4 flex justify-center">

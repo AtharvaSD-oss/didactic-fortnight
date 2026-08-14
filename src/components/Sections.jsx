@@ -500,46 +500,46 @@ export const FounderHighlightSection = () => {
         </div>
 
         {/* Founder Showcase Card */}
-        <div className="p-8 sm:p-12 rounded-2xl bg-[#0A0A0A] text-white border-2 border-[#F47C20]/40 shadow-xl relative overflow-hidden text-left">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#F47C20]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="p-8 sm:p-12 rounded-2xl bg-[#F9F9F9] text-[#111111] border-2 border-[#E5E5E5] hover:border-[#F47C20] shadow-sm relative overflow-hidden text-left transition-colors">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#F47C20]/5 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             <div className="lg:col-span-8 space-y-6">
-              <div className="inline-block px-3 py-1 rounded-sm bg-[#F47C20] text-white font-mono text-xs font-bold uppercase tracking-wider">
+              <div className="inline-block px-3 py-1 rounded-sm bg-[#F47C20] text-white font-mono text-xs font-bold uppercase tracking-wider shadow-xs">
                 FOUNDER & DIRECTOR — LEAP FROG RACING
               </div>
 
               <div className="space-y-2">
-                <h3 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">
+                <h3 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
                   MR. ROHIT <span className="text-[#F47C20]">KHANNA</span>
                 </h3>
-                <p className="text-sm sm:text-base font-mono text-[#FFC700] font-bold">
+                <p className="text-sm sm:text-base font-mono text-[#F47C20] font-bold">
                   20+ Years Active National & International Racing Champion
                 </p>
               </div>
 
-              <p className="text-xs sm:text-sm font-sans text-gray-300 leading-relaxed max-w-2xl">
-                Founded and directed by veteran racer Mr. Rohit Khanna, Kartomania brings authentic national championship telemetry and track engineering to everyday drivers. As director of Northern India's championship-winning <strong className="text-white">Leap Frog Racing Academy</strong>, Mr. Khanna trains drivers across JK Tyre National Karting & Rotax Max Championships.
+              <p className="text-xs sm:text-sm font-sans text-[#555555] leading-relaxed max-w-2xl">
+                Founded and directed by veteran racer Mr. Rohit Khanna, Kartomania brings authentic national championship telemetry and track engineering to everyday drivers. As director of Northern India's championship-winning <strong className="text-[#0A0A0A]">Leap Frog Racing Academy</strong>, Mr. Khanna trains drivers across JK Tyre National Karting & Rotax Max Championships.
               </p>
 
               {/* 3 Quick Telemetry Badges */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 font-mono">
-                <div className="p-4 rounded-xl bg-[#151515] border border-white/10 space-y-1">
+                <div className="p-4 rounded-xl bg-white border border-[#E5E5E5] space-y-1 shadow-xs">
                   <span className="text-[9px] text-[#F47C20] font-bold uppercase tracking-widest block">// EXPERIENCE</span>
-                  <div className="text-xl font-display font-bold text-white">20+ YRS</div>
-                  <span className="text-[10px] text-gray-400">Active Competition</span>
+                  <div className="text-xl font-display font-bold text-[#0A0A0A]">20+ YRS</div>
+                  <span className="text-[10px] text-[#666666]">Active Competition</span>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#151515] border border-white/10 space-y-1">
+                <div className="p-4 rounded-xl bg-white border border-[#E5E5E5] space-y-1 shadow-xs">
                   <span className="text-[9px] text-[#F47C20] font-bold uppercase tracking-widest block">// PODIUMS</span>
-                  <div className="text-xl font-display font-bold text-white">50+ WINS</div>
-                  <span className="text-[10px] text-gray-400">National Trophies</span>
+                  <div className="text-xl font-display font-bold text-[#0A0A0A]">50+ WINS</div>
+                  <span className="text-[10px] text-[#666666]">National Trophies</span>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#151515] border border-white/10 space-y-1">
+                <div className="p-4 rounded-xl bg-white border border-[#E5E5E5] space-y-1 shadow-xs">
                   <span className="text-[9px] text-[#F47C20] font-bold uppercase tracking-widest block">// ACADEMY</span>
-                  <div className="text-xl font-display font-bold text-white">PRO TIER</div>
-                  <span className="text-[10px] text-gray-400">Leap Frog Racing</span>
+                  <div className="text-xl font-display font-bold text-[#0A0A0A]">PRO TIER</div>
+                  <span className="text-[10px] text-[#666666]">Leap Frog Racing</span>
                 </div>
               </div>
 
@@ -552,30 +552,30 @@ export const FounderHighlightSection = () => {
 
             {/* Right Column: Founder Portrait Photo & Quote Box */}
             <div className="lg:col-span-4 space-y-4">
-              <div className="relative rounded-xl overflow-hidden border-2 border-[#F47C20]/40 group shadow-lg">
+              <div className="relative rounded-xl overflow-hidden border-2 border-[#E5E5E5] hover:border-[#F47C20] group shadow-md transition-colors">
                 <img
                   src="/founder-rohit-khanna.jpg"
                   alt="Mr. Rohit Khanna - Kartomania Founder & National Racing Champion"
                   className="w-full h-64 sm:h-72 object-cover object-top filter grayscale contrast-110 group-hover:grayscale-0 group-hover:contrast-100 transition-all duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between font-mono">
                   <span className="px-2.5 py-1 rounded-sm bg-[#F47C20] text-white text-[9px] font-bold uppercase tracking-wider shadow-sm">
                     ★ ROHIT KHANNA
                   </span>
-                  <span className="text-[9px] text-gray-300 font-bold uppercase bg-black/60 px-2 py-0.5 rounded-sm backdrop-blur-xs">
+                  <span className="text-[9px] text-white font-bold uppercase bg-black/60 px-2 py-0.5 rounded-sm backdrop-blur-xs">
                     NATIONAL CHAMPION
                   </span>
                 </div>
               </div>
 
-              <div className="p-5 rounded-xl bg-[#141414] border border-white/10 space-y-2">
+              <div className="p-5 rounded-xl bg-white border border-[#E5E5E5] space-y-2 shadow-xs">
                 <div className="text-3xl text-[#F47C20] font-serif leading-none">“</div>
-                <p className="text-xs font-display font-bold text-white uppercase leading-relaxed italic">
+                <p className="text-xs font-display font-bold text-[#0A0A0A] uppercase leading-relaxed italic">
                   From beginners learning proper braking lines to pro racers shaving split seconds, Kartomania offers authentic racing velocity.
                 </p>
-                <div className="pt-2 border-t border-white/10 text-[9px] font-mono text-gray-400">
+                <div className="pt-2 border-t border-[#EAEAEA] text-[9px] font-mono text-[#888888]">
                   // Track Calibration & Telemetry Briefing
                 </div>
               </div>

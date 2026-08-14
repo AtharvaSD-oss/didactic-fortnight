@@ -5,11 +5,11 @@ import { InstagramIcon, FacebookIcon, WhatsAppIcon } from './Icons';
 
 const Footer = () => {
   return (
-    <footer className="border-t border-white/10 bg-[#0A0A0A] py-14 px-4 sm:px-6 lg:px-12 text-center sm:text-left relative z-20 text-white">
+    <footer className="border-t border-[#EAEAEA] bg-white py-14 px-4 sm:px-6 lg:px-12 text-center sm:text-left relative z-20 text-[#111111]">
       <div className="max-w-7xl mx-auto space-y-8">
         
         {/* Main Footer Row */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-[#EAEAEA]">
           <div className="flex items-center gap-3">
             <Link to="/">
               <img 
@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Page Links */}
-          <div className="flex flex-wrap items-center justify-center gap-6 font-mono text-xs font-bold uppercase tracking-wider text-gray-300">
+          <div className="flex flex-wrap items-center justify-center gap-6 font-mono text-xs font-bold uppercase tracking-wider text-[#555555]">
             <Link to="/" className="hover:text-[#F47C20] transition-colors text-decoration-none">HOME</Link>
             <Link to="/experience" className="hover:text-[#F47C20] transition-colors text-decoration-none">EXPERIENCE</Link>
             <Link to="/track" className="hover:text-[#F47C20] transition-colors text-decoration-none">TRACK</Link>
@@ -34,7 +34,7 @@ const Footer = () => {
             <a 
               href="mailto:kartomania.ggn@gmail.com" 
               aria-label="Email Us"
-              className="p-2.5 rounded-full bg-[#151515] hover:bg-[#F47C20] text-[#AAAAAA] hover:text-white border border-white/10 transition-colors shadow-sm"
+              className="p-2.5 rounded-full bg-[#F5F5F5] hover:bg-[#F47C20] text-[#555555] hover:text-white border border-[#E5E5E5] transition-colors shadow-xs"
             >
               <Mail className="w-4 h-4" />
             </a>
@@ -43,7 +43,7 @@ const Footer = () => {
               target="_blank" 
               rel="noreferrer"
               aria-label="WhatsApp"
-              className="p-2.5 rounded-full bg-[#151515] hover:bg-[#25D366] text-[#AAAAAA] hover:text-white border border-white/10 transition-colors shadow-sm"
+              className="p-2.5 rounded-full bg-[#F5F5F5] hover:bg-[#25D366] text-[#555555] hover:text-white border border-[#E5E5E5] transition-colors shadow-xs"
             >
               <WhatsAppIcon className="w-4 h-4" />
             </a>
@@ -52,7 +52,7 @@ const Footer = () => {
               target="_blank" 
               rel="noreferrer"
               aria-label="Instagram"
-              className="p-2.5 rounded-full bg-[#151515] hover:bg-[#F47C20] text-[#AAAAAA] hover:text-white border border-white/10 transition-colors shadow-sm"
+              className="p-2.5 rounded-full bg-[#F5F5F5] hover:bg-[#F47C20] text-[#555555] hover:text-white border border-[#E5E5E5] transition-colors shadow-xs"
             >
               <InstagramIcon className="w-4 h-4" />
             </a>
@@ -61,14 +61,14 @@ const Footer = () => {
               target="_blank" 
               rel="noreferrer"
               aria-label="Facebook"
-              className="p-2.5 rounded-full bg-[#151515] hover:bg-[#F47C20] text-[#AAAAAA] hover:text-white border border-white/10 transition-colors shadow-sm"
+              className="p-2.5 rounded-full bg-[#F5F5F5] hover:bg-[#F47C20] text-[#555555] hover:text-white border border-[#E5E5E5] transition-colors shadow-xs"
             >
               <FacebookIcon className="w-4 h-4" />
             </a>
             <a 
               href="tel:+919717548897" 
               aria-label="Call Phone"
-              className="p-2.5 rounded-full bg-[#151515] hover:bg-[#F47C20] text-[#AAAAAA] hover:text-white border border-white/10 transition-colors shadow-sm"
+              className="p-2.5 rounded-full bg-[#F5F5F5] hover:bg-[#F47C20] text-[#555555] hover:text-white border border-[#E5E5E5] transition-colors shadow-xs"
             >
               <Phone className="w-4 h-4" />
             </a>
@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
           <a 
             href="mailto:kartomania.ggn@gmail.com" 
-            className="font-mono text-xs text-gray-300 hover:text-[#F47C20] transition-colors"
+            className="font-mono text-xs text-[#555555] hover:text-[#F47C20] transition-colors"
           >
             kartomania.ggn@gmail.com
           </a>

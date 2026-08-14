@@ -60,13 +60,12 @@ export const TrackPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white selection:bg-[#F47C20] selection:text-white relative overflow-x-hidden text-left">
+    <div className="min-h-screen bg-white text-[#111111] selection:bg-[#F47C20] selection:text-white relative overflow-x-hidden text-left">
       <ScrollProgress />
       <Cursor />
 
       {/* Navigation Header */}
       <Navbar
-        activeSection="karts"
         onNavigate={() => {}}
         onOpenSearch={() => {}}
         onOpenBooking={handleOpenBooking}
@@ -76,18 +75,18 @@ export const TrackPage = () => {
         {/* ============================================================
             01 — HERO
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-6 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5]/10 border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-[#F47C20]" /> // 720M GRAND PRIX CIRCUIT
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-display font-bold text-white uppercase tracking-tight leading-none">
+            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
               KNOW YOUR <br />
               <span className="text-[#F47C20]">TRACK.</span>
             </h1>
 
-            <p className="text-lg sm:text-2xl font-sans text-gray-300 font-medium leading-relaxed">
+            <p className="text-lg sm:text-2xl font-sans text-[#555555] font-medium leading-relaxed">
               Every corner. Every straight. Every lap.
             </p>
           </div>
@@ -96,16 +95,16 @@ export const TrackPage = () => {
         {/* ============================================================
             02 — INTERACTIVE TRACK
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-8">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#EAEAEA] pb-4">
               <div>
                 <div className="flex items-center gap-3 mb-1">
                   <span className="w-[2px] h-5 bg-[#F47C20]" />
                   <span className="text-[#F47C20] text-sm font-bold font-mono">02</span>
-                  <span className="text-white text-sm font-bold font-mono">/ INTERACTIVE TRACK MAP</span>
+                  <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ INTERACTIVE TRACK MAP</span>
                 </div>
-                <h2 className="text-2xl sm:text-4xl font-display font-bold text-white uppercase">
+                <h2 className="text-2xl sm:text-4xl font-display font-bold text-[#0A0A0A] uppercase">
                   2.5D VECTOR CIRCUIT SCHEMATIC
                 </h2>
               </div>
@@ -115,7 +114,7 @@ export const TrackPage = () => {
                 <button
                   onClick={handlePlay}
                   className={`px-4 py-2 rounded-sm font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer ${
-                    isPlaying ? 'bg-[#F47C20] text-white shadow-md' : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                    isPlaying ? 'bg-[#F47C20] text-white shadow-md' : 'bg-[#F5F5F5] text-[#555555] hover:bg-[#EAEAEA]'
                   }`}
                 >
                   <Play className="w-3.5 h-3.5" /> PLAY
@@ -123,14 +122,14 @@ export const TrackPage = () => {
                 <button
                   onClick={handlePause}
                   className={`px-4 py-2 rounded-sm font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer ${
-                    !isPlaying ? 'bg-[#F47C20] text-white shadow-md' : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                    !isPlaying ? 'bg-[#F47C20] text-white shadow-md' : 'bg-[#F5F5F5] text-[#555555] hover:bg-[#EAEAEA]'
                   }`}
                 >
                   <Pause className="w-3.5 h-3.5" /> PAUSE
                 </button>
                 <button
                   onClick={handleReset}
-                  className="px-4 py-2 rounded-sm bg-white/10 hover:bg-white/20 text-gray-300 font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer"
+                  className="px-4 py-2 rounded-sm bg-[#F5F5F5] hover:bg-[#EAEAEA] text-[#555555] font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer border border-[#E5E5E5]"
                 >
                   <RotateCcw className="w-3.5 h-3.5" /> RESET
                 </button>
@@ -147,37 +146,37 @@ export const TrackPage = () => {
         {/* ============================================================
             03 — TRACK DATA
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-8">
             <div className="flex items-center gap-3 mb-2">
               <span className="w-[2px] h-5 bg-[#F47C20]" />
               <span className="text-[#F47C20] text-sm font-bold font-mono">03</span>
-              <span className="text-white text-sm font-bold font-mono">/ VERIFIED TRACK DATA</span>
+              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ VERIFIED TRACK DATA</span>
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 font-mono">
-              <div className="p-6 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-colors space-y-2">
+              <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2 shadow-sm">
                 <span className="text-xs font-bold text-[#F47C20] tracking-widest block">01 // LENGTH</span>
-                <div className="text-3xl sm:text-5xl font-display font-bold text-white">720m</div>
-                <p className="text-xs text-gray-400 font-sans">Full outdoor polymer asphalt circuit</p>
+                <div className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A]">720m</div>
+                <p className="text-xs text-[#666666] font-sans">Full outdoor polymer asphalt circuit</p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-colors space-y-2">
+              <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2 shadow-sm">
                 <span className="text-xs font-bold text-[#F47C20] tracking-widest block">02 // TURNS</span>
-                <div className="text-3xl sm:text-5xl font-display font-bold text-white">14</div>
-                <p className="text-xs text-gray-400 font-sans">High-G apexes & technical chicanes</p>
+                <div className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A]">14</div>
+                <p className="text-xs text-[#666666] font-sans">High-G apexes & technical chicanes</p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-colors space-y-2">
+              <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2 shadow-sm">
                 <span className="text-xs font-bold text-[#F47C20] tracking-widest block">03 // TOP SPEED</span>
-                <div className="text-3xl sm:text-5xl font-display font-bold text-white">70 km/h</div>
-                <p className="text-xs text-gray-400 font-sans">Sodi RT10 Pro 270cc race fleet</p>
+                <div className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A]">70 km/h</div>
+                <p className="text-xs text-[#666666] font-sans">Sodi RT10 Pro 270cc race fleet</p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-colors space-y-2">
+              <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2 shadow-sm">
                 <span className="text-xs font-bold text-[#F47C20] tracking-widest block">04 // LAP RECORD</span>
-                <div className="text-3xl sm:text-5xl font-display font-bold text-white">41.82s</div>
-                <p className="text-xs text-gray-400 font-sans">Official track record lap time</p>
+                <div className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A]">41.82s</div>
+                <p className="text-xs text-[#666666] font-sans">Official track record lap time</p>
               </div>
             </div>
           </div>
@@ -186,29 +185,29 @@ export const TrackPage = () => {
         {/* ============================================================
             04 — TRACK SECTIONS
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-8">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <span className="w-[2px] h-5 bg-[#F47C20]" />
                 <span className="text-[#F47C20] text-sm font-bold font-mono">04</span>
-                <span className="text-white text-sm font-bold font-mono">/ TRACK SECTIONS</span>
+                <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ TRACK SECTIONS</span>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">
+              <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
                 4 CIRCUIT <span className="text-[#F47C20]">SECTORS</span>
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {TRACK_SECTIONS.map((sec, idx) => (
-                <div key={idx} className="p-6 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-colors space-y-3">
+                <div key={idx} className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-3 shadow-sm">
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-xs font-bold text-[#F47C20]">{sec.sector}</span>
-                    <span className="px-2 py-0.5 rounded-sm bg-white/10 text-white font-mono text-[9px] font-bold">{sec.turns}</span>
+                    <span className="px-2 py-0.5 rounded-sm bg-[#0A0A0A] text-white font-mono text-[9px] font-bold">{sec.turns}</span>
                   </div>
-                  <h3 className="text-lg font-display font-bold text-white uppercase">{sec.name}</h3>
+                  <h3 className="text-lg font-display font-bold text-[#0A0A0A] uppercase">{sec.name}</h3>
                   <div className="text-xs font-mono text-[#F47C20] font-bold">MAX SPEED: {sec.speed}</div>
-                  <p className="text-xs font-sans text-gray-300 leading-relaxed">{sec.desc}</p>
+                  <p className="text-xs font-sans text-[#555555] leading-relaxed">{sec.desc}</p>
                 </div>
               ))}
             </div>
@@ -220,10 +219,10 @@ export const TrackPage = () => {
         ============================================================ */}
         <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-tight">
+            <h2 className="text-4xl sm:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
               THINK YOU CAN <span className="text-[#F47C20]">MASTER IT?</span>
             </h2>
-            <p className="text-base sm:text-xl font-sans text-gray-300">
+            <p className="text-base sm:text-xl font-sans text-[#555555]">
               Test your timing on Northern India’s premier 720m outdoor circuit.
             </p>
             <div className="pt-4 flex justify-center">

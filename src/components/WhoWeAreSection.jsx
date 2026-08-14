@@ -1,61 +1,58 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useInView } from 'framer-motion';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Trophy, Flag, Zap, Gauge, Users } from 'lucide-react';
+import { Trophy, ShieldCheck, Gauge, Users, Flag } from 'lucide-react';
 import MagneticButton from './MagneticButton';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const EXPERIENCE_HIGHLIGHTS = [
   {
     number: "01",
     title: "RACING",
     icon: Flag,
-    desc: "Pure competition on a 720m outdoor asphalt circuit with 14 technical apexes and high-speed straights."
+    desc: "720m high-speed outdoor asphalt layout with 14 technical apexes, hairpins, and full-throttle overtaking straights."
   },
   {
     number: "02",
     title: "PERFORMANCE",
     icon: Gauge,
-    desc: "Engineered 270cc Sodi RT10 Pro & Twin 500cc karts with live millisecond RaceFacer telemetry tracking."
+    desc: "Engineered 270cc Sodi RT10 Pro & Twin 500cc karts with live RaceFacer millisecond telemetry tracking."
   },
   {
     number: "03",
-    title: "THE TRACK",
-    icon: Zap,
-    desc: "F1-inspired barrier protection, precision kerbs, night track floodlighting, and marshal safety controls."
+    title: "SAFETY",
+    icon: ShieldCheck,
+    desc: "Impact-absorbing polymer barrier protection, DOT helmets, sanitary balaclavas, & certified track marshals."
   },
   {
     number: "04",
     title: "COMMUNITY",
     icon: Users,
-    desc: "A thriving motorsport hub connecting beginner drivers, corporate racing leagues, and national champions."
+    desc: "Northern India's hub uniting beginner racers, corporate racing leagues, and championship academy pilots."
   }
 ];
 
 const LEAP_FROG_PHOTOS = [
   {
     src: "/leap-frog/leap-frog-1.jpg",
-    title: "Rotax Max Championship Chassis #71",
-    tag: "COMPETITION KART",
-    desc: "Championship-winning Rotax 2-stroke race kart in full competition trim at the JK Tyre National Championship."
+    title: "National Championship Grid",
+    tag: "JK TYRE NATIONALS",
+    desc: "Leap Frog Racing driver lined up on the national championship grid."
   },
   {
     src: "/leap-frog/leap-frog-2.jpg",
-    title: "JK Tyre National Karting Championship Grid",
-    tag: "NATIONAL GRID",
-    desc: "Mr. Rohit Khanna and the Leap Frog Racing squad lined up on the national championship starting grid."
+    title: "Podium Ceremony",
+    tag: "50+ NATIONAL WINS",
+    desc: "Founder Rohit Khanna and academy drivers celebrating national podium trophies."
   },
   {
-    src: "/leap-frog/leap-frog-4.jpg",
-    title: "Championship Race Action & Pit Telemetry",
-    tag: "CIRCUIT ACTION",
-    desc: "High-G apex cornering and live engine telemetry monitoring during national championship finals."
+    src: "/leap-frog/leap-frog-3.jpg",
+    title: "Telemetry & Chassis Setup",
+    tag: "PRO ACADEMY",
+    desc: "Professional telemetry debriefs and live kart tuning at the paddock."
   }
 ];
 
-const StatCounter = ({ end, suffix = '', label, number = "01" }) => {
+// Counting Stats Sub-Component
+const StatCounter = ({ end, suffix = "", label, number }) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
@@ -80,13 +77,13 @@ const StatCounter = ({ end, suffix = '', label, number = "01" }) => {
   }, [isInView, end]);
 
   return (
-    <div ref={ref} className="p-6 rounded-2xl bg-[#141414] border border-white/10 text-left hover:border-[#F47C20] transition-all duration-300">
+    <div ref={ref} className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] text-left hover:border-[#F47C20] transition-all duration-300 shadow-sm">
       <span className="font-mono text-xs font-bold text-[#F47C20] tracking-widest block mb-2">{number}</span>
-      <div className="text-3xl sm:text-5xl font-display font-bold text-white mb-1">
+      <div className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] mb-1">
         {count}
         {suffix}
       </div>
-      <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#888888]">
+      <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#666666]">
         {label}
       </p>
     </div>
@@ -101,19 +98,19 @@ export const WhoWeAreSection = () => {
     <section
       ref={sectionRef}
       id="who-we-are"
-      className="relative w-full bg-[#080808] text-white"
+      className="relative w-full bg-white text-[#111111]"
     >
-      {/* ── Dark Transition Header Block ── */}
-      <div className="bg-[#080808] text-white py-8 sm:py-10 px-4 sm:px-6 lg:px-12 border-t border-b border-white/10">
+      {/* ── Transition Header Block ── */}
+      <div className="bg-[#F9F9F9] text-[#111111] py-8 sm:py-10 px-4 sm:px-6 lg:px-12 border-t border-b border-[#EAEAEA]">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="space-y-1 text-left">
             <div className="flex items-center gap-3">
               <span className="w-[2px] h-5 bg-[#F47C20]" />
               <span className="text-[#F47C20] text-sm font-bold font-mono">02</span>
-              <span className="text-white text-sm font-bold font-mono">/ KARTOMANIA EXPERIENCE</span>
+              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ KARTOMANIA EXPERIENCE</span>
             </div>
 
-            <h2 className="mt-4 text-white font-display font-bold uppercase tracking-tight text-3xl sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-[#0A0A0A] font-display font-bold uppercase tracking-tight text-3xl sm:text-4xl lg:text-5xl">
               BUILT FOR <span className="text-[#F47C20]">THE THRILL.</span>
             </h2>
           </div>
@@ -122,16 +119,16 @@ export const WhoWeAreSection = () => {
 
       <div className="py-12 sm:py-16 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto space-y-16">
         {/* Top Header Tag */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/10 pb-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#EAEAEA] pb-6">
           <div className="text-left space-y-2 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5]/10 border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
               <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // BUILT FOR THE THRILL
             </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-white uppercase tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-tight">
               NORTHERN INDIA'S PREMIER <br className="hidden sm:block" />
               <span className="text-[#F47C20]">720M OUTDOOR</span> CIRCUIT
             </h2>
-            <p className="text-xs sm:text-sm font-sans text-gray-300 leading-relaxed">
+            <p className="text-xs sm:text-sm font-sans text-[#555555] leading-relaxed">
               Kartomania is an authentic 720-meter outdoor asphalt racing track at Entertainland Mall, Gurugram. Founded and directed by veteran racer Mr. Rohit Khanna, it provides a championship-grade motorsport environment for drivers of all skill levels.
             </p>
           </div>
@@ -148,11 +145,11 @@ export const WhoWeAreSection = () => {
 
         {/* 4 Compact Experience Highlights Grid */}
         <div className="space-y-4 text-left">
-          <div className="flex items-center justify-between border-b border-white/10 pb-3">
+          <div className="flex items-center justify-between border-b border-[#EAEAEA] pb-3">
             <span className="font-mono text-xs font-bold text-[#F47C20] uppercase tracking-wider">
               // 4 COMPACT EXPERIENCE HIGHLIGHTS
             </span>
-            <span className="text-[10px] font-mono text-gray-400 uppercase">
+            <span className="text-[10px] font-mono text-[#888888] uppercase">
               CHAMPIONSHIP MOTORSPORT FOCUS
             </span>
           </div>
@@ -163,7 +160,7 @@ export const WhoWeAreSection = () => {
               return (
                 <div
                   key={idx}
-                  className="p-6 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-all duration-300 space-y-3 text-left group"
+                  className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 space-y-3 text-left group shadow-sm"
                 >
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-xs font-bold text-[#F47C20]">
@@ -172,11 +169,11 @@ export const WhoWeAreSection = () => {
                     <IconComponent className="w-4 h-4 text-[#F47C20] group-hover:scale-110 transition-transform" />
                   </div>
 
-                  <h3 className="text-lg font-display font-bold text-white uppercase tracking-wide">
+                  <h3 className="text-lg font-display font-bold text-[#0A0A0A] uppercase tracking-wide">
                     {item.title}
                   </h3>
 
-                  <p className="text-xs font-sans text-gray-300 leading-relaxed">
+                  <p className="text-xs font-sans text-[#555555] leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -194,18 +191,18 @@ export const WhoWeAreSection = () => {
         </div>
 
         {/* ── MOTORSPORT HERITAGE: LEAP FROG RACING SUB-SECTION ── */}
-        <div className="pt-12 border-t border-white/10 space-y-12 text-left">
+        <div className="pt-12 border-t border-[#EAEAEA] space-y-12 text-left">
           {/* Section Header */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/10 pb-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#EAEAEA] pb-8">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5]/10 border border-[#F47C20]/30 text-[#F47C20] font-mono text-xs uppercase tracking-widest font-bold shadow-sm">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 text-[#F47C20] font-mono text-xs uppercase tracking-widest font-bold shadow-sm">
                 <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // MOTORSPORT HERITAGE
               </div>
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-white uppercase tracking-tight leading-none">
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
                 LEAP FROG <span className="text-[#F47C20]">RACING</span>
               </h2>
             </div>
-            <p className="text-xs sm:text-sm font-mono text-[#888888] uppercase tracking-wider max-w-md">
+            <p className="text-xs sm:text-sm font-mono text-[#666666] uppercase tracking-wider max-w-md">
               Kartomania's official professional motorsport division competing across Indian National Karting Championships.
             </p>
           </div>
@@ -213,34 +210,34 @@ export const WhoWeAreSection = () => {
           {/* Story Narrative & Racing Accolades */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7 space-y-5 font-sans">
-              <p className="text-white text-base sm:text-lg leading-relaxed font-medium">
-                <strong className="text-[#F47C20]">Leap Frog Racing</strong> is Northern India's championship-winning motorsport academy, founded and directed by veteran racer <strong className="text-white font-bold">Mr. Rohit Khanna</strong>.
+              <p className="text-[#0A0A0A] text-base sm:text-lg leading-relaxed font-medium">
+                <strong className="text-[#F47C20]">Leap Frog Racing</strong> is Northern India's championship-winning motorsport academy, founded and directed by veteran racer <strong className="text-[#0A0A0A] font-bold">Mr. Rohit Khanna</strong>.
               </p>
-              <p className="text-[#AAAAAA] text-sm sm:text-base leading-relaxed">
+              <p className="text-[#555555] text-sm sm:text-base leading-relaxed">
                 With multiple podium finishes across the JK Tyre National Karting Championship, Rotax Max Challenge India, and national formula racing championships, our racing academy trains aspiring drivers with real competition telemetry, professional telemetry debriefs, and chassis setup.
               </p>
               
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 font-mono">
-                <div className="p-4 rounded-lg bg-[#141414] border border-white/10 hover:border-[#F47C20] text-left space-y-1 transition-colors">
+                <div className="p-4 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] text-left space-y-1 transition-colors shadow-sm">
                   <span className="text-[#F47C20] text-xs font-bold block">// EXPERIENCE</span>
-                  <div className="text-2xl font-display font-bold text-white">20+ YRS</div>
-                  <span className="text-[11px] text-[#888888]">Active Racing</span>
+                  <div className="text-2xl font-display font-bold text-[#0A0A0A]">20+ YRS</div>
+                  <span className="text-[11px] text-[#666666]">Active Racing</span>
                 </div>
-                <div className="p-4 rounded-lg bg-[#141414] border border-white/10 hover:border-[#F47C20] text-left space-y-1 transition-colors">
+                <div className="p-4 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] text-left space-y-1 transition-colors shadow-sm">
                   <span className="text-[#F47C20] text-xs font-bold block">// PODIUMS</span>
-                  <div className="text-2xl font-display font-bold text-white">50+ WINS</div>
-                  <span className="text-[11px] text-[#888888]">National Trophies</span>
+                  <div className="text-2xl font-display font-bold text-[#0A0A0A]">50+ WINS</div>
+                  <span className="text-[11px] text-[#666666]">National Trophies</span>
                 </div>
-                <div className="p-4 rounded-lg bg-[#141414] border border-white/10 hover:border-[#F47C20] text-left space-y-1 col-span-2 sm:col-span-1 transition-colors">
+                <div className="p-4 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] text-left space-y-1 col-span-2 sm:col-span-1 transition-colors shadow-sm">
                   <span className="text-[#F47C20] text-xs font-bold block">// ACADEMY</span>
-                  <div className="text-2xl font-display font-bold text-white">PRO TIER</div>
-                  <span className="text-[11px] text-[#888888]">Driver Coaching</span>
+                  <div className="text-2xl font-display font-bold text-[#0A0A0A]">PRO TIER</div>
+                  <span className="text-[11px] text-[#666666]">Driver Coaching</span>
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border-2 border-white/10 hover:border-[#F47C20] transition-colors duration-500 shadow-md group">
+              <div className="relative rounded-2xl overflow-hidden border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-colors duration-500 shadow-md group">
                 <img
                   src="/leap-frog/leap-frog-4.jpg"
                   alt="Leap Frog Racing Competition Action"
@@ -257,7 +254,7 @@ export const WhoWeAreSection = () => {
 
           {/* Real Competition Photography Gallery Grid */}
           <div className="space-y-4 pt-4 text-left">
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+            <div className="flex items-center justify-between border-b border-[#EAEAEA] pb-4">
               <span className="font-mono text-xs font-bold text-[#F47C20] uppercase tracking-wider">
                 // AUTHENTIC NATIONAL CHAMPIONSHIP PHOTOGRAPHY
               </span>
@@ -271,7 +268,7 @@ export const WhoWeAreSection = () => {
                 <div
                   key={idx}
                   onClick={() => setActiveLeapFrogImg(item)}
-                  className="group relative rounded-xl overflow-hidden bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
+                  className="group relative rounded-xl overflow-hidden bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
                 >
                   <div className="relative h-64 w-full overflow-hidden">
                     <img
@@ -308,7 +305,7 @@ export const WhoWeAreSection = () => {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative max-w-3xl w-full bg-[#141414] border-2 border-[#F47C20] rounded-2xl overflow-hidden shadow-2xl"
+            className="relative max-w-3xl w-full bg-white border-2 border-[#F47C20] rounded-2xl overflow-hidden shadow-2xl"
           >
             <button
               onClick={() => setActiveLeapFrogImg(null)}
@@ -317,11 +314,11 @@ export const WhoWeAreSection = () => {
               ✕
             </button>
             <img src={activeLeapFrogImg.src} alt={activeLeapFrogImg.title} className="w-full max-h-[75vh] object-contain bg-black" />
-            <div className="p-6 bg-[#141414] border-t border-white/10 flex items-center justify-between text-white text-left">
+            <div className="p-6 bg-white border-t border-[#EAEAEA] flex items-center justify-between text-[#111111] text-left">
               <div>
                 <span className="text-[10px] font-mono text-[#F47C20] uppercase font-bold block">{activeLeapFrogImg.tag}</span>
-                <h4 className="text-lg font-display font-bold uppercase">{activeLeapFrogImg.title}</h4>
-                <p className="text-xs font-sans text-gray-400 mt-1">{activeLeapFrogImg.desc}</p>
+                <h4 className="text-lg font-display font-bold uppercase text-[#0A0A0A]">{activeLeapFrogImg.title}</h4>
+                <p className="text-xs font-sans text-[#555555] mt-1">{activeLeapFrogImg.desc}</p>
               </div>
             </div>
           </div>

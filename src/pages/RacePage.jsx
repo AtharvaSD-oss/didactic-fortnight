@@ -148,13 +148,12 @@ export const RacePage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white selection:bg-[#F47C20] selection:text-white relative overflow-x-hidden text-left">
+    <div className="min-h-screen bg-white text-[#111111] selection:bg-[#F47C20] selection:text-white relative overflow-x-hidden text-left">
       <ScrollProgress />
       <Cursor />
 
       {/* Navigation Header */}
       <Navbar
-        activeSection="pricing"
         onNavigate={() => {}}
         onOpenSearch={() => {}}
         onOpenBooking={handleOpenBooking}
@@ -164,18 +163,18 @@ export const RacePage = () => {
         {/* ============================================================
             01 — HERO
         ============================================================ */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-6 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5]/10 border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
               <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // OFFICIAL RACING PACKAGES
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-display font-bold text-white uppercase tracking-tight leading-none">
+            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
               CHOOSE YOUR <br />
               <span className="text-[#F47C20]">RACE.</span>
             </h1>
 
-            <p className="text-lg sm:text-2xl font-sans text-gray-300 font-medium leading-relaxed">
+            <p className="text-lg sm:text-2xl font-sans text-[#555555] font-medium leading-relaxed">
               Pick your experience and get ready for the grid.
             </p>
 
@@ -190,15 +189,15 @@ export const RacePage = () => {
         {/* ============================================================
             02 — RACING EXPERIENCES
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-10">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <span className="w-[2px] h-5 bg-[#F47C20]" />
                 <span className="text-[#F47C20] text-sm font-bold font-mono">02</span>
-                <span className="text-white text-sm font-bold font-mono">/ RACING EXPERIENCES</span>
+                <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ RACING EXPERIENCES</span>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">
+              <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
                 VERIFIED RACE <span className="text-[#F47C20]">CATEGORIES</span>
               </h2>
             </div>
@@ -207,15 +206,15 @@ export const RacePage = () => {
               {CATEGORIES.map((cat) => {
                 const IconComp = cat.icon;
                 return (
-                  <div key={cat.id} className="p-6 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-colors space-y-4 group">
+                  <div key={cat.id} className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-4 group shadow-sm">
                     <div className="flex items-center justify-between">
-                      <span className="px-2.5 py-0.5 rounded-sm bg-[#F47C20] text-white font-mono text-[9px] font-bold uppercase tracking-wider">
+                      <span className="px-2.5 py-0.5 rounded-sm bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider group-hover:bg-[#F47C20] transition-colors">
                         {cat.badge}
                       </span>
                       <IconComp className="w-5 h-5 text-[#F47C20] group-hover:scale-110 transition-transform" />
                     </div>
-                    <h3 className="text-xl font-display font-bold text-white uppercase">{cat.title}</h3>
-                    <p className="text-xs font-sans text-gray-300 leading-relaxed">{cat.desc}</p>
+                    <h3 className="text-xl font-display font-bold text-[#0A0A0A] uppercase">{cat.title}</h3>
+                    <p className="text-xs font-sans text-[#555555] leading-relaxed">{cat.desc}</p>
                   </div>
                 );
               })}
@@ -226,20 +225,20 @@ export const RacePage = () => {
         {/* ============================================================
             03 — PACKAGES
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-10">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-4">
               <div>
                 <div className="flex items-center gap-3 mb-1">
                   <span className="w-[2px] h-5 bg-[#F47C20]" />
                   <span className="text-[#F47C20] text-sm font-bold font-mono">03</span>
-                  <span className="text-white text-sm font-bold font-mono">/ OFFICIAL PACKAGES</span>
+                  <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ OFFICIAL PACKAGES</span>
                 </div>
-                <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase">
+                <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase">
                   REAL KARTOMANIA <span className="text-[#F47C20]">PRICING</span>
                 </h2>
               </div>
-              <span className="text-xs font-mono text-gray-400">
+              <span className="text-xs font-mono text-[#666666]">
                 All prices inclusive of all taxes
               </span>
             </div>
@@ -248,28 +247,28 @@ export const RacePage = () => {
               {PACKAGES.map((pkg) => (
                 <div
                   key={pkg.id}
-                  className="p-6 rounded-2xl bg-[#141414] border-2 border-white/10 hover:border-[#F47C20] transition-all duration-300 flex flex-col justify-between text-left shadow-md group"
+                  className="p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 flex flex-col justify-between text-left shadow-sm hover:shadow-md group"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="px-2.5 py-0.5 rounded-sm bg-[#F47C20] text-white font-mono text-[9px] font-bold uppercase tracking-wider">
+                      <span className="px-2.5 py-0.5 rounded-sm bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider group-hover:bg-[#F47C20] transition-colors">
                         {pkg.tag}
                       </span>
-                      <span className="text-[10px] font-mono text-gray-400 font-bold uppercase">
+                      <span className="text-[10px] font-mono text-[#888888] font-bold uppercase">
                         {pkg.duration}
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-display font-bold text-white uppercase tracking-wide group-hover:text-[#F47C20] transition-colors">
+                    <h3 className="text-lg font-display font-bold text-[#0A0A0A] uppercase tracking-wide group-hover:text-[#F47C20] transition-colors">
                       {pkg.name}
                     </h3>
 
-                    <div className="py-2 border-y border-white/10">
-                      <span className="text-[9px] font-mono text-gray-400 block uppercase">PACKAGE PRICE</span>
-                      <div className="text-2xl font-display font-bold text-white">
+                    <div className="py-2 border-y border-[#EAEAEA]">
+                      <span className="text-[9px] font-mono text-[#888888] block uppercase">PACKAGE PRICE</span>
+                      <div className="text-2xl font-display font-bold text-[#0A0A0A]">
                         {pkg.price}
                       </div>
-                      <span className="text-[10px] font-sans text-gray-400">
+                      <span className="text-[10px] font-sans text-[#666666]">
                         {pkg.priceNote}
                       </span>
                     </div>
@@ -280,7 +279,7 @@ export const RacePage = () => {
                       </span>
                       <div className="space-y-1.5">
                         {pkg.included.map((item, idx) => (
-                          <div key={idx} className="flex items-start gap-2 text-xs font-sans text-gray-300">
+                          <div key={idx} className="flex items-start gap-2 text-xs font-sans text-[#444444]">
                             <CheckCircle2 className="w-3.5 h-3.5 text-[#F47C20] shrink-0 mt-0.5" />
                             <span className="leading-snug">{item}</span>
                           </div>
@@ -288,13 +287,13 @@ export const RacePage = () => {
                       </div>
                     </div>
 
-                    <div className="pt-2 border-t border-white/10">
-                      <span className="text-[9px] font-mono text-gray-400 uppercase block font-bold">CONDITIONS:</span>
-                      <p className="text-[11px] font-sans text-gray-400 leading-snug">{pkg.conditions}</p>
+                    <div className="pt-2 border-t border-[#EAEAEA]">
+                      <span className="text-[9px] font-mono text-[#888888] uppercase block font-bold">CONDITIONS:</span>
+                      <p className="text-[11px] font-sans text-[#666666] leading-snug">{pkg.conditions}</p>
                     </div>
                   </div>
 
-                  <div className="pt-6 mt-4 border-t border-white/10">
+                  <div className="pt-6 mt-4 border-t border-[#EAEAEA]">
                     <MagneticButton
                       onClick={handleOpenBooking}
                       className="w-full py-2.5 px-4 text-xs font-bold justify-center"
@@ -311,25 +310,25 @@ export const RacePage = () => {
         {/* ============================================================
             04 — WHO CAN RACE?
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-8">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <span className="w-[2px] h-5 bg-[#F47C20]" />
                 <span className="text-[#F47C20] text-sm font-bold font-mono">04</span>
-                <span className="text-white text-sm font-bold font-mono">/ WHO CAN RACE?</span>
+                <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ WHO CAN RACE?</span>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">
+              <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
                 ELIGIBILITY & <span className="text-[#F47C20]">REQUIREMENTS</span>
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {ELIGIBILITY.map((item, idx) => (
-                <div key={idx} className="p-6 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-colors space-y-3">
-                  <span className="px-2 py-0.5 rounded-sm bg-[#F47C20] text-white font-mono text-[9px] font-bold uppercase">{item.req}</span>
-                  <h3 className="text-lg font-display font-bold text-white uppercase">{item.title}</h3>
-                  <p className="text-xs font-sans text-gray-300 leading-relaxed">{item.desc}</p>
+                <div key={idx} className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-3 shadow-sm">
+                  <span className="px-2 py-0.5 rounded-sm bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase">{item.req}</span>
+                  <h3 className="text-lg font-display font-bold text-[#0A0A0A] uppercase">{item.title}</h3>
+                  <p className="text-xs font-sans text-[#555555] leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -339,25 +338,25 @@ export const RacePage = () => {
         {/* ============================================================
             05 — HOW BOOKING WORKS
         ============================================================ */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-8">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <span className="w-[2px] h-5 bg-[#F47C20]" />
                 <span className="text-[#F47C20] text-sm font-bold font-mono">05</span>
-                <span className="text-white text-sm font-bold font-mono">/ HOW BOOKING WORKS</span>
+                <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ HOW BOOKING WORKS</span>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-display font-bold text-white uppercase tracking-tight">
+              <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
                 3 SIMPLE <span className="text-[#F47C20]">STEPS</span>
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono">
               {BOOKING_STEPS.map((step, idx) => (
-                <div key={idx} className="p-8 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#F47C20] transition-colors space-y-4">
+                <div key={idx} className="p-8 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-4 shadow-sm">
                   <span className="text-3xl font-display font-bold text-[#F47C20] block">{step.step}</span>
-                  <h3 className="text-xl font-display font-bold text-white uppercase">{step.title}</h3>
-                  <p className="text-xs font-sans text-gray-300 leading-relaxed">{step.desc}</p>
+                  <h3 className="text-xl font-display font-bold text-[#0A0A0A] uppercase">{step.title}</h3>
+                  <p className="text-xs font-sans text-[#555555] leading-relaxed">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -369,10 +368,10 @@ export const RacePage = () => {
         ============================================================ */}
         <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-tight">
+            <h2 className="text-4xl sm:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
               YOUR RACE <span className="text-[#F47C20]">AWAITS.</span>
             </h2>
-            <p className="text-base sm:text-xl font-sans text-gray-300">
+            <p className="text-base sm:text-xl font-sans text-[#555555]">
               Select your session preferences and launch onto Northern India’s premier 720m outdoor circuit.
             </p>
             <div className="pt-4 flex justify-center">
