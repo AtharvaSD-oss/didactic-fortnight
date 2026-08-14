@@ -14,6 +14,7 @@ import ScrollProgress from './components/ScrollProgress';
 import SearchModal from './components/SearchModal';
 import WhatsAppButton from './components/WhatsAppButton';
 import ExperiencePage from './pages/ExperiencePage';
+import TrackPage from './pages/TrackPage';
 
 import { 
   TrackSection,
@@ -164,6 +165,7 @@ export function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/experience" element={<ExperiencePage />} />
+      <Route path="/track" element={<TrackPage />} />
     </Routes>
   );
 }
