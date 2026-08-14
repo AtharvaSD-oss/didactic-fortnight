@@ -639,27 +639,33 @@ export const ContactSection = () => {
     <section id="contact" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-[#F9F9F9] text-[#111111]">
       <div className="space-y-12 sm:space-y-16">
         
-        {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E5E5E5] pb-6 text-left">
-          <div>
-            <div className="flex items-center gap-3 mb-2">
+        {/* Section Header — Task 6 Final Homepage CTA */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#E5E5E5] pb-6 text-left">
+          <div className="space-y-2">
+            <div className="flex items-center gap-3">
               <span className="w-[2px] h-5 bg-[#F47C20]" />
-              <span className="text-[#F47C20] text-sm font-bold font-mono">08</span>
-              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ LOCATION & CONTACT</span>
+              <span className="text-[#F47C20] text-sm font-bold font-mono">05</span>
+              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ FINAL BOOKING CTA</span>
             </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs text-[#F47C20] uppercase tracking-widest font-bold mb-2 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs text-[#F47C20] uppercase tracking-widest font-bold shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-[#F47C20]" /> // ARENA LOCATION & NAVIGATION
             </div>
-            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
-              FIND THE <span className="text-[#F47C20]">ARENA</span>
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
+              READY TO <span className="text-[#F47C20]">RACE?</span>
             </h2>
+            <p className="text-base sm:text-xl font-sans font-medium text-[#555555]">
+              Your next lap starts here.
+            </p>
           </div>
-          <p className="text-xs sm:text-sm font-mono text-[#666666] max-w-sm">
-            Located at Entertainland Mall, India's premier 720m outdoor pro karting circuit.
-          </p>
+
+          <div className="shrink-0 pt-2 sm:pt-0">
+            <MagneticButton href="/race" className="py-4 px-10 text-sm font-bold shadow-md">
+              BOOK YOUR RACE &rarr;
+            </MagneticButton>
+          </div>
         </div>
 
-        {/* Location Info & CTAs */}
+        {/* Location Info & Navigation Strip */}
         <div className="bg-white border border-[#E5E5E5] rounded-xl p-8 sm:p-10 shadow-sm">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 text-left font-mono">
             <div className="p-5 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2">
@@ -755,11 +761,12 @@ export const ContactSection = () => {
               </a>
             </div>
 
-            <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-3 px-8 text-xs whitespace-nowrap">
-              BOOK YOUR RACE
+            <MagneticButton href="/race" className="py-3.5 px-8 text-xs font-bold whitespace-nowrap">
+              BOOK YOUR RACE &rarr;
             </MagneticButton>
           </div>
         </div>
+
       </div>
     </section>
   );
