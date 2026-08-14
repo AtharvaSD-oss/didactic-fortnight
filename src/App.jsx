@@ -15,6 +15,7 @@ import SearchModal from './components/SearchModal';
 import WhatsAppButton from './components/WhatsAppButton';
 import ExperiencePage from './pages/ExperiencePage';
 import TrackPage from './pages/TrackPage';
+import RacePage from './pages/RacePage';
 
 import { 
   TrackSection,
@@ -166,6 +167,7 @@ export function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/experience" element={<ExperiencePage />} />
       <Route path="/track" element={<TrackPage />} />
+      <Route path="/race" element={<RacePage />} />
     </Routes>
   );
 }
