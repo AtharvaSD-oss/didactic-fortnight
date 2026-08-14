@@ -463,67 +463,7 @@ export const WhatsNewSection = () => {
           </div>
         </div>
 
-        {/* 1. Featured Weekly Mega Banner Showcase */}
-        {(activeFilter === 'all' || activeFilter === 'daily') && (
-          <div className="space-y-3 text-left">
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-xs font-bold text-[#F47C20] uppercase tracking-wider">
-                // FEATURED WEEKLY CAMPAIGN SHOWCASE
-              </span>
-              <span className="text-[10px] font-mono text-[#888888] uppercase">
-                CLICK BANNER FOR EXPANDED VIEW
-              </span>
-            </div>
 
-            <div
-              onClick={() => setActivePromoIdx(0)}
-              className="relative group rounded-2xl overflow-hidden cursor-pointer border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 shadow-md hover:shadow-xl bg-black"
-            >
-              <img
-                src="/whats-new/weekly-offers.jpg"
-                alt="Kartomania Weekly Deals Banner"
-                className="w-full h-auto max-h-[480px] object-cover object-center group-hover:scale-[1.015] transition-transform duration-700"
-              />
-              
-              {/* Subtle Ambient Vignette & Interactive Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
-
-              {/* Banner Top Badge */}
-              <div className="absolute top-5 left-5 z-10 flex items-center gap-2">
-                <span className="px-3 py-1 rounded-sm bg-[#F47C20] text-white font-mono text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-md">
-                  ★ OFFICIAL WEEKLY CAMPAIGN
-                </span>
-                <span className="hidden sm:inline-block px-3 py-1 rounded-sm bg-black/75 backdrop-blur-md text-white font-mono text-[10px] sm:text-xs uppercase font-semibold border border-white/20">
-                  CLICK TO VIEW FULL DETAILS
-                </span>
-              </div>
-
-              {/* Banner Bottom Action Bar */}
-              <div className="absolute bottom-5 left-5 right-5 z-10 flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
-                <div className="space-y-1 max-w-2xl">
-                  <span className="text-[#F47C20] font-mono text-xs font-bold uppercase tracking-widest block">
-                    MONDAY BOGO &bull; WEDNESDAY HAPPY HOUR &bull; FRIDAY FRENZY
-                  </span>
-                  <h3 className="text-xl sm:text-3xl lg:text-4xl font-display font-bold text-white uppercase tracking-tight leading-tight">
-                    HIGH-VELOCITY WEEKDAY SPECIALS
-                  </h3>
-                  <p className="text-xs sm:text-sm font-sans text-gray-300 leading-relaxed hidden sm:block">
-                    Experience authentic 720M outdoor asphalt racing starting at just ₹500. All taxes included.
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-3 shrink-0">
-                  <MagneticButton
-                    href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
-                    className="py-3 px-6 text-xs font-bold whitespace-nowrap shadow-md"
-                  >
-                    CLAIM WEEKLY DEALS &rarr;
-                  </MagneticButton>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
 
         {/* 2. Three Main Daily Offer Cards (Monday, Wednesday, Friday) */}
         {(activeFilter === 'all' || activeFilter === 'daily') && (
