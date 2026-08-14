@@ -20,7 +20,6 @@ import WhatsAppButton from './components/WhatsAppButton';
 
 import { 
   TrackSection,
-  LeapFrogSection,
   WhatsNewSection,
   PricingSection, 
   ContactSection
@@ -157,7 +156,6 @@ export function App() {
         {/* 9. KART FLEET & TRACK */}
         <TrackSection onOpenBooking={handleOpenBooking} />
         <KartsSection />
-        <LeapFrogSection />
 
         {/* 10. CONTACT & FAQ */}
         <FAQSection />
