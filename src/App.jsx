@@ -7,7 +7,6 @@ import Hero from './components/Hero';
 import WhoWeAreSection from './components/WhoWeAreSection';
 import WhyKartomaniaSection from './components/WhyKartomaniaSection';
 import RacingTimeline from './components/RacingTimeline';
-import RacingRulesSection from './components/RacingRulesSection';
 import KartsSection from './components/KartsSection';
 import GallerySection from './components/GallerySection';
 import FounderSection from './components/FounderSection';
@@ -156,7 +155,6 @@ export function App() {
         {/* 7. EXPERIENCE */}
         <WhyKartomaniaSection />
         <RacingTimeline />
-        <RacingRulesSection />
 
         {/* 8. REVIEW */}
         <TestimonialsSection />
