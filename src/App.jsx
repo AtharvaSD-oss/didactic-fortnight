@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Lenis from 'lenis';
 
 // Component Imports
@@ -12,6 +13,7 @@ import LoadingScreen from './components/LoadingScreen';
 import ScrollProgress from './components/ScrollProgress';
 import SearchModal from './components/SearchModal';
 import WhatsAppButton from './components/WhatsAppButton';
+import ExperiencePage from './pages/ExperiencePage';
 
 import { 
   TrackSection,
@@ -20,7 +22,7 @@ import {
   ContactSection
 } from './components/Sections';
 
-export function App() {
+const HomePage = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [searchOpen, setSearchOpen] = useState(false);
   const [lenisInstance, setLenisInstance] = useState(null);
@@ -154,6 +156,15 @@ export function App() {
       {/* Floating Action WhatsApp Button (Bottom Right) */}
       <WhatsAppButton />
     </div>
+  );
+};
+
+export function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/experience" element={<ExperiencePage />} />
+    </Routes>
   );
 }
 
