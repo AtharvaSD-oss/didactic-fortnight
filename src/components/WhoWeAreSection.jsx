@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useInView } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Trophy, Zap } from 'lucide-react';
+import { Trophy } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -118,41 +118,19 @@ const WhoWeAreSection = () => {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-16">
-          {/* Left Image Showcase */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative rounded-2xl overflow-hidden border-2 border-white/10 hover:border-[#F47C20] bg-[#141414] shadow-md transition-colors duration-500">
-              <img
-                ref={imgRef}
-                src="/about-action.jpg"
-                alt="Kartomania & Leap Frog Racing Kart #71"
-                className="w-full h-[360px] sm:h-[440px] object-cover object-center filter contrast-[1.03]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 pointer-events-none" />
-              <div className="absolute bottom-4 left-4 right-4 p-3 rounded-sm bg-[#080808]/90 backdrop-blur-md border border-white/10 flex items-center justify-between text-white">
-                <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#F47C20] flex items-center gap-1.5">
-                  <Zap className="w-3.5 h-3.5 text-[#F47C20]" /> ARENA TELEMETRY
-                </span>
-                <span className="font-mono text-[10px] text-[#888888] font-semibold uppercase">ENTERTAINLAND MALL ARENA</span>
-              </div>
-            </div>
-          </div>
+        <div className="mb-16 text-left max-w-4xl space-y-6">
+          <p className="text-white text-lg sm:text-2xl leading-relaxed font-sans font-medium">
+            Founded by veteran motorsport champion <strong className="font-bold text-white">Mr. Rohit Khanna</strong> (20+ years of active Indian & international racing championships), Kartomania is the <strong className="font-bold text-[#F47C20]">only racing track owned, run, and maintained by a professional racer</strong>.
+          </p>
 
-          {/* Right Story Content */}
-          <div className="lg:col-span-6 space-y-6 text-left">
-            <p className="text-white text-base sm:text-lg leading-relaxed font-sans font-medium">
-              Founded by veteran motorsport champion <strong className="font-bold text-white">Mr. Rohit Khanna</strong> (20+ years of active Indian & international racing championships), Kartomania is the <strong className="font-bold text-[#F47C20]">only racing track owned, run, and maintained by a professional racer</strong>.
-            </p>
+          <p className="text-[#AAAAAA] text-base sm:text-lg leading-relaxed font-sans">
+            From beginners learning proper braking lines to pro racers shaving split seconds, Kartomania offers an authentic 720-meter outdoor asphalt circuit with 4 calibrated kart fleet categories and live telemetry timing.
+          </p>
 
-            <p className="text-[#AAAAAA] text-sm sm:text-base leading-relaxed font-sans">
-              From beginners learning proper braking lines to pro racers shaving split seconds, Kartomania offers an authentic 720-meter outdoor asphalt circuit with 4 calibrated kart fleet categories and live telemetry timing.
-            </p>
-
-            <div className="pt-2">
-              <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-3.5 px-8 text-xs">
-                EXPERIENCE THE THRILL &rarr;
-              </MagneticButton>
-            </div>
+          <div className="pt-2">
+            <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-3.5 px-8 text-xs">
+              EXPERIENCE THE THRILL &rarr;
+            </MagneticButton>
           </div>
         </div>
 
