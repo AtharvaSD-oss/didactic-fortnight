@@ -69,15 +69,7 @@ const RacingRulesSection = () => {
           </AnimatedCard>
         </div>
 
-        {/* Experience Quote Callout Banner */}
-        <div className="p-8 rounded-xl bg-[#0A0A0A] text-white text-center space-y-2 border-l-4 border-[#F47C20] shadow-lg">
-          <p className="text-base sm:text-xl font-display font-bold uppercase tracking-wider text-white">
-            "Experience the thrill of real racing in a safe, professionally managed environment."
-          </p>
-          <div className="font-mono text-[10px] sm:text-xs text-[#F47C20] uppercase tracking-widest font-bold">
-            — KARTOMANIA MOTORSPORT CREW
-          </div>
-        </div>
+
 
         {/* Pro Telemetry Feature: "WANT MORE SPEED?" (Real Racers Race Clean) */}
         <div className="rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] p-8 sm:p-12 relative overflow-hidden text-left">
