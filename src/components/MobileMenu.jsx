@@ -110,7 +110,10 @@ const MobileMenu = ({
                         <span className={`font-mono text-xs font-bold ${isActive ? 'text-[#F47C20]' : 'text-[#888888]'}`}>
                           {item.tag}
                         </span>
-                        <span className="font-display font-bold text-base uppercase tracking-wider">
+                        <span 
+                          className="font-nav text-lg uppercase tracking-wider font-semibold"
+                          style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600 }}
+                        >
                           {item.name}
                         </span>
                       </div>

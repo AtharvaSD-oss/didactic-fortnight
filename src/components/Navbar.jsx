@@ -89,11 +89,12 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
                   onMouseEnter={() => setHoveredIndex(idx)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   className={`
-                    relative px-3.5 py-1.5 text-xs font-mono font-bold tracking-wider uppercase transition-colors duration-200 cursor-pointer bg-transparent border-none whitespace-nowrap text-decoration-none
+                    relative px-3.5 py-1.5 text-sm font-nav font-semibold tracking-wider uppercase transition-colors duration-200 cursor-pointer bg-transparent border-none whitespace-nowrap text-decoration-none
                     ${isActive ? 'text-[#F47C20]' : 'text-[#0A0A0A] hover:text-[#F47C20]'}
                   `}
+                  style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600 }}
                 >
-                  <span className="font-bold">{link.name}</span>
+                  <span className="font-semibold">{link.name}</span>
 
                   <span
                     className={`
