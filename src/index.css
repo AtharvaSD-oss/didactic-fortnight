@@ -57,10 +57,10 @@
     letter-spacing: 0.01em;
   }
 
-  h2, h3, h4, h5, h6, .font-display, .font-condensed {
-    font-family: 'Barlow Condensed', 'Anton', sans-serif;
-    font-weight: 800;
-    letter-spacing: 0.01em;
+  h2, h3, h4, h5, h6, .font-display, .font-condensed, .section-heading {
+    font-family: 'Barlow Condensed', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em;
   }
 
   .font-mono, code, .telemetry-tag, .font-barlow {
