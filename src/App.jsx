@@ -10,6 +10,7 @@ import RacingTimeline from './components/RacingTimeline';
 import RacingRulesSection from './components/RacingRulesSection';
 import KartsSection from './components/KartsSection';
 import GallerySection from './components/GallerySection';
+import FounderSection from './components/FounderSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
@@ -66,6 +67,7 @@ export function App() {
       'pricing', 
       'whats-new',
       'gallery',
+      'founder',
       'why-kartomania',
       'testimonials', 
       'karts',
@@ -145,6 +147,9 @@ export function App() {
 
         {/* 5. GALLERY */}
         <GallerySection />
+
+        {/* 6. FOUNDER HERITAGE */}
+        <FounderSection />
 
         {/* 6. EXPERIENCE */}
         <WhyKartomaniaSection />
