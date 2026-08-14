@@ -463,12 +463,6 @@ export const WhatsNewSection = () => {
                       {allPromos[activePromoIdx].price}
                     </span>
                   </div>
-                  <MagneticButton
-                    href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
-                    className="py-3 px-7 text-xs font-bold flex-1 md:flex-initial"
-                  >
-                    BOOK ONLINE &rarr;
-                  </MagneticButton>
                 </div>
               </div>
             </div>
@@ -480,323 +474,159 @@ export const WhatsNewSection = () => {
   );
 };
 
-export const PricingSection = ({ onOpenBooking }) => {
-  const weekdayCombos = [
-    { package: '5 Sessions + 1 Bowling FREE', bonus: '1 Bowling FREE', price: '₹3,250' },
-    { package: '10 Sessions + 1 Session + 1 Bowling FREE', bonus: '+1 Session & 1 Bowling FREE', price: '₹6,500' },
-    { package: '15 Sessions + 2 Sessions + 2 Bowling FREE', bonus: '+2 Sessions & 2 Bowling FREE', price: '₹9,750' },
-    { package: '20 Sessions + 3 Sessions + 3 Bowling FREE', bonus: '+3 Sessions & 3 Bowling FREE', price: '₹13,000' },
-  ];
-
-  const weekendCombos = [
-    { package: '5 Sessions + 1 Bowling FREE', bonus: '1 Bowling FREE', price: '₹3,800' },
-    { package: '10 Sessions + 1 Session + 1 Bowling FREE', bonus: '+1 Session & 1 Bowling FREE', price: '₹7,600' },
-    { package: '15 Sessions + 2 Sessions + 2 Bowling FREE', bonus: '+2 Sessions & 2 Bowling FREE', price: '₹11,400' },
-    { package: '20 Sessions + 3 Sessions + 3 Bowling FREE', bonus: '+3 Sessions & 3 Bowling FREE', price: '₹15,200' },
-  ];
-
-  const standardRates = [
-    { sessions: '1 Session (6 Min)', weekday: '₹550', weekend: '₹650' },
-    { sessions: '5 Sessions', weekday: '₹2,750', weekend: '₹3,250' },
-    { sessions: '10 Sessions', weekday: '₹5,200', weekend: '₹6,175' },
-    { sessions: '15 Sessions', weekday: '₹7,500', weekend: '₹8,850' },
-    { sessions: '20 Sessions', weekday: '₹9,570', weekend: '₹11,400' },
-  ];
-
-  const [calcGroup, setCalcGroup] = useState('solo'); // 'solo' | 'friends' | 'corporate'
-  const [calcDay, setCalcDay] = useState('weekday'); // 'weekday' | 'weekend'
-  const [calcKart, setCalcKart] = useState('pro'); // 'pro' | 'twin' | 'cadet'
-
-  // Calculate rate based on parameters
-  const getCalculatedFare = () => {
-    let basePerSession = 550;
-    if (calcDay === 'weekend') basePerSession = 650;
-    if (calcKart === 'twin') basePerSession = 1200;
-    if (calcKart === 'cadet') basePerSession = 450;
-
-    let racersCount = 1;
-    if (calcGroup === 'friends') racersCount = 4;
-    if (calcGroup === 'corporate') racersCount = 10;
-
-    let _totalSessions = racersCount;
-    let totalPrice = basePerSession * racersCount;
-    let bonusText = "Includes 1 Free Bowling Coupon!";
-
-    if (calcDay === 'weekday' && calcKart === 'pro') {
-      bonusText = "🔥 WEEKDAY BOGO: Buy 1 Session, Get 1 FREE!";
-    } else if (racersCount >= 4) {
-      bonusText = "🎁 Includes +1 FREE Race Session & 2 FREE Bowling Coupons!";
+export const PricingSection = () => {
+  const REAL_PACKAGES = [
+    {
+      id: "pro-kart",
+      name: "PRO KART SINGLE SESSION",
+      price: "₹550 / ₹650",
+      priceNote: "Weekday / Weekend",
+      duration: "6 MINUTES",
+      included: [
+        "270cc Sodi RT10 Pro Kart access",
+        "DOT-certified helmet & balaclava",
+        "Live RaceFacer telemetry tracking"
+      ],
+      tag: "MOST POPULAR"
+    },
+    {
+      id: "twin-kart",
+      name: "TWIN KART (DUO / PARENT & CHILD)",
+      price: "₹1,200",
+      priceNote: "Per session (All Days)",
+      duration: "6 MINUTES",
+      included: [
+        "500cc Twin dual-steering race kart",
+        "Dual safety harnesses & protection",
+        "Ideal for duo racers & parent/child"
+      ],
+      tag: "DUO EXPERIENCE"
+    },
+    {
+      id: "cadet-kart",
+      name: "CADET KART (JUNIOR PILOTS)",
+      price: "₹450",
+      priceNote: "Per session (All Days)",
+      duration: "6 MINUTES",
+      included: [
+        "160cc calibrated junior chassis",
+        "Speed limiter governor safety",
+        "Junior helmet & rib protector"
+      ],
+      tag: "JUNIOR RACING"
+    },
+    {
+      id: "5-session-bundle",
+      name: "5-SESSION VALUE BUNDLE",
+      price: "₹3,250 / ₹3,800",
+      priceNote: "Weekday / Weekend",
+      duration: "30 MINUTES (5 X 6-MIN)",
+      included: [
+        "5 Sodi RT10 Pro race sessions",
+        "1 FREE Complimentary Bowling Coupon",
+        "Shareable driver pass & telemetry app"
+      ],
+      tag: "BEST VALUE"
     }
-
-    return {
-      racersCount,
-      totalPrice,
-      perRacerPrice: Math.round(totalPrice / racersCount),
-      bonusText
-    };
-  };
-
-  const calculated = getCalculatedFare();
+  ];
 
   return (
-    <section id="pricing" className="py-14 sm:py-20 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
-      <div className="space-y-8 sm:space-y-10">
+    <section id="pricing" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
+      <div className="space-y-10 sm:space-y-12">
         
-        {/* Header */}
+        {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-6 text-left">
           <div>
             <div className="flex items-center gap-3 mb-2">
               <span className="w-[2px] h-5 bg-[#F47C20]" />
-              <span className="text-[#F47C20] text-sm font-bold font-mono">03</span>
-              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ PRICING & COMBOS</span>
+              <span className="text-[#F47C20] text-sm font-bold font-mono">04</span>
+              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ RACE & PACKAGES PREVIEW</span>
             </div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 text-[#F47C20] font-mono text-[10px] font-bold uppercase tracking-wider mb-2 shadow-sm">
-              ★ ALL PRICES INCLUSIVE OF ALL TAXES
+              ★ ALL PRICES INCLUSIVE OF GST & TAXES
             </div>
             <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
-              OFFICIAL <span className="text-[#F47C20]">PRICING & COMBOS</span>
+              RACE & <span className="text-[#F47C20]">PACKAGES</span>
             </h2>
           </div>
           <p className="text-xs sm:text-sm font-mono text-[#666666] max-w-md">
-            Exclusive multi-session packages featuring complimentary free bowling and bonus race sessions.
+            Official Kartomania racing packages with live telemetry tracking & safety gear.
           </p>
         </div>
 
-        {/* ====================================================
-            1. INSTANT FARE & PACKAGE CALCULATOR
-        ==================================================== */}
-        <div className="p-6 sm:p-8 rounded-2xl bg-[#0A0A0A] text-white space-y-6 text-left border-2 border-[#F47C20]/40 shadow-xl">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/15 pb-4">
-            <div>
-              <span className="px-2.5 py-0.5 rounded-sm bg-[#F47C20] text-white font-mono text-[10px] font-bold uppercase tracking-widest">
-                ⚡ 1-CLICK CALCULATOR
-              </span>
-              <h3 className="text-xl sm:text-2xl font-display font-bold uppercase text-white mt-1">
-                ESTIMATE YOUR RACE FARE
-              </h3>
-            </div>
-            <span className="text-xs font-mono text-[#AAAAAA]">
-              Instant calculation &bull; Taxes included
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Step 1: Group Size */}
-            <div className="space-y-2">
-              <label className="text-xs font-mono font-bold text-[#F47C20] uppercase tracking-wider block">
-                1. SELECT GROUP SIZE
-              </label>
-              <div className="grid grid-cols-3 gap-2">
-                {[
-                  { id: 'solo', label: '1 Racer' },
-                  { id: 'friends', label: '2–4 Friends' },
-                  { id: 'corporate', label: '5+ Team' }
-                ].map(item => (
-                  <button
-                    key={item.id}
-                    onClick={() => setCalcGroup(item.id)}
-                    className={`py-2.5 px-2 rounded-lg text-xs font-mono font-bold transition-all border ${
-                      calcGroup === item.id
-                        ? 'bg-[#F47C20] border-[#F47C20] text-white shadow-md'
-                        : 'bg-white/5 border-white/15 text-gray-300 hover:border-white/40'
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Step 2: Race Day */}
-            <div className="space-y-2">
-              <label className="text-xs font-mono font-bold text-[#F47C20] uppercase tracking-wider block">
-                2. SELECT RACE DAY
-              </label>
-              <div className="grid grid-cols-2 gap-2">
-                {[
-                  { id: 'weekday', label: 'Mon–Thu BOGO' },
-                  { id: 'weekend', label: 'Fri–Sun Weekend' }
-                ].map(item => (
-                  <button
-                    key={item.id}
-                    onClick={() => setCalcDay(item.id)}
-                    className={`py-2.5 px-2 rounded-lg text-xs font-mono font-bold transition-all border ${
-                      calcDay === item.id
-                        ? 'bg-[#F47C20] border-[#F47C20] text-white shadow-md'
-                        : 'bg-white/5 border-white/15 text-gray-300 hover:border-white/40'
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Step 3: Kart Fleet */}
-            <div className="space-y-2">
-              <label className="text-xs font-mono font-bold text-[#F47C20] uppercase tracking-wider block">
-                3. SELECT KART MODEL
-              </label>
-              <div className="grid grid-cols-3 gap-2">
-                {[
-                  { id: 'pro', label: '270cc Pro' },
-                  { id: 'twin', label: 'Twin 500cc' },
-                  { id: 'cadet', label: '160cc Junior' }
-                ].map(item => (
-                  <button
-                    key={item.id}
-                    onClick={() => setCalcKart(item.id)}
-                    className={`py-2.5 px-2 rounded-lg text-xs font-mono font-bold transition-all border ${
-                      calcKart === item.id
-                        ? 'bg-[#F47C20] border-[#F47C20] text-white shadow-md'
-                        : 'bg-white/5 border-white/15 text-gray-300 hover:border-white/40'
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Calculator Output Display Banner */}
-          <div className="p-4 sm:p-5 rounded-xl bg-white/5 border border-white/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="space-y-1">
-              <div className="text-xs font-mono text-[#F47C20] font-bold">
-                {calculated.bonusText}
-              </div>
-              <div className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight">
-                ESTIMATED FARE: <span className="text-[#F47C20]">₹{calculated.totalPrice.toLocaleString()}</span>
-                <span className="text-xs font-mono text-[#AAAAAA] ml-2 font-normal">
-                  (₹{calculated.perRacerPrice}/racer)
-                </span>
-              </div>
-            </div>
-
-            <MagneticButton
-              onClick={onOpenBooking}
-              className="py-3 px-6 text-xs font-bold whitespace-nowrap shadow-md"
+        {/* 4 Compact Package Preview Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {REAL_PACKAGES.map((pkg) => (
+            <div
+              key={pkg.id}
+              className="p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 flex flex-col justify-between text-left shadow-sm hover:shadow-md group"
             >
-              BOOK THIS FARE NOW &rarr;
-            </MagneticButton>
-          </div>
-        </div>
-
-        {/* 1. Official Value Combo Packages */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Weekday Combos */}
-          <div className="bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl p-8 shadow-sm hover:shadow-md transition-all text-left">
-            <div className="flex flex-wrap items-start justify-between gap-3 pb-4 mb-5 border-b border-[#E5E5E5]">
-              <div className="space-y-0.5">
-                <span className="text-[9px] font-mono font-bold text-[#F47C20] uppercase tracking-widest block">SUPER VALUE DEALS</span>
-                <h3 className="text-xl font-display font-bold text-[#0A0A0A] uppercase tracking-wider">WEEKDAY COMBOS</h3>
-              </div>
-              <span className="px-3 py-1 rounded-sm bg-white border border-[#E5E5E5] text-[#0A0A0A] font-mono text-xs font-bold uppercase whitespace-nowrap shadow-sm">
-                MON – THU
-              </span>
-            </div>
-
-            <div className="space-y-3.5">
-              {weekdayCombos.map((item, idx) => (
-                <div key={idx} className="p-4 rounded-lg bg-white border border-[#EAEAEA] hover:border-[#F47C20] flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition-colors shadow-sm">
-                  <div className="space-y-0.5">
-                    <div className="text-xs sm:text-sm font-display font-bold text-[#0A0A0A] uppercase">{item.package}</div>
-                    <span className="inline-block px-2 py-0.5 rounded-sm bg-[#FFF0E5] text-[#F47C20] font-mono text-[9px] font-bold uppercase tracking-wider">
-                      🎁 {item.bonus}
-                    </span>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-lg font-display font-bold text-[#0A0A0A]">{item.price}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Weekend Combos */}
-          <div className="bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl p-8 shadow-sm hover:shadow-md transition-all text-left">
-            <div className="flex flex-wrap items-start justify-between gap-3 pb-4 mb-5 border-b border-[#E5E5E5]">
-              <div className="space-y-0.5">
-                <div className="flex items-center gap-2">
-                  <span className="text-[9px] font-mono font-bold text-[#F47C20] uppercase tracking-widest block">PEAK RACING & ENTERTAINMENT</span>
-                  <span className="px-2 py-0.5 rounded-sm bg-[#F47C20] text-[8px] font-mono font-bold text-white uppercase tracking-wider">
-                    ★ POPULAR
+              <div className="space-y-4">
+                {/* Header Tag */}
+                <div className="flex items-center justify-between">
+                  <span className="px-2.5 py-0.5 rounded-sm bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider group-hover:bg-[#F47C20] transition-colors">
+                    {pkg.tag}
+                  </span>
+                  <span className="text-[10px] font-mono text-[#888888] font-bold uppercase">
+                    {pkg.duration}
                   </span>
                 </div>
-                <h3 className="text-xl font-display font-bold text-[#0A0A0A] uppercase tracking-wider">WEEKEND COMBOS</h3>
-              </div>
-              <span className="px-3 py-1 rounded-sm bg-white border border-[#E5E5E5] text-[#0A0A0A] font-mono text-xs font-bold uppercase whitespace-nowrap shadow-sm">
-                FRI – SUN & HOLIDAYS
-              </span>
-            </div>
 
-            <div className="space-y-3.5">
-              {weekendCombos.map((item, idx) => (
-                <div key={idx} className="p-4 rounded-lg bg-white border border-[#EAEAEA] hover:border-[#F47C20] flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition-colors shadow-sm">
-                  <div className="space-y-0.5">
-                    <div className="text-xs sm:text-sm font-display font-bold text-[#0A0A0A] uppercase">{item.package}</div>
-                    <span className="inline-block px-2 py-0.5 rounded-sm bg-[#FFF0E5] text-[#F47C20] font-mono text-[9px] font-bold uppercase tracking-wider">
-                      🔥 {item.bonus}
-                    </span>
+                {/* Package Title */}
+                <h3 className="text-lg font-display font-bold text-[#0A0A0A] uppercase tracking-wide group-hover:text-[#F47C20] transition-colors">
+                  {pkg.name}
+                </h3>
+
+                {/* Price Display */}
+                <div className="py-2 border-y border-[#EAEAEA]">
+                  <span className="text-[9px] font-mono text-[#888888] block uppercase">PACKAGE PRICE</span>
+                  <div className="text-2xl font-display font-bold text-[#0A0A0A]">
+                    {pkg.price}
                   </div>
-                  <div className="text-right">
-                    <div className="text-lg font-display font-bold text-[#0A0A0A]">{item.price}</div>
+                  <span className="text-[10px] font-sans text-[#666666]">
+                    {pkg.priceNote}
+                  </span>
+                </div>
+
+                {/* What's Included Bullet Inclusions */}
+                <div className="space-y-2 pt-1">
+                  <span className="text-[10px] font-mono text-[#F47C20] font-bold uppercase block tracking-wider">
+                    // WHAT'S INCLUDED
+                  </span>
+                  <div className="space-y-1.5">
+                    {pkg.included.map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2 text-xs font-sans text-[#444444]">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#F47C20] shrink-0 mt-0.5" />
+                        <span className="leading-snug">{item}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Card Booking CTA */}
+              <div className="pt-6 mt-4 border-t border-[#EAEAEA]">
+                <MagneticButton
+                  href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
+                  className="w-full py-2.5 px-4 text-xs font-bold justify-center"
+                >
+                  BOOK NOW &rarr;
+                </MagneticButton>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
 
-        {/* 2. Standard Session Tariff Table */}
-        <div className="bg-white border border-[#E5E5E5] rounded-xl p-8 shadow-sm text-left">
-          <div className="pb-4 mb-5 border-b border-[#EAEAEA]">
-            <h3 className="text-lg font-display font-bold text-[#0A0A0A] uppercase tracking-wider">
-              STANDARD KARTING SESSIONS TARIFF
-            </h3>
-            <p className="text-xs font-mono text-[#666666]">Pure track time rates without bowling additions (Taxes Included).</p>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full text-left font-mono text-xs sm:text-sm">
-              <thead className="bg-[#F5F5F5] text-[#0A0A0A] uppercase text-[11px] border border-[#E5E5E5]">
-                <tr>
-                  <th className="py-3.5 px-5 rounded-l-sm font-bold">SESSIONS</th>
-                  <th className="py-3.5 px-5 text-center font-bold">WEEKDAY (MON – THU)</th>
-                  <th className="py-3.5 px-5 text-right rounded-r-sm font-bold">WEEKEND (FRI – SUN)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-[#EAEAEA] text-[#111111]">
-                {standardRates.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-[#FFF9F5] transition-colors">
-                    <td className="py-3.5 px-5 font-bold text-[#0A0A0A]">{row.sessions}</td>
-                    <td className="py-3.5 px-5 text-center font-display font-semibold text-[#555555]">{row.weekday}</td>
-                    <td className="py-3.5 px-5 text-right font-display font-bold text-[#F47C20] text-sm sm:text-base">{row.weekend}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        {/* Bottom Navigation CTA */}
+        <div className="pt-4 text-center">
+          <MagneticButton
+            href="/race"
+            className="py-3.5 px-8 text-xs font-bold"
+          >
+            VIEW ALL RACE OPTIONS &rarr;
+          </MagneticButton>
         </div>
 
-        {/* Terms and Conditions Card */}
-        <div className="bg-[#F9F9F9] border border-[#E5E5E5] rounded-xl p-8 space-y-4 text-left shadow-sm">
-          <h4 className="font-display font-bold text-xs sm:text-sm text-[#0A0A0A] uppercase tracking-wider">
-            TERMS AND CONDITIONS
-          </h4>
-          <ul className="space-y-2 text-xs font-mono text-[#666666] list-disc list-inside">
-            <li>Each karting session lasts 6 minutes on the track.</li>
-            <li><strong>All prices are inclusive of all taxes.</strong></li>
-            <li>All sessions and free bowling coupons must be consumed on the day they are bought.</li>
-            <li>Packages are non-transferable and non-refundable.</li>
-          </ul>
-
-          <div className="pt-4 flex justify-center">
-            <MagneticButton onClick={onOpenBooking} className="py-3.5 px-10 text-xs font-bold shadow-sm">
-              BOOK YOUR RACE NOW 🏁
-            </MagneticButton>
-          </div>
-        </div>
       </div>
     </section>
   );
