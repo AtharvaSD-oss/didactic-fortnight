@@ -10,7 +10,6 @@ import RacingTimeline from './components/RacingTimeline';
 import RacingRulesSection from './components/RacingRulesSection';
 import KartsSection from './components/KartsSection';
 import GallerySection from './components/GallerySection';
-import Timeline from './components/Timeline';
 import TestimonialsSection from './components/TestimonialsSection';
 import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
@@ -137,7 +136,6 @@ export function App() {
 
         {/* 2. ABOUT */}
         <WhoWeAreSection onOpenBooking={() => setBookingOpen(true)} />
-        <Timeline />
 
         {/* 3. PRICING */}
         <PricingSection onOpenBooking={() => setBookingOpen(true)} />
