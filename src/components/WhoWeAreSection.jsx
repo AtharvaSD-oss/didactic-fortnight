@@ -98,14 +98,6 @@ const WhoWeAreSection = () => {
             </h2>
           </div>
 
-          <a
-            href="#why-kartomania"
-            className="inline-flex items-center gap-2 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest hover:text-white transition-colors duration-200 self-end sm:self-center"
-          >
-            <span>VIEW ALL</span>
-            <span className="w-8 h-[2px] bg-[#F47C20] inline-block" />
-            <span>&rarr;</span>
-          </a>
         </div>
       </div>
 
