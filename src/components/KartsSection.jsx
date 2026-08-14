@@ -82,7 +82,7 @@ const KARTS_DATA = [
   },
 ];
 
-const KartsSection = ({ onOpenBooking }) => {
+const KartsSection = () => {
   return (
     <section
       id="karts"
@@ -110,54 +110,7 @@ const KartsSection = ({ onOpenBooking }) => {
         </p>
       </div>
 
-      {/* 2. Hero Staging Grid Showcase Banner */}
-      <div className="mb-14 sm:mb-20 rounded-2xl overflow-hidden bg-[#0A0A0A] border-2 border-[#E5E5E5] hover:border-[#F47C20] relative group shadow-md transition-colors duration-500">
-        <div className="relative h-72 sm:h-96 md:h-[440px] w-full overflow-hidden">
-          <img
-            src="/gallery/kartomania-fleet-canopy.jpg"
-            alt="Kartomania Fleet Lined Up on Staging Grid"
-            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-
-          {/* Staging Overlay Badges */}
-          <div className="absolute top-6 left-6 z-10 flex items-center gap-2">
-            <span className="px-3.5 py-1 rounded-sm bg-[#F47C20] text-white font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest shadow-md">
-              PITLANE READY
-            </span>
-            <span className="hidden sm:inline-block px-3.5 py-1 rounded-sm bg-black/80 backdrop-blur-md text-white font-mono text-[10px] sm:text-xs font-semibold uppercase border border-white/20">
-              DAILY MOTORSPORT BALANCING
-            </span>
-          </div>
-
-          {/* Bottom Banner Content */}
-          <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4 z-10 text-left">
-            <div className="space-y-1.5 max-w-xl">
-              <span className="text-[#F47C20] font-mono text-xs font-bold uppercase tracking-widest block">
-                OFFICIAL KARTOMANIA FLEET
-              </span>
-              <h3 className="text-xl sm:text-3xl font-display font-bold text-white uppercase tracking-tight">
-                BUILT FOR COMPETITION. TUNED FOR GRIP.
-              </h3>
-              <p className="text-xs sm:text-sm font-sans text-gray-300 leading-relaxed">
-                Equipped with real-time RaceFacer telemetry transponders for millisecond sector tracking.
-              </p>
-            </div>
-
-            {onOpenBooking && (
-              <MagneticButton
-                onClick={onOpenBooking}
-                className="py-3 px-6 text-xs whitespace-nowrap"
-              >
-                SELECT YOUR KART &rarr;
-              </MagneticButton>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* 3. Automotive Product Model Presentation (Grid) */}
+      {/* 2. Automotive Product Model Presentation (Grid) */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
         {KARTS_DATA.map((kart, idx) => {
           return (
