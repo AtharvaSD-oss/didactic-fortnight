@@ -41,14 +41,15 @@
     background-color: #FFFFFF;
     color: #111111;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     overflow-x: hidden;
     line-height: 1.6;
     letter-spacing: -0.01em;
   }
 
-  p, span, a, button, input, textarea, div {
-    font-weight: 600;
+  p, .font-sans, .font-body, li, label, input, textarea {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    line-height: 1.6;
   }
 
   h1, .font-anton {
