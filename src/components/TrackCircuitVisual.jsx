@@ -2,20 +2,20 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 
 const TURN_DATA = [
-  { id: 1, name: "Turn 1 - Pit Exit Arc", x: 740, y: 880, speed: "70 km/h", gear: "Flat Out", desc: "High-speed acceleration straight out of the Start/Finish line into the lower right curve." },
-  { id: 2, name: "Turn 2 - North Straight Entry", x: 830, y: 760, speed: "65 km/h", gear: "Modulated", desc: "Long sweeping right arc carrying momentum directly into the North vertical straight." },
-  { id: 3, name: "Turn 3 - Infield Technical Chicane", x: 360, y: 700, speed: "38 km/h", gear: "Trail Brake", desc: "Tight technical right-hand loop demanding precision weight transfer and throttle control." },
-  { id: 4, name: "Turn 4 - Pit Straight Launch", x: 440, y: 920, speed: "48 km/h", gear: "Full Throttle", desc: "Critical exit corner onto the Start/Finish timing straight." },
-  { id: 5, name: "Turn 5 - Southwest Sweeper", x: 260, y: 810, speed: "52 km/h", gear: "Medium", desc: "Fast sweeping curve connecting the western sector to the infield loop." },
-  { id: 6, name: "Turn 6 - West Hairpin", x: 65, y: 560, speed: "35 km/h", gear: "Hard Braking", desc: "Tight western apex hairpin. Heavy late braking before rapid corner exit." },
-  { id: 7, name: "Turn 7 - Mid-Section Chicane", x: 300, y: 535, speed: "50 km/h", gear: "Modulated", desc: "Technical S-curve requiring smooth steering inputs through the apex curb." },
-  { id: 8, name: "Turn 8 - North-West Transition", x: 480, y: 660, speed: "58 km/h", gear: "Acceleration", desc: "Downhill transition straight feeding momentum towards the western sector." },
-  { id: 10, name: "Turn 10 - North Straight Exit", x: 745, y: 680, speed: "62 km/h", gear: "Fast Entry", desc: "High-speed exit sweeping right from the vertical straight into the mid technical loop." },
-  { id: 11, name: "Turn 11 - North Loop Hairpin", x: 755, y: 55, speed: "32 km/h", gear: "Heavy Braking", desc: "Topmost 180° hairpin loop with safety run-off zone. Shaves split seconds on clean exit lines." }
+  { id: 1, name: "Turn 1 - Main Straight Arc", x: 500, y: 770, speed: "70 km/h", gear: "Flat Out", desc: "High-speed acceleration past the Start/Finish line into the lower right curve." },
+  { id: 2, name: "Turn 2 - North Sweeper Entry", x: 610, y: 710, speed: "65 km/h", gear: "Modulated", desc: "Long sweeping right corner carrying momentum directly into the North vertical straight." },
+  { id: 10, name: "Turn 10 - North Straight Exit Sweeper", x: 645, y: 520, speed: "62 km/h", gear: "Fast Entry", desc: "High-speed exit sweeping right from the vertical straight into the mid-circuit loop." },
+  { id: 11, name: "Turn 11 - North Loop Hairpin", x: 550, y: 45, speed: "32 km/h", gear: "Heavy Braking", desc: "Topmost 180° hairpin loop with safety run-off zone. Shaves split seconds on clean exit lines." },
+  { id: 8, name: "Turn 8 - Mid-Circuit Transition", x: 390, y: 535, speed: "58 km/h", gear: "Acceleration", desc: "Downhill transition straight feeding momentum towards the western sector." },
+  { id: 7, name: "Turn 7 - Technical S-Chicane", x: 235, y: 455, speed: "50 km/h", gear: "Modulated", desc: "Technical S-curve requiring smooth steering inputs through the apex curbing." },
+  { id: 6, name: "Turn 6 - West Hairpin Apex", x: 55, y: 470, speed: "35 km/h", gear: "Hard Braking", desc: "Tight western apex hairpin. Heavy late braking before rapid corner exit." },
+  { id: 5, name: "Turn 5 - Southwest Sweeper", x: 220, y: 685, speed: "52 km/h", gear: "Medium", desc: "Fast sweeping curve connecting the western sector to the infield loop." },
+  { id: 3, name: "Turn 3 - Infield Chicane Loop", x: 350, y: 585, speed: "38 km/h", gear: "Trail Brake", desc: "Tight technical right-hand loop demanding precision weight transfer and throttle control." },
+  { id: 4, name: "Turn 4 - Pit Straight Launch", x: 330, y: 735, speed: "48 km/h", gear: "Full Throttle", desc: "Critical exit corner launching directly onto the Start/Finish timing straight." }
 ];
 
-// Clockwise contour matching the 11-turn official track layout
-const TRACK_PATH_D = "M 580 910 C 680 870, 770 820, 830 720 C 860 620, 840 420, 835 240 C 830 140, 810 50, 755 50 C 700 50, 680 140, 685 240 C 690 420, 700 620, 740 680 C 760 720, 740 760, 660 760 C 560 760, 480 660, 420 600 C 350 540, 240 540, 160 510 C 100 490, 60 520, 65 580 C 75 640, 160 730, 260 810 C 340 860, 390 840, 420 780 C 440 730, 410 690, 360 700 C 320 710, 310 770, 330 830 C 350 890, 440 940, 580 910 Z";
+// Precision clockwise contour matching the authentic 11-turn official track layout
+const TRACK_PATH_D = "M 430 780 C 475 800, 550 795, 605 735 C 655 675, 680 500, 645 270 C 625 115, 600 35, 550 35 C 500 35, 475 115, 495 270 C 510 420, 505 515, 555 575 C 595 615, 650 575, 650 515 C 650 455, 575 565, 495 625 C 425 675, 385 525, 345 495 C 305 465, 235 445, 175 425 C 115 405, 50 425, 50 475 C 50 525, 115 615, 185 675 C 225 705, 265 685, 275 635 C 285 585, 325 565, 355 595 C 385 625, 355 715, 305 735 C 275 745, 315 780, 430 780 Z";
 
 const TrackCircuitVisual = () => {
   const [activeTurn, setActiveTurn] = useState(null);
@@ -80,7 +80,7 @@ const TrackCircuitVisual = () => {
       </div>
 
       {/* Main Track Display Area */}
-      <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] max-h-[520px] bg-white rounded-xl overflow-hidden flex items-center justify-center p-3 border border-[#E5E5E5] shadow-inner">
+      <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] max-h-[540px] bg-white rounded-xl overflow-hidden flex items-center justify-center p-3 border border-[#E5E5E5] shadow-inner">
         
         {/* MODE 1: High-Res Official Track Map Image */}
         {viewMode === 'official' ? (
@@ -92,34 +92,57 @@ const TrackCircuitVisual = () => {
             />
           </div>
         ) : (
-          /* MODE 2: Interactive 2.5D Vector Simulation with Live Animated Kart */
+          /* MODE 2: Interactive 2.5D Vector Simulation matching the Official Map Shape */
           <div className="relative w-full h-full">
             <svg
-              viewBox="0 0 950 980"
+              viewBox="0 0 760 840"
               className="w-full h-full object-contain filter drop-shadow-[0_4px_16px_rgba(0,0,0,0.08)]"
             >
               <defs>
                 <linearGradient id="asphaltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#2a2d34" />
-                  <stop offset="100%" stopColor="#15171c" />
+                  <stop offset="0%" stopColor="#2e323b" />
+                  <stop offset="100%" stopColor="#181a1f" />
                 </linearGradient>
 
-                <pattern id="checkeredStart" width="12" height="12" patternUnits="userSpaceOnUse">
-                  <rect width="6" height="6" fill="#ffffff" />
-                  <rect x="6" width="6" height="6" fill="#111111" />
-                  <rect y="6" width="6" height="6" fill="#111111" />
-                  <rect x="6" y="6" width="6" height="6" fill="#ffffff" />
+                <pattern id="checkeredStart" width="10" height="10" patternUnits="userSpaceOnUse">
+                  <rect width="5" height="5" fill="#ffffff" />
+                  <rect x="5" width="5" height="5" fill="#111111" />
+                  <rect y="5" width="5" height="5" fill="#111111" />
+                  <rect x="5" y="5" width="5" height="5" fill="#ffffff" />
                 </pattern>
               </defs>
 
-              {/* Safety Barrier Underlay */}
+              {/* Turn 11 Top Infield Grass / Run-off Zone */}
+              <path
+                d="M 505 240 C 515 120, 530 65, 550 65 C 570 65, 585 120, 595 240 Z"
+                fill="#FFC4C4"
+                opacity="0.8"
+              />
+              <path
+                d="M 515 230 C 525 140, 535 90, 550 90 C 565 90, 575 140, 585 230 Z"
+                fill="#94C882"
+                opacity="0.85"
+              />
+
+              {/* Safety Barrier Underlay (Outer contour) */}
               <path
                 d={TRACK_PATH_D}
                 fill="none"
                 stroke="#d1d5db"
-                strokeWidth="74"
+                strokeWidth="56"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+              />
+
+              {/* Red-and-White Apex Curbing Effect */}
+              <path
+                d={TRACK_PATH_D}
+                fill="none"
+                stroke="#E53E3E"
+                strokeWidth="50"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeDasharray="14 14"
               />
 
               {/* White Kerb Outer Border */}
@@ -127,7 +150,7 @@ const TrackCircuitVisual = () => {
                 d={TRACK_PATH_D}
                 fill="none"
                 stroke="#ffffff"
-                strokeWidth="66"
+                strokeWidth="44"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
@@ -138,32 +161,33 @@ const TrackCircuitVisual = () => {
                 d={TRACK_PATH_D}
                 fill="none"
                 stroke="url(#asphaltGrad)"
-                strokeWidth="56"
+                strokeWidth="36"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
 
-              {/* Racing Line Flow */}
+              {/* Racing Line Flow in Energetic Orange */}
               {showRacingLine && (
                 <path
                   d={TRACK_PATH_D}
                   fill="none"
                   stroke="#F47C20"
-                  strokeWidth="3"
-                  strokeDasharray="10 18"
+                  strokeWidth="2.5"
+                  strokeDasharray="8 14"
+                  className="animate-[dash_10s_linear_infinite]"
                 />
               )}
 
               {/* Start/Finish Checkered Gantry Line */}
-              <g transform="translate(580, 910) rotate(-15)">
-                <rect x="-30" y="-5" width="60" height="10" fill="url(#checkeredStart)" stroke="#ffffff" strokeWidth="1" />
-                <rect x="-35" y="-22" width="70" height="15" rx="3" fill="#0A0A0A" />
-                <text x="0" y="-11" fill="#ffffff" fontFamily="sans-serif" fontSize="7" fontWeight="bold" textAnchor="middle">
+              <g transform="translate(430, 780) rotate(-15)">
+                <rect x="-22" y="-4" width="44" height="8" fill="url(#checkeredStart)" stroke="#ffffff" strokeWidth="1" />
+                <rect x="-26" y="-18" width="52" height="12" rx="2" fill="#0A0A0A" />
+                <text x="0" y="-9" fill="#ffffff" fontFamily="sans-serif" fontSize="5.5" fontWeight="bold" textAnchor="middle">
                   START / FINISH
                 </text>
               </g>
 
-              {/* Interactive Turn Hotspot Circles */}
+              {/* Interactive Turn Hotspot Circles matching exact 11 turns */}
               {TURN_DATA.map((turn) => (
                 <g
                   key={turn.id}
@@ -173,7 +197,7 @@ const TrackCircuitVisual = () => {
                   <circle
                     cx={turn.x}
                     cy={turn.y}
-                    r="14"
+                    r="12"
                     fill={activeTurn?.id === turn.id ? "#F47C20" : "#ffffff"}
                     stroke={activeTurn?.id === turn.id ? "#F47C20" : "#0A0A0A"}
                     strokeWidth="2"
@@ -181,28 +205,28 @@ const TrackCircuitVisual = () => {
                   />
                   <text
                     x={turn.x}
-                    y={turn.y + 4}
+                    y={turn.y + 3.5}
                     fill={activeTurn?.id === turn.id ? "#ffffff" : "#0A0A0A"}
                     fontFamily="sans-serif"
-                    fontSize="9"
+                    fontSize="8"
                     fontWeight="bold"
                     textAnchor="middle"
                     className="pointer-events-none"
                   >
-                    T{turn.id}
+                    {turn.id}
                   </text>
                 </g>
               ))}
 
-              {/* Live Animated Kart */}
+              {/* Live Animated Racing Kart */}
               {isVisible && (
                 <g>
                   <g id="liveRacingKart">
-                    <circle r="8" fill="#F47C20" stroke="#FFFFFF" strokeWidth="2" filter="drop-shadow(0 0 6px rgba(244,124,32,0.9))" />
-                    <polygon points="0,-3 12,0 0,3" fill="#F47C20" opacity="0.8" />
+                    <circle r="6.5" fill="#F47C20" stroke="#FFFFFF" strokeWidth="1.8" filter="drop-shadow(0 0 5px rgba(244,124,32,0.9))" />
+                    <polygon points="0,-2.5 10,0 0,2.5" fill="#F47C20" opacity="0.8" />
                     <animateMotion
                       path={TRACK_PATH_D}
-                      dur="14s"
+                      dur="12s"
                       repeatCount="indefinite"
                       rotate="auto"
                     />
