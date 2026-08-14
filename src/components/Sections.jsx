@@ -16,7 +16,7 @@ import { InstagramIcon, FacebookIcon, WhatsAppIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 import TrackCircuitVisual from './TrackCircuitVisual';
 
-export const TrackSection = ({ onOpenBooking }) => (
+export const TrackSection = () => (
   <section id="track" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
     <div className="flex flex-col lg:flex-row items-center justify-between gap-10 sm:gap-14">
       
@@ -24,53 +24,52 @@ export const TrackSection = ({ onOpenBooking }) => (
       <div className="space-y-6 lg:w-5/12 text-left">
         <div className="flex items-center gap-3 mb-2">
           <span className="w-[2px] h-5 bg-[#F47C20]" />
-          <span className="text-[#F47C20] text-sm font-bold font-mono">07</span>
-          <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ KART FLEET & TRACK</span>
+          <span className="text-[#F47C20] text-sm font-bold font-mono">03</span>
+          <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ THE TRACK</span>
         </div>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
           <MapPin className="w-3.5 h-3.5 text-[#F47C20]" /> // CIRCUIT TELEMETRY
         </div>
         <h2 className="text-3xl sm:text-5xl font-display font-bold uppercase tracking-tight text-[#0A0A0A] leading-tight">
-          THE MONACO OF <br />
-          <span className="text-[#F47C20]">OUTDOOR KARTING</span>
+          THE <span className="text-[#F47C20]">TRACK</span>
         </h2>
-        <p className="text-[#666666] text-xs sm:text-sm font-sans leading-relaxed">
-          Designed by championship racing engineers. Features a full 720-meter outdoor asphalt circuit with high-banked hairpin apexes, technical chicanes, and high-speed overtaking straights.
+        <p className="text-[#666666] text-sm sm:text-base font-sans font-medium leading-relaxed">
+          Every corner. Every straight. Every lap.
         </p>
 
-        {/* Large Statistics: 01, 02, 03, 04 in Orange */}
+        {/* Verified Track Statistics Grid */}
         <div className="grid grid-cols-2 gap-4 pt-2">
           <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl text-left space-y-1 transition-colors group shadow-sm">
             <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">01 // TRACK LENGTH</span>
             <div className="text-2xl font-display font-bold text-[#0A0A0A]">720 METERS</div>
-            <span className="text-[11px] font-sans text-[#666666]">Full outdoor asphalt circuit</span>
+            <span className="text-[11px] font-sans text-[#666666]">Outdoor asphalt circuit</span>
           </div>
 
           <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl text-left space-y-1 transition-colors group shadow-sm">
-            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">02 // CORNERS</span>
+            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">02 // TURNS</span>
             <div className="text-2xl font-display font-bold text-[#0A0A0A]">14 APEXES</div>
-            <span className="text-[11px] font-sans text-[#666666]">High-G tactical chicanes</span>
+            <span className="text-[11px] font-sans text-[#666666]">Technical chicanes</span>
           </div>
 
           <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl text-left space-y-1 transition-colors group shadow-sm">
-            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">03 // SURFACE</span>
-            <div className="text-2xl font-display font-bold text-[#0A0A0A]">POLYMER GRIP</div>
-            <span className="text-[11px] font-sans text-[#666666]">Formula asphalt compound</span>
+            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">03 // TOP SPEED</span>
+            <div className="text-2xl font-display font-bold text-[#0A0A0A]">70 KM/H</div>
+            <span className="text-[11px] font-sans text-[#666666]">Sodi RT10 Pro fleet</span>
           </div>
 
           <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl text-left space-y-1 transition-colors group shadow-sm">
-            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">04 // SAFETY</span>
-            <div className="text-2xl font-display font-bold text-[#0A0A0A]">F1 BARRIERS</div>
-            <span className="text-[11px] font-sans text-[#666666]">Pro absorption bumpers</span>
+            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">04 // LAP INFORMATION</span>
+            <div className="text-2xl font-display font-bold text-[#0A0A0A]">41.82 SEC</div>
+            <span className="text-[11px] font-sans text-[#666666]">Track record lap time</span>
           </div>
         </div>
 
         <div className="pt-4">
           <MagneticButton
-            onClick={onOpenBooking}
-            className="py-3 px-8 text-xs font-bold"
+            href="/track"
+            className="py-3.5 px-8 text-xs font-bold"
           >
-            BOOK YOUR SESSION &rarr;
+            EXPLORE THE TRACK &rarr;
           </MagneticButton>
         </div>
       </div>

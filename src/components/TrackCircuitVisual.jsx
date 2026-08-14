@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 
 const TURN_DATA = [
   { id: 1, name: "Turn 1 - Apex Sweeper", x: 740, y: 195, speed: "78 km/h", gear: "Flat Out", desc: "High-speed entry into the sweeping right arc. Keep smooth steering." },
@@ -12,13 +12,18 @@ const TURN_DATA = [
   { id: 8, name: "Turn 8 - Grand Finale Arc", x: 1140, y: 740, speed: "58 km/h", gear: "Medium", desc: "Final sweeping loop leading directly into the Start/Finish straight." }
 ];
 
+const TRACK_PATH_D = "M 320 360 C 440 310, 580 250, 740 200 C 920 210, 1060 270, 1120 370 C 1080 460, 940 480, 760 470 C 580 450, 400 430, 250 440 C 160 490, 180 560, 280 580 C 460 570, 680 550, 880 560 C 1050 590, 1140 650, 1110 720 C 960 720, 800 690, 640 670 C 480 670, 340 710, 280 780 C 340 840, 480 850, 640 840 C 800 830, 960 820, 1080 800 C 1160 740, 1140 660, 1020 580 C 860 500, 680 440, 500 390 Z";
+
 const TrackCircuitVisual = () => {
   const [activeTurn, setActiveTurn] = useState(null);
   const [showRacingLine, setShowRacingLine] = useState(true);
   const [showSectors, setShowSectors] = useState(true);
 
+  const containerRef = useRef(null);
+  const isVisible = useInView(containerRef, { margin: "100px" });
+
   return (
-    <div className="relative w-full rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] hover:border-[#F47C20] p-4 sm:p-6 shadow-md transition-colors duration-500 text-[#111111] select-none">
+    <div ref={containerRef} className="relative w-full rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] hover:border-[#F47C20] p-4 sm:p-6 shadow-md transition-colors duration-500 text-[#111111] select-none overflow-hidden">
       
       {/* Top Telemetry Header Bar */}
       <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-[#E5E5E5]">
@@ -99,7 +104,7 @@ const TrackCircuitVisual = () => {
           <g>
             {/* Safety Barrier Outer Shadow */}
             <path
-              d="M 320 360 C 440 310, 580 250, 740 200 C 920 210, 1060 270, 1120 370 C 1080 460, 940 480, 760 470 C 580 450, 400 430, 250 440 C 160 490, 180 560, 280 580 C 460 570, 680 550, 880 560 C 1050 590, 1140 650, 1110 720 C 960 720, 800 690, 640 670 C 480 670, 340 710, 280 780 C 340 840, 480 850, 640 840 C 800 830, 960 820, 1080 800 C 1160 740, 1140 660, 1020 580 C 860 500, 680 440, 500 390 Z"
+              d={TRACK_PATH_D}
               fill="none"
               stroke="#0A0A0A"
               strokeWidth="98"
@@ -109,7 +114,7 @@ const TrackCircuitVisual = () => {
 
             {/* White Outer Kerb Edge */}
             <path
-              d="M 320 360 C 440 310, 580 250, 740 200 C 920 210, 1060 270, 1120 370 C 1080 460, 940 480, 760 470 C 580 450, 400 430, 250 440 C 160 490, 180 560, 280 580 C 460 570, 680 550, 880 560 C 1050 590, 1140 650, 1110 720 C 960 720, 800 690, 640 670 C 480 670, 340 710, 280 780 C 340 840, 480 850, 640 840 C 800 830, 960 820, 1080 800 C 1160 740, 1140 660, 1020 580 C 860 500, 680 440, 500 390 Z"
+              d={TRACK_PATH_D}
               fill="none"
               stroke="#ffffff"
               strokeWidth="86"
@@ -117,26 +122,10 @@ const TrackCircuitVisual = () => {
               strokeLinejoin="round"
             />
 
-            {/* Pit Lane Branch */}
-            <path
-              d="M 640 875 C 800 875, 960 870, 1080 850 C 1140 810, 1120 760, 1080 800"
-              fill="none"
-              stroke="#1e2029"
-              strokeWidth="56"
-              strokeLinecap="round"
-            />
-            <path
-              d="M 640 875 C 800 875, 960 870, 1080 850 C 1140 810, 1120 760, 1080 800"
-              fill="none"
-              stroke="#2c2e37"
-              strokeWidth="48"
-              strokeLinecap="round"
-            />
-
             {/* Main Asphalt Circuit Surface */}
             <path
               id="mainTrackCircuit"
-              d="M 320 360 C 440 310, 580 250, 740 200 C 920 210, 1060 270, 1120 370 C 1080 460, 940 480, 760 470 C 580 450, 400 430, 250 440 C 160 490, 180 560, 280 580 C 460 570, 680 550, 880 560 C 1050 590, 1140 650, 1110 720 C 960 720, 800 690, 640 670 C 480 670, 340 710, 280 780 C 340 840, 480 850, 640 840 C 800 830, 960 820, 1080 800 C 1160 740, 1140 660, 1020 580 C 860 500, 680 440, 500 390 Z"
+              d={TRACK_PATH_D}
               fill="none"
               stroke="url(#asphaltGrad)"
               strokeWidth="76"
@@ -147,7 +136,7 @@ const TrackCircuitVisual = () => {
             {/* Animated Racing Flow Line in Energetic Orange */}
             {showRacingLine && (
               <path
-                d="M 320 360 C 440 310, 580 250, 740 200 C 920 210, 1060 270, 1120 370 C 1080 460, 940 480, 760 470 C 580 450, 400 430, 250 440 C 160 490, 180 560, 280 580 C 460 570, 680 550, 880 560 C 1050 590, 1140 650, 1110 720 C 960 720, 800 690, 640 670 C 480 670, 340 710, 280 780 C 340 840, 480 850, 640 840 C 800 830, 960 820, 1080 800 C 1160 740, 1140 660, 1020 580 C 860 500, 680 440, 500 390 Z"
+                d={TRACK_PATH_D}
                 fill="none"
                 stroke="#F47C20"
                 strokeWidth="3.5"
@@ -157,7 +146,26 @@ const TrackCircuitVisual = () => {
             )}
           </g>
 
-          {/* 3. Apex Kerbs */}
+          {/* 3. CONTINUOUS ANIMATED KART MOTION */}
+          {isVisible && (
+            <g>
+              <g id="liveRacingKart">
+                {/* Kart Body Dot */}
+                <circle r="9" fill="#F47C20" stroke="#FFFFFF" strokeWidth="2.5" filter="drop-shadow(0 0 6px rgba(244,124,32,0.8))" />
+                {/* Subtle Speed Trail Cone */}
+                <polygon points="0,-4 14,0 0,4" fill="#F47C20" opacity="0.6" />
+                
+                <animateMotion
+                  path={TRACK_PATH_D}
+                  dur="16s"
+                  repeatCount="indefinite"
+                  rotate="auto"
+                />
+              </g>
+            </g>
+          )}
+
+          {/* 4. Apex Kerbs */}
           <g>
             <path d="M 690 165 Q 740 160 790 168" stroke="#F47C20" strokeWidth="8" strokeDasharray="10 8" fill="none" />
             <path d="M 1060 230 Q 1120 270 1150 340" stroke="#0A0A0A" strokeWidth="8" strokeDasharray="10 8" fill="none" />
@@ -169,43 +177,7 @@ const TrackCircuitVisual = () => {
             <path d="M 1120 780 Q 1170 740 1160 670" stroke="#0A0A0A" strokeWidth="8" strokeDasharray="10 8" fill="none" />
           </g>
 
-          {/* 4. Directional White Racing Arrows */}
-          <g fill="rgba(255,255,255,0.85)">
-            <polygon points="460,300 480,290 460,280 466,288 440,288 440,292 466,292" />
-            <polygon points="860,205 880,205 865,195 869,203 845,203 845,207 869,207" />
-            <polygon points="1070,440 1060,460 1080,455 1070,450 1085,435 1082,432 1068,447" />
-            <polygon points="760,470 740,470 755,460 751,468 775,468 775,472 751,472" />
-            <polygon points="175,540 190,560 170,555 180,550 165,535 168,532 182,547" />
-            <polygon points="560,565 580,560 560,550 566,558 540,558 540,562 566,562" />
-            <polygon points="980,580 1000,590 980,600 986,592 960,592 960,588 986,588" />
-            <polygon points="540,670 520,670 535,660 531,668 555,668 555,672 531,672" />
-            <polygon points="740,835 760,835 745,825 749,833 725,833 725,837 749,837" />
-          </g>
-
-          {/* 5. Pit Lane Painted Text */}
-          <text x="820" y="880" fill="rgba(255,255,255,0.7)" fontFamily="monospace" fontSize="14" fontWeight="bold" letterSpacing="2">
-            PIT LANE
-          </text>
-
-          {/* 6. Marshall Stations */}
-          <g>
-            <circle cx="740" cy="155" r="15" fill="#0A0A0A" stroke="#F47C20" strokeWidth="2" />
-            <text x="740" y="160" fill="#ffffff" fontFamily="sans-serif" fontSize="13" fontWeight="bold" textAnchor="middle">M</text>
-
-            <circle cx="1110" cy="510" r="15" fill="#0A0A0A" stroke="#F47C20" strokeWidth="2" />
-            <text x="1110" y="515" fill="#ffffff" fontFamily="sans-serif" fontSize="13" fontWeight="bold" textAnchor="middle">M</text>
-
-            <circle cx="880" cy="915" r="15" fill="#0A0A0A" stroke="#F47C20" strokeWidth="2" />
-            <text x="880" y="920" fill="#ffffff" fontFamily="sans-serif" fontSize="13" fontWeight="bold" textAnchor="middle">M</text>
-          </g>
-
-          {/* 7. Sector Markers */}
-          <g>
-            <circle cx="115" cy="535" r="16" fill="#F47C20" stroke="#ffffff" strokeWidth="2" />
-            <text x="115" y="540" fill="#ffffff" fontFamily="monospace" fontSize="12" fontWeight="bold" textAnchor="middle">12</text>
-          </g>
-
-          {/* 8. START / FINISH Gantry */}
+          {/* 5. START / FINISH Gantry */}
           <g>
             <g transform="translate(320, 360) rotate(-25)">
               <rect x="-38" y="-6" width="76" height="12" fill="url(#checkered)" stroke="#ffffff" strokeWidth="1" />
@@ -218,7 +190,7 @@ const TrackCircuitVisual = () => {
             </text>
           </g>
 
-          {/* 9. Interactive Turn Hotspots */}
+          {/* 6. Interactive Turn Hotspots */}
           {TURN_DATA.map((turn) => (
             <g
               key={turn.id}
@@ -288,23 +260,23 @@ const TrackCircuitVisual = () => {
         </AnimatePresence>
       </div>
 
-      {/* Bottom Telemetry Footer Cards */}
+      {/* Bottom Telemetry Footer Cards — Verified Track Statistics */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-3 text-center font-mono">
         <div className="p-3 rounded-lg bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-colors">
-          <div className="text-[9px] text-[#888888] uppercase font-semibold">CIRCUIT LENGTH</div>
+          <div className="text-[9px] text-[#888888] uppercase font-semibold">TRACK LENGTH</div>
           <div className="text-sm sm:text-base font-display font-bold text-[#F47C20]">720 METERS</div>
         </div>
         <div className="p-3 rounded-lg bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-colors">
-          <div className="text-[9px] text-[#888888] uppercase font-semibold">TECHNICAL TURNS</div>
+          <div className="text-[9px] text-[#888888] uppercase font-semibold">TURNS</div>
           <div className="text-sm sm:text-base font-display font-bold text-[#0A0A0A]">14 APEXES</div>
         </div>
         <div className="p-3 rounded-lg bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-colors">
-          <div className="text-[9px] text-[#888888] uppercase font-semibold">SURFACE TYPE</div>
-          <div className="text-sm sm:text-base font-display font-bold text-[#0A0A0A]">POLYMER ASPHALT</div>
+          <div className="text-[9px] text-[#888888] uppercase font-semibold">TOP SPEED</div>
+          <div className="text-sm sm:text-base font-display font-bold text-[#0A0A0A]">70 KM/H</div>
         </div>
         <div className="p-3 rounded-lg bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-colors">
-          <div className="text-[9px] text-[#888888] uppercase font-semibold">SAFETY SYSTEM</div>
-          <div className="text-sm sm:text-base font-display font-bold text-[#F47C20]">F1 PRO BARRIER</div>
+          <div className="text-[9px] text-[#888888] uppercase font-semibold">LAP RECORD</div>
+          <div className="text-sm sm:text-base font-display font-bold text-[#F47C20]">41.82 SEC</div>
         </div>
       </div>
 
