@@ -65,6 +65,7 @@ export function App() {
       'home', 
       'who-we-are',
       'pricing', 
+      'whats-new',
       'gallery',
       'why-kartomania',
       'testimonials', 
@@ -139,26 +140,28 @@ export function App() {
         <Timeline />
 
         {/* 3. PRICING */}
-        <WhatsNewSection onOpenBooking={() => setBookingOpen(true)} />
         <PricingSection onOpenBooking={() => setBookingOpen(true)} />
 
-        {/* 4. GALLERY */}
+        {/* 4. WHAT'S NEW */}
+        <WhatsNewSection onOpenBooking={() => setBookingOpen(true)} />
+
+        {/* 5. GALLERY */}
         <GallerySection />
 
-        {/* 5. EXPERIENCE */}
+        {/* 6. EXPERIENCE */}
         <WhyKartomaniaSection />
         <RacingTimeline />
         <RacingRulesSection />
 
-        {/* 6. REVIEW */}
+        {/* 7. REVIEW */}
         <TestimonialsSection />
 
-        {/* 7. KART FLEET & TRACK */}
+        {/* 8. KART FLEET & TRACK */}
         <TrackSection onOpenBooking={() => setBookingOpen(true)} />
         <KartsSection />
         <LeapFrogSection />
 
-        {/* 8. CONTACT & FAQ */}
+        {/* 9. CONTACT & FAQ */}
         <FAQSection />
         <ContactSection onOpenBooking={() => setBookingOpen(true)} />
       </main>
