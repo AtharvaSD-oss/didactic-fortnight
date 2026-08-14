@@ -27,7 +27,7 @@ export const ExperiencePage = () => {
       number: "02",
       title: "PURE RACING",
       icon: Flag,
-      desc: "720m high-speed outdoor asphalt layout with 14 technical apexes, banked hairpins, and wide overtaking straights."
+      desc: "~600m high-speed outdoor asphalt layout with 11 technical apexes, banked hairpins, and wide overtaking straights."
     },
     {
       number: "03",
@@ -57,7 +57,7 @@ export const ExperiencePage = () => {
     {
       year: "2021",
       title: "KARTOMANIA GRAND OPENING",
-      desc: "Inauguration of the 720m outdoor Grand Prix asphalt circuit at Entertainland Mall, Sector 83, Manesar."
+      desc: "Inauguration of the ~600m outdoor Grand Prix asphalt circuit at Entertainland Mall, Sector 83, Manesar."
     },
     {
       year: "2024+",
@@ -69,8 +69,8 @@ export const ExperiencePage = () => {
   const KARTOMANIA_STANDARDS = [
     {
       title: "TRACK",
-      badge: "720M OUTDOOR",
-      desc: "720-meter outdoor polymer asphalt Grand Prix circuit with 14 tactical apexes."
+      badge: "600M OUTDOOR",
+      desc: "~600-meter outdoor polymer asphalt Grand Prix circuit with 11 tactical apexes."
     },
     {
       title: "KARTS",
@@ -156,7 +156,7 @@ export const ExperiencePage = () => {
               </h2>
 
               <p className="text-[#333333] text-base sm:text-lg font-sans leading-relaxed">
-                Kartomania is Northern India’s premier 720-meter outdoor asphalt go-karting circuit located at Entertainland Mall, Sector 83, Manesar, Gurugram.
+                Kartomania is Northern India’s premier ~600-meter outdoor asphalt go-karting circuit located at Entertainland Mall, Sector 83, Manesar, Gurugram.
               </p>
 
               <p className="text-[#666666] text-sm sm:text-base font-sans leading-relaxed">

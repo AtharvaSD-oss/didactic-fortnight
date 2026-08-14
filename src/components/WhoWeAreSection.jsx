@@ -7,7 +7,7 @@ const EXPERIENCE_HIGHLIGHTS = [
     number: "01",
     title: "RACING",
     icon: Flag,
-    desc: "720m high-speed outdoor asphalt layout with 14 technical apexes, hairpins, and full-throttle overtaking straights."
+    desc: "~600m high-speed outdoor asphalt layout with 11 technical apexes, hairpins, and full-throttle overtaking straights."
   },
   {
     number: "02",
@@ -125,10 +125,10 @@ export const WhoWeAreSection = () => {
             </div>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-tight">
               NORTHERN INDIA'S PREMIER <br className="hidden sm:block" />
-              <span className="text-[#F47C20]">720M OUTDOOR</span> CIRCUIT
+              <span className="text-[#F47C20]">600M OUTDOOR</span> CIRCUIT
             </h2>
             <p className="text-xs sm:text-sm font-sans text-[#555555] leading-relaxed">
-              Kartomania is an authentic 720-meter outdoor asphalt racing track at Entertainland Mall, Gurugram. Founded and directed by veteran racer Mr. Rohit Khanna, it provides a championship-grade motorsport environment for drivers of all skill levels.
+              Kartomania is an authentic ~600-meter outdoor asphalt racing track at Entertainland Mall, Gurugram. Founded and directed by veteran racer Mr. Rohit Khanna, it provides a championship-grade motorsport environment for drivers of all skill levels.
             </p>
           </div>
 
@@ -180,8 +180,8 @@ export const WhoWeAreSection = () => {
 
         {/* 4 Stats Minimal Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          <StatCounter number="01" end={720} suffix="m" label="OUTDOOR GRAND PRIX TRACK" />
-          <StatCounter number="02" end={14} label="RACING TURNS & APEXES" />
+          <StatCounter number="01" end={600} suffix="m" label="OUTDOOR GRAND PRIX TRACK" />
+          <StatCounter number="02" end={11} label="RACING TURNS & APEXES" />
           <StatCounter number="03" end={4} label="KART FLEET CATEGORIES" />
           <StatCounter number="04" end={1000} suffix="+" label="RACES COMPLETED WEEKLY" />
         </div>

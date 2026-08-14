@@ -31,31 +31,31 @@ export const TrackPage = () => {
   const TRACK_SECTIONS = [
     {
       sector: "SECTOR 01",
-      name: "MAIN STRAIGHT & SWEEPER",
+      name: "PIT STRAIGHT & NORTH ENTRY",
       turns: "T1 – T2",
       speed: "70 KM/H",
-      desc: "Full-throttle launch past the Start/Finish gantry into the high-speed sweeping right arc."
+      desc: "Full-throttle launch past the Start/Finish timing gantry into Turn 1 and the sweeping right Turn 2 arc."
     },
     {
       sector: "SECTOR 02",
-      name: "NORTH HAIRPIN & CHICANE",
-      turns: "T3 – T4",
-      speed: "38 KM/H",
-      desc: "Heavy late-braking zone into Turn 3 180° hairpin. Rapid weight transfer through the mid chicane."
+      name: "NORTH STRAIGHT & LOOP HAIRPIN",
+      turns: "T11",
+      speed: "35 KM/H",
+      desc: "Longest vertical acceleration straight leading into the 180° Turn 11 North Loop Hairpin with dedicated run-off area."
     },
     {
       sector: "SECTOR 03",
-      name: "INFIELD TECHNICAL LOOP",
-      turns: "T5 – T6",
-      speed: "42 KM/H",
-      desc: "Technical double-apex right loop demanding precise throttle modulation and trail braking."
+      name: "TECHNICAL MID-CIRCUIT CHICANE",
+      turns: "T10 – T7",
+      speed: "50 KM/H",
+      desc: "Rapid weight transfer through the downhill S-curves connecting Turns 10, 8, and 7."
     },
     {
       sector: "SECTOR 04",
-      name: "PIT MERGE & FINALE ARC",
-      turns: "T7 – T8",
-      speed: "82 KM/H",
-      desc: "Longest high-speed full-throttle acceleration straight carrying exit velocity into the final turn."
+      name: "WEST HAIRPIN & INFIELD CHICANE",
+      turns: "T6 – T3/T4",
+      speed: "42 KM/H",
+      desc: "Heavy late-braking into Turn 6 West Hairpin and technical double-apex infield chicane launching onto the main straight."
     }
   ];
 
@@ -78,7 +78,7 @@ export const TrackPage = () => {
         <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-b border-[#EAEAEA]">
           <div className="space-y-6 max-w-4xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
-              <MapPin className="w-3.5 h-3.5 text-[#F47C20]" /> // 720M GRAND PRIX CIRCUIT
+              <MapPin className="w-3.5 h-3.5 text-[#F47C20]" /> // 600M OUTDOOR CIRCUIT &bull; 11 TURNS
             </div>
 
             <h1 className="text-4xl sm:text-6xl lg:text-8xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
@@ -102,14 +102,14 @@ export const TrackPage = () => {
                 <div className="flex items-center gap-3 mb-1">
                   <span className="w-[2px] h-5 bg-[#F47C20]" />
                   <span className="text-[#F47C20] text-sm font-bold font-mono">02</span>
-                  <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ INTERACTIVE TRACK MAP</span>
+                  <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ OFFICIAL TRACK MAP</span>
                 </div>
                 <h2 className="text-2xl sm:text-4xl font-display font-bold text-[#0A0A0A] uppercase">
-                  2.5D VECTOR CIRCUIT SCHEMATIC
+                  CIRCUIT LAYOUT & TELEMETRY
                 </h2>
               </div>
 
-              {/* Telemetry Animation Controls: PLAY, PAUSE, RESET */}
+              {/* Telemetry Animation Controls */}
               <div className="flex items-center gap-2 font-mono text-xs">
                 <button
                   onClick={handlePlay}
@@ -157,26 +157,26 @@ export const TrackPage = () => {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 font-mono">
               <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2 shadow-sm">
                 <span className="text-xs font-bold text-[#F47C20] tracking-widest block">01 // LENGTH</span>
-                <div className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A]">720m</div>
-                <p className="text-xs text-[#666666] font-sans">Full outdoor polymer asphalt circuit</p>
+                <div className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A]">~ 600m</div>
+                <p className="text-xs text-[#666666] font-sans">Outdoor asphalt Grand Prix circuit</p>
               </div>
 
               <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2 shadow-sm">
-                <span className="text-xs font-bold text-[#F47C20] tracking-widest block">02 // TURNS</span>
-                <div className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A]">14</div>
-                <p className="text-xs text-[#666666] font-sans">High-G apexes & technical chicanes</p>
+                <span className="text-xs font-bold text-[#F47C20] tracking-widest block">02 // TOTAL TURNS</span>
+                <div className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A]">11</div>
+                <p className="text-xs text-[#666666] font-sans">Apexes, chicanes & hairpins</p>
               </div>
 
               <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2 shadow-sm">
-                <span className="text-xs font-bold text-[#F47C20] tracking-widest block">03 // TOP SPEED</span>
-                <div className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A]">70 km/h</div>
-                <p className="text-xs text-[#666666] font-sans">Sodi RT10 Pro 270cc race fleet</p>
+                <span className="text-xs font-bold text-[#F47C20] tracking-widest block">03 // DIRECTION</span>
+                <div className="text-2xl sm:text-4xl font-display font-bold text-[#0A0A0A]">CLOCKWISE</div>
+                <p className="text-xs text-[#666666] font-sans">Official circuit flow direction</p>
               </div>
 
               <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-2 shadow-sm">
-                <span className="text-xs font-bold text-[#F47C20] tracking-widest block">04 // LAP RECORD</span>
-                <div className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A]">41.82s</div>
-                <p className="text-xs text-[#666666] font-sans">Official track record lap time</p>
+                <span className="text-xs font-bold text-[#F47C20] tracking-widest block">04 // TRACK TYPE</span>
+                <div className="text-2xl sm:text-4xl font-display font-bold text-[#0A0A0A]">OUTDOOR</div>
+                <p className="text-xs text-[#666666] font-sans">Polymer asphalt surface</p>
               </div>
             </div>
           </div>
@@ -223,7 +223,7 @@ export const TrackPage = () => {
               THINK YOU CAN <span className="text-[#F47C20]">MASTER IT?</span>
             </h2>
             <p className="text-base sm:text-xl font-sans text-[#555555]">
-              Test your timing on Northern India’s premier 720m outdoor circuit.
+              Test your timing on Northern India’s premier 600m outdoor circuit.
             </p>
             <div className="pt-4 flex justify-center">
               <MagneticButton onClick={handleOpenBooking} className="py-4 px-10 text-xs font-bold">

@@ -118,7 +118,7 @@ export const ContactPage = () => {
                 </div>
               </div>
               <span className="font-mono text-xs text-[#666666] font-bold uppercase">
-                720M OUTDOOR ASPHALT TRACK
+                600M OUTDOOR ASPHALT TRACK
               </span>
             </div>
 

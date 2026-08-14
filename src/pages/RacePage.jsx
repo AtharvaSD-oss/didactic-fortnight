@@ -110,7 +110,7 @@ export const RacePage = () => {
     {
       title: "ADULTS & TEENS",
       req: "Height 5ft+ (152cm+)",
-      desc: "Eligible for 270cc Sodi RT10 Pro karts reaching speeds up to 70 km/h on the 720m asphalt circuit."
+      desc: "Eligible for 270cc Sodi RT10 Pro karts reaching speeds up to 70 km/h on the ~600m asphalt circuit."
     },
     {
       title: "JUNIOR DRIVERS",
@@ -143,7 +143,7 @@ export const RacePage = () => {
     {
       step: "03",
       title: "GET ON THE GRID",
-      desc: "Arrive at Entertainland Mall, gear up at the paddock, and launch onto the 720m asphalt track!"
+      desc: "Arrive at Entertainland Mall, gear up at the paddock, and launch onto the ~600m asphalt track!"
     }
   ];
 
@@ -372,7 +372,7 @@ export const RacePage = () => {
               YOUR RACE <span className="text-[#F47C20]">AWAITS.</span>
             </h2>
             <p className="text-base sm:text-xl font-sans text-[#555555]">
-              Select your session preferences and launch onto Northern India’s premier 720m outdoor circuit.
+              Select your session preferences and launch onto Northern India’s premier ~600m outdoor circuit.
             </p>
             <div className="pt-4 flex justify-center">
               <MagneticButton onClick={handleOpenBooking} className="py-4 px-10 text-xs font-bold">

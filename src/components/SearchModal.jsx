@@ -6,7 +6,7 @@ import { Search, X, Trophy, MapPin, Gauge, Flag, Sparkles } from 'lucide-react';
 const QUICK_SEARCHES = [
   { title: "270cc Sodi RT10 Pro Kart Specs", icon: Gauge, path: "/track" },
   { title: "Official Karting Session Rates", icon: Trophy, path: "/race" },
-  { title: "720m Outdoor Grand Prix Track", icon: Flag, path: "/track" },
+  { title: "600m Outdoor Grand Prix Track", icon: Flag, path: "/track" },
   { title: "Entertainland Mall Location & Directions", icon: MapPin, path: "/contact" },
   { title: "The Kartomania Experience", icon: Sparkles, path: "/experience" },
 ];

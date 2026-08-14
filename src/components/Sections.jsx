@@ -31,26 +31,26 @@ export const TrackSection = () => (
         <div className="grid grid-cols-2 gap-4 pt-2">
           <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl text-left space-y-1 transition-colors group shadow-sm">
             <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">01 // TRACK LENGTH</span>
-            <div className="text-2xl font-display font-bold text-[#0A0A0A]">720 METERS</div>
-            <span className="text-[11px] font-sans text-[#666666]">Outdoor asphalt circuit</span>
+            <div className="text-2xl font-display font-bold text-[#0A0A0A]">~ 600 METERS</div>
+            <span className="text-[11px] font-sans text-[#666666]">Outdoor GP circuit</span>
           </div>
 
           <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl text-left space-y-1 transition-colors group shadow-sm">
-            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">02 // TURNS</span>
-            <div className="text-2xl font-display font-bold text-[#0A0A0A]">14 APEXES</div>
+            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">02 // TOTAL TURNS</span>
+            <div className="text-2xl font-display font-bold text-[#0A0A0A]">11 APEXES</div>
             <span className="text-[11px] font-sans text-[#666666]">Technical chicanes</span>
           </div>
 
           <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl text-left space-y-1 transition-colors group shadow-sm">
-            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">03 // TOP SPEED</span>
-            <div className="text-2xl font-display font-bold text-[#0A0A0A]">70 KM/H</div>
-            <span className="text-[11px] font-sans text-[#666666]">Sodi RT10 Pro fleet</span>
+            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">03 // DIRECTION</span>
+            <div className="text-2xl font-display font-bold text-[#0A0A0A]">CLOCKWISE</div>
+            <span className="text-[11px] font-sans text-[#666666]">Official circuit flow</span>
           </div>
 
           <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl text-left space-y-1 transition-colors group shadow-sm">
-            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">04 // LAP INFORMATION</span>
-            <div className="text-2xl font-display font-bold text-[#0A0A0A]">41.82 SEC</div>
-            <span className="text-[11px] font-sans text-[#666666]">Track record lap time</span>
+            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">04 // TRACK TYPE</span>
+            <div className="text-2xl font-display font-bold text-[#0A0A0A]">OUTDOOR</div>
+            <span className="text-[11px] font-sans text-[#666666]">Polymer asphalt track</span>
           </div>
         </div>
 
