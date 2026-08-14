@@ -3,7 +3,6 @@ import { useInView } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Trophy } from 'lucide-react';
-import MagneticButton from './MagneticButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -110,22 +109,7 @@ export const WhoWeAreSection = () => {
           </span>
         </div>
 
-        {/* Narrative Story Block */}
-        <div className="text-left max-w-4xl space-y-6">
-          <p className="text-white text-lg sm:text-2xl leading-relaxed font-sans font-medium">
-            Founded by veteran motorsport champion <strong className="font-bold text-white">Mr. Rohit Khanna</strong> (20+ years of active Indian & international racing championships), Kartomania is the <strong className="font-bold text-[#F47C20]">only racing track owned, run, and maintained by a professional racer</strong>.
-          </p>
 
-          <p className="text-[#AAAAAA] text-base sm:text-lg leading-relaxed font-sans">
-            From beginners learning proper braking lines to pro racers shaving split seconds, Kartomania offers an authentic 720-meter outdoor asphalt circuit with 4 calibrated kart fleet categories and live telemetry timing.
-          </p>
-
-          <div className="pt-2">
-            <MagneticButton href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall" className="py-3.5 px-8 text-xs">
-              EXPERIENCE THE THRILL &rarr;
-            </MagneticButton>
-          </div>
-        </div>
 
         {/* 4 Stats Minimal Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
