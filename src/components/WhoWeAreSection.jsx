@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useInView } from 'framer-motion';
 import { Trophy, ShieldCheck, Gauge, Users, Flag } from 'lucide-react';
-import MagneticButton from './MagneticButton';
 
 const EXPERIENCE_HIGHLIGHTS = [
   {
@@ -133,13 +132,10 @@ export const WhoWeAreSection = () => {
             </p>
           </div>
 
-          <div className="shrink-0 text-left sm:text-right space-y-3">
+          <div className="shrink-0 text-left sm:text-right">
             <span className="font-mono text-xs text-[#888888] uppercase tracking-widest font-semibold block">
               MANESAR &bull; GURGAON
             </span>
-            <MagneticButton href="/experience" className="py-3 px-6 text-xs">
-              DISCOVER KARTOMANIA &rarr;
-            </MagneticButton>
           </div>
         </div>
 
