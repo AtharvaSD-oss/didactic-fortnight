@@ -63,8 +63,13 @@ const Hero = ({ onOpenBooking }) => {
         <div className="relative z-10 w-full overflow-visible">
           <motion.h1
             {...titleAnimation}
-            className="font-anton uppercase leading-[0.88] tracking-[0.02em] whitespace-nowrap text-[12.5vw] sm:text-[10.8vw] md:text-[10vw] lg:text-[13.5vw] xl:text-[13.2vw] 2xl:text-[13.5rem]"
-            style={{ fontFamily: "'Anton', 'Barlow Condensed', sans-serif" }}
+            className="font-anton uppercase italic leading-[0.88] tracking-[0.02em] whitespace-nowrap text-[12.5vw] sm:text-[10.8vw] md:text-[10vw] lg:text-[13.5vw] xl:text-[13.2vw] 2xl:text-[13.5rem] select-none inline-block"
+            style={{ 
+              fontFamily: "'Anton', 'Barlow Condensed', sans-serif",
+              fontStyle: "italic",
+              transform: "skewX(-7deg)",
+              transformOrigin: "left center"
+            }}
           >
             <span className="text-[#F47C20]">KART</span>
             <span className="text-[#FFC700] drop-shadow-[0_4px_12px_rgba(255,199,0,0.25)]">OMANIA</span>
