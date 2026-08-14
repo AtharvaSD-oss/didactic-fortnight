@@ -5,13 +5,7 @@ import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhoWeAreSection from './components/WhoWeAreSection';
-import WhyKartomaniaSection from './components/WhyKartomaniaSection';
-import RacingTimeline from './components/RacingTimeline';
 import KartsSection from './components/KartsSection';
-import GallerySection from './components/GallerySection';
-import FounderSection from './components/FounderSection';
-import TestimonialsSection from './components/TestimonialsSection';
-import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
 import Cursor from './components/Cursor';
 import LoadingScreen from './components/LoadingScreen';
@@ -64,13 +58,9 @@ export function App() {
     const sections = [
       'home', 
       'who-we-are',
+      'karts',
       'pricing', 
       'whats-new',
-      'karts',
-      'gallery',
-      'founder',
-      'why-kartomania',
-      'testimonials', 
       'contact'
     ];
     
@@ -130,40 +120,24 @@ export function App() {
 
       {/* Main Single-Page Sections Container */}
       <main className="relative z-10">
-        {/* 1. HOME */}
+        {/* 01 — HERO */}
         <Hero 
           onOpenBooking={handleOpenBooking} 
           onNavigate={handleNavigate} 
         />
 
-        {/* 2. ABOUT */}
+        {/* 02 — KARTOMANIA EXPERIENCE */}
         <WhoWeAreSection onOpenBooking={handleOpenBooking} />
 
-        {/* 3. PRICING */}
-        <PricingSection onOpenBooking={handleOpenBooking} />
-
-        {/* 4. WHAT'S NEW */}
-        <WhatsNewSection onOpenBooking={handleOpenBooking} />
-
-        {/* 5. KART FLEET & TRACK */}
+        {/* 03 — TRACK & KARTS */}
         <TrackSection onOpenBooking={handleOpenBooking} />
         <KartsSection />
 
-        {/* 6. GALLERY */}
-        <GallerySection />
+        {/* 04 — RACE / PACKAGES PREVIEW */}
+        <PricingSection onOpenBooking={handleOpenBooking} />
+        <WhatsNewSection onOpenBooking={handleOpenBooking} />
 
-        {/* 7. FOUNDER HERITAGE */}
-        <FounderSection />
-
-        {/* 8. EXPERIENCE */}
-        <WhyKartomaniaSection />
-        <RacingTimeline />
-
-        {/* 9. REVIEW */}
-        <TestimonialsSection />
-
-        {/* 10. CONTACT & FAQ */}
-        <FAQSection />
+        {/* 05 — FINAL BOOKING CTA */}
         <ContactSection onOpenBooking={handleOpenBooking} />
       </main>
 

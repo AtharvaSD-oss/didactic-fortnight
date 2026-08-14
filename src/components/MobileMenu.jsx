@@ -5,15 +5,11 @@ import { InstagramIcon, FacebookIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 
 const NAV_ITEMS = [
-  { name: 'HOME', id: 'home', tag: '01' },
-  { name: 'ABOUT KARTOMANIA', id: 'who-we-are', tag: '02' },
-  { name: 'PRICING & COMBOS', id: 'pricing', tag: '03' },
-  { name: "WHAT'S NEW SPECIALS", id: 'whats-new', tag: '04' },
-  { name: 'KART FLEET & TRACK', id: 'karts', tag: '05' },
-  { name: 'PHOTO GALLERY', id: 'gallery', tag: '06' },
-  { name: 'THE EXPERIENCE', id: 'why-kartomania', tag: '07' },
-  { name: 'RACER REVIEWS', id: 'testimonials', tag: '08' },
-  { name: 'FIND THE ARENA & CONTACT', id: 'contact', tag: '09' },
+  { name: 'HERO', id: 'home', tag: '01' },
+  { name: 'KARTOMANIA EXPERIENCE', id: 'who-we-are', tag: '02' },
+  { name: 'TRACK & KART FLEET', id: 'karts', tag: '03' },
+  { name: 'RACE & PACKAGES PREVIEW', id: 'pricing', tag: '04' },
+  { name: 'FINAL BOOKING CTA', id: 'contact', tag: '05' },
 ];
 
 const drawerVariants = {

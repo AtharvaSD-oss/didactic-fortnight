@@ -7,14 +7,10 @@ import MobileMenu from './MobileMenu';
 
 const NAV_LINKS = [
   { name: 'HOME', id: 'home' },
-  { name: 'ABOUT', id: 'who-we-are' },
-  { name: 'PRICING', id: 'pricing' },
-  { name: "WHAT'S NEW", id: 'whats-new' },
-  { name: 'KART FLEET', id: 'karts' },
-  { name: 'GALLERY', id: 'gallery' },
-  { name: 'EXPERIENCE', id: 'why-kartomania' },
-  { name: 'REVIEWS', id: 'testimonials' },
-  { name: 'CONTACT', id: 'contact' },
+  { name: 'EXPERIENCE', id: 'who-we-are' },
+  { name: 'TRACK & KARTS', id: 'karts' },
+  { name: 'RACE & PACKAGES', id: 'pricing' },
+  { name: 'BOOK NOW', id: 'contact' },
 ];
 
 const Navbar = ({ activeSection = 'home', onNavigate, onOpenSearch, onOpenBooking }) => {
