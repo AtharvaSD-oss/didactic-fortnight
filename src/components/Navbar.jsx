@@ -7,9 +7,10 @@ import MobileMenu from './MobileMenu';
 
 const NAV_LINKS = [
   { name: 'HOME', id: 'home' },
-  { name: 'ABOUT & GALLERY', id: 'who-we-are' },
+  { name: 'ABOUT', id: 'who-we-are' },
   { name: 'PRICING', id: 'pricing' },
   { name: "WHAT'S NEW", id: 'whats-new' },
+  { name: 'GALLERY', id: 'gallery' },
   { name: 'EXPERIENCE', id: 'why-kartomania' },
   { name: 'REVIEWS', id: 'testimonials' },
   { name: 'KART FLEET', id: 'karts' },

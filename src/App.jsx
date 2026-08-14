@@ -8,6 +8,7 @@ import WhoWeAreSection from './components/WhoWeAreSection';
 import WhyKartomaniaSection from './components/WhyKartomaniaSection';
 import RacingTimeline from './components/RacingTimeline';
 import KartsSection from './components/KartsSection';
+import GallerySection from './components/GallerySection';
 import FounderSection from './components/FounderSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import FAQSection from './components/FAQSection';
@@ -65,6 +66,7 @@ export function App() {
       'who-we-are',
       'pricing', 
       'whats-new',
+      'gallery',
       'founder',
       'why-kartomania',
       'testimonials', 
@@ -143,7 +145,10 @@ export function App() {
         {/* 4. WHAT'S NEW */}
         <WhatsNewSection onOpenBooking={handleOpenBooking} />
 
-        {/* 5. FOUNDER HERITAGE */}
+        {/* 5. GALLERY */}
+        <GallerySection />
+
+        {/* 6. FOUNDER HERITAGE */}
         <FounderSection />
 
         {/* 7. EXPERIENCE */}
