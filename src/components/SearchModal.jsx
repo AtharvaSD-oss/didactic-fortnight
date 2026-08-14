@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, X, Trophy, Shield, MapPin, Gauge, Camera, Zap } from 'lucide-react';
+import { Search, X, Trophy, MapPin, Gauge, Flag, Sparkles } from 'lucide-react';
 
 const QUICK_SEARCHES = [
-  { title: "Pro Kart Specs & Telemetry", icon: Gauge, path: "karts" },
-  { title: "Weekday & Weekend Rates", icon: Trophy, path: "pricing" },
-  { title: "Real Track & Racing Photo Gallery", icon: Camera, path: "gallery" },
-  { title: "Entertainland Mall Venue Address", icon: MapPin, path: "contact" },
-  { title: "What's New Special Offers", icon: Zap, path: "whats-new" },
-  { title: "Know Our Founder - Rohit Khanna", icon: Shield, path: "founder" },
+  { title: "270cc Sodi RT10 Pro Kart Specs", icon: Gauge, path: "/track" },
+  { title: "Official Karting Session Rates", icon: Trophy, path: "/race" },
+  { title: "720m Outdoor Grand Prix Track", icon: Flag, path: "/track" },
+  { title: "Entertainland Mall Location & Directions", icon: MapPin, path: "/contact" },
+  { title: "The Kartomania Experience", icon: Sparkles, path: "/experience" },
 ];
 
-const SearchModal = ({ isOpen, onClose, onNavigate }) => {
+const SearchModal = ({ isOpen, onClose }) => {
   const [query, setQuery] = useState('');
+  const navigate = useNavigate();
 
   if (!isOpen) return null;
 
@@ -20,14 +21,19 @@ const SearchModal = ({ isOpen, onClose, onNavigate }) => {
     item.title.toLowerCase().includes(query.toLowerCase())
   );
 
+  const handleSelect = (path) => {
+    navigate(path);
+    onClose();
+  };
+
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 p-4 bg-black/50 backdrop-blur-sm">
+      <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 p-4 bg-black/60 backdrop-blur-sm">
         <motion.div
           initial={{ opacity: 0, scale: 0.96, y: -15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.96, y: -15 }}
-          className="relative w-full max-w-xl bg-white border-2 border-[#F47C20] rounded-2xl p-6 shadow-2xl text-[#111111]"
+          className="relative w-full max-w-xl bg-white border-2 border-[#F47C20] rounded-2xl p-6 shadow-2xl text-[#111111] text-left"
         >
           {/* Top Search Input Bar */}
           <div className="flex items-center gap-3 border-b border-[#E5E5E5] pb-4">
@@ -48,33 +54,39 @@ const SearchModal = ({ isOpen, onClose, onNavigate }) => {
             </button>
           </div>
 
-          {/* Search Suggestions */}
-          <div className="py-4 space-y-2 max-h-80 overflow-y-auto">
-            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block mb-2 font-bold">
-              QUICK TELEMETRY LINKS
+          {/* Search Suggestions List */}
+          <div className="mt-4 space-y-2">
+            <span className="text-[10px] font-mono text-[#F47C20] uppercase font-bold tracking-widest block mb-2">
+              // SEARCH NAVIGATION
             </span>
-
-            {filtered.map((item, idx) => {
-              const IconComp = item.icon;
-              return (
-                <button
-                  key={idx}
-                  onClick={() => {
-                    onNavigate(item.path);
-                    onClose();
-                  }}
-                  className="w-full text-left flex items-center justify-between p-3 rounded-lg bg-[#F9F9F9] hover:bg-[#FFF0E5] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors group cursor-pointer"
-                >
-                  <div className="flex items-center gap-3">
-                    <IconComp className="w-4 h-4 text-[#F47C20]" />
-                    <span className="text-xs font-mono text-[#0A0A0A] group-hover:text-[#F47C20] font-semibold transition-colors">
-                      {item.title}
+            {filtered.length > 0 ? (
+              filtered.map((item, idx) => {
+                const IconComp = item.icon;
+                return (
+                  <button
+                    key={idx}
+                    onClick={() => handleSelect(item.path)}
+                    className="w-full p-3 rounded-lg bg-[#F9F9F9] hover:bg-[#FFF0E5] border border-[#E5E5E5] hover:border-[#F47C20] flex items-center justify-between transition-all duration-200 cursor-pointer group"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 rounded-md bg-white border border-[#E5E5E5] text-[#F47C20] group-hover:bg-[#F47C20] group-hover:text-white transition-colors">
+                        <IconComp className="w-4 h-4" />
+                      </div>
+                      <span className="text-xs font-mono font-bold text-[#0A0A0A] group-hover:text-[#F47C20] transition-colors">
+                        {item.title}
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-mono font-bold text-[#888888] uppercase">
+                      GO &rarr;
                     </span>
-                  </div>
-                  <span className="text-[10px] font-mono text-[#F47C20] font-bold">GO &rarr;</span>
-                </button>
-              );
-            })}
+                  </button>
+                );
+              })
+            ) : (
+              <div className="p-4 text-center font-mono text-xs text-[#888888]">
+                No matching telemetry found.
+              </div>
+            )}
           </div>
         </motion.div>
       </div>
