@@ -17,7 +17,6 @@ import Footer from './components/Footer';
 import Cursor from './components/Cursor';
 import LoadingScreen from './components/LoadingScreen';
 import ScrollProgress from './components/ScrollProgress';
-import BookingModal from './components/BookingModal';
 import SearchModal from './components/SearchModal';
 import WhatsAppButton from './components/WhatsAppButton';
 
@@ -32,8 +31,11 @@ import {
 export function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [searchOpen, setSearchOpen] = useState(false);
-  const [bookingOpen, setBookingOpen] = useState(false);
   const [lenisInstance, setLenisInstance] = useState(null);
+
+  const handleOpenBooking = () => {
+    window.open("https://web.racefacer.com/kiosk/kartomaniaentertainlandmall", "_blank", "noopener,noreferrer");
+  };
 
   // Initialize Lenis Smooth Scroll Engine
   useEffect(() => {
@@ -120,30 +122,30 @@ export function App() {
       {/* 3. Interactive Precision Custom Cursor */}
       <Cursor />
 
-      {/* 4. Glassmorphism Single-Page Navbar */}
+      {/* Glassmorphism Single-Page Navbar */}
       <Navbar
         activeSection={activeSection}
         onNavigate={handleNavigate}
         onOpenSearch={() => setSearchOpen(true)}
-        onOpenBooking={() => setBookingOpen(true)}
+        onOpenBooking={handleOpenBooking}
       />
 
-      {/* 5. Main Single-Page Sections Container */}
+      {/* Main Single-Page Sections Container */}
       <main className="relative z-10">
         {/* 1. HOME */}
         <Hero 
-          onOpenBooking={() => setBookingOpen(true)} 
+          onOpenBooking={handleOpenBooking} 
           onNavigate={handleNavigate} 
         />
 
         {/* 2. ABOUT */}
-        <WhoWeAreSection onOpenBooking={() => setBookingOpen(true)} />
+        <WhoWeAreSection onOpenBooking={handleOpenBooking} />
 
         {/* 3. PRICING */}
-        <PricingSection onOpenBooking={() => setBookingOpen(true)} />
+        <PricingSection onOpenBooking={handleOpenBooking} />
 
         {/* 4. WHAT'S NEW */}
-        <WhatsNewSection onOpenBooking={() => setBookingOpen(true)} />
+        <WhatsNewSection onOpenBooking={handleOpenBooking} />
 
         {/* 5. GALLERY */}
         <GallerySection />
@@ -151,37 +153,32 @@ export function App() {
         {/* 6. FOUNDER HERITAGE */}
         <FounderSection />
 
-        {/* 6. EXPERIENCE */}
+        {/* 7. EXPERIENCE */}
         <WhyKartomaniaSection />
         <RacingTimeline />
         <RacingRulesSection />
 
-        {/* 7. REVIEW */}
+        {/* 8. REVIEW */}
         <TestimonialsSection />
 
-        {/* 8. KART FLEET & TRACK */}
-        <TrackSection onOpenBooking={() => setBookingOpen(true)} />
+        {/* 9. KART FLEET & TRACK */}
+        <TrackSection onOpenBooking={handleOpenBooking} />
         <KartsSection />
         <LeapFrogSection />
 
-        {/* 9. CONTACT & FAQ */}
+        {/* 10. CONTACT & FAQ */}
         <FAQSection />
-        <ContactSection onOpenBooking={() => setBookingOpen(true)} />
+        <ContactSection onOpenBooking={handleOpenBooking} />
       </main>
 
-      {/* 6. Footer */}
+      {/* Footer */}
       <Footer />
 
-      {/* Interactive Modals */}
+      {/* Interactive Search Modal */}
       <SearchModal
         isOpen={searchOpen}
         onClose={() => setSearchOpen(false)}
         onNavigate={handleNavigate}
-      />
-
-      <BookingModal
-        isOpen={bookingOpen}
-        onClose={() => setBookingOpen(false)}
       />
 
       {/* Floating Action WhatsApp Button (Bottom Right) */}
