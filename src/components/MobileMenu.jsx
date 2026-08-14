@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Phone, Mail, ChevronRight } from 'lucide-react';
+import { X, Phone, ChevronRight } from 'lucide-react';
 import { InstagramIcon, FacebookIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 
 const NAV_ITEMS = [
-  { name: 'HERO', id: 'home', tag: '01' },
-  { name: 'KARTOMANIA EXPERIENCE', id: 'who-we-are', tag: '02' },
-  { name: 'TRACK & KART FLEET', id: 'karts', tag: '03' },
-  { name: 'RACE & PACKAGES PREVIEW', id: 'pricing', tag: '04' },
-  { name: 'FINAL BOOKING CTA', id: 'contact', tag: '05' },
+  { name: 'HOME', path: '/', tag: '01' },
+  { name: 'EXPERIENCE', path: '/experience', tag: '02' },
+  { name: 'TRACK', path: '/track', tag: '03' },
+  { name: 'RACE', path: '/race', tag: '04' },
+  { name: 'CONTACT', path: '/contact', tag: '05' },
 ];
 
 const drawerVariants = {
@@ -39,142 +40,124 @@ const itemVariants = {
 
 const MobileMenu = ({ 
   isOpen, 
-  onClose, 
-  activeSection, 
-  onNavigate,
+  onClose,
   onOpenBooking 
 }) => {
+  const location = useLocation();
+
   return (
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-50 overflow-hidden lg:hidden">
-          {/* Backdrop Blur Overlay */}
+          {/* Backdrop overlay */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           />
 
-          {/* Slide-out Drawer Panel */}
+          {/* Drawer container */}
           <motion.div
             variants={drawerVariants}
             initial="closed"
             animate="open"
             exit="closed"
-            className="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-white border-l border-[#E5E5E5] shadow-2xl flex flex-col justify-between p-6 sm:p-8 overflow-y-auto text-[#111111]"
+            className="absolute top-0 right-0 bottom-0 w-[85%] max-w-sm bg-[#0A0A0A] border-l border-white/10 text-white flex flex-col justify-between shadow-2xl p-6 sm:p-8"
           >
-            {/* Top Drawer Header */}
-            <div className="space-y-6">
-              <div className="flex items-center justify-between border-b border-[#E5E5E5] pb-4">
-                <div className="flex items-center gap-3">
-                  <img src="/logo.png" alt="Kartomania" className="h-8 w-auto" />
-                </div>
-                <button
-                  onClick={onClose}
-                  className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] border border-[#E5E5E5] text-[#0A0A0A] hover:text-[#F47C20] transition-colors cursor-pointer"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-              </div>
+            {/* Header: Logo & Close Button */}
+            <div className="flex items-center justify-between pb-6 border-b border-white/10">
+              <Link to="/" onClick={onClose} className="flex items-center gap-2">
+                <img
+                  src="/logo.png"
+                  alt="Kartomania Logo"
+                  className="h-8 w-auto object-contain"
+                />
+              </Link>
 
-              {/* Navigation Items */}
-              <div className="space-y-1.5">
-                <span className="font-mono text-[10px] font-semibold text-[#888888] uppercase tracking-widest block mb-2">
-                  NAVIGATION SECTIONS
-                </span>
-
-                {NAV_ITEMS.map((item) => {
-                  const isActive = activeSection === item.id;
-                  return (
-                    <motion.div key={item.id} variants={itemVariants}>
-                      <button
-                        onClick={() => {
-                          onNavigate(item.id);
-                          onClose();
-                        }}
-                        className={`
-                          group w-full flex items-center justify-between py-2.5 px-3.5 rounded-sm border transition-all duration-200 cursor-pointer
-                          ${isActive 
-                            ? 'bg-[#F47C20] border-[#F47C20] text-white font-bold shadow-sm' 
-                            : 'bg-white border-[#EAEAEA] hover:border-[#F47C20] text-[#333333] hover:text-[#F47C20] hover:bg-[#FFF8F2]'
-                          }
-                        `}
-                      >
-                        <div className="flex items-center gap-3">
-                          <span className={`font-mono text-xs font-semibold ${isActive ? 'text-white' : 'text-[#888888]'}`}>
-                            {item.tag}
-                          </span>
-                          <span className="font-display text-sm font-bold tracking-wider uppercase">
-                            {item.name}
-                          </span>
-                        </div>
-
-                        <ChevronRight 
-                          className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                            isActive ? 'text-white translate-x-0.5' : 'text-[#AAAAAA] group-hover:text-[#F47C20] group-hover:translate-x-0.5'
-                          }`} 
-                        />
-                      </button>
-                    </motion.div>
-                  );
-                })}
-              </div>
+              <button
+                onClick={onClose}
+                aria-label="Close menu"
+                className="p-2 rounded-full bg-[#1A1A1A] hover:bg-[#F47C20] text-gray-400 hover:text-white transition-colors cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
             </div>
 
-            {/* Bottom Footer Actions */}
-            <div className="space-y-4 pt-6 border-t border-[#E5E5E5] mt-6">
-              <MagneticButton 
-                onClick={() => {
-                  onClose();
-                  if (onOpenBooking) onOpenBooking();
-                }} 
-                className="w-full py-3.5 text-xs font-bold"
+            {/* Navigation List */}
+            <nav className="py-6 space-y-2 flex-1 overflow-y-auto">
+              <div className="text-[10px] font-mono font-bold text-[#F47C20] uppercase tracking-widest mb-4">
+                // NAVIGATION
+              </div>
+
+              {NAV_ITEMS.map((item) => {
+                const isActive = location.pathname === item.path;
+
+                return (
+                  <motion.div key={item.path} variants={itemVariants}>
+                    <Link
+                      to={item.path}
+                      onClick={onClose}
+                      className={`
+                        flex items-center justify-between p-3.5 rounded-lg transition-all duration-200 group text-decoration-none
+                        ${isActive 
+                          ? 'bg-[#181818] border border-[#F47C20]/40 text-[#F47C20]' 
+                          : 'hover:bg-[#151515] border border-transparent text-gray-200 hover:text-white'}
+                      `}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className={`font-mono text-xs font-bold ${isActive ? 'text-[#F47C20]' : 'text-gray-500'}`}>
+                          {item.tag}
+                        </span>
+                        <span className="font-display font-bold text-base uppercase tracking-wider">
+                          {item.name}
+                        </span>
+                      </div>
+
+                      <ChevronRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${isActive ? 'text-[#F47C20]' : 'text-gray-600'}`} />
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </nav>
+
+            {/* Footer Action Strip */}
+            <div className="pt-6 border-t border-white/10 space-y-4">
+              <MagneticButton
+                href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
+                className="w-full py-3 px-4 text-xs font-bold justify-center shadow-lg"
               >
-                BOOK YOUR RACE
+                BOOK NOW
               </MagneticButton>
 
-              <div className="flex flex-col gap-2 text-xs font-mono text-[#666666]">
-                <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between pt-2">
+                <div className="flex items-center gap-2">
                   <a
-                    href="tel:+919717548897"
-                    className="flex items-center gap-2 hover:text-[#F47C20] transition-colors"
+                    href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-2.5 rounded-full bg-[#151515] text-gray-300 hover:text-[#F47C20] hover:bg-[#202020] transition-colors"
                   >
-                    <Phone className="w-3.5 h-3.5 text-[#F47C20]" />
-                    <span>+91 97175 48897</span>
+                    <InstagramIcon className="w-4 h-4" />
                   </a>
-
-                  <div className="flex items-center gap-2">
-                    <a
-                      href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="Instagram"
-                      className="p-2 rounded-full bg-[#F5F5F5] border border-[#E5E5E5] hover:border-[#F47C20] text-[#333333] hover:text-[#F47C20] transition-colors"
-                    >
-                      <InstagramIcon className="w-3.5 h-3.5" />
-                    </a>
-
-                    <a
-                      href="https://www.facebook.com/kartomaniacsggn/"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="Facebook"
-                      className="p-2 rounded-full bg-[#F5F5F5] border border-[#E5E5E5] hover:border-[#F47C20] text-[#333333] hover:text-[#F47C20] transition-colors"
-                    >
-                      <FacebookIcon className="w-3.5 h-3.5" />
-                    </a>
-                  </div>
+                  <a
+                    href="https://www.facebook.com/kartomaniacsggn/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-2.5 rounded-full bg-[#151515] text-gray-300 hover:text-[#F47C20] hover:bg-[#202020] transition-colors"
+                  >
+                    <FacebookIcon className="w-4 h-4" />
+                  </a>
                 </div>
 
-                <a
-                  href="mailto:kartomania.ggn@gmail.com"
-                  className="flex items-center gap-2 hover:text-[#F47C20] transition-colors text-[11px]"
-                >
-                  <Mail className="w-3.5 h-3.5 text-[#F47C20]" />
-                  <span>kartomania.ggn@gmail.com</span>
-                </a>
+                <div className="flex items-center gap-2 text-xs font-mono text-gray-400">
+                  <Phone className="w-3.5 h-3.5 text-[#F47C20]" />
+                  <a href="tel:+919717548897" className="hover:text-white transition-colors">
+                    +91 97175 48897
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
