@@ -9,10 +9,10 @@ const NAV_ITEMS = [
   { name: 'ABOUT KARTOMANIA', id: 'who-we-are', tag: '02' },
   { name: 'PRICING & COMBOS', id: 'pricing', tag: '03' },
   { name: "WHAT'S NEW SPECIALS", id: 'whats-new', tag: '04' },
-  { name: 'PHOTO GALLERY', id: 'gallery', tag: '05' },
-  { name: 'THE EXPERIENCE', id: 'why-kartomania', tag: '06' },
-  { name: 'RACER REVIEWS', id: 'testimonials', tag: '07' },
-  { name: 'KART FLEET & TRACK', id: 'karts', tag: '08' },
+  { name: 'KART FLEET & TRACK', id: 'karts', tag: '05' },
+  { name: 'PHOTO GALLERY', id: 'gallery', tag: '06' },
+  { name: 'THE EXPERIENCE', id: 'why-kartomania', tag: '07' },
+  { name: 'RACER REVIEWS', id: 'testimonials', tag: '08' },
   { name: 'FIND THE ARENA & CONTACT', id: 'contact', tag: '09' },
 ];
 

@@ -10,10 +10,10 @@ const NAV_LINKS = [
   { name: 'ABOUT', id: 'who-we-are' },
   { name: 'PRICING', id: 'pricing' },
   { name: "WHAT'S NEW", id: 'whats-new' },
+  { name: 'KART FLEET', id: 'karts' },
   { name: 'GALLERY', id: 'gallery' },
   { name: 'EXPERIENCE', id: 'why-kartomania' },
   { name: 'REVIEWS', id: 'testimonials' },
-  { name: 'KART FLEET', id: 'karts' },
   { name: 'CONTACT', id: 'contact' },
 ];
 

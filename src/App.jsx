@@ -66,11 +66,11 @@ export function App() {
       'who-we-are',
       'pricing', 
       'whats-new',
+      'karts',
       'gallery',
       'founder',
       'why-kartomania',
       'testimonials', 
-      'karts',
       'contact'
     ];
     
@@ -145,22 +145,22 @@ export function App() {
         {/* 4. WHAT'S NEW */}
         <WhatsNewSection onOpenBooking={handleOpenBooking} />
 
-        {/* 5. GALLERY */}
+        {/* 5. KART FLEET & TRACK */}
+        <TrackSection onOpenBooking={handleOpenBooking} />
+        <KartsSection />
+
+        {/* 6. GALLERY */}
         <GallerySection />
 
-        {/* 6. FOUNDER HERITAGE */}
+        {/* 7. FOUNDER HERITAGE */}
         <FounderSection />
 
-        {/* 7. EXPERIENCE */}
+        {/* 8. EXPERIENCE */}
         <WhyKartomaniaSection />
         <RacingTimeline />
 
-        {/* 8. REVIEW */}
+        {/* 9. REVIEW */}
         <TestimonialsSection />
-
-        {/* 9. KART FLEET & TRACK */}
-        <TrackSection onOpenBooking={handleOpenBooking} />
-        <KartsSection />
 
         {/* 10. CONTACT & FAQ */}
         <FAQSection />
