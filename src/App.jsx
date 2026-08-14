@@ -16,6 +16,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 import ExperiencePage from './pages/ExperiencePage';
 import TrackPage from './pages/TrackPage';
 import RacePage from './pages/RacePage';
+import ContactPage from './pages/ContactPage';
 
 import { 
   TrackSection,
@@ -168,6 +169,7 @@ export function App() {
       <Route path="/experience" element={<ExperiencePage />} />
       <Route path="/track" element={<TrackPage />} />
       <Route path="/race" element={<RacePage />} />
+      <Route path="/contact" element={<ContactPage />} />
     </Routes>
   );
 }
