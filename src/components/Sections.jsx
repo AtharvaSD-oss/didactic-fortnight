@@ -329,52 +329,7 @@ export const WhatsNewSection = () => {
     }
   ];
 
-  const bundleSessions = [
-    {
-      tier: "TIER 01",
-      name: "5 SESSIONS STARTER BUNDLE",
-      bonus: "1 FREE Bowling Coupon",
-      price: "₹3,250",
-      effective: "₹650 / Session Value",
-      desc: "Ideal for a racing duo or dedicated solo telemetry practice.",
-      features: [
-        "5 x 6-Min High-Speed Outdoor GP Sessions",
-        "1 Free Bowling Voucher at Entertainland Mall",
-        "Live Millisecond Telemetry Timing Printouts",
-        "Valid for 30 Days from Purchase"
-      ]
-    },
-    {
-      tier: "TIER 02",
-      badge: "MOST POPULAR",
-      name: "10 SESSIONS RACER PACK",
-      bonus: "1 FREE Session + 1 Bowling",
-      price: "₹6,500",
-      effective: "₹590 / Session Value",
-      desc: "Our top-rated package for group shootouts & team Grand Prix challenges.",
-      features: [
-        "11 Total Racing Sessions (10 + 1 FREE Bonus)",
-        "1 Free Bowling Voucher Included",
-        "Shareable with Friends, Family & Colleagues",
-        "Priority Grid Staging Access"
-      ]
-    },
-    {
-      tier: "TIER 03",
-      badge: "BEST VALUE",
-      name: "20 SESSIONS PRO CHAMPIONSHIP",
-      bonus: "3 FREE Sessions + 3 Bowling",
-      price: "₹13,000",
-      effective: "₹565 / Session Value",
-      desc: "Ultimate group Grand Prix package for corporate events & enthusiasts.",
-      features: [
-        "23 Total Racing Sessions (20 + 3 FREE Bonus)",
-        "3 Free Bowling Vouchers Included",
-        "Championship Podium Ceremony & Trophies",
-        "Dedicated Track Marshal & Race Director"
-      ]
-    }
-  ];
+
 
   // Keyboard navigation for lightbox
   useEffect(() => {
@@ -567,87 +522,7 @@ export const WhatsNewSection = () => {
           </div>
         )}
 
-        {/* 3. Multi-Race Value Bundles Grid */}
-        {(activeFilter === 'all' || activeFilter === 'bundles') && (
-          <div className="space-y-4 text-left pt-6">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
-              <div>
-                <span className="font-mono text-xs font-bold text-[#F47C20] uppercase tracking-wider block">
-                  // PRE-PAID MULTI-SESSION VALUE BUNDLES
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
-                  MORE LAPS. MORE FREE BOWLING.
-                </h3>
-              </div>
-              <span className="text-xs font-mono text-[#666666]">
-                Shareable with Friends & Family &bull; Valid for 30 Days
-              </span>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {bundleSessions.map((bundle, bIdx) => (
-                <div
-                  key={bIdx}
-                  className="p-7 rounded-2xl bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between space-y-6 text-left group"
-                >
-                  <div className="space-y-4">
-                    {/* Tier and Badge */}
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs font-bold text-[#F47C20]">
-                        {bundle.tier}
-                      </span>
-                      {bundle.badge && (
-                        <span className="px-2.5 py-0.5 rounded-sm bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider shadow-sm">
-                          ★ {bundle.badge}
-                        </span>
-                      )}
-                      <span className="text-xs font-mono text-[#666666] font-semibold">
-                        {bundle.effective}
-                      </span>
-                    </div>
-
-                    <h4 className="text-lg font-display font-bold text-[#0A0A0A] uppercase leading-tight">
-                      {bundle.name}
-                    </h4>
-
-                    {/* Free Bonus Callout Pill in Orange Tint */}
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 text-[#F47C20] font-mono text-[10px] font-bold uppercase tracking-wider shadow-sm">
-                      🎁 {bundle.bonus}
-                    </div>
-
-                    <p className="text-xs font-sans text-[#666666] leading-relaxed">
-                      {bundle.desc}
-                    </p>
-
-                    {/* Feature Inclusions */}
-                    <div className="pt-3 space-y-2 border-t border-[#EAEAEA]">
-                      {bundle.features.map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-center gap-2 text-xs font-sans text-[#444444]">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#F47C20] shrink-0" />
-                          <span>{feat}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Price & Booking Button */}
-                  <div className="pt-4 flex items-center justify-between border-t border-[#EAEAEA] gap-3">
-                    <div>
-                      <span className="text-[9px] font-mono text-[#888888] block uppercase">PACKAGE TOTAL</span>
-                      <div className="text-xl font-display font-bold text-[#0A0A0A]">{bundle.price}</div>
-                    </div>
-                    <MagneticButton
-                      href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
-                      className="py-2 px-4 text-xs font-bold"
-                    >
-                      GET PASS &rarr;
-                    </MagneticButton>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
 
         {/* 4. Track Transparency & Racer Assurance 4-Pillar Strip */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-left font-mono">
