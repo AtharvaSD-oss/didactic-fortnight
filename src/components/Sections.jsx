@@ -427,7 +427,7 @@ export const PricingSection = () => {
             </span>
           </div>
 
-          <div className="animate-packages-container marquee-fade-mask relative w-full overflow-hidden flex py-2">
+          <div className="animate-packages-container packages-fade-mask relative w-full overflow-hidden flex py-2">
             {[0, 1].map((groupIndex) => (
               <div
                 key={groupIndex}
@@ -453,7 +453,7 @@ export const PricingSection = () => {
             </span>
           </div>
 
-          <div className="animate-packages-container marquee-fade-mask relative w-full overflow-hidden flex py-2">
+          <div className="animate-packages-container packages-fade-mask relative w-full overflow-hidden flex py-2">
             {[0, 1].map((groupIndex) => (
               <div
                 key={groupIndex}
