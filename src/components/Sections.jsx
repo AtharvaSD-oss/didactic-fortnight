@@ -12,23 +12,28 @@ import MagneticButton from './MagneticButton';
 import TrackCircuitVisual from './TrackCircuitVisual';
 
 export const TrackSection = () => (
-  <section id="track" className="py-14 sm:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
+  <section id="track" className="py-14 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
     <div className="flex flex-col lg:flex-row items-center justify-between gap-10 sm:gap-14">
       
       {/* Left Spec & Narrative */}
       <div className="space-y-6 lg:w-1/2 text-left">
-        <h2 className="text-3xl sm:text-5xl font-display font-bold uppercase tracking-tight text-[#0A0A0A] leading-tight">
-          THE <span className="text-[#F47C20]">TRACK</span>
-        </h2>
-        <p className="text-[#666666] text-sm sm:text-base font-sans font-medium leading-relaxed">
-          Every corner. Every straight. Every lap.
+        <div className="space-y-2">
+          <span className="font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest block">
+            03 // THE CIRCUIT
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-display font-bold uppercase tracking-tight text-[#0A0A0A] leading-tight">
+            KNOW EVERY <span className="text-[#F47C20]">TURN.</span>
+          </h2>
+        </div>
+        <p className="text-[#555555] text-sm sm:text-base font-sans leading-relaxed">
+          Northern India's premier ~600-meter outdoor polymer asphalt circuit. Engineered with 11 technical apexes, sweeping chicanes, and live RaceFacer millisecond telemetry tracking.
         </p>
 
         {/* Verified Track Statistics Grid */}
         <div className="grid grid-cols-2 gap-4 pt-2">
           <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl text-left space-y-1 transition-colors group shadow-sm">
             <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">01 // TRACK LENGTH</span>
-            <div className="text-2xl font-display font-bold text-[#0A0A0A]">~ 600 METERS</div>
+            <div className="text-2xl font-display font-bold text-[#0A0A0A]">~600 METERS</div>
             <span className="text-[11px] font-sans text-[#666666]">Outdoor GP circuit</span>
           </div>
 
@@ -45,18 +50,18 @@ export const TrackSection = () => (
           </div>
 
           <div className="p-5 bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] rounded-xl text-left space-y-1 transition-colors group shadow-sm">
-            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">04 // TRACK TYPE</span>
-            <div className="text-2xl font-display font-bold text-[#0A0A0A]">OUTDOOR</div>
+            <span className="text-[10px] font-mono text-[#F47C20] uppercase tracking-widest block font-bold">04 // TRACK SURFACE</span>
+            <div className="text-2xl font-display font-bold text-[#0A0A0A]">OUTDOOR GP</div>
             <span className="text-[11px] font-sans text-[#666666]">Polymer asphalt track</span>
           </div>
         </div>
 
-        <div className="pt-4">
+        <div className="pt-3">
           <MagneticButton
             href="/track"
-            className="py-3.5 px-8 text-xs font-bold"
+            className="py-3 px-7 text-xs font-bold"
           >
-            EXPLORE THE TRACK &rarr;
+            EXPLORE FULL CIRCUIT &rarr;
           </MagneticButton>
         </div>
       </div>
