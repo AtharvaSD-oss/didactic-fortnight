@@ -90,15 +90,15 @@ const StatCounter = ({ end, suffix = "", label, number }) => {
 };
 
 const MARQUEE_ITEMS = [
-  { text: "SPEED", highlight: false },
-  { text: "PRECISION", highlight: true },
-  { text: "ADRENALINE", highlight: false },
-  { text: "PERFORMANCE", highlight: true },
-  { text: "RACING", highlight: false },
-  { text: "COMPETE", highlight: false },
-  { text: "KARTING", highlight: true },
-  { text: "PURE SPEED", highlight: false },
-  { text: "RACE YOUR LIMITS", highlight: true }
+  { text: "SPEED", separator: "◆", highlight: false },
+  { text: "PRECISION", separator: "//", highlight: true },
+  { text: "ADRENALINE", separator: "×", highlight: false },
+  { text: "PERFORMANCE", separator: "•", highlight: true },
+  { text: "RACING", separator: "◆", highlight: false },
+  { text: "COMPETE", separator: "→", highlight: false },
+  { text: "KARTING", separator: "//", highlight: true },
+  { text: "PURE SPEED", separator: "•", highlight: false },
+  { text: "RACE YOUR LIMITS", separator: "◆", highlight: true }
 ];
 
 export const WhoWeAreSection = () => {
@@ -111,8 +111,8 @@ export const WhoWeAreSection = () => {
       id="who-we-are"
       className="relative w-full bg-white text-[#111111]"
     >
-      {/* ── Premium Motorsport Ticker Marquee ── */}
-      <div className="bg-[#FAFAFA] py-4.5 sm:py-5 border-t border-b border-[#EAEAEA] relative overflow-hidden select-none w-full shadow-xs">
+      {/* ── Continuous Motorsport Information Strip ── */}
+      <div className="bg-[#FAFAFA] py-3.5 sm:py-4 border-t border-b border-[#EAEAEA] relative overflow-hidden select-none w-full shadow-xs">
         {/* Subtle Edge Fade Masks */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-[#FAFAFA] to-transparent z-10" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-[#FAFAFA] to-transparent z-10" />
@@ -121,19 +121,21 @@ export const WhoWeAreSection = () => {
         <div className="animate-marquee-track flex items-center">
           {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, idx) => (
             <div key={idx} className="flex items-center shrink-0">
-              <span
-                className={`font-display font-extrabold uppercase text-xl sm:text-2xl lg:text-3xl tracking-tight transition-colors duration-300 ${
-                  item.highlight ? 'text-[#F47C20]' : 'text-[#0A0A0A]'
-                }`}
-              >
-                {item.text}
-              </span>
-              
-              {/* Clean Geometric Motorsport Separator */}
-              <div className="mx-6 sm:mx-8 flex items-center gap-1.5 opacity-60">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F47C20]" />
-                <span className="w-1 h-1 rounded-full bg-[#0A0A0A]" />
+              {/* Compact Racing Ticker Badge */}
+              <div className="inline-flex items-center px-3.5 py-1 rounded-md bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-colors shadow-xs">
+                <span
+                  className={`font-display font-extrabold uppercase text-xs sm:text-sm tracking-wider ${
+                    item.highlight ? 'text-[#F47C20]' : 'text-[#0A0A0A]'
+                  }`}
+                >
+                  {item.text}
+                </span>
               </div>
+              
+              {/* Subtle Racing Telemetry Separator */}
+              <span className="mx-3.5 sm:mx-5 font-mono text-[11px] sm:text-xs font-bold text-[#F47C20] select-none">
+                {item.separator}
+              </span>
             </div>
           ))}
         </div>
