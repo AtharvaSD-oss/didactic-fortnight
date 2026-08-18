@@ -17,7 +17,8 @@ import WhatsAppButton from './components/WhatsAppButton';
 import { 
   TrackSection,
   PricingSection,
-  FounderHighlightSection
+  FounderHighlightSection,
+  ContactSection
 } from './components/Sections';
 
 // Lazy Loaded Page Components for Code-Splitting
@@ -117,6 +118,9 @@ const HomePage = () => {
         {/* 04 — RACE / PACKAGES PREVIEW & FOUNDER PEDIGREE */}
         <PricingSection onOpenBooking={handleOpenBooking} />
         <FounderHighlightSection />
+
+        {/* 05 — VENUE, DIRECTIONS & CONTACT */}
+        <ContactSection />
       </main>
 
       {/* Footer */}

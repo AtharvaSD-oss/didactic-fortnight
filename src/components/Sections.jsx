@@ -1,8 +1,14 @@
 import React from 'react';
 import {
   MapPin,
-  CheckCircle2
+  CheckCircle2,
+  Phone,
+  Mail,
+  Clock,
+  Trophy,
+  Navigation
 } from 'lucide-react';
+import { FacebookIcon, InstagramIcon, WhatsAppIcon } from './Icons';
 import MagneticButton from './MagneticButton';
 import TrackCircuitVisual from './TrackCircuitVisual';
 
@@ -340,6 +346,157 @@ export const PricingSection = () => {
           </MagneticButton>
         </div>
 
+      </div>
+    </section>
+  );
+};
+
+export const ContactSection = () => {
+  const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/7c5CMX5a4vaaXFLN9";
+
+  return (
+    <section id="contact" className="border-t border-[#EAEAEA] bg-white text-[#111111]">
+      {/* ── 01: Venue & Direction Section ── */}
+      <div className="py-14 sm:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
+        <div className="space-y-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-4 text-left">
+            <div>
+              <div className="flex items-center gap-3 mb-1">
+                <span className="w-[2px] h-5 bg-[#F47C20]" />
+                <span className="text-[#F47C20] text-sm font-bold font-mono">05</span>
+                <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ VENUE & NAVIGATION</span>
+              </div>
+              <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+                ENTERTAINLAND MALL <span className="text-[#F47C20]">CIRCUIT</span>
+              </h2>
+            </div>
+
+            <a
+              href={GOOGLE_MAPS_LINK}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-[#F47C20] hover:bg-[#E0670E] text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors shadow-md shrink-0 cursor-pointer text-decoration-none"
+            >
+              <Navigation className="w-4 h-4" /> GET DIRECTIONS
+            </a>
+          </div>
+
+          {/* Address Banner */}
+          <div className="p-6 rounded-xl bg-[#F9F9F9] border border-[#E5E5E5] flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-sm text-left">
+            <div className="space-y-1">
+              <span className="text-[10px] font-mono text-[#F47C20] font-bold uppercase tracking-widest block">OFFICIAL ADDRESS</span>
+              <div className="text-base sm:text-lg font-sans font-bold text-[#0A0A0A]">
+                Entertainland Mall, Sector 83, Manesar, Gurugram, Haryana 122004
+              </div>
+            </div>
+            <span className="font-mono text-xs text-[#666666] font-bold uppercase shrink-0">
+              ★ 10 MINS FROM GURGAON NH-48 EXIT
+            </span>
+          </div>
+
+          {/* Embedded Interactive Google Map */}
+          <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden border-2 border-[#E5E5E5] shadow-md">
+            <iframe
+              title="Kartomania Arena Location Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.963198083884!2d76.96024987625126!3d28.36081497581451!2m3!1f0!0f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3d5267b14073%3A0xb36cb76e274b7027!2sKartomania!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              className="w-full h-full border-0 opacity-95 transition-all duration-500"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* ── 02: Contact & Hours Section ── */}
+      <div className="py-14 sm:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto text-left">
+        <div className="space-y-8">
+          <div className="space-y-2">
+            <div className="flex items-center gap-3">
+              <span className="w-[2px] h-5 bg-[#F47C20]" />
+              <span className="text-[#F47C20] text-sm font-bold font-mono">03</span>
+              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ CONTACT & HOURS</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+              COMMUNICATION <span className="text-[#F47C20]">CHANNELS</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 font-mono">
+            {/* Phone */}
+            <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-3 shadow-sm">
+              <div className="flex items-center gap-2 text-[#F47C20]">
+                <Phone className="w-5 h-5" />
+                <span className="text-xs uppercase font-bold tracking-wider">// PHONE</span>
+              </div>
+              <div className="space-y-1 font-sans text-sm">
+                <a href="tel:+919717548897" className="block hover:text-[#F47C20] transition-colors font-bold text-[#0A0A0A] text-decoration-none">+91 97175 48897</a>
+                <a href="tel:+919560492876" className="block hover:text-[#F47C20] transition-colors font-bold text-[#0A0A0A] text-decoration-none">+91 95604 92876</a>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-3 shadow-sm">
+              <div className="flex items-center gap-2 text-[#F47C20]">
+                <Mail className="w-5 h-5" />
+                <span className="text-xs uppercase font-bold tracking-wider">// EMAIL</span>
+              </div>
+              <a href="mailto:kartomania.ggn@gmail.com" className="block hover:text-[#F47C20] transition-colors font-bold font-sans text-sm text-[#0A0A0A] break-all text-decoration-none">
+                kartomania.ggn@gmail.com
+              </a>
+            </div>
+
+            {/* Opening Hours */}
+            <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-3 shadow-sm">
+              <div className="flex items-center gap-2 text-[#F47C20]">
+                <Clock className="w-5 h-5" />
+                <span className="text-xs uppercase font-bold tracking-wider">// OPENING HOURS</span>
+              </div>
+              <div className="font-sans text-xs space-y-1 text-[#555555]">
+                <div>Mon – Fri: 2:00 PM – 11:00 PM</div>
+                <div>Sat – Sun: 1:00 PM – 11:00 PM</div>
+                <div className="text-[#F47C20] font-bold font-mono">// OPEN 7 DAYS A WEEK</div>
+              </div>
+            </div>
+
+            {/* Social Media */}
+            <div className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-colors space-y-3 shadow-sm">
+              <div className="flex items-center gap-2 text-[#F47C20]">
+                <Trophy className="w-5 h-5" />
+                <span className="text-xs uppercase font-bold tracking-wider">// SOCIAL MEDIA</span>
+              </div>
+              <div className="flex items-center gap-3 pt-1">
+                <a
+                  href="https://www.facebook.com/kartomaniacsggn/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2.5 rounded-lg bg-white border border-[#E5E5E5] hover:bg-[#F47C20] hover:text-white text-[#0A0A0A] transition-colors shadow-xs"
+                  aria-label="Facebook"
+                >
+                  <FacebookIcon className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2.5 rounded-lg bg-white border border-[#E5E5E5] hover:bg-[#F47C20] hover:text-white text-[#0A0A0A] transition-colors shadow-xs"
+                  aria-label="Instagram"
+                >
+                  <InstagramIcon className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://wa.me/919717548897?text=Hi%20Kartomania!%20I%20would%20like%20to%20inquire%20about%20booking%20a%20racing%20session."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2.5 rounded-lg bg-white border border-[#E5E5E5] hover:bg-[#25D366] hover:text-white text-[#0A0A0A] transition-colors shadow-xs"
+                  aria-label="WhatsApp"
+                >
+                  <WhatsAppIcon className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
