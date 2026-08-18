@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  MapPin,
   CheckCircle2,
   Phone,
   Mail,
@@ -18,14 +17,6 @@ export const TrackSection = () => (
       
       {/* Left Spec & Narrative */}
       <div className="space-y-6 lg:w-1/2 text-left">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="w-[2px] h-5 bg-[#F47C20]" />
-          <span className="text-[#F47C20] text-sm font-bold font-mono">03</span>
-          <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ THE TRACK</span>
-        </div>
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
-          <MapPin className="w-3.5 h-3.5 text-[#F47C20]" /> // CIRCUIT TELEMETRY
-        </div>
         <h2 className="text-3xl sm:text-5xl font-display font-bold uppercase tracking-tight text-[#0A0A0A] leading-tight">
           THE <span className="text-[#F47C20]">TRACK</span>
         </h2>
@@ -87,14 +78,6 @@ export const FounderHighlightSection = () => {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-6 text-left">
           <div>
-            <div className="flex items-center gap-3 mb-2">
-              <span className="w-[2px] h-5 bg-[#F47C20]" />
-              <span className="text-[#F47C20] text-sm font-bold font-mono">04-B</span>
-              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ FOUNDER & MOTORSPORT HERITAGE</span>
-            </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 text-[#F47C20] font-mono text-[10px] font-bold uppercase tracking-wider mb-2 shadow-sm">
-              ★ NATIONAL RACING CHAMPION PEDIGREE
-            </div>
             <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
               MEET OUR <span className="text-[#F47C20]">FOUNDER</span>
             </h2>
@@ -256,14 +239,6 @@ export const PricingSection = () => {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-6 text-left">
           <div>
-            <div className="flex items-center gap-3 mb-2">
-              <span className="w-[2px] h-5 bg-[#F47C20]" />
-              <span className="text-[#F47C20] text-sm font-bold font-mono">04</span>
-              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ RACE & PACKAGES PREVIEW</span>
-            </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 text-[#F47C20] font-mono text-[10px] font-bold uppercase tracking-wider mb-2 shadow-sm">
-              ★ ALL PRICES INCLUSIVE OF GST & TAXES
-            </div>
             <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
               RACE & <span className="text-[#F47C20]">PACKAGES</span>
             </h2>
@@ -336,16 +311,6 @@ export const PricingSection = () => {
           ))}
         </div>
 
-        {/* Bottom Navigation CTA */}
-        <div className="pt-4 text-center">
-          <MagneticButton
-            href="/race"
-            className="py-3.5 px-8 text-xs font-bold"
-          >
-            VIEW ALL RACE OPTIONS &rarr;
-          </MagneticButton>
-        </div>
-
       </div>
     </section>
   );
@@ -361,11 +326,6 @@ export const ContactSection = () => {
         <div className="space-y-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-4 text-left">
             <div>
-              <div className="flex items-center gap-3 mb-1">
-                <span className="w-[2px] h-5 bg-[#F47C20]" />
-                <span className="text-[#F47C20] text-sm font-bold font-mono">05</span>
-                <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ VENUE & NAVIGATION</span>
-              </div>
               <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
                 ENTERTAINLAND MALL <span className="text-[#F47C20]">CIRCUIT</span>
               </h2>
@@ -412,11 +372,6 @@ export const ContactSection = () => {
       <div className="py-14 sm:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto text-left">
         <div className="space-y-8">
           <div className="space-y-2">
-            <div className="flex items-center gap-3">
-              <span className="w-[2px] h-5 bg-[#F47C20]" />
-              <span className="text-[#F47C20] text-sm font-bold font-mono">03</span>
-              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ CONTACT & HOURS</span>
-            </div>
             <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
               COMMUNICATION <span className="text-[#F47C20]">CHANNELS</span>
             </h2>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, CheckCircle2, Award } from 'lucide-react';
+import { Shield, CheckCircle2 } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 
 const KARTS_DATA = [
@@ -91,15 +91,6 @@ const KartsSection = () => {
       {/* 1. Header Section */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#EAEAEA] pb-6 mb-8 sm:mb-10 text-left">
         <div className="space-y-2">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="w-[2px] h-5 bg-[#F47C20]" />
-            <span className="text-[#F47C20] text-sm font-bold font-mono">07</span>
-            <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ KART FLEET</span>
-          </div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
-            <Award className="w-3.5 h-3.5 text-[#F47C20]" /> // MOTORSPORT FLEET
-          </div>
-
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
             PRECISION <span className="text-[#F47C20]">RACE FLEET</span>
           </h2>

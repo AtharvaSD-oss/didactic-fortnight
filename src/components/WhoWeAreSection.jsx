@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useInView } from 'framer-motion';
-import { Trophy, ShieldCheck, Gauge, Users, Flag } from 'lucide-react';
+import { ShieldCheck, Gauge, Users, Flag } from 'lucide-react';
 
 const EXPERIENCE_HIGHLIGHTS = [
   {
@@ -103,13 +103,7 @@ export const WhoWeAreSection = () => {
       <div className="bg-[#F9F9F9] text-[#111111] py-8 sm:py-10 px-4 sm:px-8 lg:px-[54px] border-t border-b border-[#EAEAEA]">
         <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="space-y-1 text-left">
-            <div className="flex items-center gap-3">
-              <span className="w-[2px] h-5 bg-[#F47C20]" />
-              <span className="text-[#F47C20] text-sm font-bold font-mono">02</span>
-              <span className="text-[#0A0A0A] text-sm font-bold font-mono">/ KARTOMANIA EXPERIENCE</span>
-            </div>
-
-            <h2 className="mt-4 text-[#0A0A0A] font-display font-bold uppercase tracking-tight text-3xl sm:text-4xl lg:text-5xl">
+            <h2 className="text-[#0A0A0A] font-display font-bold uppercase tracking-tight text-3xl sm:text-4xl lg:text-5xl">
               BUILT FOR <span className="text-[#F47C20]">THE THRILL.</span>
             </h2>
           </div>
@@ -120,9 +114,6 @@ export const WhoWeAreSection = () => {
         {/* Top Header Tag */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#EAEAEA] pb-6">
           <div className="text-left space-y-2 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest shadow-sm">
-              <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // BUILT FOR THE THRILL
-            </div>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-tight">
               NORTHERN INDIA'S PREMIER <br className="hidden sm:block" />
               <span className="text-[#F47C20]">600M OUTDOOR</span> CIRCUIT
@@ -141,14 +132,6 @@ export const WhoWeAreSection = () => {
 
         {/* 4 Compact Experience Highlights Grid */}
         <div className="space-y-4 text-left">
-          <div className="flex items-center justify-between border-b border-[#EAEAEA] pb-3">
-            <span className="font-mono text-xs font-bold text-[#F47C20] uppercase tracking-wider">
-              // 4 COMPACT EXPERIENCE HIGHLIGHTS
-            </span>
-            <span className="text-[10px] font-mono text-[#888888] uppercase">
-              CHAMPIONSHIP MOTORSPORT FOCUS
-            </span>
-          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {EXPERIENCE_HIGHLIGHTS.map((item, idx) => {
@@ -191,9 +174,6 @@ export const WhoWeAreSection = () => {
           {/* Section Header */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#EAEAEA] pb-8">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#FFF0E5] border border-[#F47C20]/30 text-[#F47C20] font-mono text-xs uppercase tracking-widest font-bold shadow-sm">
-                <Trophy className="w-3.5 h-3.5 text-[#F47C20]" /> // MOTORSPORT HERITAGE
-              </div>
               <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
                 LEAP FROG <span className="text-[#F47C20]">RACING</span>
               </h2>
@@ -250,10 +230,7 @@ export const WhoWeAreSection = () => {
 
           {/* Real Competition Photography Gallery Grid */}
           <div className="space-y-4 pt-4 text-left">
-            <div className="flex items-center justify-between border-b border-[#EAEAEA] pb-4">
-              <span className="font-mono text-xs font-bold text-[#F47C20] uppercase tracking-wider">
-                // AUTHENTIC NATIONAL CHAMPIONSHIP PHOTOGRAPHY
-              </span>
+            <div className="flex items-center justify-end border-b border-[#EAEAEA] pb-4">
               <span className="text-[10px] font-mono text-[#888888] uppercase">
                 CLICK IMAGE TO EXPAND
               </span>
