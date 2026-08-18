@@ -112,33 +112,39 @@ export const WhoWeAreSection = () => {
       className="relative w-full bg-white text-[#111111]"
     >
       {/* ── Continuous Motorsport Information Strip ── */}
-      <div className="bg-[#FAFAFA] py-3.5 sm:py-4 border-t border-b border-[#EAEAEA] relative overflow-hidden select-none w-full shadow-xs">
+      <div className="animate-marquee-container bg-[#FAFAFA] py-3.5 sm:py-4 border-t border-b border-[#EAEAEA] relative overflow-hidden select-none w-full shadow-xs flex">
         {/* Subtle Edge Fade Masks */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-[#FAFAFA] to-transparent z-10" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-[#FAFAFA] to-transparent z-10" />
 
-        {/* 2-Part Seamless Loop Track */}
-        <div className="animate-marquee-track flex items-center">
-          {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, idx) => (
-            <div key={idx} className="flex items-center shrink-0">
-              {/* Compact Racing Ticker Badge */}
-              <div className="inline-flex items-center px-3.5 py-1 rounded-md bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-colors shadow-xs">
-                <span
-                  className={`font-display font-extrabold uppercase text-xs sm:text-sm tracking-wider ${
-                    item.highlight ? 'text-[#F47C20]' : 'text-[#0A0A0A]'
-                  }`}
-                >
-                  {item.text}
+        {/* 2 Duplicated Track Groups for Mathematically Seamless Infinite Looping */}
+        {[0, 1].map((groupIndex) => (
+          <div
+            key={groupIndex}
+            aria-hidden={groupIndex === 1 ? 'true' : undefined}
+            className="animate-marquee-track-group flex items-center shrink-0"
+          >
+            {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, idx) => (
+              <div key={idx} className="flex items-center shrink-0">
+                {/* Compact Racing Ticker Badge */}
+                <div className="inline-flex items-center px-3.5 py-1 rounded-md bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-colors shadow-xs">
+                  <span
+                    className={`font-display font-extrabold uppercase text-xs sm:text-sm tracking-wider ${
+                      item.highlight ? 'text-[#F47C20]' : 'text-[#0A0A0A]'
+                    }`}
+                  >
+                    {item.text}
+                  </span>
+                </div>
+                
+                {/* Subtle Racing Telemetry Separator */}
+                <span className="mx-3.5 sm:mx-5 font-mono text-[11px] sm:text-xs font-bold text-[#F47C20] select-none">
+                  {item.separator}
                 </span>
               </div>
-              
-              {/* Subtle Racing Telemetry Separator */}
-              <span className="mx-3.5 sm:mx-5 font-mono text-[11px] sm:text-xs font-bold text-[#F47C20] select-none">
-                {item.separator}
-              </span>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ))}
       </div>
 
       <div className="py-12 sm:py-16 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto space-y-16">
