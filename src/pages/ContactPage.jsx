@@ -20,7 +20,7 @@ export const ContactPage = () => {
     window.open("https://web.racefacer.com/kiosk/kartomaniaentertainlandmall", "_blank", "noopener,noreferrer");
   };
 
-  const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/7c5CMX5a4vaaXFLN9";
+  const GOOGLE_MAPS_LINK = "https://www.google.com/maps/dir/?api=1&destination=Kartomania+Entertainland+Mall+Sector+83+Gurugram";
 
   const FAQS = [
     {
@@ -126,7 +126,7 @@ export const ContactPage = () => {
             <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden border-2 border-[#E5E5E5] shadow-md">
               <iframe
                 title="Kartomania Arena Location Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.963198083884!2d76.96024987625126!3d28.36081497581451!2m3!1f0!0f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3d5267b14073%3A0xb36cb76e274b7027!2sKartomania!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                src="https://maps.google.com/maps?q=Kartomania%2C%20Entertainland%20Mall%2C%20Sector%2083%2C%20Gurugram%2C%20Haryana&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-full border-0 opacity-95 transition-all duration-500"
                 allowFullScreen=""
                 loading="lazy"
