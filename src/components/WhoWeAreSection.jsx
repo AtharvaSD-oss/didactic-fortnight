@@ -111,8 +111,8 @@ export const WhoWeAreSection = () => {
       id="who-we-are"
       className="relative w-full bg-white text-[#111111]"
     >
-      {/* ── Continuous Motorsport Information Strip with Refined 0-12% / 88-100% Alpha Edge Fade ── */}
-      <div className="animate-marquee-container marquee-fade-mask bg-[#FAFAFA] py-2.5 sm:py-3.5 lg:py-4 border-t border-b border-[#EAEAEA] relative overflow-hidden select-none w-full max-w-full shadow-xs flex">
+      {/* ── Continuous Motorsport Information Strip with Refined 0-10% / 90-100% Alpha Edge Fade ── */}
+      <div className="animate-marquee-container marquee-fade-mask bg-[#FAFAFA] py-3 sm:py-3.5 border-t border-b border-[#EAEAEA] relative overflow-hidden select-none w-full max-w-full shadow-xs flex">
         {/* 2 Duplicated Track Groups for Mathematically Seamless Infinite Looping */}
         {[0, 1].map((groupIndex) => (
           <div
@@ -122,10 +122,10 @@ export const WhoWeAreSection = () => {
           >
             {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, idx) => (
               <div key={idx} className="flex items-center shrink-0 cursor-default whitespace-nowrap">
-                {/* Compact Racing Ticker Badge with Responsive Padding & Typography */}
-                <div className="marquee-item-badge inline-flex items-center px-2.5 py-0.5 sm:px-3 sm:py-1 lg:px-4 lg:py-1.5 rounded-sm sm:rounded-md bg-white border border-[#E5E5E5] shadow-xs shrink-0 whitespace-nowrap">
+                {/* Precision Architectural Motorsport Telemetry Badge */}
+                <div className="marquee-item-badge inline-flex items-center px-3 py-1 sm:px-3.5 sm:py-1 lg:px-4 lg:py-1.5 rounded-[3px] bg-white border border-[#E5E5E5] shadow-xs shrink-0 whitespace-nowrap">
                   <span
-                    className={`marquee-text font-display font-extrabold uppercase text-[11px] sm:text-xs lg:text-sm tracking-wider whitespace-nowrap transition-colors duration-300 ${
+                    className={`marquee-text font-display font-extrabold uppercase text-[11px] sm:text-xs lg:text-[13px] tracking-wider whitespace-nowrap transition-colors duration-200 ${
                       item.highlight ? 'text-[#F47C20]' : 'text-[#0A0A0A]'
                     }`}
                   >
@@ -133,8 +133,8 @@ export const WhoWeAreSection = () => {
                   </span>
                 </div>
                 
-                {/* Subtle Racing Telemetry Separator with Responsive Margins */}
-                <span className="mx-2.5 sm:mx-4 lg:mx-5.5 font-mono text-[10px] sm:text-xs lg:text-sm font-bold text-[#F47C20] select-none shrink-0 whitespace-nowrap">
+                {/* Subtle Racing Telemetry Separator with Balanced Spacing */}
+                <span className="mx-3 sm:mx-4 lg:mx-5 font-mono text-[10px] sm:text-xs font-bold text-[#F47C20] select-none shrink-0 whitespace-nowrap">
                   {item.separator}
                 </span>
               </div>
