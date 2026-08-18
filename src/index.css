@@ -200,3 +200,26 @@
   );
 }
 
+/* Accessibility: prefers-reduced-motion support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-container {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .animate-marquee-container::-webkit-scrollbar {
+    display: none;
+  }
+  .animate-marquee-track-group {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+  .animate-marquee-track-group[aria-hidden="true"] {
+    display: none !important;
+  }
+  .marquee-item-badge {
+    transition: none !important;
+  }
+}
+
