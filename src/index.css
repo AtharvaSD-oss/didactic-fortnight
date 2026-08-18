@@ -236,6 +236,10 @@
   width: 100%;
   max-width: 100%;
   contain: paint;
+  touch-action: pan-y;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .animate-packages-track-group {
