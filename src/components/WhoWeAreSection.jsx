@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useInView } from 'framer-motion';
 
 const LEAP_FROG_PHOTOS = [
@@ -74,7 +74,6 @@ const MARQUEE_ITEMS = [
 ];
 
 export const WhoWeAreSection = () => {
-  const [activeLeapFrogImg, setActiveLeapFrogImg] = useState(null);
   const sectionRef = useRef(null);
 
   return (
@@ -225,23 +224,20 @@ export const WhoWeAreSection = () => {
             <span className="font-mono text-xs font-bold text-[#0A0A0A] uppercase tracking-wider">
               // CHAMPIONSHIP ARCHIVE
             </span>
-            <span className="text-[10px] font-mono text-[#888888] uppercase">
-              CLICK IMAGE TO VIEW FULL FRAME
-            </span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {LEAP_FROG_PHOTOS.map((item, idx) => (
               <div
                 key={idx}
-                onClick={() => setActiveLeapFrogImg(item)}
-                className="group relative rounded-xl overflow-hidden bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 cursor-pointer shadow-xs"
+                className="group relative rounded-xl overflow-hidden bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 shadow-xs"
               >
                 <div className="relative h-64 w-full overflow-hidden">
                   <img
                     src={item.src}
                     alt={item.title}
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                   
@@ -263,34 +259,6 @@ export const WhoWeAreSection = () => {
         </div>
 
       </div>
-
-      {/* Lightbox Modal for Leap Frog Photos */}
-      {activeLeapFrogImg && (
-        <div
-          onClick={() => setActiveLeapFrogImg(null)}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="relative max-w-3xl w-full bg-white border-2 border-[#F47C20] rounded-2xl overflow-hidden shadow-2xl"
-          >
-            <button
-              onClick={() => setActiveLeapFrogImg(null)}
-              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/80 text-white hover:text-[#F47C20] transition-colors cursor-pointer"
-            >
-              ✕
-            </button>
-            <img src={activeLeapFrogImg.src} alt={activeLeapFrogImg.title} className="w-full max-h-[75vh] object-contain bg-black" />
-            <div className="p-6 bg-white border-t border-[#EAEAEA] flex items-center justify-between text-[#111111] text-left">
-              <div>
-                <span className="text-[10px] font-mono text-[#F47C20] uppercase font-bold block">{activeLeapFrogImg.tag}</span>
-                <h4 className="text-lg font-display font-bold uppercase text-[#0A0A0A]">{activeLeapFrogImg.title}</h4>
-                <p className="text-xs font-sans text-[#555555] mt-1">{activeLeapFrogImg.desc}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
