@@ -51,14 +51,6 @@ const Hero = ({ onOpenBooking }) => {
   return (
     <section ref={heroRef} id="home" className="relative w-full min-h-0 lg:min-h-[100svh] bg-white text-[#0A0A0A] overflow-hidden">
       <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-[54px] pt-[85px] sm:pt-[100px] lg:pt-[125px]">
-        
-        {/* Section Label */}
-        <motion.div {...fadeUp(0.05)} className="flex items-center gap-3 mb-4 lg:mb-5">
-          <span className="block w-[2px] h-[20px] bg-[#F47C20]" />
-          <span className="text-[#F47C20] text-[14px] sm:text-[15px] font-bold tracking-[0.12em]">01</span>
-          <span className="text-[#111111] text-[14px] sm:text-[15px] font-bold tracking-[0.12em]">/ HOME</span>
-        </motion.div>
-
         {/* Giant Title */}
         <div className="relative z-10 w-full overflow-visible">
           <motion.h1
