@@ -89,9 +89,21 @@ const StatCounter = ({ end, suffix = "", label, number }) => {
   );
 };
 
+const MARQUEE_ITEMS = [
+  { text: "SPEED", highlight: false },
+  { text: "PRECISION", highlight: true },
+  { text: "ADRENALINE", highlight: false },
+  { text: "PERFORMANCE", highlight: true },
+  { text: "RACING", highlight: false },
+  { text: "COMPETE", highlight: false },
+  { text: "KARTING", highlight: true },
+  { text: "PURE SPEED", highlight: false },
+  { text: "RACE YOUR LIMITS", highlight: true }
+];
+
 export const WhoWeAreSection = () => {
-  const sectionRef = useRef(null);
   const [activeLeapFrogImg, setActiveLeapFrogImg] = useState(null);
+  const sectionRef = useRef(null);
 
   return (
     <section
@@ -99,14 +111,31 @@ export const WhoWeAreSection = () => {
       id="who-we-are"
       className="relative w-full bg-white text-[#111111]"
     >
-      {/* ── Transition Header Block ── */}
-      <div className="bg-[#F9F9F9] text-[#111111] py-8 sm:py-10 px-4 sm:px-8 lg:px-[54px] border-t border-b border-[#EAEAEA]">
-        <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="space-y-1 text-left">
-            <h2 className="text-[#0A0A0A] font-display font-bold uppercase tracking-tight text-3xl sm:text-4xl lg:text-5xl">
-              BUILT FOR <span className="text-[#F47C20]">THE THRILL.</span>
-            </h2>
-          </div>
+      {/* ── Premium Motorsport Ticker Marquee ── */}
+      <div className="bg-[#FAFAFA] py-4.5 sm:py-5 border-t border-b border-[#EAEAEA] relative overflow-hidden select-none w-full shadow-xs">
+        {/* Subtle Edge Fade Masks */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-[#FAFAFA] to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-[#FAFAFA] to-transparent z-10" />
+
+        {/* 2-Part Seamless Loop Track */}
+        <div className="animate-marquee-track flex items-center">
+          {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, idx) => (
+            <div key={idx} className="flex items-center shrink-0">
+              <span
+                className={`font-display font-extrabold uppercase text-xl sm:text-2xl lg:text-3xl tracking-tight transition-colors duration-300 ${
+                  item.highlight ? 'text-[#F47C20]' : 'text-[#0A0A0A]'
+                }`}
+              >
+                {item.text}
+              </span>
+              
+              {/* Clean Geometric Motorsport Separator */}
+              <div className="mx-6 sm:mx-8 flex items-center gap-1.5 opacity-60">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F47C20]" />
+                <span className="w-1 h-1 rounded-full bg-[#0A0A0A]" />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
