@@ -111,12 +111,8 @@ export const WhoWeAreSection = () => {
       id="who-we-are"
       className="relative w-full bg-white text-[#111111]"
     >
-      {/* ── Continuous Motorsport Information Strip ── */}
-      <div className="animate-marquee-container bg-[#FAFAFA] py-3.5 sm:py-4 border-t border-b border-[#EAEAEA] relative overflow-hidden select-none w-full shadow-xs flex">
-        {/* Subtle Edge Fade Masks */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-[#FAFAFA] to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-[#FAFAFA] to-transparent z-10" />
-
+      {/* ── Continuous Motorsport Information Strip with Refined 0-12% / 88-100% Alpha Edge Fade ── */}
+      <div className="animate-marquee-container marquee-fade-mask bg-[#FAFAFA] py-3.5 sm:py-4 border-t border-b border-[#EAEAEA] relative overflow-hidden select-none w-full shadow-xs flex">
         {/* 2 Duplicated Track Groups for Mathematically Seamless Infinite Looping */}
         {[0, 1].map((groupIndex) => (
           <div
