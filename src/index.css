@@ -118,82 +118,145 @@
   animation: orangePulse 2s infinite ease-in-out;
 }
 
-/* ── Motorsport Triple Chevron Speed Arrow Button Animation (Uiverse) ── */
-.racing-button-anim {
+/* ── Uiverse Dynamic Chevron Button Animation (Motorsport Edition) ── */
+.btn-uiverse {
+  --color-text: #ffffff;
+  --color-background: #0A0A0A;
+  --color-background-hover: #F47C20;
   --color-outline: rgba(244, 124, 32, 0.45);
-  --color-shadow: rgba(0, 0, 0, 0.25);
+  --color-shadow: rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  color: var(--color-text);
+  background: var(--color-background);
+  box-shadow: 0 0 0.2em 0 var(--color-background);
+  transition: all 0.5s ease;
   position: relative;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: visible;
 }
 
-.racing-button-anim:active {
+.btn-uiverse.btn-variant-orange {
+  --color-background: #F47C20;
+  --color-background-hover: #0A0A0A;
+  --color-outline: rgba(244, 124, 32, 0.5);
+}
+
+.btn-uiverse.btn-variant-outline {
+  --color-background: #FFFFFF;
+  --color-background-hover: #F47C20;
+  --color-text: #0A0A0A;
+  border: 1px solid #E5E5E5;
+}
+
+.btn-uiverse.btn-variant-outline:hover {
+  --color-text: #FFFFFF;
+  border-color: #F47C20;
+}
+
+.btn-uiverse:active {
   transform: scale(0.95);
 }
 
-.racing-button-anim:hover {
+.btn-uiverse:hover {
   outline: 0.1em solid transparent;
   outline-offset: 0.2em;
-  animation: btn-ripple 1s linear infinite;
+  box-shadow: 0 0 1em 0 var(--color-background-hover);
+  animation:
+    btn-ripple 1s linear infinite,
+    btn-colorize 1s infinite;
+  transition: 0.5s;
 }
 
-.racing-button-anim .btn-text {
-  transition: all 0.3s ease;
+.btn-uiverse span.btn-label {
+  margin-right: 0.35em;
+  transition: 0.5s;
 }
 
-.racing-button-anim:hover .btn-text {
-  text-shadow: 0 2px 8px var(--color-shadow);
+.btn-uiverse:hover span.btn-label {
+  text-shadow: 2px 2px 5px var(--color-shadow);
 }
 
-.racing-button-anim svg.chevron-arrow {
-  height: 0.9em;
+.btn-uiverse:active span.btn-label {
+  text-shadow: none;
+}
+
+.btn-uiverse svg.chevron-svg {
+  height: 0.85em;
   width: auto;
   fill: currentColor;
+  margin-right: -0.16em;
   position: relative;
-  transition: all 0.4s ease;
+  transition: 0.5s;
   overflow: visible;
   flex-shrink: 0;
 }
 
-.racing-button-anim:hover svg.chevron-arrow {
-  filter: drop-shadow(0 2px 4px var(--color-shadow));
+.btn-uiverse:hover svg.chevron-svg {
+  margin-right: 0.5em;
+  transition: 0.5s;
+  filter: drop-shadow(2px 2px 3px var(--color-shadow));
 }
 
-.racing-button-anim svg.chevron-arrow polygon:nth-child(1) {
-  transition: transform 0.4s ease;
-  transform: translateX(-45%);
+.btn-uiverse:active svg.chevron-svg {
+  filter: none;
 }
 
-.racing-button-anim svg.chevron-arrow polygon:nth-child(2) {
-  transition: transform 0.4s ease;
-  transform: translateX(-22%);
+.btn-uiverse svg.chevron-svg polygon:nth-child(1) {
+  transition: 0.4s;
+  transform: translateX(-60%);
 }
 
-.racing-button-anim svg.chevron-arrow polygon:nth-child(3) {
-  transition: transform 0.4s ease;
+.btn-uiverse svg.chevron-svg polygon:nth-child(2) {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.btn-uiverse svg.chevron-svg polygon:nth-child(3) {
+  transition: 0.4s;
+}
+
+.btn-uiverse:hover svg.chevron-svg polygon:nth-child(1) {
   transform: translateX(0%);
+  animation: chevron-opacity 1s infinite 0.6s;
 }
 
-.racing-button-anim:hover svg.chevron-arrow polygon:nth-child(1) {
+.btn-uiverse:hover svg.chevron-svg polygon:nth-child(2) {
   transform: translateX(0%);
   animation: chevron-opacity 1s infinite 0.4s;
 }
 
-.racing-button-anim:hover svg.chevron-arrow polygon:nth-child(2) {
-  transform: translateX(0%);
+.btn-uiverse:hover svg.chevron-svg polygon:nth-child(3) {
   animation: chevron-opacity 1s infinite 0.2s;
 }
 
-.racing-button-anim:hover svg.chevron-arrow polygon:nth-child(3) {
-  transform: translateX(0%);
-  animation: chevron-opacity 1s infinite 0s;
-}
-
 @keyframes chevron-opacity {
-  0%, 100% {
+  0% {
     opacity: 1;
   }
   50% {
-    opacity: 0.2;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes btn-colorize {
+  0% {
+    background: var(--color-background);
+  }
+  50% {
+    background: var(--color-background-hover);
+  }
+  100% {
+    background: var(--color-background);
   }
 }
 
@@ -203,12 +266,12 @@
     outline-offset: -0.1em;
   }
   50% {
-    outline: 0.18em solid var(--color-outline);
-    outline-offset: 0.15em;
+    outline: 0.2em solid var(--color-outline);
+    outline-offset: 0.2em;
   }
   100% {
-    outline: 0.3em solid transparent;
-    outline-offset: 0.3em;
+    outline: 0.4em solid transparent;
+    outline-offset: 0.4em;
   }
 }
 

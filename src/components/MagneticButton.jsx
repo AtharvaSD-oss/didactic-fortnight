@@ -72,34 +72,35 @@ const MagneticButton = ({
 
   const getVariantClasses = () => {
     if (variant === 'orange' || variant === 'secondary') {
-      return 'bg-[#F47C20] text-white border-[#F47C20] hover:bg-[#0A0A0A] hover:border-[#0A0A0A] hover:text-white shadow-sm';
+      return 'btn-variant-orange shadow-sm';
     }
     if (variant === 'outline') {
-      return 'bg-white text-[#0A0A0A] border-[#E5E5E5] hover:border-[#0A0A0A] hover:bg-[#F9F9F9]';
+      return 'btn-variant-outline';
     }
     // Default: primary (black w/ orange accent on hover)
-    return 'bg-[#0A0A0A] text-white border-[#0A0A0A] hover:bg-[#F47C20] hover:border-[#F47C20] hover:text-white shadow-sm';
+    return 'shadow-sm';
   };
 
   const baseClasses = `
-    racing-button-anim relative inline-flex items-center justify-center group overflow-hidden rounded-[4px] font-mono font-bold tracking-widest text-xs uppercase
-    px-6 py-3 transition-all duration-300 cursor-pointer text-decoration-none border
+    btn-uiverse text-xs font-mono tracking-widest uppercase font-bold
+    px-6 py-3 cursor-pointer text-decoration-none
     ${getVariantClasses()}
     ${className}
   `;
 
   const innerContent = (
-    <span ref={contentRef} className="relative z-10 flex items-center gap-2">
-      <span className="btn-text">{children}</span>
+    <span ref={contentRef} className="relative z-10 flex items-center">
+      <span className="btn-label">{children}</span>
       {showArrow && (
-        <svg 
-          viewBox="0 0 65 40" 
-          className="chevron-arrow text-[#F47C20] group-hover:text-white"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 66 43"
+          className="chevron-svg text-[#F47C20]"
           aria-hidden="true"
         >
-          <polygon points="0,0 13,0 26,20 13,40 0,40 13,20" />
-          <polygon points="16,0 29,0 42,20 29,40 16,40 29,20" />
-          <polygon points="32,0 45,0 58,20 45,40 32,40 45,20" />
+          <polygon points="0 0, 26 0, 46 21.5, 26 43, 0 43, 20 21.5" />
+          <polygon points="20 0, 46 0, 66 21.5, 46 43, 20 43, 40 21.5" />
+          <polygon points="40 0, 66 0, 86 21.5, 66 43, 40 43, 60 21.5" />
         </svg>
       )}
     </span>
