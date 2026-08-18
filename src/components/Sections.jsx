@@ -287,7 +287,7 @@ export const PricingSection = () => {
   const renderSprintCard = (item, key) => (
     <div
       key={key}
-      className="package-card-hover w-[320px] sm:w-[350px] lg:w-[380px] shrink-0 p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] flex flex-col justify-between shadow-sm group text-left relative"
+      className="package-card-hover w-[82vw] xs:w-[310px] sm:w-[350px] lg:w-[380px] max-w-[380px] shrink-0 p-5 sm:p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] flex flex-col justify-between shadow-sm group text-left relative"
     >
       <div className="space-y-4">
         <div className="flex items-center justify-between">
@@ -300,7 +300,7 @@ export const PricingSection = () => {
         </div>
 
         <div>
-          <h3 className="text-xl font-display font-bold text-[#0A0A0A] uppercase tracking-wide group-hover:text-[#F47C20] transition-colors">
+          <h3 className="text-lg sm:text-xl font-display font-bold text-[#0A0A0A] uppercase tracking-wide group-hover:text-[#F47C20] transition-colors leading-tight">
             {item.name}
           </h3>
           <p className="text-[11px] font-mono text-[#666666] uppercase mt-0.5">
@@ -309,15 +309,15 @@ export const PricingSection = () => {
         </div>
 
         {/* Pricing Box */}
-        <div className="py-2.5 px-3 rounded-lg bg-white border border-[#EAEAEA] flex items-center justify-between">
+        <div className="py-2 px-3 rounded-lg bg-white border border-[#EAEAEA] flex items-center justify-between">
           <div>
             <span className="text-[9px] font-mono text-[#888888] block uppercase">WEEKDAY</span>
-            <div className="text-lg font-display font-bold text-[#0A0A0A]">{item.weekdayPrice}</div>
+            <div className="text-base sm:text-lg font-display font-bold text-[#0A0A0A]">{item.weekdayPrice}</div>
           </div>
-          <div className="w-[1px] h-7 bg-[#EAEAEA]" />
+          <div className="w-[1px] h-6 bg-[#EAEAEA]" />
           <div>
             <span className="text-[9px] font-mono text-[#888888] block uppercase">WEEKEND</span>
-            <div className="text-lg font-display font-bold text-[#F47C20]">{item.weekendPrice}</div>
+            <div className="text-base sm:text-lg font-display font-bold text-[#F47C20]">{item.weekendPrice}</div>
           </div>
         </div>
 
@@ -332,7 +332,7 @@ export const PricingSection = () => {
         </div>
       </div>
 
-      <div className="pt-5 mt-4 border-t border-[#EAEAEA]">
+      <div className="pt-4 sm:pt-5 mt-4 border-t border-[#EAEAEA]">
         <MagneticButton
           href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
           className="w-full py-2 px-4 text-xs font-bold justify-center"
@@ -346,7 +346,7 @@ export const PricingSection = () => {
   const renderPackageCard = (pkg, key) => (
     <div
       key={key}
-      className="package-card-hover w-[300px] sm:w-[340px] lg:w-[360px] shrink-0 p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] flex flex-col justify-between shadow-sm group text-left relative"
+      className="package-card-hover w-[82vw] xs:w-[310px] sm:w-[340px] lg:w-[360px] max-w-[360px] shrink-0 p-5 sm:p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] flex flex-col justify-between shadow-sm group text-left relative"
     >
       <div className="space-y-4">
         {/* Header Tag */}

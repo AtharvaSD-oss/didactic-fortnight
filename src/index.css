@@ -258,6 +258,8 @@
 
 @media (max-width: 640px) {
   .animate-packages-track-group {
+    gap: 1rem;
+    padding-right: 1rem;
     animation-duration: 32s;
   }
 }
