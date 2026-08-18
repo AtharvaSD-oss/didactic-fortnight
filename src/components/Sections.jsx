@@ -180,9 +180,15 @@ export const PricingSection = () => {
   const SINGLE_SPRINTS = [
     {
       id: "sprint-adult",
+      number: "01",
+      category: "PRO",
+      tag: "MOST POPULAR",
       name: "PRO ADULT SPRINT",
-      kart: "270CC SODI RT10",
-      spec: "SINGLE DRIVER (HEIGHT 4'6\"+)",
+      kartName: "SODI RT10 PRO",
+      desc: "High-speed outdoor sprint session with authentic Grand Prix telemetry.",
+      power: "13.0 HP",
+      topSpeed: "75 KM/H",
+      engine: "270CC HONDA GX",
       weekdayPrice: "₹650",
       weekendPrice: "₹760",
       duration: "10 MINS / ~12-15 LAPS",
@@ -190,14 +196,19 @@ export const PricingSection = () => {
         "Honda GX270 4-Stroke Engine",
         "RaceFacer Live Telemetry Timing",
         "DOT Helmet & Balaclava Included"
-      ],
-      tag: "FLAGSHIP"
+      ]
     },
     {
       id: "sprint-twin",
+      number: "02",
+      category: "HYPER",
+      tag: "2 DRIVERS",
       name: "TWIN TANDEM SPRINT",
-      kart: "500CC DUAL ENGINE",
-      spec: "2 DRIVERS (COUPLES / PARENT-CHILD)",
+      kartName: "TWIN POWER 500CC",
+      desc: "Dual steering & synchronized engines for couples and parent-child duos.",
+      power: "22.0 HP",
+      topSpeed: "80 KM/H",
+      engine: "500CC DUAL ENGINE",
       weekdayPrice: "₹1,000",
       weekendPrice: "₹1,200",
       duration: "10 MINS / ~12-15 LAPS",
@@ -205,14 +216,19 @@ export const PricingSection = () => {
         "Dual Steering & Dual Honda Engines",
         "Passenger Height 3'6\"+ with Adult",
         "Dual Safety Harness & Roll Bar"
-      ],
-      tag: "DUAL RACER"
+      ]
     },
     {
       id: "sprint-cadet",
+      number: "03",
+      category: "CADET",
+      tag: "JUNIOR CLASS",
       name: "CADET JUNIOR SPRINT",
-      kart: "160CC SODI CADET",
-      spec: "JUNIOR RACERS (HEIGHT 4'0\"+)",
+      kartName: "SODI LR5 CADET",
+      desc: "Calibrated speed-restricted junior chassis designed for young champions.",
+      power: "6.5 HP",
+      topSpeed: "45 KM/H",
+      engine: "160CC HONDA OHV",
       weekdayPrice: "₹650",
       weekendPrice: "₹760",
       duration: "10 MINS / ~12-15 LAPS",
@@ -220,15 +236,21 @@ export const PricingSection = () => {
         "Calibrated Speed Limiter Controls",
         "Padded Ergonomic Bucket Seat",
         "Junior Helmet & Neck Guard"
-      ],
-      tag: "JUNIOR CLASS"
+      ]
     }
   ];
 
   const REAL_PACKAGES = [
     {
       id: "pkg-5",
+      number: "01",
+      category: "ROOKIE",
       name: "5 SESSIONS + 1 BOWLING FREE",
+      kartName: "PRO / CADET FLEET",
+      desc: "Starter multi-session racing pass with complimentary bowling included.",
+      power: "13.0 HP",
+      topSpeed: "75 KM/H",
+      engine: "PRO FLEET PASS",
       price: "₹3,250 / ₹3,800",
       priceNote: "Weekday: ₹3,250 | Weekend: ₹3,800",
       duration: "5 SESSIONS",
@@ -242,7 +264,14 @@ export const PricingSection = () => {
     },
     {
       id: "pkg-10",
+      number: "02",
+      category: "PRO",
       name: "10 SESSIONS + 1 FREE + 1 BOWLING",
+      kartName: "SHAREABLE PASS",
+      desc: "Maximum popular value package shareable with friends and family.",
+      power: "13.0 HP",
+      topSpeed: "75 KM/H",
+      engine: "PRO FLEET PASS",
       price: "₹6,500 / ₹7,600",
       priceNote: "Weekday: ₹6,500 | Weekend: ₹7,600",
       duration: "10 + 1 SESSIONS",
@@ -256,7 +285,14 @@ export const PricingSection = () => {
     },
     {
       id: "pkg-15",
+      number: "03",
+      category: "HYPER",
       name: "15 SESSIONS + 2 FREE + 2 BOWLING",
+      kartName: "GROUP DRIVER PASS",
+      desc: "Championship group volume pass for corporate leagues and race teams.",
+      power: "13.0 HP",
+      topSpeed: "75 KM/H",
+      engine: "PRO FLEET PASS",
       price: "₹9,750 / ₹11,400",
       priceNote: "Weekday: ₹9,750 | Weekend: ₹11,400",
       duration: "15 + 2 SESSIONS",
@@ -270,7 +306,14 @@ export const PricingSection = () => {
     },
     {
       id: "pkg-20",
+      number: "04",
+      category: "HYPER",
       name: "20 SESSIONS + 3 FREE + 3 BOWLING",
+      kartName: "MEGA COMBO FLEET",
+      desc: "Ultimate track time pass with maximum bonus sessions and bowling.",
+      power: "13.0 HP",
+      topSpeed: "75 KM/H",
+      engine: "PRO FLEET PASS",
       price: "₹13,000 / ₹15,200",
       priceNote: "Weekday: ₹13,000 | Weekend: ₹15,200",
       duration: "20 + 3 SESSIONS",
@@ -290,22 +333,43 @@ export const PricingSection = () => {
       className="package-card-hover w-[82vw] xs:w-[310px] sm:w-[350px] lg:w-[380px] max-w-[380px] shrink-0 p-5 sm:p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] flex flex-col justify-between shadow-sm group text-left relative"
     >
       <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <span className="px-2.5 py-0.5 rounded-[3px] bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider group-hover:bg-[#F47C20] transition-colors">
-            {item.tag}
+        {/* Top Telemetry Header */}
+        <div className="flex items-center justify-between border-b border-[#EAEAEA] pb-2.5">
+          <span className="font-mono text-xs font-bold text-[#F47C20] tracking-wider">
+            PACKAGE {item.number}
           </span>
-          <span className="font-mono text-xs text-[#0A0A0A] font-bold">
-            {item.kart}
+          <span className="px-2.5 py-0.5 rounded-[3px] bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider group-hover:bg-[#F47C20] transition-colors">
+            {item.category}
           </span>
         </div>
 
+        {/* Kart Name & Title */}
         <div>
+          <span className="font-mono text-[10px] font-bold text-[#888888] uppercase tracking-widest block mb-0.5">
+            {item.kartName}
+          </span>
           <h3 className="text-lg sm:text-xl font-display font-bold text-[#0A0A0A] uppercase tracking-wide group-hover:text-[#F47C20] transition-colors leading-tight">
             {item.name}
           </h3>
-          <p className="text-[11px] font-mono text-[#666666] uppercase mt-0.5">
-            {item.spec}
+          <p className="text-xs font-sans text-[#555555] leading-relaxed mt-1 line-clamp-2">
+            {item.desc}
           </p>
+        </div>
+
+        {/* Key Specifications Grid */}
+        <div className="grid grid-cols-3 gap-2 py-2 px-2.5 rounded-lg bg-white border border-[#EAEAEA] text-center font-mono">
+          <div>
+            <span className="text-[8px] text-[#888888] uppercase block">POWER</span>
+            <span className="text-[11px] font-bold text-[#0A0A0A]">{item.power}</span>
+          </div>
+          <div className="border-x border-[#EAEAEA]">
+            <span className="text-[8px] text-[#888888] uppercase block">TOP SPEED</span>
+            <span className="text-[11px] font-bold text-[#F47C20]">{item.topSpeed}</span>
+          </div>
+          <div>
+            <span className="text-[8px] text-[#888888] uppercase block">ENGINE</span>
+            <span className="text-[10px] font-bold text-[#0A0A0A] truncate block">{item.engine}</span>
+          </div>
         </div>
 
         {/* Pricing Box */}
@@ -337,7 +401,7 @@ export const PricingSection = () => {
           href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
           className="w-full py-2 px-4 text-xs font-bold justify-center"
         >
-          BOOK SPRINT &rarr;
+          VIEW PACKAGE &rarr;
         </MagneticButton>
       </div>
     </div>
@@ -349,20 +413,44 @@ export const PricingSection = () => {
       className="package-card-hover w-[82vw] xs:w-[310px] sm:w-[340px] lg:w-[360px] max-w-[360px] shrink-0 p-5 sm:p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] flex flex-col justify-between shadow-sm group text-left relative"
     >
       <div className="space-y-4">
-        {/* Header Tag */}
-        <div className="flex items-center justify-between">
-          <span className="px-2.5 py-0.5 rounded-[3px] bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider group-hover:bg-[#F47C20] transition-colors">
-            {pkg.tag}
+        {/* Top Telemetry Header */}
+        <div className="flex items-center justify-between border-b border-[#EAEAEA] pb-2.5">
+          <span className="font-mono text-xs font-bold text-[#F47C20] tracking-wider">
+            PACKAGE {pkg.number}
           </span>
-          <span className="text-[10px] font-mono text-[#888888] font-bold uppercase">
-            {pkg.duration}
+          <span className="px-2.5 py-0.5 rounded-[3px] bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider group-hover:bg-[#F47C20] transition-colors">
+            {pkg.category}
           </span>
         </div>
 
-        {/* Package Title */}
-        <h3 className="text-base font-display font-bold text-[#0A0A0A] uppercase tracking-wide group-hover:text-[#F47C20] transition-colors leading-snug">
-          {pkg.name}
-        </h3>
+        {/* Kart Name & Title */}
+        <div>
+          <span className="font-mono text-[10px] font-bold text-[#888888] uppercase tracking-widest block mb-0.5">
+            {pkg.kartName}
+          </span>
+          <h3 className="text-base font-display font-bold text-[#0A0A0A] uppercase tracking-wide group-hover:text-[#F47C20] transition-colors leading-snug">
+            {pkg.name}
+          </h3>
+          <p className="text-xs font-sans text-[#555555] leading-relaxed mt-1 line-clamp-2">
+            {pkg.desc}
+          </p>
+        </div>
+
+        {/* Key Specifications Grid */}
+        <div className="grid grid-cols-3 gap-2 py-2 px-2.5 rounded-lg bg-white border border-[#EAEAEA] text-center font-mono">
+          <div>
+            <span className="text-[8px] text-[#888888] uppercase block">POWER</span>
+            <span className="text-[11px] font-bold text-[#0A0A0A]">{pkg.power}</span>
+          </div>
+          <div className="border-x border-[#EAEAEA]">
+            <span className="text-[8px] text-[#888888] uppercase block">TOP SPEED</span>
+            <span className="text-[11px] font-bold text-[#F47C20]">{pkg.topSpeed}</span>
+          </div>
+          <div>
+            <span className="text-[8px] text-[#888888] uppercase block">ENGINE</span>
+            <span className="text-[10px] font-bold text-[#0A0A0A] truncate block">{pkg.engine}</span>
+          </div>
+        </div>
 
         {/* Price Display */}
         <div className="py-2 border-y border-[#EAEAEA]">
@@ -394,7 +482,7 @@ export const PricingSection = () => {
           href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
           className="w-full py-2 px-4 text-xs font-bold justify-center"
         >
-          BOOK PASS &rarr;
+          VIEW PACKAGE &rarr;
         </MagneticButton>
       </div>
     </div>
@@ -404,15 +492,18 @@ export const PricingSection = () => {
     <section id="pricing" className="py-14 sm:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
       <div className="space-y-12 sm:space-y-16">
         
-        {/* Section Header */}
+        {/* Section Header with 02 // RACE & PACKAGES and CHOOSE YOUR RACE */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-6 text-left">
           <div>
+            <span className="font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest block mb-1">
+              02 // RACE & PACKAGES
+            </span>
             <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
-              RACE & <span className="text-[#F47C20]">PACKAGES</span>
+              CHOOSE YOUR <span className="text-[#F47C20]">RACE</span>
             </h2>
           </div>
           <p className="text-xs sm:text-sm font-mono text-[#666666] max-w-md">
-            Official Kartomania racing sessions with live telemetry tracking, safety gear, and combo passes.
+            Championship-calibrated rental sprint sessions and multi-session group passes with live telemetry tracking.
           </p>
         </div>
 
