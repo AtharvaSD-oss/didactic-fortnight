@@ -284,6 +284,122 @@ export const PricingSection = () => {
     }
   ];
 
+  const renderSprintCard = (item, key) => (
+    <div
+      key={key}
+      className="w-[320px] sm:w-[350px] lg:w-[380px] shrink-0 p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md group text-left"
+    >
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <span className="px-2.5 py-0.5 rounded-[3px] bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider group-hover:bg-[#F47C20] transition-colors">
+            {item.tag}
+          </span>
+          <span className="font-mono text-xs text-[#0A0A0A] font-bold">
+            {item.kart}
+          </span>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-display font-bold text-[#0A0A0A] uppercase tracking-wide group-hover:text-[#F47C20] transition-colors">
+            {item.name}
+          </h3>
+          <p className="text-[11px] font-mono text-[#666666] uppercase mt-0.5">
+            {item.spec}
+          </p>
+        </div>
+
+        {/* Pricing Box */}
+        <div className="py-2.5 px-3 rounded-lg bg-white border border-[#EAEAEA] flex items-center justify-between">
+          <div>
+            <span className="text-[9px] font-mono text-[#888888] block uppercase">WEEKDAY</span>
+            <div className="text-lg font-display font-bold text-[#0A0A0A]">{item.weekdayPrice}</div>
+          </div>
+          <div className="w-[1px] h-7 bg-[#EAEAEA]" />
+          <div>
+            <span className="text-[9px] font-mono text-[#888888] block uppercase">WEEKEND</span>
+            <div className="text-lg font-display font-bold text-[#F47C20]">{item.weekendPrice}</div>
+          </div>
+        </div>
+
+        {/* Features */}
+        <div className="space-y-1.5 pt-1">
+          {item.features.map((feat, idx) => (
+            <div key={idx} className="flex items-start gap-2 text-xs font-sans text-[#444444]">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#F47C20] shrink-0 mt-0.5" />
+              <span className="leading-snug">{feat}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="pt-5 mt-4 border-t border-[#EAEAEA]">
+        <MagneticButton
+          href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
+          className="w-full py-2 px-4 text-xs font-bold justify-center"
+        >
+          BOOK SPRINT &rarr;
+        </MagneticButton>
+      </div>
+    </div>
+  );
+
+  const renderPackageCard = (pkg, key) => (
+    <div
+      key={key}
+      className="w-[300px] sm:w-[340px] lg:w-[360px] shrink-0 p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md group text-left"
+    >
+      <div className="space-y-4">
+        {/* Header Tag */}
+        <div className="flex items-center justify-between">
+          <span className="px-2.5 py-0.5 rounded-[3px] bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider group-hover:bg-[#F47C20] transition-colors">
+            {pkg.tag}
+          </span>
+          <span className="text-[10px] font-mono text-[#888888] font-bold uppercase">
+            {pkg.duration}
+          </span>
+        </div>
+
+        {/* Package Title */}
+        <h3 className="text-base font-display font-bold text-[#0A0A0A] uppercase tracking-wide group-hover:text-[#F47C20] transition-colors leading-snug">
+          {pkg.name}
+        </h3>
+
+        {/* Price Display */}
+        <div className="py-2 border-y border-[#EAEAEA]">
+          <span className="text-[9px] font-mono text-[#888888] block uppercase">PACKAGE PRICE</span>
+          <div className="text-xl font-display font-bold text-[#0A0A0A]">
+            {pkg.price}
+          </div>
+          <span className="text-[10px] font-sans text-[#666666]">
+            {pkg.priceNote}
+          </span>
+        </div>
+
+        {/* What's Included Bullet Inclusions */}
+        <div className="space-y-2 pt-1">
+          <div className="space-y-1.5">
+            {pkg.included.map((item, idx) => (
+              <div key={idx} className="flex items-start gap-2 text-xs font-sans text-[#444444]">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#F47C20] shrink-0 mt-0.5" />
+                <span className="leading-snug">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Card Booking CTA */}
+      <div className="pt-5 mt-4 border-t border-[#EAEAEA]">
+        <MagneticButton
+          href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
+          className="w-full py-2 px-4 text-xs font-bold justify-center"
+        >
+          BOOK PASS &rarr;
+        </MagneticButton>
+      </div>
+    </div>
+  );
+
   return (
     <section id="pricing" className="py-14 sm:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
       <div className="space-y-12 sm:space-y-16">
@@ -300,7 +416,7 @@ export const PricingSection = () => {
           </p>
         </div>
 
-        {/* ── Sub-Section 01: Single Sprint Sessions ── */}
+        {/* ── Sub-Section 01: Single Sprint Sessions Infinite Track ── */}
         <div className="space-y-6 text-left">
           <div className="flex items-center justify-between border-b border-[#EAEAEA] pb-3">
             <span className="font-mono text-xs font-bold text-[#0A0A0A] uppercase tracking-wider">
@@ -311,69 +427,22 @@ export const PricingSection = () => {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {SINGLE_SPRINTS.map((item) => (
+          <div className="animate-packages-container marquee-fade-mask relative w-full overflow-hidden flex py-2">
+            {[0, 1].map((groupIndex) => (
               <div
-                key={item.id}
-                className="p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md group"
+                key={groupIndex}
+                aria-hidden={groupIndex === 1 ? 'true' : undefined}
+                className="animate-packages-track-group flex items-stretch shrink-0"
               >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="px-2.5 py-0.5 rounded-[3px] bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider group-hover:bg-[#F47C20] transition-colors">
-                      {item.tag}
-                    </span>
-                    <span className="font-mono text-xs text-[#0A0A0A] font-bold">
-                      {item.kart}
-                    </span>
-                  </div>
-
-                  <div>
-                    <h3 className="text-xl font-display font-bold text-[#0A0A0A] uppercase tracking-wide group-hover:text-[#F47C20] transition-colors">
-                      {item.name}
-                    </h3>
-                    <p className="text-[11px] font-mono text-[#666666] uppercase mt-0.5">
-                      {item.spec}
-                    </p>
-                  </div>
-
-                  {/* Pricing Box */}
-                  <div className="py-2.5 px-3 rounded-lg bg-white border border-[#EAEAEA] flex items-center justify-between">
-                    <div>
-                      <span className="text-[9px] font-mono text-[#888888] block uppercase">WEEKDAY</span>
-                      <div className="text-lg font-display font-bold text-[#0A0A0A]">{item.weekdayPrice}</div>
-                    </div>
-                    <div className="w-[1px] h-7 bg-[#EAEAEA]" />
-                    <div>
-                      <span className="text-[9px] font-mono text-[#888888] block uppercase">WEEKEND</span>
-                      <div className="text-lg font-display font-bold text-[#F47C20]">{item.weekendPrice}</div>
-                    </div>
-                  </div>
-
-                  {/* Features */}
-                  <div className="space-y-1.5 pt-1">
-                    {item.features.map((feat, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs font-sans text-[#444444]">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#F47C20] shrink-0 mt-0.5" />
-                        <span className="leading-snug">{feat}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="pt-5 mt-4 border-t border-[#EAEAEA]">
-                  <MagneticButton
-                    href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
-                    className="w-full py-2 px-4 text-xs font-bold justify-center"
-                  >
-                    BOOK SPRINT &rarr;
-                  </MagneticButton>
-                </div>
+                {[...SINGLE_SPRINTS, ...SINGLE_SPRINTS].map((item, idx) => (
+                  renderSprintCard(item, `sprint-${groupIndex}-${idx}`)
+                ))}
               </div>
             ))}
           </div>
         </div>
 
-        {/* ── Sub-Section 02: Multi-Session Value Passes ── */}
+        {/* ── Sub-Section 02: Multi-Session Value Passes Infinite Track ── */}
         <div className="space-y-6 text-left">
           <div className="flex items-center justify-between border-b border-[#EAEAEA] pb-3">
             <span className="font-mono text-xs font-bold text-[#0A0A0A] uppercase tracking-wider">
@@ -384,61 +453,16 @@ export const PricingSection = () => {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {REAL_PACKAGES.map((pkg) => (
+          <div className="animate-packages-container marquee-fade-mask relative w-full overflow-hidden flex py-2">
+            {[0, 1].map((groupIndex) => (
               <div
-                key={pkg.id}
-                className="p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md group"
+                key={groupIndex}
+                aria-hidden={groupIndex === 1 ? 'true' : undefined}
+                className="animate-packages-track-group flex items-stretch shrink-0"
               >
-                <div className="space-y-4">
-                  {/* Header Tag */}
-                  <div className="flex items-center justify-between">
-                    <span className="px-2.5 py-0.5 rounded-[3px] bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider group-hover:bg-[#F47C20] transition-colors">
-                      {pkg.tag}
-                    </span>
-                    <span className="text-[10px] font-mono text-[#888888] font-bold uppercase">
-                      {pkg.duration}
-                    </span>
-                  </div>
-
-                  {/* Package Title */}
-                  <h3 className="text-base font-display font-bold text-[#0A0A0A] uppercase tracking-wide group-hover:text-[#F47C20] transition-colors leading-snug">
-                    {pkg.name}
-                  </h3>
-
-                  {/* Price Display */}
-                  <div className="py-2 border-y border-[#EAEAEA]">
-                    <span className="text-[9px] font-mono text-[#888888] block uppercase">PACKAGE PRICE</span>
-                    <div className="text-xl font-display font-bold text-[#0A0A0A]">
-                      {pkg.price}
-                    </div>
-                    <span className="text-[10px] font-sans text-[#666666]">
-                      {pkg.priceNote}
-                    </span>
-                  </div>
-
-                  {/* What's Included Bullet Inclusions */}
-                  <div className="space-y-2 pt-1">
-                    <div className="space-y-1.5">
-                      {pkg.included.map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-xs font-sans text-[#444444]">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#F47C20] shrink-0 mt-0.5" />
-                          <span className="leading-snug">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card Booking CTA */}
-                <div className="pt-5 mt-4 border-t border-[#EAEAEA]">
-                  <MagneticButton
-                    href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
-                    className="w-full py-2 px-4 text-xs font-bold justify-center"
-                  >
-                    BOOK PASS &rarr;
-                  </MagneticButton>
-                </div>
+                {REAL_PACKAGES.map((pkg, idx) => (
+                  renderPackageCard(pkg, `pkg-${groupIndex}-${idx}`)
+                ))}
               </div>
             ))}
           </div>

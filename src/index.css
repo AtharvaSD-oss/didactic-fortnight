@@ -221,3 +221,69 @@
   }
 }
 
+/* ── Seamless Infinite Race & Packages Track Animation ── */
+@keyframes packagesSeamlessLoop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.animate-packages-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  contain: paint;
+}
+
+.animate-packages-track-group {
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+  will-change: transform;
+  animation: packagesSeamlessLoop 36s linear infinite;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (max-width: 1024px) {
+  .animate-packages-track-group {
+    animation-duration: 28s;
+  }
+}
+
+@media (max-width: 640px) {
+  .animate-packages-track-group {
+    animation-duration: 22s;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .animate-packages-container:hover .animate-packages-track-group {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-packages-container {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .animate-packages-container::-webkit-scrollbar {
+    display: none;
+  }
+  .animate-packages-track-group {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+  .animate-packages-track-group[aria-hidden="true"] {
+    display: none !important;
+  }
+}
+
