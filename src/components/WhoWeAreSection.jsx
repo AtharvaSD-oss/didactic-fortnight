@@ -1,33 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useInView } from 'framer-motion';
-import { ShieldCheck, Gauge, Users, Flag } from 'lucide-react';
-
-const EXPERIENCE_HIGHLIGHTS = [
-  {
-    number: "01",
-    title: "RACING",
-    icon: Flag,
-    desc: "~600m high-speed outdoor asphalt layout with 11 technical apexes, hairpins, and full-throttle overtaking straights."
-  },
-  {
-    number: "02",
-    title: "PERFORMANCE",
-    icon: Gauge,
-    desc: "Engineered 270cc Sodi RT10 Pro & Twin 500cc karts with live RaceFacer millisecond telemetry tracking."
-  },
-  {
-    number: "03",
-    title: "SAFETY",
-    icon: ShieldCheck,
-    desc: "Impact-absorbing polymer barrier protection, DOT helmets, sanitary balaclavas, & certified track marshals."
-  },
-  {
-    number: "04",
-    title: "COMMUNITY",
-    icon: Users,
-    desc: "Northern India's hub uniting beginner racers, corporate racing leagues, and championship academy pilots."
-  }
-];
 
 const LEAP_FROG_PHOTOS = [
   {
@@ -143,164 +115,153 @@ export const WhoWeAreSection = () => {
         ))}
       </div>
 
-      <div className="py-12 sm:py-16 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto space-y-16">
-        {/* Top Header Tag */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#EAEAEA] pb-6">
-          <div className="text-left space-y-2 max-w-3xl">
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-tight">
+      <div className="py-14 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto space-y-20">
+        
+        {/* ── 01: Editorial Section Header ── */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#EAEAEA] pb-8 text-left">
+          <div className="space-y-3 max-w-3xl">
+            <span className="font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest block">
+              02 // THE KARTOMANIA EXPERIENCE
+            </span>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
               NORTHERN INDIA'S PREMIER <br className="hidden sm:block" />
               <span className="text-[#F47C20]">600M OUTDOOR</span> CIRCUIT
             </h2>
-            <p className="text-xs sm:text-sm font-sans text-[#555555] leading-relaxed">
-              Kartomania is an authentic ~600-meter outdoor asphalt racing track at Entertainland Mall, Gurugram. Founded and directed by veteran racer Mr. Rohit Khanna, it provides a championship-grade motorsport environment for drivers of all skill levels.
-            </p>
           </div>
-
-          <div className="shrink-0 text-left sm:text-right">
-            <span className="font-mono text-xs text-[#888888] uppercase tracking-widest font-semibold block">
-              MANESAR &bull; GURGAON
+          <div className="shrink-0 text-left sm:text-right font-mono">
+            <span className="text-xs text-[#888888] uppercase tracking-widest font-semibold block">
+              ENTERTAINLAND MALL &bull; GURUGRAM
             </span>
           </div>
         </div>
 
-        {/* 4 Compact Experience Highlights Grid */}
-        <div className="space-y-4 text-left">
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {EXPERIENCE_HIGHLIGHTS.map((item, idx) => {
-              const IconComponent = item.icon;
-              return (
-                <div
-                  key={idx}
-                  className="p-6 rounded-2xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 space-y-3 text-left group shadow-sm"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold text-[#F47C20]">
-                      {item.number}
-                    </span>
-                    <IconComponent className="w-4 h-4 text-[#F47C20] group-hover:scale-110 transition-transform" />
-                  </div>
-
-                  <h3 className="text-lg font-display font-bold text-[#0A0A0A] uppercase tracking-wide">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-xs font-sans text-[#555555] leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* 4 Stats Minimal Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          <StatCounter number="01" end={600} suffix="m" label="OUTDOOR GRAND PRIX TRACK" />
-          <StatCounter number="02" end={11} label="RACING TURNS & APEXES" />
-          <StatCounter number="03" end={4} label="KART FLEET CATEGORIES" />
-          <StatCounter number="04" end={1000} suffix="+" label="RACES COMPLETED WEEKLY" />
-        </div>
-
-        {/* ── MOTORSPORT HERITAGE: LEAP FROG RACING SUB-SECTION ── */}
-        <div className="pt-12 border-t border-[#EAEAEA] space-y-12 text-left">
-          {/* Section Header */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#EAEAEA] pb-8">
-            <div className="space-y-2">
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-none">
-                LEAP FROG <span className="text-[#F47C20]">RACING</span>
-              </h2>
-            </div>
-            <p className="text-xs sm:text-sm font-mono text-[#666666] uppercase tracking-wider max-w-md">
-              Kartomania's official professional motorsport division competing across Indian National Karting Championships.
-            </p>
-          </div>
-
-          {/* Story Narrative & Racing Accolades */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-7 space-y-5 font-sans">
-              <p className="text-[#0A0A0A] text-base sm:text-lg leading-relaxed font-medium">
-                <strong className="text-[#F47C20]">Leap Frog Racing</strong> is Northern India's championship-winning motorsport academy, founded and directed by veteran racer <strong className="text-[#0A0A0A] font-bold">Mr. Rohit Khanna</strong>.
-              </p>
-              <p className="text-[#555555] text-sm sm:text-base leading-relaxed">
-                With multiple podium finishes across the JK Tyre National Karting Championship, Rotax Max Challenge India, and national formula racing championships, our racing academy trains aspiring drivers with real competition telemetry, professional telemetry debriefs, and chassis setup.
-              </p>
-              
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 font-mono">
-                <div className="p-4 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] text-left space-y-1 transition-colors shadow-sm">
-                  <span className="text-[#F47C20] text-xs font-bold block">// EXPERIENCE</span>
-                  <div className="text-2xl font-display font-bold text-[#0A0A0A]">20+ YRS</div>
-                  <span className="text-[11px] text-[#666666]">Active Racing</span>
-                </div>
-                <div className="p-4 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] text-left space-y-1 transition-colors shadow-sm">
-                  <span className="text-[#F47C20] text-xs font-bold block">// PODIUMS</span>
-                  <div className="text-2xl font-display font-bold text-[#0A0A0A]">50+ WINS</div>
-                  <span className="text-[11px] text-[#666666]">National Trophies</span>
-                </div>
-                <div className="p-4 rounded-lg bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] text-left space-y-1 col-span-2 sm:col-span-1 transition-colors shadow-sm">
-                  <span className="text-[#F47C20] text-xs font-bold block">// ACADEMY</span>
-                  <div className="text-2xl font-display font-bold text-[#0A0A0A]">PRO TIER</div>
-                  <span className="text-[11px] text-[#666666]">Driver Coaching</span>
-                </div>
+        {/* ── 02: Visual Story Flow: Dominant Image 01 ── */}
+        <div className="relative w-full overflow-hidden rounded-xl">
+          <div className="relative h-[320px] sm:h-[450px] lg:h-[560px] w-full overflow-hidden">
+            <img
+              src="/leap-frog/leap-frog-4.jpg"
+              alt="Kartomania Grand Prix High Speed Track Action"
+              className="w-full h-full object-cover object-center transition-transform duration-1000 ease-out"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+            
+            <div className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-left">
+              <div className="max-w-xl text-white space-y-1.5">
+                <span className="px-2.5 py-0.5 rounded-[3px] bg-[#F47C20] text-white font-mono text-[9px] sm:text-[10px] font-bold uppercase tracking-wider inline-block">
+                  SECTOR 01 // MAIN STRAIGHT
+                </span>
+                <h3 className="text-xl sm:text-3xl font-display font-bold uppercase tracking-tight">
+                  AUTHENTIC GRAND PRIX ASPHALT
+                </h3>
               </div>
-            </div>
-
-            <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-colors duration-500 shadow-md group">
-                <img
-                  src="/leap-frog/leap-frog-4.jpg"
-                  alt="Leap Frog Racing Competition Action"
-                  className="w-full h-80 sm:h-96 object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono">
-                  <span className="text-[#F47C20] font-bold uppercase">// OFFICIAL RACING ACADEMY</span>
-                  <span className="text-white bg-black/80 px-2 py-0.5 rounded-sm font-semibold">JK TYRE NATIONALS</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Real Competition Photography Gallery Grid */}
-          <div className="space-y-4 pt-4 text-left">
-            <div className="flex items-center justify-end border-b border-[#EAEAEA] pb-4">
-              <span className="text-[10px] font-mono text-[#888888] uppercase">
-                CLICK IMAGE TO EXPAND
+              <span className="font-mono text-xs text-white/80 uppercase font-semibold">
+                600 METERS &bull; 11 APEXES
               </span>
             </div>
+          </div>
+        </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {LEAP_FROG_PHOTOS.map((item, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => setActiveLeapFrogImg(item)}
-                  className="group relative rounded-xl overflow-hidden bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
-                >
-                  <div className="relative h-64 w-full overflow-hidden">
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                    
-                    <div className="absolute top-3 left-3">
-                      <span className="px-2.5 py-0.5 rounded-sm bg-[#F47C20] text-white font-mono text-[9px] font-bold uppercase tracking-wider shadow-sm">
-                        {item.tag}
-                      </span>
-                    </div>
-
-                    <div className="absolute bottom-3 left-3 right-3 text-left">
-                      <h4 className="text-sm font-display font-bold text-white uppercase tracking-wide group-hover:text-[#F47C20] transition-colors">
-                        {item.title}
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              ))}
+        {/* ── 03: Experience Statement ── */}
+        <div className="py-4 sm:py-8 border-y border-[#EAEAEA] text-left">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-8">
+              <p className="text-2xl sm:text-4xl lg:text-[42px] font-display font-extrabold text-[#0A0A0A] uppercase tracking-tight leading-[1.15]">
+                ENGINEERED FOR THE APEX. <br />
+                <span className="text-[#F47C20]">CALIBRATED FOR RAW RACING VELOCITY.</span>
+              </p>
+            </div>
+            <div className="lg:col-span-4 font-sans text-sm sm:text-base text-[#555555] leading-relaxed">
+              Founded and directed by national champion Mr. Rohit Khanna, Kartomania bridges professional racing telemetry with high-octane everyday entertainment.
             </div>
           </div>
         </div>
+
+        {/* ── 04: Asymmetric Visual Story: Secondary Image & Editorial Narrative ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch text-left">
+          {/* Immersive Secondary Image */}
+          <div className="lg:col-span-7 relative rounded-xl overflow-hidden min-h-[320px] sm:min-h-[420px]">
+            <img
+              src="/leap-frog/leap-frog-1.jpg"
+              alt="National Championship Starting Grid"
+              className="w-full h-full object-cover object-center"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+            <div className="absolute bottom-5 left-5 text-white font-mono text-xs">
+              <span className="px-2 py-0.5 rounded-[3px] bg-black/70 backdrop-blur-xs font-bold uppercase">
+                ★ JK TYRE NATIONAL GRID PEDIGREE
+              </span>
+            </div>
+          </div>
+
+          {/* Short Narrative & Verified Statistics */}
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
+            <div className="space-y-4">
+              <span className="font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest block">
+                // MOTORSPORT HERITAGE
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+                LEAP FROG RACING ACADEMY
+              </h3>
+              <p className="text-sm font-sans text-[#555555] leading-relaxed">
+                As Northern India's premier racing academy, Leap Frog Racing has earned over 50+ national podium trophies. Everyday drivers at Kartomania pilot karts tuned on the exact same principles.
+              </p>
+            </div>
+
+            {/* 4 Clean Stats */}
+            <div className="grid grid-cols-2 gap-3.5 pt-2">
+              <StatCounter number="01" end={600} suffix="m" label="GP TRACK LENGTH" />
+              <StatCounter number="02" end={11} label="TECHNICAL APEXES" />
+              <StatCounter number="03" end={20} suffix="+" label="YRS CHAMPIONSHIP PEDIGREE" />
+              <StatCounter number="04" end={50} suffix="+" label="NATIONAL TROPHIES" />
+            </div>
+          </div>
+        </div>
+
+        {/* ── 05: Editorial Photo Trio ── */}
+        <div className="space-y-4 text-left pt-6 border-t border-[#EAEAEA]">
+          <div className="flex items-center justify-between pb-2">
+            <span className="font-mono text-xs font-bold text-[#0A0A0A] uppercase tracking-wider">
+              // CHAMPIONSHIP ARCHIVE
+            </span>
+            <span className="text-[10px] font-mono text-[#888888] uppercase">
+              CLICK IMAGE TO VIEW FULL FRAME
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {LEAP_FROG_PHOTOS.map((item, idx) => (
+              <div
+                key={idx}
+                onClick={() => setActiveLeapFrogImg(item)}
+                className="group relative rounded-xl overflow-hidden bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 cursor-pointer shadow-xs"
+              >
+                <div className="relative h-64 w-full overflow-hidden">
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                  
+                  <div className="absolute top-3 left-3">
+                    <span className="px-2.5 py-0.5 rounded-[3px] bg-[#F47C20] text-white font-mono text-[9px] font-bold uppercase tracking-wider shadow-xs">
+                      {item.tag}
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-3 left-3 right-3 text-left">
+                    <h4 className="text-sm font-display font-bold text-white uppercase tracking-wide group-hover:text-[#F47C20] transition-colors">
+                      {item.title}
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
 
       {/* Lightbox Modal for Leap Frog Photos */}
