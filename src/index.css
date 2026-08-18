@@ -126,12 +126,21 @@
   }
 }
 
+.animate-marquee-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  contain: paint;
+  white-space: nowrap;
+}
+
 .animate-marquee-track-group {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  white-space: nowrap;
   will-change: transform;
-  animation: marqueeSeamless 20s linear infinite;
+  animation: marqueeSeamless 22s linear infinite;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
