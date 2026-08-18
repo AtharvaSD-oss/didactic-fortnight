@@ -235,7 +235,7 @@
   overflow: hidden;
   width: 100%;
   max-width: 100%;
-  contain: paint;
+  contain: paint layout style;
   touch-action: pan-y;
   -webkit-touch-callout: none;
   user-select: none;
@@ -248,10 +248,13 @@
   flex-shrink: 0;
   gap: 1.5rem;
   padding-right: 1.5rem;
+  transform: translate3d(0, 0, 0);
   will-change: transform;
   animation: packagesSeamlessLoop 26s linear infinite;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
 }
 
 @media (max-width: 1024px) {
