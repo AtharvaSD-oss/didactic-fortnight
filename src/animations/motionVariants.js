@@ -1,56 +1,38 @@
-// Unified Kartomania Motorsport Motion System
-// FAST: 200–300ms (Buttons & Hover)
-// MEDIUM: 500–800ms (Text & Image Reveals)
-// SLOW: 1000–1500ms (Hero & Cinematic Entrances)
-
-export const EASE_MOTORSPORT = [0.16, 1, 0.3, 1]; // Quintic Ease-Out
-
 export const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
   visible: (custom = 0) => ({
     opacity: 1,
     y: 0,
+    filter: 'blur(0px)',
     transition: {
       duration: 0.6,
-      delay: custom * 0.08,
-      ease: EASE_MOTORSPORT,
+      delay: custom * 0.1,
+      ease: [0.22, 1, 0.36, 1],
     },
   }),
 };
 
 export const fadeBlur = {
-  hidden: { opacity: 0, y: 28, filter: 'blur(8px)' },
+  hidden: { opacity: 0, y: 50, filter: 'blur(20px)' },
   visible: {
     opacity: 1,
     y: 0,
     filter: 'blur(0px)',
     transition: {
-      duration: 0.7,
-      ease: EASE_MOTORSPORT,
+      duration: 0.8,
+      ease: [0.22, 1, 0.36, 1],
     },
   },
 };
 
 export const scaleIn = {
-  hidden: { opacity: 0, scale: 0.96 },
+  hidden: { opacity: 0, scale: 0.85 },
   visible: {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.55,
-      ease: EASE_MOTORSPORT,
-    },
-  },
-};
-
-export const imageReveal = {
-  hidden: { opacity: 0, scale: 1.03 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.75,
-      ease: EASE_MOTORSPORT,
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
     },
   },
 };
@@ -60,8 +42,8 @@ export const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.05,
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
     },
   },
 };
@@ -71,15 +53,15 @@ export const drawerSlide = {
   visible: {
     x: 0,
     transition: {
-      duration: 0.35,
-      ease: EASE_MOTORSPORT,
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
     },
   },
   exit: {
     x: '100%',
     transition: {
-      duration: 0.3,
-      ease: [0.32, 0, 0.67, 0],
+      duration: 0.4,
+      ease: [0.22, 1, 0.36, 1],
     },
   },
 };

@@ -118,6 +118,100 @@
   animation: orangePulse 2s infinite ease-in-out;
 }
 
+/* ── Motorsport Triple Chevron Speed Arrow Button Animation (Uiverse) ── */
+.racing-button-anim {
+  --color-outline: rgba(244, 124, 32, 0.45);
+  --color-shadow: rgba(0, 0, 0, 0.25);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.racing-button-anim:active {
+  transform: scale(0.95);
+}
+
+.racing-button-anim:hover {
+  outline: 0.1em solid transparent;
+  outline-offset: 0.2em;
+  animation: btn-ripple 1s linear infinite;
+}
+
+.racing-button-anim .btn-text {
+  transition: all 0.3s ease;
+}
+
+.racing-button-anim:hover .btn-text {
+  text-shadow: 0 2px 8px var(--color-shadow);
+}
+
+.racing-button-anim svg.chevron-arrow {
+  height: 0.9em;
+  width: auto;
+  fill: currentColor;
+  position: relative;
+  transition: all 0.4s ease;
+  overflow: visible;
+  flex-shrink: 0;
+}
+
+.racing-button-anim:hover svg.chevron-arrow {
+  filter: drop-shadow(0 2px 4px var(--color-shadow));
+}
+
+.racing-button-anim svg.chevron-arrow polygon:nth-child(1) {
+  transition: transform 0.4s ease;
+  transform: translateX(-45%);
+}
+
+.racing-button-anim svg.chevron-arrow polygon:nth-child(2) {
+  transition: transform 0.4s ease;
+  transform: translateX(-22%);
+}
+
+.racing-button-anim svg.chevron-arrow polygon:nth-child(3) {
+  transition: transform 0.4s ease;
+  transform: translateX(0%);
+}
+
+.racing-button-anim:hover svg.chevron-arrow polygon:nth-child(1) {
+  transform: translateX(0%);
+  animation: chevron-opacity 1s infinite 0.4s;
+}
+
+.racing-button-anim:hover svg.chevron-arrow polygon:nth-child(2) {
+  transform: translateX(0%);
+  animation: chevron-opacity 1s infinite 0.2s;
+}
+
+.racing-button-anim:hover svg.chevron-arrow polygon:nth-child(3) {
+  transform: translateX(0%);
+  animation: chevron-opacity 1s infinite 0s;
+}
+
+@keyframes chevron-opacity {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes btn-ripple {
+  0% {
+    outline: 0em solid transparent;
+    outline-offset: -0.1em;
+  }
+  50% {
+    outline: 0.18em solid var(--color-outline);
+    outline-offset: 0.15em;
+  }
+  100% {
+    outline: 0.3em solid transparent;
+    outline-offset: 0.3em;
+  }
+}
+
 /* Seamless Infinite Motorsport Marquee Animation */
 @keyframes marqueeSeamless {
   0% {

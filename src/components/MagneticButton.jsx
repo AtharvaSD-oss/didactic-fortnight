@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import { ArrowRight } from 'lucide-react';
 
 const MagneticButton = ({ 
   children = "Book Your Race", 
@@ -28,15 +27,16 @@ const MagneticButton = ({
       gsap.to(btn, {
         x: x * strength,
         y: y * strength,
-        duration: 0.25,
+        rotate: x * 0.02,
+        duration: 0.3,
         ease: 'power2.out'
       });
 
       if (contentRef.current) {
         gsap.to(contentRef.current, {
-          x: x * (strength * 0.35),
-          y: y * (strength * 0.35),
-          duration: 0.25,
+          x: x * (strength * 0.4),
+          y: y * (strength * 0.4),
+          duration: 0.3,
           ease: 'power2.out'
         });
       }
@@ -46,7 +46,8 @@ const MagneticButton = ({
       gsap.to(btn, {
         x: 0,
         y: 0,
-        duration: 0.35,
+        rotate: 0,
+        duration: 0.5,
         ease: 'power2.out'
       });
 
@@ -54,7 +55,7 @@ const MagneticButton = ({
         gsap.to(contentRef.current, {
           x: 0,
           y: 0,
-          duration: 0.35,
+          duration: 0.5,
           ease: 'power2.out'
         });
       }
@@ -81,17 +82,25 @@ const MagneticButton = ({
   };
 
   const baseClasses = `
-    relative inline-flex items-center justify-center group overflow-hidden rounded-sm font-mono font-bold tracking-widest text-xs uppercase
-    px-6 py-3 transition-all duration-300 transform active:scale-95 cursor-pointer text-decoration-none border
+    racing-button-anim relative inline-flex items-center justify-center group overflow-hidden rounded-[4px] font-mono font-bold tracking-widest text-xs uppercase
+    px-6 py-3 transition-all duration-300 cursor-pointer text-decoration-none border
     ${getVariantClasses()}
     ${className}
   `;
 
   const innerContent = (
     <span ref={contentRef} className="relative z-10 flex items-center gap-2">
-      <span>{children}</span>
+      <span className="btn-text">{children}</span>
       {showArrow && (
-        <ArrowRight className="w-3.5 h-3.5 text-[#F47C20] group-hover:text-white transition-all duration-300 group-hover:translate-x-1" />
+        <svg 
+          viewBox="0 0 65 40" 
+          className="chevron-arrow text-[#F47C20] group-hover:text-white"
+          aria-hidden="true"
+        >
+          <polygon points="0,0 13,0 26,20 13,40 0,40 13,20" />
+          <polygon points="16,0 29,0 42,20 29,40 16,40 29,20" />
+          <polygon points="32,0 45,0 58,20 45,40 32,40 45,20" />
+        </svg>
       )}
     </span>
   );
