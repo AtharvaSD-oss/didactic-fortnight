@@ -76,34 +76,97 @@ export const TrackSection = () => (
 );
 
 export const FounderHighlightSection = () => {
+  const WHY_KARTOMANIA_PILLARS = [
+    {
+      number: "01",
+      title: "PROFESSIONAL KARTS",
+      subtitle: "SODI RT10 PRO & TWIN 500CC",
+      desc: "Calibrated 4-stroke Honda powertrains tuned for instant throttle response and competition handling."
+    },
+    {
+      number: "02",
+      title: "PRECISION TRACK",
+      subtitle: "~600M OUTDOOR ASPHALT",
+      desc: "11 tactical apexes, high-speed sweeping straights, and bank hairpins tuned by national champions."
+    },
+    {
+      number: "03",
+      title: "SAFETY FIRST",
+      subtitle: "FIA POLYMER BARRIERS",
+      desc: "Multi-layer impact absorption barriers, DOT-certified helmets, sanitary balaclavas, and track marshals."
+    },
+    {
+      number: "04",
+      title: "PURE ADRENALINE",
+      subtitle: "LIVE RACEFACER TELEMETRY",
+      desc: "Millisecond transponder timing, instant cloud leaderboards, and authentic racing adrenaline."
+    }
+  ];
+
   return (
-    <section id="founder-pedigree" className="py-14 sm:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
-      <div className="space-y-10 sm:space-y-12">
+    <section id="why-kartomania" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
+      <div className="space-y-16 sm:space-y-20">
         
-        {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-6 text-left">
-          <div>
-            <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
-              MEET OUR <span className="text-[#F47C20]">FOUNDER</span>
+        {/* ── 01: Editorial Section Header & Large Statement ── */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-[#EAEAEA] pb-10 text-left">
+          <div className="space-y-3 max-w-3xl">
+            <span className="font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest block">
+              04 // WHY KARTOMANIA
+            </span>
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-[#0A0A0A] uppercase tracking-tight leading-[0.95]">
+              BUILT AROUND <br className="hidden sm:block" />
+              <span className="text-[#F47C20]">THE RACE.</span>
             </h2>
           </div>
-          <p className="text-xs sm:text-sm font-mono text-[#666666] max-w-md text-left">
-            Kartomania is the only racing track in Northern India owned, operated, and calibrated by an active national racing champion.
-          </p>
+          <div className="max-w-md text-left lg:text-left font-sans">
+            <p className="text-sm sm:text-base text-[#555555] leading-relaxed">
+              Conceived and calibrated by national racing champion Mr. Rohit Khanna, Kartomania brings authentic competition engineering, millisecond live telemetry, and FIA barrier safety to Northern India's premier ~600m outdoor circuit.
+            </p>
+          </div>
         </div>
 
-        {/* Founder Showcase Card */}
-        <div className="p-8 sm:p-12 rounded-2xl bg-[#F9F9F9] text-[#111111] border-2 border-[#E5E5E5] hover:border-[#F47C20] shadow-sm relative overflow-hidden text-left transition-colors">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#F47C20]/5 rounded-full blur-3xl pointer-events-none" />
+        {/* ── 02: 4 Minimal Large Typography Feature Pillars ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+          {WHY_KARTOMANIA_PILLARS.map((pillar, idx) => (
+            <div
+              key={idx}
+              className="p-6 sm:p-7 rounded-xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 flex flex-col justify-between space-y-6 group shadow-xs hover:shadow-md"
+            >
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-3xl sm:text-4xl font-display font-extrabold text-[#0A0A0A] group-hover:text-[#F47C20] transition-colors leading-none">
+                    {pillar.number}
+                  </span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#F47C20]" />
+                </div>
 
+                <div className="pt-2">
+                  <h3 className="text-lg sm:text-xl font-display font-bold text-[#0A0A0A] uppercase tracking-wide group-hover:text-[#F47C20] transition-colors leading-tight">
+                    {pillar.title}
+                  </h3>
+                  <span className="text-[10px] font-mono text-[#888888] font-bold uppercase tracking-wider block mt-1">
+                    {pillar.subtitle}
+                  </span>
+                </div>
+
+                <p className="text-xs font-sans text-[#555555] leading-relaxed pt-1">
+                  {pillar.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ── 03: Founder Pedigree & Heritage Spotlight ── */}
+        <div className="p-8 sm:p-12 rounded-2xl bg-[#F9F9F9] text-[#111111] border border-[#E5E5E5] hover:border-[#F47C20] shadow-xs relative overflow-hidden text-left transition-colors">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             <div className="lg:col-span-8 space-y-6">
-              <div className="inline-block px-3 py-1 rounded-sm bg-[#F47C20] text-white font-mono text-xs font-bold uppercase tracking-wider shadow-xs">
+              <div className="inline-block px-3 py-1 rounded-[3px] bg-[#F47C20] text-white font-mono text-xs font-bold uppercase tracking-wider shadow-xs">
                 FOUNDER & DIRECTOR — LEAP FROG RACING
               </div>
 
               <div className="space-y-2">
-                <h3 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+                <h3 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight leading-tight">
                   MR. ROHIT <span className="text-[#F47C20]">KHANNA</span>
                 </h3>
                 <p className="text-sm sm:text-base font-mono text-[#F47C20] font-bold">
@@ -145,7 +208,7 @@ export const FounderHighlightSection = () => {
 
             {/* Right Column: Founder Portrait Photo & Quote Box */}
             <div className="lg:col-span-4 space-y-4">
-              <div className="relative rounded-xl overflow-hidden border-2 border-[#E5E5E5] hover:border-[#F47C20] group shadow-md transition-colors">
+              <div className="relative rounded-xl overflow-hidden border border-[#E5E5E5] hover:border-[#F47C20] group shadow-sm transition-colors">
                 <img
                   src="/founder-rohit-khanna.jpg"
                   alt="Mr. Rohit Khanna - Kartomania Founder & National Racing Champion"
@@ -154,10 +217,10 @@ export const FounderHighlightSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between font-mono">
-                  <span className="px-2.5 py-1 rounded-sm bg-[#F47C20] text-white text-[9px] font-bold uppercase tracking-wider shadow-sm">
+                  <span className="px-2.5 py-1 rounded-[3px] bg-[#F47C20] text-white text-[9px] font-bold uppercase tracking-wider shadow-xs">
                     ★ ROHIT KHANNA
                   </span>
-                  <span className="text-[9px] text-white font-bold uppercase bg-black/60 px-2 py-0.5 rounded-sm backdrop-blur-xs">
+                  <span className="text-[9px] text-white font-bold uppercase bg-black/60 px-2 py-0.5 rounded-[3px] backdrop-blur-xs">
                     NATIONAL CHAMPION
                   </span>
                 </div>
