@@ -68,7 +68,7 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
         <div className="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-[54px] flex items-center justify-between gap-4">
           
           {/* 1. LEFT: Brand Logo */}
-          <Link to="/" className="flex items-center gap-2 group cursor-pointer shrink-0 text-decoration-none">
+          <Link to="/" className="flex items-center gap-2 group cursor-pointer shrink-0 text-decoration-none py-1">
             <img
               src="/logo.png"
               alt="Kartomania Logo"
@@ -77,7 +77,7 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
           </Link>
 
           {/* 2. CENTER: Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2 shrink">
+          <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2.5 shrink">
             {NAV_LINKS.map((link, idx) => {
               const isActive = location.pathname === link.path;
               const isHovered = hoveredIndex === idx;
@@ -89,18 +89,18 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
                   onMouseEnter={() => setHoveredIndex(idx)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   className={`
-                    relative px-3.5 py-1.5 text-sm font-nav font-semibold tracking-wider uppercase transition-colors duration-200 cursor-pointer bg-transparent border-none whitespace-nowrap text-decoration-none
+                    relative px-4 py-2 text-[13px] xl:text-[14px] font-display font-bold tracking-widest uppercase transition-colors duration-250 cursor-pointer bg-transparent border-none whitespace-nowrap text-decoration-none
                     ${isActive ? 'text-[#F47C20]' : 'text-[#0A0A0A] hover:text-[#F47C20]'}
                   `}
-                  style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600 }}
                 >
-                  <span className="font-semibold">{link.name}</span>
+                  <span>{link.name}</span>
 
                   <span
                     className={`
-                      absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#F47C20] transition-all duration-200
-                      ${isActive ? 'w-full opacity-100' : isHovered ? 'w-full opacity-60' : 'w-0 opacity-0'}
+                      absolute bottom-0.5 left-3 right-3 h-[2px] bg-[#F47C20] rounded-full transition-all duration-250
+                      ${isActive ? 'opacity-100 scale-x-100' : isHovered ? 'opacity-70 scale-x-100' : 'opacity-0 scale-x-0'}
                     `}
+                    style={{ transformOrigin: 'center' }}
                   />
                 </Link>
               );
@@ -109,13 +109,13 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
 
           {/* 3. RIGHT: Search, Social & Primary CTA */}
           <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
-            <div className="hidden sm:flex items-center gap-1.5 pr-2 border-r border-[#E5E5E5]">
+            <div className="hidden sm:flex items-center gap-1.5 pr-2.5 border-r border-[#E5E5E5]">
               <a
                 href="https://www.instagram.com/kartomaniacsggn/?r=nametag"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#333333] hover:text-[#F47C20] transition-colors"
+                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#444444] hover:text-[#F47C20] transition-colors duration-200"
               >
                 <InstagramIcon className="w-3.5 h-3.5" />
               </a>
@@ -125,7 +125,7 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
-                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#333333] hover:text-[#F47C20] transition-colors"
+                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#444444] hover:text-[#F47C20] transition-colors duration-200"
               >
                 <FacebookIcon className="w-3.5 h-3.5" />
               </a>
@@ -133,7 +133,7 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
               <button
                 onClick={onOpenSearch}
                 aria-label="Search"
-                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#333333] hover:text-[#F47C20] transition-colors cursor-pointer"
+                className="p-2 rounded-full bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#444444] hover:text-[#F47C20] transition-colors duration-200 cursor-pointer"
               >
                 <Search className="w-3.5 h-3.5" />
               </button>
@@ -143,7 +143,7 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
             <div className="hidden md:block">
               <MagneticButton
                 href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
-                className="py-2.5 px-5 text-xs shadow-sm font-bold"
+                className="py-2.5 px-5 text-xs font-bold tracking-widest shadow-sm"
               >
                 BOOK NOW
               </MagneticButton>
@@ -153,7 +153,7 @@ const Navbar = ({ onOpenSearch, onOpenBooking }) => {
             <button
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Toggle Mobile Menu"
-              className="lg:hidden p-2 rounded-lg bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#0A0A0A] hover:text-[#F47C20] transition-colors cursor-pointer border border-[#EAEAEA]"
+              className="lg:hidden p-2.5 rounded-lg bg-[#F5F5F5] hover:bg-[#FFF0E5] text-[#0A0A0A] hover:text-[#F47C20] transition-colors duration-200 cursor-pointer border border-[#EAEAEA]"
             >
               <Menu className="w-5 h-5" />
             </button>

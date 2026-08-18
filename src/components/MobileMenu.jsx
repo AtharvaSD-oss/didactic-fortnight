@@ -111,8 +111,7 @@ const MobileMenu = ({
                           {item.tag}
                         </span>
                         <span 
-                          className="font-nav text-lg uppercase tracking-wider font-semibold"
-                          style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600 }}
+                          className="font-display text-lg uppercase tracking-wider font-bold"
                         >
                           {item.name}
                         </span>
