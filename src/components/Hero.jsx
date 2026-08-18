@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, MapPin } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -51,7 +51,18 @@ const Hero = ({ onOpenBooking }) => {
   return (
     <section ref={heroRef} id="home" className="relative w-full min-h-0 lg:min-h-[100svh] bg-white text-[#0A0A0A] overflow-hidden">
       <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-[54px] pt-[85px] sm:pt-[100px] lg:pt-[125px]">
-        {/* Giant Title */}
+        {/* Eyebrow Kicker */}
+        <motion.div
+          {...fadeUp(0.1)}
+          className="flex items-center gap-2 mb-2 sm:mb-3"
+        >
+          <span className="w-2 h-2 rounded-full bg-[#F47C20] animate-orange-pulse" />
+          <span className="font-mono text-[11px] sm:text-xs font-bold text-[#F47C20] uppercase tracking-widest">
+            01 // KARTOMANIA
+          </span>
+        </motion.div>
+
+        {/* Giant Dominant Title */}
         <div className="relative z-10 w-full overflow-visible">
           <motion.h1
             {...titleAnimation}
@@ -73,7 +84,7 @@ const Hero = ({ onOpenBooking }) => {
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className="relative w-full"
           >
             <div
@@ -93,52 +104,51 @@ const Hero = ({ onOpenBooking }) => {
           </motion.div>
         </div>
 
-        {/* Lower Hero Area */}
+        {/* Lower Hero Area: Narrative & Dual CTAs */}
         <div className="relative z-20 min-h-0 lg:min-h-[460px]">
-          {/* Text Content & CTAs */}
-          <div className="relative lg:absolute left-0 top-0 lg:top-[58px] z-30 w-full max-w-[420px] sm:max-w-[450px] lg:max-w-[480px] pt-2 lg:pt-0">
-            <motion.p
-              {...fadeUp(0.35)}
-              className="text-[#111111] font-extrabold text-[14px] sm:text-[17px] lg:text-[19px] uppercase tracking-[0.12em] sm:tracking-[0.16em] leading-tight whitespace-nowrap"
+          <div className="relative lg:absolute left-0 top-0 lg:top-[48px] z-30 w-full max-w-[440px] sm:max-w-[480px] lg:max-w-[500px] pt-2 lg:pt-0 text-left">
+            {/* Primary Headline */}
+            <motion.h2
+              {...fadeUp(0.3)}
+              className="text-[#0A0A0A] font-display font-extrabold text-[24px] sm:text-[28px] lg:text-[34px] uppercase tracking-tight leading-tight"
             >
-              RACE. EXPERIENCE. REMEMBER.
-            </motion.p>
+              RACE WITHOUT <span className="text-[#F47C20]">LIMITS.</span>
+            </motion.h2>
 
             <motion.div
               initial={{ opacity: 0, scaleX: 0 }}
               animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 0.5, delay: 0.45, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
               style={{ transformOrigin: "left center" }}
-              className="w-[84px] h-[2px] bg-[#F47C20] mt-5 mb-5"
+              className="w-[72px] h-[2px] bg-[#F47C20] mt-3 mb-4"
             />
 
+            {/* Supporting Text (1-2 clean lines) */}
             <motion.p
-              {...fadeUp(0.5)}
-              className="text-[#333333] text-[15px] sm:text-[16px] leading-[1.8] max-w-[350px]"
+              {...fadeUp(0.45)}
+              className="text-[#444444] text-[14px] sm:text-[15px] lg:text-[16px] leading-relaxed font-sans"
             >
-              Where speed meets adrenaline.
-              <br />
-              <span className="text-[#111111] font-semibold">Experience Kartomania.</span>
+              High-speed ~600m outdoor Grand Prix asphalt circuit with live telemetry and championship karts.
             </motion.p>
 
-            <motion.div {...fadeUp(0.6)} className="flex flex-col items-start gap-3 mt-6 lg:mt-8">
+            {/* Dual CTAs */}
+            <motion.div {...fadeUp(0.55)} className="flex flex-wrap items-center gap-3.5 mt-6 lg:mt-8">
+              {/* Primary CTA */}
               <MagneticButton
                 onClick={onOpenBooking}
                 variant="primary"
-                className="group h-[54px] px-6 sm:px-7 bg-[#0A0A0A] text-white text-[12px] sm:text-[13px] font-bold rounded-[5px] shadow-none transition-all duration-300 hover:bg-[#F47C20]"
+                className="h-[50px] px-6 sm:px-7 bg-[#0A0A0A] text-white text-[12px] sm:text-[13px] font-bold rounded-[4px] shadow-sm transition-all duration-300 hover:bg-[#F47C20]"
               >
                 <span>BOOK YOUR RACE</span>
                 <ArrowRight className="inline-block w-4 h-4 ml-2 text-[#F47C20] group-hover:text-white transition-colors duration-300" />
               </MagneticButton>
 
+              {/* Secondary CTA */}
               <a
-                href="https://maps.app.goo.gl/7c5CMX5a4vaaXFLN9"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 h-[54px] px-5 border border-[#DCDCDC] bg-white text-[#111111] text-[11px] font-bold tracking-[0.08em] uppercase rounded-[5px] transition-all duration-300 hover:border-[#F47C20] hover:text-[#F47C20]"
+                href="/track"
+                className="inline-flex items-center justify-center h-[50px] px-6 border-2 border-[#E5E5E5] bg-white text-[#0A0A0A] text-[12px] sm:text-[13px] font-mono font-bold tracking-wider uppercase rounded-[4px] transition-all duration-300 hover:border-[#0A0A0A] hover:bg-[#F9F9F9] text-decoration-none"
               >
-                <MapPin className="w-4 h-4 text-[#F47C20]" />
-                GET DIRECTIONS
+                EXPLORE THE TRACK
               </a>
             </motion.div>
           </div>
