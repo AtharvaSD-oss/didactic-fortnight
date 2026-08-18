@@ -637,21 +637,59 @@ export const ContactSection = () => {
 
   return (
     <section id="contact" className="border-t border-[#EAEAEA] bg-white text-[#111111]">
-      {/* ── 01: Venue & Direction Section ── */}
+      
+      {/* ── 01: Final High-Conversion Grand Prix Call-To-Action Banner ── */}
+      <div className="py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA] text-center">
+        <div className="max-w-3xl mx-auto space-y-6">
+          <div className="inline-flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#F47C20] animate-orange-pulse" />
+            <span className="font-mono text-xs font-bold text-[#F47C20] uppercase tracking-widest">
+              05 // YOUR RACE STARTS HERE
+            </span>
+          </div>
+
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-[#0A0A0A] uppercase tracking-tight leading-[0.95]">
+            READY TO <span className="text-[#F47C20]">RACE?</span>
+          </h2>
+
+          <p className="text-sm sm:text-base lg:text-lg text-[#555555] font-sans leading-relaxed max-w-xl mx-auto">
+            Lock in your session on Northern India's premier ~600m outdoor circuit with live RaceFacer millisecond telemetry and championship karts.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+            <MagneticButton
+              href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
+              variant="primary"
+              className="h-[54px] sm:h-[58px] px-8 sm:px-10 text-xs sm:text-sm font-bold tracking-widest shadow-md hover:scale-[1.02] transition-transform"
+            >
+              BOOK YOUR RACE
+            </MagneticButton>
+
+            <a
+              href="/race"
+              className="inline-flex items-center justify-center h-[54px] sm:h-[58px] px-7 sm:px-8 border-2 border-[#E5E5E5] bg-white text-[#0A0A0A] text-xs sm:text-sm font-mono font-bold tracking-wider uppercase rounded-[4px] transition-all duration-300 hover:border-[#0A0A0A] hover:bg-[#F9F9F9] hover:scale-[1.02] text-decoration-none"
+            >
+              VIEW PACKAGES
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* ── 02: Venue & Direction Section ── */}
       <div className="py-14 sm:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-b border-[#EAEAEA]">
         <div className="space-y-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-4 text-left">
             <div>
-              <h2 className="text-3xl sm:text-5xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
+              <h3 className="text-2xl sm:text-4xl font-display font-bold text-[#0A0A0A] uppercase tracking-tight">
                 ENTERTAINLAND MALL <span className="text-[#F47C20]">CIRCUIT</span>
-              </h2>
+              </h3>
             </div>
 
             <a
               href={GOOGLE_MAPS_LINK}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-[#F47C20] hover:bg-[#E0670E] text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors shadow-md shrink-0 cursor-pointer text-decoration-none"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-[3px] bg-[#F47C20] hover:bg-[#E0670E] text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors shadow-xs shrink-0 cursor-pointer text-decoration-none"
             >
               <Navigation className="w-4 h-4" /> GET DIRECTIONS
             </a>
