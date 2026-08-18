@@ -28,16 +28,15 @@ const MagneticButton = ({
       gsap.to(btn, {
         x: x * strength,
         y: y * strength,
-        rotate: x * 0.02,
-        duration: 0.3,
+        duration: 0.25,
         ease: 'power2.out'
       });
 
       if (contentRef.current) {
         gsap.to(contentRef.current, {
-          x: x * (strength * 0.4),
-          y: y * (strength * 0.4),
-          duration: 0.3,
+          x: x * (strength * 0.35),
+          y: y * (strength * 0.35),
+          duration: 0.25,
           ease: 'power2.out'
         });
       }
@@ -47,8 +46,7 @@ const MagneticButton = ({
       gsap.to(btn, {
         x: 0,
         y: 0,
-        rotate: 0,
-        duration: 0.5,
+        duration: 0.35,
         ease: 'power2.out'
       });
 
@@ -56,7 +54,7 @@ const MagneticButton = ({
         gsap.to(contentRef.current, {
           x: 0,
           y: 0,
-          duration: 0.5,
+          duration: 0.35,
           ease: 'power2.out'
         });
       }

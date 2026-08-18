@@ -107,10 +107,10 @@ const KartsSection = () => {
           return (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.08 }}
+              transition={{ duration: 0.55, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="p-7 rounded-xl bg-[#F9F9F9] border border-[#E5E5E5] hover:border-[#F47C20] flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-md group"
             >
               {/* Top Meta Line */}
