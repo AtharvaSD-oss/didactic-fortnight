@@ -287,7 +287,7 @@ export const PricingSection = () => {
   const renderSprintCard = (item, key) => (
     <div
       key={key}
-      className="w-[320px] sm:w-[350px] lg:w-[380px] shrink-0 p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md group text-left"
+      className="package-card-hover w-[320px] sm:w-[350px] lg:w-[380px] shrink-0 p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] flex flex-col justify-between shadow-sm group text-left relative"
     >
       <div className="space-y-4">
         <div className="flex items-center justify-between">
@@ -346,7 +346,7 @@ export const PricingSection = () => {
   const renderPackageCard = (pkg, key) => (
     <div
       key={key}
-      className="w-[300px] sm:w-[340px] lg:w-[360px] shrink-0 p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md group text-left"
+      className="package-card-hover w-[300px] sm:w-[340px] lg:w-[360px] shrink-0 p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] flex flex-col justify-between shadow-sm group text-left relative"
     >
       <div className="space-y-4">
         {/* Header Tag */}

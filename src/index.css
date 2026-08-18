@@ -266,6 +266,20 @@
   .animate-packages-container:hover .animate-packages-track-group {
     animation-play-state: paused;
   }
+
+  .package-card-hover {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease;
+    will-change: transform;
+  }
+
+  .package-card-hover:hover {
+    transform: scale(1.02);
+    border-color: #F47C20;
+    box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.08), 0 6px 16px -4px rgba(244, 124, 32, 0.12);
+    z-index: 20;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
