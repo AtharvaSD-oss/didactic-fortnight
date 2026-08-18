@@ -245,7 +245,7 @@
   gap: 1.5rem;
   padding-right: 1.5rem;
   will-change: transform;
-  animation: packagesSeamlessLoop 36s linear infinite;
+  animation: packagesSeamlessLoop 26s linear infinite;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
@@ -258,7 +258,7 @@
 
 @media (max-width: 640px) {
   .animate-packages-track-group {
-    animation-duration: 22s;
+    animation-duration: 32s;
   }
 }
 
