@@ -121,11 +121,11 @@ export const WhoWeAreSection = () => {
             className="animate-marquee-track-group flex items-center shrink-0"
           >
             {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, idx) => (
-              <div key={idx} className="flex items-center shrink-0">
-                {/* Compact Racing Ticker Badge */}
-                <div className="inline-flex items-center px-3.5 py-1 rounded-md bg-white border border-[#E5E5E5] hover:border-[#F47C20] transition-colors shadow-xs">
+              <div key={idx} className="flex items-center shrink-0 cursor-default">
+                {/* Compact Racing Ticker Badge with Subtle Hover Interaction */}
+                <div className="marquee-item-badge inline-flex items-center px-3.5 py-1 rounded-md bg-white border border-[#E5E5E5] shadow-xs">
                   <span
-                    className={`font-display font-extrabold uppercase text-xs sm:text-sm tracking-wider ${
+                    className={`marquee-text font-display font-extrabold uppercase text-xs sm:text-sm tracking-wider transition-colors duration-300 ${
                       item.highlight ? 'text-[#F47C20]' : 'text-[#0A0A0A]'
                     }`}
                   >
