@@ -72,35 +72,33 @@ const MagneticButton = ({
 
   const getVariantClasses = () => {
     if (variant === 'orange' || variant === 'secondary') {
-      return 'btn-variant-orange shadow-sm';
+      return 'btn-orange';
     }
     if (variant === 'outline') {
-      return 'btn-variant-outline';
+      return 'btn-outline';
     }
-    // Default: primary (black w/ orange accent on hover)
-    return 'shadow-sm';
+    // Default: primary (black w/ orange circle on hover)
+    return '';
   };
 
   const baseClasses = `
-    btn-uiverse text-xs font-mono tracking-widest uppercase font-bold
-    px-6 py-3 cursor-pointer text-decoration-none
+    animated-button
     ${getVariantClasses()}
     ${className}
   `;
 
   const innerContent = (
-    <span ref={contentRef} className="relative z-10 flex items-center">
-      <span className="btn-label">{children}</span>
+    <span ref={contentRef} className="relative z-10 flex items-center justify-center w-full">
       {showArrow && (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 66 43"
-          className="chevron-svg text-[#F47C20]"
-          aria-hidden="true"
-        >
-          <polygon points="0 0, 26 0, 46 21.5, 26 43, 0 43, 20 21.5" />
-          <polygon points="20 0, 46 0, 66 21.5, 46 43, 20 43, 40 21.5" />
-          <polygon points="40 0, 66 0, 86 21.5, 66 43, 40 43, 60 21.5" />
+        <svg viewBox="0 0 24 24" className="arr-2" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
+        </svg>
+      )}
+      <span className="btn-text">{children}</span>
+      <span className="circle" aria-hidden="true" />
+      {showArrow && (
+        <svg viewBox="0 0 24 24" className="arr-1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
         </svg>
       )}
     </span>

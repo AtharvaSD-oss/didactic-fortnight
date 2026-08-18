@@ -118,161 +118,133 @@
   animation: orangePulse 2s infinite ease-in-out;
 }
 
-/* ── Uiverse Dynamic Chevron Button Animation (Motorsport Edition) ── */
-.btn-uiverse {
-  --color-text: #ffffff;
-  --color-background: #0A0A0A;
-  --color-background-hover: #F47C20;
-  --color-outline: rgba(244, 124, 32, 0.45);
-  --color-shadow: rgba(0, 0, 0, 0.35);
-  cursor: pointer;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  border: none;
-  border-radius: 4px;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  color: var(--color-text);
-  background: var(--color-background);
-  box-shadow: 0 0 0.2em 0 var(--color-background);
-  transition: all 0.5s ease;
+/* ── Dynamic Expanding Circle Arrow Button (Uiverse by ryota1231) ── */
+.animated-button {
   position: relative;
-  overflow: visible;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px 32px;
+  border: 2px solid transparent;
+  font-size: 13px;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background-color: #0A0A0A;
+  border-radius: 4px;
+  font-weight: 700;
+  color: #FFFFFF;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.btn-uiverse.btn-variant-orange {
-  --color-background: #F47C20;
-  --color-background-hover: #0A0A0A;
-  --color-outline: rgba(244, 124, 32, 0.5);
+.animated-button.btn-orange {
+  background-color: #F47C20;
+  color: #FFFFFF;
 }
 
-.btn-uiverse.btn-variant-outline {
-  --color-background: #FFFFFF;
-  --color-background-hover: #F47C20;
-  --color-text: #0A0A0A;
-  border: 1px solid #E5E5E5;
+.animated-button.btn-orange .circle {
+  background-color: #0A0A0A;
 }
 
-.btn-uiverse.btn-variant-outline:hover {
-  --color-text: #FFFFFF;
+.animated-button.btn-orange svg {
+  fill: #FFFFFF;
+}
+
+.animated-button.btn-orange:hover svg {
+  fill: #F47C20;
+}
+
+.animated-button.btn-outline {
+  background-color: #FFFFFF;
+  color: #0A0A0A;
+  border-color: #E5E5E5;
+  box-shadow: 0 0 0 1px #E5E5E5;
+}
+
+.animated-button.btn-outline .circle {
+  background-color: #F47C20;
+}
+
+.animated-button.btn-outline:hover {
+  color: #FFFFFF;
   border-color: #F47C20;
 }
 
-.btn-uiverse:active {
-  transform: scale(0.95);
+.animated-button svg {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  fill: #F47C20;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  pointer-events: none;
 }
 
-.btn-uiverse:hover {
-  outline: 0.1em solid transparent;
-  outline-offset: 0.2em;
-  box-shadow: 0 0 1em 0 var(--color-background-hover);
-  animation:
-    btn-ripple 1s linear infinite,
-    btn-colorize 1s infinite;
-  transition: 0.5s;
+.animated-button .arr-1 {
+  right: 14px;
 }
 
-.btn-uiverse span.btn-label {
-  margin-right: 0.35em;
-  transition: 0.5s;
+.animated-button .arr-2 {
+  left: -25%;
 }
 
-.btn-uiverse:hover span.btn-label {
-  text-shadow: 2px 2px 5px var(--color-shadow);
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #F47C20;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  pointer-events: none;
 }
 
-.btn-uiverse:active span.btn-label {
-  text-shadow: none;
-}
-
-.btn-uiverse svg.chevron-svg {
-  height: 0.85em;
-  width: auto;
-  fill: currentColor;
-  margin-right: -0.16em;
+.animated-button .btn-text {
   position: relative;
-  transition: 0.5s;
-  overflow: visible;
-  flex-shrink: 0;
+  z-index: 1;
+  transform: translateX(-8px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.btn-uiverse:hover svg.chevron-svg {
-  margin-right: 0.5em;
-  transition: 0.5s;
-  filter: drop-shadow(2px 2px 3px var(--color-shadow));
+.animated-button:hover {
+  box-shadow: 0 0 0 6px transparent;
+  color: #FFFFFF;
+  border-color: #F47C20;
 }
 
-.btn-uiverse:active svg.chevron-svg {
-  filter: none;
+.animated-button:hover .arr-1 {
+  right: -25%;
 }
 
-.btn-uiverse svg.chevron-svg polygon:nth-child(1) {
-  transition: 0.4s;
-  transform: translateX(-60%);
+.animated-button:hover .arr-2 {
+  left: 14px;
 }
 
-.btn-uiverse svg.chevron-svg polygon:nth-child(2) {
-  transition: 0.5s;
-  transform: translateX(-30%);
+.animated-button:hover .btn-text {
+  transform: translateX(8px);
 }
 
-.btn-uiverse svg.chevron-svg polygon:nth-child(3) {
-  transition: 0.4s;
+.animated-button:hover svg {
+  fill: #FFFFFF;
 }
 
-.btn-uiverse:hover svg.chevron-svg polygon:nth-child(1) {
-  transform: translateX(0%);
-  animation: chevron-opacity 1s infinite 0.6s;
+.animated-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 0 3px #F47C20;
 }
 
-.btn-uiverse:hover svg.chevron-svg polygon:nth-child(2) {
-  transform: translateX(0%);
-  animation: chevron-opacity 1s infinite 0.4s;
-}
-
-.btn-uiverse:hover svg.chevron-svg polygon:nth-child(3) {
-  animation: chevron-opacity 1s infinite 0.2s;
-}
-
-@keyframes chevron-opacity {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes btn-colorize {
-  0% {
-    background: var(--color-background);
-  }
-  50% {
-    background: var(--color-background-hover);
-  }
-  100% {
-    background: var(--color-background);
-  }
-}
-
-@keyframes btn-ripple {
-  0% {
-    outline: 0em solid transparent;
-    outline-offset: -0.1em;
-  }
-  50% {
-    outline: 0.2em solid var(--color-outline);
-    outline-offset: 0.2em;
-  }
-  100% {
-    outline: 0.4em solid transparent;
-    outline-offset: 0.4em;
-  }
+.animated-button:hover .circle {
+  width: 340px;
+  height: 340px;
+  opacity: 1;
 }
 
 /* Seamless Infinite Motorsport Marquee Animation */
