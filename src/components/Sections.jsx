@@ -177,6 +177,54 @@ export const FounderHighlightSection = () => {
 };
 
 export const PricingSection = () => {
+  const SINGLE_SPRINTS = [
+    {
+      id: "sprint-adult",
+      name: "PRO ADULT SPRINT",
+      kart: "270CC SODI RT10",
+      spec: "SINGLE DRIVER (HEIGHT 4'6\"+)",
+      weekdayPrice: "₹650",
+      weekendPrice: "₹760",
+      duration: "10 MINS / ~12-15 LAPS",
+      features: [
+        "Honda GX270 4-Stroke Engine",
+        "RaceFacer Live Telemetry Timing",
+        "DOT Helmet & Balaclava Included"
+      ],
+      tag: "FLAGSHIP"
+    },
+    {
+      id: "sprint-twin",
+      name: "TWIN TANDEM SPRINT",
+      kart: "500CC DUAL ENGINE",
+      spec: "2 DRIVERS (COUPLES / PARENT-CHILD)",
+      weekdayPrice: "₹1,000",
+      weekendPrice: "₹1,200",
+      duration: "10 MINS / ~12-15 LAPS",
+      features: [
+        "Dual Steering & Dual Honda Engines",
+        "Passenger Height 3'6\"+ with Adult",
+        "Dual Safety Harness & Roll Bar"
+      ],
+      tag: "DUAL RACER"
+    },
+    {
+      id: "sprint-cadet",
+      name: "CADET JUNIOR SPRINT",
+      kart: "160CC SODI CADET",
+      spec: "JUNIOR RACERS (HEIGHT 4'0\"+)",
+      weekdayPrice: "₹650",
+      weekendPrice: "₹760",
+      duration: "10 MINS / ~12-15 LAPS",
+      features: [
+        "Calibrated Speed Limiter Controls",
+        "Padded Ergonomic Bucket Seat",
+        "Junior Helmet & Neck Guard"
+      ],
+      tag: "JUNIOR CLASS"
+    }
+  ];
+
   const REAL_PACKAGES = [
     {
       id: "pkg-5",
@@ -187,46 +235,50 @@ export const PricingSection = () => {
       included: [
         "Weekday - 5 sessions + 1 Bowling FREE (₹3,250)",
         "Weekend - 5 sessions + 1 Bowling FREE (₹3,800)",
-        "DOT-certified helmet & balaclava"
+        "DOT-certified helmet & balaclava included",
+        "1 free bowling game included"
       ],
       tag: "5 SESSIONS"
     },
     {
       id: "pkg-10",
-      name: "10 SESSIONS + 1 SESSION + 1 BOWLING FREE",
+      name: "10 SESSIONS + 1 FREE + 1 BOWLING",
       price: "₹6,500 / ₹7,600",
       priceNote: "Weekday: ₹6,500 | Weekend: ₹7,600",
       duration: "10 + 1 SESSIONS",
       included: [
         "Weekday - 10 sessions + 1 Session + 1 Bowling FREE (₹6,500)",
         "Weekend - 10 sessions + 1 Session + 1 Bowling FREE (₹7,600)",
-        "Live RaceFacer telemetry tracking"
+        "Live RaceFacer telemetry tracking",
+        "Shareable with friends & family"
       ],
       tag: "MOST POPULAR"
     },
     {
       id: "pkg-15",
-      name: "15 SESSIONS + 2 SESSIONS + 2 BOWLING FREE",
+      name: "15 SESSIONS + 2 FREE + 2 BOWLING",
       price: "₹9,750 / ₹11,400",
       priceNote: "Weekday: ₹9,750 | Weekend: ₹11,400",
       duration: "15 + 2 SESSIONS",
       included: [
         "Weekday - 15 sessions + 2 Sessions + 2 Bowling FREE (₹9,750)",
         "Weekend - 15 sessions + 2 Sessions + 2 Bowling FREE (₹11,400)",
-        "Shareable driver group pass"
+        "Shareable driver group pass",
+        "Maximum flexibility across 6 months"
       ],
       tag: "BEST VALUE"
     },
     {
       id: "pkg-20",
-      name: "20 SESSIONS + 3 SESSION + 3 BOWLING FREE",
+      name: "20 SESSIONS + 3 FREE + 3 BOWLING",
       price: "₹13,000 / ₹15,200",
       priceNote: "Weekday: ₹13,000 | Weekend: ₹15,200",
       duration: "20 + 3 SESSIONS",
       included: [
         "Weekday - 20 sessions + 3 Session + 3 Bowling FREE (₹13,000)",
         "Weekend - 20 sessions + 3 Session + 3 Bowling FREE (₹15,200)",
-        "Maximum track time & savings"
+        "Maximum track time & savings",
+        "3 bonus sessions + 3 bowling games"
       ],
       tag: "MEGA COMBO"
     }
@@ -234,7 +286,7 @@ export const PricingSection = () => {
 
   return (
     <section id="pricing" className="py-14 sm:py-20 px-4 sm:px-8 lg:px-[54px] max-w-[1600px] mx-auto border-t border-[#EAEAEA] bg-white text-[#111111]">
-      <div className="space-y-10 sm:space-y-12">
+      <div className="space-y-12 sm:space-y-16">
         
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAEAEA] pb-6 text-left">
@@ -244,71 +296,152 @@ export const PricingSection = () => {
             </h2>
           </div>
           <p className="text-xs sm:text-sm font-mono text-[#666666] max-w-md">
-            Official Kartomania racing packages with live telemetry tracking & safety gear.
+            Official Kartomania racing sessions with live telemetry tracking, safety gear, and combo passes.
           </p>
         </div>
 
-        {/* 4 Compact Package Preview Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {REAL_PACKAGES.map((pkg) => (
-            <div
-              key={pkg.id}
-              className="p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 flex flex-col justify-between text-left shadow-sm hover:shadow-md group"
-            >
-              <div className="space-y-4">
-                {/* Header Tag */}
-                <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-sm bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider group-hover:bg-[#F47C20] transition-colors">
-                    {pkg.tag}
-                  </span>
-                  <span className="text-[10px] font-mono text-[#888888] font-bold uppercase">
-                    {pkg.duration}
-                  </span>
-                </div>
+        {/* ── Sub-Section 01: Single Sprint Sessions ── */}
+        <div className="space-y-6 text-left">
+          <div className="flex items-center justify-between border-b border-[#EAEAEA] pb-3">
+            <span className="font-mono text-xs font-bold text-[#0A0A0A] uppercase tracking-wider">
+              // SINGLE SPRINT SESSIONS (10 MINS)
+            </span>
+            <span className="font-mono text-[10px] text-[#F47C20] font-bold uppercase">
+              100% INCLUSIVE OF GST & TAXES
+            </span>
+          </div>
 
-                {/* Package Title */}
-                <h3 className="text-lg font-display font-bold text-[#0A0A0A] uppercase tracking-wide group-hover:text-[#F47C20] transition-colors">
-                  {pkg.name}
-                </h3>
-
-                {/* Price Display */}
-                <div className="py-2 border-y border-[#EAEAEA]">
-                  <span className="text-[9px] font-mono text-[#888888] block uppercase">PACKAGE PRICE</span>
-                  <div className="text-2xl font-display font-bold text-[#0A0A0A]">
-                    {pkg.price}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {SINGLE_SPRINTS.map((item) => (
+              <div
+                key={item.id}
+                className="p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md group"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="px-2.5 py-0.5 rounded-[3px] bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider group-hover:bg-[#F47C20] transition-colors">
+                      {item.tag}
+                    </span>
+                    <span className="font-mono text-xs text-[#0A0A0A] font-bold">
+                      {item.kart}
+                    </span>
                   </div>
-                  <span className="text-[10px] font-sans text-[#666666]">
-                    {pkg.priceNote}
-                  </span>
-                </div>
 
-                {/* What's Included Bullet Inclusions */}
-                <div className="space-y-2 pt-1">
-                  <span className="text-[10px] font-mono text-[#F47C20] font-bold uppercase block tracking-wider">
-                    // WHAT'S INCLUDED
-                  </span>
-                  <div className="space-y-1.5">
-                    {pkg.included.map((item, idx) => (
+                  <div>
+                    <h3 className="text-xl font-display font-bold text-[#0A0A0A] uppercase tracking-wide group-hover:text-[#F47C20] transition-colors">
+                      {item.name}
+                    </h3>
+                    <p className="text-[11px] font-mono text-[#666666] uppercase mt-0.5">
+                      {item.spec}
+                    </p>
+                  </div>
+
+                  {/* Pricing Box */}
+                  <div className="py-2.5 px-3 rounded-lg bg-white border border-[#EAEAEA] flex items-center justify-between">
+                    <div>
+                      <span className="text-[9px] font-mono text-[#888888] block uppercase">WEEKDAY</span>
+                      <div className="text-lg font-display font-bold text-[#0A0A0A]">{item.weekdayPrice}</div>
+                    </div>
+                    <div className="w-[1px] h-7 bg-[#EAEAEA]" />
+                    <div>
+                      <span className="text-[9px] font-mono text-[#888888] block uppercase">WEEKEND</span>
+                      <div className="text-lg font-display font-bold text-[#F47C20]">{item.weekendPrice}</div>
+                    </div>
+                  </div>
+
+                  {/* Features */}
+                  <div className="space-y-1.5 pt-1">
+                    {item.features.map((feat, idx) => (
                       <div key={idx} className="flex items-start gap-2 text-xs font-sans text-[#444444]">
                         <CheckCircle2 className="w-3.5 h-3.5 text-[#F47C20] shrink-0 mt-0.5" />
-                        <span className="leading-snug">{item}</span>
+                        <span className="leading-snug">{feat}</span>
                       </div>
                     ))}
                   </div>
                 </div>
-              </div>
 
-              {/* Card Booking CTA */}
-              <div className="pt-6 mt-4 border-t border-[#EAEAEA]">
-                <MagneticButton
-                  href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
-                  className="w-full py-2.5 px-4 text-xs font-bold justify-center"
-                >
-                  BOOK NOW &rarr;
-                </MagneticButton>
+                <div className="pt-5 mt-4 border-t border-[#EAEAEA]">
+                  <MagneticButton
+                    href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
+                    className="w-full py-2 px-4 text-xs font-bold justify-center"
+                  >
+                    BOOK SPRINT &rarr;
+                  </MagneticButton>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        {/* ── Sub-Section 02: Multi-Session Value Passes ── */}
+        <div className="space-y-6 text-left">
+          <div className="flex items-center justify-between border-b border-[#EAEAEA] pb-3">
+            <span className="font-mono text-xs font-bold text-[#0A0A0A] uppercase tracking-wider">
+              // MULTI-SESSION VALUE PASSES & COMBO PACKAGES
+            </span>
+            <span className="font-mono text-[10px] text-[#666666] font-bold uppercase">
+              SHAREABLE WITH FRIENDS & FAMILY
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {REAL_PACKAGES.map((pkg) => (
+              <div
+                key={pkg.id}
+                className="p-6 rounded-2xl bg-[#F9F9F9] border-2 border-[#E5E5E5] hover:border-[#F47C20] transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md group"
+              >
+                <div className="space-y-4">
+                  {/* Header Tag */}
+                  <div className="flex items-center justify-between">
+                    <span className="px-2.5 py-0.5 rounded-[3px] bg-[#0A0A0A] text-white font-mono text-[9px] font-bold uppercase tracking-wider group-hover:bg-[#F47C20] transition-colors">
+                      {pkg.tag}
+                    </span>
+                    <span className="text-[10px] font-mono text-[#888888] font-bold uppercase">
+                      {pkg.duration}
+                    </span>
+                  </div>
+
+                  {/* Package Title */}
+                  <h3 className="text-base font-display font-bold text-[#0A0A0A] uppercase tracking-wide group-hover:text-[#F47C20] transition-colors leading-snug">
+                    {pkg.name}
+                  </h3>
+
+                  {/* Price Display */}
+                  <div className="py-2 border-y border-[#EAEAEA]">
+                    <span className="text-[9px] font-mono text-[#888888] block uppercase">PACKAGE PRICE</span>
+                    <div className="text-xl font-display font-bold text-[#0A0A0A]">
+                      {pkg.price}
+                    </div>
+                    <span className="text-[10px] font-sans text-[#666666]">
+                      {pkg.priceNote}
+                    </span>
+                  </div>
+
+                  {/* What's Included Bullet Inclusions */}
+                  <div className="space-y-2 pt-1">
+                    <div className="space-y-1.5">
+                      {pkg.included.map((item, idx) => (
+                        <div key={idx} className="flex items-start gap-2 text-xs font-sans text-[#444444]">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#F47C20] shrink-0 mt-0.5" />
+                          <span className="leading-snug">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card Booking CTA */}
+                <div className="pt-5 mt-4 border-t border-[#EAEAEA]">
+                  <MagneticButton
+                    href="https://web.racefacer.com/kiosk/kartomaniaentertainlandmall"
+                    className="w-full py-2 px-4 text-xs font-bold justify-center"
+                  >
+                    BOOK PASS &rarr;
+                  </MagneticButton>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>
